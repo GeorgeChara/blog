@@ -6,9 +6,34 @@ draft: false
 
 Building a game from scratch. No Unity, no Unreal, no Godot. Just C, C++, and OpenGL. The project is codenamed **Coopla**, and the custom engine powering it is called **Terra**.
 
-## Engine and Quake movement
+## Game, Engine & Libraries
 
-The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated dependency tree. Just enough to get pixels on screen and a player moving through 3D space. The architecture is layered cleanly: platform libraries at the bottom (GLFW, glad, cgltf, miniaudio), the Terra engine in the middle handling rendering, input, camera, lighting and audio, and game specific code on top.
+The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated dependency tree. Just enough to get pixels on screen and a player moving through 3D space.
+
+```goat
+┌──────────────────────────────────────────────────┐
+│                 COOPLA (Game)                    │
+│                                                  │
+│   player    editor    brushes    levels    hud   │
+│                                                  │
+├─────────────────────────┬────────────────────────┤
+│                         │                        │
+│                         v                        │
+│                 TERRA (Engine)                   │
+│                                                  │
+│  renderer    input    camera    audio    light   │
+│                                                  │
+├─────────────────────────┬────────────────────────┤
+│                         │                        │
+│                         v                        │
+│                    LIBRARIES                     │
+│                                                  │
+│   OpenGL 3.3     GLFW     cgltf     miniaudio    │
+│                                                  │
+└──────────────────────────────────────────────────┘
+```
+
+Game specific code on top, the engine in the middle handling rendering, input, camera, lighting and audio, and platform libraries at the bottom.
 
 ## First Signs of Life
 
