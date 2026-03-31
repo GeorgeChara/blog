@@ -43,7 +43,7 @@ The first milestone was getting the renderer working and hooked up to the game. 
 
 ## Building the Tools
 
-I integrated [Dear ImGui](https://github.com/ocornut/imgui) — an open source C++ immediate-mode GUI library which is really useful for building tools with. Most of them I set to my function keys.
+I integrated [ImGui](https://github.com/ocornut/imgui) — an open source C++ GUI library which is really useful for building game engine tools with. For example, using this GUI library, I am able to list a set of game variables as sliders and then mess around with them in real time.
 
 ![Brush editor with the first placed geometry](/images/devlog-001/2.png)
 
