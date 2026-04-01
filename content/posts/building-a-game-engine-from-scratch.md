@@ -1,12 +1,12 @@
 ---
-title: "Building a Game and Engine from Scratch"
+title: "Building a game and engine from scratch"
 date: 2026-03-31
 draft: false
 ---
 
 Building a game from scratch. No Unity, no Unreal, no Godot. Just C, C++, and OpenGL. The project is codenamed **Coopla**, and the custom engine powering it is called **Terra**.
 
-## Game, Engine & Libraries
+## Game, engine & libraries
 
 The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated dependency tree. Just enough to get pixels on screen and a player moving through 3D space.
 
@@ -14,17 +14,17 @@ The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated d
 
 Game specific code on top, the engine in the middle handling rendering, input, camera, lighting and audio, and platform libraries at the bottom.
 
-## First Signs of Life
+## First signs of life
 
-The first milestone was getting the renderer working and hooked up to the game. Just a chequered floor and some coloured cubes — each face is a different colour using vertex colours, which is the simplest way to get colour on screen without textures. Terra + Coopla were working: shaders compiling, camera moving, game loop ticking.
+The first milestone was getting the renderer working and hooked up to the game. Just a chequered floor and some coloured cubes. Each face is a different colour using vertex colours, which is the simplest way to get colour on screen without textures. Terra + Coopla were working: shaders compiling, camera moving, game loop ticking.
 
 ![First render — coloured cubes on a chequered floor](/images/devlog-001/first-vertexes.png)
 
 ![Different angle — each face of the cube has a different vertex colour](/images/devlog-001/first-vertexes-2.png)
 
-## Building the Tools
+## Building the tools
 
-After adding a lightbox and some other basics, I integrated [ImGui](https://github.com/ocornut/imgui) — an open source C++ GUI library for building in-engine tools. I built a level editor with brush placement, an asset pipeline for importing 3D models (glTF format), and prop placement for dropping objects into the scene.
+After adding a lightbox and some other basics, I integrated [ImGui](https://github.com/ocornut/imgui): an open source C++ GUI library for building in-engine tools. I built a level editor with brush placement, an asset pipeline for importing 3D models (glTF format), and prop placement for dropping objects into the scene.
 
 Here I'm stacking tower props at different scales to test the prop system.
 
@@ -32,7 +32,7 @@ Here I'm stacking tower props at different scales to test the prop system.
 
 ![Large tower](/images/devlog-001/tower-edit-2.png)
 
-## Physics & Movement
+## Physics & movement
 
 The best way to tune movement is to feel it while playing. I'm using the ImGui sliders I set up earlier to adjust physics variables in real time without ever leaving the game.
 
@@ -42,7 +42,7 @@ The movement system is based on Quake's air acceleration model, which means it s
 
 ![Strafe jumping movement demo](/images/devlog-001/movement.gif)
 
-## Developer Console & Debug Tools
+## Developer console & debug tools
 
 I built a Quake/Source-style developer console that drops down with the tilde key. It's useful for thing like teleport, noclip, god mode, and direct CVar editing, all with tab autocomplete and command history.
 
@@ -52,13 +52,13 @@ Here's everything open at once: performance graphs, CVar sliders, brush editor, 
 
 ![All GUI panels open at once](/images/devlog-001/gui-menus.png)
 
-## Nextbot Detour
+## Nextbot detour
 
 I messed around with [nextbots](https://developer.valvesoftware.com/wiki/NextBot) (the AI system from Garry's Mod). Slowed the movement down, added fog, a torch, some pillars to hide behind, and had a nextbot chasing the player through a dark room.
 
 ![Dark room with fog, torch, and a nextbot](/images/devlog-001/6.png)
 
-## Zooming Out
+## Zooming out
 
 I started experimenting with procedurally generated rooms and started building a system that pieces together simple room templates and arranges them into a dungeon layout.
 
@@ -68,7 +68,7 @@ I started experimenting with procedurally generated rooms and started building a
 
 Looking at the game from here made me think about controlling the character like an ARPG. That led to an isometric camera, click-to-move controls, and eventually a completely different game direction.
 
-## Current State: ARPG Prototype
+## Current state: ARPG prototype
 
 The game has pivoted to an isometric ARPG, enemies swarm in and abilities fire on cooldowns.
 
