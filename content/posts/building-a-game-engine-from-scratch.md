@@ -16,7 +16,7 @@ Game specific code on top, the engine in the middle handling rendering, input, c
 
 ## First signs of life
 
-The first milestone was getting the renderer working and hooked up to the game. Just a chequered floor and some coloured cubes. Each face is a different colour using vertex colours, which is the simplest way to get colour on screen without textures. Terra + Coopla were working: shaders compiling, camera moving, game loop ticking.
+The first milestone was getting the renderer working. A chequered floor and some cubes — each face tinted differently using vertex data, the simplest way to shade geometry without textures. Proof that the stack was working: shaders compiling, camera moving, game loop ticking.
 
 ![First render — coloured cubes on a chequered floor](/images/devlog-001/first-vertexes.png)
 
