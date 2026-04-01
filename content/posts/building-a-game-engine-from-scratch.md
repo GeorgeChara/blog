@@ -8,7 +8,7 @@ Building a game from scratch. No Unity, no Unreal, no Godot. Just C, C++, and Op
 
 ## Game, engine & libraries
 
-The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated dependency tree. Just enough to get pixels on screen and a player moving through 3D space.
+The engine is written in C17 with OpenGL 3.3. No massive framework with a load of stuff we will never need. Just enough to get pixels on screen and a player moving through 3D space.
 
 ![Engine architecture](/images/devlog-001/engine-diagram.svg)
 
@@ -16,7 +16,7 @@ Game specific code on top, the engine in the middle handling rendering, input, c
 
 ## First signs of life
 
-The first milestone was getting the renderer working. A chequered floor and some cubes, each face tinted differently using vertex data (the simplest way to shade geometry without textures). Proof that the stack was working: shaders compiling, camera moving, game loop ticking.
+The first milestone was getting the renderer working. A chequered floor and some cubes, each face tinted differently using vertex data (the simplest way to shade geometry without textures).
 
 ![First render — coloured cubes on a chequered floor](/images/devlog-001/first-vertexes.png)
 
@@ -34,7 +34,7 @@ Here I'm stacking tower props at different scales to test the prop system.
 
 ## Physics & movement
 
-The best way to tune movement is to feel it while playing. I'm using the ImGui sliders I set up earlier to adjust physics variables in real time without ever leaving the game.
+The best way to tune in game movement is to just feel it while playing. Using the ImGui sliders I can easily adjust physics whilst I play until things feel right.
 
 ![Physics tuning panel with live CVars and performance bar](/images/devlog-001/physics.png)
 
@@ -48,7 +48,7 @@ I built a Quake/Source-style developer console that drops down with the tilde ke
 
 ![In-game developer console with command list](/images/devlog-001/command-mode.png)
 
-Here's everything open at once: performance graphs, CVar sliders, brush editor, game state, log viewer, and level save/load.
+Here's everything open at once (performance graphs, game state, log viewer, etc.)
 
 ![All GUI panels open at once](/images/devlog-001/gui-menus.png)
 
@@ -66,10 +66,10 @@ I started experimenting with procedurally generated rooms and started building a
 
 ![Closer look at the generated rooms](/images/devlog-001/8.png)
 
-Looking at the game from here made me think about controlling the character like an ARPG. That led to an isometric camera, click-to-move controls, and eventually a completely different game direction.
+Looking at the game from here made me think about controlling the character like an ARPG. This led to an isometric camera, click to move controls, and eventually a completely different game direction.
 
 ## Current state: ARPG prototype
 
-The game has pivoted to an isometric ARPG, enemies swarm in and abilities fire on cooldowns.
+The game has pivoted to an isometric ARPG, enemies swarm in and abilities fire on cooldowns but most of all at this stage, it's showcasing the engine's ability to adapt.
 
 ![ARPG prototype with isometric camera](/images/devlog-001/9.png)
