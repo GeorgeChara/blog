@@ -44,7 +44,7 @@ The movement system is based on Quake's air acceleration model, which means it s
 
 ## Developer console & debug tools
 
-I built a Quake/Source-style developer console that drops down with the tilde key. It's useful for thing like teleport, noclip, god mode, and direct CVar editing, all with tab autocomplete and command history.
+I built a Quake/Source-style developer console that drops down with the tilde key. It's useful for things like teleport, noclip, god mode, and direct CVar editing, all with tab autocomplete and command history.
 
 ![In-game developer console with command list](/images/devlog-001/command-mode.png)
 
