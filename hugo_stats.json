@@ -3,12 +3,10 @@
     "tags": [
       "a",
       "body",
-      "code",
       "div",
       "figcaption",
       "figure",
       "footer",
-      "g",
       "h1",
       "h2",
       "head",
@@ -22,13 +20,10 @@
       "nav",
       "ol",
       "p",
-      "polygon",
       "pre",
       "script",
       "span",
       "strong",
-      "svg",
-      "text",
       "time",
       "title",
       "ul"
@@ -38,12 +33,10 @@
       "back-nav",
       "comments",
       "current",
-      "goat",
       "highlight",
       "path-nav",
       "reading-time",
       "skip-link",
-      "svg-container",
       "terminal-nav",
       "time",
       "time-list",
@@ -52,7 +45,6 @@
     ],
     "ids": [
       "TableOfContents",
-      "basic-arpg",
       "building-the-tools",
       "current-state-arpg-prototype",
       "developer-console--debug-tools",
@@ -61,7 +53,6 @@
       "main-content",
       "nextbot-detour",
       "physics--movement",
-      "physics-tuning--performance",
       "zooming-out"
     ]
   }

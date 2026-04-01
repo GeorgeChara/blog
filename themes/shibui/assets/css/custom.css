@@ -1,0 +1,13 @@
+/* Zoom on hover */
+img {
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+img:hover {
+  transform: scale(1.5);
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0 0 6px white, 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: white;
+}
