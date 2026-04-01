@@ -18,9 +18,9 @@ Game specific code on top, the engine in the middle handling rendering, input, c
 
 The first milestone was getting the renderer working. A chequered floor and some cubes, each face tinted differently using vertex data (the simplest way to shade geometry without textures).
 
-![First render — coloured cubes on a chequered floor](/images/devlog-001/first-vertexes.png)
+![First render](/images/devlog-001/first-vertexes.png)
 
-![Different angle — each face of the cube has a different vertex colour](/images/devlog-001/first-vertexes-2.png)
+![Different angle](/images/devlog-001/first-vertexes-2.png)
 
 ## Building the tools
 
@@ -46,7 +46,7 @@ The movement system is based on Quake's air acceleration model, which means it s
 
 I built a Quake/Source-style developer console that drops down with the tilde key. It's useful for things like teleport, noclip, god mode, and direct CVar editing, all with tab autocomplete and command history.
 
-![In-game developer console with command list](/images/devlog-001/command-mode.png)
+![Developer console with command list](/images/devlog-001/command-mode.png)
 
 Here's everything open at once (performance graphs, game state, log viewer, etc.)
 
