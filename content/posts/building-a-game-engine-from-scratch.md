@@ -10,73 +10,72 @@ Building a game from scratch. No Unity, no Unreal, no Godot. Just C, C++, and Op
 
 The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated dependency tree. Just enough to get pixels on screen and a player moving through 3D space.
 
-```goat
-┌──────────────────────────────────────────────────┐
-│                 COOPLA (Game)                    │
-│                                                  │
-│   player    editor    brushes    levels    hud   │
-│                                                  │
-├─────────────────────────┬────────────────────────┤
-│                         │                        │
-│                         v                        │
-│                 TERRA (Engine)                   │
-│                                                  │
-│  renderer    input    camera    audio    light   │
-│                                                  │
-├─────────────────────────┬────────────────────────┤
-│                         │                        │
-│                         v                        │
-│                    LIBRARIES                     │
-│                                                  │
-│   OpenGL 3.3     GLFW     cgltf     miniaudio    │
-│                                                  │
-└──────────────────────────────────────────────────┘
+```
+  COOPLA (Game)        — player, editor, brushes, levels, hud
+        ↓
+  TERRA (Engine)       — renderer, input, camera, audio, lighting
+        ↓
+  LIBRARIES            — OpenGL 3.3, GLFW, cgltf, miniaudio
 ```
 
 Game specific code on top, the engine in the middle handling rendering, input, camera, lighting and audio, and platform libraries at the bottom.
 
 ## First Signs of Life
 
-The first milestone was getting the renderer working and hooked up to the game. Just a chequered floor at this point but its proof that terra + coopla were working and at this point we have the basics: shaders, camera moving, game loop ticking etc.).
+The first milestone was getting the renderer working and hooked up to the game. Just a chequered floor and some coloured cubes — each face is a different colour using vertex colours, which is the simplest way to get colour on screen without textures. Terra + Coopla were working: shaders compiling, camera moving, game loop ticking.
 
-![First render — chequered floor proof of life](/images/devlog-001/1.png)
+![First render — coloured cubes on a chequered floor](/images/devlog-001/first-vertexes.png)
+
+![Different angle — each face of the cube has a different vertex colour](/images/devlog-001/first-vertexes-2.png)
 
 ## Building the Tools
 
-I integrated [ImGui](https://github.com/ocornut/imgui) — an open source C++ GUI library which is really useful for building game engine tools with. For example, using this GUI library, I am able to list a set of game variables as sliders and then mess around with them in real time.
+I integrated [ImGui](https://github.com/ocornut/imgui) — an open source C++ GUI library for building in-engine tools. I built a level editor with brush placement, an asset pipeline for importing 3D models (glTF format), and prop placement for dropping objects into the scene.
 
-![Brush editor with the first placed geometry](/images/devlog-001/2.png)
+Here I'm stacking tower props at different scales to test the prop system.
 
-The editor started simple, place brushes (the basic building blocks of level geometry — walls, floors, ramps), move them around, save and load levels.
+![Small tower](/images/devlog-001/tower-edit.png)
 
-![Model browser with importable assets](/images/devlog-001/3.png)
+![Large tower](/images/devlog-001/tower-edit-2.png)
 
-I built an asset pipeline that lets me browse and import 3D models from online packs (glTF/GLB format). The editor has a model list, and you can drop props straight into the scene which is useful for quick prototyping.
+## Physics & Movement
 
-![Editor with prototype geometry and the chequered world](/images/devlog-001/4.png)
+The best way to tune movement is to feel it while playing. I'm using the ImGui sliders I set up earlier to adjust physics variables in real time without ever leaving the game.
 
-![Placed brushes and props in the scene](/images/devlog-001/5.png)
+![Physics tuning panel with live CVars and performance bar](/images/devlog-001/physics.png)
 
-The editor ended up with five modes/tabs — Brush, Prototype, Prefab, Prop, and Author. Having tools built directly into the engine means the feedback loop is instant: place something, hit play, test it, switch back to edit.
+The movement system is based on Quake's air acceleration model, which means it supports strafe jumping. It's a bit rough at this point but you can see it working as the bar at the bottom tracks speed.
+
+![Strafe jumping movement demo](/images/devlog-001/movement.gif)
+
+## Developer Console & Debug Tools
+
+I built a Quake/Source-style developer console that drops down with the tilde key. It's useful for thing like teleport, noclip, god mode, and direct CVar editing, all with tab autocomplete and command history.
+
+![In-game developer console with command list](/images/devlog-001/command-mode.png)
+
+Here's everything open at once: performance graphs, CVar sliders, brush editor, game state, log viewer, and level save/load.
+
+![All GUI panels open at once](/images/devlog-001/gui-menus.png)
 
 ## Nextbot Detour
 
-Just thought I would mess around with nextbots because I remember using them in Gmod and the code for this is widely available. I slowed the movement speed down, added fog, a torch, some pillars to hide behind, and a [nextbot](https://developer.valvesoftware.com/wiki/NextBot) chasing the player through a dark room.
+I messed around with [nextbots](https://developer.valvesoftware.com/wiki/NextBot) (the AI system from Garry's Mod). Slowed the movement down, added fog, a torch, some pillars to hide behind, and had a nextbot chasing the player through a dark room.
 
 ![Dark room with fog, torch, and a nextbot](/images/devlog-001/6.png)
 
 ## Zooming Out
 
-I then started experimenting with procedurally generated rooms. I built a system that piece together simple rooms and arrange them in a scene.
+I started experimenting with procedurally generated rooms and started building a system that pieces together simple room templates and arranges them into a dungeon layout.
 
 ![Row of procedurally generated rooms from above](/images/devlog-001/7.png)
 
-![Closer look at the generated buildings](/images/devlog-001/8.png)
+![Closer look at the generated rooms](/images/devlog-001/8.png)
 
-Looking at the game from here made me think about controlling the character from a birds eye view... so basically an like an Action Role Playing Game (ARPG).
+Looking at the game from here made me think about controlling the character like an ARPG. That led to an isometric camera, click-to-move controls, and eventually a completely different game direction.
 
-## Basic ARPG
+## Current State: ARPG Prototype
 
-The end result as of now, more experimenting with game mechanics in this ARPG like setting.
+The game has pivoted to an isometric ARPG, enemies swarm in and abilities fire on cooldowns.
 
-![Basic ARPG gameplay](/images/devlog-001/9.png)
+![ARPG prototype with isometric camera](/images/devlog-001/9.png)
