@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 280" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="440" height="280" fill="white"/>
+
+  <!-- Game -->
+  <rect x="20" y="10" width="400" height="65" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="220" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e3a5f">COOPLA</text>
+  <text x="220" y="44" text-anchor="middle" font-size="11" fill="#64748b">(Game)</text>
+  <text x="220" y="58" text-anchor="middle" font-size="11" fill="#475569">player · abilities · horde · camera · UI</text>
+
+  <!-- Arrow -->
+  <line x1="220" y1="75" x2="220" y2="95" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="216,92 220,99 224,92" fill="#94a3b8"/>
+
+  <!-- Engine -->
+  <rect x="20" y="100" width="400" height="65" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="220" y="120" text-anchor="middle" font-size="16" font-weight="bold" fill="#14532d">TERRA</text>
+  <text x="220" y="134" text-anchor="middle" font-size="11" fill="#64748b">(Engine)</text>
+  <text x="220" y="148" text-anchor="middle" font-size="11" fill="#475569">renderer · mesh · shader · ECS · audio · input · instancing</text>
+
+  <!-- Arrow -->
+  <line x1="220" y1="165" x2="220" y2="185" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="216,182 220,189 224,182" fill="#94a3b8"/>
+
+  <!-- Libraries -->
+  <rect x="20" y="190" width="400" height="65" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="220" y="210" text-anchor="middle" font-size="16" font-weight="bold" fill="#78350f">LIBRARIES</text>
+  <text x="220" y="224" text-anchor="middle" font-size="11" fill="#64748b">(Open Source)</text>
+  <text x="220" y="238" text-anchor="middle" font-size="11" fill="#475569">OpenGL 3.3 · GLFW · ImGui · miniaudio · cgltf · HandmadeMath</text>
+</svg>

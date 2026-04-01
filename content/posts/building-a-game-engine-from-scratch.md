@@ -10,13 +10,7 @@ Building a game from scratch. No Unity, no Unreal, no Godot. Just C, C++, and Op
 
 The engine is written in C17 with OpenGL 3.3. No massive framework, no bloated dependency tree. Just enough to get pixels on screen and a player moving through 3D space.
 
-```
-  COOPLA (Game)        — player, editor, brushes, levels, hud
-        ↓
-  TERRA (Engine)       — renderer, input, camera, audio, lighting
-        ↓
-  LIBRARIES            — OpenGL 3.3, GLFW, cgltf, miniaudio
-```
+![Engine architecture](/images/devlog-001/engine-diagram.svg)
 
 Game specific code on top, the engine in the middle handling rendering, input, camera, lighting and audio, and platform libraries at the bottom.
 
@@ -30,7 +24,7 @@ The first milestone was getting the renderer working and hooked up to the game. 
 
 ## Building the Tools
 
-I integrated [ImGui](https://github.com/ocornut/imgui) — an open source C++ GUI library for building in-engine tools. I built a level editor with brush placement, an asset pipeline for importing 3D models (glTF format), and prop placement for dropping objects into the scene.
+After adding a lightbox and some other basics, I integrated [ImGui](https://github.com/ocornut/imgui) — an open source C++ GUI library for building in-engine tools. I built a level editor with brush placement, an asset pipeline for importing 3D models (glTF format), and prop placement for dropping objects into the scene.
 
 Here I'm stacking tower props at different scales to test the prop system.
 
