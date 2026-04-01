@@ -1,13 +1,15 @@
-/* Zoom on hover */
-img {
-  cursor: default;
-  transition: transform 0.2s ease;
-}
+/* Zoom on hover — desktop only */
+@media (min-width: 601px) {
+  img {
+    cursor: default;
+    transition: transform 0.2s ease;
+  }
 
-img:hover {
-  transform: scale(1.5);
-  z-index: 10;
-  position: relative;
-  box-shadow: 0 0 0 6px white, 0 4px 20px rgba(0, 0, 0, 0.3);
-  background: white;
+  img:hover {
+    transform: scale(1.5);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 0 6px white, 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: white;
+  }
 }
