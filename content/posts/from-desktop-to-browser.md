@@ -1,7 +1,7 @@
 ---
 title: "From desktop to browser"
 date: 2026-04-03
-draft: true
+draft: false
 ---
 
 Quite a few changes since the last post. It actually plays like a game and I have also configured a pipeline so that I can provide demos to play in a web browser.
