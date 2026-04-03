@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout blog
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.COOPLA_ARTIFACT_TOKEN }}
 
       - name: Download demo artifact
         uses: dawidd6/action-download-artifact@v6
