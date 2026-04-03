@@ -1,0 +1,219 @@
+#version 330 core
+
+in vec3 vColor;
+in vec2 vUV;
+in vec3 vWorldPos;
+in vec3 vNormal;
+
+uniform sampler2D uTexture;
+uniform int uUseTexture;
+uniform vec3 uTintColor;
+uniform int uUseTintColor;
+
+// Lighting (optional — set uUseLighting = 1 to enable)
+uniform int uUseLighting;
+
+struct DirLight {
+    vec3 direction;
+    vec3 color;
+    float intensity;
+};
+uniform DirLight uDirLight;
+
+struct PointLight {
+    vec3 position;
+    vec3 color;
+    float intensity;
+    float radius;
+};
+#define MAX_POINT_LIGHTS 8
+uniform PointLight uPointLights[MAX_POINT_LIGHTS];
+uniform int uPointLightCount;
+
+uniform vec3 uAmbientColor;
+uniform float uAmbientIntensity;
+
+// Spotlight (torch cone)
+struct SpotLight {
+    vec3 position;
+    vec3 direction;
+    vec3 color;
+    float intensity;
+    float radius;
+    float innerCutoff; // cos(inner angle) — full brightness inside this
+    float outerCutoff; // cos(outer angle) — fades to zero at this
+};
+uniform SpotLight uSpotLight;
+uniform int uUseSpotLight;
+
+// Uniform color override (replaces vertex color when enabled)
+uniform vec3 uColor;
+uniform int uUseColor;
+
+// Alpha for ghost preview
+uniform float uAlpha;
+
+// Exponential fog
+uniform int uUseFog;
+uniform vec3 uFogColor;
+uniform float uFogDensity;
+uniform vec3 uCameraPos;
+
+// Triplanar texture mapping (world-space UVs, 1 unit = 1 tile)
+uniform int uTriplanarTex;
+uniform float uTriplanarScale;
+
+out vec4 FragColor;
+
+void main() {
+    vec3 baseColor;
+    float texAlpha = 1.0;
+
+    // Compute UV — triplanar (world-space) or mesh UV
+    vec2 texUV = vUV;
+    if (uTriplanarTex == 1) {
+        vec3 n = normalize(vNormal);
+        vec3 na = abs(n);
+        // Scale world-space UVs so inner grid cells ≈ 1m
+        // Use sign(n) to flip horizontal axis per-face so text reads L-to-R
+        float s = uTriplanarScale > 0.0 ? uTriplanarScale : 0.5;
+        if (na.y > na.x && na.y > na.z) {
+            texUV = vec2(vWorldPos.x, -vWorldPos.z) * s;                // top/bottom
+        } else if (na.x > na.z) {
+            texUV = vec2(-sign(n.x) * vWorldPos.z, vWorldPos.y) * s;   // left/right walls
+        } else {
+            texUV = vec2(sign(n.z) * vWorldPos.x, vWorldPos.y) * s;    // front/back walls
+        }
+    }
+
+    if (uUseTintColor == 1 && uUseTexture == 1) {
+        // Text mode: tint color with texture alpha (bitmap font)
+        baseColor = uTintColor;
+        texAlpha = texture(uTexture, texUV).r;
+    } else if (uUseTintColor == 1) {
+        baseColor = uTintColor;
+    } else if (uUseTexture == 1 && uTriplanarTex == 1) {
+        baseColor = texture(uTexture, texUV).rgb;
+    } else if (uUseTexture == 1) {
+        vec4 texSample = texture(uTexture, texUV);
+        baseColor = texSample.rgb * vColor;
+        texAlpha = texSample.a;
+    } else if (uUseColor == 1) {
+        baseColor = uColor;
+    } else {
+        baseColor = vColor;
+    }
+
+    if (uUseLighting == 1) {
+        vec3 normal = normalize(vNormal);
+        vec3 lighting = uAmbientColor * uAmbientIntensity;
+
+        // Directional light
+        vec3 lightDir = normalize(-uDirLight.direction);
+        float diff = max(dot(normal, lightDir), 0.0);
+        lighting += uDirLight.color * uDirLight.intensity * diff;
+
+        // Point lights
+        for (int i = 0; i < uPointLightCount && i < MAX_POINT_LIGHTS; i++) {
+            vec3 toLight = uPointLights[i].position - vWorldPos;
+            float dist = length(toLight);
+            if (dist < uPointLights[i].radius) {
+                vec3 dir = toLight / dist;
+                float atten = 1.0 - (dist / uPointLights[i].radius);
+                atten *= atten;
+                float d = max(dot(normal, dir), 0.0);
+                lighting += uPointLights[i].color * uPointLights[i].intensity * d * atten;
+            }
+        }
+
+        // Spotlight (torch cone)
+        if (uUseSpotLight == 1) {
+            vec3 toLight = uSpotLight.position - vWorldPos;
+            float dist = length(toLight);
+            if (dist < uSpotLight.radius) {
+                vec3 fragDir = toLight / dist;
+                // Angle between spotlight direction and direction to fragment
+                float theta = dot(fragDir, normalize(-uSpotLight.direction));
+                // Smooth falloff between inner and outer cone
+                float epsilon = uSpotLight.innerCutoff - uSpotLight.outerCutoff;
+                float spotFade = clamp((theta - uSpotLight.outerCutoff) / epsilon, 0.0, 1.0);
+                // Distance attenuation
+                float atten = 1.0 - (dist / uSpotLight.radius);
+                atten *= atten;
+                float d = max(dot(normal, fragDir), 0.0);
+                lighting += uSpotLight.color * uSpotLight.intensity * d * atten * spotFade;
+            }
+        }
+
+        baseColor *= lighting;
+    }
+
+    // Exponential fog — geometry fades to fog color with distance
+    if (uUseFog == 1) {
+        float dist = length(vWorldPos - uCameraPos);
+        float fogFactor = exp(-uFogDensity * dist);
+        fogFactor = clamp(fogFactor, 0.0, 1.0);
+        baseColor = mix(uFogColor, baseColor, fogFactor);
+    }
+
+    float alpha = uAlpha > 0.0 ? uAlpha : 1.0;
+    FragColor = vec4(baseColor, alpha * texAlpha);
+}
+#version 330 core
+
+layout(location = 0) in vec3 aPos;
+layout(location = 1) in vec3 aColor;
+layout(location = 2) in vec2 aUV;
+layout(location = 3) in vec3 aNormal;
+
+uniform mat4 uModel;
+uniform mat4 uView;
+uniform mat4 uProjection;
+
+out vec3 vColor;
+out vec2 vUV;
+out vec3 vWorldPos;
+out vec3 vNormal;
+
+void main() {
+    vec4 worldPos = uModel * vec4(aPos, 1.0);
+    gl_Position = uProjection * uView * worldPos;
+    vColor = aColor;
+    vUV = aUV;
+    vWorldPos = worldPos.xyz;
+    vNormal = normalize(mat3(uModel) * aNormal);
+}
+#version 330 core
+
+// Per-vertex attributes (from mesh VBO)
+layout(location = 0) in vec3 aPos;
+layout(location = 1) in vec3 aColor;
+layout(location = 2) in vec2 aUV;
+layout(location = 3) in vec3 aNormal;
+
+// Per-instance attributes (from instance VBO)
+layout(location = 4) in vec4 aModelCol0;
+layout(location = 5) in vec4 aModelCol1;
+layout(location = 6) in vec4 aModelCol2;
+layout(location = 7) in vec4 aModelCol3;
+layout(location = 8) in vec3 aInstanceColor;
+
+uniform mat4 uView;
+uniform mat4 uProjection;
+
+out vec3 vColor;
+out vec2 vUV;
+out vec3 vWorldPos;
+out vec3 vNormal;
+
+void main() {
+    mat4 model = mat4(aModelCol0, aModelCol1, aModelCol2, aModelCol3);
+
+    vec4 worldPos = model * vec4(aPos, 1.0);
+    gl_Position = uProjection * uView * worldPos;
+
+    vColor = aInstanceColor;
+    vUV = aUV;
+    vWorldPos = worldPos.xyz;
+    vNormal = normalize(mat3(model) * aNormal);
+}
