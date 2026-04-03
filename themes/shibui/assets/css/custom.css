@@ -1,3 +1,44 @@
+/* Keyboard key sprites */
+.key-sprite {
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  background-size: 34px 16px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  vertical-align: middle;
+  transform: scale(2);
+  margin: 0 2px;
+}
+
+/* Animated variant */
+.key-sprite.animated {
+  animation: key-press 1.2s steps(1) infinite;
+}
+
+@keyframes key-press {
+  0%, 70%  { background-position: 0 0; }
+  40%, 60% { background-position: -17px 0; }
+}
+
+/* Keyboard key caps (fallback) */
+kbd {
+  display: inline-block;
+  padding: 3px 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #1e293b;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 #94a3b8, inset 0 1px 0 #fff;
+  min-width: 1.6em;
+  text-align: center;
+  line-height: 1.4;
+}
+
 /* Zoom on hover — desktop only */
 @media (min-width: 601px) {
   img {
