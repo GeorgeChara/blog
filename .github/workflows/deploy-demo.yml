@@ -1,0 +1,31 @@
+name: Deploy Demo
+
+on:
+  repository_dispatch:
+    types: [deploy-demo]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout blog
+        uses: actions/checkout@v4
+
+      - name: Download demo artifact
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.COOPLA_ARTIFACT_TOKEN }}
+          repo: GeorgeChara/coopla
+          workflow: build-web-demo.yml
+          name: web-demo
+          path: static/demo
+
+      - name: Commit demo files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add static/demo/
+          git diff --cached --quiet || git commit -m "Update web demo"
+          git push
