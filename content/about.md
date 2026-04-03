@@ -1,7 +1,9 @@
 ---
 title: "About"
+date: 2026-03-31
+showreadingtime: false
 ---
 
-Building a game and engine from scratch using C & C++.
+<style>.time { display: none; } main > h1:first-of-type { display: none; }</style>
 
-[GitHub](https://github.com/GeorgeChara)
+Building a game and engine from scratch using C & C++.
