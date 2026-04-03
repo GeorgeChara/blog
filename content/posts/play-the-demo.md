@@ -8,9 +8,21 @@ showreadingtime: false
 <style>
   main > h1:first-of-type { display: none; }
   main > .time:first-of-type { display: none; }
+  .demo-game { display: block; }
+  .demo-mobile { display: none; text-align: center; padding: 60px 20px; color: #999; }
+  @media (max-width: 768px) {
+    .demo-game { display: none !important; }
+    .demo-mobile { display: block; }
+  }
 </style>
 
-<div style="position: relative; width: 90vw; max-width: 1280px; height: 80vh; left: 50%; transform: translateX(-50%); overflow: hidden;">
+<div class="demo-mobile">
+  <p style="font-size: 2em; margin-bottom: 8px;">:(</p>
+  <p>This demo requires a keyboard and mouse.</p>
+  <p>Come back on a PC to play!</p>
+</div>
+
+<div class="demo-game" style="position: relative; width: 90vw; max-width: 1280px; aspect-ratio: 16/9; left: 50%; transform: translateX(-50%); overflow: hidden;">
   <iframe src="/demo/index.html"
           frameborder="0" allow="autoplay; fullscreen" scrolling="no"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
