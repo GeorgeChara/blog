@@ -28,12 +28,12 @@ showreadingtime: false
 
 <pre style="padding: 1em; border-radius: 4px;"><span style="color: #888;">Makes 4 baguettes</span>
 
-900g     flour
+900g     strong white bread flour
 580ml    water
-50ml     milk
-2 tbsp   extra virgin olive oil
 3 tsp    crushed Maldon sea salt
 1/2 tsp  dry yeast
+2 tbsp   extra virgin olive oil
+50ml     milk
 </pre>
 
 ## Recipe
