@@ -106,7 +106,7 @@ showreadingtime: false
 <div style="margin: 1em 0;">
   <img src="/images/baguette/10-finnished-result.jpg" alt="Fresh baguettes" style="width: 100%; border-radius: 4px; margin-bottom: 8px;">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-    <img src="/images/baguette/cut-open.jpg" alt="Cut open" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
-    <img src="/images/baguette/ham-and-cheese.jpg" alt="Ham and cheese" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
+    <img src="/images/baguette/cut-open.jpg" alt="Cut open" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center; border-radius: 4px;">
+    <img src="/images/baguette/ham-and-cheese.jpg" alt="Ham and cheese" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center; border-radius: 4px;">
   </div>
 </div>
