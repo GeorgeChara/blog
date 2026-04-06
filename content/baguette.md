@@ -9,14 +9,16 @@ showreadingtime: false
   .time { display: none; }
   h2::before, h3::before { content: none !important; }
   img:hover { transform: none !important; box-shadow: none !important; }
-  details { margin: 0.5em 0; }
+  details { margin: -1em 0 0 0; padding: 0; }
   details summary {
     color: #888;
-    font-size: 0.85em;
+    font-size: 0.8em;
     cursor: pointer;
     user-select: none;
+    line-height: 1;
   }
   details summary:hover { color: #555; }
+  details[open] { margin-bottom: 0.5em; }
 </style>
 
 <h1>Baguette</h1>
@@ -24,20 +26,19 @@ showreadingtime: false
 
 ## Ingredients
 
-<span style="color: #888; font-size: 0.9em;">Makes 4 baguettes</span>
+<pre style="padding: 1em; border-radius: 4px;"><span style="color: #888;">Makes 4 baguettes</span>
 
-```
 900g     flour
 580ml    water
 50ml     milk
 2 tbsp   extra virgin olive oil
 3 tsp    crushed Maldon sea salt
 1/2 tsp  dry yeast
-```
+</pre>
 
 ## Recipe
 
-Combine all ingredients in a large mixing bowl. Mix until just combined. The dough should be shaggy, not smooth.
+**1.** Combine all ingredients in a large mixing bowl. Mix until all ingredients are combined.
 
 <details>
 <summary>show photo</summary>
@@ -46,7 +47,7 @@ Combine all ingredients in a large mixing bowl. Mix until just combined. The dou
 
 </details>
 
-Cover and leave to rise for 8 to 10 hours, or overnight. The dough should double or triple in size.
+**2.** Cover and leave to rise for 8 to 10 hours, or overnight.
 
 <details>
 <summary>show photos</summary>
@@ -58,9 +59,9 @@ Cover and leave to rise for 8 to 10 hours, or overnight. The dough should double
 
 </details>
 
-Preheat the oven to 230°C.
+**3.** Preheat the oven to 230°C and line rack with baking paper.
 
-Dust flour generously over the worktop. Carefully turn the dough out, keeping as many bubbles intact as possible.
+**4.** Dust flour over the worktop and carefully turn the dough out onto it.
 
 <details>
 <summary>show photos</summary>
@@ -71,7 +72,7 @@ Dust flour generously over the worktop. Carefully turn the dough out, keeping as
 
 </details>
 
-Dust more flour over the top of the dough.
+**5.** Dust more flour over the top of the dough.
 
 <details>
 <summary>show photo</summary>
@@ -80,7 +81,7 @@ Dust more flour over the top of the dough.
 
 </details>
 
-Divide into 4 equal pieces. Gently shape each piece into a baguette. Avoid pressing out the air.
+**6.** Divide into 4 equal pieces. Gently shape each piece into a baguette. Avoid pressing out the air.
 
 <details>
 <summary>show photo</summary>
@@ -89,7 +90,7 @@ Divide into 4 equal pieces. Gently shape each piece into a baguette. Avoid press
 
 </details>
 
-Turn them seam-side down onto a baking tray lined with baking paper. Stretch gently to final length.
+**7.** Flip and stretch out as long as the rack.
 
 <details>
 <summary>show photo</summary>
@@ -98,7 +99,7 @@ Turn them seam-side down onto a baking tray lined with baking paper. Stretch gen
 
 </details>
 
-Bake for 25 to 30 minutes until golden and hollow-sounding when tapped on the base.
+**8.** Bake for 25 to 30 minutes until golden.
 
 ## Result
 
