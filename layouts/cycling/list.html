@@ -1,0 +1,144 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+
+  .cycling-header { margin-bottom: var(--spacing-lg); }
+  .cycling-header h1 { margin-bottom: var(--spacing-xs); }
+  .cycling-header p { color: var(--color-text-muted); margin-top: 0; }
+
+  .summary-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--pre-border-radius);
+  }
+  .stat { text-align: center; flex: 1; }
+  .stat-value { font-weight: bold; }
+  .stat-label { font-size: var(--font-size-small); color: var(--color-text-muted); margin-left: 0.3em; }
+
+  .chart-container {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--pre-border-radius);
+  }
+  .chart-container h3 { margin-top: 0; margin-bottom: var(--spacing-sm); }
+  h2::before, h3::before { content: none !important; }
+
+  .recent-rides h2 { margin-bottom: var(--spacing-sm); }
+  .ride-list { list-style: none; margin-left: 0; padding: 0; }
+  .ride-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .ride-item:last-child { border-bottom: none; }
+  .ride-name a { text-decoration: none; }
+  .ride-meta {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .view-all { margin-top: var(--spacing-sm); }
+</style>
+
+{{ $summary := hugo.Data.cycling.summary }}
+{{ $recent := hugo.Data.cycling.recent }}
+
+<div class="cycling-header">
+  <h1>Cycling</h1>
+  <p>Rides tracked with Garmin, synced automatically.</p>
+</div>
+
+{{ with $summary }}
+<div class="summary-stats">
+  <div class="stat"><span class="stat-value">{{ .total_rides }}</span><span class="stat-label">rides</span></div>
+  <div class="stat"><span class="stat-value">{{ printf "%.0f" .total_distance_km }} km</span></div>
+  <div class="stat"><span class="stat-value">{{ printf "%.0f" .total_elevation_m }} m</span><span class="stat-label">climbed</span></div>
+  <div class="stat"><span class="stat-value">{{ printf "%.1f" .avg_speed_kmh }}</span><span class="stat-label">km/h avg</span></div>
+  <div class="stat"><span class="stat-value">{{ printf "%.0f" .total_calories }}</span><span class="stat-label">kcal</span></div>
+</div>
+
+{{ if .monthly_distance }}
+<div class="chart-container">
+  <h3>Monthly Distance ({{ .year }})</h3>
+  <canvas id="monthlyChart" height="60"></canvas>
+</div>
+{{ end }}
+{{ end }}
+
+<div class="recent-rides">
+  <h2>Recent Rides</h2>
+  {{ if $recent }}
+  <ul class="ride-list">
+    {{ range $recent }}
+    <li class="ride-item">
+      <span class="ride-name"><a href="/cycling/rides/{{ .slug }}/">{{ .name }}</a></span>
+      <span class="ride-meta">
+        <span>{{ .date }}</span>
+        <span>{{ .distance_km }} km</span>
+        <span>{{ .elevation_gain_m }} m</span>
+        <span>{{ .duration }}</span>
+      </span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <p class="text-muted">No rides yet. Get out there!</p>
+  {{ end }}
+  <p class="view-all"><a href="/cycling/rides/">View all rides &rarr;</a></p>
+</div>
+
+{{ .Content }}
+
+{{ with $summary }}
+{{ if .monthly_distance }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  var raw = {{ .monthly_distance | jsonify }};
+  var monthly = (typeof raw === 'string') ? JSON.parse(raw) : raw;
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var keys = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+  var data = keys.map(function(k) {
+    return monthly[k] || monthly[String(parseInt(k))] || 0;
+  });
+
+  new Chart(document.getElementById('monthlyChart'), {
+    type: 'bar',
+    data: {
+      labels: months,
+      datasets: [{
+        label: 'Distance (km)',
+        data: data,
+        backgroundColor: 'rgba(107,114,128,0.3)',
+        borderColor: '#6b7280',
+        borderWidth: 1,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, title: { display: true, text: 'km' } }
+      }
+    }
+  });
+})();
+</script>
+{{ end }}
+{{ end }}
+{{ end }}

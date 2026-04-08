@@ -1,0 +1,48 @@
+name: Sync Garmin Activities
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:
+  repository_dispatch:
+    types: [garmin-activity]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/garmin-sync/requirements.txt
+
+      - name: Sync Garmin activities
+        env:
+          GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
+          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
+          GARMIN_TOKEN_PATH: /tmp/garmin_tokens
+        working-directory: scripts/garmin-sync
+        run: python sync.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cycling/ static/cycling/gpx/ content/cycling/rides/
+          if git diff --staged --quiet; then
+            echo "No new activities to commit"
+          else
+            git commit -m "Sync cycling activities from Garmin"
+            git push
+          fi

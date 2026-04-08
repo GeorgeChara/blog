@@ -33,6 +33,10 @@ name = "George Charalambous"
     name = "Baguette"
     url = "/baguette/"
     weight = 2
+  [[menu.main]]
+    name = "Cycling"
+    url = "/cycling/"
+    weight = 3
 
 [build]
   writeStats = true

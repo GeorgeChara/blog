@@ -1,0 +1,58 @@
+{{ define "main" }}
+<style>
+  .ride-table { width: 100%; border-collapse: collapse; }
+  .ride-table th, .ride-table td {
+    text-align: left;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .ride-table th {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    font-weight: normal;
+  }
+  .ride-table td a { text-decoration: none; }
+  .ride-table .num { text-align: right; }
+
+  @media (max-width: 600px) {
+    .ride-table .hide-mobile { display: none; }
+  }
+</style>
+
+<h1>{{ .Title }}</h1>
+
+{{ if .Pages }}
+<table class="ride-table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Ride</th>
+      <th class="num">Distance</th>
+      <th class="num hide-mobile">Elevation</th>
+      <th class="num hide-mobile">Speed</th>
+      <th class="num">Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range .Pages.ByDate.Reverse }}
+    <tr>
+      <td>{{ .Date.Format "2 Jan" }}</td>
+      <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+      <td class="num">{{ .Params.distance_km }} km</td>
+      <td class="num hide-mobile">{{ .Params.elevation_m }} m</td>
+      <td class="num hide-mobile">{{ .Params.avg_speed_kmh }} km/h</td>
+      <td class="num">{{ .Params.duration }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+{{ else }}
+<p class="text-muted">No rides recorded yet.</p>
+{{ end }}
+
+<div class="terminal-nav">
+  <div class="back-nav">
+    <a href="/cycling/" class="back-link">../</a>
+  </div>
+</div>
+{{ end }}

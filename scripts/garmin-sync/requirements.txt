@@ -1,0 +1,2 @@
+garminconnect==1.0.39
+gpxpy>=1.6.0

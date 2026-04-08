@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="test-data-generator"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+  <metadata>
+    <name>Essex Loop - Braintree Circuit</name>
+    <time>2026-04-06T08:00:00Z</time>
+  </metadata>
+  <trk>
+    <name>Essex Loop - Braintree Circuit</name>
+    <trkseg>
+      <!-- Braintree start - heading north toward Halstead -->
+      <trkpt lat="51.8781" lon="0.5580"><ele>60</ele><time>2026-04-06T08:00:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>72</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8810" lon="0.5560"><ele>62</ele><time>2026-04-06T08:01:30Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>95</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8850" lon="0.5530"><ele>65</ele><time>2026-04-06T08:03:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>110</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8900" lon="0.5490"><ele>70</ele><time>2026-04-06T08:05:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>125</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8960" lon="0.5440"><ele>68</ele><time>2026-04-06T08:07:30Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>132</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9020" lon="0.5380"><ele>72</ele><time>2026-04-06T08:10:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>138</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Approaching Stisted -->
+      <trkpt lat="51.9080" lon="0.5310"><ele>78</ele><time>2026-04-06T08:13:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>140</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9140" lon="0.5250"><ele>85</ele><time>2026-04-06T08:16:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>142</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9200" lon="0.5200"><ele>90</ele><time>2026-04-06T08:19:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>145</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Greenstead Green -->
+      <trkpt lat="51.9260" lon="0.5150"><ele>82</ele><time>2026-04-06T08:22:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>143</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9330" lon="0.5100"><ele>75</ele><time>2026-04-06T08:25:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>140</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Halstead area -->
+      <trkpt lat="51.9420" lon="0.5060"><ele>55</ele><time>2026-04-06T08:28:30Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>135</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9490" lon="0.5080"><ele>48</ele><time>2026-04-06T08:31:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>130</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9530" lon="0.5130"><ele>42</ele><time>2026-04-06T08:33:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>128</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Heading west toward Gosfield -->
+      <trkpt lat="51.9510" lon="0.5020"><ele>50</ele><time>2026-04-06T08:36:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>135</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9480" lon="0.4900"><ele>58</ele><time>2026-04-06T08:39:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>140</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9440" lon="0.4780"><ele>65</ele><time>2026-04-06T08:42:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>145</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Gosfield -->
+      <trkpt lat="51.9390" lon="0.4650"><ele>72</ele><time>2026-04-06T08:45:30Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>148</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9340" lon="0.4530"><ele>68</ele><time>2026-04-06T08:48:30Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>146</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- South toward Blackwater -->
+      <trkpt lat="51.9270" lon="0.4460"><ele>60</ele><time>2026-04-06T08:51:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>142</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9190" lon="0.4420"><ele>55</ele><time>2026-04-06T08:54:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>138</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.9100" lon="0.4400"><ele>48</ele><time>2026-04-06T08:57:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>135</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Coggeshall area -->
+      <trkpt lat="51.9010" lon="0.4450"><ele>40</ele><time>2026-04-06T09:00:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>140</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8930" lon="0.4510"><ele>35</ele><time>2026-04-06T09:03:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>142</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8870" lon="0.4580"><ele>38</ele><time>2026-04-06T09:06:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>138</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Heading east toward Kelvedon -->
+      <trkpt lat="51.8810" lon="0.4650"><ele>32</ele><time>2026-04-06T09:09:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>140</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8760" lon="0.4750"><ele>28</ele><time>2026-04-06T09:12:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>145</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8720" lon="0.4860"><ele>35</ele><time>2026-04-06T09:15:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>148</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Turning northeast back toward Braintree -->
+      <trkpt lat="51.8690" lon="0.4980"><ele>42</ele><time>2026-04-06T09:18:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>150</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8670" lon="0.5090"><ele>50</ele><time>2026-04-06T09:21:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>152</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8660" lon="0.5200"><ele>55</ele><time>2026-04-06T09:24:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>148</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Cressing area -->
+      <trkpt lat="51.8680" lon="0.5310"><ele>58</ele><time>2026-04-06T09:27:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>145</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8710" lon="0.5400"><ele>55</ele><time>2026-04-06T09:30:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>140</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8740" lon="0.5490"><ele>58</ele><time>2026-04-06T09:33:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>135</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <!-- Return to Braintree -->
+      <trkpt lat="51.8760" lon="0.5550"><ele>60</ele><time>2026-04-06T09:35:00Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>130</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+      <trkpt lat="51.8781" lon="0.5580"><ele>60</ele><time>2026-04-06T09:36:30Z</time><extensions><gpxtpx:TrackPointExtension><gpxtpx:hr>120</gpxtpx:hr></gpxtpx:TrackPointExtension></extensions></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
