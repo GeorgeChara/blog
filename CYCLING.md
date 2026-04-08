@@ -4,27 +4,48 @@ Cycling activities from Garmin, displayed on charalambous.uk/cycling/.
 
 ## How It Works
 
-```
-Garmin device → Garmin Connect → Strava (auto-sync)
-                                    ↓
-                          Strava webhook fires
-                                    ↓
-                      Cloudflare Worker receives POST
-                                    ↓
-                   GitHub repository_dispatch event
-                                    ↓
-              GitHub Action runs scripts/garmin-sync/sync.py
-                                    ↓
-         Pulls ride data from Garmin Connect (not Strava)
-         Generates GPX + JSON + Hugo markdown files
-         Commits and pushes to repo
-                                    ↓
-              Hugo rebuilds → GitHub Pages deploys
+```mermaid
+flowchart TD
+    A["🚴 Finish ride"] --> B["Garmin device uploads"]
+    B --> C["Garmin Connect (cloud)"]
+
+    C -->|"auto-sync (always happens)"| D["Strava"]
+    C -.->|"ride data stays here"| G
+
+    D -->|"webhook POST: new activity"| E["Cloudflare Worker
+    (strava-webhook-relay)"]
+
+    E -->|"repository_dispatch event"| F["GitHub Action
+    (garmin-sync.yml)"]
+
+    H["⏰ Daily cron 6AM UTC"] -.->|"fallback trigger"| F
+
+    F --> G["Python sync script
+    pulls from Garmin Connect API"]
+
+    G --> I["Generates files:
+    • GPX track → static/cycling/gpx/
+    • JSON metrics → data/cycling/
+    • Markdown page → content/cycling/rides/"]
+
+    I --> J["git commit + push"]
+    J --> K["Hugo builds site"]
+    K --> L["GitHub Pages deploys
+    charalambous.uk/cycling/"]
+
+    style A fill:#f9f9f9,stroke:#333
+    style D fill:#fc4c02,stroke:#333,color:#fff
+    style E fill:#f48120,stroke:#333,color:#fff
+    style F fill:#333,stroke:#333,color:#fff
+    style L fill:#f9f9f9,stroke:#333
 ```
 
-Strava is only used as a trigger signal — all ride data comes directly from Garmin Connect. Your Strava activities can stay private.
+### Key Points
 
-A daily cron (6 AM UTC) also runs as a fallback in case the webhook misses anything.
+- **Strava is just the doorbell** — it triggers the pipeline, but no ride data comes from Strava. Your Strava activities can stay private.
+- **All ride data comes from Garmin Connect** — the Python script authenticates with your Garmin credentials and downloads GPX/metrics directly.
+- **Daily cron as fallback** — if the webhook misses an event, the 6 AM UTC scheduled run catches anything new.
+- **Two triggers, same action** — both the Strava webhook and the daily cron run the exact same sync script.
 
 ## Project Structure
 
