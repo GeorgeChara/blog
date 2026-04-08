@@ -1,0 +1,208 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+
+  .ride-header { margin-bottom: var(--spacing-lg); }
+  .ride-header h1 { margin-bottom: var(--spacing-xs); }
+  .ride-date { color: var(--color-text-muted); font-size: var(--font-size-small); }
+
+  .ride-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--pre-border-radius);
+  }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.4em; font-weight: bold; display: block; }
+  .stat-label { font-size: var(--font-size-small); color: var(--color-text-muted); }
+
+  #ride-map {
+    height: 400px;
+    width: 100%;
+    border-radius: var(--pre-border-radius);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-lg);
+    z-index: 0;
+  }
+
+  .chart-container {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--pre-border-radius);
+  }
+  .chart-container h3 { margin-top: 0; margin-bottom: var(--spacing-sm); }
+  .chart-container canvas { width: 100% !important; }
+</style>
+
+<div class="ride-header">
+  <h1>{{ .Title }}</h1>
+  <span class="ride-date">{{ .Date.Format "Monday, 2 January 2006" }}</span>
+</div>
+
+<div class="ride-stats">
+  <div class="stat">
+    <span class="stat-value">{{ .Params.distance_km }} km</span>
+    <span class="stat-label">Distance</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value">{{ .Params.elevation_m }} m</span>
+    <span class="stat-label">Elevation</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value">{{ .Params.duration }}</span>
+    <span class="stat-label">Duration</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value">{{ .Params.avg_speed_kmh }} km/h</span>
+    <span class="stat-label">Avg Speed</span>
+  </div>
+  {{ with .Params.avg_hr }}
+  <div class="stat">
+    <span class="stat-value">{{ . }} bpm</span>
+    <span class="stat-label">Avg HR</span>
+  </div>
+  {{ end }}
+  {{ with .Params.avg_power }}
+  <div class="stat">
+    <span class="stat-value">{{ . }} W</span>
+    <span class="stat-label">Avg Power</span>
+  </div>
+  {{ end }}
+  {{ with .Params.calories }}
+  <div class="stat">
+    <span class="stat-value">{{ . }}</span>
+    <span class="stat-label">Calories</span>
+  </div>
+  {{ end }}
+</div>
+
+<div id="ride-map"></div>
+
+{{ $activityId := .Params.garmin_id }}
+{{ $activityData := index hugo.Data.cycling.activities $activityId }}
+{{ if $activityData }}
+
+<div class="chart-container">
+  <h3>Elevation Profile</h3>
+  <canvas id="elevationChart" height="80"></canvas>
+</div>
+
+{{ if $activityData.hr_profile }}
+<div class="chart-container">
+  <h3>Heart Rate</h3>
+  <canvas id="hrChart" height="60"></canvas>
+</div>
+{{ end }}
+
+{{ if $activityData.speed_profile }}
+<div class="chart-container">
+  <h3>Speed</h3>
+  <canvas id="speedChart" height="60"></canvas>
+</div>
+{{ end }}
+
+{{ if $activityData.power_profile }}
+<div class="chart-container">
+  <h3>Power</h3>
+  <canvas id="powerChart" height="60"></canvas>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{ .Content }}
+
+<div class="terminal-nav">
+  <div class="back-nav">
+    <a href="{{ (.Parent).RelPermalink }}" class="back-link">../</a>
+  </div>
+</div>
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-gpx@2.1.2/gpx.js"></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+<script>
+(function() {
+  // Map
+  var map = L.map('ride-map', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18
+  }).addTo(map);
+
+  var gpxUrl = '{{ .Params.gpx_file }}';
+  new L.GPX(gpxUrl, {
+    async: true,
+    polyline_options: { color: '#e34234', weight: 3, opacity: 0.8 },
+    marker_options: {
+      startIconUrl: null,
+      endIconUrl: null,
+      shadowUrl: null,
+      wptIconUrls: { '': null }
+    }
+  }).on('loaded', function(e) {
+    map.fitBounds(e.target.getBounds(), { padding: [20, 20] });
+  }).on('error', function(e) {
+    console.error('GPX load error:', e);
+  }).addTo(map);
+
+  // Chart data
+  {{ if $activityData }}
+  var activityData = {{ $activityData | jsonify }};
+
+  var distLabels = activityData.distance_profile.map(function(d) { return d.toFixed(1); });
+
+  var chartDefaults = {
+    responsive: true,
+    interaction: { intersect: false, mode: 'index' },
+    plugins: { legend: { display: false } },
+    scales: {
+      x: {
+        display: true,
+        title: { display: true, text: 'Distance (km)' },
+        ticks: { maxTicksLimit: 10 }
+      }
+    },
+    elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } }
+  };
+
+  function makeChart(id, data, label, color, yLabel, fill) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var opts = JSON.parse(JSON.stringify(chartDefaults));
+    opts.scales.y = { title: { display: true, text: yLabel } };
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: distLabels,
+        datasets: [{
+          label: label,
+          data: data,
+          borderColor: color,
+          backgroundColor: fill || (color + '20'),
+          fill: !!fill || true
+        }]
+      },
+      options: opts
+    });
+  }
+
+  makeChart('elevationChart', activityData.elevation_profile, 'Elevation', '#6b7280', 'Elevation (m)', 'rgba(107,114,128,0.15)');
+  makeChart('hrChart', activityData.hr_profile, 'Heart Rate', '#ef4444', 'BPM', 'rgba(239,68,68,0.1)');
+  makeChart('speedChart', activityData.speed_profile, 'Speed', '#3b82f6', 'km/h', 'rgba(59,130,246,0.1)');
+  makeChart('powerChart', activityData.power_profile, 'Power', '#f59e0b', 'Watts', 'rgba(245,158,11,0.1)');
+  {{ end }}
+})();
+</script>
+{{ end }}
