@@ -1,7 +1,7 @@
 ---
 title: "Teaching Terra to speak Lua"
 date: 2026-04-13
-draft: true
+draft: false
 ---
 
 The game code has moved from C to Lua. Terra (the C engine) now exposes functions that Lua scripts call to spawn entities, move cameras, play sounds, and draw UI. The game itself is now a Lua script that the engine loads and runs.

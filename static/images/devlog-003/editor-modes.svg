@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="560" height="240" fill="white"/>
+
+  <!-- PLAY -->
+  <rect x="20" y="25" width="145" height="90" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="92" y="48" text-anchor="middle" font-size="14" font-weight="bold" fill="#14532d">▶ PLAY</text>
+  <text x="92" y="64" text-anchor="middle" font-size="9" fill="#475569">Game running</text>
+  <text x="92" y="76" text-anchor="middle" font-size="9" fill="#475569">Player controls</text>
+  <text x="92" y="88" text-anchor="middle" font-size="9" fill="#475569">Play bar visible</text>
+  <text x="92" y="104" text-anchor="middle" font-size="8" fill="#64748b">Shift+P to pause</text>
+
+  <!-- EDIT -->
+  <rect x="207" y="25" width="145" height="90" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="279" y="48" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a5f">✏ EDIT</text>
+  <text x="279" y="64" text-anchor="middle" font-size="9" fill="#475569">Game paused</text>
+  <text x="279" y="76" text-anchor="middle" font-size="9" fill="#475569">Free camera (WASD)</text>
+  <text x="279" y="88" text-anchor="middle" font-size="9" fill="#475569">Click to select entities</text>
+  <text x="279" y="104" text-anchor="middle" font-size="8" fill="#64748b">F1 debug menu</text>
+
+  <!-- COMMAND -->
+  <rect x="395" y="25" width="145" height="90" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="467" y="48" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">⌨ COMMAND</text>
+  <text x="467" y="64" text-anchor="middle" font-size="9" fill="#475569">Neovim panel open</text>
+  <text x="467" y="76" text-anchor="middle" font-size="9" fill="#475569">Full code editing</text>
+  <text x="467" y="88" text-anchor="middle" font-size="9" fill="#475569">Plugins + LSP</text>
+  <text x="467" y="104" text-anchor="middle" font-size="8" fill="#64748b">Hot reload on save</text>
+
+  <!-- Arrow: PLAY → EDIT -->
+  <line x1="165" y1="55" x2="202" y2="55" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="199,51 207,55 199,59" fill="#94a3b8"/>
+  <text x="183" y="48" text-anchor="middle" font-size="7" fill="#94a3b8">Shift</text>
+  <text x="183" y="56" text-anchor="middle" font-size="7" fill="#94a3b8">+Tab</text>
+
+  <!-- Arrow: EDIT → COMMAND -->
+  <line x1="352" y1="55" x2="390" y2="55" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="387,51 395,55 387,59" fill="#94a3b8"/>
+  <text x="371" y="48" text-anchor="middle" font-size="7" fill="#94a3b8">Shift</text>
+  <text x="371" y="56" text-anchor="middle" font-size="7" fill="#94a3b8">+Tab</text>
+
+  <!-- Arrow: COMMAND → PLAY (curved back) -->
+  <path d="M 467 115 Q 467 175 279 180 Q 92 185 92 115" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  <polygon points="88,118 92,110 96,118" fill="#94a3b8"/>
+  <text x="279" y="197" text-anchor="middle" font-size="7" fill="#94a3b8">Shift+Tab</text>
+
+  <!-- Status bars -->
+  <rect x="20" y="125" width="145" height="20" rx="3" fill="#dcfce7" stroke="#22c55e" stroke-width="0.5"/>
+  <text x="92" y="138" text-anchor="middle" font-size="7" fill="#14532d">FPS · branch · entities · camera</text>
+  <text x="92" y="155" text-anchor="middle" font-size="7" font-weight="bold" fill="#64748b">play bar</text>
+
+  <rect x="207" y="125" width="145" height="20" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.5"/>
+  <text x="279" y="138" text-anchor="middle" font-size="7" fill="#1e3a5f">EDIT · entities · selection · camera</text>
+  <text x="279" y="155" text-anchor="middle" font-size="7" font-weight="bold" fill="#64748b">play bar (edit)</text>
+
+  <rect x="395" y="125" width="145" height="20" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
+  <text x="467" y="138" text-anchor="middle" font-size="7" fill="#78350f">mode · file · line:col · git</text>
+  <text x="467" y="155" text-anchor="middle" font-size="7" font-weight="bold" fill="#64748b">lualine</text>
+
+  <!-- Side panels note -->
+  <rect x="207" y="210" width="145" height="20" rx="3" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="3"/>
+  <text x="279" y="224" text-anchor="middle" font-size="7" fill="#64748b">+ asset panels (planned)</text>
+</svg>

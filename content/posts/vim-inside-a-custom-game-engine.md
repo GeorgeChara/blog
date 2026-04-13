@@ -1,7 +1,7 @@
 ---
 title: "Vim inside a custom game engine"
 date: 2026-04-13
-draft: true
+draft: false
 ---
 
 I embedded Neovim as a subprocess inside Terra. Neovim runs as `nvim --embed --headless` (no terminal or window).

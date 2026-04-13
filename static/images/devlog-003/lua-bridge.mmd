@@ -1,0 +1,21 @@
+flowchart LR
+    subgraph Game["Game (Lua)"]
+        A["main.lua\non_init() on_tick() on_draw()"]
+    end
+    subgraph Bridge["Lua Bridge (tr_lua.c)"]
+        B["terra.entity()\nterra.set_camera_pos()\nterra.key_down()\nterra.raycast()"]
+    end
+    subgraph Engine["Engine (C)"]
+        C["ECS\nRenderer\nInput\nAudio\nPhysics"]
+    end
+    subgraph Platform["Platform"]
+        D["OpenGL\nGLFW\nminiaudio"]
+    end
+    A -->|"Lua calls"| B
+    B -->|"C functions"| C
+    C -->|"system calls"| D
+
+    style Game fill:#4a6741,stroke:#6a9960,color:#fff
+    style Bridge fill:#4a5568,stroke:#718096,color:#fff
+    style Engine fill:#553c6b,stroke:#805ad5,color:#fff
+    style Platform fill:#4a4a5a,stroke:#666,color:#ccc
