@@ -1,0 +1,30 @@
+flowchart LR
+    OSC["🎵 Oscillator\nSaw / Square / Sine"]
+    SUB["Sub Osc\n-1 octave"]
+    NOISE["Noise"]
+    MIX["Mix"]
+    FILT["Filter\nLP / HP / BP\nDiode Ladder"]
+    DIST["Distortion"]
+    AMP["Amp\nEnvelope"]
+    DLY["Delay"]
+    REV["Reverb"]
+    OUT["🔊 Output"]
+
+    OSC --> MIX
+    SUB --> MIX
+    NOISE --> MIX
+    MIX --> FILT
+    FILT --> DIST
+    DIST --> AMP
+    AMP --> DLY
+    DLY --> REV
+    REV --> OUT
+
+    ENV["Filter\nEnvelope"] -.->|"modulate\ncutoff"| FILT
+    LFO["LFO"] -.->|"modulate"| FILT
+
+    style OSC fill:#4a5568,stroke:#a0aec0,color:#fff
+    style FILT fill:#553c6b,stroke:#805ad5,color:#fff
+    style OUT fill:#2d6a2e,stroke:#4ade80,color:#fff
+    style ENV fill:#744210,stroke:#d69e2e,color:#fff
+    style LFO fill:#744210,stroke:#d69e2e,color:#fff
