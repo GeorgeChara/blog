@@ -18,38 +18,35 @@ showreadingtime: false
   .calc-header h1 { font-size: 1.1em; font-weight: bold; margin: 0 0 0.2em 0; }
   .calc-header p  { color: #888; font-size: 0.85em; margin: 0; }
 
-  .calc-field { margin-bottom: 1.8em; }
-  .calc-label {
-    display: flex;
-    align-items: baseline;
-    gap: 0.4em;
-    margin-bottom: 0.5em;
-  }
-  .calc-label span  { color: #888; font-size: 0.85em; }
+  .calc-field { margin-bottom: 1.6em; }
+  .calc-label { display: flex; align-items: baseline; gap: 0.4em; margin-bottom: 0.4em; }
+  .calc-label span { color: #888; font-size: 0.85em; }
   .calc-val {
-    font-size: 2em;
-    font-weight: bold;
-    color: #000;
-    line-height: 1;
-    transition: transform 0.12s ease;
-    display: inline-block;
+    font-size: 2em; font-weight: bold; color: #000; line-height: 1;
+    transition: transform 0.12s ease; display: inline-block;
   }
   .calc-val.bump { transform: scale(1.25); }
 
   input[type=range] { width: 60%; display: block; }
 
-  .calc-result {
-    margin-top: 2em;
-    padding-top: 1.5em;
-    border-top: 1px solid #E5DECF;
-    font-size: 0.9em;
-  }
-  .calc-result .result-meta { color: #888; font-size: 0.85em; margin-bottom: 0.8em; }
-  .calc-result .result-row  { display: flex; line-height: 1.7; }
-  .calc-result .result-row span:first-child { color: #000; width: 6em; flex-shrink: 0; }
-  .calc-result .result-row span:last-child  { color: #000; }
+  .storage-ind { font-size: 0.78em; color: #aaa; margin-top: 0.3em; }
 
-  .calc-warn { margin-top: 1em; font-size: 0.8em; color: #888; }
+  .calc-result {
+    margin-top: 2em; padding-top: 1.2em;
+    border-top: 1px solid #E5DECF; font-size: 0.9em;
+    border-bottom: none;
+  }
+  .result-row { display: flex; line-height: 1.7; }
+  .result-row span:first-child { color: #000; width: 6em; flex-shrink: 0; }
+  .result-row span:last-child  { color: #000; }
+
+  .calc-note {
+    margin-top: 1em;
+    font-size: 0.8em; color: #888;
+  }
+  .calc-note a { color: #888; }
+  .content hr { display: none; }
+  .terminal-nav { border-top: none !important; }
 </style>
 
 <div class="calc-wrap">
@@ -60,7 +57,7 @@ showreadingtime: false
 
   <div class="calc-field">
     <div class="calc-label">
-      <span>baguettes per day</span>
+      <span>baguettes per session</span>
       <span class="calc-val" id="bpd-val">2</span>
     </div>
     <input type="range" id="bpd" min="1" max="8" value="2">
@@ -68,10 +65,11 @@ showreadingtime: false
 
   <div class="calc-field">
     <div class="calc-label">
-      <span>bake days</span>
+      <span>bake sessions</span>
       <span class="calc-val" id="days-val">3</span>
     </div>
-    <input type="range" id="days" min="1" max="7" value="3">
+    <input type="range" id="days" min="1" max="5" value="3">
+    <div class="storage-ind" id="storage-ind">●●●○○ &nbsp;3 of 5 days</div>
   </div>
 
   <div class="calc-result">
@@ -79,12 +77,10 @@ showreadingtime: false
     <div class="result-row"><span>water</span><span id="r-water">1740ml</span></div>
     <div class="result-row"><span>salt</span><span id="r-salt">27g</span></div>
     <div class="result-row"><span>yeast</span><span id="r-yeast">6g</span></div>
-    <hr style="border:none; border-top: 1px solid #E5DECF; margin: 0.8em 0;">
-    <div class="result-meta" id="result-context">Mix once. Divide into 3 pots, refrigerate, and bake one pot per day.</div>
+    <div class="calc-note">
+      Mix once and divide into 3 pots. Bake one pot per session from <a href="/baguette/">step 4</a>.
+    </div>
   </div>
-
-  <div class="calc-warn" id="calc-warn"></div>
-  <p style="margin-top: 1.5em; font-size: 0.8em; color: #888;">when ready to bake, remove from fridge and follow from <a href="/baguette/" style="color: #888;">step 4</a></p>
 </div>
 
 <script>
@@ -96,7 +92,7 @@ showreadingtime: false
     const flour = Math.round(bpd * days * (BASE_TOTAL / 2) * (BASE_FLOUR / BASE_TOTAL) / 10) * 10;
     const water = Math.round(flour * (BASE_WATER / BASE_FLOUR));
     const salt  = Math.round(flour * (BASE_SALT  / BASE_FLOUR));
-    const yeast = Math.max(1.0, Math.round(flour * (BASE_YEAST / BASE_FLOUR) / (1 + YEAST_K * (days - 1)) * 2) / 2);
+    const yeast = Math.max(1, Math.ceil(flour * (BASE_YEAST / BASE_FLOUR) / (1 + YEAST_K * (days - 1))));
     return { flour, water, salt, yeast };
   }
 
@@ -114,17 +110,16 @@ showreadingtime: false
     document.getElementById('bpd-val').textContent  = bpd;
     document.getElementById('days-val').textContent = days;
     if (changed) pulse(changed + '-val');
+    document.getElementById('storage-ind').innerHTML =
+      '●'.repeat(days) + '○'.repeat(5 - days) + ' &nbsp;' + days + ' of 5 days';
     const r = calc(bpd, days);
-    document.getElementById('result-context').textContent =
-      days > 1
-        ? `Mix once. Divide into ${days} pots, refrigerate, and bake one pot per day.`
-        : `Mix once. Refrigerate overnight, then bake.`;
     document.getElementById('r-flour').textContent = r.flour + 'g';
     document.getElementById('r-water').textContent = r.water + 'ml';
     document.getElementById('r-salt').textContent  = r.salt  + 'g';
     document.getElementById('r-yeast').textContent = r.yeast + 'g';
-    document.getElementById('calc-warn').textContent =
-      days > 5 ? `⚠ ${days}-day ferment — quality drops past day 5` : '';
+    document.querySelector('.calc-note').innerHTML = days === 1
+      ? 'Mix once. Bake from <a href="/baguette/" style="color:#888;">step 4</a>.'
+      : `Mix once and divide into ${days} pots. Bake one pot per session from <a href="/baguette/" style="color:#888;">step 4</a>.`;
   }
 
   document.getElementById('bpd').addEventListener('input', () => update('bpd'));
