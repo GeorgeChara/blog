@@ -24,7 +24,7 @@ showreadingtime: false
 <h1>Baguette</h1>
 <p style="color: #888; margin-top: -0.5em;">recipe v2.1 · 25 min prep · 25 min bake</p>
 
-![Baguettes](/images/baguette/result-alt-angle-2.png)
+![](/images/baguette/result-alt-angle-2.png)
 
 ## Ingredients
 
