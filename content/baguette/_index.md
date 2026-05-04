@@ -104,7 +104,7 @@ yeast    2g
   <div class="media-content" id="s5-video"><iframe src="https://www.youtube.com/embed/IRDL3lPQSkc?start=57&mute=1" frameborder="0" allowfullscreen></iframe></div>
 </div>
 
-**6.** Place a metal tray at the bottom of your oven to pour boiling water into. This is to create steam to crisp the baguettes up as much as possible. Pre-heat the oven to 230°C.
+**6.** Preheat oven to 230°C with an empty metal tray on the bottom rack.
 
 **7.** Score baguettes with 3/4 lines down the middle using a sharp blade.
 
@@ -115,7 +115,7 @@ yeast    2g
 
 </details>
 
-**8.** Load baguettes into the oven. Pour boiling water in tray to create steam. **Bake at 230°C for 10 mins then 210°C for 7 mins**.
+**8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. **Bake at 230°C for 10 mins then 210°C for 7 mins**.
 
 <script>
 function toggleMedia(id, el) {
