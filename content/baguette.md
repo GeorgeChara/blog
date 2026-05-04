@@ -78,7 +78,7 @@ yeast    2g
 
 </details>
 
-**7.** Just after loading baguettes in, pour boiling water in tray to create steam.
+**7.** Just after loading baguettes in oven, pour boiling water in tray to create steam.
 
 **8.** Bake at 230°C for 10mins then 210°C for 7 mins.
 
