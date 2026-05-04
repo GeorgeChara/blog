@@ -8,9 +8,10 @@ showreadingtime: false
   main > h1:first-of-type { display: none; }
   .time { display: none; }
   h2::before { content: none !important; }
+  .terminal-nav { border-top: none !important; }
 
   .calc-wrap {
-    max-width: 480px;
+    max-width: 320px;
     font-family: ui-monospace, Menlo, Consolas, monospace;
   }
 
@@ -18,35 +19,50 @@ showreadingtime: false
   .calc-header h1 { font-size: 1.1em; font-weight: bold; margin: 0 0 0.2em 0; }
   .calc-header p  { color: #888; font-size: 0.85em; margin: 0; }
 
-  .calc-field { margin-bottom: 1.6em; }
-  .calc-label { display: flex; align-items: baseline; gap: 0.4em; margin-bottom: 0.4em; }
-  .calc-label span { color: #888; font-size: 0.85em; }
+  /* Input rows */
+  .calc-field { margin-bottom: 1.4em; }
+  .calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3em;
+  }
+  .calc-row .label { color: #888; font-size: 0.85em; }
   .calc-val {
-    font-size: 2em; font-weight: bold; color: #000; line-height: 1;
+    font-size: 1em; font-weight: bold; color: #000;
     transition: transform 0.12s ease; display: inline-block;
   }
-  .calc-val.bump { transform: scale(1.25); }
+  .calc-val.bump { transform: scale(1.15); }
 
-  input[type=range] { width: 60%; display: block; }
+  input[type=range] { width: 100%; display: block; }
 
-  .storage-ind { font-size: 0.78em; color: #aaa; margin-top: 0.3em; }
-
-  .calc-result {
-    margin-top: 2em; padding-top: 1.2em;
-    border-top: 1px solid #E5DECF; font-size: 0.9em;
-    border-bottom: none;
+  /* Output table */
+  .result-table {
+    border: 1px solid #E5DECF;
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
   }
-  .result-row { display: flex; line-height: 1.7; }
-  .result-row span:first-child { color: #000; width: 6em; flex-shrink: 0; }
-  .result-row span:last-child  { color: #000; }
-
-  .calc-note {
-    margin-top: 1em;
-    font-size: 0.8em; color: #888;
+  .result-field {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #E5DECF;
   }
+  .result-field:last-child { border-bottom: none; }
+  .result-field:nth-child(odd)  { background: #fff; }
+  .result-field:nth-child(even) { background: #F6EEE3; }
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .result-row .label { color: #888; font-size: 0.85em; }
+  .result-val {
+    font-size: 1.6em; font-weight: bold; color: #000; line-height: 1.2;
+    transition: transform 0.1s ease; display: inline-block;
+  }
+
+  .calc-note { margin-top: 1.2em; font-size: 0.8em; color: #888; }
   .calc-note a { color: #888; }
-  .content hr { display: none; }
-  .terminal-nav { border-top: none !important; }
 </style>
 
 <div class="calc-wrap">
@@ -56,31 +72,41 @@ showreadingtime: false
   </div>
 
   <div class="calc-field">
-    <div class="calc-label">
-      <span>baguettes per session</span>
+    <div class="calc-row">
+      <span class="label">baguettes per session</span>
       <span class="calc-val" id="bpd-val">2</span>
     </div>
     <input type="range" id="bpd" min="1" max="8" value="2">
   </div>
 
   <div class="calc-field">
-    <div class="calc-label">
-      <span>bake sessions</span>
+    <div class="calc-row">
+      <span class="label">bake sessions</span>
       <span class="calc-val" id="days-val">1</span>
     </div>
     <input type="range" id="days" min="1" max="5" value="1">
-    <div class="storage-ind" id="storage-ind">●○○○○ &nbsp;1 of 5 days</div>
+    <div style="font-size:0.75em; color:#aaa; margin-top:0.8em; line-height:1.5;" id="calc-note">bulk mix once, divide into <span id="n-pots">1</span> <span id="pots-word">pot</span> and store in the fridge, bake fresh when you have time. once removed from fridge, <a href="/baguette/" style="color:#aaa;">follow from step 4</a></div>
   </div>
 
-  <div class="calc-result">
-    <div class="result-row"><span>flour</span><span id="r-flour">420g</span></div>
-    <div class="result-row"><span>water</span><span id="r-water">580ml</span></div>
-    <div class="result-row"><span>salt</span><span id="r-salt">9g</span></div>
-    <div class="result-row"><span>yeast</span><span id="r-yeast">2g</span></div>
-    <div class="calc-note">
-      Mix once. Bake from <a href="/baguette/">step 4</a>.
+  <div class="calc-field" style="margin-top:1.6em;">
+    <div class="result-table">
+      <div class="result-field">
+        <div class="result-row"><span class="label">flour</span><span class="result-val" id="r-flour">420g</span></div>
+      </div>
+      <div class="result-field">
+        <div class="result-row"><span class="label">water</span><span class="result-val" id="r-water">580ml</span></div>
+      </div>
+      <div class="result-field">
+        <div class="result-row"><span class="label">salt</span><span class="result-val" id="r-salt">9g</span></div>
+      </div>
+      <div class="result-field">
+        <div class="result-row"><span class="label">yeast</span><span class="result-val" id="r-yeast">2g</span></div>
+      </div>
     </div>
   </div>
+
+  <div style="font-size:0.75em; color:#aaa; margin-top:1em;">max 5 days</div>
+
 </div>
 
 <script>
@@ -103,9 +129,9 @@ showreadingtime: false
     if (anims[key]) cancelAnimationFrame(anims[key]);
     const start = current[key];
     const el = document.getElementById('r-' + key);
-    const startTime = performance.now();
+    const t0 = performance.now();
     function step(now) {
-      const t = Math.min((now - startTime) / duration, 1);
+      const t = Math.min((now - t0) / duration, 1);
       const val = Math.round(start + (target - start) * t);
       current[key] = val;
       el.textContent = val + suffix;
@@ -128,16 +154,13 @@ showreadingtime: false
     document.getElementById('bpd-val').textContent  = bpd;
     document.getElementById('days-val').textContent = days;
     if (changed) pulse(changed + '-val');
-    document.getElementById('storage-ind').innerHTML =
-      '●'.repeat(days) + '○'.repeat(5 - days) + ' &nbsp;' + days + ' of 5 days';
     const r = calc(bpd, days);
     animateTo('flour', r.flour, 'g',  180);
     animateTo('water', r.water, 'ml', 180);
     animateTo('salt',  r.salt,  'g',  180);
     animateTo('yeast', r.yeast, 'g',  180);
-    document.querySelector('.calc-note').innerHTML = days === 1
-      ? 'Mix once. Bake from <a href="/baguette/" style="color:#888;">step 4</a>.'
-      : `Mix once and divide into ${days} pots. Bake one pot per session from <a href="/baguette/" style="color:#888;">step 4</a>.`;
+    document.getElementById('n-pots').textContent   = days;
+    document.getElementById('pots-word').textContent = days === 1 ? 'pot' : 'pots';
   }
 
   document.getElementById('bpd').addEventListener('input', () => update('bpd'));
