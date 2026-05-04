@@ -66,19 +66,19 @@ showreadingtime: false
   <div class="calc-field">
     <div class="calc-label">
       <span>bake sessions</span>
-      <span class="calc-val" id="days-val">3</span>
+      <span class="calc-val" id="days-val">1</span>
     </div>
-    <input type="range" id="days" min="1" max="5" value="3">
-    <div class="storage-ind" id="storage-ind">●●●○○ &nbsp;3 of 5 days</div>
+    <input type="range" id="days" min="1" max="5" value="1">
+    <div class="storage-ind" id="storage-ind">●○○○○ &nbsp;1 of 5 days</div>
   </div>
 
   <div class="calc-result">
-    <div class="result-row"><span>flour</span><span id="r-flour">1260g</span></div>
-    <div class="result-row"><span>water</span><span id="r-water">1740ml</span></div>
-    <div class="result-row"><span>salt</span><span id="r-salt">27g</span></div>
-    <div class="result-row"><span>yeast</span><span id="r-yeast">6g</span></div>
+    <div class="result-row"><span>flour</span><span id="r-flour">420g</span></div>
+    <div class="result-row"><span>water</span><span id="r-water">580ml</span></div>
+    <div class="result-row"><span>salt</span><span id="r-salt">9g</span></div>
+    <div class="result-row"><span>yeast</span><span id="r-yeast">2g</span></div>
     <div class="calc-note">
-      Mix once and divide into 3 pots. Bake one pot per session from <a href="/baguette/">step 4</a>.
+      Mix once. Bake from <a href="/baguette/">step 4</a>.
     </div>
   </div>
 </div>
@@ -88,12 +88,30 @@ showreadingtime: false
   const BASE_TOTAL = BASE_FLOUR + BASE_WATER + BASE_SALT + BASE_YEAST;
   const YEAST_K = 0.018;
 
+  const current = { flour: 420, water: 580, salt: 9, yeast: 2 };
+  const anims = {};
+
   function calc(bpd, days) {
     const flour = Math.round(bpd * days * (BASE_TOTAL / 2) * (BASE_FLOUR / BASE_TOTAL) / 10) * 10;
     const water = Math.round(flour * (BASE_WATER / BASE_FLOUR));
     const salt  = Math.round(flour * (BASE_SALT  / BASE_FLOUR));
     const yeast = Math.max(1, Math.ceil(flour * (BASE_YEAST / BASE_FLOUR) / (1 + YEAST_K * (days - 1))));
     return { flour, water, salt, yeast };
+  }
+
+  function animateTo(key, target, suffix, duration) {
+    if (anims[key]) cancelAnimationFrame(anims[key]);
+    const start = current[key];
+    const el = document.getElementById('r-' + key);
+    const startTime = performance.now();
+    function step(now) {
+      const t = Math.min((now - startTime) / duration, 1);
+      const val = Math.round(start + (target - start) * t);
+      current[key] = val;
+      el.textContent = val + suffix;
+      if (t < 1) anims[key] = requestAnimationFrame(step);
+    }
+    anims[key] = requestAnimationFrame(step);
   }
 
   function pulse(id) {
@@ -113,10 +131,10 @@ showreadingtime: false
     document.getElementById('storage-ind').innerHTML =
       '●'.repeat(days) + '○'.repeat(5 - days) + ' &nbsp;' + days + ' of 5 days';
     const r = calc(bpd, days);
-    document.getElementById('r-flour').textContent = r.flour + 'g';
-    document.getElementById('r-water').textContent = r.water + 'ml';
-    document.getElementById('r-salt').textContent  = r.salt  + 'g';
-    document.getElementById('r-yeast').textContent = r.yeast + 'g';
+    animateTo('flour', r.flour, 'g',  180);
+    animateTo('water', r.water, 'ml', 180);
+    animateTo('salt',  r.salt,  'g',  180);
+    animateTo('yeast', r.yeast, 'g',  180);
     document.querySelector('.calc-note').innerHTML = days === 1
       ? 'Mix once. Bake from <a href="/baguette/" style="color:#888;">step 4</a>.'
       : `Mix once and divide into ${days} pots. Bake one pot per session from <a href="/baguette/" style="color:#888;">step 4</a>.`;
