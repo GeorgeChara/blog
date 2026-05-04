@@ -51,8 +51,6 @@ layout: single
 
 ## Ingredients
 
-<p style="margin-top: -0.5em;"><a href="/baguette/calculator/" style="color: #888; font-size: 0.85em;">dough storage calculator →</a></p>
-
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin-top: 0; color: #000;"><span style="color: #888;">Makes 2 baguettes</span>
 
 flour    420g
@@ -78,6 +76,7 @@ yeast    2g
 </div>
 
 **3.** Two sets of coil fold 30 mins apart. Cover and leave in fridge overnight.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.2em;">Baking across multiple days? Use the <a href="/baguette/calculator/" style="color:#888;">dough storage calculator</a>.</span>
 
 <details class="video-embed">
 <summary>watch: coil fold</summary>

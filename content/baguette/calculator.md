@@ -21,14 +21,22 @@ showreadingtime: false
   .calc-field { margin-bottom: 1.8em; }
   .calc-label {
     display: flex;
-    justify-content: space-between;
-    font-size: 0.85em;
+    align-items: baseline;
+    gap: 0.4em;
     margin-bottom: 0.5em;
   }
-  .calc-label span     { color: #888; }
-  .calc-label strong   { color: #000; }
+  .calc-label span  { color: #888; font-size: 0.85em; }
+  .calc-val {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+    transition: transform 0.12s ease;
+    display: inline-block;
+  }
+  .calc-val.bump { transform: scale(1.25); }
 
-  input[type=range] { width: 100%; display: block; }
+  input[type=range] { width: 60%; display: block; }
 
   .calc-result {
     margin-top: 2em;
@@ -53,7 +61,7 @@ showreadingtime: false
   <div class="calc-field">
     <div class="calc-label">
       <span>baguettes per day</span>
-      <strong id="bpd-val">2</strong>
+      <span class="calc-val" id="bpd-val">2</span>
     </div>
     <input type="range" id="bpd" min="1" max="8" value="2">
   </div>
@@ -61,17 +69,18 @@ showreadingtime: false
   <div class="calc-field">
     <div class="calc-label">
       <span>bake days</span>
-      <strong id="days-val">3</strong>
+      <span class="calc-val" id="days-val">3</span>
     </div>
     <input type="range" id="days" min="1" max="7" value="3">
   </div>
 
   <div class="calc-result">
-    <div class="result-meta" id="result-meta">3 pots · 6 baguettes total</div>
     <div class="result-row"><span>flour</span><span id="r-flour">1260g</span></div>
     <div class="result-row"><span>water</span><span id="r-water">1740ml</span></div>
     <div class="result-row"><span>salt</span><span id="r-salt">27g</span></div>
     <div class="result-row"><span>yeast</span><span id="r-yeast">6g</span></div>
+    <hr style="border:none; border-top: 1px solid #E5DECF; margin: 0.8em 0;">
+    <div class="result-meta" id="result-context">Mix once. Divide into 3 pots, refrigerate, and bake one pot per day.</div>
   </div>
 
   <div class="calc-warn" id="calc-warn"></div>
@@ -88,17 +97,28 @@ showreadingtime: false
     const water = Math.round(flour * (BASE_WATER / BASE_FLOUR));
     const salt  = Math.round(flour * (BASE_SALT  / BASE_FLOUR));
     const yeast = Math.max(1.0, Math.round(flour * (BASE_YEAST / BASE_FLOUR) / (1 + YEAST_K * (days - 1)) * 2) / 2);
-    return { flour, water, salt, yeast, total: bpd * days };
+    return { flour, water, salt, yeast };
   }
 
-  function update() {
+  function pulse(id) {
+    const el = document.getElementById(id);
+    el.classList.remove('bump');
+    void el.offsetWidth;
+    el.classList.add('bump');
+    setTimeout(() => el.classList.remove('bump'), 150);
+  }
+
+  function update(changed) {
     const bpd  = parseInt(document.getElementById('bpd').value);
     const days = parseInt(document.getElementById('days').value);
     document.getElementById('bpd-val').textContent  = bpd;
     document.getElementById('days-val').textContent = days;
+    if (changed) pulse(changed + '-val');
     const r = calc(bpd, days);
-    document.getElementById('result-meta').textContent =
-      `${days} pot${days > 1 ? 's' : ''} · ${r.total} baguette${r.total > 1 ? 's' : ''} total`;
+    document.getElementById('result-context').textContent =
+      days > 1
+        ? `Mix once. Divide into ${days} pots, refrigerate, and bake one pot per day.`
+        : `Mix once. Refrigerate overnight, then bake.`;
     document.getElementById('r-flour').textContent = r.flour + 'g';
     document.getElementById('r-water').textContent = r.water + 'ml';
     document.getElementById('r-salt').textContent  = r.salt  + 'g';
@@ -107,7 +127,7 @@ showreadingtime: false
       days > 5 ? `⚠ ${days}-day ferment — quality drops past day 5` : '';
   }
 
-  document.getElementById('bpd').addEventListener('input', update);
-  document.getElementById('days').addEventListener('input', update);
+  document.getElementById('bpd').addEventListener('input', () => update('bpd'));
+  document.getElementById('days').addEventListener('input', () => update('days'));
   update();
 </script>
