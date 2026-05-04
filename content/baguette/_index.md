@@ -2,6 +2,7 @@
 title: "Baguette"
 toc: false
 showreadingtime: false
+layout: single
 ---
 
 <style>
@@ -19,6 +20,7 @@ showreadingtime: false
   }
   details summary:hover { color: #555; }
   details[open] { margin-bottom: 0.5em; }
+  .content pre { color: #000; }
 </style>
 
 <h1>Baguette</h1>
@@ -28,7 +30,9 @@ showreadingtime: false
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin-top: 0;"><span style="color: #888;">Makes 2 baguettes</span>
+<p style="margin-top: -0.5em;"><a href="/baguette/calculator/" style="color: #888; font-size: 0.85em;">dough storage calculator →</a></p>
+
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin-top: 0; color: #000;"><span style="color: #888;">Makes 2 baguettes</span>
 
 flour    420g
 water    580ml
@@ -60,7 +64,7 @@ yeast    2g
 
 </details>
 
-**5.** Degass then shape into baguettes. Proof until 1.5x.
+**5.** Degass then shape into baguettes. Prove until 1.5x.
 
 <details>
 <summary>show photo</summary>
