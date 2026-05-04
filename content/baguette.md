@@ -28,12 +28,12 @@ showreadingtime: false
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px;"><span style="color: #888;">Makes 2 baguettes</span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block;"><span style="color: #888;">Makes 2 baguettes</span>
 
-420g     flour
-580ml    water
-9g       salt
-2g       yeast
+flour    420g
+water    580ml
+salt     9g
+yeast    2g
 </pre>
 
 ## Recipe
