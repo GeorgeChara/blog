@@ -38,7 +38,7 @@ showreadingtime: false
 
 ## Recipe
 
-**1.** Combine all ingredients in a large mixing bowl. Mix until all ingredients are combined. Cover and let rest for 30 mins.
+**1.** Mix all ingredients. Cover and let rest for 30 mins.
 
 **2.** One set of stretch and fold. Let rest for 30 mins.
 
