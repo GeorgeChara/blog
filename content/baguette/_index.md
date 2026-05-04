@@ -77,7 +77,7 @@ yeast    2g
   <div class="media-content" id="s2-video"><iframe src="https://www.youtube.com/embed/mwtTZK7_t08?mute=1" frameborder="0" allowfullscreen></iframe></div>
 </div>
 
-**3.** Two sets of coil fold 30 mins apart. Cover and leave in fridge overnight. From this point you can store it for up to 5 days.
+**3.** Two sets of coil fold 30 mins apart. Cover and leave in fridge overnight.
 
 <details class="video-embed">
 <summary>watch: coil fold</summary>
