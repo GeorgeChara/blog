@@ -36,7 +36,7 @@ layout: single
   .media-content iframe { width: 100%; aspect-ratio: 16/9; display: block; }
 
   /* Solo video (no photo on same step) */
-  details.video-embed { margin-top: 0; }
+  details.video-embed { margin-top: -0.8em; }
   details.video-embed > summary { list-style: none; }
   details.video-embed > summary::-webkit-details-marker { display: none; }
   details.video-embed > summary::before { content: '↳ '; }
@@ -51,7 +51,7 @@ layout: single
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin-top: 0; color: #000;"><span style="color: #888;">Makes 2 baguettes</span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 2 baguettes</span>
 
 flour    420g
 water    580ml
@@ -76,12 +76,12 @@ yeast    2g
 </div>
 
 **3.** Two sets of coil fold 30 mins apart. Cover and leave in fridge overnight.
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.2em;">Baking across multiple days? Use the <a href="/baguette/calculator/" style="color:#888;">dough storage calculator</a>.</span>
-
 <details class="video-embed">
 <summary>watch: coil fold</summary>
 <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/RcJWjGeoZbc?mute=1" frameborder="0" allowfullscreen></iframe>
 </details>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Baking across multiple days? Use the <a href="/baguette/calculator/" style="color:#888;">dough storage calculator</a>.</span>
 
 **4.** Flour the work surface, turn out the dough and dust the top. Divide into two, shape into rough baguettes, cover and rest for 15 mins.
 
