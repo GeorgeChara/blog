@@ -22,7 +22,7 @@ showreadingtime: false
 </style>
 
 <h1>Baguette</h1>
-<p style="color: #888; margin-top: -0.5em;">recipe v2.1 · 25 min prep · 25 min bake</p>
+<p style="color: #888; margin-top: -0.5em;">recipe v2.1 · 25 min prep · 17 min bake</p>
 
 ![](/images/baguette/result-alt-angle-2.png)
 
