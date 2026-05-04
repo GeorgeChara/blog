@@ -84,7 +84,7 @@ yeast    2g
 <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/RcJWjGeoZbc?mute=1" frameborder="0" allowfullscreen></iframe>
 </details>
 
-**4.** Dust work surface with flour, scrape dough out onto work surface and dust flour over the top so dividing and shaping are easier. Divide into two using a bread scraper and shape into rough baguettes (see image). Cover with tea towel and rest for 15 mins.
+**4.** Flour the work surface, turn out the dough and dust the top. Divide into two, shape into rough baguettes, cover and rest for 15 mins.
 
 <details>
 <summary>show photo</summary>
