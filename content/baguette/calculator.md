@@ -79,7 +79,7 @@ showreadingtime: false
       <div class="result-row"><span class="label">flour</span><span class="result-val" id="r-flour">420g</span></div>
     </div>
     <div class="result-field">
-      <div class="result-row"><span class="label">water</span><span class="result-val" id="r-water">580ml</span></div>
+      <div class="result-row"><span class="label">water</span><span class="result-val" id="r-water">320ml</span></div>
     </div>
     <div class="result-field">
       <div class="result-row"><span class="label">salt</span><span class="result-val" id="r-salt">9g</span></div>
@@ -111,12 +111,12 @@ showreadingtime: false
 </div>
 
 <script>
-  const BASE_FLOUR = 420, BASE_WATER = 580, BASE_SALT = 9, BASE_YEAST = 2;
+  const BASE_FLOUR = 420, BASE_WATER = 320, BASE_SALT = 9, BASE_YEAST = 2;
   const BASE_TOTAL = BASE_FLOUR + BASE_WATER + BASE_SALT + BASE_YEAST;
   const YEAST_K = 0.018;
   const limits = { bpd: [1, 8], days: [1, 5] };
   const state  = { bpd: 2, days: 1 };
-  const current = { flour: 420, water: 580, salt: 9, yeast: 2 };
+  const current = { flour: 420, water: 320, salt: 9, yeast: 2 };
   const anims = {};
 
   function calc(bpd, days) {

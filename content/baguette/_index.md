@@ -46,7 +46,7 @@ layout: single
 </style>
 
 <h1>Baguette</h1>
-<p style="color: #888; margin-top: -0.5em;">recipe v2.1 · 25 min prep · 17 min bake</p>
+<p style="color: #888; margin-top: -0.5em;">recipe v2.1 · 76% hydration · 25 min prep · 17 min bake</p>
 
 <img src="/images/baguette/result-alt-angle-2.png" alt="Baguette">
 
@@ -55,7 +55,7 @@ layout: single
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 2 baguettes</span>
 
 flour    420g
-water    580ml
+water    320ml
 salt     9g
 yeast    2g
 </pre>
