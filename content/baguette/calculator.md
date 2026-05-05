@@ -106,7 +106,12 @@ showreadingtime: false
     </div>
   </div>
 
-  <div class="calc-hint" id="calc-hint">bulk mix once, divide into <span id="n-pots">1</span> <span id="pots-word">pot</span> and store in the fridge, bake fresh when you have time. once removed from fridge, <a href="/baguette/">follow from step 4</a></div>
+  <div style="margin-top:1.4em; font-size:0.75em; color:#aaa; line-height:1.6; border-left:2px solid #E5DECF; padding-left:0.6em;">
+    <span style="color:#888; font-weight:bold;">extra step (storage only)</span><br>
+    before refrigerating, divide into <span id="n-pots" style="color:#888; font-weight:bold;">1</span> equal <span id="pots-word">portion</span>, give each a quick coil fold, then place into its container.
+  </div>
+
+  <div class="calc-hint" style="margin-top:1.4em;"><a href="/baguette/" style="color:#aaa;">follow from step 4</a></div>
   <div class="calc-max">keep in fridge for 5 days max</div>
 </div>
 
@@ -153,7 +158,7 @@ showreadingtime: false
     animateTo('salt',  r.salt,  'g',  180);
     animateTo('yeast', r.yeast, 'g',  180);
     document.getElementById('n-pots').textContent    = days;
-    document.getElementById('pots-word').textContent = days === 1 ? 'pot' : 'pots';
+    document.getElementById('pots-word').textContent = days === 1 ? 'portion' : 'portions';
   }
 
   document.getElementById('bpd').addEventListener('input', update);
