@@ -10,6 +10,7 @@ layout: single
   .time { display: none; }
   h2::before, h3::before { content: none !important; }
   img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   details { margin: -1em 0 0 0; padding: 0; }
   details summary {
     color: #888;
@@ -47,7 +48,7 @@ layout: single
 <h1>Baguette</h1>
 <p style="color: #888; margin-top: -0.5em;">recipe v2.1 · 25 min prep · 17 min bake</p>
 
-![](/images/baguette/result-alt-angle-2.png)
+<img src="/images/baguette/result-alt-angle-2.png" alt="Baguette">
 
 ## Ingredients
 
