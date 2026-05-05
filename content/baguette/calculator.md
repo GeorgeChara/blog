@@ -19,13 +19,39 @@ showreadingtime: false
   .calc-header h1 { font-size: 1.1em; font-weight: bold; margin: 0 0 0.2em 0; }
   .calc-header p  { color: #888; font-size: 0.85em; margin: 0; }
 
-  /* Ingredient table */
-  .result-table {
+  /* One container for everything */
+  .calc-card {
     border: 1px solid #E5DECF;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 1.8em;
   }
+
+  /* Stepper rows at top */
+  .stepper-card {
+    border: 1px solid #E5DECF;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.6em;
+    margin-bottom: 1.8em;
+  }
+  .stepper-field {
+    padding: 0.6em 1em;
+    border-bottom: 1px solid #E5DECF;
+    background: #fff;
+  }
+  .stepper-field:last-child { border-bottom: none; }
+  .slider-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3em;
+  }
+  .slider-row .label { color: #888; font-size: 0.85em; }
+  .slider-row .val { font-size: 1em; font-weight: bold; color: #000; }
+  input[type=range] { width: 100%; display: block; }
+
+  /* Ingredient rows below */
   .result-field { padding: 0.5em 1em; border-bottom: 1px solid #E5DECF; }
   .result-field:last-child { border-bottom: none; }
   .result-field:nth-child(odd)  { background: #fff; }
@@ -35,26 +61,6 @@ showreadingtime: false
   .result-val {
     font-size: 1.6em; font-weight: bold; color: #000; line-height: 1.2;
     display: inline-block;
-  }
-
-  /* Stepper inputs */
-  .calc-field { margin-bottom: 1em; }
-  .calc-row { display: flex; justify-content: space-between; align-items: center; }
-  .calc-row .label { color: #888; font-size: 0.85em; }
-  .stepper { display: flex; align-items: center; border: 1px solid #E5DECF; }
-  .stepper button {
-    background: none; border: none; width: 36px; height: 36px;
-    font-family: ui-monospace, Menlo, Consolas, monospace;
-    font-size: 1.1em; cursor: pointer; color: #000;
-    display: flex; align-items: center; justify-content: center;
-    -webkit-tap-highlight-color: transparent; user-select: none;
-  }
-  .stepper button:active { background: #F6EEE3; }
-  .stepper button:disabled { color: #ccc; cursor: default; }
-  .stepper .val {
-    width: 2.2em; text-align: center; font-size: 0.9em; font-weight: bold;
-    border-left: 1px solid #E5DECF; border-right: 1px solid #E5DECF;
-    height: 36px; line-height: 36px;
   }
 
   .calc-hint { font-size: 0.75em; color: #aaa; margin-top: 1.4em; line-height: 1.5; }
@@ -68,7 +74,7 @@ showreadingtime: false
     <p><a href="/baguette/">recipe v2.1</a></p>
   </div>
 
-  <div class="result-table">
+  <div class="calc-card">
     <div class="result-field">
       <div class="result-row"><span class="label">flour</span><span class="result-val" id="r-flour">420g</span></div>
     </div>
@@ -83,25 +89,20 @@ showreadingtime: false
     </div>
   </div>
 
-  <div class="calc-field">
-    <div class="calc-row">
-      <span class="label">baguettes per session</span>
-      <div class="stepper">
-        <button id="bpd-dec" onclick="step('bpd',-1)">−</button>
+  <div class="stepper-card">
+    <div class="stepper-field">
+      <div class="slider-row">
+        <span class="label">baguettes per session</span>
         <span class="val" id="bpd-val">2</span>
-        <button id="bpd-inc" onclick="step('bpd',1)">+</button>
       </div>
+      <input type="range" id="bpd" min="1" max="8" value="2">
     </div>
-  </div>
-
-  <div class="calc-field">
-    <div class="calc-row">
-      <span class="label">bake sessions</span>
-      <div class="stepper">
-        <button id="days-dec" onclick="step('days',-1)">−</button>
+    <div class="stepper-field">
+      <div class="slider-row">
+        <span class="label">bake sessions</span>
         <span class="val" id="days-val">1</span>
-        <button id="days-inc" onclick="step('days',1)">+</button>
       </div>
+      <input type="range" id="days" min="1" max="5" value="1">
     </div>
   </div>
 
@@ -141,28 +142,21 @@ showreadingtime: false
     anims[key] = requestAnimationFrame(tick);
   }
 
-  function step(field, dir) {
-    const [min, max] = limits[field];
-    state[field] = Math.min(max, Math.max(min, state[field] + dir));
-    update();
-  }
-
   function update() {
-    const { bpd, days } = state;
+    const bpd  = parseInt(document.getElementById('bpd').value);
+    const days = parseInt(document.getElementById('days').value);
     document.getElementById('bpd-val').textContent  = bpd;
     document.getElementById('days-val').textContent = days;
-    document.getElementById('bpd-dec').disabled  = bpd  === limits.bpd[0];
-    document.getElementById('bpd-inc').disabled  = bpd  === limits.bpd[1];
-    document.getElementById('days-dec').disabled = days === limits.days[0];
-    document.getElementById('days-inc').disabled = days === limits.days[1];
     const r = calc(bpd, days);
     animateTo('flour', r.flour, 'g',  180);
     animateTo('water', r.water, 'ml', 180);
     animateTo('salt',  r.salt,  'g',  180);
     animateTo('yeast', r.yeast, 'g',  180);
-    document.getElementById('n-pots').textContent   = days;
+    document.getElementById('n-pots').textContent    = days;
     document.getElementById('pots-word').textContent = days === 1 ? 'pot' : 'pots';
   }
 
+  document.getElementById('bpd').addEventListener('input', update);
+  document.getElementById('days').addEventListener('input', update);
   update();
 </script>
