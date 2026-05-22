@@ -30,8 +30,8 @@ name = "George Charalambous"
     url = "/posts/"
     weight = 1
   [[menu.main]]
-    name = "Baguette"
-    url = "/baguette/"
+    name = "Baking"
+    url = "/baking/"
     weight = 2
 
 [build]
