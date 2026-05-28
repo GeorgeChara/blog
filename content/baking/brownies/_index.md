@@ -25,13 +25,13 @@ butter (unsalted)              285g
 chocolate (60–70% cacao)       225g
 granulated sugar               400g
 dark brown sugar               100g
-eggs                           6 large
+eggs                           6
 vanilla extract                 9g
-flour (all-purpose)            125g
+flour                          125g
 cocoa powder (Dutch-processed)  75g  <span style="color: #888;">(reserve 25g for step 5)</span>
 salt                            12g
 espresso powder                  8g
-flaky sea salt                  optional, for topping
+flaky sea salt                  pinch for topping
 </pre>
 
 ## Recipe
