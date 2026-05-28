@@ -28,7 +28,7 @@ dark brown sugar               100g
 eggs                           6 large
 vanilla extract                 9g
 flour (all-purpose)            125g
-cocoa powder (Dutch-processed)  75g
+cocoa powder (Dutch-processed)  75g  <span style="color: #888;">(reserve 25–30g for step 5)</span>
 salt                            12g
 espresso powder                  8g
 flaky sea salt                  optional, for topping
@@ -38,13 +38,13 @@ flaky sea salt                  optional, for topping
 
 **1.** Heat the oven to 180°C. Grease the tin and line with parchment paper.
 
-**2.** Roughly chop the chocolate and add to a bowl with the cocoa powder and espresso powder. Pour the hot melted butter over and stir until smooth.
+**2.** Roughly chop the chocolate and add to a bowl with the cocoa powder (the larger portion — reserve 25–30g for later) and espresso powder. Pour the hot melted butter over and stir until smooth.
 
 **3.** Add the eggs, vanilla and both sugars to the bowl of a stand mixer and beat on high until thick and pale, like a thick pancake batter.
 
 **4.** Pour the chocolate mixture into the stand mixer bowl and stir to combine with everything.
 
-**5.** Detach the bowl from the mixer. Sift the flour and salt directly on top of the batter. Gently fold by hand until just combined, being careful not to knock out the air.
+**5.** Detach the bowl from the mixer. Sift the flour, reserved cocoa powder, and salt directly on top of the batter. Gently fold by hand until just combined, being careful not to knock out the air.
 
 **6.** Pour into the tin and smooth the top. At this point you can press any toppings into the surface if you like: salted pretzels, crispy M&Ms, whatever works. Bake for 45 minutes. After about 20 minutes, pull the tin out and bang it firmly on the counter, then put it back in. This cracks the top and gives you a fudgy texture throughout.
 
