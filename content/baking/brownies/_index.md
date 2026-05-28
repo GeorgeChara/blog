@@ -15,7 +15,7 @@ layout: single
 </style>
 
 <h1>Brownies</h1>
-<p style="color: #888; margin-top: -0.5em;">recipe · 45 min bake · 180°C · 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">45 min bake, 180°C, 23cm square tin</p>
 
 ## Ingredients
 
@@ -28,7 +28,7 @@ dark brown sugar               100g
 eggs                           6 large
 vanilla extract                 9g
 flour (all-purpose)            125g
-cocoa powder (Dutch-processed)  75g  <span style="color: #888;">(reserve 25–30g for step 5)</span>
+cocoa powder (Dutch-processed)  75g  <span style="color: #888;">(reserve 25g for step 5)</span>
 salt                            12g
 espresso powder                  8g
 flaky sea salt                  optional, for topping
@@ -38,7 +38,7 @@ flaky sea salt                  optional, for topping
 
 **1.** Heat the oven to 180°C. Grease the tin and line with parchment paper.
 
-**2.** Roughly chop the chocolate and add to a bowl with the cocoa powder (the larger portion — reserve 25–30g for later) and espresso powder. Pour the hot melted butter over and stir until smooth.
+**2.** Roughly chop the chocolate and add to a bowl with the cocoa powder (reserve 25g for later) and espresso powder. Pour the hot melted butter over and stir until smooth.
 
 **3.** Add the eggs, vanilla and both sugars to the bowl of a stand mixer and beat on high until thick and pale, like a thick pancake batter.
 

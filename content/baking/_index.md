@@ -20,6 +20,7 @@ layout: single
 
 <ul class="recipe-list">
   <li><a href="/baking/baguette/">Baguette</a><span class="recipe-meta">— 17 min bake</span></li>
+  <li><a href="/baking/brownie-blondie/">Brownie Blondie</a><span class="recipe-meta">— 40 min bake</span></li>
   <li><a href="/baking/brownies/">Brownies</a><span class="recipe-meta">— 45 min bake</span></li>
   <li><a href="/baking/butter/">Butter</a><span class="recipe-meta">— 10 min whisk</span></li>
   <li><a href="/baking/cookies/">Cookies</a><span class="recipe-meta">— 10 min bake</span></li>
