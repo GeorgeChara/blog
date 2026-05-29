@@ -42,6 +42,6 @@ toppings             ~250g
 
 **3.** Add the flour, bicarbonate of soda and salt. Mix on slow to medium until combined.
 
-**4.** Add toppings and mix. Crispy M&Ms and chocolate chips both work well.
+**4.** Add toppings and mix.
 
 **5.** Scoop small spoonfuls onto a baking tray lined with baking paper. Bake for roughly 10 minutes. Pull them out just before they start browning and let cool on a rack.
