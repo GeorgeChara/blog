@@ -29,16 +29,16 @@ showreadingtime: false
   </iframe>
   <div style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.6); border-radius: 8px; padding: 10px 14px; pointer-events: none;">
     <div style="display: grid; grid-template-columns: 34px 8px 34px 34px 34px; grid-template-rows: 32px 32px; gap: 0; align-items: center; justify-items: center;">
-      <span class="key-sprite animated" style="background-image: url(/images/keys/Q.png)"></span>
+      <span class="key-sprite animated" style="background-image: url(/images/keys/Q.webp)"></span>
       <div></div>
       <div></div>
-      <span class="key-sprite" style="background-image: url(/images/keys/W.png)"></span>
+      <span class="key-sprite" style="background-image: url(/images/keys/W.webp)"></span>
       <div></div>
       <div></div>
       <div></div>
-      <span class="key-sprite" style="background-image: url(/images/keys/A.png)"></span>
-      <span class="key-sprite" style="background-image: url(/images/keys/S.png)"></span>
-      <span class="key-sprite" style="background-image: url(/images/keys/D.png)"></span>
+      <span class="key-sprite" style="background-image: url(/images/keys/A.webp)"></span>
+      <span class="key-sprite" style="background-image: url(/images/keys/S.webp)"></span>
+      <span class="key-sprite" style="background-image: url(/images/keys/D.webp)"></span>
     </div>
     <p style="font-size: 0.7em; color: #ccc; margin: 8px 0 0 0; line-height: 1.4;">
       WASD move · Q cast<br>

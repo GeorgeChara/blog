@@ -18,15 +18,15 @@ The Lua bridge is a single C file that wraps every engine system (renderer, inpu
 
 The first thing I got working was `terra.print("hello")` which you can see at the top of this screenshot of our engine console
 
-![Lua hello world](/images/devlog-003/lua-hello-world.png)
+![Lua hello world](/images/devlog-003/lua-hello-world.webp)
 
 Then something a bit more useful, `terra.entity()`: spawning a cube from a Lua script.
 
-![First entity spawned from Lua](/images/devlog-003/lua-first-spawn.png)
+![First entity spawned from Lua](/images/devlog-003/lua-first-spawn.webp)
 
 Once that worked, everything else followed quickly. Spawning spheres, changing colours etc all from Lua.
 
-![Red sphere](/images/devlog-003/lua-entities.png)
+![Red sphere](/images/devlog-003/lua-entities.webp)
 
 ## C vs Lua
 

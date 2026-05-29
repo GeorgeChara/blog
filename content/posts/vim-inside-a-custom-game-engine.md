@@ -10,7 +10,7 @@ I embedded Neovim as a subprocess inside Terra. Neovim runs as `nvim --embed --h
 
 The first version was a bit rough but I have vim working inside the terra editor. You may also notice in this screenshot we have a 'fake' vim bar at the bottom which i was also experimenting with before importing vim, later we use the real one natively. 
 
-![First rough Neovim import](/images/devlog-003/vim-first-import.png)
+![First rough Neovim import](/images/devlog-003/vim-first-import.webp)
 
 Your personal `~/.config/nvim/init.vim` carries straight into Terra, this means any of your personal shortcuts will work natively without any futher config needed.
 
@@ -18,7 +18,7 @@ Your personal `~/.config/nvim/init.vim` carries straight into Terra, this means 
 
 I then replaced our fake line bar with the real vim one. This is powerful because theres so many things we can do with this in our editor. This specifically is using the lualine bar which aligns with my future plans to introduce lua as the main language to program games in.
 
-![Neovim with lualine status bar](/images/devlog-003/vim-panel.png)
+![Neovim with lualine status bar](/images/devlog-003/vim-panel.webp)
 
 ## Introducing game engine modes
 

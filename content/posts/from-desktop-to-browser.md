@@ -18,11 +18,11 @@ You can **[play the demo here](/posts/play-the-demo/)**. The rest of this post c
 
 Added some passive abilities, **QWER** keys are hotkeys for abilities in game and we currently have two equipped: 'Slam' and some kind of 'aura' which auto attacks (this is the blue square around the player).
 
-![Abilities](/images/devlog-002/1.png)
+![Abilities](/images/devlog-002/1.webp)
 
 Enemies show floating damage numbers on hit and kills chain into a combo counter shown in the centre of the screen.
 
-![Damage numbers and combo counter](/images/devlog-002/2.png)
+![Damage numbers and combo counter](/images/devlog-002/2.webp)
 
 ## Chain effects
 
@@ -40,7 +40,7 @@ A lot is happening in this clip, but firstly we have added a bit of variety to h
 
 I added a few different enemies, smaller ones are more common with less health and the larger ones are rare with more health. As you survive longer, more large enemies will spawn adjusting to the players creep up in damage output.
 
-![Enemy variety](/images/devlog-002/5.png)
+![Enemy variety](/images/devlog-002/5.webp)
 
 ## Chain lightning
 
