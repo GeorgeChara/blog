@@ -15,22 +15,24 @@ layout: single
 </style>
 
 <h1>Cookies</h1>
-<p style="color: #888; margin-top: -0.5em;">recipe · ~10 min bake · KitchenAid paddle</p>
+<p style="color: #888; margin-top: -0.5em;">~10 min bake, KitchenAid paddle</p>
 
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes ~24 cookies</span>
 
-butter (unsalted)     225g
-light brown sugar     220g
-granulated sugar      150g
-eggs                    2
-vanilla extract       10ml
-flour                 312g
-bicarbonate of soda     5g
-salt                    6g
-toppings (any)       ~250g
+unsalted butter      225g
+light brown sugar    220g
+granulated sugar     150g
+eggs                 2
+vanilla extract      10ml
+flour                312g
+bicarbonate of soda  5g
+salt                 6g
+toppings             ~250g
 </pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Crispy M&Ms, chocolate chips, or whatever you like.</span>
 
 ## Recipe
 

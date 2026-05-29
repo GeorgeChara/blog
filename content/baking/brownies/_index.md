@@ -27,18 +27,20 @@ layout: single
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes one 23cm tin</span>
 
-butter (unsalted)              285g
-chocolate (60–70% cacao)       225g
-granulated sugar               400g
-dark brown sugar               100g
-eggs                           6
-vanilla extract                 9g
-flour                          125g
-cocoa powder (Dutch-processed)  75g  <span style="color: #888;">(reserve 25g for step 5)</span>
-salt                            12g
-espresso powder                  8g
-flaky sea salt                  pinch for topping
+unsalted butter    285g
+chocolate          225g
+granulated sugar   400g
+dark brown sugar   100g
+eggs               6
+vanilla extract    9g
+flour              125g
+cocoa powder       75g
+salt               12g
+espresso powder    8g
+flaky sea salt     pinch
 </pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use 60–70% cacao chocolate and Dutch-processed cocoa.<br>Reserve 25g of the cocoa powder for step 5.</span>
 
 ## Recipe
 

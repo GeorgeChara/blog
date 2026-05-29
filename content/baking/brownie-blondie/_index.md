@@ -28,14 +28,14 @@ Half the [brownie recipe](/baking/brownies/).
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">For the 23cm tin</span>
 
-butter (unsalted)              115g
-brown sugar                    220g
-eggs                           2
-vanilla extract                  5g
-flour                          170g
-salt                             6g
-white chocolate                100g
-walnuts                         50g
+unsalted butter  115g
+brown sugar      220g
+eggs             2
+vanilla extract  5g
+flour            170g
+salt             6g
+white chocolate  100g
+walnuts          50g
 </pre>
 
 ## Recipe
