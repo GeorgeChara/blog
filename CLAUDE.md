@@ -11,6 +11,9 @@
 - Animated clips: `ffmpeg` palette GIF → `gif2webp -lossy -q 80`
 - The pre-commit hook in `.git/hooks/pre-commit` auto-converts staged PNG/JPG to WebP
 
+## Writing style
+- No em dashes (—) anywhere. Use a comma, colon, or split into two sentences instead.
+
 ## Recipe pages
 - Layout: `layout: single`, hide h1/time/terminal-nav via inline `<style>`
 - Subtitle format: `45 min bake, 180°C, 23cm square tin` — commas, no bullets
