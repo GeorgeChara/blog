@@ -12,10 +12,16 @@ layout: single
   img:hover { transform: none !important; box-shadow: none !important; }
   img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   .content pre { color: #000; }
+  details { margin: -1em 0 0 0; padding: 0; }
+  details summary { color: #888; font-size: 0.8em; cursor: pointer; user-select: none; line-height: 1; }
+  details summary:hover { color: #555; }
+  details[open] { margin-bottom: 0.5em; }
 </style>
 
 <h1>Brownies</h1>
 <p style="color: #888; margin-top: -0.5em;">45 min bake, 180°C, 23cm square tin</p>
+
+<img loading="lazy" src="/images/brownies/header.webp" alt="Brownies">
 
 ## Ingredients
 
@@ -44,10 +50,31 @@ flaky sea salt                  pinch for topping
 
 **4.** Pour the chocolate mixture into the stand mixer bowl and stir to combine with everything.
 
+<details>
+<summary>show video</summary>
+
+![Pouring chocolate mixture](/images/brownies/step4.webp)
+
+</details>
+
 **5.** Detach the bowl from the mixer. Sift the flour, reserved cocoa powder, and salt directly on top of the batter. Gently fold by hand until just combined, being careful not to knock out the air.
+
+<details>
+<summary>show video</summary>
+
+![Folding in flour](/images/brownies/step5.webp)
+
+</details>
 
 **6.** Pour into the tin and smooth the top. At this point you can press any toppings into the surface if you like: salted pretzels, crispy M&Ms, whatever works. Bake for 45 minutes. After about 20 minutes, pull the tin out and bang it firmly on the counter, then put it back in. This cracks the top and gives you a fudgy texture throughout.
 
 **7.** A toothpick should come out with some wet batter, not clean. Leave to cool completely in the tin before cutting.
+
+<details>
+<summary>show photo</summary>
+
+![Brownies cooling](/images/brownies/step7.webp)
+
+</details>
 
 **8.** Wipe the knife between cuts for clean squares. Top with a pinch of flaky sea salt if you like.
