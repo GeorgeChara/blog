@@ -10,8 +10,12 @@ showreadingtime: false
   h2::before { content: none !important; }
   .terminal-nav { display: none; }
 
+  header, main, footer { min-width: 0; }
+
   .calc-wrap {
     max-width: 360px;
+    width: 100%;
+    box-sizing: border-box;
     font-family: ui-monospace, Menlo, Consolas, monospace;
   }
 
