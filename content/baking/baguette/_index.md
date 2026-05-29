@@ -48,7 +48,7 @@ layout: single
 <h1>Baguette</h1>
 <p style="color: #888; margin-top: -0.5em;">recipe v2.1, 76% hydration, 25 min prep, 17 min bake</p>
 
-<img src="/images/baguette/result-alt-angle-2.png" alt="Baguette">
+<img loading="lazy" src="/images/baguette/result-alt-angle-2.png" alt="Baguette">
 
 ## Ingredients
 
@@ -74,7 +74,7 @@ yeast    2g
     <span class="step-media-sep">|</span>
     <span class="step-link watch-link" onclick="toggleMedia('s2-video',this)">watch: stretch and fold</span>
   </div>
-  <div class="media-content" id="s2-photo"><img src="/images/baguette/foldandcoil.png" alt="Fold and coil"></div>
+  <div class="media-content" id="s2-photo"><img loading="lazy" src="/images/baguette/foldandcoil.png" alt="Fold and coil"></div>
   <div class="media-content" id="s2-video"><iframe src="https://www.youtube.com/embed/mwtTZK7_t08?mute=1" frameborder="0" allowfullscreen></iframe></div>
 </div>
 
@@ -103,7 +103,7 @@ yeast    2g
     <span class="step-media-sep">|</span>
     <span class="step-link watch-link" onclick="toggleMedia('s5-video',this)">watch: shaping baguettes</span>
   </div>
-  <div class="media-content" id="s5-photo"><img src="/images/baguette/baguettes-in-tray.png" alt="Baguettes in tray"></div>
+  <div class="media-content" id="s5-photo"><img loading="lazy" src="/images/baguette/baguettes-in-tray.png" alt="Baguettes in tray"></div>
   <div class="media-content" id="s5-video"><iframe src="https://www.youtube.com/embed/IRDL3lPQSkc?start=57&mute=1" frameborder="0" allowfullscreen></iframe></div>
 </div>
 
