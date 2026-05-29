@@ -8,10 +8,10 @@ showreadingtime: false
   main > h1:first-of-type { display: none; }
   .time { display: none; }
   h2::before { content: none !important; }
-  .terminal-nav { border-top: none !important; }
+  .terminal-nav { display: none; }
 
   .calc-wrap {
-    max-width: 320px;
+    max-width: 360px;
     font-family: ui-monospace, Menlo, Consolas, monospace;
   }
 
