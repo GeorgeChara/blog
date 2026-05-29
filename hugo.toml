@@ -42,3 +42,6 @@ name = "George Charalambous"
   expiryDate = ['expiryDate']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
+
+[minify]
+  minifyOutput = true

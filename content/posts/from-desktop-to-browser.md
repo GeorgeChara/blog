@@ -28,13 +28,13 @@ Enemies show floating damage numbers on hit and kills chain into a combo counter
 
 Here I am just messing around with the idea that enemies can have a 'chain' like effect when they are killed.
 
-![Abilities in action](/images/devlog-002/3.gif)
+![Abilities in action](/images/devlog-002/3.webp)
 
 ## Pinball
 
 A lot is happening in this clip, but firstly we have added a bit of variety to how the 'mobs' spawn so they're not too uniform like before in their ring like configuration. I also added a new passive ability which is a pinball which bounces off the mobs speeding up until it eventually goes off screen. There are also some rough broken flippers at the bottom but I didn't bother to fix these as of yet. It might also be hard to tell from the low frame gif but I have added a subtle screen shake on larger group kills too giving it a satisfying feeling for multikills.
 
-![Combat gameplay](/images/devlog-002/4.gif)
+![Combat gameplay](/images/devlog-002/4.webp)
 
 ## Enemy variety
 
@@ -59,4 +59,4 @@ catalog_add((AbilityDef){
 
 The default for lightning chain is set to 4 enemies but here it is in play with over 50. I set this to 50 in the demo so you can test it out but feel free to adjust and play with any of the abilities using the pause menu.
 
-![Chain lightning and enemy hordes](/images/devlog-002/6.gif)
+![Chain lightning and enemy hordes](/images/devlog-002/6.webp)

@@ -40,7 +40,7 @@ The best way to tune in game movement is to just feel it while playing. Using th
 
 The movement system is based on Quake's air acceleration model, which means it supports strafe jumping. It's a bit rough at this point but you can see it working as the bar at the bottom tracks speed.
 
-![Strafe jumping movement demo](/images/devlog-001/movement.gif)
+![Strafe jumping movement demo](/images/devlog-001/movement.webp)
 
 ## Developer console & debug tools
 

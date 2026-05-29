@@ -22,7 +22,7 @@ I then replaced our fake line bar with the real vim one. This is powerful becaus
 
 ## Introducing game engine modes
 
-![Cycling through PLAY, EDIT, and CMD modes with Shift+Tab](/images/devlog-003/vim-modes-demo.gif)
+![Cycling through PLAY, EDIT, and CMD modes with Shift+Tab](/images/devlog-003/vim-modes-demo.webp)
 
 I utilised the vim lualine bar as a way to visually switch between modes in the terra engine. Usually, when using a game engine you have a tiny window where you play your game whilst testing with a load of windows, tabs overlapping all round. The idea here is to keep things as clean as possible and keep the flow between in game feel and programming seamless. The editor cycles between three modes with **Shift+Tab**:
 
@@ -48,6 +48,6 @@ In edit mode, when I click any entity and a floating code window appears above i
 
 It's inspired by LittleBigPlanet's popit menu.
 
-![Code view LBP](/images/devlog-003/spatial-editing.gif)
+![Code view LBP](/images/devlog-003/spatial-editing.webp)
 
 Just open the file, edit a line and then `:w` to see changes take effect.
