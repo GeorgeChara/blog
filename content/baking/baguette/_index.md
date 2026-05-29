@@ -48,7 +48,7 @@ layout: single
 <h1>Baguette</h1>
 <p style="color: #888; margin-top: -0.5em;">recipe v2.1, 76% hydration, 25 min prep, 17 min bake</p>
 
-<img loading="lazy" src="/images/baguette/result-alt-angle-2.webp" alt="Baguette">
+<img loading="lazy" src="/images/baguette/header.webp" alt="Baguette">
 
 ## Ingredients
 
