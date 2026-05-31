@@ -38,13 +38,13 @@
   </div>
   <script>
     (function() {
-      var pre = document.querySelector('.content pre');
+      var pre = document.querySelector('pre');
       if (!pre) return;
       document.getElementById('recipe-utils').style.display = 'block';
     })();
 
     function copyIngredients() {
-      var pre = document.querySelector('.content pre');
+      var pre = document.querySelector('pre');
       if (!pre) return;
       var text = pre.innerText;
       navigator.clipboard.writeText(text).then(function() {
