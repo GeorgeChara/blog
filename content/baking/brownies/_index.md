@@ -50,6 +50,8 @@ flaky sea salt     pinch
 
 **3.** Add the eggs, vanilla and both sugars to the bowl of a stand mixer and beat on high until thick and pale, like a thick pancake batter.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on high.</span>
+
 **4.** Pour the chocolate mixture into the stand mixer bowl and stir to combine with everything.
 
 <details>

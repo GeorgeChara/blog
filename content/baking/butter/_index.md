@@ -56,6 +56,8 @@ layout: single
 
 **2.** Pour into a stand mixer and whisk on high for 5-10 minutes. It goes through stages: whipped cream, stiff peaks, then it breaks. You'll see the butter form suddenly. Stop there.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on high.</span>
+
 <div class="step-media">
   <div class="step-media-row">
     <span class="step-link photo-link" onclick="toggleMedia('s2-photo',this)">show photo</span>

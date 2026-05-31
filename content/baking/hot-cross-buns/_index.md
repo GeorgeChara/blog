@@ -49,6 +49,8 @@ apricot jam         45g
 
 **1.** Mix the flour, sugar, salt, yeast, mixed spice and cinnamon. Add the warm milk, egg and butter. Knead for 10 minutes until smooth and springy.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook. Speed 1-2 to bring it together, then speed 2 for the full knead.</span>
+
 **2.** Work in the sultanas, currants and mixed peel until evenly distributed.
 
 **3.** Cover and leave to prove for 1.5 hours until doubled.
