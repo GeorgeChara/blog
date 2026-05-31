@@ -14,17 +14,17 @@ layout: single
   .page-header h1 { margin: 0; }
   .recipe-key { font-size: 0.75em; display: grid; grid-template-columns: 14px auto; gap: 4px 0; align-items: center; }
   .key-sq { display: block; width: 8px; height: 8px; }
-  .key-tried-sq { background: #000; }
+  .key-tried-sq { background: #4169E1; }
   .key-tomake-sq { background: none; border: 1px solid #aaa; }
-  .key-tried-label { color: #000; }
+  .key-tried-label { color: #4169E1; font-weight: bold; }
   .key-tomake-label { color: #aaa; }
 
   .cat-heading { font-weight: bold; font-size: 1em; margin: 1.8em 0 0.5em 0; color: #000; }
 
   .recipe-list { list-style: none; padding: 0; margin: 0; }
   .recipe-list li { margin: 0.6em 0; }
-  .recipe-list a { color: inherit; text-decoration: none; border-bottom: 1px solid #E5DECF; }
-  .recipe-list a:hover { border-bottom-color: #888; }
+  .recipe-list a { color: #4169E1; font-weight: bold; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+  .recipe-list a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .recipe-meta { color: #888; font-size: 0.85em; margin-left: 0.4em; }
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
