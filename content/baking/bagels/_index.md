@@ -37,7 +37,9 @@ salt    10g
 
 ## Recipe
 
-**1.** Add everything to a stand mixer with a dough hook. Mix on low to medium until it comes together, then knead for 5 minutes.
+**1.** Add everything to a stand mixer with a dough hook. Mix on low to medium until it comes together, then turn up to medium and knead for 5 minutes.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook throughout. No hand kneading needed.</span>
 
 **2.** Into a greased bowl, cover and leave for 1.5 hours until doubled.
 
