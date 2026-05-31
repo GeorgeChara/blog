@@ -42,6 +42,8 @@ egg              1
 
 **2.** Mix the flour, baking powder, salt and sugar. Rub in the cold butter until it looks like breadcrumbs.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment on low. Stop as soon as it looks like breadcrumbs.</span>
+
 **3.** Beat the egg and milk together. Add to the mix and stir until it just comes together. Stop as soon as it does.
 
 **4.** Tip onto a floured surface and pat to about 2.5cm thick. Don't roll it.
