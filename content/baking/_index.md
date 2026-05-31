@@ -33,9 +33,13 @@ layout: single
 
 <ul class="recipe-list recipe-list-pending">
   <li><a href="/baking/bagels/">Bagels</a></li>
+  <li><a href="/baking/bakewell-tart/">Bakewell Tart</a></li>
   <li><a href="/baking/blondies/">Blondies</a></li>
+  <li><a href="/baking/buttercream/">Buttercream</a></li>
   <li><a href="/baking/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li><a href="/baking/croissants/">Croissants</a></li>
+  <li><a href="/baking/crumpets/">Crumpets</a></li>
+  <li><a href="/baking/english-muffins/">English Muffins</a></li>
   <li><a href="/baking/flapjacks/">Flapjacks</a></li>
   <li><a href="/baking/flour-tortillas/">Flour Tortillas</a></li>
   <li><a href="/baking/hot-cross-buns/">Hot Cross Buns</a></li>
@@ -46,4 +50,5 @@ layout: single
   <li><a href="/baking/shokupan/">Shokupan</a></li>
   <li><a href="/baking/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
   <li><a href="/baking/tottenham-cake/">Tottenham Cake</a></li>
+  <li><a href="/baking/victoria-sponge/">Victoria Sponge</a></li>
 </ul>
