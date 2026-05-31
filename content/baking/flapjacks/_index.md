@@ -44,3 +44,5 @@ salt             2g
 **5.** Bake for 20-25 minutes until golden at the edges.
 
 **6.** Leave to cool completely in the tin, then cut into bars.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Keep in an airtight tin for up to 5 days. They get chewier over the first couple of days as the syrup settles.</span>
