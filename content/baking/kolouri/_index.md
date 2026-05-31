@@ -46,11 +46,15 @@ aniseed             2g
 
 **1.** Mix the yeast and sugar into the warm milk. Leave for a few minutes while you sift the flour into a bowl. Add the olive oil and rub it in until it looks like breadcrumbs.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment on low to rub in the oil.</span>
+
 **2.** Add the salt, ground fennel, aniseed, mastic, and mahlapi. Mix through.
 
 **3.** Pour in the yeast mixture and bring together with your fingers. Gradually add the water until all the flour is incorporated into a dough.
 
-**4.** Knead on a floured surface for 15–20 minutes until soft and elastic.
+**4.** Knead for 8-10 minutes until soft and elastic.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook on speed 2. No need to flour the surface.</span>
 
 **5.** Coat lightly with olive oil, put back in the bowl, cover and leave somewhere warm for at least an hour until doubled.
 
