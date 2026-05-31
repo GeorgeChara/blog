@@ -44,30 +44,30 @@ whole milk       14g
 
 ### Day 1
 
-**1.** Add milk, water and yeast to the stand mixer bowl. Add flour, salt, sugar and butter. Mix on low until combined, then knead for 5 minutes until smooth. Press into a flat 18x18cm square, wrap and rest at room temperature for 30 minutes, then refrigerate overnight.
+**1.** Add milk, water and yeast to the stand mixer bowl, then add the flour, salt, sugar and butter. Mix on low until combined, then knead for 5 minutes until smooth. Press into a flat 18x18cm square, wrap and rest at room temperature for 30 minutes, then refrigerate overnight.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook on low.</span>
 
-**2.** Butter block: mark a 15x20cm rectangle on baking paper, fold into an envelope. Bash the cold butter with a rolling pin until pliable, then roll to fill the rectangle evenly. Refrigerate overnight.
+**2.** For the butter block, draw a 15x20cm rectangle on baking paper and fold it into an envelope that size. Put the cold butter inside and use a rolling pin to work it until it fills the rectangle evenly. Refrigerate overnight.
 
 ### Day 2
 
-**3.** Before starting: dough should be fridge-cold (2-5°C). Butter block should be 12-15°C — bends without cracking, not greasy. Take it out of the fridge and leave a few minutes if needed.
+**3.** The dough needs to be fridge-cold (2-5°C) and the butter block around 12-15°C, so it bends without cracking. Take the butter out a few minutes before you start if it feels too firm.
 
-**4.** Press the dough into a 23x36cm rectangle. Place the butter block in the centre, fold the top and bottom of the dough over it to encase. Pinch the seams shut.
+**4.** Press the dough into a 23x36cm rectangle. Lay the butter block in the centre, fold the top and bottom of the dough over to fully cover it and pinch the edges closed.
 
-**5. First fold (double/book fold):** Rotate 90°. Roll out to 5mm thick and about 75cm long. Fold the left side to the two-thirds mark, fold the right side to meet the left edge, then fold in half like closing a book. You now have 4 layers. Refrigerate 60-90 minutes.
+**5. First fold:** Turn the dough 90°. Roll to 5mm thick and about 75cm long. Fold the left side two thirds of the way across, fold the right side to meet the left edge, then fold the whole thing in half like a book. Refrigerate for 60-90 minutes.
 
-**6. Second fold (letter fold):** Rotate 90°. Roll out to 5mm thick and about 63cm long. Fold the left third in, then fold the right third over. Wrap and refrigerate 60-90 minutes.
+**6. Second fold:** Turn 90°. Roll to 5mm thick and about 63cm long. Fold the left third in, then the right third over it. Wrap and refrigerate for 60-90 minutes.
 
-**7.** Roll the dough to 4mm thick and about 58cm long, 25cm wide. Trim all four edges.
+**7.** Roll the dough to 4mm thick, about 58cm long and 25cm wide. Trim all four edges cleanly.
 
-**8.** Mark every 9cm along the bottom edge. Offset by 4.5cm on the top. Cut diagonals to make 12 long triangles.
+**8.** Mark every 9cm along the bottom edge and offset by 4.5cm along the top. Cut diagonals between the marks to give 12 long triangles.
 
-**9.** Stretch each triangle gently from base to tip. Roll tightly from base to tip and tuck the tip underneath on the tray. Curve the ends inward slightly.
+**9.** Stretch each triangle lightly from base to tip. Roll from the base up tightly, finishing with the tip tucked under. Curve the ends in slightly and place on a lined tray.
 
-**10.** Prove at room temperature for 2.5-4 hours. They're ready when noticeably puffed and the tray wobbles them like jelly when shaken. Don't rush this with heat — above 27°C the butter melts into the dough.
+**10.** Leave to prove at room temperature for 2.5-4 hours. They are ready when they look puffed and the tray wobbles them when shaken. Keep the room cool, above 27°C the butter melts into the dough and you lose the layers.
 
-**11.** Brush tops with egg wash. Don't let it drip down the cut sides.
+**11.** Brush the tops with egg wash. Keep it off the cut sides or it seals the layers shut.
 
-**12.** Bake at 200°C for 10 minutes. Rotate the trays, reduce to 180°C and bake a further 10-13 minutes until deep golden brown. Cool on a wire rack for at least 20 minutes before eating.
+**12.** Bake at 200°C for 10 minutes. Rotate the trays, drop to 180°C and bake for another 10-13 minutes until deep golden brown. Leave on a wire rack for at least 20 minutes before eating.
