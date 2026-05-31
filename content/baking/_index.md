@@ -40,7 +40,7 @@ layout: single
 
 <p class="cat-heading">Signature</p>
 <ul class="recipe-list">
-  <li><a href="/baking/baguette/">Baguette</a><span class="recipe-meta">17 min bake</span></li>
+  <li><a href="/baking/baguette/">Baguette</a></li>
 </ul>
 
 <p class="cat-heading">Bread</p>
@@ -59,9 +59,9 @@ layout: single
 <p class="cat-heading">Cakes and Traybakes</p>
 <ul class="recipe-list">
   <li class="pending"><a href="/baking/blondies/">Blondies</a></li>
-  <li><a href="/baking/brownie-blondie/">Brownie Blondie</a><span class="recipe-meta">40 min bake</span></li>
-  <li><a href="/baking/brownies/">Brownies</a><span class="recipe-meta">45 min bake</span></li>
-  <li><a href="/baking/cookies/">Cookies</a><span class="recipe-meta">10 min bake</span></li>
+  <li><a href="/baking/brownie-blondie/">Brownie Blondie</a></li>
+  <li><a href="/baking/brownies/">Brownies</a></li>
+  <li><a href="/baking/cookies/">Cookies</a></li>
   <li class="pending"><a href="/baking/flapjacks/">Flapjacks</a></li>
   <li class="pending"><a href="/baking/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
   <li class="pending"><a href="/baking/tottenham-cake/">Tottenham Cake</a></li>
@@ -84,7 +84,7 @@ layout: single
 
 <p class="cat-heading">Basics</p>
 <ul class="recipe-list">
-  <li><a href="/baking/butter/">Butter</a><span class="recipe-meta">10 min whisk</span></li>
+  <li><a href="/baking/butter/">Butter</a></li>
   <li class="pending"><a href="/baking/buttercream/">Buttercream</a></li>
   <li class="pending"><a href="/baking/rough-puff-pastry/">Rough Puff Pastry</a></li>
 </ul>
