@@ -95,34 +95,43 @@
         btn.textContent = 'copy';
         btn.title = 'Copy ingredients';
         btn.onclick = function() {
-          // Parse the pre block — spans are headings, text nodes are ingredients
           var tmp = document.createElement('div');
           tmp.innerHTML = pre.innerHTML;
-          var lines = [], htmlLines = [];
+
+          var plainLines = [];
+          var htmlParts = [];
+          var inList = false;
+
+          function openList() {
+            if (!inList) { htmlParts.push('<ul>'); inList = true; }
+          }
+          function closeList() {
+            if (inList) { htmlParts.push('</ul>'); inList = false; }
+          }
 
           tmp.childNodes.forEach(function(node) {
-            if (node.nodeType === 3) { // text node
+            if (node.nodeType === 3) {
               node.textContent.split('\n').forEach(function(line) {
                 var clean = line.replace(/ {2,}/g, ' ').trim();
                 if (clean) {
-                  lines.push('☐ ' + clean);
-                  htmlLines.push('<li style="list-style:none">☐ ' + clean + '</li>');
-                } else if (lines.length) {
-                  lines.push('');
-                  htmlLines.push('</ul><ul style="padding:0;margin:0.5em 0">');
+                  openList();
+                  plainLines.push('☐ ' + clean);
+                  htmlParts.push('<li><input type="checkbox"> ' + clean + '</li>');
                 }
               });
-            } else if (node.nodeType === 1) { // span (heading)
+            } else if (node.nodeType === 1) {
               var t = node.textContent.trim();
               if (t) {
-                lines.push(t);
-                htmlLines.push('</ul><b>' + t + '</b><ul style="padding:0;margin:0.2em 0">');
+                closeList();
+                plainLines.push('\n' + t);
+                htmlParts.push('<p><b>' + t + '</b></p>');
               }
             }
           });
+          closeList();
 
-          var plainText = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-          var html = '<ul style="padding:0;margin:0">' + htmlLines.join('') + '</ul>';
+          var plainText = plainLines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+          var html = htmlParts.join('');
 
           try {
             navigator.clipboard.write([new ClipboardItem({
