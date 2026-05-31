@@ -36,6 +36,8 @@ layout: single
   <li><a href="/baking/bakewell-tart/">Bakewell Tart</a></li>
   <li><a href="/baking/blondies/">Blondies</a></li>
   <li><a href="/baking/buttercream/">Buttercream</a></li>
+  <li><a href="/baking/cheese-twists/">Cheese Twists</a></li>
+  <li><a href="/baking/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
   <li><a href="/baking/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li><a href="/baking/croissants/">Croissants</a></li>
   <li><a href="/baking/crumpets/">Crumpets</a></li>
@@ -44,12 +46,15 @@ layout: single
   <li><a href="/baking/flour-tortillas/">Flour Tortillas</a></li>
   <li><a href="/baking/hot-cross-buns/">Hot Cross Buns</a></li>
   <li><a href="/baking/kolouri/">Kolouri</a></li>
+  <li><a href="/baking/mille-feuille/">Mille-feuille</a></li>
   <li><a href="/baking/pain-au-chocolat/">Pain au Chocolat</a></li>
   <li><a href="/baking/pita/">Pita</a></li>
   <li><a href="/baking/rough-puff-pastry/">Rough Puff Pastry</a></li>
   <li><a href="/baking/sausage-plait/">Sausage Plait</a></li>
+  <li><a href="/baking/sausage-rolls/">Sausage Rolls</a></li>
   <li><a href="/baking/scones/">Scones</a></li>
   <li><a href="/baking/shokupan/">Shokupan</a></li>
+  <li><a href="/baking/steak-pie/">Steak Pie</a></li>
   <li><a href="/baking/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
   <li><a href="/baking/tottenham-cake/">Tottenham Cake</a></li>
   <li><a href="/baking/victoria-sponge/">Victoria Sponge</a></li>
