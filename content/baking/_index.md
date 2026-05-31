@@ -33,6 +33,7 @@ layout: single
 
 <ul class="recipe-list recipe-list-pending">
   <li><a href="/baking/bagels/">Bagels</a></li>
+  <li><a href="/baking/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li><a href="/baking/flour-tortillas/">Flour Tortillas</a></li>
   <li><a href="/baking/kolouri/">Kolouri</a></li>
   <li><a href="/baking/pita/">Pita</a></li>
