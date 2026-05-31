@@ -4,6 +4,7 @@
       "a",
       "body",
       "br",
+      "button",
       "code",
       "details",
       "div",
@@ -96,6 +97,7 @@
       "chain-effects",
       "chain-lightning",
       "click-an-entity-see-its-code",
+      "copy-btn",
       "current-state-arpg-prototype",
       "days",
       "days-val",
@@ -118,6 +120,7 @@
       "r-water",
       "r-yeast",
       "recipe",
+      "recipe-utils",
       "running-in-the-browser",
       "s1-photo",
       "s2-photo",
@@ -128,6 +131,7 @@
       "s5-video",
       "the-bridge",
       "vim-line-bar-in-terra",
+      "wake-btn",
       "zooming-out"
     ]
   }

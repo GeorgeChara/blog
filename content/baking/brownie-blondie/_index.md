@@ -49,25 +49,27 @@ flaky sea salt   pinch
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">For the 23cm tin</span>
 
-unsalted butter  115g
-brown sugar      220g
-eggs             2
-vanilla extract  5g
-flour            170g
-salt             6g
-white chocolate  100g
+unsalted butter  90g
+dark brown sugar 150g
+egg              1
+vanilla extract  4g
+flour            65g
+salt             3g
+white chocolate  75g
 walnuts          50g
 </pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Melt the white chocolate and stir it into the batter rather than adding as chunks. This is what makes it fudgy.</span>
 
 ## Recipe
 
 **1.** Make the brownie mix following the [brownie recipe](/baking/brownies/) using half quantities. Set aside.
 
-**2.** Brown the butter for the blondie: melt it in a saucepan over medium heat, stirring, until it turns golden and smells nutty. Pour into a bowl and leave to cool for 10 minutes.
+**2.** Brown the butter for the blondie: melt in a saucepan over medium heat until golden and nutty smelling. Take off the heat, add the brown sugar and whisk while still hot. Leave to cool for 5 minutes.
 
-**3.** Whisk the brown butter, brown sugar, eggs and vanilla together until smooth.
+**3.** Whisk in the egg and vanilla.
 
-**4.** Fold in the flour and salt until just combined. Stir in the white chocolate and walnuts.
+**4.** Fold in the flour and salt until just combined. Fold in the melted white chocolate and walnuts.
 
 **5.** Grease and line the tin. Alternate large spoonfuls of brownie and blondie batter across the tin.
 
