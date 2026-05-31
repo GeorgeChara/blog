@@ -35,6 +35,7 @@ layout: single
   <li><a href="/baking/bagels/">Bagels</a></li>
   <li><a href="/baking/blondies/">Blondies</a></li>
   <li><a href="/baking/cinnamon-swirls/">Cinnamon Swirls</a></li>
+  <li><a href="/baking/croissants/">Croissants</a></li>
   <li><a href="/baking/flapjacks/">Flapjacks</a></li>
   <li><a href="/baking/flour-tortillas/">Flour Tortillas</a></li>
   <li><a href="/baking/hot-cross-buns/">Hot Cross Buns</a></li>
