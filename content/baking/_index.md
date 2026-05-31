@@ -46,6 +46,8 @@ layout: single
   <li><a href="/baking/kolouri/">Kolouri</a></li>
   <li><a href="/baking/pain-au-chocolat/">Pain au Chocolat</a></li>
   <li><a href="/baking/pita/">Pita</a></li>
+  <li><a href="/baking/rough-puff-pastry/">Rough Puff Pastry</a></li>
+  <li><a href="/baking/sausage-plait/">Sausage Plait</a></li>
   <li><a href="/baking/scones/">Scones</a></li>
   <li><a href="/baking/shokupan/">Shokupan</a></li>
   <li><a href="/baking/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
