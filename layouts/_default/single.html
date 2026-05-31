@@ -100,35 +100,24 @@
 
           var plainLines = [];
           var htmlParts = [];
-          var inList = false;
-
-          function openList() {
-            if (!inList) { htmlParts.push('<ul>'); inList = true; }
-          }
-          function closeList() {
-            if (inList) { htmlParts.push('</ul>'); inList = false; }
-          }
 
           tmp.childNodes.forEach(function(node) {
             if (node.nodeType === 3) {
               node.textContent.split('\n').forEach(function(line) {
                 var clean = line.replace(/ {2,}/g, ' ').trim();
                 if (clean) {
-                  openList();
                   plainLines.push('☐ ' + clean);
-                  htmlParts.push('<li><input type="checkbox"> ' + clean + '</li>');
+                  htmlParts.push('<p><input type="checkbox"> ' + clean + '</p>');
                 }
               });
             } else if (node.nodeType === 1) {
               var t = node.textContent.trim();
               if (t) {
-                closeList();
                 plainLines.push('\n' + t);
                 htmlParts.push('<p><b>' + t + '</b></p>');
               }
             }
           });
-          closeList();
 
           var plainText = plainLines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
           var html = htmlParts.join('');
