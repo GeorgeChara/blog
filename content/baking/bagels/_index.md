@@ -45,7 +45,7 @@ salt    10g
 
 **4.** Push your thumb through the centre of each ball and stretch into a ring with a 2-3 inch hole. Place on a semolina-dusted lined tray.
 
-**5.** Rest on the counter for 15 minutes, or refrigerate overnight for more flavour.
+**5.** Leave to rest for 15 minutes, or refrigerate overnight for more flavour.
 
 **6.** Bring the water bath to a boil. Drop the bagels in and boil 1 minute per side.
 
