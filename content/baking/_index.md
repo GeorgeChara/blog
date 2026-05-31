@@ -23,7 +23,6 @@ layout: single
 
 <ul class="recipe-list">
   <li><a href="/baking/baguette/">Baguette</a><span class="recipe-meta">— 17 min bake</span></li>
-  <li><a href="/baking/blondies/">Blondies</a><span class="recipe-meta">— 25 min bake</span></li>
   <li><a href="/baking/brownie-blondie/">Brownie Blondie</a><span class="recipe-meta">— 40 min bake</span></li>
   <li><a href="/baking/brownies/">Brownies</a><span class="recipe-meta">— 45 min bake</span></li>
   <li><a href="/baking/butter/">Butter</a><span class="recipe-meta">— 10 min whisk</span></li>
@@ -34,6 +33,7 @@ layout: single
 
 <ul class="recipe-list recipe-list-pending">
   <li><a href="/baking/bagels/">Bagels</a></li>
+  <li><a href="/baking/blondies/">Blondies</a></li>
   <li><a href="/baking/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li><a href="/baking/flapjacks/">Flapjacks</a></li>
   <li><a href="/baking/flour-tortillas/">Flour Tortillas</a></li>
