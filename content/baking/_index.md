@@ -39,5 +39,6 @@ layout: single
   <li><a href="/baking/hot-cross-buns/">Hot Cross Buns</a></li>
   <li><a href="/baking/kolouri/">Kolouri</a></li>
   <li><a href="/baking/pita/">Pita</a></li>
+  <li><a href="/baking/school-cake/">School Cake</a></li>
   <li><a href="/baking/scones/">Scones</a></li>
 </ul>
