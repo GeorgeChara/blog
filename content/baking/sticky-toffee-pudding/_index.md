@@ -43,7 +43,7 @@ double cream     315g
 
 ## Recipe
 
-**1.** Pit and roughly chop the dates. Put in a bowl with the bicarbonate of soda, pour over the boiling water, and leave for 10-15 minutes. Blend to a smooth paste with a stick blender. Set aside.
+**1.** Pit and roughly chop the dates. Put in a bowl with the bicarbonate of soda, pour over the boiling water, and leave for 10-15 minutes. Tip into a blender and blend to a smooth paste. Set aside.
 
 **2.** Heat the oven to 180°C. Grease and line the tin.
 
