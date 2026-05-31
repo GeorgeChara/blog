@@ -30,6 +30,53 @@
    <!-- Content -->
    {{ .Content }}
 
+  <!-- Recipe utilities -->
+  <div id="recipe-utils" style="display:none; margin-top: 1.2em; font-size: 0.8em; color: #888; font-family: ui-monospace, Menlo, Consolas, monospace;">
+    <span id="copy-btn" onclick="copyIngredients()" style="cursor:pointer; user-select:none;" title="Copy ingredients">copy ingredients</span>
+    <span style="color: #ccc; margin: 0 0.5em;">|</span>
+    <span id="wake-btn" onclick="toggleWake()" style="cursor:pointer; user-select:none;" title="Keep screen on">keep screen on</span>
+  </div>
+  <script>
+    (function() {
+      var pre = document.querySelector('.content pre');
+      if (!pre) return;
+      document.getElementById('recipe-utils').style.display = 'block';
+    })();
+
+    function copyIngredients() {
+      var pre = document.querySelector('.content pre');
+      if (!pre) return;
+      var text = pre.innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('copy-btn');
+        btn.textContent = 'copied!';
+        setTimeout(function() { btn.textContent = 'copy ingredients'; }, 2000);
+      });
+    }
+
+    var wakeLock = null;
+    function toggleWake() {
+      var btn = document.getElementById('wake-btn');
+      if (wakeLock) {
+        wakeLock.release();
+        wakeLock = null;
+        btn.textContent = 'keep screen on';
+      } else {
+        navigator.wakeLock.request('screen').then(function(lock) {
+          wakeLock = lock;
+          btn.textContent = 'screen on';
+          lock.addEventListener('release', function() {
+            wakeLock = null;
+            btn.textContent = 'keep screen on';
+          });
+        }).catch(function() {
+          btn.textContent = 'not supported';
+          setTimeout(function() { btn.textContent = 'keep screen on'; }, 2000);
+        });
+      }
+    }
+  </script>
+
   <!-- Comments block -->
   {{ if and .Content (default true (default .Site.Params.comments
     .Params.comments))
