@@ -91,5 +91,7 @@ layout: single
 
 <p class="cat-heading">Preserves</p>
 <ul class="recipe-list">
+  <li class="pending"><a href="/baking/jalapeno-relish/">Jalapeño Relish</a></li>
   <li class="pending"><a href="/baking/piccalilli/">Piccalilli</a></li>
+  <li class="pending"><a href="/baking/pickles/">Pickles</a></li>
 </ul>
