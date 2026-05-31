@@ -43,6 +43,8 @@ water               30g
 
 **2.** Beat the butter and sugar together until pale and fluffy. Add the eggs one at a time, mixing between each.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment. Start on low, bring up to medium. Drop back to low when adding the eggs.</span>
+
 **3.** Add the vanilla. Fold in the flour, then stir in the milk to loosen slightly.
 
 **4.** Pour into the tin and level off. Bake for 25-30 minutes until a skewer comes out clean. Leave to cool completely in the tin.
