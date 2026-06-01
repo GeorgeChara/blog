@@ -41,13 +41,13 @@ water               30g
 
 **1.** Heat the oven to 170°C. Grease and line the tin.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For neat corners: cut the paper about 5cm bigger than the tin on all sides. Lower it in, then cut a diagonal slit at each corner from the edge of the paper down to where the base meets the side. The flaps will overlap cleanly and sit flat. The grease holds it in place.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cut a diagonal slit at each corner of the paper so it sits neatly in the tin without bunching.</span>
 
 **2.** Beat the butter and sugar together until pale and fluffy. Add the eggs one at a time, mixing between each.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment. Start on low, bring up to medium. Drop back to low when adding the eggs.</span>
 
-**3.** Add the vanilla and mix on low. Fold in the flour on low, then stir in the milk until just loosened.
+**3.** Add the vanilla and mix on low. Add the flour and mix on low until just combined, then mix in the milk to loosen slightly.
 
 **4.** Pour into the tin and level off. Bake for 25-30 minutes until a skewer comes out clean. Leave in the tin for 10 minutes, then lift out onto a wire rack. Leave until completely cool before icing.
 
