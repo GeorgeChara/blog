@@ -43,6 +43,13 @@ layout: single
   <li><a href="/baking/baguette/">Baguette</a></li>
 </ul>
 
+<p class="cat-heading">Basics</p>
+<ul class="recipe-list">
+  <li><a href="/baking/butter/">Butter</a></li>
+  <li class="pending"><a href="/baking/buttercream/">Buttercream</a></li>
+  <li class="pending"><a href="/baking/rough-puff-pastry/">Rough Puff Pastry</a></li>
+</ul>
+
 <p class="cat-heading">Bread</p>
 <ul class="recipe-list">
   <li class="pending"><a href="/baking/bagels/">Bagels</a></li>
@@ -68,6 +75,15 @@ layout: single
   <li class="pending"><a href="/baking/victoria-sponge/">Victoria Sponge</a></li>
 </ul>
 
+<p class="cat-heading">Cypriot</p>
+<ul class="recipe-list">
+  <li class="pending"><a href="/baking/bourekia/">Bourekia</a></li>
+  <li class="pending"><a href="/baking/koupepia/">Koupepia</a></li>
+  <li class="pending"><a href="/baking/louvi/">Louvi</a></li>
+  <li class="pending"><a href="/baking/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
+  <li class="pending"><a href="/baking/souvla/">Souvla</a></li>
+</ul>
+
 <p class="cat-heading">Pastry</p>
 <ul class="recipe-list">
   <li class="pending"><a href="/baking/bakewell-tart/">Bakewell Tart</a></li>
@@ -80,21 +96,6 @@ layout: single
   <li class="pending"><a href="/baking/sausage-rolls/">Sausage Rolls</a></li>
   <li class="pending"><a href="/baking/scones/">Scones</a></li>
   <li class="pending"><a href="/baking/steak-pie/">Steak Pie</a></li>
-</ul>
-
-<p class="cat-heading">Basics</p>
-<ul class="recipe-list">
-  <li><a href="/baking/butter/">Butter</a></li>
-  <li class="pending"><a href="/baking/buttercream/">Buttercream</a></li>
-  <li class="pending"><a href="/baking/rough-puff-pastry/">Rough Puff Pastry</a></li>
-</ul>
-
-<p class="cat-heading">Cypriot</p>
-<ul class="recipe-list">
-  <li class="pending"><a href="/baking/bourekia/">Bourekia</a></li>
-  <li class="pending"><a href="/baking/koupepia/">Koupepia</a></li>
-  <li class="pending"><a href="/baking/louvi/">Louvi</a></li>
-  <li class="pending"><a href="/baking/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
 </ul>
 
 <p class="cat-heading">Preserves</p>
