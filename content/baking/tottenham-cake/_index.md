@@ -53,4 +53,4 @@ water               30g
 
 **6.** Place the cooled cake back in the tin. Ice in the tin, not on the rack. The tin keeps the icing contained so it does not pour off the sides. The cake should be cool to the touch before the icing goes on or it will run straight off.
 
-**7.** Scatter hundreds and thousands on top. Leave to set fully, then lift out and cut into squares.
+**7.** Scatter hundreds and thousands on top if you like. Leave to set fully, then lift out and cut into squares.
