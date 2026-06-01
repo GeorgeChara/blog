@@ -30,7 +30,7 @@ layout: single
 
 chicken thighs   2kg
 olive oil        60g
-lemon           1
+lemon            1
 salt             12g
 black pepper     4g
 ground cumin     8g
