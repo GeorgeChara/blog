@@ -41,7 +41,7 @@ dried oregano    5g
 
 ## Recipe
 
-**1.** Mix the olive oil (or buttermilk), lemon juice, salt, pepper and cumin. Add the chicken and coat well. Marinate for at least 2 hours, overnight is better.
+**1.** Marinate the chicken in all the ingredients. At least 2 hours, overnight is better.
 
 <details>
 <summary>show photo</summary>
