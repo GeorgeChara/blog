@@ -51,7 +51,7 @@ ground cumin     3g
 
 **2.** Light the charcoal 1 hour before you want to cook. Wait for the white ash stage before putting the meat on.
 
-**3.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece flipped so they sit facing opposite directions — this ensures an even rotation on the foukou.
+**3.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece flipped so they sit facing opposite directions, this ensures an even rotation on the foukou.
 
 **4.** Start high above the coals to sear the outside. After 10 minutes lower closer to the heat.
 
