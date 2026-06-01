@@ -10,8 +10,7 @@ layout: single
   .time { display: none; }
   .terminal-nav { display: none; }
 
-  .page-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.4em; }
-  .page-header h1 { margin: 0; }
+  .page-header { display: flex; justify-content: flex-end; margin-top: -2em; margin-bottom: 1.4em; }
   .recipe-key { font-size: 0.75em; display: grid; grid-template-columns: 14px auto; gap: 4px 0; align-items: center; }
   .key-sq { display: block; width: 8px; height: 8px; }
   .key-tried-sq { background: #4169E1; }
@@ -31,7 +30,6 @@ layout: single
 </style>
 
 <div class="page-header">
-  <h1>Food</h1>
   <span class="recipe-key">
     <span class="key-sq key-tried-sq"></span><span class="key-tried-label">done</span>
     <span class="key-sq key-tomake-sq"></span><span class="key-tomake-label">to do</span>
