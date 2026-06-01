@@ -75,7 +75,7 @@ showreadingtime: false
 <div class="calc-wrap">
   <div class="calc-header">
     <h1>/ Dough Storage</h1>
-    <p><a href="/baking/baguette/">recipe v2.1</a></p>
+    <p><a href="/cookbook/baguette/">recipe v2.1</a></p>
   </div>
 
   <div class="calc-card">
@@ -115,7 +115,7 @@ showreadingtime: false
     before refrigerating, divide into <span id="n-pots" style="color:#888; font-weight:bold;">1</span> equal <span id="pots-word">portion</span>, give each a quick coil fold, then place into its container.
   </div>
 
-  <div class="calc-hint" style="margin-top:1.4em;"><a href="/baking/baguette/" style="color:#aaa;">follow from step 4</a></div>
+  <div class="calc-hint" style="margin-top:1.4em;"><a href="/cookbook/baguette/" style="color:#aaa;">follow from step 4</a></div>
   <div class="calc-max">keep in fridge for 5 days max</div>
 </div>
 

@@ -86,7 +86,7 @@ yeast    2g
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Open it out sideways too. Otherwise it gets stiff under its own tension, like folding paper too many times.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Baking across multiple days? Use the <a href="/baking/baguette/calculator/" style="color:#888;">dough storage calculator</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Baking across multiple days? Use the <a href="/cookbook/baguette/calculator/" style="color:#888;">dough storage calculator</a>.</span>
 
 **4.** Flour the work surface, turn out the dough and dust the top. Divide into two, shape into rough baguettes, cover and rest for 15 mins.
 

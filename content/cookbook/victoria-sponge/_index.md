@@ -32,7 +32,7 @@ vanilla extract    5g
 
 <span style="color: #888;">Filling</span>
 raspberry jam      170g
-<a href="/baking/buttercream/" style="color:#888;">buttercream</a>      1 batch
+<a href="/cookbook/buttercream/" style="color:#888;">buttercream</a>      1 batch
 icing sugar        for dusting
 </pre>
 
@@ -58,4 +58,4 @@ icing sugar        for dusting
 
 **8.** Leave in the tins for 5 minutes, then turn out onto a wire rack and leave to cool completely before filling.
 
-**9.** Spread [buttercream](/baking/buttercream/) over the flat side of one sponge. Spread jam over the buttercream. Place the second sponge on top. Dust with icing sugar.
+**9.** Spread [buttercream](/cookbook/buttercream/) over the flat side of one sponge. Spread jam over the buttercream. Place the second sponge on top. Dust with icing sugar.

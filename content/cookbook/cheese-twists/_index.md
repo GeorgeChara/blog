@@ -20,7 +20,7 @@ layout: single
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;"><a href="/baking/rough-puff-pastry/" style="color:#888;">Rough puff pastry</a></span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;"><a href="/cookbook/rough-puff-pastry/" style="color:#888;">Rough puff pastry</a></span>
 half a batch (~250g)
 
 <span style="color: #888;">Filling</span>

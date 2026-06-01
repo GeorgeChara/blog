@@ -39,7 +39,7 @@ salt      9g
 yeast     2g
 ```
 
-## Baking index (`/content/baking/_index.md`)
+## Baking index (`/content/cookbook/_index.md`)
 - Main list (published recipes): alphabetical order, with `— time` meta
 - "to make" list (pending): alphabetical order, greyed out links, no meta
 - Both lists must stay alphabetical when adding new recipes

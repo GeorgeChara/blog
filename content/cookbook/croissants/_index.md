@@ -38,7 +38,7 @@ egg              1
 whole milk       14g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is exactly the same dough as the <a href="/baking/pain-au-chocolat/" style="color:#888;">pain au chocolat</a>, just doubled. You can run one batch and split it between both.<br>Use European butter with at least 82% fat for the butter block. Kerrygold or Anchor work well.<br>Read all the steps before starting. Temperature control is everything.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is exactly the same dough as the <a href="/cookbook/pain-au-chocolat/" style="color:#888;">pain au chocolat</a>, just doubled. You can run one batch and split it between both.<br>Use European butter with at least 82% fat for the butter block. Kerrygold or Anchor work well.<br>Read all the steps before starting. Temperature control is everything.</span>
 
 ## Recipe
 

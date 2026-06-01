@@ -28,7 +28,7 @@ layout: single
 
 **Brownie**
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Half the <a href="/baking/brownies/" style="color:#888;">brownie recipe</a></span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Half the <a href="/cookbook/brownies/" style="color:#888;">brownie recipe</a></span>
 
 unsalted butter  140g
 chocolate        115g
@@ -63,7 +63,7 @@ walnuts          50g
 
 ## Recipe
 
-**1.** Make the brownie mix following the [brownie recipe](/baking/brownies/) using half quantities. Set aside.
+**1.** Make the brownie mix following the [brownie recipe](/cookbook/brownies/) using half quantities. Set aside.
 
 **2.** Brown the butter for the blondie: melt in a saucepan over medium heat until golden and nutty smelling. Take off the heat, add the brown sugar and whisk while still hot. Leave to cool for 5 minutes.
 

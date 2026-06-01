@@ -26,12 +26,12 @@ name = "George Charalambous"
 
 [menu]
   [[menu.main]]
-    name = "Software"
-    url = "/posts/"
+    name = "Dev"
+    url = "/dev/"
     weight = 1
   [[menu.main]]
-    name = "Food"
-    url = "/baking/"
+    name = "Cookbook"
+    url = "/cookbook/"
     weight = 2
 
 [build]
