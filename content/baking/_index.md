@@ -10,13 +10,6 @@ layout: single
   .time { display: none; }
   .terminal-nav { display: none; }
 
-  .page-header { display: flex; justify-content: flex-end; margin-bottom: 0.5em; }
-  .recipe-key { font-size: 0.75em; display: grid; grid-template-columns: 14px auto; gap: 4px 0; align-items: center; }
-  .key-sq { display: block; width: 8px; height: 8px; }
-  .key-tried-sq { background: #4169E1; }
-  .key-tomake-sq { background: none; border: 1px solid #aaa; }
-  .key-tried-label { color: #4169E1; }
-  .key-tomake-label { color: #aaa; }
 
   .cat-heading { font-weight: bold; font-size: 1em; margin: 1.8em 0 0.5em 0; color: #000; }
 
@@ -29,12 +22,6 @@ layout: single
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
 </style>
 
-<div class="page-header">
-  <span class="recipe-key">
-    <span class="key-sq key-tried-sq"></span><span class="key-tried-label">done</span>
-    <span class="key-sq key-tomake-sq"></span><span class="key-tomake-label">to do</span>
-  </span>
-</div>
 
 <p class="cat-heading">Signature</p>
 <ul class="recipe-list">
