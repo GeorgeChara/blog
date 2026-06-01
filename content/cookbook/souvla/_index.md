@@ -66,4 +66,4 @@ ground cumin     3g
 
 **5.** In the last 10 minutes, slide the pieces apart on the skewer to expose more surface area for the final crisping.
 
-**7.** You'll know when it's done. Eyeball it. The skin should be deep golden and pulling away from the bone. It's nearly impossible to dry out or undercook chicken thighs on a foukou.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You'll know when it's done, eyeball it.</span>
