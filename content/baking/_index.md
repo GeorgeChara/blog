@@ -89,9 +89,24 @@ layout: single
   <li class="pending"><a href="/baking/rough-puff-pastry/">Rough Puff Pastry</a></li>
 </ul>
 
+<p class="cat-heading">Cypriot</p>
+<ul class="recipe-list">
+  <li class="pending"><a href="/baking/bourekia/">Bourekia</a></li>
+  <li class="pending"><a href="/baking/koupepia/">Koupepia</a></li>
+  <li class="pending"><a href="/baking/louvi/">Louvi</a></li>
+  <li class="pending"><a href="/baking/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
+</ul>
+
 <p class="cat-heading">Preserves</p>
 <ul class="recipe-list">
+  <li class="pending"><a href="/baking/brown-sauce/">Brown Sauce</a></li>
   <li class="pending"><a href="/baking/jalapeno-relish/">Jalapeño Relish</a></li>
   <li class="pending"><a href="/baking/piccalilli/">Piccalilli</a></li>
+  <li class="pending"><a href="/baking/pickled-red-onions/">Pickled Red Onions</a></li>
   <li class="pending"><a href="/baking/pickles/">Pickles</a></li>
+  <li class="pending"><a href="/baking/pikla/">Pikla</a></li>
+  <li class="pending"><a href="/baking/pink-turnip-pickle/">Pink Turnip Pickle</a></li>
+  <li class="pending"><a href="/baking/preserved-lemons/">Preserved Lemons</a></li>
+  <li class="pending"><a href="/baking/tomato-ketchup/">Tomato Ketchup</a></li>
+  <li class="pending"><a href="/baking/tsoursi/">Tsoursi</a></li>
 </ul>
