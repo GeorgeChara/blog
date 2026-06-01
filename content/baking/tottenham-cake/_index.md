@@ -41,6 +41,8 @@ water               30g
 
 **1.** Heat the oven to 170°C. Grease and line the tin.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For neat corners: cut the paper about 5cm bigger than the tin on all sides. Lower it in, then cut a diagonal slit at each corner from the edge of the paper down to where the base meets the side. The flaps will overlap cleanly and sit flat. The grease holds it in place.</span>
+
 **2.** Beat the butter and sugar together until pale and fluffy. Add the eggs one at a time, mixing between each.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment. Start on low, bring up to medium. Drop back to low when adding the eggs.</span>
