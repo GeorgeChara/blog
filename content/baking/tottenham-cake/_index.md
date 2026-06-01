@@ -45,10 +45,12 @@ water               30g
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment. Start on low, bring up to medium. Drop back to low when adding the eggs.</span>
 
-**3.** Add the vanilla. Fold in the flour, then stir in the milk to loosen slightly.
+**3.** Add the vanilla and mix on low. Fold in the flour on low, then stir in the milk until just loosened.
 
-**4.** Pour into the tin and level off. Bake for 25-30 minutes until a skewer comes out clean. Leave to cool completely in the tin.
+**4.** Pour into the tin and level off. Bake for 25-30 minutes until a skewer comes out clean. Leave in the tin for 10 minutes, then lift out onto a wire rack. Leave until completely cool before icing.
 
 **5.** Warm the raspberry jam and pass through a sieve to remove the seeds. Mix with the icing sugar and water to a thick, spreadable consistency.
 
-**6.** Spread the icing over the cooled cake and scatter hundreds and thousands on top. Leave to set before cutting into squares.
+**6.** Place the cooled cake back in the tin. Ice in the tin, not on the rack. The tin keeps the icing contained so it does not pour off the sides. The cake should be cool to the touch before the icing goes on or it will run straight off.
+
+**7.** Scatter hundreds and thousands on top. Leave to set fully, then lift out and cut into squares.
