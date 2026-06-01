@@ -62,10 +62,8 @@ ground cumin     3g
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">At this point, rotate the skewer to mimic the rotisserie and check for any large pieces of skin flapping. Pin them down or cut them off. Pinning is better since the skin crisps up nicely and has good flavour.</span>
 
-**4.** Start high above the coals to sear the outside. After 10 minutes lower closer to the heat.
+**4.** Set the motor to its fastest speed. Start high above the coals, then lower after 10 minutes. Brush with leftover marinade as you go and salt the skin as it cooks to help it crisp up.
 
-**5.** Set the motor to its fastest speed and leave it. Brush with leftover marinade as you go. Salt the skin as it cooks to draw out moisture and help it crisp up.
-
-**6.** In the last 10 minutes, slide the pieces apart on the skewer to expose more surface area for the final crisping.
+**5.** In the last 10 minutes, slide the pieces apart on the skewer to expose more surface area for the final crisping.
 
 **7.** You'll know when it's done. Eyeball it. The skin should be deep golden and pulling away from the bone. It's nearly impossible to dry out or undercook chicken thighs on a foukou.
