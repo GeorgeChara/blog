@@ -81,7 +81,7 @@ layout: single
   <li class="pending"><a href="/baking/koupepia/">Koupepia</a></li>
   <li class="pending"><a href="/baking/louvi/">Louvi</a></li>
   <li class="pending"><a href="/baking/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
-  <li class="pending"><a href="/baking/souvla/">Souvla</a></li>
+  <li><a href="/baking/souvla/">Souvla</a></li>
 </ul>
 
 <p class="cat-heading">Pastry</p>

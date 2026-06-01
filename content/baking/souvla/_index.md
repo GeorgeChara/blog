@@ -8,13 +8,17 @@ layout: single
 <style>
   main > h1:first-of-type { display: none; }
   .time { display: none; }
-  h2::before { content: none !important; }
+  h2::before, h3::before { content: none !important; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
 </style>
 
 <h1>Souvla</h1>
 <p style="color: #888; margin-top: -0.5em;">chicken thighs on charcoal, 45-60 min</p>
+
+<img loading="lazy" src="/images/souvla/header.webp" alt="Souvla">
 
 ## Ingredients
 
