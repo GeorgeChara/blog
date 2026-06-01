@@ -18,6 +18,8 @@ layout: single
 <h1>Tottenham Cake</h1>
 <p style="color: #888; margin-top: -0.5em;">30 min bake, 170°C, 33x23cm tin</p>
 
+<img loading="lazy" src="/images/tottenham-cake/header.webp" alt="Tottenham Cake">
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes ~20 squares</span>

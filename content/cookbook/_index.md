@@ -56,7 +56,7 @@ layout: single
   <li><a href="/cookbook/cookies/">Cookies</a></li>
   <li class="pending"><a href="/cookbook/flapjacks/">Flapjacks</a></li>
   <li class="pending"><a href="/cookbook/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
-  <li class="pending"><a href="/cookbook/tottenham-cake/">Tottenham Cake</a></li>
+  <li><a href="/cookbook/tottenham-cake/">Tottenham Cake</a></li>
   <li class="pending"><a href="/cookbook/victoria-sponge/">Victoria Sponge</a></li>
 </ul>
 
