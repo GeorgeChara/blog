@@ -10,7 +10,7 @@ layout: single
   .time { display: none; }
   .terminal-nav { display: none; }
 
-  .page-header { display: flex; justify-content: flex-end; margin-top: -2em; margin-bottom: 1.4em; }
+  .page-header { display: flex; justify-content: flex-end; margin-top: -4em; margin-bottom: 1.4em; }
   .recipe-key { font-size: 0.75em; display: grid; grid-template-columns: 14px auto; gap: 4px 0; align-items: center; }
   .key-sq { display: block; width: 8px; height: 8px; }
   .key-tried-sq { background: #4169E1; }
