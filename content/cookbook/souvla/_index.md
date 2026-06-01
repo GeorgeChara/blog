@@ -53,6 +53,13 @@ ground cumin     3g
 
 **3.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece flipped so they sit facing opposite directions, this ensures an even rotation on the foukou.
 
+<details>
+<summary>show photo</summary>
+
+![Souvla skewered](/images/souvla/step3.webp)
+
+</details>
+
 **4.** Start high above the coals to sear the outside. After 10 minutes lower closer to the heat.
 
 **5.** Set the motor to its fastest speed and leave it. Brush with leftover marinade as you go. Salt the skin as it cooks to draw out moisture and help it crisp up.
