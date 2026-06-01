@@ -13,6 +13,10 @@ layout: single
   img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
+  details { margin: -1em 0 0 0; padding: 0; }
+  details summary { color: #888; font-size: 0.8em; cursor: pointer; user-select: none; line-height: 1; }
+  details summary:hover { color: #555; }
+  details[open] { margin-bottom: 0.5em; }
 </style>
 
 <h1>Souvla</h1>
@@ -38,14 +42,21 @@ ground cumin     3g
 
 **1.** Mix the olive oil (or buttermilk), lemon juice, salt, pepper and cumin. Add the chicken and coat well. Marinate for at least 2 hours, overnight is better.
 
+<details>
+<summary>show photo</summary>
+
+![Souvla marinade](/images/souvla/step1.webp)
+
+</details>
+
 **2.** Light the charcoal 1 hour before you want to cook. Wait for the white ash stage before putting the meat on.
 
-**3.** Skewer the thighs across the bone. Push the skewer through the thickest part of the meat perpendicular to the bone so each piece sits flat and secure.
+**3.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece flipped so they sit facing opposite directions — this ensures an even rotation on the foukou.
 
 **4.** Start high above the coals to sear the outside. After 10 minutes lower closer to the heat.
 
-**5.** Cook for 45-60 minutes, turning every few minutes. Brush with leftover marinade as you go. Salt the skin as it cooks to draw out moisture and help it crisp up.
+**5.** Set the motor to its fastest speed and leave it. Brush with leftover marinade as you go. Salt the skin as it cooks to draw out moisture and help it crisp up.
 
 **6.** In the last 10 minutes, slide the pieces apart on the skewer to expose more surface area for the final crisping.
 
-**7.** Done when the skin is deep golden and crispy, juices run clear and the meat pulls away from the bone easily.
+**7.** You'll know when it's done. Eyeball it. The skin should be deep golden and pulling away from the bone. It's nearly impossible to dry out or undercook chicken thighs on a foukou.
