@@ -33,6 +33,7 @@ whole milk          60g
 icing sugar         400g
 raspberry jam       60g
 water               30g
+sprinkles           optional
 </pre>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Butter should be softened.<br>Raspberry jam gives the traditional Tottenham pink and a fruity flavour. For the school cake version, swap the jam and water for 50g milk and a few drops of pink food colouring.<br>Top with hundreds and thousands either way.</span>
