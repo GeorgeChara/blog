@@ -36,7 +36,7 @@ black pepper     4g
 ground cumin     3g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone-in, skin-on thighs. Cheap, juicy and the skin crisps up well over charcoal.<br>Skewer across the bone, not through it. 1.5kg per skewer leaves room to separate the pieces at the end for final crisping.<br><strong>Swap ins:</strong> buttermilk instead of olive oil for a better crust. Lemon zest for more citrus. Lemon pepper instead of black. White pepper for a softer heat.<br><strong>Big upgrade:</strong> swap the olive oil for buttermilk. Marinate overnight.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone-in, skin-on thighs. Skewer across the bone, 1.5kg per skewer.<br>Swap the olive oil for buttermilk for a better crust. Marinate overnight.</span>
 
 ## Recipe
 
