@@ -1,5 +1,5 @@
 ---
-title: "Baking"
+title: "Food"
 toc: false
 showreadingtime: false
 layout: single
@@ -31,7 +31,7 @@ layout: single
 </style>
 
 <div class="page-header">
-  <h1>Baking</h1>
+  <h1>Food</h1>
   <span class="recipe-key">
     <span class="key-sq key-tried-sq"></span><span class="key-tried-label">done</span>
     <span class="key-sq key-tomake-sq"></span><span class="key-tomake-label">to do</span>
