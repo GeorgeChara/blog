@@ -60,6 +60,8 @@ ground cumin     3g
 
 </details>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">At this point, rotate the skewer to mimic the rotisserie and check for any large pieces of skin flapping. Pin them down or cut them off. Pinning is better since the skin crisps up nicely and has good flavour.</span>
+
 **4.** Start high above the coals to sear the outside. After 10 minutes lower closer to the heat.
 
 **5.** Set the motor to its fastest speed and leave it. Brush with leftover marinade as you go. Salt the skin as it cooks to draw out moisture and help it crisp up.
