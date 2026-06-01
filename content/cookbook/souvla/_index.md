@@ -50,7 +50,7 @@ dried oregano    5g
 
 </details>
 
-**2.** Light the charcoal 1 hour before you want to cook. Wait for the white ash stage before putting the meat on.
+**2.** Light the charcoal 15-20 minutes before you want to cook. Wait for the white ash stage before putting the meat on.
 
 **3.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece flipped so they sit facing opposite directions, this ensures an even rotation on the foukou.
 
