@@ -28,12 +28,12 @@ layout: single
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Per skewer</span>
 
-chicken thighs   1.5kg
+chicken thighs   2kg
 olive oil        60g
-lemon juice      50g
-salt             10g
+lemon           1
+salt             12g
 black pepper     4g
-ground cumin     3g
+ground cumin     8g
 </pre>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Thighs with the bone in and skin on. Skewer across the bone, 1.5kg per skewer.<br>Swap the olive oil for buttermilk for a better crust. Marinate overnight.</span>
