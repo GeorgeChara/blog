@@ -1,0 +1,64 @@
+---
+title: "Iced Fingers"
+toc: false
+showreadingtime: false
+layout: single
+---
+
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  h2::before, h3::before { content: none !important; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
+  .content pre { color: #000; }
+  .terminal-nav { display: none; }
+</style>
+
+<h1>Iced Fingers</h1>
+<p style="color: #888; margin-top: -0.5em;">10 min bake, 220°C, makes 12</p>
+
+## Ingredients
+
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 12</span>
+
+strong bread flour  500g
+instant yeast       14g
+caster sugar        50g
+unsalted butter     40g
+eggs                2
+fine sea salt       10g
+whole milk          150g
+water               140g
+
+<span style="color: #888;">Filling</span>
+whipping cream      200g
+
+<span style="color: #888;">Icing</span>
+icing sugar         300g
+water               40g
+</pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Milk and butter should be at room temperature.<br>For the classic pink icing, add a drop of pink food colouring to the icing.<br>For a raspberry icing, cook down 80g raspberries, press through a sieve and use the juice instead of water. Fruitier, naturally pink, same idea as the <a href="/cookbook/tottenham-cake/" style="color:#888;">Tottenham cake</a>.<br>The icing must be thick enough to stay on top without sliding off. If it runs, add more icing sugar.</span>
+
+## Recipe
+
+**1.** Put the flour, yeast, sugar, butter, eggs, salt, milk and water into a large bowl. Mix until a rough dough forms.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook on medium, 6-8 minutes until smooth and elastic.</span>
+
+**2.** Cover and leave to prove for 1 hour until doubled.
+
+**3.** Knock back and divide into 12 equal pieces, roughly 70g each. Roll each into a finger shape about 12cm long. Place on a lined tray with a small gap between each.
+
+**4.** Leave to prove for 40 minutes until puffed and nearly touching. Heat the oven to 220°C.
+
+**5.** Bake for 10 minutes until golden. Cool completely on a wire rack before filling or icing.
+
+**6.** Mix the icing sugar with water to a thick, smooth paste. It should coat the back of a spoon without running. Add your chosen colour or raspberry juice.
+
+**7.** Dip the top of each finger into the icing. Set on a rack icing-side up and leave to set for 10-15 minutes.
+
+**8.** Whip the cream to firm peaks. Slice each finger almost all the way through lengthways, leaving one edge as a hinge. Pipe cream into the base. Serve straight away.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The fingers can be baked and frozen unfilled and uniced. Defrost, then ice and fill fresh.</span>

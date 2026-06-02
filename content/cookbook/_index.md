@@ -43,6 +43,7 @@ layout: single
   <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
   <li class="pending"><a href="/cookbook/flour-tortillas/">Flour Tortillas</a></li>
   <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
+  <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
   <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
   <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
   <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
