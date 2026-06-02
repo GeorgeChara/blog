@@ -29,7 +29,7 @@ golden syrup     85g
 salt             2g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pull them out when still slightly soft in the middle. They firm up as they cool.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pull them out when still slightly soft in the middle. They firm up as they cool.<br><strong>To take them further:</strong><br>Brown the butter first until golden and nutty smelling before adding the sugar and syrup. The single biggest upgrade.<br>Swap demerara for dark brown sugar or muscovado for a deeper, treacle-like flavour.<br>Add a tablespoon of black treacle alongside the golden syrup for more complexity.<br>Press flaky sea salt on top just before baking.<br>Mix through toasted pecans or hazelnuts.<br>Once cooled, pour melted dark chocolate over the top and leave to set.<br>Add dried sour cherries or chopped dried apricot for a fruity contrast to the sweetness.</span>
 
 ## Recipe
 
