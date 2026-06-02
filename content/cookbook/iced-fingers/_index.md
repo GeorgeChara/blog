@@ -56,10 +56,16 @@ raspberry jam       optional
 
 **5.** Bake for 10 minutes until golden. Cool completely on a wire rack before filling or icing.
 
-**6.** Mix the icing sugar with water a little at a time until you have a thick paste that coats the back of a spoon. For a pink icing, warm raspberry jam on the hob and sieve out the seeds, then use it in place of the water. Add just enough until you have the right consistency.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">While the bread bakes, clean the bowl and swap to the whisk attachment. Make the icing and cream straight in the mixer with no extra washing up.</span>
+
+**6.** If using raspberry jam, warm it on the hob and press through a sieve. Add the icing sugar to the clean mixer bowl and pour in the sieved jam or water on low, a little at a time, until you have a thick paste that coats the back of a spoon.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on low. Add the liquid gradually until the right consistency.</span>
 
 **7.** Dip the top of each finger into the icing. Set on a rack icing-side up and leave to set for 10-15 minutes.
 
 **8.** Whip the cream to firm peaks. Slice each finger almost all the way through lengthways, leaving one edge as a hinge. Pipe cream into the base. Serve straight away.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on medium to high.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The fingers can be baked and frozen unfilled and uniced. Defrost, then ice and fill fresh.</span>
