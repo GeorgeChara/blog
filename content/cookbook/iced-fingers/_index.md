@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Iced Fingers</h1>
-<p style="color: #888; margin-top: -0.5em;">10 min bake, 220°C, makes 12</p>
+<p style="color: #888; margin-top: -0.5em;">~3 hrs start to finish, 10 min bake, 220°C, makes 12</p>
 
 ## Ingredients
 
@@ -31,7 +31,7 @@ fine sea salt       10g
 whole milk          150g
 water               140g
 
-<span style="color: #888;">Filling</span>
+<span style="color: #888;">Filling (optional)</span>
 whipping cream      200g
 
 <span style="color: #888;">Icing</span>
@@ -64,8 +64,8 @@ raspberry jam       optional
 
 **7.** Dip the top of each finger into the icing. Set on a rack icing-side up and leave to set for 10-15 minutes.
 
-**8.** Whip the cream to firm peaks. Slice each finger almost all the way through lengthways, leaving one edge as a hinge. Pipe cream into the base. Serve straight away.
+**8.** Optional: whip the cream to firm peaks and pipe into each split finger. Serve straight away if filling with cream.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on medium to high.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on medium to high. Once filled they need to be eaten immediately.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The fingers can be baked and frozen unfilled and uniced. Defrost, then ice and fill fresh.</span>
