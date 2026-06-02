@@ -39,12 +39,13 @@ black pepper       3g
 potatoes           1.5kg
 onions             2 large
 tomatoes           2 large
+halloumi           2 blocks
 fresh rosemary     4 sprigs
 bay leaves         3
 olive oil          drizzle
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder only, not leg. The fat in the shoulder renders down over the long cook and keeps everything moist.<br>The overnight marinade is not optional. 12-16 hours makes a categorically different result to 2 hours.<br>Cinnamon is the Cypriot tell. Don't skip it.<br>You can add cubed halloumi into the parcel before sealing for an even more Cypriot version.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder only, not leg. The fat in the shoulder renders down over the long cook and keeps everything moist.<br>The overnight marinade is not optional. 12-16 hours makes a categorically different result to 2 hours.<br>Cinnamon is the Cypriot tell. Don't skip it.<br>The halloumi goes soft inside the parcel, nothing like grilled. It absorbs all the lamb juices and herbs. Cut into thick slices or large cubes and nestle in around the lamb before sealing.</span>
 
 ## Recipe
 
