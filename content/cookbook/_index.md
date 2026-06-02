@@ -70,6 +70,11 @@ layout: single
   <li><a href="/cookbook/souvla/">Souvla</a></li>
 </ul>
 
+<p class="cat-heading">Mains</p>
+<ul class="recipe-list">
+  <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
+</ul>
+
 <p class="cat-heading">Pastry</p>
 <ul class="recipe-list">
   <li class="pending"><a href="/cookbook/bakewell-tart/">Bakewell Tart</a></li>
