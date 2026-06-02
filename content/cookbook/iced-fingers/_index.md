@@ -36,10 +36,11 @@ whipping cream      200g
 
 <span style="color: #888;">Icing</span>
 icing sugar         300g
-raspberries         80g
+water               to consistency
+raspberry jam       optional
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Milk and butter should be at room temperature.<br>For the icing, cook down 80g raspberries, press through a sieve and use the juice instead of water. Naturally pink and fruitier, same idea as the <a href="/cookbook/tottenham-cake/" style="color:#888;">Tottenham cake</a>. Try strawberry jam or blackcurrant for different colours and flavours.<br>The icing must be thick enough to stay on top without sliding off. If it runs, add more icing sugar.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Milk and butter should be at room temperature.<br>For a pink icing, warm raspberry jam on the hob and sieve out the seeds. Same method as the <a href="/cookbook/tottenham-cake/" style="color:#888;">Tottenham cake</a>. Use the sieved jam in place of some or all of the water.<br>The icing must be thick enough to stay on top without sliding off. Add water a little at a time until you have the right consistency.</span>
 
 ## Recipe
 
@@ -55,7 +56,7 @@ raspberries         80g
 
 **5.** Bake for 10 minutes until golden. Cool completely on a wire rack before filling or icing.
 
-**6.** Cook down 80g raspberries in a small pan, press through a sieve and use the juice in place of water. Mix with the icing sugar to a thick, smooth paste that coats the back of a spoon without running.
+**6.** Mix the icing sugar with water a little at a time until you have a thick paste that coats the back of a spoon. For a pink icing, warm raspberry jam on the hob and sieve out the seeds, then use it in place of the water. Add just enough until you have the right consistency.
 
 **7.** Dip the top of each finger into the icing. Set on a rack icing-side up and leave to set for 10-15 minutes.
 
