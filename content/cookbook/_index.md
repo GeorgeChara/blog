@@ -64,6 +64,7 @@ layout: single
 <p class="cat-heading">Cypriot</p>
 <ul class="recipe-list">
   <li class="pending"><a href="/cookbook/bourekia/">Bourekia</a></li>
+  <li class="pending"><a href="/cookbook/kleftiko/">Kleftiko</a></li>
   <li class="pending"><a href="/cookbook/koupepia/">Koupepia</a></li>
   <li class="pending"><a href="/cookbook/louvi/">Louvi</a></li>
   <li class="pending"><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
