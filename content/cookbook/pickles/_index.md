@@ -24,9 +24,9 @@ layout: single
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 1 jar</span>
 
-cucumber           340g
+cucumber           1.5
 water              120g
-rice vinegar       120g
+rice vinegar       150g
 maple syrup        18g
 fine sea salt      9g
 fresh dill         2 sprigs
@@ -36,7 +36,7 @@ red pepper flakes  pinch
 bay leaf           1
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">These are refrigerator pickles. No sterilising or canning needed.<br>Thin slices are ready in 1 hour. Spears need at least 3 hours. Better after a few days.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">These are refrigerator pickles. No sterilising or canning needed.<br>Thin slices are ready in 1 hour. Spears need at least 3 hours. Better after a few days.<br>If the brine doesn't reach the top of the jar, top up with a mix of cold water and a small pinch of salt until everything is submerged.</span>
 
 ## Recipe
 
