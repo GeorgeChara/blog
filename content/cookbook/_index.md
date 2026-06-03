@@ -10,7 +10,6 @@ layout: single
   .time { display: none; }
   .terminal-nav { display: none; }
 
-
   .cat-heading { font-weight: bold; font-size: 1em; margin: 1.8em 0 0.5em 0; color: #000; }
 
   .recipe-list { list-style: none; padding: 0; margin: 0; }
@@ -21,7 +20,6 @@ layout: single
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
 </style>
-
 
 <p class="cat-heading">Signature</p>
 <ul class="recipe-list">
@@ -52,16 +50,32 @@ layout: single
   <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
 </ul>
 
-<p class="cat-heading">Cakes and Traybakes</p>
+<p class="cat-heading">Sweet</p>
 <ul class="recipe-list">
+  <li class="pending"><a href="/cookbook/bakewell-tart/">Bakewell Tart</a></li>
   <li class="pending"><a href="/cookbook/blondies/">Blondies</a></li>
   <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
   <li><a href="/cookbook/brownies/">Brownies</a></li>
   <li><a href="/cookbook/cookies/">Cookies</a></li>
+  <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>
   <li class="pending"><a href="/cookbook/flapjacks/">Flapjacks</a></li>
+  <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
+  <li class="pending"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
+  <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
   <li class="pending"><a href="/cookbook/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
   <li><a href="/cookbook/tottenham-cake/">Tottenham Cake</a></li>
   <li class="pending"><a href="/cookbook/victoria-sponge/">Victoria Sponge</a></li>
+</ul>
+
+<p class="cat-heading">Savoury</p>
+<ul class="recipe-list">
+  <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
+  <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
+  <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
+  <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
+  <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
+  <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
+  <li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a></li>
 </ul>
 
 <p class="cat-heading">Cypriot</p>
@@ -77,26 +91,6 @@ layout: single
   <li><a href="/cookbook/souvla/">Souvla</a></li>
 </ul>
 
-<p class="cat-heading">Mains</p>
-<ul class="recipe-list">
-  <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
-</ul>
-
-<p class="cat-heading">Pastry</p>
-<ul class="recipe-list">
-  <li class="pending"><a href="/cookbook/bakewell-tart/">Bakewell Tart</a></li>
-  <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
-  <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
-  <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>
-  <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
-  <li class="pending"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
-  <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
-  <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
-  <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
-  <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
-  <li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a></li>
-</ul>
-
 <p class="cat-heading">Preserves</p>
 <ul class="recipe-list">
   <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
@@ -109,37 +103,4 @@ layout: single
   <li class="pending"><a href="/cookbook/preserved-lemons/">Preserved Lemons</a></li>
   <li class="pending"><a href="/cookbook/tomato-ketchup/">Tomato Ketchup</a></li>
   <li class="pending"><a href="/cookbook/tsoursi/">Tsoursi</a></li>
-</ul>
-
-<p class="cat-heading">Breakfast</p>
-<ul class="recipe-list">
-  <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
-  <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
-  <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
-  <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
-</ul>
-
-<p class="cat-heading">Lunch</p>
-<ul class="recipe-list">
-  <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
-  <li class="pending"><a href="/cookbook/pickles/">Pickles</a></li>
-  <li class="pending"><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
-  <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
-  <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
-</ul>
-
-<p class="cat-heading">Quick Dinners</p>
-<ul class="recipe-list">
-  <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
-  <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
-  <li class="pending"><a href="/cookbook/louvi/">Louvi</a></li>
-</ul>
-
-<p class="cat-heading">Snacks</p>
-<ul class="recipe-list">
-  <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
-  <li><a href="/cookbook/cookies/">Cookies</a></li>
-  <li><a href="/cookbook/flapjacks/">Flapjacks</a></li>
-  <li class="pending"><a href="/cookbook/loukanika/">Loukanika</a></li>
-  <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
 </ul>
