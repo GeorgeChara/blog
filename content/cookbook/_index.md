@@ -33,6 +33,7 @@ layout: single
   <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
   <li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a></li>
   <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
+  <li class="pending"><a href="/cookbook/soffritto/">Soffritto</a></li>
 </ul>
 
 <p class="cat-heading">Bread</p>
@@ -73,6 +74,7 @@ layout: single
   <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
   <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
   <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
+  <li class="pending"><a href="/cookbook/ragu/">Ragù</a></li>
   <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
   <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
   <li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a></li>
