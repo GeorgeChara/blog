@@ -126,9 +126,13 @@ yeast    2g
 
 ## Batch and Freezer
 
-**Par-baking:** Pull at 10-14 minutes. Firm when squeezed, still pale with no colour at all. Too early and the inside is still wet. Too late and it tans too much on the re-bake.
+**Par-baking:** Pull when the crust is firm and still pale with no colour. The crumb inside must be fully cooked — a probe should read 93-96°C in the centre. Colour alone is not enough. Pulling too early is the most common mistake and produces a gummy, collapsed loaf on re-bake.
 
-Cool for 45 minutes. Vacuum seal and freeze. From frozen: 12-15 minutes at 230°C with a splash of steam.
+Cool on a wire rack for at least 1 hour. Do not wrap while still warm as condensation destroys the crust.
+
+Open-freeze on a tray for 1-2 hours until the surface is solid, then vacuum seal. The thin crust cracks if you seal it while still pliable. Store flat with nothing pressing on top.
+
+From frozen: straight into a 230°C oven on a preheated stone or tray. Pour 50ml of hot water into a small hot tray at the bottom of the oven as you load the bread, close the door. 14-18 minutes. Use within 6-8 weeks.
 
 **Dividing in bulk:** 375g per baguette. If a piece is off, place the smaller piece on the larger, fold the dough over to envelope it, do 2-3 letter folds and rest 10-15 minutes. Do not knead it in.
 
