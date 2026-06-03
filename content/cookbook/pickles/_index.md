@@ -22,7 +22,7 @@ layout: single
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 1 jar</span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 1 litre jar</span>
 
 cucumber           1.5
 water              120g
