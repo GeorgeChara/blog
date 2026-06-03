@@ -122,11 +122,13 @@ yeast    2g
 
 **8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. **Bake at 230°C for 10 mins then 210°C for 7 mins**.
 
+---
+
 ## Batch and Freezer
 
 **Par-baking:** Pull them when the crust feels firm when squeezed gently but is still pale with no colour developing anywhere. Roughly 10-14 minutes. Too early and the crumb is still wet inside, which ruins the re-bake. Too late and the crust tans too much on the finish. Pale and set is what you are looking for.
 
-Cool completely (at least 45 minutes). Wrap in parchment then foil, or press into a zip-lock freezer bag with all the air out. Freeze. From frozen: 12-15 minutes at 230°C with a splash of steam water.
+Cool completely (at least 45 minutes). Vacuum seal for the best result — the shrink wrap keeps everything tight with no air, no freezer burn. From frozen: 12-15 minutes at 230°C with a splash of steam water.
 
 **Dividing dough in bulk:** Total dough weight divided by number of baguettes = 375g per baguette. Use a digital scale and dough scraper. If a piece is slightly off, flatten both pieces, place the smaller on top of the larger, fold the larger over to envelope it, do 2-3 letter folds and rest 10-15 minutes before shaping. Do not knead it in.
 
