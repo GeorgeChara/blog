@@ -99,7 +99,7 @@ layout: single
   <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
   <li class="pending"><a href="/cookbook/piccalilli/">Piccalilli</a></li>
   <li class="pending"><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
-  <li class="pending"><a href="/cookbook/pickles/">Pickles</a></li>
+  <li><a href="/cookbook/pickles/">Pickles</a></li>
   <li class="pending"><a href="/cookbook/pikla/">Pikla</a></li>
   <li class="pending"><a href="/cookbook/pink-turnip-pickle/">Pink Turnip Pickle</a></li>
   <li class="pending"><a href="/cookbook/preserved-lemons/">Preserved Lemons</a></li>
