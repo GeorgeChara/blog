@@ -32,6 +32,8 @@ layout: single
 <ul class="recipe-list">
   <li><a href="/cookbook/butter/">Butter</a></li>
   <li class="pending"><a href="/cookbook/buttercream/">Buttercream</a></li>
+  <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
+  <li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a></li>
   <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
 </ul>
 
@@ -67,7 +69,10 @@ layout: single
   <li class="pending"><a href="/cookbook/bourekia/">Bourekia</a></li>
   <li class="pending"><a href="/cookbook/kleftiko/">Kleftiko</a></li>
   <li class="pending"><a href="/cookbook/koupepia/">Koupepia</a></li>
+  <li class="pending"><a href="/cookbook/loukanika/">Loukanika</a></li>
   <li class="pending"><a href="/cookbook/louvi/">Louvi</a></li>
+  <li class="pending"><a href="/cookbook/moussaka/">Moussaka</a></li>
+  <li class="pending"><a href="/cookbook/pastitsio/">Pastitsio</a></li>
   <li class="pending"><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
   <li><a href="/cookbook/souvla/">Souvla</a></li>
 </ul>
@@ -104,4 +109,37 @@ layout: single
   <li class="pending"><a href="/cookbook/preserved-lemons/">Preserved Lemons</a></li>
   <li class="pending"><a href="/cookbook/tomato-ketchup/">Tomato Ketchup</a></li>
   <li class="pending"><a href="/cookbook/tsoursi/">Tsoursi</a></li>
+</ul>
+
+<p class="cat-heading">Breakfast</p>
+<ul class="recipe-list">
+  <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
+  <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
+  <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
+  <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
+</ul>
+
+<p class="cat-heading">Lunch</p>
+<ul class="recipe-list">
+  <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
+  <li class="pending"><a href="/cookbook/pickles/">Pickles</a></li>
+  <li class="pending"><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
+  <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
+  <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
+</ul>
+
+<p class="cat-heading">Quick Dinners</p>
+<ul class="recipe-list">
+  <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
+  <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
+  <li class="pending"><a href="/cookbook/louvi/">Louvi</a></li>
+</ul>
+
+<p class="cat-heading">Snacks</p>
+<ul class="recipe-list">
+  <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
+  <li><a href="/cookbook/cookies/">Cookies</a></li>
+  <li><a href="/cookbook/flapjacks/">Flapjacks</a></li>
+  <li class="pending"><a href="/cookbook/loukanika/">Loukanika</a></li>
+  <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
 </ul>
