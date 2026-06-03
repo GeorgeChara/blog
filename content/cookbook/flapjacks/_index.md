@@ -18,6 +18,8 @@ layout: single
 <h1>Flapjacks</h1>
 <p style="color: #888; margin-top: -0.5em;">20 min bake, 180°C, 20cm square tin</p>
 
+<img loading="lazy" src="/images/flapjacks/header.webp" alt="Flapjacks">
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 12 bars</span>
