@@ -42,6 +42,7 @@ layout: single
   <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
   <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
   <li class="pending"><a href="/cookbook/flour-tortillas/">Flour Tortillas</a></li>
+  <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
   <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
   <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
   <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
@@ -84,6 +85,7 @@ layout: single
   <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>
   <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
   <li class="pending"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
+  <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
   <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
   <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
   <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
