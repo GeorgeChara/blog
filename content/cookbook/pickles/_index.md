@@ -40,7 +40,7 @@ bay leaf           1
 
 ## Recipe
 
-**1.** Slice the cucumber into thin 3mm rounds for chips, or cut lengthwise into spears.
+**1.** Slice the cucumber into thin 3mm rounds, or cut lengthwise into spears.
 
 **2.** Combine the water, vinegar, maple syrup, salt, black pepper and red pepper flakes in a jug. Stir until the salt dissolves.
 
