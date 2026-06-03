@@ -18,6 +18,8 @@ layout: single
 <h1>Pickles</h1>
 <p style="color: #888; margin-top: -0.5em;">refrigerator pickles, ready in 1 hour, keeps 3 weeks</p>
 
+<img loading="lazy" src="/images/pickles/header.webp" alt="Pickles">
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 1 jar</span>
