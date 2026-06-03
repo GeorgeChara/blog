@@ -126,11 +126,11 @@ yeast    2g
 
 ## Batch and Freezer
 
-**Par-baking:** Pull them when the crust feels firm when squeezed gently but is still pale with no colour developing anywhere. Roughly 10-14 minutes. Too early and the crumb is still wet inside, which ruins the re-bake. Too late and the crust tans too much on the finish. Pale and set is what you are looking for.
+**Par-baking:** Pull at 10-14 minutes. Firm when squeezed, still pale with no colour at all. Too early and the inside is still wet. Too late and it tans too much on the re-bake.
 
-Cool completely (at least 45 minutes). Vacuum seal for the best result — the shrink wrap keeps everything tight with no air, no freezer burn. From frozen: 12-15 minutes at 230°C with a splash of steam water.
+Cool for 45 minutes. Vacuum seal and freeze. From frozen: 12-15 minutes at 230°C with a splash of steam.
 
-**Dividing dough in bulk:** Total dough weight divided by number of baguettes = 375g per baguette. Use a digital scale and dough scraper. If a piece is slightly off, flatten both pieces, place the smaller on top of the larger, fold the larger over to envelope it, do 2-3 letter folds and rest 10-15 minutes before shaping. Do not knead it in.
+**Dividing in bulk:** 375g per baguette. If a piece is off, place the smaller piece on the larger, fold the dough over to envelope it, do 2-3 letter folds and rest 10-15 minutes. Do not knead it in.
 
 <script>
 function toggleMedia(id, el) {
