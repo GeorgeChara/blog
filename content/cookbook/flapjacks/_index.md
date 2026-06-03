@@ -22,10 +22,10 @@ layout: single
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 12 bars</span>
 
-rolled oats      300g
-unsalted butter  175g
+rolled oats      275g
+unsalted butter  200g
 demerara sugar   100g
-golden syrup     85g
+golden syrup     100g
 salt             2g
 </pre>
 
@@ -41,7 +41,7 @@ salt             2g
 
 **4.** Tip into the tin and press down into an even layer.
 
-**5.** Bake for 20-25 minutes until golden at the edges.
+**5.** Bake for 18-20 minutes until golden at the edges. The centre should still look wet and shiny when you pull them — this is correct. They firm up a lot as they cool and will be dense and chewy rather than dry.
 
 **6.** Leave to cool completely in the tin, then cut into bars.
 
