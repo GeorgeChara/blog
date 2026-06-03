@@ -122,7 +122,11 @@ yeast    2g
 
 **8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. **Bake at 230°C for 10 mins then 210°C for 7 mins**.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Par-baking for the freezer:</strong> Pull them at 12 minutes total — fully cooked inside but pale, no real colour yet. Cool completely (at least 45 minutes), wrap tightly in two layers of cling film, freeze. From frozen: 12-15 minutes at 230°C with a splash of steam water. You'll always have a baguette available. Quality is about 90% of fresh — for a sandwich, indistinguishable.<br><strong>Dividing dough in bulk:</strong> Total dough weight ÷ number of baguettes = 375g per baguette. Use a digital scale and dough scraper. If a piece is slightly off, flatten both pieces, place the smaller on top of the larger, fold the larger over to envelope it, do 2-3 letter folds and rest 10-15 minutes before shaping. Do not knead it in.</span>
+## Batch and Freezer
+
+**Par-baking:** Pull them at 12 minutes total. Fully cooked inside but pale, no real colour yet. Cool completely (at least 45 minutes), wrap tightly in two layers of cling film and freeze. From frozen: 12-15 minutes at 230°C with a splash of steam water. Quality is about 90% of fresh. For a sandwich, indistinguishable.
+
+**Dividing dough in bulk:** Total dough weight divided by number of baguettes = 375g per baguette. Use a digital scale and dough scraper. If a piece is slightly off, flatten both pieces, place the smaller on top of the larger, fold the larger over to envelope it, do 2-3 letter folds and rest 10-15 minutes before shaping. Do not knead it in.
 
 <script>
 function toggleMedia(id, el) {
