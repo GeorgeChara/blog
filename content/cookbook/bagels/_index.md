@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Bagels</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 230°C, makes 7</p>
+<p style="color: #888; margin-top: -0.5em;">22/25 min bake, 210°C, makes 7</p>
 
 ![](/images/bagels/bagel_header.webp)
 
@@ -81,13 +81,15 @@ bicarbonate of soda  1 tbsp
 
 </details>
 
-**7.** Drain, back onto the tray. Add toppings now while the surface is still wet. Bake at 230°C for 20 minutes until deep golden.
+**7.** Drain, back onto the tray. Add toppings now while the surface is still wet. **Bake at 210°C for 22/25 minutes** until deep golden.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything bagel: dip the wet bagel face down into everything bagel seasoning.<br>Cheese and jalapeño: add grated cheese at the 10 minute mark.</span>
 
 <details><summary>show photo</summary>
 
 ![](/images/bagels/bagel_7.webp)
+
+![](/images/bagels/bagel_7b.webp)
 
 </details>
 
