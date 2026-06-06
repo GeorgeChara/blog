@@ -14,40 +14,37 @@ layout: single
 </style>
 
 <h1>Bourekia</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot sweet cheese pastry, makes 20-25</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot sweet cheese pastry, makes 25</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 20-25</span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 25</span>
 
 <span style="color: #888;">Dough</span>
-plain flour      250g
-sunflower oil    55g
-warm water       110g
+plain flour      350g
+vegetable oil    50ml
+warm water       125ml
 salt             5g
 
 <span style="color: #888;">Filling</span>
-anari or ricotta 300g
-caster sugar     55g
+anari            250g
+caster sugar     50g
 ground cinnamon  3g
+rose water       2ml
 
 <span style="color: #888;">To finish</span>
-sunflower oil    500g
+vegetable oil    for frying
 icing sugar      to dust
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Anari is a fresh Cypriot whey cheese, similar to ricotta. Ricotta is a good substitute.<br>These are deep-fried, not baked. Serve warm, dusted with icing sugar and cinnamon.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Anari is a fresh Cypriot whey cheese, similar to ricotta. Ricotta is a good substitute but has a wetter texture.<br>Deep-fried, not baked. Serve warm, dusted with icing sugar.</span>
 
 ## Recipe
 
-**1.** Mix the flour and salt. Add the oil and rub in until sandy. Add the water a little at a time until the dough just comes together into a soft smooth ball. Cover and rest for 30 minutes.
+**1.** Sieve the flour and salt into a bowl. Add the oil and rub together until it resembles breadcrumbs. Add the warm water and knead for 10 minutes until smooth. Cover and rest for 30 minutes.
 
-**2.** Mix the anari, sugar and cinnamon until smooth.
+**2.** Mash the anari with a fork. Mix in the sugar, cinnamon and rose water until smooth.
 
-**3.** Roll the dough thin, either with a rolling pin or through a pasta machine to setting 4-5.
+**3.** Roll the dough to 2-3mm thickness. Cut into crescents, circles or squares. Place a teaspoon of filling on each piece and seal the edges firmly.
 
-**4.** Place small teaspoons of filling at 5cm intervals along one half of the dough. Fold the other half over. Press around each mound to remove air. Cut into individual pastries with a round cutter or glass. Crimp the edges firmly with a fork.
-
-**5.** Heat the oil in a small deep saucepan to 170°C. Fry in batches of 4, turning once, until golden all over, about 2-3 minutes per batch.
-
-**6.** Drain on kitchen paper. Dust with icing sugar and a pinch of cinnamon while still warm.
+**4.** Fill a small deep saucepan with 5cm of vegetable oil and heat until a piece of dough sizzles immediately when added. Fry in batches for 4-5 minutes per side until golden. Drain on kitchen paper and dust generously with icing sugar while still warm.
