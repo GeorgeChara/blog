@@ -18,14 +18,16 @@ layout: single
 <h1>Bagels</h1>
 <p style="color: #888; margin-top: -0.5em;">20 min bake, 230°C, makes 7</p>
 
+![](/images/bagels/bagel_header.webp)
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 7</span>
 
-strong white flour   500g
+flour                500g
 water                275g
 salt                 10g
-instant yeast        2g
+yeast                2g
 
 <span style="color: #888;">Water bath</span>
 water                2L
@@ -39,24 +41,58 @@ bicarbonate of soda  1 tbsp
 
 **1.** Put everything in the mixer bowl. Dough hook on speed 1 until no dry flour remains, about 2 minutes. Increase to speed 2 and knead for 10 minutes.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:1em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">At 2-3 minutes in, stop the machine, peel any dough off the bottom and fold it into the ball, then continue. Never go above speed 2. Done when it pulls cleanly from the bowl and slaps the sides. To check: stretch a small piece between your fingers — it should go thin without tearing.</span>
+<details><summary>show photo</summary>
 
-**2.** Into a lightly oiled bowl, cover and leave for 1.5 hours until doubled.
+![](/images/bagels/bagel_1.webp)
+
+</details>
+
+**2.** Oil a bowl with olive oil, cover and leave for 1 hour 30 mins until doubled.
+
+<details><summary>show photo</summary>
+
+![](/images/bagels/bagel_2.webp)
+
+</details>
 
 **3.** Divide into 7 pieces (~112g each). Shape into tight balls, cover and rest 15 minutes.
 
-**4.** Push your thumb through the centre and stretch each ring to a 4-5cm hole. Place on a tray lined with baking parchment, dusted with semolina or rice flour, or brushed with olive oil.
+<details><summary>show photo</summary>
+
+![](/images/bagels/bagel_3.webp)
+
+</details>
+
+**4.** Push your thumb through the centre and stretch each ring to a 4/5cm hole. Place on a tray lined with baking paper, dusted with semolina or rice flour, or brushed with olive oil.
+
+<details><summary>show photo</summary>
+
+![](/images/bagels/bagel_4.webp)
+
+</details>
 
 **5.** Cover and rest 20 minutes, or refrigerate overnight for more flavour.
 
-**6.** Bring the water bath to a boil. Boil 2-3 at a time, 1 minute per side.
+**6.** Bring the water to a boil with the honey and bicarbonate of soda. Boil 2/3 at a time, 1 minute per side.
+
+<details><summary>show photo</summary>
+
+![](/images/bagels/bagel_6.webp)
+
+</details>
 
 **7.** Drain, back onto the tray. Add toppings now while the surface is still wet. Bake at 230°C for 20 minutes until deep golden.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything bagel: dip the wet bagel face-down into everything bagel seasoning.<br>Cheese and jalapeño: add grated cheddar and sliced jalapeños at the 10 minute mark.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything bagel: dip the wet bagel face down into everything bagel seasoning.<br>Cheese and jalapeño: add grated cheese at the 10 minute mark.</span>
+
+<details><summary>show photo</summary>
+
+![](/images/bagels/bagel_7.webp)
+
+</details>
 
 ## Rainbow bagels
 
-Follow the recipe as normal. After step 1, divide the dough into 4-6 equal portions. Knead a different colour of gel food colouring into each portion until even throughout. Flatten each piece into a rough rectangle, stack them on top of each other, then roll the stack tightly into a log. Divide into 7 pieces and continue from step 3.
+After step 1, divide the dough into 4/6 portions and knead a different colour of gel food colouring into each. Flatten each into a rectangle, stack them, roll tightly into a log, then slice across into 7 pieces. Each slice will show a spiral. Continue from step 3.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use gel colouring, not liquid drops. Liquid throws off the hydration. The swirl shows when you slice the baked bagel open.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use gel colouring, not liquid. Liquid throws off the hydration. The swirl shows when you slice the baked bagel open.</span>
