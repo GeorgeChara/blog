@@ -19,6 +19,7 @@ layout: single
   .recipe-meta { color: #888; font-size: 0.85em; margin-left: 0.4em; }
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
+
 </style>
 
 <p class="cat-heading">Signature</p>
@@ -38,7 +39,7 @@ layout: single
 
 <p class="cat-heading">Bread</p>
 <ul class="recipe-list">
-  <li class="pending"><a href="/cookbook/bagels/">Bagels</a></li>
+  <li><a href="/cookbook/bagels/">Bagels</a></li>
   <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
   <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
