@@ -43,7 +43,11 @@ icing sugar      to dust
 
 **1.** Sieve the flour and salt into a bowl. Add the oil and rub together until it resembles breadcrumbs. Add the warm water and knead for 10 minutes until smooth. Cover and rest for 30 minutes.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.6em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: dough hook, speed 2. Mix on low until it comes together, then speed 2 for 5-6 minutes until smooth and slightly tacky.</span>
+
 **2.** Mash the anari with a fork. Mix in the sugar, cinnamon and rose water until smooth.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.6em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle attachment, speed 1. Beat the anari alone for a minute to break it up, then add the sugar, cinnamon and rose water and mix until smooth.</span>
 
 **3.** Roll the dough to 2-3mm thickness. Cut into crescents, circles or squares. Place a teaspoon of filling on each piece and seal the edges firmly.
 
