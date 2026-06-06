@@ -51,4 +51,6 @@ bicarbonate of soda  1 tbsp
 
 **6.** Bring the water bath to a boil. Boil 2-3 at a time, 1 minute per side.
 
-**7.** Drain, back onto the tray. Bake at 230°C for 20 minutes until deep golden.
+**7.** Drain, back onto the tray. Add toppings now while the surface is still wet. Bake at 230°C for 20 minutes until deep golden.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything bagel: dip the wet bagel face-down into everything bagel seasoning.<br>Cheese and jalapeño: add grated cheddar and sliced jalapeños at the 10 minute mark.</span>
