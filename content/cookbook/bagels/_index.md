@@ -16,39 +16,39 @@ layout: single
 </style>
 
 <h1>Bagels</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 230°C</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 230°C, makes 7</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 6 bagels</span>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 7</span>
 
-flour   413g
-water   270g
-salt    8g
-yeast   2g
+strong white flour   500g
+water                275g
+salt                 10g
+instant yeast        2g
 
 <span style="color: #888;">Water bath</span>
-water   1.5L
-honey   40g
-salt    10g
+water                2L
+honey                1 tbsp
+bicarbonate of soda  1 tbsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use bread flour for the right chew.<br>Instant yeast, not active dry. Water should be lukewarm.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Strong white bread flour only. Barley malt syrup in the bath instead of honey if you can find it.<br>The bicarbonate of soda is what gives the crust its colour and chew. Don't skip it.<br>Dough water should be lukewarm, around 35°C, to activate the yeast.</span>
 
 ## Recipe
 
-**1.** Add everything to a stand mixer with a dough hook. Mix on low to medium until it comes together, then turn up to medium and knead for 5 minutes.
+**1.** Put everything in the mixer bowl. Dough hook on speed 1 until no dry flour remains, about 2 minutes. Increase to speed 2 and knead for 10 minutes.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook throughout. No hand kneading needed.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:1em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">At 2-3 minutes in, stop the machine, peel any dough off the bottom and fold it into the ball, then continue. Never go above speed 2. Done when it pulls cleanly from the bowl and slaps the sides. To check: stretch a small piece between your fingers — it should go thin without tearing.</span>
 
-**2.** Into a greased bowl, cover and leave for 1.5 hours until doubled.
+**2.** Into a lightly oiled bowl, cover and leave for 1.5 hours until doubled.
 
-**3.** Divide into 6 pieces. Roll each into a tight ball, cover and rest for 15 minutes.
+**3.** Divide into 7 pieces (~112g each). Shape into tight balls, cover and rest 15 minutes.
 
-**4.** Push your thumb through the centre of each ball and stretch into a ring with a 2-3 inch hole. Place on a semolina-dusted lined tray.
+**4.** Push your thumb through the centre and stretch each ring to a 4-5cm hole. Place on a tray lined with baking parchment, dusted with semolina or rice flour, or brushed with olive oil.
 
-**5.** Leave to rest for 15 minutes, or refrigerate overnight for more flavour.
+**5.** Cover and rest 20 minutes, or refrigerate overnight for more flavour.
 
-**6.** Bring the water bath to a boil. Drop the bagels in and boil 1 minute per side.
+**6.** Bring the water bath to a boil. Boil 2-3 at a time, 1 minute per side.
 
-**7.** Back onto the tray. Bake at 230°C for 20 minutes until golden.
+**7.** Drain, back onto the tray. Bake at 230°C for 20 minutes until deep golden.
