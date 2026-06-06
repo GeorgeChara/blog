@@ -24,18 +24,18 @@ layout: single
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 7</span>
 
-flour                500g
-water                275g
-salt                 10g
-yeast                2g
+flour        500g
+water        275g
+salt         10g
+yeast        2g
 
-<span style="color: #888;">Water bath</span>
-water                2L
-honey                1 tbsp
-bicarbonate of soda  1 tbsp
+<span style="color: #888;">Boiling pot</span>
+water        half full
+honey        1 tbsp
+bicarb       1 tbsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Strong white bread flour only. Barley malt syrup in the bath instead of honey if you can find it.<br>The bicarbonate of soda is what gives the crust its colour and chew. Don't skip it.<br>Dough water should be lukewarm, around 35°C, to activate the yeast.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Strong white bread flour only. Barley malt syrup in the pot instead of honey if you can find it.<br>The bicarb is what gives the crust its colour and chew. Don't skip it.<br>Dough water should be lukewarm, around 35°C, to activate the yeast.</span>
 
 ## Recipe
 
@@ -73,7 +73,7 @@ bicarbonate of soda  1 tbsp
 
 **5.** Cover and rest 20 minutes, or refrigerate overnight for more flavour.
 
-**6.** Bring the water to a boil with the honey and bicarbonate of soda. Boil 2/3 at a time, 1 minute per side.
+**6.** Bring the water to a boil with the honey and bicarb. Boil 2/3 at a time, 1 minute per side.
 
 <details><summary>show photo</summary>
 
