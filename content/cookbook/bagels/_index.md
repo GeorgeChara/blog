@@ -54,3 +54,9 @@ bicarbonate of soda  1 tbsp
 **7.** Drain, back onto the tray. Add toppings now while the surface is still wet. Bake at 230°C for 20 minutes until deep golden.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything bagel: dip the wet bagel face-down into everything bagel seasoning.<br>Cheese and jalapeño: add grated cheddar and sliced jalapeños at the 10 minute mark.</span>
+
+## Rainbow bagels
+
+Follow the recipe as normal. After step 1, divide the dough into 4-6 equal portions. Knead a different colour of gel food colouring into each portion until even throughout. Flatten each piece into a rough rectangle, stack them on top of each other, then roll the stack tightly into a log. Divide into 7 pieces and continue from step 3.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use gel colouring, not liquid drops. Liquid throws off the hydration. The swirl shows when you slice the baked bagel open.</span>
