@@ -66,7 +66,7 @@ Weeks in the fridge without feeding is fine. It is almost certainly still alive.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use filtered or bottled water. Chlorine in UK tap water can slow fermentation. Leaving tap water out overnight also works.<br>A spot near a radiator or on top of the fridge speeds things up in winter.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You can feed into the same jar without cleaning it. If you do switch jars, rinse with hot water only. No soap — residue kills the culture.<br>The discard step matters. Adding flour and water on top of a large starving starter won't work because there isn't enough fresh food relative to the exhausted culture. Taking 10g and feeding that proportionally gives the fresh food a fighting chance.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You can feed into the same jar without cleaning it. If you do switch jars, rinse with hot water only. No soap. Residue kills the culture.<br>The discard step matters. Adding flour and water on top of a large starving starter won't work. There isn't enough fresh food relative to the exhausted culture. Taking 10g and feeding that proportionally means the fresh food is enough to do its job.</span>
 
 ---
 
