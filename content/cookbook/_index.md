@@ -40,7 +40,7 @@ layout: single
 <p class="cat-heading">Bread</p>
 <ul class="recipe-list">
   <li><a href="/cookbook/bagels/">Bagels</a></li>
-  <li class="pending"><a href="/cookbook/boule/">Boule</a></li>
+  <li><a href="/cookbook/boule/">Boule</a></li>
   <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
   <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
