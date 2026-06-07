@@ -51,6 +51,7 @@ layout: single
   <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
   <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
   <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
+  <li class="pending"><a href="/cookbook/sourdough-starter/">Sourdough Starter</a></li>
 </ul>
 
 <p class="cat-heading">Sweet</p>
