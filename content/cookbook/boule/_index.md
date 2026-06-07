@@ -14,7 +14,7 @@ layout: single
 </style>
 
 <h1>Boule</h1>
-<p style="color: #888; margin-top: -0.5em;">40 min bake, 230°C, makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">50 min bake, 230°C, makes 1 loaf</p>
 
 ## Ingredients
 
@@ -64,7 +64,7 @@ Cover and leave 1/2 hours at room temperature, or return to the fridge overnight
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Blade straight down, not angled.</span>
 
-**4.** Lift the sling by both ends and lower the dough into the hot pot. Tuck any excess paper down inside the pot, put the lid on and bake for 20 minutes.
+**4.** Lift the sling by both ends and lower the dough into the hot pot. Tuck any excess paper down inside the pot, put the lid on and bake for 30 minutes.
 
 **5.** Remove the lid, drop to 210°C and bake for a further 20 minutes until deep golden. Lift out using the sling and cool on a wire rack for at least 1 hour before cutting.
 
