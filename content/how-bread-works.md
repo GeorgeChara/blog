@@ -126,6 +126,51 @@ The finer the grind, the more surface area, the faster hydration, the more devel
 
 The milling slider above covers most of it. The other key variable is protein content. Strong white bread flour sits at 12/14% protein. That protein is what forms gluten when water is added. Plain flour is 9/11% and gives a softer, more tender result. The higher the protein, the more structure, the better the loaf holds its shape and traps gas.
 
+Flour contains two proteins: glutenin and gliadin. On their own they do nothing. Add water and they hydrate, unfold, and bond together into gluten strands. Mix and knead and those strands organise into a network. Drag the slider to watch it happen.
+
+<div style="margin:2em 0;"><canvas id="gluten-canvas" width="560" height="200" style="border-radius:6px; display:block; max-width:100%;"></canvas><div style="display:flex; align-items:center; gap:14px; margin-top:12px;"><span style="font-size:0.78em; color:#888; white-space:nowrap;">dry flour</span><input type="range" id="gluten-sl" min="0" max="100" value="0" style="flex:1; accent-color:#7a4e2a; cursor:pointer;"><span style="font-size:0.78em; color:#888; white-space:nowrap;">developed gluten</span></div><div style="font-size:0.78em; color:#aaa; margin-top:8px;" id="gluten-stage">Dry flour. Proteins scattered and inert.</div></div>
+
+<script>
+(function(){
+  var canvas=document.getElementById('gluten-canvas'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+  var rng=(function(){var s=42;return function(){s=(s*1664525+1013904223)&0xffffffff;return(s>>>0)/4294967296;};})();
+  var N=48,pts=[],types=[];
+  for(var i=0;i<N;i++){pts.push([12+rng()*(W-24),12+rng()*(H-24)]);types.push(rng()<0.55?0:1);}
+  var neighbors=pts.map(function(p,i){
+    return pts.map(function(q,j){if(j===i)return null;var dx=p[0]-q[0],dy=p[1]-q[1];return{j:j,d:Math.sqrt(dx*dx+dy*dy)};})
+      .filter(Boolean).sort(function(a,b){return a.d-b.d;}).slice(0,5);
+  });
+  var sl=document.getElementById('gluten-sl');
+  function draw(){
+    var v=parseInt(sl.value),t=v/100;
+    var bgR=245-Math.round(t*15),bgG=240-Math.round(t*28),bgB=232-Math.round(t*50);
+    ctx.fillStyle='rgb('+bgR+','+bgG+','+bgB+')';ctx.fillRect(0,0,W,H);
+    var connThresh=t*110,maxDist=110;
+    pts.forEach(function(p,i){
+      neighbors[i].forEach(function(nb){
+        if(nb.d>maxDist)return;
+        var strength=Math.max(0,Math.min(1,(connThresh-nb.d+20)/40));
+        if(strength<=0)return;
+        ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(pts[nb.j][0],pts[nb.j][1]);
+        ctx.strokeStyle='rgba(100,65,30,'+strength*0.55+')';ctx.lineWidth=strength*2.5;ctx.stroke();
+      });
+    });
+    pts.forEach(function(p,i){
+      ctx.beginPath();ctx.arc(p[0],p[1],types[i]===0?3.5:2.5,0,Math.PI*2);
+      ctx.fillStyle=types[i]===0?'#7a4e2a':'#c4993a';ctx.fill();
+    });
+    var stage;
+    if(v<20) stage='Dry flour. Glutenin (brown) and gliadin (gold) proteins scattered and inert.';
+    else if(v<40) stage='Water added. Proteins hydrating, beginning to unfold.';
+    else if(v<65) stage='Mixing. Proteins bonding, gluten strands forming.';
+    else if(v<85) stage='Kneading. Network developing. Dough becoming elastic and strong.';
+    else stage='Fully developed gluten. A tight network capable of trapping CO2 and holding the loaf\'s shape.';
+    document.getElementById('gluten-stage').textContent=stage;
+  }
+  sl.addEventListener('input',draw);draw();
+})();
+</script>
+
 ---
 
 ### Water
