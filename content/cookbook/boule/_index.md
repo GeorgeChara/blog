@@ -16,9 +16,29 @@ layout: single
 <h1>Boule</h1>
 <p style="color: #888; margin-top: -0.5em;">40 min bake, 230°C, makes 1 loaf</p>
 
+## Ingredients
+
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 1 loaf</span>
+
+flour    420g
+water    320ml
+salt     9g
+yeast    2g
+</pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use strong white bread flour. It makes a difference.</span>
+
 ## Dough
 
-Use the <a href="/cookbook/baguette/">baguette recipe</a> through step 3, keeping the full batch as one loaf rather than dividing into two.
+Follow the <a href="/cookbook/baguette/">baguette recipe</a> steps 1-3 using the ingredients above, keeping the full batch as one loaf rather than dividing into two.
+
+<details><summary style="color:#888; font-size:0.85em;">show steps 1-3</summary>
+<span style="display:block; color:#888; font-size:0.85em; margin-top:0.5em; line-height:2;">
+1. Mix until no dry flour. Rest 30 mins.<br>
+2. Stretch and fold. Rest 30 mins.<br>
+3. Two coil folds 30 mins apart. Fridge overnight.
+</span>
+</details>
 
 ## Shaping
 
@@ -40,7 +60,9 @@ Cover and leave 1/2 hours at room temperature, or return to the fridge overnight
 
 **2.** Set your sling on the work surface and tip the banneton upside down onto it so the dough lands seam side down.
 
-**3.** Score the top with a single deep cut or cross using a sharp blade or lame.
+**3.** Score the top with a single deep cut or cross using a sharp blade or lame. Go at least 1cm deep, confident and quick.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Blade straight down, not angled.</span>
 
 **4.** Lift the sling by both ends and lower the dough into the hot pot. Tuck any excess paper down inside the pot, put the lid on and bake for 20 minutes.
 
