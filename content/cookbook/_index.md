@@ -40,6 +40,7 @@ layout: single
 <p class="cat-heading">Bread</p>
 <ul class="recipe-list">
   <li><a href="/cookbook/bagels/">Bagels</a></li>
+  <li class="pending"><a href="/cookbook/boule/">Boule</a></li>
   <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
   <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
   <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
@@ -58,8 +59,8 @@ layout: single
   <li class="pending"><a href="/cookbook/blondies/">Blondies</a></li>
   <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
   <li><a href="/cookbook/brownies/">Brownies</a></li>
-  <li><a href="/cookbook/cookies/">Cookies</a></li>
   <li class="pending"><a href="/cookbook/cheesecake/">Cheesecake</a></li>
+  <li><a href="/cookbook/cookies/">Cookies</a></li>
   <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>
   <li><a href="/cookbook/flapjacks/">Flapjacks</a></li>
   <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
