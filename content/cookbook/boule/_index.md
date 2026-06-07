@@ -24,7 +24,7 @@ Use the <a href="/cookbook/baguette/">baguette recipe</a> through step 3, keepin
 
 **Pre-shape.** Turn the dough out and shape into a rough round using a bench scraper. Leave uncovered on the work surface for 20 minutes.
 
-**Final shape.** Flip the dough, fold the edges in towards the centre, then flip seam side down. Cup your hands around it and drag it towards you to build surface tension. Place seam side up into a well-floured banneton.
+**Final shape.** Flip the dough, fold the edges in towards the centre, then flip seam side down. Cup your hands around it and drag it towards you to build surface tension. Place seam side up into a well-floured banneton. Even if skipping the prove, the banneton holds the shape while the pot preheats.
 
 ## Prove
 
