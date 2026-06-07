@@ -27,13 +27,15 @@ salt                 8g
 baking powder        5g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Lard is traditional and gives the best result. Butter works as a substitute. Not oil.<br>Water should be warm, around 50°C. Helps the lard incorporate cleanly.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Lard is traditional and gives the best result. No lard: vegetable shortening (Trex) is the closest match, butter works well and adds flavour, oil is the weakest option.<br>Water should be warm, around 50°C. Helps the fat incorporate cleanly.</span>
 
 ## Recipe
 
 **1.** Mix the flour, salt and baking powder. Add the lard and rub in with your fingers until the mixture resembles coarse breadcrumbs with no large lumps.
 
 **2.** Add the warm water gradually, mixing as you go, until a shaggy dough forms. Knead for 5 minutes until smooth. Cover and rest for 25 minutes.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle attachment to rub the lard into the flour on speed 1, then swap to the dough hook, add the water and knead on speed 2 for 3/4 minutes until smooth.</span>
 
 **3.** Divide into 6 equal pieces. Roll each into a ball, cover and rest a further 10 minutes.
 
