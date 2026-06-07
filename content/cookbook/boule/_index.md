@@ -24,13 +24,15 @@ Use the <a href="/cookbook/baguette/">baguette recipe</a> through step 3, keepin
 
 **Pre-shape.** Turn the dough out and shape into a rough round using a bench scraper. Leave uncovered on the work surface for 20 minutes.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Uncovered so the surface dries slightly, making the final shape easier to handle.</span>
+
 **Final shape.** Flip the dough, fold the edges in towards the centre, then flip seam side down. Cup your hands around it and drag it towards you to build surface tension. Place seam side up into a well-floured banneton. Even if skipping the prove, the banneton holds the shape while the pot preheats.
 
 ## Prove
 
 Cover and leave 1/2 hours at room temperature, or return to the fridge overnight.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">If the dough has already been cold fermenting for 2/3 days and is active and bubbly, skip this step. Go straight from shaping into the banneton and into the oven. Don't leave it sitting out.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">If the dough has been cold fermenting for 2/3 days and is active and bubbly, skip this step. Shape, place in the banneton and leave to rest while the Dutch oven comes to temperature, about 30 minutes.</span>
 
 ## Bake
 
