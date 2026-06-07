@@ -54,6 +54,8 @@ Weeks in the fridge without feeding is fine. It is almost certainly still alive.
 
 **Check first.** Pour off any grey or brown liquid on top. This is hooch, just alcohol from a hungry starter. If you see pink, orange or fuzzy mould in the jar, bin it and start fresh. Anything else is fine.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Left at room temperature rather than the fridge? The revival process is the same but expect 5/7 days rather than 3/5, and it may not come back at all. Room temperature accelerates fermentation until all the food runs out, which is harder on the culture than a slow fridge starvation. If it shows no signs of rise after 7 days of twice-daily feeds, start fresh using the section below.</span>
+
 **1.** Scrape off any dried crust from the surface. Take 10g of starter from underneath and transfer to a clean jar.
 
 **2.** Feed with 25g strong white flour and 25g filtered water. Stir well, loosely cover, leave at room temperature.
@@ -63,6 +65,8 @@ Weeks in the fridge without feeding is fine. It is almost certainly still alive.
 **4.** Ready when it doubles within 4/8 hours of a feed and smells fruity or lightly tangy.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use filtered or bottled water. Chlorine in UK tap water can slow fermentation. Leaving tap water out overnight also works.<br>A spot near a radiator or on top of the fridge speeds things up in winter.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You can feed into the same jar without cleaning it. If you do switch jars, rinse with hot water only. No soap — residue kills the culture.<br>The discard step matters. Adding flour and water on top of a large starving starter won't work because there isn't enough fresh food relative to the exhausted culture. Taking 10g and feeding that proportionally gives the fresh food a fighting chance.</span>
 
 ---
 
