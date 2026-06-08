@@ -26,7 +26,7 @@ warm water    270g
 salt          7g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Four ingredients, no baking powder. Leavening puffs them up bread-like, the opposite of the thin stretchy tortilla you want. The authentic Sonoran style uses none.<br>This dough is high hydration on purpose. It is what keeps the tortillas soft and pliable instead of stiff and crack-prone. It will feel sticky when mixed and firms up as it rests.<br>Lard is traditional. Trex (vegetable shortening) swaps in 1:1 and is vegetarian and vegan. Butter is not 1:1 as its water content makes them more pita-like. Trex is in the baking aisle of most UK supermarkets, a white block in red packaging, room temperature not chilled.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No baking powder. The high hydration is what keeps them soft, it will feel sticky and firms up as it rests.<br>Lard or Trex (1:1, vegan). Not butter, the water content makes them pita-like.</span>
 
 ## Recipe
 
@@ -34,7 +34,7 @@ salt          7g
 
 **2.** Add the warm water gradually, mixing as you go, until the dough comes together soft and sticky, like sticky oatmeal. Dust the counter with flour and knead for 5 minutes until smooth and no longer sticky.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle attachment to rub the lard into the flour on speed 1, then swap to the dough hook, add the water and knead on speed 2 for 3/4 minutes until it pulls cleanly from the bowl.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle to rub in the lard, then dough hook on speed 2 for 3/4 minutes.<br>Green tortillas: blend 100g spinach with 240g water, use in place of the plain water.</span>
 
 **3.** Smear a little lard over the dough ball, cover with a damp cloth and rest 20 minutes somewhere warm.
 
@@ -42,10 +42,10 @@ salt          7g
 
 **5.** On a lightly floured surface, roll each ball out paper thin, aiming for 25cm. This is the make or break step. The dough should be thin enough to see the shadow of your hand through it. Too thick and they puff up and eat like pita.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Roll from the centre outward, rotating the dough rather than the rolling pin. If it springs back, leave it 2/3 minutes before continuing. Flour both sides lightly to stop it sticking, but keep it light as excess flour toughens them.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flour both sides lightly. If it springs back, rest it 2/3 minutes.</span>
 
 **6.** Heat a dry pan over medium-high heat. No oil. Cook each tortilla 20/30 seconds per side until brown spots appear. Keep it quick, overcooking dries them out and makes them stiff. Adjust the heat after the first one if they are crisping rather than staying soft.
 
 **7.** Wrap in a clean tea towel as they come out to keep them warm and pliable. Serve immediately.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Store uncooked: stack the rolled dough discs with greaseproof paper between them, refrigerate up to 2 weeks. Bring to room temperature before cooking.<br>Cooked tortillas keep in the fridge up to a week. Reheat dry in the pan for 20 seconds per side.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cooked tortillas keep a week in the fridge, reheat dry for 20 seconds a side.</span>
