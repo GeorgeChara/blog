@@ -32,13 +32,13 @@ salt               to taste
 
 <span style="color: #888;">Filling</span>
 cooked chicken     400g
-onion              1
+jalapeño relish    optional
 
 <span style="color: #888;">To assemble</span>
 tortillas          8
 mature cheddar     to taste
 mozzarella         to taste
-red onion          1/2
+red onion          1
 fresh parsley      handful
 </pre>
 
@@ -52,14 +52,14 @@ fresh parsley      handful
 
 **3.** Take the pan off the heat and blend smooth with a stick blender. Taste and adjust the salt and heat.
 
-**4.** In a separate bowl, mix the shredded chicken with the finely diced onion, a pinch of salt and cumin, and a few spoonfuls of the sauce until coated. Keep the rest of the sauce for dipping and topping.
+**4.** Slice half the red onion thinly. In a separate bowl, mix the shredded chicken with the sliced onion, a pinch of salt and cumin, and a few spoonfuls of the sauce until coated. Keep the rest of the sauce for the base and topping.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Optional <a href="/cookbook/jalapeno-relish/">jalapeño relish</a> mixed in with the chicken, to taste.</span>
 
 **5.** Spread a thin layer of sauce over the base of a baking dish.
 
-**6.** Warm each tortilla in a dry pan to make it pliable. Spoon chicken down the centre, roll up and place seam side down in the dish. Repeat for all 8.
+**6.** Warm each tortilla in a dry pan to make it pliable. Spoon chicken down the centre with a little cheese, roll up and place seam side down in the dish. Repeat for all 8.
 
-**7.** Pour the remaining sauce over the top and scatter with cheese.
+**7.** Pour the remaining sauce over the top and scatter with the rest of the cheese.
 
-**8.** Bake at 200°C for 15/20 minutes until the cheese is melted and bubbling. Finish with finely diced red onion and torn parsley.
+**8.** Bake at 200°C for 15/20 minutes until the cheese is melted and bubbling. Finely dice the other half of the red onion and finish with it and torn parsley.
