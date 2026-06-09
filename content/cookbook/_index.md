@@ -75,6 +75,7 @@ layout: single
 
 <p class="cat-heading">Savoury</p>
 <ul class="recipe-list">
+  <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
   <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
   <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
   <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
