@@ -52,6 +52,7 @@ layout: single
 <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
 <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
 <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
+<li class="pending"><a href="/cookbook/farata/">Farata</a></li>
 <li><a href="/cookbook/flour-tortillas/">Flour Tortillas</a></li>
 <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
 <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
@@ -86,6 +87,7 @@ layout: single
 <p class="cat-heading">Savoury</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
+<li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
 <li class="pending"><a href="/cookbook/carnitas/">Carnitas</a></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
