@@ -54,3 +54,5 @@ salt               to taste
 **6.** Add the potatoes, water and salt. Bring to a simmer, lid on, and cook 30/40 minutes until the chicken is tender and the potatoes are soft.
 
 **7.** Finish with torn coriander. Serve with <a href="/cookbook/farata/">farata</a>.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Vegetarian (cari gros pois): swap the chicken for 2 tins of drained butter beans, the traditional Mauritian version. Add them with the potatoes and use a little less water as they need less cooking. Soya chunks (rehydrated first) or chickpeas work the same way.</span>
