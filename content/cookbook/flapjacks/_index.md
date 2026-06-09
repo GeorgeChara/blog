@@ -26,12 +26,12 @@ layout: single
 
 rolled oats      275g
 unsalted butter  200g
-demerara sugar   100g
-golden syrup     100g
+golden syrup     150g
+demerara sugar   50g
 salt             2g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pull them out when still slightly soft in the middle. They firm up as they cool.<br><strong>Dark chocolate:</strong> pour melted dark chocolate over the cooled bars while still in the tin. Press flaky salt on top. Leave to set then cut.<br><strong>White chocolate and raspberry:</strong> mix 50-60g dried raspberries and the zest of half a lemon into the oats before pressing into the tin. Pour melted white chocolate over the cooled bars. Leave to set then cut.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For chewy not hard: the layer should be 2-3cm thick. If it comes out at 1cm the tin is too big, use a 20cm square or smaller. The golden syrup keeps them chewy, demerara sets harder, so don't swap it back. Pull them out when the centre still looks wet and shiny, they firm up a lot as they cool.<br><strong>Dark chocolate:</strong> pour melted dark chocolate over the cooled bars while still in the tin. Press flaky salt on top. Leave to set then cut.<br><strong>White chocolate and raspberry:</strong> mix 50-60g dried raspberries and the zest of half a lemon into the oats before pressing into the tin. Pour melted white chocolate over the cooled bars. Leave to set then cut.</span>
 
 ## Recipe
 
@@ -43,7 +43,7 @@ salt             2g
 
 **4.** Tip into the tin and press down into an even layer.
 
-**5.** Bake for 18-20 minutes until golden at the edges. The centre should still look wet and shiny when you pull them — this is correct. They firm up a lot as they cool and will be dense and chewy rather than dry.
+**5.** Bake for 18-20 minutes until golden at the edges. The centre should still look wet and shiny when you pull them, this is correct. They firm up a lot as they cool and will be dense and chewy rather than dry.
 
 **6.** Leave to cool completely in the tin, then cut into bars.
 
