@@ -92,6 +92,7 @@ layout: single
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
+<li class="pending"><a href="/cookbook/chicken-tagine/">Chicken Tagine</a></li>
 <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
