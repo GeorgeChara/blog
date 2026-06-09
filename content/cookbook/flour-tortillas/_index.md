@@ -47,9 +47,9 @@ spinach       100g, optional
 
 </details>
 
-**3.** Smear a little lard over the dough ball, cover with a damp cloth and rest 20 minutes somewhere warm.
+**3.** Cover the dough ball with a damp cloth and rest 20 minutes somewhere warm.
 
-**4.** Divide into 8 equal pieces. Roll each into a smooth ball and smear a little lard over each to stop them drying. Cover and rest 10 minutes while the pan heats.
+**4.** Divide into 8 equal pieces. Roll each into a ball, cover and rest 10 minutes while the pan heats.
 
 <details><summary>show photo</summary>
 
@@ -59,7 +59,7 @@ spinach       100g, optional
 
 **5.** On a lightly floured surface, roll each ball out paper thin, aiming for 25cm. This is the make or break step. The dough should be thin enough to see the shadow of your hand through it. Too thick and they puff up and eat like pita.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flour both sides lightly. If it springs back, rest it 2/3 minutes.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flour both sides lightly. Let the rolling pin do the work, don't push down or it sticks and tears. If it springs back, rest it 2/3 minutes.</span>
 
 **6.** Heat a dry pan over medium-high heat. No oil. Cook each tortilla 20/30 seconds per side until brown spots appear. Keep it quick, overcooking dries them out and makes them stiff. Adjust the heat after the first one if they are crisping rather than staying soft.
 
