@@ -38,6 +38,8 @@ fine salt    1g
 
 **2.** When it becomes too stiff to fork, use your hands. Bring the dough together into a rough ball, then knead for 10 minutes until smooth, yellow, and elastic. It will feel quite stiff at first.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: put everything in the bowl, mix with the dough hook on low until it forms a ball (about 3 minutes), then knead on speed 2 for 5/6 minutes until smooth. It will be crumbly at first. If it won't come together add a teaspoon of water, if sticky add a little flour. Keep it on low, it is a stiff dough.</span>
+
 **3.** Wrap tightly in cling film and rest at room temperature for 30 minutes. Up to 2 hours is fine.
 
 **4.** Cut the dough into 3 equal pieces. Keep the pieces you are not using wrapped.
@@ -51,6 +53,8 @@ fine salt    1g
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dust with semolina between passes if the dough feels sticky. 00 flour can make the sheets too slippery; semolina dusting grips better.</span>
 
 **8.** For tagliatelle or pappardelle: cut the sheets into 25cm lengths, dust well with semolina, roll loosely and cut by hand into strips (5mm for tagliatelle, 20mm for pappardelle). Shake out into nests and leave to dry on a floured tray for up to 30 minutes before cooking.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cutter attachment: fit the tagliatelle cutter, set to speed 2. Dust the sheet well with semolina so the strips don't stick, then feed it through, catching the strips as they come out the bottom. Shake into nests. Pappardelle is too wide for the cutter, cut it by hand.</span>
 
 **9.** For lasagne sheets: cut to fit your dish and use immediately, or layer between semolina-dusted parchment.
 
