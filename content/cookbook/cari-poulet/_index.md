@@ -41,7 +41,7 @@ salt               to taste
 
 ## Recipe
 
-**1.** Joint the chicken thighs into a couple of pieces each. Peel and dice the potatoes into large chunks.
+**1.** Cut each chicken thigh into 2 or 3 pieces. Peel and dice the potatoes into large chunks.
 
 **2.** Mix the curry powder and turmeric with a splash of water to a loose paste.
 
@@ -53,4 +53,4 @@ salt               to taste
 
 **6.** Add the potatoes, water and salt. Bring to a simmer, lid on, and cook 30/40 minutes until the chicken is tender and the potatoes are soft.
 
-**7.** Finish with torn coriander. Serve with farata.
+**7.** Finish with torn coriander. Serve with <a href="/cookbook/farata/">farata</a>.
