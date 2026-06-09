@@ -37,11 +37,11 @@ water              400ml
 salt               to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use long grain parboiled rice. It holds its shape, normal rice goes mushy.<br>The scotch bonnet brings the heat. Use half for milder, leave it whole and remove before serving for flavour without the full punch.<br>Maggi or Knorr cubes are the authentic seasoning.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use long grain parboiled rice. It holds its shape, normal rice goes mushy.<br>The scotch bonnet brings the heat. Deseed it or use half for a milder result.<br>Maggi or Knorr cubes are the authentic seasoning.</span>
 
 ## Recipe
 
-**1.** Blend the tinned tomatoes, red peppers, 1 onion and the scotch bonnet to a smooth purée.
+**1.** Blend the tinned tomatoes, red peppers, 1 onion and the scotch bonnet to a smooth puree.
 
 **2.** Heat the oil in the Dutch oven. Dice the other onion and fry until soft. Add the tomato puree and cook 2/3 minutes.
 
