@@ -38,6 +38,6 @@ fine sea salt    to taste
 
 **4.** Add the potatoes back in and mash until smooth. A ricer gives the smoothest result.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: mash or rice the potatoes first, then the paddle attachment on low just to whip in the butter and milk. Stop the moment it is smooth. Never the whisk, and never overwork it, both turn it gluey.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: mash or rice the potatoes first, then the flex edge beater on low just to whip in the butter and milk. Stop the moment it is smooth. Never the whisk, and never overwork it, both turn it gluey.</span>
 
 **5.** Season well with salt. Taste and adjust butter if needed.

@@ -42,7 +42,7 @@ eggs                3
 
 **2.** Beat the cream cheese and sugar until smooth, about 2 minutes.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment on low to medium.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater on low to medium. It scrapes the bowl so the cream cheese beats smooth without lumps.</span>
 
 **3.** Add the sour cream, lemon juice and vanilla. Mix until just combined.
 

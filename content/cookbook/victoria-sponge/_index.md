@@ -46,7 +46,7 @@ icing sugar        for dusting
 
 **3.** Beat the butter and sugar together until pale and fluffy, about 4-5 minutes.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment, low to medium.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater, low to medium. It scrapes the bowl as it creams.</span>
 
 **4.** Beat the eggs lightly in a jug. Add them gradually, a little at a time, mixing between each addition. Add a spoonful of the flour with each addition to stop it curdling.
 

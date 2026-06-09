@@ -48,7 +48,7 @@ sprinkles           optional
 
 **2.** Beat the butter and sugar together until pale and fluffy. Add the eggs one at a time, mixing between each.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment. Start on low, bring up to medium. Drop back to low when adding the eggs.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater. Start on low, bring up to medium. Drop back to low when adding the eggs.</span>
 
 **3.** Add the vanilla and mix on low. Add the flour and mix on low until just combined, then mix in the milk to loosen slightly.
 
