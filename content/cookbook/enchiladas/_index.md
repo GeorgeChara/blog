@@ -9,12 +9,16 @@ layout: single
   main > h1:first-of-type { display: none; }
   .time { display: none; }
   h2::before { content: none !important; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
 </style>
 
 <h1>Enchiladas</h1>
 <p style="color: #888; margin-top: -0.5em;">45 min, 200°C, serves 4</p>
+
+![](/images/enchiladas/header.webp)
 
 ## Ingredients
 
@@ -56,10 +60,28 @@ fresh parsley      handful
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Optional <a href="/cookbook/jalapeno-relish/">jalapeño relish</a> mixed in with the chicken, to taste.</span>
 
+<details><summary>show photo</summary>
+
+![](/images/enchiladas/chicken.webp)
+
+</details>
+
 **5.** Spread a thin layer of sauce over the base of a baking dish.
 
 **6.** Warm each tortilla in a dry pan to make it pliable. Spoon chicken down the centre with a little cheese, roll up and place seam side down in the dish. Repeat for all 8.
 
+<details><summary>show photo</summary>
+
+![](/images/enchiladas/rolled.webp)
+
+</details>
+
 **7.** Pour the remaining sauce over the top and scatter with the rest of the cheese.
+
+<details><summary>show photo</summary>
+
+![](/images/enchiladas/cheese.webp)
+
+</details>
 
 **8.** Bake at 200°C for 15/20 minutes until the cheese is melted and bubbling. Finely dice the other half of the red onion and finish with it and torn parsley.

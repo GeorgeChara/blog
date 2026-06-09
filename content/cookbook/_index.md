@@ -93,10 +93,10 @@ layout: single
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
 <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
-<li class="pending"><a href="/cookbook/enchiladas/">Enchiladas</a></li>
+<li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
 <li class="pending"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
-<li class="pending"><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
+<li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
 <li class="pending"><a href="/cookbook/ragu/">Ragù</a></li>
