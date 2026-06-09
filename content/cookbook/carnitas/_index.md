@@ -1,0 +1,57 @@
+---
+title: "Carnitas"
+toc: false
+showreadingtime: false
+layout: single
+---
+
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  h2::before { content: none !important; }
+  .content pre { color: #000; }
+  .terminal-nav { display: none; }
+</style>
+
+<h1>Carnitas</h1>
+<p style="color: #888; margin-top: -0.5em;">3 hr 30 min, Dutch oven, serves 6</p>
+
+## Ingredients
+
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Pork</span>
+pork shoulder      1.5kg
+onion              1
+garlic             5 cloves
+orange             1
+lime               2
+ground cumin       2 tsp
+dried oregano      2 tsp
+ground cinnamon    1/2 tsp
+bay leaves         2
+stock              200ml
+salt and pepper    to season
+
+<span style="color: #888;">To serve</span>
+tortillas
+pickled red onion
+jalapeño relish
+lime
+</pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Leave some fat on the pork, it keeps it moist and crisps up at the end. Don't trim it all off.<br>The cinnamon is the Mexican tell, like in kleftiko. Don't skip it.<br>Serve in <a href="/cookbook/flour-tortillas/">flour tortillas</a> with <a href="/cookbook/pickled-red-onions/">pickled red onion</a>, <a href="/cookbook/jalapeno-relish/">jalapeño relish</a> and <a href="/cookbook/fermented-hot-sauce/">fermented hot sauce</a>.</span>
+
+## Recipe
+
+**1.** Cut the pork shoulder into large 5cm chunks, leaving some fat on. Season well with salt and pepper.
+
+**2.** Put the pork in the Dutch oven with the quartered onion, garlic, cumin, oregano, cinnamon and bay. Squeeze in the orange and lime juice and add the stock. The liquid should come about halfway up.
+
+**3.** Lid on, into the oven at 150°C for 3 hours until the pork falls apart easily.
+
+**4.** Lift the pork into the stand mixer bowl. Paddle on low for a few seconds until shredded.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater or paddle on low. A few seconds only, it shreds fast.</span>
+
+**5.** Spread the shredded pork on a tray, spoon over some of the cooking juices and crisp under a hot grill for 5/10 minutes until the edges are golden and crispy.
+
+**6.** Pile into warm tortillas with pickled onion, jalapeño relish, a squeeze of lime and hot sauce.

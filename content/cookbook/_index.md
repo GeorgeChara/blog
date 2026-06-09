@@ -86,6 +86,7 @@ layout: single
 <p class="cat-heading">Savoury</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
+<li class="pending"><a href="/cookbook/carnitas/">Carnitas</a></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
@@ -118,6 +119,7 @@ layout: single
 <p class="cat-heading">Preserves</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
+<li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
 <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
 <li class="pending"><a href="/cookbook/piccalilli/">Piccalilli</a></li>
 <li class="pending"><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
