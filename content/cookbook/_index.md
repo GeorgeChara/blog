@@ -24,7 +24,14 @@ layout: single
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
 
   @media (max-width: 600px) { .cookbook-cols { column-count: 1; } }
+
+  .featured { margin: 0 0 1.8em 0; padding: 0.7em 1em; border: 1px solid #E5DECF; border-radius: 6px; background: #fbf9f4; }
+  .featured a { color: #4169E1; text-decoration: none; font-weight: bold; }
+  .featured a:hover { color: #2a50c8; }
+  .featured span { color: #888; font-size: 0.85em; }
 </style>
+
+<div class="featured"><a href="/cookbook/make-ahead/">Make-Ahead Prep</a> <span>batch-prep and freezer storage guide</span></div>
 
 <div class="cookbook-cols">
 <div class="cat">
@@ -134,6 +141,12 @@ layout: single
 <li class="pending"><a href="/cookbook/preserved-lemons/">Preserved Lemons</a></li>
 <li class="pending"><a href="/cookbook/tomato-ketchup/">Tomato Ketchup</a></li>
 <li class="pending"><a href="/cookbook/tsoursi/">Tsoursi</a></li>
+</ul>
+</div>
+<div class="cat">
+<p class="cat-heading">Drinks</p>
+<ul class="recipe-list">
+<li><a href="/cookbook/smoothies/">Smoothies</a></li>
 </ul>
 </div>
 </div>
