@@ -47,3 +47,5 @@ toppings             ~250g
 **4.** Add toppings and mix.
 
 **5.** Scoop small spoonfuls onto a baking tray lined with baking paper. Bake for roughly 10 minutes. Pull them out just before they start browning and let cool on a rack.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: portion the dough into balls and freeze flat.<br>Bake: from frozen, add a minute or two to the time.<br>Keeps: 3 months frozen as dough, baked cookies a few days in a tub.</span>

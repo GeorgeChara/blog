@@ -65,4 +65,4 @@ spinach       100g, optional
 
 **7.** Wrap in a clean tea towel as they come out to keep them warm and pliable. Serve immediately.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cooked tortillas keep a week in the fridge, reheat dry for 20 seconds a side.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: stack cooled tortillas with baking paper between each, flat in a bag.<br>Reheat: from frozen, dry hot pan 20/30 seconds a side, no need to thaw.<br>Keeps: 6 months frozen, 1 week in the fridge.</span>

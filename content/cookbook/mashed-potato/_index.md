@@ -41,3 +41,5 @@ fine sea salt    to taste
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: mash or rice the potatoes first, then the flex edge beater on low just to whip in the butter and milk. Stop the moment it is smooth. Never the whisk, and never overwork it, both turn it gluey.</span>
 
 **5.** Season well with salt. Taste and adjust butter if needed.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: in portions, flat in bags.<br>Reheat: from frozen on a gentle heat with a splash of milk, or thaw in the fridge first.<br>Keeps: 3 months frozen, 3 days in the fridge.</span>

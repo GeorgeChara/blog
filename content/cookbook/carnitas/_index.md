@@ -55,3 +55,5 @@ lime
 **5.** Spread the shredded pork on a tray, spoon over some of the cooking juices and crisp under a hot grill for 5/10 minutes until the edges are golden and crispy.
 
 **6.** Pile into warm tortillas with pickled onion, jalapeño relish, a squeeze of lime and hot sauce.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: shred and freeze in its own juices, flat in bags.<br>Reheat: from frozen in a pan or oven, crisp the edges at the end.<br>Keeps: 3 months frozen, 3 days in the fridge.</span>

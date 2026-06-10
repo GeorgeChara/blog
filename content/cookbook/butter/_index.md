@@ -104,3 +104,5 @@ function toggleMedia(id, el) {
   if (!isOpen) { target.classList.add('open'); el.classList.add('open'); }
 }
 </script>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: wrap tight in blocks.<br>Thaw: in the fridge overnight.<br>Keeps: 6/12 months frozen, 2/3 weeks in the fridge.</span>

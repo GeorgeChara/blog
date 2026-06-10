@@ -42,3 +42,5 @@ salt        5g
 **5.** Leave to cool completely. Spoon into ice cube trays and freeze solid. Transfer the cubes to a bag. Label with the date.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">To use: drop 2-3 cubes straight into a cold pan with a little oil. Heat gently. You have saved 20-25 minutes of prep.<br>Use as the base for: ragù, soups, stews, tomato sauce, risotto, shakshuka, or anything that starts with sweating onions.<br>Keeps 6 months in the freezer.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: cool, then freeze in cubes or flat in a bag.<br>Reheat: straight from frozen into the pan.<br>Keeps: 3 months frozen, 1 week in the fridge.</span>

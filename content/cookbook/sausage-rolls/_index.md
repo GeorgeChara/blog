@@ -58,3 +58,5 @@ whole milk         15g
 **8.** Bake for 25-35 minutes until deep golden brown.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>To take them further:</strong><br>Black pudding and apple: replace 150g of the sausage meat with crumbled cooked black pudding and add one grated apple (squeezed dry). The best upgrade.<br>Brie and cranberry: spread cranberry sauce on the pastry before the meat, lay a strip of brie on top before rolling.<br>Caramelised onion: stir 2 tbsp of onion chutney into the raw meat instead of cooking a fresh onion.<br>Glaze: brush with egg wash then a thin layer of Dijon before the seeds go on.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: unbaked, on a tray then bag once solid.<br>Bake: from frozen, add 5/10 minutes to the time.<br>Keeps: 3 months frozen, baked ones 2 days in the fridge.</span>

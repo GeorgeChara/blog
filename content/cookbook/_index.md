@@ -22,16 +22,15 @@ layout: single
   .recipe-meta { color: #888; font-size: 0.85em; margin-left: 0.4em; }
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
+  .frz { color: #3f9fd4; font-size: 1em; margin-left: 0.35em; }
 
   @media (max-width: 600px) { .cookbook-cols { column-count: 1; } }
 
-  .featured { margin: 0 0 1.8em 0; padding: 0.7em 1em; border: 1px solid #E5DECF; border-radius: 6px; background: #fbf9f4; }
-  .featured a { color: #4169E1; text-decoration: none; font-weight: bold; }
-  .featured a:hover { color: #2a50c8; }
-  .featured span { color: #888; font-size: 0.85em; }
+  .featured { margin: 0 0 1.6em 0; padding-bottom: 1.2em; border-bottom: 1px solid #eee; }
+  .featured a { color: #4169E1; text-decoration: none; font-weight: bold; border-bottom: 1px solid #c5ccee; }
+  .featured a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
+  .featured span { color: #888; font-size: 0.85em; margin-left: 0.4em; }
 </style>
-
-<div class="featured"><a href="/cookbook/make-ahead/">Make-Ahead Prep</a> <span>batch-prep and freezer storage guide</span></div>
 
 <div class="cookbook-cols">
 <div class="cat">
@@ -43,12 +42,12 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Basics</p>
 <ul class="recipe-list">
-<li><a href="/cookbook/butter/">Butter</a></li>
+<li><a href="/cookbook/butter/">Butter</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/buttercream/">Buttercream</a></li>
 <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
-<li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a></li>
+<li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
-<li class="pending"><a href="/cookbook/soffritto/">Soffritto</a></li>
+<li class="pending"><a href="/cookbook/soffritto/">Soffritto</a><span class="frz">❄</span></li>
 </ul>
 </div>
 <div class="cat">
@@ -60,7 +59,7 @@ layout: single
 <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
 <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
 <li class="pending"><a href="/cookbook/farata/">Farata</a></li>
-<li><a href="/cookbook/flour-tortillas/">Flour Tortillas</a></li>
+<li><a href="/cookbook/flour-tortillas/">Flour Tortillas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
 <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
 <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
@@ -79,7 +78,7 @@ layout: single
 <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
 <li><a href="/cookbook/brownies/">Brownies</a></li>
 <li class="pending"><a href="/cookbook/cheesecake/">Cheesecake</a></li>
-<li><a href="/cookbook/cookies/">Cookies</a></li>
+<li><a href="/cookbook/cookies/">Cookies</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>
 <li><a href="/cookbook/flapjacks/">Flapjacks</a></li>
 <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
@@ -94,8 +93,9 @@ layout: single
 <p class="cat-heading">Savoury</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
+<li class="pending"><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
-<li class="pending"><a href="/cookbook/carnitas/">Carnitas</a></li>
+<li class="pending"><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
@@ -107,10 +107,10 @@ layout: single
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
-<li class="pending"><a href="/cookbook/ragu/">Ragù</a></li>
+<li class="pending"><a href="/cookbook/ragu/">Ragù</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
-<li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
-<li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a></li>
+<li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a><span class="frz">❄</span></li>
 </ul>
 </div>
 <div class="cat">

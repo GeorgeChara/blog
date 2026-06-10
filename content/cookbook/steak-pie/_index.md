@@ -61,3 +61,5 @@ egg               1
 **7.** Brush the rim of the dish with beaten egg. Press a thin strip of pastry around the rim. Brush the strip with egg, then lay the pastry lid on top. Press firmly around the edges to seal. Trim and crimp.
 
 **8.** Brush all over with beaten egg. Score a few lines or cut a small cross in the centre. Bake for 25-35 minutes until deep golden brown and puffed. Serve immediately.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: assemble unbaked and wrap well, or freeze just the cooled filling.<br>Bake: from frozen, add 20/30 minutes. Filling only: thaw, then top with fresh pastry.<br>Keeps: 3 months frozen.</span>
