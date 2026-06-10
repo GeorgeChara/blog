@@ -92,6 +92,7 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Savoury</p>
 <ul class="recipe-list">
+<li class="pending"><a href="/cookbook/bowsers-big-bean-burrito/">Bowser's Big Bean Burrito</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
 <li class="pending"><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
