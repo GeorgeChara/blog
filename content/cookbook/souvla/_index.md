@@ -69,3 +69,6 @@ lemon            1
 **5.** In the last 10 minutes, slide the pieces apart on the skewer to expose more surface area for the final crisping.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You'll know when it's done, eyeball it.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Brilliant pulled off the skewer into a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with <a href="/cookbook/parsley-yoghurt/">parsley yoghurt</a> and <a href="/cookbook/pickled-red-onions/">pickled onions</a>, a souvlaki style wrap. Stir grated cucumber into the yoghurt to take it towards tzatziki.</span>
+

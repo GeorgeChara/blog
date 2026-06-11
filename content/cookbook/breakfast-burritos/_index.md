@@ -58,6 +58,13 @@ hash brown
 ketchup
 </pre>
 
+<p class="bb-name">The Diner</p>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">hash brown
+egg
+cheese
+beans
+</pre>
+
 <p class="bb-name">Hellim</p>
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">halloumi
 egg

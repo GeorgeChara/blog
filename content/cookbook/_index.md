@@ -46,8 +46,9 @@ layout: single
 <li class="pending"><a href="/cookbook/buttercream/">Buttercream</a></li>
 <li class="pending"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
-<li class="pending"><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/parsley-yoghurt/">Parsley Yoghurt</a></li>
 <li class="pending"><a href="/cookbook/rice/">Rice</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
 <li class="pending"><a href="/cookbook/soffritto/">Soffritto</a><span class="frz">❄</span></li>
