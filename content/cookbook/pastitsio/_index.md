@@ -33,6 +33,7 @@ garlic              2 cloves, crushed
 ground cinnamon     3g (1 tsp)
 ground cloves       1g (pinch)
 ground nutmeg       1g (pinch)
+dried mint          2g (1 tsp)
 passata             185g
 dry red wine        100ml
 olive oil           30g
@@ -62,7 +63,7 @@ salt and pepper     to taste
 
 **2.** Add both minces and cook, breaking up clumps, until browned all over, about 8-10 minutes. Pour in the wine and let it reduce for 3-4 minutes.
 
-**3.** Add the cinnamon, cloves, nutmeg, and passata. Stir well and simmer on low heat for 20-25 minutes until the sauce is thick and most of the liquid is gone. Season and set aside.
+**3.** Add the cinnamon, cloves, nutmeg, mint, and passata. Stir well and simmer on low heat for 20-25 minutes until the sauce is thick and most of the liquid is gone. Season and set aside.
 
 **4.** Cook the pasta in well-salted boiling water for 1-2 minutes less than the packet says. It will finish cooking in the oven. Drain and set aside.
 
