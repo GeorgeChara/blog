@@ -51,6 +51,13 @@ potato
 chipotle tomato
 </pre>
 
+<p class="bb-name">Menace Special 2.0</p>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">egg
+bacon
+hash brown
+ketchup
+</pre>
+
 <p class="bb-name">Hellim</p>
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">halloumi
 egg
