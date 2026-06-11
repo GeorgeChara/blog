@@ -39,7 +39,7 @@ spinach       100g, optional
 
 **2.** Add the warm water gradually, mixing as you go, until the dough comes together soft and sticky, like sticky oatmeal. Dust the counter with flour and knead for 5 minutes until smooth and no longer sticky.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle to rub in the lard, then dough hook on speed 2 for 3/4 minutes.<br>Green tortillas: blend the spinach into the water, holding back 60g as the spinach adds moisture. Add it back only if the dough feels dry.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle to rub in the lard, then dough hook on speed 2 for 3/4 minutes.<br>Buttermilk version: swap the water for warmed buttermilk. Softer, slightly tangy, and folds even better. A good use for the buttermilk left from making <a href="/cookbook/butter/">butter</a>. Keep the lard.<br>Green tortillas: blend the spinach into the water, holding back 60g as the spinach adds moisture. Add it back only if the dough feels dry.</span>
 
 <details><summary>show photo</summary>
 
