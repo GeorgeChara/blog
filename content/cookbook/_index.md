@@ -99,7 +99,7 @@ layout: single
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/bowsers-big-bean-burrito/">Bowser's Big Bean Burrito</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
-<li class="pending"><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
 <li class="pending"><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
