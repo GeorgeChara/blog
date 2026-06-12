@@ -70,5 +70,7 @@ lemon            1
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You'll know when it's done, eyeball it.</span>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For ultra crispy skin: pat it dry and salt it well before it goes on, dry skin is the secret, and the turning spit renders the fat and crisps it as it goes. Go easy on the lemon during cooking and save it for serving, wet skin won't crisp. A pinch of baking powder rubbed in with the salt crisps it even more.</span>
+
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Brilliant pulled off the skewer into a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with <a href="/cookbook/parsley-yoghurt/">parsley yoghurt</a> and <a href="/cookbook/pickled-red-onions/">pickled onions</a>, a souvlaki style wrap. Stir grated cucumber into the yoghurt to take it towards tzatziki.</span>
 

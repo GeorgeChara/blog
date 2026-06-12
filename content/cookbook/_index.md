@@ -114,6 +114,7 @@ layout: single
 <li class="pending"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
+<li class="pending"><a href="/cookbook/pot-roast-chicken-thighs/">Pot-Roast Chicken Thighs</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
 <li class="pending"><a href="/cookbook/ragu/">Ragù</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/roast-pork-loin/">Roast Pork Loin</a><span class="frz">❄</span></li>
