@@ -70,6 +70,7 @@ layout: single
 <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
 <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
 <li class="pending"><a href="/cookbook/pupusas/">Pupusas</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/seeded-wholemeal-loaf/">Seeded Wholemeal Loaf</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
 <li class="pending"><a href="/cookbook/sourdough/">Sourdough</a></li>
 <li class="pending"><a href="/cookbook/sourdough-starter/">Sourdough Starter</a></li>
