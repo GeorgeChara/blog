@@ -28,7 +28,7 @@ fresh parsley      15g
 fresh mint         10g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Slice the onions as thin as possible. A mandoline helps.<br>Serve as part of a mezze, alongside grilled meats, halloumi or in wraps.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Slice the onions as thin as possible. A mandoline helps.<br>No sumac? Use the zest of a lemon and a small squeeze of juice. You get the lemony tang, just not the deep pink colour.<br>Serve as part of a mezze, alongside grilled meats, halloumi or in wraps.</span>
 
 ## Recipe
 

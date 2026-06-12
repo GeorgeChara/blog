@@ -32,13 +32,14 @@ chicken stock      200ml
 salt and pepper    to season
 
 <span style="color: #888;">To serve</span>
-tortillas
-pickled red onion
-jalapeño relish
+<a href="/cookbook/flour-tortillas/">tortillas</a>
+<a href="/cookbook/pickled-red-onions/">pickled red onion</a>
+<a href="/cookbook/jalapeno-relish/">jalapeño relish</a>
+<a href="/cookbook/fermented-hot-sauce/">fermented hot sauce</a>
 lime
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pork shoulder is in the fresh pork aisle of any big supermarket (Sainsbury's, Tesco, Aldi), look for a shoulder joint, boneless is easiest. Sometimes labelled pork collar, or ask at the butcher counter for ~1.5kg.<br>Pick one with a fat cap and leave some fat on, it keeps it moist and crisps up at the end.<br>The cinnamon is the Mexican tell, like in kleftiko. Don't skip it.<br>Serve in <a href="/cookbook/flour-tortillas/">flour tortillas</a> with <a href="/cookbook/pickled-red-onions/">pickled red onion</a>, <a href="/cookbook/jalapeno-relish/">jalapeño relish</a> and <a href="/cookbook/fermented-hot-sauce/">fermented hot sauce</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pork shoulder is in the fresh pork aisle of any big supermarket (Sainsbury's, Tesco, Aldi), look for a shoulder joint, boneless is easiest. Sometimes labelled pork collar, or ask at the butcher counter for ~1.5kg.<br>Pick one with a fat cap and leave some fat on, it keeps it moist and crisps up at the end.<br>The cinnamon is the Mexican tell, like in kleftiko. Don't skip it.</span>
 
 ## Recipe
 
@@ -56,6 +57,6 @@ lime
 
 **5.** Spread the shredded pork on a tray, spoon over some of the cooking juices and crisp under a hot grill for 5/10 minutes until the edges are golden and crispy.
 
-**6.** Pile into warm tortillas with pickled onion, jalapeño relish, a squeeze of lime and hot sauce.
+**6.** Pile into warm tortillas with <a href="/cookbook/pickled-red-onions/">pickled onion</a>, jalapeño relish, a squeeze of lime and hot sauce.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: shred and freeze in its own juices, flat in bags.<br>Reheat: from frozen in a pan or oven, crisp the edges at the end.<br>Keeps: 3 months frozen, 3 days in the fridge.</span>
