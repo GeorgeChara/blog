@@ -115,6 +115,7 @@ layout: single
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
 <li class="pending"><a href="/cookbook/ragu/">Ragù</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/roast-pork-loin/">Roast Pork Loin</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
 <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a><span class="frz">❄</span></li>
