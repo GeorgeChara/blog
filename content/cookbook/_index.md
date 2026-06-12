@@ -42,6 +42,7 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Basics</p>
 <ul class="recipe-list">
+<li class="pending"><a href="/cookbook/apple-sauce/">Apple Sauce</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/butter/">Butter</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/buttercream/">Buttercream</a></li>
 <li class="pending"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>

@@ -24,7 +24,7 @@ flaky salt        2 tsp
 pepper            to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Loin is lean. Roast to a temperature, never slow-cook it or it dries out.<br>Leave the string on to roast, snip off before carving. Serve with apple sauce, roast potatoes and greens.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Loin is lean. Roast to a temperature, never slow-cook it or it dries out.<br>Leave the string on to roast, snip off before carving. Serve with <a href="/cookbook/apple-sauce/">apple sauce</a>, roast potatoes and greens.</span>
 
 ## Recipe
 
