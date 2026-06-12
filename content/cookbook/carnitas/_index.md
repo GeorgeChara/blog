@@ -39,8 +39,6 @@ salt and pepper    to season
 lime
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pork shoulder is in the fresh pork aisle of any big supermarket (Sainsbury's, Tesco, Aldi), look for a shoulder joint, boneless is easiest. Sometimes labelled pork collar, or ask at the butcher counter for ~1.5kg.<br>Pick one with a fat cap and leave some fat on, it keeps it moist and crisps up at the end.<br>The cinnamon is the Mexican tell, like in kleftiko. Don't skip it.</span>
-
 ## Recipe
 
 **1.** Cut the pork shoulder into large 5cm chunks, leaving some fat on. Season well with salt and pepper.
