@@ -18,13 +18,7 @@ layout: single
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Marinade</span>
-diced chicken    600g
-buttermilk       250ml
-salt             1 tsp
-smoked paprika   1 tsp
-garlic           1 tsp
-cayenne          1/2 tsp
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">diced chicken    600g
 
 <span style="color: #888;">Coating</span>
 plain flour      150g
@@ -37,11 +31,11 @@ baking powder    1 tsp
 oil              for frying
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cayenne is optional, leave it out for kids.<br>Neutral oil to fry: sunflower, vegetable or rapeseed, not olive.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Marinate first in the buttermilk <a href="/cookbook/chicken-marinade/">chicken marinade</a>.<br>Neutral oil to fry: sunflower, vegetable or rapeseed, not olive.</span>
 
 ## Recipe
 
-**1.** Mix the chicken with the marinade ingredients. Cover and fridge 30 minutes, or overnight.
+**1.** Marinate the diced chicken in the <a href="/cookbook/chicken-marinade/">chicken marinade</a>, 30 minutes to overnight.
 
 **2.** Mix the coating: flour with the salt, paprika, garlic powder and baking powder.
 

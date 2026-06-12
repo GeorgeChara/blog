@@ -104,7 +104,7 @@ layout: single
 <li><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/buttermilk-fried-chicken/">Buttermilk Fried Chicken</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
-<li class="pending"><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
@@ -146,7 +146,7 @@ layout: single
 <li class="pending"><a href="/cookbook/hot-honey/">Hot Honey</a></li>
 <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
 <li class="pending"><a href="/cookbook/piccalilli/">Piccalilli</a></li>
-<li class="pending"><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
+<li><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
 <li><a href="/cookbook/pickles/">Pickles</a></li>
 <li class="pending"><a href="/cookbook/pikla/">Pikla</a></li>
 <li class="pending"><a href="/cookbook/pink-turnip-pickle/">Pink Turnip Pickle</a></li>

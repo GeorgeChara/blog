@@ -11,10 +11,18 @@ layout: single
   h2::before { content: none !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
+  details { margin: -1em 0 0 0; padding: 0; }
+  details summary { color: #888; font-size: 0.8em; cursor: pointer; user-select: none; line-height: 1; }
+  details summary:hover { color: #555; }
+  details[open] { margin-bottom: 0.5em; }
 </style>
 
 <h1>Carnitas</h1>
 <p style="color: #888; margin-top: -0.5em;">3 hr 30 min, Dutch oven, serves 6</p>
+
+![](/images/carnitas/header.webp)
 
 ## Ingredients
 
@@ -43,7 +51,21 @@ lime
 
 **1.** Cut the pork shoulder into large 5cm chunks, leaving some fat on. Season well with salt and pepper.
 
+<details>
+<summary>show photo</summary>
+
+![Pork chunks](/images/carnitas/step1.webp)
+
+</details>
+
 **2.** Put the pork in the Dutch oven with the quartered onion, garlic, cumin, oregano, cinnamon and bay. Squeeze in the orange and lime juice and add the stock. The liquid should come about halfway up.
+
+<details>
+<summary>show photo</summary>
+
+![Pork in the pot](/images/carnitas/step2.webp)
+
+</details>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No searing, no preheating the pot. Everything goes in cold and comes up to temperature together in the oven. The crisping comes at the end under the grill.</span>
 
@@ -54,6 +76,13 @@ lime
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater or paddle on low. A few seconds only, it shreds fast.<br>Keep the juices left in the pot. Some go back over the pork in the next step, the rest is great for moistening or freezing it.</span>
 
 **5.** Spread the shredded pork on a tray, spoon over some of the cooking juices and crisp under a hot grill for 5/10 minutes until the edges are golden and crispy.
+
+<details>
+<summary>show photo</summary>
+
+![Shredded carnitas on the tray](/images/carnitas/step5.webp)
+
+</details>
 
 **6.** Pile into warm tortillas with <a href="/cookbook/pickled-red-onions/">pickled onion</a>, jalapeño relish, a squeeze of lime and hot sauce.
 

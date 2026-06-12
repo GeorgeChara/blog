@@ -11,10 +11,14 @@ layout: single
   h2::before { content: none !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
 </style>
 
 <h1>Pickled Red Onions</h1>
 <p style="color: #888; margin-top: -0.5em;">ready in 30 min, keeps 1 week</p>
+
+![](/images/pickled-red-onions/header.webp)
 
 ## Ingredients
 
