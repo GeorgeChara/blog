@@ -28,7 +28,7 @@ ground cumin       2 tsp
 dried oregano      2 tsp
 ground cinnamon    1/2 tsp
 bay leaves         2
-stock              200ml
+chicken stock      200ml
 salt and pepper    to season
 
 <span style="color: #888;">To serve</span>
@@ -46,11 +46,13 @@ lime
 
 **2.** Put the pork in the Dutch oven with the quartered onion, garlic, cumin, oregano, cinnamon and bay. Squeeze in the orange and lime juice and add the stock. The liquid should come about halfway up.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No searing, no preheating the pot. Everything goes in cold and comes up to temperature together in the oven. The crisping comes at the end under the grill.</span>
+
 **3.** Lid on, into the oven at 150°C for 3 hours until the pork falls apart easily.
 
-**4.** Lift the pork into the stand mixer bowl. Paddle on low for a few seconds until shredded.
+**4.** Lift the pork out with a slotted spoon, leaving the juices in the pot, into the stand mixer bowl. Paddle on low for a few seconds until shredded.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater or paddle on low. A few seconds only, it shreds fast.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater or paddle on low. A few seconds only, it shreds fast.<br>Keep the juices left in the pot. Some go back over the pork in the next step, the rest is great for moistening or freezing it.</span>
 
 **5.** Spread the shredded pork on a tray, spoon over some of the cooking juices and crisp under a hot grill for 5/10 minutes until the edges are golden and crispy.
 
