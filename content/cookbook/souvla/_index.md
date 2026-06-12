@@ -72,5 +72,7 @@ lemon            1
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Cosmic souvla</strong><br>Bag the thighs in buttermilk and spices (no lemon), push the air out and freeze flat.<br>Two days before, move to the fridge to thaw.<br>The night before, take them out of the marinade, pat the skin dry, rub on salt and a pinch of baking powder and leave them uncovered in the fridge.<br>Save the lemon for the end, it stops the skin crisping.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Brilliant pulled off the skewer into a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with <a href="/cookbook/parsley-yoghurt/">parsley yoghurt</a> and <a href="/cookbook/pickled-red-onions/">pickled onions</a>, a souvlaki style wrap. Stir grated cucumber into the yoghurt to take it towards tzatziki.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Serving: rest it on a wire rack with a mesh net over the top, never a lid. A lid traps steam and the skin goes soft. Pile onto a board with lemon wedges and salt for the table. Eat it hot, souvla does not like sitting around.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Wrap it in a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with <a href="/cookbook/parsley-yoghurt/">parsley yoghurt</a> and <a href="/cookbook/pickled-red-onions/">pickled onions</a>. Add grated cucumber to the yoghurt for tzatziki.</span>
 
