@@ -143,6 +143,7 @@ layout: single
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
 <li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
+<li class="pending"><a href="/cookbook/hot-honey/">Hot Honey</a></li>
 <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
 <li class="pending"><a href="/cookbook/piccalilli/">Piccalilli</a></li>
 <li class="pending"><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
