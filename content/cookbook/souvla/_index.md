@@ -70,7 +70,7 @@ lemon            1
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You'll know when it's done, eyeball it.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Cosmic souvla</strong>, the full make-ahead:<br>Bag the thighs raw in buttermilk and the spices, no lemon. Squeeze the air out and freeze flat.<br>Two days before, move to the fridge to thaw.<br>One day before, lift from the marinade, wipe the skin dry, rub on salt and a pinch of baking powder, leave uncovered in the fridge overnight.<br>Spit-roast, lemon at serving. Buttermilk-tender inside, bone-dry crackling skin.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Cosmic souvla</strong><br>Bag the thighs in buttermilk and spices (no lemon), push the air out and freeze flat.<br>Two days before, move to the fridge to thaw.<br>The night before, take them out of the marinade, pat the skin dry, rub on salt and a pinch of baking powder and leave them uncovered in the fridge.<br>Save the lemon for the end, it stops the skin crisping.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Brilliant pulled off the skewer into a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with <a href="/cookbook/parsley-yoghurt/">parsley yoghurt</a> and <a href="/cookbook/pickled-red-onions/">pickled onions</a>, a souvlaki style wrap. Stir grated cucumber into the yoghurt to take it towards tzatziki.</span>
 
