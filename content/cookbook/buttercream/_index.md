@@ -43,3 +43,5 @@ fine salt        pinch
 **4.** Add the vanilla and beat for another 3-4 minutes until pale, light and fluffy.
 
 **5.** If it is too stiff, add whole milk a teaspoon at a time. If too soft, add a bit more icing sugar.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: in an airtight container or freezer bag, surface smoothed.<br>Thaw: overnight in the fridge, then bring to room temperature.<br>Re-beat: beat again until smooth and fluffy before using, it firms and can split a little as it thaws.<br>Keeps: 3 months frozen.</span>
