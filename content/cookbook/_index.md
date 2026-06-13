@@ -49,7 +49,6 @@ layout: single
 <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
 <li><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a><span class="frz">❄</span></li>
-<li class="pending"><a href="/cookbook/parsley-yoghurt/">Parsley Yoghurt</a></li>
 <li class="pending"><a href="/cookbook/rice/">Rice</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
 <li class="pending"><a href="/cookbook/soffritto/">Soffritto</a><span class="frz">❄</span></li>
@@ -140,12 +139,14 @@ layout: single
 </ul>
 </div>
 <div class="cat">
-<p class="cat-heading">Preserves</p>
+<p class="cat-heading">Sauces &amp; Preserves</p>
 <ul class="recipe-list">
+<li class="pending"><a href="/cookbook/aji-verde/">Aji Verde</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
 <li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
 <li class="pending"><a href="/cookbook/hot-honey/">Hot Honey</a></li>
 <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
+<li><a href="/cookbook/parsley-yoghurt/">Parsley Yoghurt</a></li>
 <li class="pending"><a href="/cookbook/piccalilli/">Piccalilli</a></li>
 <li><a href="/cookbook/pickled-red-onions/">Pickled Red Onions</a></li>
 <li><a href="/cookbook/pickles/">Pickles</a></li>
