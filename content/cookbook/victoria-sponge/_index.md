@@ -18,6 +18,8 @@ layout: single
 <h1>Victoria Sponge</h1>
 <p style="color: #888; margin-top: -0.5em;">20 min bake, 190°C, two 20cm tins</p>
 
+![](/images/victoria-sponge/header.webp)
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Serves 8</span>
@@ -58,4 +60,18 @@ icing sugar        for dusting
 
 **8.** Leave in the tins for 5 minutes, then turn out onto a wire rack and leave to cool completely before filling.
 
+<details>
+<summary>show photo</summary>
+
+![Two golden sponges cooling on a wire rack](/images/victoria-sponge/step8.webp)
+
+</details>
+
 **9.** Spread [buttercream](/cookbook/buttercream/) over the flat side of one sponge. Spread jam over the buttercream. Place the second sponge on top. Dust with icing sugar.
+
+<details>
+<summary>show photo</summary>
+
+![Finished Victoria sponge dusted with icing sugar](/images/victoria-sponge/step9.webp)
+
+</details>

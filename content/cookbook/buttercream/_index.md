@@ -16,23 +16,19 @@ layout: single
 </style>
 
 <h1>Buttercream</h1>
-<p style="color: #888; margin-top: -0.5em;">vanilla, fills and covers a 20cm cake</p>
+<p style="color: #888; margin-top: -0.5em;">vanilla, fills a 20cm cake</p>
+
+![](/images/buttercream/header.webp)
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Full batch</span>
-
-unsalted butter  200g
-icing sugar      400g
-vanilla extract  5g
-
-<span style="color: #888;">Half batch (filling only)</span>
-unsalted butter  100g
-icing sugar      200g
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">unsalted butter  100g
+icing sugar      150g
 vanilla extract  3g
+fine salt        pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use block butter, not spread. It must be at room temperature, soft enough to leave an indent when pressed.<br>Always sift the icing sugar or it will be lumpy.<br>Keeps at room temperature for 2 days, or in the fridge for a week. Bring back to room temp and re-beat before using.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A balanced British ratio, 1.5 parts sugar to 1 part butter, not the usual 2 to 1 that tastes far too sweet. The pinch of salt does most of the work cutting the sweetness, don't skip it.<br>Use block butter, not spread. It must be at room temperature, soft enough to leave an indent when pressed.<br>Always sift the icing sugar or it will be lumpy.<br>Keeps at room temperature for 2 days, or in the fridge for a week. Bring back to room temp and re-beat before using.</span>
 
 ## Recipe
 
@@ -40,7 +36,7 @@ vanilla extract  3g
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on medium-high.</span>
 
-**2.** Add half the sifted icing sugar. Mix on low until combined, then beat on medium until smooth.
+**2.** Add half the sifted icing sugar and the salt. Mix on low until combined, then beat on medium until smooth.
 
 **3.** Add the rest of the icing sugar and beat again until fully combined.
 

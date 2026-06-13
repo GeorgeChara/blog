@@ -44,7 +44,7 @@ layout: single
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/apple-sauce/">Apple Sauce</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/butter/">Butter</a><span class="frz">❄</span></li>
-<li class="pending"><a href="/cookbook/buttercream/">Buttercream</a></li>
+<li><a href="/cookbook/buttercream/">Buttercream</a></li>
 <li class="pending"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
 <li><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
@@ -93,7 +93,7 @@ layout: single
 <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
 <li class="pending"><a href="/cookbook/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
 <li><a href="/cookbook/tottenham-cake/">Tottenham Cake</a></li>
-<li class="pending"><a href="/cookbook/victoria-sponge/">Victoria Sponge</a></li>
+<li><a href="/cookbook/victoria-sponge/">Victoria Sponge</a></li>
 </ul>
 </div>
 <div class="cat">
