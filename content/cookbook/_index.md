@@ -23,6 +23,7 @@ layout: single
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
   .frz { color: #3f9fd4; font-size: 1em; margin-left: 0.35em; }
+  .clk { font-size: 0.85em; margin-left: 0.35em; }
 
   @media (max-width: 600px) { .cookbook-cols { column-count: 1; } }
 
@@ -70,8 +71,10 @@ layout: single
 <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
 <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
 <li class="pending"><a href="/cookbook/pupusas/">Pupusas</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/rye-loaf/">Rye Loaf</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/seeded-wholemeal-loaf/">Seeded Wholemeal Loaf</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/shokupan/">Shokupan</a></li>
+<li class="pending"><a href="/cookbook/soda-bread/">Soda Bread</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/sourdough/">Sourdough</a></li>
 <li class="pending"><a href="/cookbook/sourdough-starter/">Sourdough Starter</a></li>
 </ul>
@@ -111,8 +114,11 @@ layout: single
 <li><a href="/cookbook/chicken-couscous-bowl/">Chicken Couscous Bowl</a></li>
 <li class="pending"><a href="/cookbook/chicken-tagine/">Chicken Tagine</a></li>
 <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
+<li class="pending"><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
+<li class="pending"><a href="/cookbook/greek-pasta-salad/">Greek Pasta Salad</a></li>
+<li class="pending"><a href="/cookbook/italian-deli-pasta-salad/">Italian Deli Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
