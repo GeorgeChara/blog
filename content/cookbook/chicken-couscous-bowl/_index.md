@@ -11,10 +11,14 @@ layout: single
   h2::before { content: none !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
 </style>
 
 <h1>Chicken Couscous Bowl</h1>
 <p style="color: #888; margin-top: -0.5em;">light, serves 3, 15 min</p>
+
+![](/images/chicken-couscous-bowl/header.webp)
 
 ## Ingredients
 
