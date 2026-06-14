@@ -31,7 +31,7 @@ salt          7g
 spinach       100g, optional
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No baking powder. The high hydration is what keeps them soft, it will feel sticky and firms up as it rests.<br>Lard or Trex (1:1, vegan) for the best result. Olive oil works for a lighter, healthier wrap. Not butter, the water content makes them pita-like.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No baking powder. The high hydration is what keeps them soft, it will feel sticky and firms up as it rests.<br>Lard or Trex (1:1, vegan) for the best result. Olive oil works for a lighter, healthier wrap, and butter works too.</span>
 
 ## Recipe
 
