@@ -20,6 +20,7 @@ layout: single
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">diced chicken  400g
 couscous       150g
+boiling water  225ml
 red onion      1/2
 cucumber       1/2
 tomato         1
@@ -35,7 +36,7 @@ paprika        1 tsp
 
 **1.** Season and cook the chicken with whatever you like.
 
-**2.** Couscous in a bowl, pour over boiling water or stock just to cover. Lid on 5 minutes, then fluff with a fork.
+**2.** Couscous in a bowl, pour over the boiling water or stock (1.5 times the couscous by volume). Lid on 5 minutes, then fluff with a fork.
 
 **3.** Dice the red onion, cucumber and tomato, chop the parsley, and stir it all through the couscous. Dress with lemon and olive oil.
 
