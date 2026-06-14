@@ -27,7 +27,7 @@ tomato         2
 parsley        handful
 lemon          1
 olive oil      to dress
-paprika        1 tsp
+cumin          1 tsp
 </pre>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Optional extras and swaps</strong><br><a href="/cookbook/pickled-red-onions/">Pickled red onions</a> in place of raw, or <a href="/cookbook/pickles/">pickled cucumber</a> in place of fresh. Go easy on the lemon if you use them, they already bring acidity.<br>Parsley swaps for mint or coriander. Spring onion for a milder onion.<br>Feta, olives or toasted nuts all work thrown on top.</span>
