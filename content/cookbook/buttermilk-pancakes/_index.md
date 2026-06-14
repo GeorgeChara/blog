@@ -32,13 +32,15 @@ melted butter        50g
 
 ## Recipe
 
-**1.** Whisk the dry ingredients in one bowl, the buttermilk, eggs and melted butter in another.
+**1.** Flour, sugar, baking powder, bicarb and salt in the mixer bowl, flat beater on low, a few seconds to combine.
 
-**2.** Pour the wet into the dry and fold just until combined. Lumps are good, don't overmix, that is what keeps them fluffy.
+**2.** Lowest speed, pour in the buttermilk, eggs and butter. 10 seconds, stop while it's still lumpy.
 
-**3.** Rest the batter 10 minutes.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flat beater, not the whisk. Lumpy and thick is good. Smooth and glossy means you've overmixed.</span>
 
-**4.** Cook on a buttered pan over medium heat. Ladle on, flip when bubbles form on top and pop, about 2 minutes a side.
+**3.** Rest 10 minutes.
+
+**4.** Buttered pan, medium heat. Flip when the bubbles pop, 2 minutes a side.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Medium heat is key: too hot burns the outside before the middle cooks, too low makes them flat.<br>Keep them warm in a low oven while you work through the batch.<br>Serve with maple syrup, berries, or a drizzle of <a href="/cookbook/hot-honey/">hot honey</a>.</span>
 
