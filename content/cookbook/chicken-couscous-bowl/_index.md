@@ -14,16 +14,16 @@ layout: single
 </style>
 
 <h1>Chicken Couscous Bowl</h1>
-<p style="color: #888; margin-top: -0.5em;">light, serves 2, 15 min</p>
+<p style="color: #888; margin-top: -0.5em;">light, serves 3, 15 min</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">diced chicken  400g
-couscous       150g
-boiling water  225ml
-red onion      1/2
-cucumber       1/2
-tomato         1
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">diced chicken  600g
+couscous       200g
+boiling water  300ml
+red onion      1
+cucumber       1
+tomato         2
 parsley        handful
 lemon          1
 olive oil      to dress
