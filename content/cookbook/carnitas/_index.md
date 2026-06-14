@@ -87,3 +87,5 @@ lime
 **6.** Pile into warm tortillas with <a href="/cookbook/pickled-red-onions/">pickled onion</a>, jalapeño relish, a squeeze of lime and hot sauce.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: shred and freeze in its own juices, flat in bags.<br>Reheat: from frozen in a pan or oven, crisp the edges at the end.<br>Keeps: 3 months frozen, 3 days in the fridge.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Froze it without the juices?</strong> Warm it through with the juice of an orange and a lime, a splash of water and a spoon of oil. Then crisp as in step 5. No stock, no extra salt.</span>
