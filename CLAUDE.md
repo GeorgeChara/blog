@@ -18,7 +18,33 @@
 - Layout: `layout: single`, hide h1/time/terminal-nav via inline `<style>`
 - Subtitle format: `45 min bake, 180°C, 23cm square tin` — commas, no bullets
   - Keep `recipe vX.Y` prefix only for versioned/adjusted recipes (e.g. baguette)
+  - Bread/dough recipes lead with hydration %, e.g. `70% hydration, 2.5 hr, 2lb tin, makes 1`
+    (hydration = (water + milk + buttermilk) ÷ flour; eggs, butter, oil, honey, seeds don't count)
+    Skip it where it isn't meaningful: sweet enriched doughs, batters (crumpets), masa (pupusas)
 - Step dropdowns: use `<details><summary>show photo</summary>` or `show video`
+
+## Recipe tags (frontmatter)
+Every recipe carries a `tags:` array in frontmatter. This is the source of truth for
+sorting/filtering the cookbook later, so set it accurately when adding a recipe.
+
+Controlled vocabulary (extend only when there's a real need):
+- `quick` — 15 minutes or less, start to finish
+- `freezer` — freezes well
+- `make-ahead` — keeps well in the fridge for batch / meal prep
+- `no-cook` — no hob or oven
+- `vegetarian`, `vegan` — dietary
+
+```yaml
+tags: [quick, freezer, vegetarian]
+```
+
+When a recipe is `quick` or `freezer`, also add the matching icon in the cookbook index
+(see below). The frontmatter tag is the source of truth; the icons will eventually be
+generated from it.
+
+Tag links are hidden on the page via `.terms-list { display: none }` in
+`themes/shibui/assets/css/custom.css`. Tags still power the `/tags/` pages and the index
+icons, they just don't render on the recipe itself.
 
 ## Ingredient blocks — standard format
 Use a `<pre>` block (inline-block, same padding/border as other recipes).
@@ -39,7 +65,10 @@ salt      9g
 yeast     2g
 ```
 
-## Baking index (`/content/cookbook/_index.md`)
-- Main list (published recipes): alphabetical order, with `— time` meta
-- "to make" list (pending): alphabetical order, greyed out links, no meta
-- Both lists must stay alphabetical when adding new recipes
+## Cookbook index (`/content/cookbook/_index.md`)
+- Hand-maintained, grouped by category (Bread, Sweet, Savoury, Cypriot, Sauces & Preserves)
+- Each recipe is an `<li>`: published = normal link, pending/unwritten = `<li class="pending">` (greyed out)
+- Keep each category alphabetical when adding a recipe
+- Icons after the link mirror the recipe's frontmatter tags:
+  - `freezer` → `<span class="frz">❄</span>`
+  - `quick` → `<span class="clk">🕐</span>`
