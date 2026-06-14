@@ -11,10 +11,14 @@ layout: single
   h2::before { content: none !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
 </style>
 
 <h1>Buttermilk Pancakes</h1>
 <p style="color: #888; margin-top: -0.5em;">fluffy, makes 10, 20 min</p>
+
+![](/images/buttermilk-pancakes/header.webp)
 
 ## Ingredients
 
