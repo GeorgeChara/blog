@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Shokupan</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 185°C</p>
+<p style="color: #888; margin-top: -0.5em;">76% hydration, 25 min bake, 185°C</p>
 
 ## Ingredients
 

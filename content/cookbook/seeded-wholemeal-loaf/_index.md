@@ -14,7 +14,7 @@ layout: single
 </style>
 
 <h1>Seeded Wholemeal Loaf</h1>
-<p style="color: #888; margin-top: -0.5em;">everyday healthy loaf, 2lb tin, makes 1</p>
+<p style="color: #888; margin-top: -0.5em;">75% hydration, everyday healthy loaf, 2lb tin, makes 1</p>
 
 ## Ingredients
 
@@ -27,7 +27,7 @@ honey                   1 tbsp
 oil                     20g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Seeds: sunflower, pumpkin and linseed (flax) is a good mix. Save a spoonful for the top.<br>75% hydration. The dough will feel sticky and wet, which is right for wholemeal, it drinks more water than white.<br>Sourdough version: swap the yeast for 100g active <a href="/cookbook/sourdough-starter/">starter</a> and hold back 40ml water. Prove longer, 3/4 hours, or shape and leave overnight in the fridge. Slower, but the ferment lowers the GI and makes it more digestible, the healthier option. Yeast is quicker if that is what you have.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Seeds: sunflower, pumpkin and linseed (flax) is a good mix. Save a spoonful for the top.<br>The dough will feel sticky and wet, which is right for wholemeal, it drinks more water than white.<br>Sourdough version: swap the yeast for 100g active <a href="/cookbook/sourdough-starter/">starter</a> and hold back 40ml water. Prove longer, 3/4 hours, or shape and leave overnight in the fridge. Slower, but the ferment lowers the GI and makes it more digestible, the healthier option. Yeast is quicker if that is what you have.</span>
 
 ## Recipe
 

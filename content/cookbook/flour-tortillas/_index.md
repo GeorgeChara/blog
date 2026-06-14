@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Flour Tortillas</h1>
-<p style="color: #888; margin-top: -0.5em;">35 min, pan sized, makes 8</p>
+<p style="color: #888; margin-top: -0.5em;">69% hydration, 35 min, pan sized, makes 8</p>
 
 ![](/images/flour-tortillas/header.webp)
 

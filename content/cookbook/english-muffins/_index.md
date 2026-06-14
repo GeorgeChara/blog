@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>English Muffins</h1>
-<p style="color: #888; margin-top: -0.5em;">cooked on the hob, overnight preferment</p>
+<p style="color: #888; margin-top: -0.5em;">82% hydration, cooked on the hob, overnight preferment</p>
 
 ## Ingredients
 

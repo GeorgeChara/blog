@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Bagels</h1>
-<p style="color: #888; margin-top: -0.5em;">22/25 min bake, 210°C, makes 7</p>
+<p style="color: #888; margin-top: -0.5em;">55% hydration, 22/25 min bake, 210°C, makes 7</p>
 
 ![](/images/bagels/bagel_header.webp)
 

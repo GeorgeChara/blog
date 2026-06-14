@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Kolouri</h1>
-<p style="color: #888; margin-top: -0.5em;">30 min bake, 210°C</p>
+<p style="color: #888; margin-top: -0.5em;">65% hydration, 30 min bake, 210°C</p>
 
 ## Ingredients
 

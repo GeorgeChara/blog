@@ -14,7 +14,7 @@ layout: single
 </style>
 
 <h1>Farata</h1>
-<p style="color: #888; margin-top: -0.5em;">1 hr, Mauritian flaky flatbread, makes 6</p>
+<p style="color: #888; margin-top: -0.5em;">60% hydration, 1 hr, Mauritian flaky flatbread, makes 6</p>
 
 ## Ingredients
 

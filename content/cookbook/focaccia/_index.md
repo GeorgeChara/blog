@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Focaccia</h1>
-<p style="color: #888; margin-top: -0.5em;">30 min bake, 240°C, overnight prove, serves 12</p>
+<p style="color: #888; margin-top: -0.5em;">75% hydration, 30 min bake, 240°C, overnight prove, serves 12</p>
 
 ## Ingredients
 

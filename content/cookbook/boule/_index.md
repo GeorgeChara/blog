@@ -14,7 +14,7 @@ layout: single
 </style>
 
 <h1>Boule</h1>
-<p style="color: #888; margin-top: -0.5em;">50 min bake, 230°C, makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">76% hydration, 50 min bake, 230°C, makes 1 loaf</p>
 
 ## Ingredients
 

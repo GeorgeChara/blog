@@ -14,7 +14,7 @@ layout: single
 </style>
 
 <h1>Sourdough</h1>
-<p style="color: #888; margin-top: -0.5em;">24 hr process, 50 min bake, 230°C, makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">75% hydration, 24 hr process, 50 min bake, 230°C, makes 1 loaf</p>
 
 You need an active <a href="/cookbook/sourdough-starter/">sourdough starter</a> before making this.
 
@@ -28,7 +28,7 @@ starter              100g
 salt                 10g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">75% hydration. High enough for an open crumb, manageable enough to shape.<br>Use filtered or bottled water. Chlorine in tap water can slow fermentation.<br>The starter should be active and bubbly, fed 4/8 hours before you begin.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">High enough for an open crumb, manageable enough to shape.<br>Use filtered or bottled water. Chlorine in tap water can slow fermentation.<br>The starter should be active and bubbly, fed 4/8 hours before you begin.</span>
 
 ---
 
