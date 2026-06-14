@@ -14,18 +14,18 @@ layout: single
 </style>
 
 <h1>Buttermilk Pancakes</h1>
-<p style="color: #888; margin-top: -0.5em;">fluffy, makes 12, 20 min</p>
+<p style="color: #888; margin-top: -0.5em;">fluffy, makes 10, 20 min</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">plain flour          250g
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">plain flour          220g
 sugar                2 tbsp
 baking powder        2 tsp
 bicarbonate of soda  1/2 tsp
 salt                 1/2 tsp
-buttermilk           450ml
+buttermilk           400ml
 eggs                 2
-melted butter        50g
+melted butter        45g
 </pre>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The bicarb reacts with the buttermilk for lift, the baking powder adds extra. Don't skip either.<br>A good use for the buttermilk from making <a href="/cookbook/butter/">butter</a>.</span>
