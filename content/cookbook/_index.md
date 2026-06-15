@@ -68,7 +68,7 @@ layout: single
 <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
 <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
 <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
-<li class="pending"><a href="/cookbook/lazy-boule/">Lazy Boule</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/lazy-boule/">Lazy Boule</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
 <li class="pending"><a href="/cookbook/pupusas/">Pupusas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/rye-loaf/">Rye Loaf</a><span class="frz">❄</span></li>

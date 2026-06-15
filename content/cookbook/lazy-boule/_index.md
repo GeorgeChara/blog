@@ -19,6 +19,8 @@ tags: [freezer]
 <h1>Lazy Boule</h1>
 <p style="color: #888; margin-top: -0.5em;">65% hydration, stand mixer, makes 1 loaf</p>
 
+![](/images/lazy-boule/header.webp)
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">strong white flour  500g
