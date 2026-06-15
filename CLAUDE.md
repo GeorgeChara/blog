@@ -28,19 +28,17 @@ Every recipe carries a `tags:` array in frontmatter. This is the source of truth
 sorting/filtering the cookbook later, so set it accurately when adding a recipe.
 
 Controlled vocabulary (extend only when there's a real need):
-- `quick` — 15 minutes or less, start to finish
 - `freezer` — freezes well
 - `make-ahead` — keeps well in the fridge for batch / meal prep
 - `no-cook` — no hob or oven
 - `vegetarian`, `vegan` — dietary
 
 ```yaml
-tags: [quick, freezer, vegetarian]
+tags: [freezer, vegetarian]
 ```
 
-When a recipe is `quick` or `freezer`, also add the matching icon in the cookbook index
-(see below). The frontmatter tag is the source of truth; the icons will eventually be
-generated from it.
+When a recipe is `freezer`, also add the ❄ icon in the cookbook index (see below). The
+frontmatter tag is the source of truth; the icon will eventually be generated from it.
 
 Tag links are hidden on the page via `.terms-list { display: none }` in
 `themes/shibui/assets/css/custom.css`. Tags still power the `/tags/` pages and the index
@@ -71,4 +69,3 @@ yeast     2g
 - Keep each category alphabetical when adding a recipe
 - Icons after the link mirror the recipe's frontmatter tags:
   - `freezer` → `<span class="frz">❄</span>`
-  - `quick` → `<span class="clk">🕐</span>`

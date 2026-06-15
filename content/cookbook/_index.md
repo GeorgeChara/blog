@@ -23,7 +23,6 @@ layout: single
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
   .frz { color: #3f9fd4; font-size: 1em; margin-left: 0.35em; }
-  .clk { font-size: 0.85em; margin-left: 0.35em; }
 
   @media (max-width: 600px) { .cookbook-cols { column-count: 1; } }
 
@@ -110,6 +109,7 @@ layout: single
 <li class="pending"><a href="/cookbook/buttermilk-fried-chicken/">Buttermilk Fried Chicken</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
 <li><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/cheese-toastie/">Cheese Toastie</a></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
