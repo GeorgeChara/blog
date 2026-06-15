@@ -40,6 +40,8 @@ Follow the <a href="/cookbook/baguette/">baguette recipe</a> steps 1-3 using the
 </span>
 </details>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Same day (about 4 hours):</strong> use 7g yeast instead of 2g. After the folds, skip the overnight fridge and leave to bulk rise somewhere warm for 1.5 to 2 hours until doubled. Then shape, prove and bake as below. A little less depth of flavour, but a crusty loaf in an afternoon.</span>
+
 ## Shaping
 
 **Pre-shape.** Turn the dough out and shape into a rough round using a bench scraper. Leave uncovered on the work surface for 20 minutes.
