@@ -132,7 +132,7 @@ layout: single
 <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
 <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a><span class="frz">❄</span></li>
-<li class="pending"><a href="/cookbook/tomato-soup/">Tomato Soup</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/tomato-soup/">Tomato Soup</a><span class="frz">❄</span></li>
 </ul>
 </div>
 <div class="cat">
