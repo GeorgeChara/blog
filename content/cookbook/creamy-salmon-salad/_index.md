@@ -18,6 +18,8 @@ layout: single
 <h1>Creamy Salmon Salad</h1>
 <p style="color: #888; margin-top: -0.5em;">serves 2, 20 min</p>
 
+<img loading="lazy" src="/images/creamy-salmon-salad/header.webp" alt="Creamy Salmon Salad">
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">salmon             200g
@@ -30,12 +32,10 @@ hot sauce          to taste
 salt and pepper    to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cook a fresh fillet (pan or oven) and flake it in once cool. Hot-smoked, tinned or leftover cooked salmon all work too, no cooking needed.</span>
-
 ## Recipe
 
 **1.** Flake the salmon into a bowl, skin and bones out. Mash in the avocado to bind it creamy.
 
 **2.** Stir in the yogurt, diced cucumber, chopped dill, lemon juice and hot sauce. Season and taste, adjust the lemon and hot sauce.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Lovely rolled in a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with an extra squeeze of lemon and more hot sauce. Also good on toast or crackers.<br>Best fresh, the avocado browns. Keeps a day in the fridge with cling film pressed to the surface. Don't freeze.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pairs with a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a>, or toast and crackers.</span>
