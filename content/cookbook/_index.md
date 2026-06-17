@@ -117,7 +117,7 @@ layout: single
 <li><a href="/cookbook/chicken-couscous-bowl/">Chicken Couscous Bowl</a></li>
 <li class="pending"><a href="/cookbook/chicken-tagine/">Chicken Tagine</a></li>
 <li><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
-<li class="pending"><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
+<li><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
 <li class="pending"><a href="/cookbook/greek-pasta-salad/">Greek Pasta Salad</a></li>
