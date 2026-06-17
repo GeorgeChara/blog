@@ -31,7 +31,8 @@ layout: single
   .featured a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .featured span { color: #888; font-size: 0.85em; margin-left: 0.4em; }
 
-  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.55em 0.8em; margin: 0 0 1.4em 0; font-size: 16px; border: 1px solid #d8d2c7; border-radius: 6px; background: #fff; color: #000; }
+  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0 0 1.3em 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
+  .cookbook-search::placeholder { color: #b3b3b3; font-size: 13px; }
   .cookbook-search:focus { outline: none; border-color: #4169E1; }
   .cat.is-hidden, .recipe-list li.is-hidden { display: none; }
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0; }
@@ -209,5 +210,8 @@ layout: single
     if (nores) nores.style.display = any ? 'none' : 'block';
   }
   input.addEventListener('input', filter);
+  // Reset to a clean, consistent state on every (re)visit, including Back via
+  // the bfcache (where the input clears but the filtered DOM is restored stale).
+  window.addEventListener('pageshow', function () { input.value = ''; filter(); });
 })();
 </script>
