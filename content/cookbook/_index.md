@@ -30,7 +30,15 @@ layout: single
   .featured a { color: #4169E1; text-decoration: none; font-weight: bold; border-bottom: 1px solid #c5ccee; }
   .featured a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .featured span { color: #888; font-size: 0.85em; margin-left: 0.4em; }
+
+  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.55em 0.8em; margin: 0 0 1.4em 0; font-size: 1em; border: 1px solid #d8d2c7; border-radius: 6px; background: #fff; color: #000; }
+  .cookbook-search:focus { outline: none; border-color: #4169E1; }
+  .cat.is-hidden, .recipe-list li.is-hidden { display: none; }
+  .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0; }
 </style>
+
+<input type="search" id="cookbook-search" class="cookbook-search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
+<p id="cookbook-noresults" class="cookbook-noresults">No recipes match that search.</p>
 
 <div class="cookbook-cols">
 <div class="cat">
@@ -175,3 +183,31 @@ layout: single
 </ul>
 </div>
 </div>
+
+<script>
+(function () {
+  var input = document.getElementById('cookbook-search');
+  if (!input) return;
+  var cats = [].slice.call(document.querySelectorAll('.cat'));
+  var items = [].slice.call(document.querySelectorAll('.recipe-list li'));
+  items.forEach(function (li) {
+    var a = li.querySelector('a');
+    li._name = (a ? a.textContent : li.textContent).toLowerCase();
+  });
+  var nores = document.getElementById('cookbook-noresults');
+  function filter() {
+    var q = input.value.trim().toLowerCase();
+    var any = false;
+    items.forEach(function (li) {
+      var show = !q || li._name.indexOf(q) !== -1;
+      li.classList.toggle('is-hidden', !show);
+      if (show) any = true;
+    });
+    cats.forEach(function (cat) {
+      cat.classList.toggle('is-hidden', !cat.querySelector('.recipe-list li:not(.is-hidden)'));
+    });
+    if (nores) nores.style.display = any ? 'none' : 'block';
+  }
+  input.addEventListener('input', filter);
+})();
+</script>
