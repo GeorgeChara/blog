@@ -31,7 +31,7 @@ layout: single
   .featured a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .featured span { color: #888; font-size: 0.85em; margin-left: 0.4em; }
 
-  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.55em 0.8em; margin: 0 0 1.4em 0; font-size: 1em; border: 1px solid #d8d2c7; border-radius: 6px; background: #fff; color: #000; }
+  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.55em 0.8em; margin: 0 0 1.4em 0; font-size: 16px; border: 1px solid #d8d2c7; border-radius: 6px; background: #fff; color: #000; }
   .cookbook-search:focus { outline: none; border-color: #4169E1; }
   .cat.is-hidden, .recipe-list li.is-hidden { display: none; }
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0; }
