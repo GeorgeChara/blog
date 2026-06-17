@@ -30,7 +30,7 @@ garlic             4 cloves
 salt               to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">San Marzano if you can get them, otherwise good plum tomatoes. For a blended soup like this, 1 tin San Marzano and 3 of good plum is plenty. That is 4 tins of 400g.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">San Marzano if you can get them, otherwise good plum tomatoes. For a blended soup like this, 1 tin San Marzano and 3 of good plum is plenty.</span>
 
 ## Recipe
 
