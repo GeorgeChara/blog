@@ -66,7 +66,6 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Bread</p>
 <ul class="recipe-list">
-<li class="pending"><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/bagels/">Bagels</a></li>
 <li><a href="/cookbook/boule/">Boule</a></li>
 <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
@@ -77,7 +76,6 @@ layout: single
 <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
 <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
 <li class="pending"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
-<li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
 <li><a href="/cookbook/lazy-boule/">Lazy Boule</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
 <li class="pending"><a href="/cookbook/pupusas/">Pupusas</a><span class="frz">❄</span></li>
@@ -148,8 +146,10 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Cypriot</p>
 <ul class="recipe-list">
+<li class="pending"><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/bourekia/">Bourekia</a></li>
 <li class="pending"><a href="/cookbook/kleftiko/">Kleftiko</a></li>
+<li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
 <li class="pending"><a href="/cookbook/koupepia/">Koupepia</a></li>
 <li class="pending"><a href="/cookbook/loukanika/">Loukanika</a></li>
 <li class="pending"><a href="/cookbook/louvi/">Louvi</a></li>
