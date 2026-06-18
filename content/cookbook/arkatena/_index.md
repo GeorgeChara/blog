@@ -67,9 +67,9 @@ black sesame seeds   5g
 
 **3.** Shape into a 28cm oblong. Brush with water and roll all over in the sesame.
 
-**4.** Put on a lined tray, slash deep across the top to mark the slices, and prove 45 minutes to 1 hour. Start heating the baking stone now, if using.
+**4.** Put on a lined tray and prove 45 minutes to 1 hour. Start heating the baking stone now, if using.
 
-**5.** Bake at 185°C for 45 to 50 minutes, until deep golden and hollow underneath.
+**5.** Slash deep across the top to mark the slices, then bake at 185°C for 45 to 50 minutes, until deep golden and hollow underneath.
 
 **6.** Cool fully before slicing.
 
