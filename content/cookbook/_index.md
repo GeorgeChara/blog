@@ -66,6 +66,7 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Bread</p>
 <ul class="recipe-list">
+<li class="pending"><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/bagels/">Bagels</a></li>
 <li><a href="/cookbook/boule/">Boule</a></li>
 <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
