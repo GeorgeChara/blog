@@ -49,23 +49,21 @@ salt                 pinch
 
 ## Recipe
 
-**1.** Heat the oven to 150°C. Spread the pecans on a tray and toast 7 minutes, then chop. Turn the oven up to 180°C. Grease and line three 23cm round tins.
+**1.** Heat the oven to 150°C. Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C. Grease and line three 23cm tins.
 
 **2.** Whisk the oil, both sugars, eggs, apple sauce and vanilla until smooth.
 
-**3.** In another bowl, whisk the flour, baking powder, bicarbonate of soda, salt and spices.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: whisk attachment, medium.</span>
 
-**4.** Fold the dry into the wet. Add the carrots and half the pecans. Stir until just combined.
+**3.** Whisk the flour, baking powder, bicarbonate of soda, salt and spices in another bowl, then fold into the wet with the carrots and half the pecans, until just combined.
 
-**5.** Divide between the tins. Bake 20 to 25 minutes, until a skewer comes out clean.
+**4.** Divide between the tins and bake 20 to 25 minutes, until a skewer comes out clean. Cool in the tins 1 hour, turn out onto a rack, and frost only when cold.
 
-**6.** Cool in the tins 1 hour, then turn out onto a rack. Frost only when cold.
+**5.** Beat the cream cheese and butter smooth, then beat in the icing sugar, vanilla and salt until thick and spreadable.
 
-**7.** Beat the cream cheese and butter smooth. Add the icing sugar, vanilla and salt. Beat until thick and spreadable.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle, medium. Don't overbeat or it slackens.</span>
 
-**8.** Level the cake tops. Stack the layers with frosting between each, then coat the top and sides. Press the rest of the pecans on top.
-
-**9.** Chill 20 minutes before slicing.
+**6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill 20 minutes before slicing.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Two tins instead of three: bake 30 to 35 minutes.</span>
 
