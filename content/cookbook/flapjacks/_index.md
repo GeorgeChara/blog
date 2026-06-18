@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Flapjacks</h1>
-<p style="color: #888; margin-top: -0.5em;">30 min bake, 160°C, 20cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">30 min bake, 160°C (140°C fan), 20cm square tin</p>
 
 <img loading="lazy" src="/images/flapjacks/header.webp" alt="Flapjacks">
 
@@ -31,11 +31,11 @@ light brown sugar  200g
 salt               4g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For chewy not hard: the layer should be 2-3cm thick. If it comes out thin the tin is too big, use a 20cm square or smaller. Golden syrup and light brown sugar keep them soft, demerara sets harder so don't use it. Pull them out when the centre still looks wet and shiny, they firm up a lot as they cool.<br><strong>Dark chocolate:</strong> pour melted dark chocolate over the cooled bars while still in the tin. Press flaky salt on top. Leave to set then cut.<br><strong>White chocolate and raspberry:</strong> mix 50-60g dried raspberries and the zest of half a lemon into the oats before pressing into the tin. Pour melted white chocolate over the cooled bars. Leave to set then cut.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For chewy not hard: the layer should be 2-3cm thick. If it comes out thin the tin is too big, use a 20cm square or smaller. Golden syrup and light brown sugar keep them soft, demerara sets harder so don't use it. Pull them out when the centre still looks wet and shiny, they firm up a lot as they cool.<br><strong>Dark chocolate:</strong> pour melted dark chocolate over the cooled bars while still in the tin. Press flaky salt on top. Leave to set then cut.<br><strong>White chocolate and raspberry:</strong> pour melted white chocolate over the cooled bars, then scatter 50-60g dried raspberries and the zest of half a lemon on top. Leave to set then cut. Mixing the raspberries into the oats burns them, so add them after.</span>
 
 ## Recipe
 
-**1.** Heat the oven to 160°C. Grease and line a 20cm square tin.
+**1.** Heat the oven to 160°C (140°C fan). Grease and line a 20cm square tin.
 
 **2.** Melt the butter, sugar and golden syrup in a pan over low heat, stirring until the sugar dissolves. Don't let it boil hard or it sets too firm as it cools.
 
