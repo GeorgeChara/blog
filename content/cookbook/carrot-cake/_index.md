@@ -57,14 +57,16 @@ salt                 pinch
 
 **3.** Whisk the flour, baking powder, bicarbonate of soda, salt and spices in another bowl, then fold into the wet with the carrots and half the pecans, until just combined.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">By hand, not the mixer, or it toughens.</span>
+
 **4.** Divide between the tins and bake 20 to 25 minutes, until a skewer in the middle comes out clean and the top springs back when pressed. Cool in the tins 1 hour, turn out onto a rack, and frost only when cold.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tin size changes the bake. More or bigger tins make thinner layers, so start checking a few minutes early. Two tins instead of three, or smaller tins, bake longer: 30 to 35 minutes.</span>
 
 **5.** Beat the cream cheese and butter smooth, then beat in the icing sugar, vanilla and salt until thick and spreadable.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle, medium. Don't overbeat or it slackens.</span>
 
 **6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill 20 minutes before slicing.
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tin size changes the bake. More or bigger tins make thinner layers, so start checking a few minutes early. Two tins instead of three, or smaller tins, bake longer: 30 to 35 minutes.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: wrap the unfrosted layers well, or freeze finished slices.<br>Reheat: thaw at room temperature.<br>Keeps: 3 months frozen, 5 days in the fridge once frosted.</span>
