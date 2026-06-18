@@ -45,7 +45,7 @@ vanilla extract      7.5ml
 salt                 pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pecans or walnuts, both work. Half go in the batter, half on top.<br>Grate the carrots on the fine side, about 4 large.<br>Full-fat soft cheese, not light or spreadable, or the frosting runs. Supermarket own-brand sets firmer than Philadelphia.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pecans or walnuts, both work. Half go in the batter, half on top.<br>Grate the carrots on the fine side, about 4 large.<br>Full-fat soft cheese, not light or spreadable, or the frosting runs. Supermarket own-brand sets firmer than Philadelphia.<br>No need to make the apple sauce. A jar of Bramley apple sauce works, in the condiments aisle by the mint sauce, not the baking aisle. For no added sugar, use a pure apple purée from the organic or baby aisle instead.</span>
 
 ## Recipe
 
