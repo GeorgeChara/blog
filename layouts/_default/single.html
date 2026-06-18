@@ -52,6 +52,11 @@
     }
     .copy-btn:hover { color: #555; }
 
+    /* Ingredient tick-off list */
+    .ingr { cursor: pointer; }
+    .ingr-tick { margin: 0 0.5em 0 0; vertical-align: middle; }
+    .ingr:has(.ingr-tick:checked) { color: #bbb; text-decoration: line-through; }
+
     /* Wake lock pill — fixed bottom right */
     #wake-btn {
       position: fixed;
@@ -84,58 +89,58 @@
       var pres = document.querySelectorAll('pre');
       if (!pres.length) return;
 
+      function attrEsc(s) {
+        return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+                .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
       pres.forEach(function(pre) {
+        var isIngr = (pre.getAttribute('style') || '').indexOf('inline-block') !== -1;
+
         var wrap = document.createElement('div');
         wrap.className = 'ingr-wrap';
         pre.parentNode.insertBefore(wrap, pre);
         wrap.appendChild(pre);
 
+        if (isIngr) {
+          // Put a tickbox on each ingredient line. Keep section labels (grey
+          // spans) as plain headers. Split by line so inline links survive.
+          pre.innerHTML = pre.innerHTML.split('\n').map(function(lineHTML) {
+            if (!lineHTML.trim()) return '';
+            if (/^<span[^>]*888[^>]*>[\s\S]*<\/span>$/.test(lineHTML.trim())) return lineHTML;
+            var tmp = document.createElement('div');
+            tmp.innerHTML = lineHTML;
+            var name = (tmp.textContent.split(/\s{2,}/)[0] || '').trim();
+            return '<label class="ingr" data-name="' + attrEsc(name) + '">'
+                 + '<input type="checkbox" class="ingr-tick">'
+                 + lineHTML.replace(/^\s+/, '') + '</label>';
+          }).join('\n');
+        }
+
         var btn = document.createElement('button');
         btn.className = 'copy-btn';
         btn.textContent = 'copy';
-        btn.title = 'Copy ingredients';
+        btn.title = isIngr ? 'Copy a shopping list of what you have not ticked' : 'Copy';
         btn.onclick = function() {
-          var tmp = document.createElement('div');
-          tmp.innerHTML = pre.innerHTML;
-
-          var plainLines = [];
-          var htmlParts = [];
-
-          tmp.childNodes.forEach(function(node) {
-            if (node.nodeType === 3) {
-              node.textContent.split('\n').forEach(function(line) {
-                var clean = line.replace(/ {2,}/g, ' ').trim();
-                if (clean) {
-                  plainLines.push('☐ ' + clean);
-                  htmlParts.push('<p><input type="checkbox"> ' + clean + '</p>');
-                }
-              });
-            } else if (node.nodeType === 1) {
-              var t = node.textContent.trim();
-              if (t) {
-                plainLines.push('\n' + t);
-                htmlParts.push('<p><b>' + t + '</b></p>');
-              }
+          var text;
+          if (isIngr) {
+            var names = [];
+            pre.querySelectorAll('label.ingr').forEach(function(lab) {
+              if (!lab.querySelector('.ingr-tick').checked) names.push(lab.getAttribute('data-name'));
+            });
+            text = names.join('\n');
+            if (!text) {
+              btn.textContent = 'all ticked';
+              setTimeout(function() { btn.textContent = 'copy'; }, 2000);
+              return;
             }
-          });
-
-          var plainText = plainLines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-          var html = htmlParts.join('');
-
-          try {
-            navigator.clipboard.write([new ClipboardItem({
-              'text/plain': new Blob([plainText], {type: 'text/plain'}),
-              'text/html': new Blob([html], {type: 'text/html'})
-            })]).then(function() {
-              btn.textContent = '✓';
-              setTimeout(function() { btn.textContent = 'copy'; }, 2000);
-            });
-          } catch(e) {
-            navigator.clipboard.writeText(plainText).then(function() {
-              btn.textContent = '✓';
-              setTimeout(function() { btn.textContent = 'copy'; }, 2000);
-            });
+          } else {
+            text = pre.textContent;
           }
+          navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = '✓';
+            setTimeout(function() { btn.textContent = 'copy'; }, 2000);
+          });
         };
         wrap.appendChild(btn);
       });
