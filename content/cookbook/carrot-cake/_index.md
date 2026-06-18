@@ -35,7 +35,7 @@ ground cinnamon      4g
 ground ginger        2g
 ground nutmeg        0.5g
 ground cloves        0.5g
-carrots              260g
+carrots (grated)     260g
 
 <span style="color: #888;">Frosting</span>
 cream cheese         452g
