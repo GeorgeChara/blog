@@ -15,7 +15,7 @@ tags: [vegetarian, freezer]
 </style>
 
 <h1>Carrot Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C, three 23cm tins, serves 12</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C (160°C fan), three 23cm tins, serves 12</p>
 
 ## Ingredients
 
@@ -49,7 +49,7 @@ salt                 pinch
 
 ## Recipe
 
-**1.** Heat the oven to 150°C. Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C. Grease and line three 23cm tins.
+**1.** Heat the oven to 150°C (130°C fan). Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C (160°C fan). Grease and line three 23cm tins.
 
 **2.** Whisk the oil, both sugars, eggs, apple sauce and vanilla until smooth.
 
