@@ -38,7 +38,9 @@ fresh mint         10g
 
 **1.** Peel and halve the onion. Slice as thinly as possible.
 
-**2.** Put everything in a bowl and massage together for a minute to help the onion soften.
+**2.** Put in a bowl and massage together for a minute to help the onion soften:
+
+{{< ingr "red onion=250g, red wine vinegar=125g, sumac=25g, salt=15g, parsley=15g, mint=10g" >}}
 
 **3.** Cover and refrigerate for at least 30 minutes. Better left overnight.
 
