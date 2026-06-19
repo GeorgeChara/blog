@@ -47,6 +47,8 @@ salt and pepper    to season
 lime
 </pre>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pork belly works too, with exactly the same steps. It is fattier, so it comes out richer and more melting, with extra crispy edges.</span>
+
 ## Recipe
 
 **1.** Cut the pork shoulder into large 5cm chunks, leaving some fat on. Season well with salt and pepper.
