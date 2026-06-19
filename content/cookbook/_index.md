@@ -101,7 +101,7 @@ layout: single
 <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>
 <li><a href="/cookbook/flapjacks/">Flapjacks</a></li>
 <li class="pending"><a href="/cookbook/french-toast/">French Toast</a></li>
-<li class="pending"><a href="/cookbook/gingerbread-cake/">Gingerbread Cake</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/gingerbread-men/">Gingerbread Men</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
 <li class="pending"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
 <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
