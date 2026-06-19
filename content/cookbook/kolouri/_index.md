@@ -48,7 +48,9 @@ aniseed             2g
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment on low to rub in the oil.</span>
 
-**2.** Add the salt, ground fennel, aniseed, mastic, and mahlapi. Mix through.
+**2.** Add and mix through:
+
+{{< ingr "salt=3g, ground fennel=0.3g, aniseed=0.3g, mastic=0.5g, mahlapi=1g" >}}
 
 **3.** Pour in the yeast mixture and bring together with your fingers. Gradually add the water until all the flour is incorporated into a dough.
 

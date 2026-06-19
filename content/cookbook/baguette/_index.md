@@ -64,7 +64,11 @@ yeast    2g
 
 ## Recipe
 
-**1.** Mix all ingredients until no dry patches of flour are visible. It should look shaggy at this point, close to porridge consistency. Cover and let rest for 30 mins.
+**1.** Mix until no dry patches of flour are visible:
+
+{{< ingr "flour=420g, water=320ml, salt=9g, yeast=2g" >}}
+
+It should look shaggy at this point, close to porridge consistency. Cover and let rest for 30 mins.
 
 **2.** One set of stretch and fold. Cover and let rest for 30 mins.
 
