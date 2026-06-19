@@ -34,7 +34,9 @@ butter           for frying
 
 ## Recipe
 
-**1.** Whisk the eggs, milk, sugar, vanilla, cinnamon and salt in a wide dish until smooth and no streaks of egg remain.
+**1.** Whisk in a wide dish until smooth and no streaks of egg remain:
+
+{{< ingr "eggs=2, milk=120ml, sugar=1 tbsp, vanilla=1 tsp, cinnamon=1/2 tsp, salt=pinch" >}}
 
 **2.** Soak each slice 20 to 30 seconds a side, until spongey through but not falling apart. Let the excess drip off.
 

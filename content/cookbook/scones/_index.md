@@ -40,7 +40,11 @@ egg              1
 
 **1.** Heat the oven to 220°C and line a baking tray.
 
-**2.** Mix the flour, baking powder, salt and sugar. Rub in the cold butter until it looks like breadcrumbs.
+**2.** Mix:
+
+{{< ingr "flour=350g, baking powder=10g, salt=3g, sugar=50g" >}}
+
+Rub in the cold butter until it looks like breadcrumbs.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle attachment on low. Stop as soon as it looks like breadcrumbs.</span>
 

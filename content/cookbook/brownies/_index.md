@@ -48,7 +48,11 @@ flaky sea salt     pinch
 
 **2.** Roughly chop the chocolate and add to a bowl with the cocoa powder (reserve 25g for later) and espresso powder. Pour the hot melted butter over and stir until smooth.
 
-**3.** Add the eggs, vanilla and both sugars to the bowl of a stand mixer and beat on high until thick and pale, like a thick pancake batter.
+**3.** Add to the stand mixer bowl:
+
+{{< ingr "eggs=6, vanilla=9g, granulated sugar=400g, dark brown sugar=100g" >}}
+
+Beat on high until thick and pale, like a thick pancake batter.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on high.</span>
 
@@ -61,7 +65,11 @@ flaky sea salt     pinch
 
 </details>
 
-**5.** Detach the bowl from the mixer. Sift the flour, reserved cocoa powder, and salt directly on top of the batter. Gently fold by hand until just combined, being careful not to knock out the air.
+**5.** Detach the bowl from the mixer. Sift directly on top of the batter:
+
+{{< ingr "flour=125g, reserved cocoa=25g, salt=12g" >}}
+
+Gently fold by hand until just combined, being careful not to knock out the air.
 
 <details>
 <summary>show video</summary>

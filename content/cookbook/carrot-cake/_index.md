@@ -60,11 +60,17 @@ salt                 pinch
 
 **1.** Heat the oven to 150°C (130°C fan). Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C (160°C fan). Grease and line three 24cm tins.
 
-**2.** Whisk the oil, both sugars, eggs, apple sauce and vanilla until smooth.
+**2.** Whisk until smooth:
+
+{{< ingr "oil=240ml, brown sugar=300g, caster sugar=100g, eggs=4, apple sauce=180g, vanilla=5ml" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: whisk attachment, medium.</span>
 
-**3.** Whisk the flour, baking powder, bicarbonate of soda, salt and spices in another bowl, then fold into the wet with the carrots and half the pecans, until just combined.
+**3.** Whisk the dry in another bowl:
+
+{{< ingr "flour=313g, baking powder=8g, bicarb=6g, salt=3g, cinnamon=4g, ginger=2g, nutmeg=0.5g, cloves=0.5g" >}}
+
+Fold into the wet with the carrots and half the pecans, until just combined.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">By hand, not the mixer, or it toughens.</span>
 

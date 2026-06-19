@@ -36,13 +36,21 @@ toppings             ~250g
 
 ## Recipe
 
-**1.** Mix the butter, light brown sugar and granulated sugar. Work up from low to medium speed until combined.
+**1.** Mix:
+
+{{< ingr "butter=225g, light brown sugar=220g, granulated sugar=150g" >}}
+
+Work up from low to medium speed until combined.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flex edge beater, low to medium. It scrapes the bowl as it creams.</span>
 
 **2.** Add the eggs and vanilla extract and mix until combined.
 
-**3.** Add the flour, bicarbonate of soda and salt. Mix on slow to medium until combined.
+**3.** Add:
+
+{{< ingr "flour=312g, bicarb=5g, salt=6g" >}}
+
+Mix on slow to medium until combined.
 
 **4.** Add toppings and mix.
 
