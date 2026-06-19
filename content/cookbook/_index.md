@@ -165,6 +165,7 @@ layout: single
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/aji-verde/">Aji Verde</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
+<li class="pending"><a href="/cookbook/cosmic-souvla-sauce/">Cosmic Souvla Sauce</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
 <li class="pending"><a href="/cookbook/hot-honey/">Hot Honey</a></li>
 <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
