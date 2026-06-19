@@ -95,7 +95,7 @@ layout: single
 <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
 <li><a href="/cookbook/brownies/">Brownies</a></li>
 <li><a href="/cookbook/buttermilk-pancakes/">Buttermilk Pancakes</a><span class="frz">❄</span></li>
-<li class="pending"><a href="/cookbook/carrot-cake/">Carrot Cake</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/carrot-cake/">Carrot Cake</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cheesecake/">Cheesecake</a></li>
 <li><a href="/cookbook/cookies/">Cookies</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/croissants/">Croissants</a></li>

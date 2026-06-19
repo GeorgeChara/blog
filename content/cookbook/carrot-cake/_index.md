@@ -10,6 +10,8 @@ tags: [vegetarian, freezer]
   main > h1:first-of-type { display: none; }
   .time { display: none; }
   h2::before { content: none !important; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   details { margin: -0.5em 0 0 0; padding: 0; }
   details summary { color: #888; font-size: 0.8em; cursor: pointer; user-select: none; }
   details summary:hover { color: #555; }
@@ -20,6 +22,8 @@ tags: [vegetarian, freezer]
 
 <h1>Carrot Cake</h1>
 <p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C (160°C fan), three 23cm tins, serves 12</p>
+
+<img loading="lazy" src="/images/carrot-cake/header.webp" alt="Carrot Cake">
 
 ## Ingredients
 
@@ -72,6 +76,15 @@ salt                 pinch
 <details>
 <summary>show the foolproof method</summary>
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.4em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle, not the whisk.<br>1. Butter on its own, medium, 1 min, until creamy.<br>2. Add the icing sugar, low then medium, 2 to 3 min, to a thick buttercream.<br>3. Add the cold cream cheese, vanilla and salt, low, 30 to 60 seconds, just until smooth. Stop there.<br>🤓 <strong>The science:</strong> butter and sugar first coats the sugar so it cannot pull water out of the cream cheese. Creaming the cheese in early, or overbeating, releases that water and turns it runny.</span>
+</details>
+
+<details>
+<summary>show photo</summary>
+
+![Cream cheese frosting in the mixer](/images/carrot-cake/step5.webp)
+
+![Finished cream cheese frosting](/images/carrot-cake/frosting.webp)
+
 </details>
 
 **6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill 20 minutes before slicing.
