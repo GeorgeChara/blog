@@ -61,7 +61,11 @@ black sesame seeds   5g
 
 <span style="color: #888;">Next day</span>
 
-**1.** Put the poolish, 300g strong flour, salt, olive oil, mahlepi, mastic, nutmeg and the last 1g yeast in a stand mixer. Add the 90g spiced water a little at a time, kneading with the dough hook on low to bring together, then medium 6 to 8 minutes, until smooth. Keep it firm and stiff, that gives the tight crumb. By hand, knead 10 minutes.
+**1.** Tip into the stand mixer:
+
+<code>[poolish, strong flour <span style="color:#aaa">300g</span>, salt <span style="color:#aaa">8g</span>, olive oil <span style="color:#aaa">30g</span>, mahlepi <span style="color:#aaa">1g</span>, mastic <span style="color:#aaa">0.5g</span>, nutmeg <span style="color:#aaa">0.5g</span>, yeast <span style="color:#aaa">1g</span>]</code>
+
+Add the 90g spiced water a little at a time, kneading with the dough hook on low to bring together, then medium 6 to 8 minutes, until smooth. Keep it firm and stiff, that gives the tight crumb. By hand, knead 10 minutes.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use the whole poolish, no need to measure it. Add the water until it comes together into a firm, stiff dough, not sticky. Poolishes vary, so if yours is loose, hold back some water or work in a little more strong white flour. All the dough flour is strong white bread flour, the chickpea flour went in the poolish.</span>
 
