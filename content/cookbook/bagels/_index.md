@@ -39,7 +39,11 @@ bicarb       1 tbsp
 
 ## Recipe
 
-**1.** Put everything in the mixer bowl. Dough hook on speed 1 until no dry flour remains, about 2 minutes. Increase to speed 2 and knead for 10 minutes.
+**1.** Put in the mixer bowl:
+
+{{< ingr "flour=500g, water=275g, salt=10g, yeast=2g" >}}
+
+Dough hook on speed 1 until no dry flour remains, about 2 minutes. Increase to speed 2 and knead for 10 minutes.
 
 <details><summary>show photo</summary>
 

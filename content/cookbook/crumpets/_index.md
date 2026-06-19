@@ -35,7 +35,11 @@ bicarbonate       3g
 
 ## Recipe
 
-**1.** Mix the flour, yeast, sugar and salt in a large bowl. Pour in the warm milk and water and stir to a smooth, thick batter. Cover and leave somewhere warm for 1-2 hours until risen and full of bubbles.
+**1.** Mix in a large bowl:
+
+{{< ingr "flour=250g, yeast=7g, sugar=4g, salt=6g" >}}
+
+Pour in the warm milk and water and stir to a smooth, thick batter. Cover and leave somewhere warm for 1-2 hours until risen and full of bubbles.
 
 **2.** Dissolve the bicarbonate of soda in a splash of warm water and stir into the batter. Beat for a minute or two. The batter will loosen and should pour like thick double cream. Cover and rest for 30-60 minutes.
 

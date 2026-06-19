@@ -31,7 +31,11 @@ instant yeast       7g
 
 ## Recipe
 
-**1.** Put everything in the stand mixer bowl. Dough hook on speed 2 for 8 minutes, until smooth and elastic.
+**1.** Put in the stand mixer bowl:
+
+{{< ingr "strong flour=500g, water=325g, salt=10g, yeast=7g" >}}
+
+Dough hook on speed 2 for 8 minutes, until smooth and elastic.
 
 **2.** Tip out and shape into a tight ball, dragging it across the surface to build tension. Place seam side up in banneton with rice flour. Cover and prove somewhere warm 1.5 to 2 hours, until risen and puffy.
 

@@ -44,7 +44,11 @@ raspberry jam       optional
 
 ## Recipe
 
-**1.** Put the flour, yeast, sugar, butter, eggs, salt, milk and water into a large bowl. Mix until a rough dough forms.
+**1.** Put into a large bowl:
+
+{{< ingr "flour=500g, yeast=14g, sugar=50g, butter=40g, eggs=2, salt=10g, milk=150g, water=140g" >}}
+
+Mix until a rough dough forms.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook on medium, 6-8 minutes until smooth and elastic.</span>
 

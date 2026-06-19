@@ -35,7 +35,11 @@ salt                10g
 
 ## Recipe
 
-**1.** Mix the flours and seeds, yeast on one side, salt on the other. Add the warm water and honey and mix to a sticky, rough dough.
+**1.** Mix the dry, yeast on one side, salt on the other:
+
+{{< ingr "dark rye=250g, strong white flour=250g, mixed seeds=50g, caraway=1 tbsp, yeast=7g, salt=10g" >}}
+
+Add the warm water and honey and mix to a sticky, rough dough.
 
 **2.** Knead 8 minutes. Rye is sticky and won't go as smooth or stretchy as white, that is normal, resist adding much flour.
 

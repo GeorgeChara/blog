@@ -44,7 +44,11 @@ milk             25g
 
 ## Recipe
 
-**1.** Mix the flour, sugar, salt and yeast. Add the warm milk and egg and mix until it comes together. Work in the butter and knead for 10 minutes until smooth and springy.
+**1.** Mix:
+
+{{< ingr "flour=500g, sugar=50g, salt=8g, yeast=7g" >}}
+
+Add the warm milk and egg and mix until it comes together. Work in the butter and knead for 10 minutes until smooth and springy.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook. Speed 1-2 to bring it together, then speed 2 for the full knead.</span>
 
