@@ -31,7 +31,11 @@ salt          6g
 
 ## Recipe
 
-**1.** Mix the flour, salt and oil. Add the warm water gradually to a soft, smooth dough. Knead 5 minutes. Cover and rest 30 minutes.
+**1.** Mix:
+
+{{< ingr "flour=400g, salt=6g, oil=2 tbsp" >}}
+
+Add the warm water gradually to a soft, smooth dough. Knead 5 minutes. Cover and rest 30 minutes.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: dough hook on speed 2 for 3/4 minutes until smooth.</span>
 

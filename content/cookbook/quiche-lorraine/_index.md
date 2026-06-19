@@ -50,7 +50,9 @@ nutmeg           pinch
 
 **4.** Reduce the oven to 170°C. Fry the lardons in a dry pan until golden but not crispy. Leave to cool.
 
-**5.** Whisk together the eggs, yolks, cream, salt, pepper and nutmeg.
+**5.** Whisk together:
+
+{{< ingr "eggs=3, egg yolks=2, double cream=300g, salt=pinch, black pepper=pinch, nutmeg=pinch" >}}
 
 **6.** Scatter the lardons across the pastry base. Pour the custard over to just below the rim.
 
