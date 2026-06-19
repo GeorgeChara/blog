@@ -38,7 +38,9 @@ salt               to taste
 
 **1.** Finely shred both cabbages and grate the carrot. Put in a large bowl.
 
-**2.** Whisk the lime juice, olive oil and salt together.
+**2.** Whisk together:
+
+{{< ingr "lime juice=1, olive oil=2 tbsp, salt=to taste" >}}
 
 **3.** Thinly slice the <a href="/cookbook/pickles/">cucumber pickles</a> and add to the bowl with the torn parsley. Pour over the dressing and toss well.
 

@@ -47,6 +47,8 @@ salt and pepper    to season
 
 **2.** Shake the dressing together in a jar. The yogurt keeps it creamy and pourable straight from the fridge.
 
-**3.** Combine the pasta, chicken, tomatoes, feta, olives, cucumber and red onion. Toss through the dressing.
+**3.** Combine, then toss through the dressing:
+
+{{< ingr "pasta=300g, chicken=300g, tomatoes=250g, feta=200g, olives=100g, cucumber=1/2, red onion=1/2" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Making it for the week? Hold a little dressing back, pasta drinks it up as it sits. Refresh with a squeeze of lemon at lunch.<br>Keeps 5 days in the fridge, airtight. Don't freeze, it thaws mushy. Out on the side: 1 hour max in the heat.</span>

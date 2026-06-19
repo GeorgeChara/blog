@@ -43,7 +43,11 @@ whole milk         15g
 
 **1.** Finely chop the onion and cook in a little oil over low heat for 12-15 minutes until soft and lightly golden. Leave to cool completely.
 
-**2.** Mix the sausage meat, breadcrumbs, fennel seeds, egg, salt, pepper and cooled onion together. Fry a small piece to taste and adjust seasoning.
+**2.** Mix together:
+
+{{< ingr "sausage meat=500g, breadcrumbs=40g, fennel seeds=5g, egg=1, salt=3g, black pepper=2g, cooled onion=150g" >}}
+
+Fry a small piece to taste and adjust seasoning.
 
 **3.** Heat the oven to 200°C. Line two baking trays with baking paper.
 

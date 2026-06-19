@@ -47,6 +47,10 @@ salt and pepper    to season
 
 **2.** Shake the dressing together in a jar until thick and emulsified.
 
-**3.** Combine the pasta, tomatoes, mozzarella, peppers, salami and olives. Toss through the dressing. Fresh basil on top if you have it.
+**3.** Combine, then toss through the dressing:
+
+{{< ingr "pasta=300g, tomatoes=250g, mozzarella=150g, peppers=150g, salami=100g, olives=100g" >}}
+
+Fresh basil on top if you have it.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Making it for the week? Hold a little dressing back, pasta drinks it up as it sits. Refresh with a splash of oil and vinegar at lunch.<br>Keeps 3 to 4 days in the fridge, airtight (it has dairy and cured meat). Don't freeze. Out on the side: 1 hour max in the heat.</span>

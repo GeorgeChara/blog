@@ -37,7 +37,9 @@ oil              for frying
 
 **1.** Marinate the diced chicken in the <a href="/cookbook/chicken-marinade/">chicken marinade</a>, 30 minutes to overnight.
 
-**2.** Mix the coating: flour with the salt, paprika, garlic powder and baking powder.
+**2.** Mix the coating:
+
+{{< ingr "flour=150g, salt=1 tsp, smoked paprika=1 tsp, garlic powder=1 tsp, baking powder=1 tsp" >}}
 
 **3.** Lift the chicken from the buttermilk, let the excess drip off, and toss in the flour until well coated. Press it on for a craggy crust.
 

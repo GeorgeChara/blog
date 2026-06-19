@@ -48,7 +48,9 @@ sesame seeds      10g
 
 **1.** Finely slice the red onions. Cook in the butter and olive oil over low heat for 25-30 minutes until deeply soft and golden, stirring occasionally. Add the balsamic vinegar and stir for a minute until it evaporates. Spread onto a plate and leave to cool completely.
 
-**2.** Mix the sausage meat, breadcrumbs, chopped sage, mustard, salt, pepper and cooled onions together until evenly combined. Refrigerate until needed.
+**2.** Mix until evenly combined, then refrigerate until needed:
+
+{{< ingr "sausage meat=500g, breadcrumbs=40g, sage=5g, dijon=15g, salt=3g, black pepper=2g, cooled onions" >}}
 
 **3.** Heat the oven to 200°C. Line a large baking tray with baking paper.
 

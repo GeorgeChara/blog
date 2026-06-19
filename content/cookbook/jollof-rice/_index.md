@@ -43,7 +43,11 @@ salt               to taste
 
 ## Recipe
 
-**1.** Blend the tinned tomatoes, red peppers, 1 onion and the scotch bonnet to a smooth puree. Add the garlic and ginger too if using.
+**1.** Blend to a smooth puree:
+
+{{< ingr "plum tomatoes=400g tin, red peppers=2, onion=1, scotch bonnet=1" >}}
+
+Add the garlic and ginger too if using.
 
 **2.** Heat the oil in the Dutch oven. Dice the other onion and fry until soft. Add the tomato puree and cook 2/3 minutes.
 
