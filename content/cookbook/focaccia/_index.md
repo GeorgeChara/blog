@@ -47,7 +47,11 @@ flaky sea salt   generous pinch
 
 ### Night before
 
-**1.** Mix the flour and salt in a large bowl. In a separate bowl, mix the water, yeast and honey until dissolved. Pour the yeast mixture and olive oil into the flour and mix until a rough sticky dough forms with no dry patches. Cover and leave at room temperature for 12-14 hours until doubled and bubbly on the surface.
+**1.** Mix the flour and salt in a large bowl. In a separate bowl, dissolve:
+
+{{< ingr "water=600g, yeast=3g, honey=15g" >}}
+
+Pour the yeast mixture and olive oil into the flour and mix until a rough sticky dough forms with no dry patches. Cover and leave at room temperature for 12-14 hours until doubled and bubbly on the surface.
 
 ### Day of
 
