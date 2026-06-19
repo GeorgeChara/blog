@@ -13,6 +13,7 @@ tags: [vegetarian, freezer]
   img:hover { transform: none !important; box-shadow: none !important; }
   img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   details { margin: -0.5em 0 0 0; padding: 0; }
+  details + details { margin-top: 0.5em; }
   details summary { color: #888; font-size: 0.8em; cursor: pointer; user-select: none; }
   details summary:hover { color: #555; }
   details[open] { margin-bottom: 0.5em; }
@@ -21,7 +22,7 @@ tags: [vegetarian, freezer]
 </style>
 
 <h1>Carrot Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C (160°C fan), three 23cm tins, serves 12</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C (160°C fan), three 24cm tins, serves 12</p>
 
 <img loading="lazy" src="/images/carrot-cake/header.webp" alt="Carrot Cake">
 
@@ -57,7 +58,7 @@ salt                 pinch
 
 ## Recipe
 
-**1.** Heat the oven to 150°C (130°C fan). Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C (160°C fan). Grease and line three 23cm tins.
+**1.** Heat the oven to 150°C (130°C fan). Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C (160°C fan). Grease and line three 24cm tins.
 
 **2.** Whisk the oil, both sugars, eggs, apple sauce and vanilla until smooth.
 
@@ -81,9 +82,10 @@ salt                 pinch
 <details>
 <summary>show photo</summary>
 
-![Cream cheese frosting in the mixer](/images/carrot-cake/step5.webp)
-
-![Finished cream cheese frosting](/images/carrot-cake/frosting.webp)
+<div style="display:flex; gap:0.5em;">
+<img loading="lazy" src="/images/carrot-cake/step5.webp" alt="Cream cheese frosting in the mixer" style="width:50%;">
+<img loading="lazy" src="/images/carrot-cake/frosting.webp" alt="Finished cream cheese frosting" style="width:50%;">
+</div>
 
 </details>
 
