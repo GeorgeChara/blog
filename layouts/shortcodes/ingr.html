@@ -1,0 +1,12 @@
+{{- /* Dimmed ingredient array for a step. Usage:
+       {{< ingr "poolish, strong flour=300g, salt=8g" >}}
+       Each comma item is "name" or "name=amount"; the amount renders dimmed. */ -}}
+{{- $items := split (.Get 0) "," -}}
+<code>[
+{{- range $i, $it := $items -}}
+{{- if $i }}, {{ end -}}
+{{- $p := split (trim $it " ") "=" -}}
+{{- trim (index $p 0) " " -}}
+{{- if gt (len $p) 1 }} <span style="color:#aaa">{{ trim (index $p 1) " " }}</span>{{- end -}}
+{{- end -}}
+]</code>

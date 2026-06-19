@@ -55,15 +55,23 @@ black sesame seeds   5g
 
 <span style="color: #888;">Night before</span>
 
-**1.** Make the spiced water. Boil the water with the bay, peppercorns, ginger and sugar for a minute. Steep until lukewarm, then strain. You need about 290g.
+**1.** Make the spiced water. Boil together for a minute:
 
-**2.** Stir the chickpea flour, 90g strong flour, 200g of the spiced water and 1g yeast to a loose batter, about pancake-batter thickness. Cover and leave somewhere warm 12 to 16 hours, until bubbly and risen. Save the rest of the spiced water for tomorrow.
+{{< ingr "water=350g, bay leaves=3, black peppercorns=3g, ginger=15g, sugar=4g" >}}
+
+Steep until lukewarm, then strain. You need about 290g.
+
+**2.** Stir to a loose batter, about pancake-batter thickness:
+
+{{< ingr "chickpea flour=60g, strong flour=90g, spiced water=200g, yeast=1g" >}}
+
+Cover and leave somewhere warm 12 to 16 hours, until bubbly and risen. Save the rest of the spiced water for tomorrow.
 
 <span style="color: #888;">Next day</span>
 
 **1.** Tip into the stand mixer:
 
-<code>[poolish, strong flour <span style="color:#aaa">300g</span>, salt <span style="color:#aaa">8g</span>, olive oil <span style="color:#aaa">30g</span>, mahlepi <span style="color:#aaa">1g</span>, mastic <span style="color:#aaa">0.5g</span>, nutmeg <span style="color:#aaa">0.5g</span>, yeast <span style="color:#aaa">1g</span>]</code>
+{{< ingr "poolish, strong flour=300g, salt=8g, olive oil=30g, mahlepi=1g, mastic=0.5g, nutmeg=0.5g, yeast=1g" >}}
 
 Add the 90g spiced water a little at a time, kneading with the dough hook on low to bring together, then medium 6 to 8 minutes, until smooth. Keep it firm and stiff, that gives the tight crumb. By hand, knead 10 minutes.
 
