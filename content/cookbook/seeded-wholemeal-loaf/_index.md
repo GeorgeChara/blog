@@ -31,7 +31,11 @@ oil                     20g
 
 ## Recipe
 
-**1.** Mix the flour and seeds, yeast on one side, salt on the other. Add the warm water, honey and oil and mix to a rough, sticky dough.
+**1.** Mix the dry, yeast on one side, salt on the other:
+
+{{< ingr "wholemeal flour=500g, mixed seeds=75g, yeast=7g, salt=10g" >}}
+
+Add the warm water, honey and oil and mix to a rough, sticky dough.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: the flex edge beater (the scraper paddle) on low brings it together and scrapes the walls as it goes. Then swap to the dough hook to knead.</span>
 

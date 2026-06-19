@@ -44,11 +44,19 @@ semolina         25g
 
 **Night before:**
 
-**1.** Mix the preferment flour, yeast, milk and water in a large bowl until you get a thick batter. Cover and leave in the fridge overnight.
+**1.** Mix in a large bowl to a thick batter:
+
+{{< ingr "flour=190g, yeast=3g, milk=152g, water=102g" >}}
+
+Cover and leave in the fridge overnight.
 
 **Day of:**
 
-**2.** Melt the butter and leave to cool. Add the remaining flour, salt, sugar and melted butter to the preferment and mix by hand until it comes together into a soft, sticky dough.
+**2.** Melt the butter and leave to cool. Add to the preferment:
+
+{{< ingr "flour=120g, salt=6g, sugar=4g, melted butter=18g" >}}
+
+Mix by hand until it comes together into a soft, sticky dough.
 
 **3.** With wet hands, stretch the dough up from the bottom and fold it over itself several times around the bowl. Shape into a rough ball. Cover and rest for 1 hour.
 

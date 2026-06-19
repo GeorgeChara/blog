@@ -31,7 +31,11 @@ oil           for cooking
 
 ## Recipe
 
-**1.** Mix the masa harina, salt and warm water into a soft, smooth, moist dough. Rest 10 minutes. If it cracks when pressed, work in a splash more water.
+**1.** Mix into a soft, smooth, moist dough:
+
+{{< ingr "masa harina=250g, salt=1/2 tsp, warm water=300ml" >}}
+
+Rest 10 minutes. If it cracks when pressed, work in a splash more water.
 
 **2.** Divide into 6 balls. Press a deep well into each, pack in cheese, then pinch the dough closed over the top.
 
