@@ -10,6 +10,10 @@ tags: [vegetarian, freezer]
   main > h1:first-of-type { display: none; }
   .time { display: none; }
   h2::before { content: none !important; }
+  details { margin: -0.5em 0 0 0; padding: 0; }
+  details summary { color: #888; font-size: 0.8em; cursor: pointer; user-select: none; }
+  details summary:hover { color: #555; }
+  details[open] { margin-bottom: 0.5em; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
 </style>
@@ -63,9 +67,12 @@ salt                 pinch
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tin size changes the bake. More or bigger tins make thinner layers, so start checking a few minutes early. Two tins instead of three, or smaller tins, bake longer: 30 to 35 minutes.</span>
 
-**5.** Beat the cream cheese and butter smooth, then beat in the icing sugar, vanilla and salt until thick and spreadable.
+**5.** Beat the butter smooth, then beat in the icing sugar to a thick buttercream. Add the cold cream cheese, vanilla and salt and mix on low just until smooth and spreadable.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle, medium. Don't overbeat or it slackens.</span>
+<details>
+<summary>show the foolproof method</summary>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.4em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle, not the whisk.<br>1. Butter on its own, medium, 1 min, until creamy.<br>2. Add the icing sugar, low then medium, 2 to 3 min, to a thick buttercream.<br>3. Add the cold cream cheese, vanilla and salt, low, 30 to 60 seconds, just until smooth. Stop there.<br>🤓 <strong>The science:</strong> butter and sugar first coats the sugar so it cannot pull water out of the cream cheese. Creaming the cheese in early, or overbeating, releases that water and turns it runny.</span>
+</details>
 
 **6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill 20 minutes before slicing.
 
