@@ -47,7 +47,11 @@ black pepper       2g
 
 **3.** Stir in the tomato paste and cook for 2 minutes. Add the grated tomatoes and sugar. Simmer for 10 minutes.
 
-**4.** Add the cinnamon, salt, pepper, spearmint, parsley and a quarter of the lemon juice. Mix in the rice. Leave to cool completely.
+**4.** Add to the pan:
+
+{{< ingr "cinnamon=6g, salt=12g, pepper=2g, spearmint=3g, parsley=50g, lemon juice=a quarter" >}}
+
+Mix in the rice. Leave to cool completely.
 
 **5.** Lay a vine leaf smooth-side down. Place a heaped teaspoon of filling near the stalk end. Fold the left side over, then the right, then roll away from you into a tight cigar. Not too tight as the rice will expand.
 

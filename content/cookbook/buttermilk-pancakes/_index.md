@@ -36,9 +36,15 @@ melted butter        45g
 
 ## Recipe
 
-**1.** Flour, sugar, baking powder, bicarb and salt in the mixer bowl, flat beater on low, a few seconds to combine.
+**1.** In the mixer bowl, flat beater on low, a few seconds to combine:
 
-**2.** Lowest speed, pour in the buttermilk, eggs and butter. 10 seconds, stop while it's still lumpy.
+{{< ingr "flour=220g, sugar=2 tbsp, baking powder=2 tsp, bicarb=1/2 tsp, salt=1/2 tsp" >}}
+
+**2.** Lowest speed, pour in:
+
+{{< ingr "buttermilk=400ml, eggs=2, melted butter=45g" >}}
+
+10 seconds, stop while it's still lumpy.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flat beater, not the whisk. Lumpy and thick is good. Smooth and glossy means you've overmixed.</span>
 

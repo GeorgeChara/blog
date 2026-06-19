@@ -36,7 +36,9 @@ pepper           to taste
 
 ## Recipe
 
-**1.** Whisk everything together in a bowl until the chipotle paste has loosened into the buttermilk.
+**1.** Whisk together in a bowl until the chipotle paste has loosened into the buttermilk:
+
+{{< ingr "buttermilk=200ml, chipotle paste=1 tbsp, garlic=2 cloves, cumin=1 tsp, oregano=1 tsp, smoked paprika=1 tsp, oil=1 tbsp, lemon=1/2, salt=1 tsp, pepper=to taste" >}}
 
 **2.** Add the diced chicken, turn to coat, cover.
 
