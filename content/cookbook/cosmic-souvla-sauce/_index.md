@@ -19,7 +19,7 @@ tags: [vegan, freezer]
 <h1>Cosmic Souvla Sauce</h1>
 <p style="color: #888; margin-top: -0.5em;">5 min, blend</p>
 
-<img loading="lazy" src="/images/cosmic-souvla-sauce/header.webp" alt="Cosmic Souvla Sauce">
+<img loading="lazy" src="/images/cosmic-souvla-sauce/header.webp" alt="Cosmic Souvla Sauce" style="max-width: 50%;">
 
 ## Ingredients
 
