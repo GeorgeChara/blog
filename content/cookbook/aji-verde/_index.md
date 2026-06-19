@@ -27,7 +27,7 @@ salt            to taste
 msg (optional)  1/4 tsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The Peruvian green sauce served with charcoal grilled chicken. Use the coriander stalks as well as the leaves, they carry most of the flavour.<br>A spoon of aji amarillo paste deepens it and makes it more authentic, if you can find it.<br>A pinch of MSG with the salt rounds out the savouriness and makes the herbs and lime pop. Start small and taste.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The Peruvian green sauce served with charcoal grilled chicken. Use the coriander stalks as well as the leaves, they carry most of the flavour.<br>A spoon of aji amarillo paste deepens it and makes it more authentic, if you can find it.<br>A pinch of MSG with the salt rounds out the savouriness and makes the herbs and lime pop. Start small and taste.<br>Any neutral oil works, sunflower or vegetable as well as the rapeseed. Avoid olive oil, it turns bitter blended.</span>
 
 ## Recipe
 
