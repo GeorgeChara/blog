@@ -31,7 +31,9 @@ msg (optional)  1/4 tsp
 
 ## Recipe
 
-**1.** Blend the coriander, chilli, garlic, lime juice and salt until broken down.
+**1.** Blend until broken down:
+
+{{< ingr "coriander=large bunch, green chilli=1 to 2, garlic=1 clove, lime juice=1, salt=to taste" >}}
 
 **2.** Stream in the rapeseed oil with the blender running until it emulsifies into a smooth, vivid green sauce. Loosen with a splash of water if it is too thick.
 

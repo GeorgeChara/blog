@@ -42,7 +42,9 @@ bay leaf           1
 
 **1.** Slice the cucumber into thin 3mm rounds, or cut lengthwise into spears.
 
-**2.** Combine the water, vinegar, maple syrup, salt, black pepper and red pepper flakes in a jug. Stir until the salt dissolves.
+**2.** Combine in a jug, stirring until the salt dissolves:
+
+{{< ingr "water=120g, rice vinegar=150g, maple syrup=18g, salt=9g, black pepper=pinch, red pepper flakes=pinch" >}}
 
 **3.** Pack the cucumber into a jar. Add the dill, garlic and bay leaf.
 

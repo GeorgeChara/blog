@@ -30,7 +30,11 @@ salt            to taste
 
 ## Recipe
 
-**1.** Blend the yoghurt, parsley, garlic, lemon juice, olive oil and salt until smooth and green. Or chop the parsley fine and stir everything together by hand.
+**1.** Blend until smooth and green:
+
+{{< ingr "yoghurt=200g, parsley=large handful, garlic=1 clove, lemon juice=1/2, olive oil=1 tbsp, salt=to taste" >}}
+
+Or chop the parsley fine and stir everything together by hand.
 
 **2.** Taste and adjust with more salt and lemon.
 

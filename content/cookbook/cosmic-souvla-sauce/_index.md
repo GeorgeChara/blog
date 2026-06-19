@@ -32,7 +32,9 @@ msg (optional)  1/4 tsp
 
 ## Recipe
 
-**1.** Blend the parsley, chilli, garlic, lemon juice and salt until broken down.
+**1.** Blend until broken down:
+
+{{< ingr "parsley=large bunch, green chilli=1 to 2, garlic=1 clove, lemon juice=1, salt=to taste" >}}
 
 **2.** Stream in the oil with the blender running until it emulsifies into a smooth green sauce. Loosen with a splash of water if too thick.
 
