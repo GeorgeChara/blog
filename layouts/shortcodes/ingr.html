@@ -1,13 +1,15 @@
 {{- /* Dimmed ingredient array for a step. Usage:
        {{< ingr "poolish, strong flour=300g, salt=8g" >}}
        Each comma item is "name" or "name=amount"; the amount renders dimmed.
-       Wrapped in <p> so the theme's "p > code" box styling applies. */ -}}
+       Each item is nowrap so a name and its amount never split across lines;
+       wrapping only happens between items. Wrapped in <p> for the code box. */ -}}
 {{- $items := split (.Get 0) "," -}}
 <p><code>[
 {{- range $i, $it := $items -}}
 {{- if $i }}, {{ end -}}
 {{- $p := split (trim $it " ") "=" -}}
-{{- trim (index $p 0) " " -}}
-{{- if gt (len $p) 1 }} <span style="color:#aaa">{{ trim (index $p 1) " " }}</span>{{- end -}}
+<span style="white-space:nowrap">{{ trim (index $p 0) " " }}
+{{- if gt (len $p) 1 }} <span style="color:#aaa">{{ trim (index $p 1) " " }}</span>{{ end -}}
+</span>
 {{- end -}}
 ]</code></p>
