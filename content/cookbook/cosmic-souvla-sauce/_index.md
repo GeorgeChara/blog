@@ -27,7 +27,7 @@ tags: [vegan, freezer]
 green chilli    1 to 2
 garlic          1 clove
 lemon           1
-sunflower oil   4 tbsp
+sunflower oil   to texture
 salt            to taste
 msg (optional)  1/4 tsp
 </pre>
