@@ -32,7 +32,7 @@ salt            to taste
 msg (optional)  1/4 tsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Green Tabasco in place of the green chilli. Blend smooth if bottling. Keeps 5 days in the fridge.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Green Tabasco in place of the green chilli. Keeps 5 days in the fridge.</span>
 
 ## Recipe
 
