@@ -15,7 +15,7 @@ tags: [vegan, freezer]
 </style>
 
 <h1>Arkatena</h1>
-<p style="color: #888; margin-top: -0.5em;">overnight poolish, 50 min bake, 185°C, makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">overnight poolish, 50 min bake, 185°C (165°C fan), makes 1 loaf</p>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Real arkatena rises on arkatis, a wild foam from fermented chickpeas. Tastes great, but slow and a faff. This is the shortcut: a chickpea poolish with a pinch of yeast, the same spiced water, the same mastic and mahlepi. Dense, tight crumb, sesame all over.</span>
 
@@ -83,7 +83,7 @@ Add the 90g spiced water a little at a time, kneading with the dough hook on low
 
 **4.** Put on a lined tray. Slash 4 or 5 cuts across the top, about 1cm deep, to mark the slices. Prove 45 minutes to 1 hour, the cuts open up and set. Start heating the baking stone now, if using.
 
-**5.** Bake at 185°C for 45 to 50 minutes, until deep golden and hollow underneath.
+**5.** Bake at 185°C (165°C fan) for 45 to 50 minutes, until deep golden and hollow underneath. Tent loosely with foil if the sesame browns too fast.
 
 **6.** Cool fully before slicing.
 
