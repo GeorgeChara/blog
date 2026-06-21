@@ -24,7 +24,7 @@ cider vinegar  1 tsp
 salt           pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">More chilli for more heat, or use a sliced fresh chilli. The vinegar cuts the sweetness, don't skip it.<br>Keeps in a jar at room temperature for weeks.<br>Great on <a href="/cookbook/buttermilk-fried-chicken/">fried chicken</a>, pizza, halloumi and roast veg.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">More chilli for more heat, or use a sliced fresh chilli. The vinegar cuts the sweetness, don't skip it.<br>Keeps in a jar at room temperature for weeks.<br>Great on <a href="/cookbook/souvla/">souvla</a>, <a href="/cookbook/buttermilk-fried-chicken/">fried chicken</a>, pizza, halloumi and roast veg.</span>
 
 ## Recipe
 

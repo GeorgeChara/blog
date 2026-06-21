@@ -34,6 +34,8 @@ msg (optional)  1/4 tsp
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Green Tabasco in place of the green chilli. Keeps 5 days in the fridge.</span>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Creamy version</strong><br>Stir in a few spoons of Greek yoghurt and chill to mellow the garlic. Don't freeze this one.</span>
+
 ## Recipe
 
 **1.** Blend until broken down:

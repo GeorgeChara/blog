@@ -29,20 +29,34 @@ layout: single
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Per skewer</span>
 
 chicken thighs   2kg
-
-salt             12g
-black pepper     4g
-dried oregano    5g
-ground cumin     8g
-olive oil        60g
+buttermilk       250g
+salt             to taste
+black pepper     to taste
+dried oregano    to taste
+baking powder    4g
 lemon            1
+
+<span style="color: #888;">Classic, add</span>
+ground cumin     to taste
+
+<span style="color: #888;">Cypriot, add</span>
+coriander seed   to taste
+ground cumin     to taste
+cinnamon         pinch
+allspice         pinch
+
+<span style="color: #888;">Flavour bomb, add</span>
+Dijon mustard    1 tbsp
+smoked paprika   to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Thighs with the bone in and skin on. Skewer across the bone, 1.5kg per skewer.<br>Swap the olive oil for buttermilk for a better crust. Marinate overnight.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Thighs with the bone in and skin on. Skewer across the bone, max 2kg per skewer.<br>Olive oil instead of buttermilk for a quicker version, marinate a few hours.<br>Tzatziki with the Cypriot, <a href="/cookbook/cosmic-souvla-sauce/">cosmic souvla sauce</a> with the flavour bomb.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Flaky skin</strong><br>Poke holes in the skin so the fat drains out. Run the fire hot and build the coals up at the end.</span>
 
 ## Recipe
 
-**1.** Marinate the chicken in all the ingredients. At least 2 hours, overnight is better.
+**1.** Bag the thighs in the buttermilk with your chosen seasonings, no lemon. Push the air out. Marinate overnight, or freeze flat and move to the fridge two days before to thaw.
 
 <details>
 <summary>show photo</summary>
@@ -51,9 +65,11 @@ lemon            1
 
 </details>
 
-**2.** Light the charcoal 15-20 minutes before you want to cook. Wait for the white ash stage before putting the meat on.
+**2.** The night before, lift them out of the marinade, pat the skin dry and rub on the salt and baking powder. Leave uncovered on a rack in the fridge to dry the skin.
 
-**3.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece flipped so they sit facing opposite directions, this ensures an even rotation on the foukou.
+**3.** Light the charcoal 15-20 minutes before you want to cook. Wait for the white ash stage before putting the meat on.
+
+**4.** Skewer the thighs across the bone through the thickest part of the meat. Alternate each piece facing opposite directions for even rotation on the foukou.
 
 <details>
 <summary>show photo</summary>
@@ -62,17 +78,11 @@ lemon            1
 
 </details>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">At this point, rotate the skewer to mimic the rotisserie and check for any large pieces of skin flapping. Pin them down or cut them off. Pinning is better since the skin crisps up nicely and has good flavour.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Rotate the skewer and check for any large pieces of skin flapping. Pin them down or cut them off. Pinning is better, the skin crisps up nicely and has good flavour.</span>
 
-**4.** Set the motor to its fastest speed. Start high above the coals, then lower after 10 minutes. As it cooks, sprinkle salt and oregano and squeeze lemon over when it needs it.
-
-**5.** In the last 10 minutes, slide the pieces apart on the skewer to expose more surface area for the final crisping.
+**5.** Set the motor to its fastest speed. Run the fire hot and cook 45 to 60 minutes. Slide the pieces apart for the last stretch to crisp more surface.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">You'll know when it's done, eyeball it.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Cosmic souvla</strong><br>Bag the thighs in buttermilk and spices (no lemon), push the air out and freeze flat.<br>Two days before, move to the fridge to thaw.<br>The night before, take them out of the marinade, pat the skin dry, rub on salt and a pinch of baking powder and leave them uncovered in the fridge.<br>Save the lemon for the end, it stops the skin crisping.</span>
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Serving: rest it on a wire rack with a mesh net over the top, never a lid. A lid traps steam and the skin goes soft. Pile onto a board with lemon wedges and salt for the table. Eat it hot, souvla does not like sitting around.</span>
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Wrap it in a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a> with <a href="/cookbook/parsley-yoghurt/">parsley yoghurt</a> and <a href="/cookbook/pickled-red-onions/">pickled onions</a>. Add grated cucumber to the yoghurt for tzatziki.</span>
+**6.** Squeeze the lemon over only at the end. Acid earlier stops the skin crisping.
 
