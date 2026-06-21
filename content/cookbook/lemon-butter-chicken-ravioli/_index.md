@@ -36,6 +36,8 @@ salt and pepper    to season
 
 **1.** Season the chicken hard and fry in a little oil until golden and cooked through. Rest, then slice or shred. A shop rotisserie chicken is fine instead.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>While the chicken cooks, get everything ready, the end goes fast.</strong> Zest and juice the lemons, grate the cheese fine, weigh out the peas, tear the basil, and get the pasta water boiling and well salted. Make the sauce in the chicken pan, the browned bits left behind are pure flavour. The chicken is happy resting while you finish.</span>
+
 **2.** Cook the ravioli gently in well-salted water, don't let it boil hard or the parcels split. Lift out with a slotted spoon when they float, 3 to 4 minutes. Keep a mug of the pasta water.
 
 **3.** In the pan, make the sauce:
