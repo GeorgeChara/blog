@@ -16,15 +16,15 @@ layout: single
 </style>
 
 <h1>Lemon Butter Chicken Ravioli</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min, serves 2</p>
+<p style="color: #888; margin-top: -0.5em;">25 min, serves 4</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">ravioli            250g
-chicken thighs     300g
-butter             3 tbsp
-lemon              1
-frozen peas        150g
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">ravioli            500g
+chicken thighs     600g
+butter             80g
+lemon              2
+frozen peas        300g
 basil              handful
 parmesan           to serve
 salt and pepper    to season
@@ -40,7 +40,7 @@ salt and pepper    to season
 
 **3.** In the pan, make the sauce:
 
-{{< ingr "butter=3 tbsp, water=4 tbsp, lemon zest and juice=1, peas=150g" >}}
+{{< ingr "butter=80g, water=120g, lemon zest and juice=2, peas=300g" >}}
 
 Simmer until the peas are bright, but don't reduce it fully or it splits.
 
