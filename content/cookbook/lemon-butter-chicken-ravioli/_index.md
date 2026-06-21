@@ -30,15 +30,15 @@ parmesan           to serve
 salt and pepper    to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shop-bought spinach and ricotta ravioli. A light sauce is the point, the filling does the flavour work.<br>No peas? Courgette, asparagus or green beans all work, sautéed in the butter first. A spoon of <a href="/cookbook/cosmic-souvla-sauce/">cosmic souvla sauce</a> drizzled over at the end is a good extra.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shop bought spinach and ricotta ravioli, keep the sauce light.<br>No peas? Courgette, asparagus or green beans work too. A spoon of <a href="/cookbook/cosmic-souvla-sauce/">cosmic souvla sauce</a> over the top is a good extra.</span>
 
 ## Recipe
 
 **1.** Season the chicken hard and fry in a little oil until golden and cooked through. Rest, then slice or shred. A shop rotisserie chicken is fine instead.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>While the chicken cooks, get everything ready, the end goes fast.</strong> Zest and juice the lemons, grate the cheese fine, weigh out the peas, tear the basil, and get the pasta water boiling and well salted. Make the sauce in the chicken pan, the browned bits left behind are pure flavour. The chicken is happy resting while you finish.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">While the chicken cooks, prep the rest: zest and juice the lemons, grate the cheese, get the pasta water on. Make the sauce in the chicken pan. The end goes fast.</span>
 
-**2.** Cook the ravioli gently in well-salted water, don't let it boil hard or the parcels split. Lift out with a slotted spoon when they float, 3 to 4 minutes. Keep a mug of the pasta water.
+**2.** Cook the ravioli, scoop out and keep to one side. Save a mug of the pasta water.
 
 **3.** In the pan, make the sauce:
 
@@ -48,10 +48,8 @@ Simmer until the peas are bright, but don't reduce it fully or it splits.
 
 **4.** Add the ravioli and chicken. Toss gently to coat, splash in pasta water if it needs loosening, and simmer 1 minute.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The sauce should gloss the pasta, not pool underneath. Butter and water alone stay thin, the starchy pasta water and the cheese are what emulsify it into a silky sauce that clings. Add the pasta water a splash at a time and toss hard. For a richer, foolproof sauce, swap 50g of the water for cream.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The pasta water and cheese pull the sauce together so it clings. Add the water a splash at a time and toss hard. Swap 50g of the water for cream for a richer sauce.</span>
 
 **5.** Plate up. Torn basil, grated parmesan, black pepper, a squeeze more lemon.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cheddar works in place of parmesan, just add it off the heat and grate it fine, or it can go oily.</span>
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Best eaten straight away, the ravioli does not keep once sauced.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cheddar works too, grated fine and added off the heat.</span>
