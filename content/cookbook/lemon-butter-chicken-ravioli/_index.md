@@ -46,6 +46,10 @@ Simmer until the peas are bright, but don't reduce it fully or it splits.
 
 **4.** Add the ravioli and chicken. Toss gently to coat, splash in pasta water if it needs loosening, and simmer 1 minute.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The sauce should gloss the pasta, not pool underneath. Butter and water alone stay thin, the starchy pasta water and the cheese are what emulsify it into a silky sauce that clings. Add the pasta water a splash at a time and toss hard. For a richer, foolproof sauce, swap 50g of the water for cream.</span>
+
 **5.** Plate up. Torn basil, grated parmesan, black pepper, a squeeze more lemon.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cheddar works in place of parmesan, just add it off the heat and grate it fine, or it can go oily.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Best eaten straight away, the ravioli does not keep once sauced.</span>
