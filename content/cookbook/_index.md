@@ -130,6 +130,7 @@ layout: single
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
 <li class="pending"><a href="/cookbook/greek-pasta-salad/">Greek Pasta Salad</a></li>
+<li><a href="/cookbook/green-goddess-pasta-salad/">Green Goddess Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/italian-deli-pasta-salad/">Italian Deli Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
