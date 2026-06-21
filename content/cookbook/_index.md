@@ -133,6 +133,7 @@ layout: single
 <li><a href="/cookbook/green-goddess-pasta-salad/">Green Goddess Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/italian-deli-pasta-salad/">Italian Deli Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
+<li><a href="/cookbook/lemon-butter-chicken-ravioli/">Lemon Butter Chicken Ravioli</a></li>
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/pot-roast-chicken-thighs/">Pot-Roast Chicken Thighs</a><span class="frz">❄</span></li>
