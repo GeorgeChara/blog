@@ -29,13 +29,13 @@ bay leaves       2
 chicken breasts  2
 chicken stock    1.4L
 orzo             150g
-lemon            1
+lemon            1 to 2
 egg yolks        2
 dill             handful
 salt and pepper  to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Orzo or short-grain rice.<br>Off the boil before the eggs go in, or it curdles.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Orzo or short grain rice.<br>Off the boil before the eggs go in, or it curdles.</span>
 
 ## Recipe
 
@@ -49,6 +49,6 @@ salt and pepper  to taste
 
 **5.** Whisk the egg yolks with the lemon juice. Whisk in a ladle of hot broth to warm them, then another.
 
-**6.** Off the heat, pour the egg-lemon back into the pot. Warm through gently, don't boil.
+**6.** Off the heat, pour the egg lemon back into the pot. Warm through gently, don't boil.
 
-**7.** Stir in the dill, season, serve.
+**7.** Stir in the dill, season, and adjust the lemon to taste. Serve.
