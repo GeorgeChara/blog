@@ -46,7 +46,7 @@ cinnamon         pinch
 allspice         pinch
 
 <span style="color: #888;">Flavour bomb, add</span>
-Dijon mustard    1 tbsp
+Dijon mustard    2 tbsp
 smoked paprika   to taste
 </pre>
 
@@ -78,7 +78,7 @@ smoked paprika   to taste
 
 </details>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Rotate the skewer and check for any large pieces of skin flapping. Pin them down or cut them off. Pinning is better, the skin crisps up nicely and has good flavour.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Rotate the skewer and check for any large pieces of skin flapping. Pin them down or cut them off.</span>
 
 **5.** Set the motor to its fastest speed. Run the fire hot and cook 45 to 60 minutes. Slide the pieces apart for the last stretch to crisp more surface.
 
