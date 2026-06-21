@@ -121,6 +121,7 @@ layout: single
 <li><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cheese-toastie/">Cheese Toastie</a></li>
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
+<li class="pending"><a href="/cookbook/cheesesteak/">Cheesesteak</a></li>
 <li class="pending"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
 <li><a href="/cookbook/chicken-couscous-bowl/">Chicken Couscous Bowl</a></li>
