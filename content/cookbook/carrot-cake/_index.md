@@ -54,7 +54,7 @@ vanilla extract      7.5ml
 salt                 pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pecans or walnuts. Half in the batter, half on top.<br>Carrots grated fine.<br>Full-fat soft cheese, or the frosting runs.<br>A jar of apple sauce is fine.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pecans or walnuts. Half in the batter, half on top.<br>Carrots grated fine.<br>Full-fat soft cheese, the light stuff goes runny.<br>A jar of apple sauce is fine.</span>
 
 ## Recipe
 
