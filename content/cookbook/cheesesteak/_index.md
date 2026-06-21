@@ -20,16 +20,16 @@ layout: single
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">beef sirloin       340g
-onion              1 medium
-provolone          120g
-soft sub rolls     2
-beef dripping      15g
-salt               to taste
-black pepper       to taste
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">beef sirloin              340g
+onion                     1 medium
+provolone                 120g
+soft sub rolls            2
+beef dripping (optional)  15g
+salt                      to taste
+black pepper              to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Ribeye ideally, sirloin works too and is cheaper.<br>Provolone first choice, or mild mozzarella. Avoid cheddar, it splits.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Ribeye ideally, sirloin works too and is cheaper.<br>Provolone first choice, or mild mozzarella. Avoid cheddar, it splits.<br>Butter or oil instead of dripping.</span>
 
 ## Recipe
 
