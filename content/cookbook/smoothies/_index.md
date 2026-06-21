@@ -98,3 +98,13 @@ banana               1/2
 green tea            to blend
 </pre>
 <span class="smoothie-note">Make before deep work. Walnuts and flax for omega 3, blueberries and green tea for focus. Soak the walnuts in the cooled green tea for 10 minutes first.</span>
+
+<p class="smoothie-name">Morning Refresher</p>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">frozen berries   handful
+banana           1/2
+lemon            squeeze
+ginger           thumb
+honey            1 tsp
+water or juice   250ml
+</pre>
+<span class="smoothie-note">Make the night before. Light and hydrating, the lemon keeps it bright overnight. Fill the jar to the top and shake in the morning.</span>
