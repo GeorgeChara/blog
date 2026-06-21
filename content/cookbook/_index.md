@@ -151,7 +151,7 @@ layout: single
 <p class="cat-heading">Cypriot</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
-<li class="pending"><a href="/cookbook/avgolemono/">Avgolemono</a></li>
+<li class="pending"><a href="/cookbook/avgolemoni/">Avgolemoni</a></li>
 <li class="pending"><a href="/cookbook/bourekia/">Bourekia</a></li>
 <li class="pending"><a href="/cookbook/kleftiko/">Kleftiko</a></li>
 <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>

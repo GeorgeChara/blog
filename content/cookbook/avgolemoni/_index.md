@@ -1,5 +1,5 @@
 ---
-title: "Avgolemono"
+title: "Avgolemoni"
 toc: false
 showreadingtime: false
 layout: single
@@ -15,7 +15,7 @@ layout: single
   img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
 </style>
 
-<h1>Avgolemono</h1>
+<h1>Avgolemoni</h1>
 <p style="color: #888; margin-top: -0.5em;">40 min, serves 4</p>
 
 ## Ingredients
