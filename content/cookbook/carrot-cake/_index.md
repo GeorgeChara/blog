@@ -95,6 +95,6 @@ Fold into the wet with the carrots and half the pecans, until just combined.
 
 </details>
 
-**6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill a few hours, ideally overnight, to set fully before slicing.
+**6.** Stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill a few hours, ideally overnight, to set fully before slicing.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: wrap the unfrosted layers well, or freeze finished slices.<br>Reheat: thaw at room temperature.<br>Keeps: 3 months frozen, 5 days in the fridge once frosted.</span>
