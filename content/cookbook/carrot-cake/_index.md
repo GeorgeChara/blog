@@ -47,14 +47,14 @@ ground cloves        0.5g
 carrots (grated)     260g
 
 <span style="color: #888;">Frosting</span>
-cream cheese         452g
+cream cheese         340g
 unsalted butter      113g
 icing sugar          480g
 vanilla extract      7.5ml
 salt                 pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pecans or walnuts. Half in the batter, half on top.<br>Carrots grated fine.<br>Full-fat soft cheese, the light stuff goes runny.<br>A jar of apple sauce is fine.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pecans or walnuts, half in the batter, half on top.<br>Carrots grated fine.<br>Full fat soft cheese, the light stuff goes runny.<br>A jar of apple sauce is fine.</span>
 
 ## Recipe
 
@@ -78,11 +78,11 @@ Fold into the wet with the carrots and half the pecans, until just combined.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tin size changes the bake. More or bigger tins make thinner layers, so start checking a few minutes early. Two tins instead of three, or smaller tins, bake longer: 30 to 35 minutes.</span>
 
-**5.** Beat the butter smooth, then beat in the icing sugar to a thick buttercream. Add the cold cream cheese, vanilla and salt and mix on low just until smooth and spreadable.
+**5.** Drain the cream cheese in a paper lined sieve for 30 minutes. Beat the butter smooth, then beat in the icing sugar to a thick buttercream. Add the cold drained cream cheese, vanilla and salt and mix on low just until smooth. If it is slack, beat in more icing sugar a spoonful at a time until it holds its shape.
 
 <details>
 <summary>show the foolproof method</summary>
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.4em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle, not the whisk.<br>1. Butter on its own, medium, 1 min, until creamy.<br>2. Add the icing sugar, low then medium, 2 to 3 min, to a thick buttercream.<br>3. Add the cold cream cheese, vanilla and salt, low, 30 to 60 seconds, just until smooth. Stop there.<br>🤓 <strong>The science:</strong> butter and sugar first coats the sugar so it cannot pull water out of the cream cheese. Creaming the cheese in early, or overbeating, releases that water and turns it runny.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.4em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle, not the whisk.<br>1. Drain the cream cheese first: sit it in a sieve lined with kitchen paper, 30 minutes, to lose the loose water.<br>2. Butter on its own, medium, 1 min, until creamy.<br>3. Add the icing sugar, low then medium, 2 to 3 min, to a thick buttercream.<br>4. Add the cold drained cream cheese, vanilla and salt, low, 30 to 60 seconds, just until smooth. Stop there.<br>5. Still slack? Beat in more icing sugar a spoon at a time until it holds its shape.<br>It firms up cold. Chill before spreading, and the cake sets cleanest after a few hours in the fridge, ideally overnight.<br>🤓 <strong>The science:</strong> the slackness is water from the cream cheese. Draining removes it, butter and sugar first stop the rest pulling out, and the cold fridge sets the butter firm. Overbeating or creaming the cheese in early releases the water and turns it runny.</span>
 </details>
 
 <details>
@@ -95,6 +95,6 @@ Fold into the wet with the carrots and half the pecans, until just combined.
 
 </details>
 
-**6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill 20 minutes before slicing.
+**6.** Level the tops, stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill a few hours, ideally overnight, to set fully before slicing.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: wrap the unfrosted layers well, or freeze finished slices.<br>Reheat: thaw at room temperature.<br>Keeps: 3 months frozen, 5 days in the fridge once frosted.</span>
