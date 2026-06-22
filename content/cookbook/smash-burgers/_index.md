@@ -27,7 +27,7 @@ salt           to taste
 black pepper   to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">20% fat mince, lean won't crust.<br>American or burger cheese melts best.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">20% fat mince, lean won't crust.<br>American or burger cheese melts best.<br>Toasted <a href="/cookbook/brioche-buns/">brioche buns</a> are the one.</span>
 
 ## Recipe
 
