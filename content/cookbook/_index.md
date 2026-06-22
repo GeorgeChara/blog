@@ -107,6 +107,7 @@ layout: single
 <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
 <li class="pending"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
 <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
+<li class="pending"><a href="/cookbook/skillet-cookie/">Skillet Cookie</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
 <li><a href="/cookbook/tottenham-cake/">Tottenham Cake</a></li>
 <li><a href="/cookbook/victoria-sponge/">Victoria Sponge</a></li>
@@ -119,6 +120,7 @@ layout: single
 <li class="pending"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
 <li><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/buttermilk-fried-chicken/">Buttermilk Fried Chicken</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/carbonara/">Carbonara</a></li>
 <li class="pending"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
 <li><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/cheese-toastie/">Cheese Toastie</a></li>
@@ -132,6 +134,7 @@ layout: single
 <li><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
+<li class="pending"><a href="/cookbook/gnocchi-bake/">Gnocchi Bake</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/greek-pasta-salad/">Greek Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/green-goddess-pasta-salad/">Green Goddess Pasta Salad</a></li>
 <li class="pending"><a href="/cookbook/italian-deli-pasta-salad/">Italian Deli Pasta Salad</a></li>
@@ -140,11 +143,14 @@ layout: single
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/pot-roast-chicken-thighs/">Pot-Roast Chicken Thighs</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/quesadilla/">Quesadilla</a></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
 <li class="pending"><a href="/cookbook/ragu/">Ragù</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/roast-pork-loin/">Roast Pork Loin</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
 <li class="pending"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/skillet-lasagna/">Skillet Lasagna</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/skillet-steak/">Skillet Steak</a></li>
 <li class="pending"><a href="/cookbook/smash-burgers/">Smash Burgers</a></li>
 <li class="pending"><a href="/cookbook/steak-pie/">Steak Pie</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/tomato-soup/">Tomato Soup</a><span class="frz">❄</span></li>
@@ -164,6 +170,7 @@ layout: single
 <li class="pending"><a href="/cookbook/moussaka/">Moussaka</a></li>
 <li class="pending"><a href="/cookbook/pastitsio/">Pastitsio</a></li>
 <li class="pending"><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
+<li class="pending"><a href="/cookbook/saganaki/">Saganaki</a></li>
 <li><a href="/cookbook/souvla/">Souvla</a></li>
 </ul>
 </div>
