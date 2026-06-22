@@ -29,15 +29,15 @@ salt                      to taste
 black pepper              to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Ribeye ideally, sirloin works too and is cheaper.<br>Provolone first choice, or mild mozzarella. Avoid cheddar, it splits.<br>Butter or oil instead of dripping.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Ribeye ideally, sirloin works too and is cheaper.<br>Provolone first choice, or mild mozzarella. Avoid cheddar, it splits.<br>Butter or oil instead of dripping.<br>A cast iron skillet holds the heat for a proper sear.</span>
 
 ## Recipe
 
 **1.** Freeze the beef 45 to 60 minutes until firm but not solid. Slice as thin as you can against the grain, then chop the slices into rough 1 to 2cm shreds.
 
-**2.** Slice the onion into thin strips. Cook low and slow in the dripping, about 10 minutes until soft and golden. Remove and keep to one side.
+**2.** Slice the onion into thin strips. Soften low and slow in a cast iron skillet in the dripping, about 10 minutes until golden. Remove and keep to one side.
 
-**3.** Crank the heat to high. Beef into the same pan. It releases water, let it boil off, then it sears. 3 to 4 minutes, chopping and folding it with the spatula as it cooks.
+**3.** Get the skillet ripping hot. Beef in, it releases water, let it boil off, then it sears. 3 to 4 minutes, chopping and folding it with the spatula as it cooks.
 
 **4.** Season with salt and pepper, nothing else. No garlic, no herbs.
 
