@@ -18,6 +18,8 @@ layout: single
 <h1>Cheesesteak</h1>
 <p style="color: #888; margin-top: -0.5em;">15 min, makes 2</p>
 
+<img loading="lazy" src="/images/cheesesteak/header.webp" alt="Cheesesteak">
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">beef sirloin              340g
