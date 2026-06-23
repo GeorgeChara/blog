@@ -3,6 +3,7 @@ title: "Baguette"
 toc: false
 showreadingtime: false
 layout: single
+tags: [freezer]
 ---
 
 <style>
@@ -126,19 +127,7 @@ It should look shaggy at this point, close to porridge consistency. Cover and le
 
 **8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. **Bake at 230°C for 10 mins then 210°C for 7 mins**.
 
----
-
-## Batch and Freezer
-
-**Par-baking:** Pull when the crust is firm and still pale with no colour. The crumb inside must be fully cooked — a probe should read 93-96°C in the centre. Colour alone is not enough. Pulling too early is the most common mistake and produces a gummy, collapsed loaf on re-bake.
-
-Cool on a wire rack for at least 1 hour. Do not wrap while still warm as condensation destroys the crust.
-
-Open-freeze on a tray for 1-2 hours until the surface is solid, then vacuum seal. The thin crust cracks if you seal it while still pliable. Store flat with nothing pressing on top.
-
-From frozen: straight into a 230°C oven on a preheated stone or tray. Pour 50ml of hot water into a small hot tray at the bottom of the oven as you load the bread, close the door. 14-18 minutes. Use within 6-8 weeks.
-
-**Dividing in bulk:** 375g per baguette. If a piece is off, place the smaller piece on the larger, fold the dough over to envelope it, do 2-3 letter folds and rest 10-15 minutes. Do not knead it in.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: bake until just set but still pale, cool fully, then freeze in a bag.<br>Reheat: from frozen into a hot 230°C oven with a splash of water for steam, 14–18 mins until golden.<br>Keeps: 6–8 weeks frozen.</span>
 
 <script>
 function toggleMedia(id, el) {
