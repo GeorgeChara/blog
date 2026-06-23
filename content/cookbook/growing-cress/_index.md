@@ -46,6 +46,8 @@ window            east-facing, bright morning light
 
 **1.** Line a shallow tray with damp paper towel, 2–3 layers, or 1–2 cm of compost. Wet it before sowing so the seeds don't wash into clumps.
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Almost any container works. Cress wants wide and shallow, not deep, so a tray, tub or takeaway box beats a plant pot. No drainage hole is fine, just water gently so it doesn't pool.</span>
+
 **2.** Scatter the seeds thickly so they nearly touch. Don't bury them, just press down so they sit flat against the surface.
 
 **3.** Cover loosely with a lid or plate for 2–3 days until they sprout, then move to an east window.
