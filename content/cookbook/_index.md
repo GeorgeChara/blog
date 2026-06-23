@@ -55,6 +55,7 @@ layout: single
 <li><a href="/cookbook/butter/">Butter</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/buttercream/">Buttercream</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/egg-mayo/">Egg Mayo</a></li>
 <li class="pending"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
 <li><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/mashed-potato/">Mashed Potato</a><span class="frz">❄</span></li>
