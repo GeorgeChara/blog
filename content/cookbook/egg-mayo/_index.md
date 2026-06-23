@@ -30,7 +30,7 @@ cress           small handful
 salt and pepper to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cress is optional, chives or spring onion work too.<br>Older eggs peel far more easily than fresh ones.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cress is optional, chives or spring onion work too.</span>
 
 ## Recipe
 
@@ -44,4 +44,4 @@ salt and pepper to taste
 
 **4.** Taste and adjust. It usually needs more salt than you'd think, and a squeeze of lemon or splash of vinegar lifts it.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Lovely on soft white bread or in a crusty roll, topped with <a href="/cookbook/growing-cress/">cress</a>.<br>Keeps 3 days in the fridge in a sealed container.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Keeps 3 days in the fridge in a sealed container.</span>
