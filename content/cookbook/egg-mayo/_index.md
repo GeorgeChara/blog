@@ -10,12 +10,16 @@ tags: [make-ahead, vegetarian]
   main > h1:first-of-type { display: none; }
   .time { display: none; }
   h2::before { content: none !important; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
   .content pre { color: #000; }
   .terminal-nav { display: none; }
 </style>
 
 <h1>Egg Mayo</h1>
 <p style="color: #888; margin-top: -0.5em;">15 min, makes 2 sandwiches</p>
+
+<img loading="lazy" src="/images/egg-mayo/header.webp" alt="Egg Mayo">
 
 ## Ingredients
 
