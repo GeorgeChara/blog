@@ -200,6 +200,12 @@ layout: single
 <li><a href="/cookbook/smoothies/">Smoothies</a></li>
 </ul>
 </div>
+<div class="cat">
+<p class="cat-heading">Growing</p>
+<ul class="recipe-list">
+<li><a href="/cookbook/growing-cress/">Cress</a></li>
+</ul>
+</div>
 </div>
 
 <script>
