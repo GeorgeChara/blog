@@ -33,7 +33,7 @@ walnuts          80g
 flaky sea salt   pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Melt the white chocolate and stir it into the batter. Adding it as chunks gives you sweet cake with bits in — melting it in is what makes blondies fudgy.<br>Pull them out when the centre still has a slight wobble. They firm up a lot as they cool.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Melt the white chocolate and stir it into the batter. Adding it as chunks gives you sweet cake with bits in. Melting it in is what makes blondies fudgy.<br>Pull them out when the centre still has a slight wobble. They firm up a lot as they cool.</span>
 
 ## Recipe
 

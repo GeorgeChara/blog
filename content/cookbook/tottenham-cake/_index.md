@@ -38,7 +38,7 @@ desiccated coconut  optional
 sprinkles           optional
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Butter should be softened.<br>150g jam gives a proper deep pink. Warm and sieve it — the sieved juice is the liquid for the icing, no water needed. Add a splash only if the consistency needs it.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Butter should be softened.<br>150g jam gives a proper deep pink. Warm and sieve it. The sieved juice is the liquid for the icing, no water needed. Add a splash only if the consistency needs it.</span>
 
 ## Recipe
 
@@ -56,7 +56,7 @@ sprinkles           optional
 
 **5.** While the cake cools, clean the bowl and swap to the whisk attachment. Warm the raspberry jam and pass through a sieve. Add the icing sugar to the clean bowl and pour in the sieved jam on low, a little at a time, until thick and spreadable. Add a splash of water only if needed.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on low. The sieved jam is your liquid — 150g of jam gives a proper deep pink. No extra water needed unless the consistency is too stiff.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on low. The sieved jam is your liquid. 150g of jam gives a proper deep pink. No extra water needed unless the consistency is too stiff.</span>
 
 **6.** Place the cooled cake back in the tin. Ice in the tin, not on the rack. The tin keeps the icing contained so it does not pour off the sides. The cake should be cool to the touch before the icing goes on or it will run straight off.
 

@@ -55,7 +55,7 @@ whole milk       14g
 
 ### Day 2
 
-**3.** Before starting, the dough should be fridge-cold. The butter block should be 12-15°C — flexible like cool clay, bends without snapping. If it cracks it's too cold; leave it a few minutes. If it leaves grease on your finger it's too warm; put it back in the fridge.
+**3.** Before starting, the dough should be fridge-cold. The butter block should be 12-15°C, flexible like cool clay that bends without snapping. If it cracks it's too cold; leave it a few minutes. If it leaves grease on your finger it's too warm; put it back in the fridge.
 
 **4.** Roll the dough out to roughly 14x30cm. Place the butter block in the centre and fold the top and bottom of the dough over it to fully encase it. Pinch the seams closed.
 
@@ -67,7 +67,7 @@ whole milk       14g
 
 **8.** Cut into 6 rectangles. Place one chocolate baton along the short edge of each piece, roll once over it, place a second baton at the seam, then roll up firmly to the end. Place seam-side down on a lined tray.
 
-**9.** Prove at room temperature for 2.5-4 hours until noticeably puffed and the layers are visible on the sides. Don't rush this with heat — above 27°C the butter melts into the dough and you lose the layers.
+**9.** Prove at room temperature for 2.5-4 hours until noticeably puffed and the layers are visible on the sides. Don't rush this with heat. Above 27°C the butter melts into the dough and you lose the layers.
 
 **10.** Brush the tops with egg wash. Don't let it drip down the cut sides.
 

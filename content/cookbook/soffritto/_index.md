@@ -27,7 +27,7 @@ olive oil   80g
 salt        5g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The 2:1:1 ratio of onion to carrot to celery is the Italian standard. Do not deviate much.<br>This is a base, not a dish. It should taste sweet and deeply savoury, not browned or bitter.<br>Use the food processor attachment to chop everything. Pulse to small dice — do not blitz to a paste.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The 2:1:1 ratio of onion to carrot to celery is the Italian standard. Do not deviate much.<br>This is a base, not a dish. It should taste sweet and deeply savoury, not browned or bitter.<br>Use the food processor attachment to chop everything. Pulse to small dice, do not blitz to a paste.</span>
 
 ## Recipe
 
