@@ -45,7 +45,7 @@ layout: single
 <div class="cat">
 <p class="cat-heading">Signature</p>
 <ul class="recipe-list">
-<li><a href="/cookbook/baguette/">Baguette</a></li>
+<li><a href="/cookbook/baguette/">Baguette</a><span class="frz">❄</span></li>
 </ul>
 </div>
 <div class="cat">
@@ -94,6 +94,7 @@ layout: single
 <p class="cat-heading">Sweet</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/bakewell-tart/">Bakewell Tart</a></li>
+<li><a href="/cookbook/banana-bread/">Banana Bread</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/blondies/">Blondies</a></li>
 <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
 <li><a href="/cookbook/brownies/">Brownies</a></li>
