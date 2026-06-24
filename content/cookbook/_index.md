@@ -159,6 +159,12 @@ layout: single
 </ul>
 </div>
 <div class="cat">
+<p class="cat-heading">Sandwiches</p>
+<ul class="recipe-list">
+<li><a href="/cookbook/blt-baguettes/">BLT Baguettes</a></li>
+</ul>
+</div>
+<div class="cat">
 <p class="cat-heading">Cypriot</p>
 <ul class="recipe-list">
 <li><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
