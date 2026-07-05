@@ -32,15 +32,15 @@ salt          7g
 spinach       100g, optional
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No baking powder. The high hydration is what keeps them soft, it will feel sticky and firms up as it rests.<br>Lard or Trex (1:1, vegan) for the best result. Olive oil works for a lighter, healthier wrap, and butter works too.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No baking powder. The high hydration is what keeps them soft, it will feel sticky and firms up as it rests.<br>Lard, Trex or Stork block (1:1) for the best result. Olive oil works for a lighter, healthier wrap, and butter works too.</span>
 
 ## Recipe
 
-**1.** Mix the flour and salt. Add the lard and squeeze it into the flour with your fingers until the mixture is crumbly and nothing sticks to your hands.
+**1.** Mix the flour and salt. Squeeze in the lard until crumbly and nothing sticks to your hands.
 
-**2.** Add the warm water gradually, mixing as you go, until the dough comes together soft and sticky, like sticky oatmeal. Dust the counter with flour and knead for 5 minutes until smooth and no longer sticky.
+**2.** Add the water gradually until the dough is soft and sticky, like sticky oatmeal. Knead on a floured counter for 5 minutes until smooth.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle to rub in the lard, then dough hook on speed 2 for 3/4 minutes.<br>Buttermilk version: swap the water for warmed buttermilk. Softer, slightly tangy, and folds even better. A good use for the buttermilk left from making <a href="/cookbook/butter/">butter</a>. Keep the lard.<br>Green tortillas: blend the spinach into the water, holding back 60g as the spinach adds moisture. Add it back only if the dough feels dry.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stand mixer: paddle to rub in the lard, then dough hook on speed 2 for 3/4 minutes.<br>Buttermilk version: swap the water for warmed buttermilk. Softer, tangier, folds better. A good use for the buttermilk left from making <a href="/cookbook/butter/">butter</a>. Keep the lard.<br>Green tortillas: blend the spinach into the water, holding back 60g. Add it back only if the dough feels dry.</span>
 
 <details><summary>show photo</summary>
 
@@ -48,9 +48,11 @@ spinach       100g, optional
 
 </details>
 
-**3.** Cover the dough ball with a damp cloth and rest 20 minutes somewhere warm.
+**3.** Weigh the dough and rest it whole. Same day: covered, 20 minutes somewhere warm. Ahead: oil lightly, wrap airtight, fridge up to 48 hours, then back to room temperature for an hour before dividing.
 
-**4.** Divide into 8 equal pieces. Roll each into a ball, cover and rest 10 minutes while the pan heats.
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The fridge rest rolls thinner with less spring-back. Keep it whole so less surface dries out, a pizza dough box or any airtight tub is ideal.</span>
+
+**4.** Divide and ball. 8 for pan-sized, about 90g each, or 4 for large wraps, about 185g. Cover and rest 10 minutes while the pan heats.
 
 <details><summary>show photo</summary>
 
@@ -58,14 +60,12 @@ spinach       100g, optional
 
 </details>
 
-**5.** On a lightly floured surface, roll each ball out paper thin, aiming for 25cm. This is the make or break step. The dough should be thin enough to see the shadow of your hand through it. Too thick and they puff up and eat like pita.
+**5.** Roll each ball paper thin on a floured surface, aiming for 25cm. This is the make or break step: thin enough to see your hand through it. Too thick and they puff up like pita.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flour both sides lightly. Let the rolling pin do the work, don't push down or it sticks and tears. If it springs back, rest it 2/3 minutes.</span>
 
-**6.** Heat a dry pan over medium-high heat. No oil. Cook each tortilla 20/30 seconds per side until brown spots appear. Keep it quick, overcooking dries them out and makes them stiff. Adjust the heat after the first one if they are crisping rather than staying soft.
+**6.** Dry pan, medium-high, no oil. Cook 20/30 seconds a side until brown spots appear. Keep it quick or they dry out and stiffen. Drop the heat after the first if they crisp rather than stay soft.
 
-**7.** Wrap in a clean tea towel as they come out to keep them warm and pliable. Serve immediately.
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #e8c98f; padding-left: 0.6em;"><span style="color:#c89a3f; font-size:1.1em;">⏳ <strong>Make ahead</strong></span><br>Dough: mix and knead through step 2, lightly oil the ball, wrap airtight and chill up to 48 hours. The long rest rolls thinner with less spring-back.<br>Pre-balled: divide and round as in step 4, coat each lightly in olive oil, space them out in an airtight box (a pizza dough box is ideal), lid on.<br>On the day: bring to room temperature about 1 hour before rolling, cold dough firms up and tears when rolled thin. Then roll and cook fresh from step 5.</span>
+**7.** Wrap in a tea towel as they come off the pan. Serve immediately.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: stack cooled tortillas with baking paper between each, flat in a bag.<br>Reheat: from frozen, dry hot pan 20/30 seconds a side, no need to thaw.<br>Keeps: 6 months frozen, 1 week in the fridge.</span>
