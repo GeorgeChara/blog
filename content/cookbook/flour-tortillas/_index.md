@@ -3,6 +3,7 @@ title: "Flour Tortillas"
 toc: false
 showreadingtime: false
 layout: single
+tags: [make-ahead, freezer]
 ---
 
 <style>
@@ -64,5 +65,7 @@ spinach       100g, optional
 **6.** Heat a dry pan over medium-high heat. No oil. Cook each tortilla 20/30 seconds per side until brown spots appear. Keep it quick, overcooking dries them out and makes them stiff. Adjust the heat after the first one if they are crisping rather than staying soft.
 
 **7.** Wrap in a clean tea towel as they come out to keep them warm and pliable. Serve immediately.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #e8c98f; padding-left: 0.6em;"><span style="color:#c89a3f; font-size:1.1em;">⏳ <strong>Make ahead</strong></span><br>Dough: mix and knead through step 2, lightly oil the ball, wrap airtight and chill up to 48 hours. The long rest rolls thinner with less spring-back.<br>Pre-balled: divide and round as in step 4, coat each lightly in olive oil, space them out in an airtight box (a pizza dough box is ideal), lid on.<br>On the day: bring to room temperature about 1 hour before rolling, cold dough firms up and tears when rolled thin. Then roll and cook fresh from step 5.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: stack cooled tortillas with baking paper between each, flat in a bag.<br>Reheat: from frozen, dry hot pan 20/30 seconds a side, no need to thaw.<br>Keeps: 6 months frozen, 1 week in the fridge.</span>
