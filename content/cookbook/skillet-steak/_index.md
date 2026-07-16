@@ -47,11 +47,11 @@ asparagus           small bunch, trimmed
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A damp steak steams and goes grey. Salt too early and it draws water back out.</span>
 
-**3.** Put the cast iron pan on high heat, empty, until it just starts to smoke.
+**3.** Add the oil to the pan and heat over medium-high until it shimmers and runs thin.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cast iron stays hot when the cold steak lands, so it keeps browning instead of cooling. Too cool and there is no crust.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Never heat enamelled cast iron empty or on full heat, it can craze the enamel. With the oil in and the heat at medium-high it still gets plenty hot to sear, it just takes a minute longer to get there.</span>
 
-**4.** Rub the oil on the steak, not the pan. Lay it in and leave it, 2.5 to 3 minutes each side.
+**4.** Lay the steak in away from you and leave it, 2.5 to 3 minutes each side.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">It needs to sit still to brown, and lifts off the pan on its own once ready. Do not keep moving it.</span>
 
