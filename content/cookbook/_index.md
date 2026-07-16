@@ -78,6 +78,7 @@ layout: single
 <li><a href="/cookbook/bagels/">Bagels</a></li>
 <li><a href="/cookbook/boule/">Boule</a></li>
 <li class="pending"><a href="/cookbook/brioche-buns/">Brioche Buns</a><span class="frz">❄</span></li>
+<li class="pending"><a href="/cookbook/cheese-potato-bread/">Cheese Potato Bread</a></li>
 <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
 <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
 <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
