@@ -17,7 +17,7 @@ tags: [vegetarian]
 </style>
 
 <h1>Cheese Potato Bread</h1>
-<p style="color: #888; margin-top: -0.5em;">serves 2-3, 45 min incl. chill, frying pan with a lid</p>
+<p style="color: #888; margin-top: -0.5em;">45 min incl. chill, frying pan with a lid</p>
 
 ## Ingredients
 
