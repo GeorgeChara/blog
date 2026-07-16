@@ -34,24 +34,22 @@ mozzarella         150g, grated
 salt and pepper    to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No yeast, no oven, no egg. Strong bread flour gives a chewier, stretchier dough that holds the filling. Season the potato well, it carries the whole thing. Add garlic, chilli or herbs to the mash if you like.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No yeast, no oven, no egg. Season the potato well, and add garlic, chilli or herbs to the mash if you like.</span>
 
 ## Recipe
 
-**1.** Mix the flour and salt, then add the melted butter and milk and knead to a smooth, soft dough. Wrap and chill 30 minutes.
+**1.** Mix the flour and salt, add the butter and milk, and knead to a smooth dough. Chill 30 minutes.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Chilling relaxes the dough so it rolls out without springing back.</span>
+**2.** Boil the peeled potato until tender. Mash while hot, stir in the mayonnaise and season.
 
-**2.** Boil the peeled potato in salted water until tender. Mash while hot, then stir in the mayonnaise and season well.
+**3.** Roll the dough to a 23cm circle on baking paper. Pile half the mozzarella in the middle, then the potato, then the rest, leaving a border.
 
-**3.** Roll the chilled dough to a 23cm circle on baking paper. Pile half the mozzarella in the middle, then the potato, then the rest of the mozzarella, leaving a clear border.
+**4.** Fold the edges over the middle and pinch to seal. Roll back out to a flat 20cm round.
 
-**4.** Fold the edges up and over into the centre and pinch to seal. Gently roll it back out to a flat 20cm round.
+**5.** Melt a little butter in the pan on medium heat. Cook until golden underneath, 4 to 5 minutes.
 
-**5.** Melt a little butter in the pan over medium heat. Cook the bread until golden underneath, 4 to 5 minutes.
+**6.** Flip, put the lid on, and cook until golden, 4 to 5 minutes. Flip once more for 2 to 3 minutes, then serve.
 
-**6.** Flip it, put the lid on, and cook the other side until golden, another 4 to 5 minutes. Flip once more for a final 2 to 3 minutes, then serve straight away.
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The lid is the trick: it traps steam so the cheese melts through while the outside stays crisp. Keep it on medium, on high it browns before the middle heats.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The lid traps steam so the cheese melts while the outside crisps. Keep it on medium or it browns before the middle heats.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.how-tasty.com/potato-cheese-bread-no-yeast-no-oven/">How Tasty</a>, <a href="https://en.cooking-tree.com/no-oven-no-yeast-potato-cheese-bread-recipe/">Cooking Tree</a>.</span>
