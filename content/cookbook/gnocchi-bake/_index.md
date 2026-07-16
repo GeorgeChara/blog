@@ -17,45 +17,43 @@ tags: [freezer, vegetarian]
 </style>
 
 <h1>Gnocchi Bake</h1>
-<p style="color: #888; margin-top: -0.5em;">{serves 2-3, 30 min, grill finish}</p>
+<p style="color: #888; margin-top: -0.5em;">serves 2-3, 30 min, grill finish</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">shelf gnocchi       {qty}
-butter              {qty}
-olive oil           {qty}
-garlic              {qty}, sliced
-chilli flakes       {qty}
-cherry tomatoes     {qty}
-ricotta             {qty}
-mozzarella          {qty}, torn
-parmesan            {qty}, grated
-basil               to finish
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">shelf gnocchi       500g (1 pack)
+butter              30g
+olive oil           1 tbsp
+garlic              3 cloves, sliced
+chilli flakes       1/2 tsp
+cherry tomatoes     400g (or 350g passata)
+ricotta             125g
+mozzarella          125g (1 ball), torn
+parmesan            30g, grated
+basil               small handful
+salt                1/2 tsp, plus to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Passata works instead of cherry tomatoes. The ricotta is for silkiness, stir it into the sauce.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Level up, pick one: brown 100g 'nduja or sausage in the pan before the garlic, or melt a 200g block of feta into the sauce, baked-feta style.</span>
 
-<!-- LEVEL-UP (pick one): brown 'nduja or sausage first, OR melt a block of feta
-     into the sauce. -->
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">{optional level-up: brown 'nduja or sausage first, or melt a block of feta into the sauce}</span>
-
-<!-- SCIENCE HOOK (your words): crowding means steaming. Pan-fry gnocchi STRAIGHT from
-     the pack in a single layer with space around each one so they crisp instead of
-     going gluey. No boiling. -->
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">{the why: no boiling. A crowded pan steams, a single layer browns}</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No boiling. A crowded pan steams the gnocchi soft, a single layer with room around each one browns them crisp. That's the whole dish.</span>
 
 ## Recipe
 
-<!-- 1: crisp gnocchi in butter and oil, single layer, ~12-15 min, stir every few min; remove -->
-**1.** {step}
+**1.** Heat the grill to high. In a grill-proof skillet, melt the butter with the oil over medium-high heat.
 
-<!-- 2: build garlic, chilli and tomato base in the same pan; stir in ricotta -->
-**2.** {step}
+**2.** Tip in the gnocchi straight from the pack and spread to a single layer with a little room around each piece (do two batches if the pan is small). Cook 12 to 15 minutes, turning every 2 to 3 minutes, until deep golden and crisp. Season, then tip out onto a plate.
 
-<!-- 3: gnocchi back in; mozzarella plus parmesan on top -->
-**3.** {step}
+**3.** Lower the heat to medium. Add the garlic and chilli flakes to the same pan and cook 30 to 60 seconds until fragrant, without browning the garlic.
 
-<!-- 4: under the grill till blistered; basil; serve in the pan -->
-**4.** {step}
+**4.** Add the cherry tomatoes and simmer 5 to 8 minutes, crushing them as they burst, until thick and jammy. Season.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">{shortcut: a cast iron skillet goes straight from hob to grill, no transferring.}</span>
+**5.** Stir the ricotta through in rough spoonfuls so it stays marbled. Fold the crisp gnocchi back in.
+
+**6.** Scatter the torn mozzarella and parmesan over the top.
+
+**7.** Slide under the hot grill for 3 to 5 minutes until melted, bubbling and blistered. Finish with basil and serve from the pan.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A cast iron skillet goes straight from hob to grill, no transferring.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://whatsgabycooking.com/crispy-cheesy-gnocchi/">What's Gaby Cooking</a>, <a href="https://dishedbykate.com/one-pot-gnocchi-alla-sorrentina/">Dished by Kate</a>.</span>
