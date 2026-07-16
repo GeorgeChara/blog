@@ -22,7 +22,7 @@ tags: [vegetarian]
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Dough</span>
-plain flour        120g
+strong flour       120g
 butter             14g, melted
 milk               60g, room temp
 salt               pinch
@@ -34,7 +34,7 @@ mozzarella         150g, grated
 salt and pepper    to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No yeast, no oven, no egg. Season the potato well, it carries the whole thing. Add garlic, chilli or herbs to the mash if you like.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No yeast, no oven, no egg. Strong bread flour gives a chewier, stretchier dough that holds the filling. Season the potato well, it carries the whole thing. Add garlic, chilli or herbs to the mash if you like.</span>
 
 ## Recipe
 
