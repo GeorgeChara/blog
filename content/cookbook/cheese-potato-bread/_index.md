@@ -52,4 +52,4 @@ salt and pepper    to season
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The lid traps steam so the cheese melts while the outside crisps. Keep it on medium or it browns before the middle heats.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.how-tasty.com/potato-cheese-bread-no-yeast-no-oven/">How Tasty</a>, <a href="https://en.cooking-tree.com/no-oven-no-yeast-potato-cheese-bread-recipe/">Cooking Tree</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.youtube.com/watch?v=d3sdpcaMbPk">YouTube</a>, <a href="https://www.how-tasty.com/potato-cheese-bread-no-yeast-no-oven/">How Tasty</a>, <a href="https://en.cooking-tree.com/no-oven-no-yeast-potato-cheese-bread-recipe/">Cooking Tree</a>.</span>
