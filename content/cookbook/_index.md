@@ -188,6 +188,7 @@ layout: single
 <li><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending"><a href="/cookbook/quesadilla/">Quesadilla</a></li>
+<li class="pending"><a href="/cookbook/steak-fajitas/">Steak Fajitas</a></li>
 </ul>
 </div>
 
@@ -233,6 +234,7 @@ layout: single
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
+<li class="pending"><a href="/cookbook/shakshuka/">Shakshuka</a></li>
 </ul>
 </div>
 
