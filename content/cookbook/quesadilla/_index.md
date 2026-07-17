@@ -50,4 +50,6 @@ pickled jalapeno    1 tbsp, sliced
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A second pan or press on top gives even contact and a crisper finish. Wet fillings make it soggy, drain them first.</span>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Make it a meal, add a cooked filling:<br><a href="/cookbook/carnitas/">carnitas</a> or shredded chicken<br>fried chorizo or beef mince<br>black beans, lightly mashed<br>peppers and onion, fried soft<br>Serve with slaw, guacamole or soured cream.</span>
+
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.recipetineats.com/quesadilla/">RecipeTin Eats</a>, <a href="https://www.isabeleats.com/cheese-quesadilla/">Isabel Eats</a>.</span>
