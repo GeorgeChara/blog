@@ -23,14 +23,12 @@ tags: []
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Salmon</span>
 salmon fillets     2 (about 150g each), skin on
-sake               1 tsp
 oil                1 tsp
 
 <span style="color: #888;">Teriyaki</span>
 soy sauce          2 tbsp
-mirin              2 tbsp
-sake               1 tbsp
-sugar              1 tbsp
+mirin              3 tbsp
+sugar              2 tsp
 
 <span style="color: #888;">Bowl</span>
 cooked rice        2 bowls
@@ -41,13 +39,13 @@ spring onion       1, sliced
 sesame seeds       to scatter
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Teriyaki is equal soy and mirin, half the sake and sugar. Scale it up and keep the ratio.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Soy and mirin do the work here, with just a little sugar to balance. No sake needed.</span>
 
 ## Recipe
 
-**1.** Pat the salmon dry and sprinkle with the sake. Mix the teriyaki ingredients in a small bowl.
+**1.** Pat the salmon really dry. Mix the teriyaki ingredients in a small bowl.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dry skin is what crisps. The sake takes off any fishy edge.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dry skin is what crisps, so pat it well.</span>
 
 **2.** Heat the oil in the pan on medium-high. Lay the salmon skin down and leave it until the skin is crisp and lifts freely, 3 to 4 minutes. Flip and cook 1 to 2 minutes more.
 
