@@ -23,7 +23,7 @@ tags: []
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Salmon</span>
 salmon fillets     2 (about 150g each), skin on
-oil                1 tsp
+avocado oil        1 tsp
 
 <span style="color: #888;">Glaze</span>
 soy sauce          2 tbsp
