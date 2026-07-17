@@ -59,4 +59,6 @@ sesame seeds       to scatter
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flake the salmon into the sauce for a proper rice bowl, or keep the fillet whole.</span>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Variation, soy and garlic instead of teriyaki. Use 2 tbsp soy, 1 grated garlic clove, a grated thumb of ginger, 1 tsp honey and a splash of water. Add it after searing, off the high heat so the garlic and ginger do not scorch, then drizzle in a little sesame oil at the end. Sesame oil burns easily, so never sear in it.</span>
+
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.chopstickchronicles.com/teriyaki-salmon-rice-bowls/">Chopstick Chronicles</a>, <a href="https://www.thatcutedish.com/teriyaki-salmon/">That Cute Dish</a>.</span>
