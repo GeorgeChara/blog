@@ -1,5 +1,5 @@
 ---
-title: "Teriyaki Salmon Donburi"
+title: "Soy Garlic Salmon"
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +16,7 @@ tags: []
   .terminal-nav { display: none; }
 </style>
 
-<h1>Teriyaki Salmon Donburi</h1>
+<h1>Soy Garlic Salmon</h1>
 <p style="color: #888; margin-top: -0.5em;">serves 2, 20 min, cast iron</p>
 
 ## Ingredients
@@ -25,10 +25,13 @@ tags: []
 salmon fillets     2 (about 150g each), skin on
 oil                1 tsp
 
-<span style="color: #888;">Teriyaki</span>
+<span style="color: #888;">Glaze</span>
 soy sauce          2 tbsp
-mirin              3 tbsp
-sugar              2 tsp
+garlic             1 clove, grated
+ginger             thumb, grated
+honey              1 tsp
+sesame oil         1 tsp
+water              splash
 
 <span style="color: #888;">Bowl</span>
 cooked rice        2 bowls
@@ -39,11 +42,11 @@ spring onion       1, sliced
 sesame seeds       to scatter
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Soy and mirin do the work here, with just a little sugar to balance. No sake needed.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything but the sesame oil goes in the glaze, that goes in last as it burns easily.</span>
 
 ## Recipe
 
-**1.** Pat the salmon really dry. Mix the teriyaki ingredients in a small bowl.
+**1.** Pat the salmon really dry. Mix the soy, garlic, ginger, honey and water in a small bowl, keeping the sesame oil to one side.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dry skin is what crisps, so pat it well.</span>
 
@@ -51,14 +54,12 @@ sesame seeds       to scatter
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">It sticks at first, then releases itself when the skin is crisp. Do not force it early.</span>
 
-**3.** Pour off the oil, turn the heat down, and add the teriyaki. Let it bubble and spoon it over the salmon until glossy, 1 to 2 minutes.
+**3.** Pour off the oil, turn the heat down, and add the glaze. Bubble and spoon it over the salmon until glossy, 1 to 2 minutes, then drizzle in the sesame oil.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The sugar thickens it fast, so keep it moving and pull it before it turns sticky.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Garlic and ginger scorch on high heat, so keep it low. The sesame oil goes in right at the end, off the boil.</span>
 
 **4.** Serve on rice with the sauce poured over, cucumber, avocado and edamame alongside. Scatter with spring onion and sesame.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flake the salmon into the sauce for a proper rice bowl, or keep the fillet whole.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Variation, soy and garlic instead of teriyaki. Use 2 tbsp soy, 1 grated garlic clove, a grated thumb of ginger, 1 tsp honey and a splash of water. Add it after searing, off the high heat so the garlic and ginger do not scorch, then drizzle in a little sesame oil at the end. Sesame oil burns easily, so never sear in it.</span>
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.chopstickchronicles.com/teriyaki-salmon-rice-bowls/">Chopstick Chronicles</a>, <a href="https://www.thatcutedish.com/teriyaki-salmon/">That Cute Dish</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://thewoodenskillet.com/salmon-rice-bowl/">The Wooden Skillet</a>, <a href="https://whatmollymade.com/salmon-rice-bowl/">What Molly Made</a>.</span>
