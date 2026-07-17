@@ -165,6 +165,7 @@ layout: single
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
 <li><a href="/cookbook/chicken-couscous-bowl/">Chicken Couscous Bowl</a></li>
 <li class="pending"><a href="/cookbook/chicken-tagine/">Chicken Tagine</a></li>
+<li class="pending"><a href="/cookbook/creamy-chicken-and-gnocchi/">Creamy Chicken and Gnocchi</a></li>
 <li><a href="/cookbook/lemon-butter-chicken-ravioli/">Lemon Butter Chicken Ravioli</a></li>
 <li class="pending"><a href="/cookbook/pot-roast-chicken-thighs/">Pot-Roast Chicken Thighs</a><span class="frz">❄</span></li>
 </ul>
