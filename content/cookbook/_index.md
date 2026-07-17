@@ -173,10 +173,10 @@ layout: single
 <div class="subcat">
 <p class="subcat-heading">Fish</p>
 <ul class="recipe-list">
-<li><a href="/cookbook/baked-cod/">Baked Cod</a></li>
+<li class="pending"><a href="/cookbook/baked-cod/">Baked Cod</a></li>
 <li><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
-<li><a href="/cookbook/mediterranean-cod/">Mediterranean Cod</a></li>
-<li><a href="/cookbook/miso-cod/">Miso Cod</a></li>
+<li class="pending"><a href="/cookbook/mediterranean-cod/">Mediterranean Cod</a></li>
+<li class="pending"><a href="/cookbook/miso-cod/">Miso Cod</a></li>
 <li class="pending"><a href="/cookbook/soy-garlic-salmon/">Soy Garlic Salmon</a></li>
 </ul>
 </div>
