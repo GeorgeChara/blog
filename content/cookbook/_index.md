@@ -177,6 +177,7 @@ layout: single
 <li><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
 <li><a href="/cookbook/mediterranean-cod/">Mediterranean Cod</a></li>
 <li><a href="/cookbook/miso-cod/">Miso Cod</a></li>
+<li class="pending"><a href="/cookbook/teriyaki-salmon-donburi/">Teriyaki Salmon Donburi</a></li>
 </ul>
 </div>
 
