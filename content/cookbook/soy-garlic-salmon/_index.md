@@ -56,6 +56,13 @@ sesame seeds       to scatter
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">It sticks at first, then releases itself when the skin is crisp. Do not force it early.</span>
 
+<details>
+<summary>show photo</summary>
+
+![Salmon searing skin down](/images/soy-garlic-salmon/step2.webp)
+
+</details>
+
 **3.** Pour off the oil, turn the heat down, and add the glaze. Bubble and spoon it over the salmon until glossy, 1 to 2 minutes, then drizzle in the sesame oil.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Garlic and ginger scorch on high heat, so keep it low. The sesame oil goes in right at the end, off the boil.</span>
