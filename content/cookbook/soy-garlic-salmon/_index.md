@@ -19,6 +19,8 @@ tags: []
 <h1>Soy Garlic Salmon</h1>
 <p style="color: #888; margin-top: -0.5em;">serves 2, 20 min, cast iron</p>
 
+<img loading="lazy" src="/images/soy-garlic-salmon/header.webp" alt="Soy Garlic Salmon">
+
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Salmon</span>

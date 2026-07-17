@@ -179,7 +179,7 @@ layout: single
 <li><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
 <li class="pending"><a href="/cookbook/mediterranean-cod/">Mediterranean Cod</a></li>
 <li class="pending"><a href="/cookbook/miso-cod/">Miso Cod</a></li>
-<li class="pending"><a href="/cookbook/soy-garlic-salmon/">Soy Garlic Salmon</a></li>
+<li><a href="/cookbook/soy-garlic-salmon/">Soy Garlic Salmon</a></li>
 </ul>
 </div>
 
