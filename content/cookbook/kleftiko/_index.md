@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Kleftiko</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot slow-roast lamb, one pot, 3 hr, serves 6-8</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot slow roast lamb, one pot, 3 hr, serves 6-8</p>
 
 ## Ingredients
 
