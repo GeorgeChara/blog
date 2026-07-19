@@ -1,0 +1,98 @@
+---
+title: "Workouts"
+toc: false
+showreadingtime: false
+layout: single
+---
+
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  .terminal-nav { display: none; }
+
+  .gym-h1 { font-weight: bold; font-size: 1.5em; margin: 0 0 0.2em 0; color: #000; }
+  .gym-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
+  .gym-h2 { font-weight: bold; font-size: 1em; margin: 2em 0 0.7em 0; color: #000; }
+
+  /* week grid */
+  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4em; }
+  @media (max-width: 560px) { .week { grid-template-columns: repeat(3, 1fr); } }
+  .day { border: 1px solid #eee; border-radius: 4px; padding: 0.5em 0.6em; }
+  .day .d { font-size: 0.7em; letter-spacing: 0.05em; text-transform: uppercase; color: #aaa; }
+  .day .a { font-size: 0.85em; margin-top: 0.25em; display: flex; align-items: center; gap: 0.4em; }
+  .day.rest .a { color: #bbb; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; display: inline-block; }
+  .lift .dot { background: #4169E1; }
+  .run  .dot { background: #3aa06a; }
+  .ride .dot { background: #d98a2b; }
+  .rest .dot { background: #ccc; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 1em; margin-top: 0.7em; font-size: 0.75em; color: #888; }
+  .legend span { display: inline-flex; align-items: center; gap: 0.4em; }
+
+  /* lift cards */
+  .lifts { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+  @media (max-width: 560px) { .lifts { grid-template-columns: 1fr; } }
+  .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
+  .card .h { font-weight: bold; color: #000; margin: 0 0 0.5em 0; font-size: 0.95em; }
+  table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; }
+  table.ex tr:last-child td { border-bottom: none; }
+  table.ex td.r { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* callout */
+  .callout { border-left: 3px solid #4169E1; background: #f3f6fd; border-radius: 0 4px 4px 0; padding: 0.7em 0.9em; font-size: 0.85em; color: #333; }
+  .callout b { color: #000; }
+
+  .note { display:block; color:#888; font-size:0.8em; line-height:1.6; border-left: 2px solid #E5DECF; padding-left: 0.6em; margin: 0.55em 0; }
+</style>
+
+<p class="gym-h1">Workouts</p>
+<p class="gym-sub">Two lifts, two runs, one ride a week.</p>
+
+<p class="gym-h2">The week</p>
+<div class="week">
+<div class="day run"><div class="d">Mon</div><div class="a"><span class="dot"></span>Run</div></div>
+<div class="day lift"><div class="d">Tue</div><div class="a"><span class="dot"></span>Lift A</div></div>
+<div class="day run"><div class="d">Wed</div><div class="a"><span class="dot"></span>Run</div></div>
+<div class="day lift"><div class="d">Thu</div><div class="a"><span class="dot"></span>Lift B</div></div>
+<div class="day rest"><div class="d">Fri</div><div class="a"><span class="dot"></span>Rest</div></div>
+<div class="day ride"><div class="d">Sat</div><div class="a"><span class="dot"></span>Ride</div></div>
+<div class="day rest"><div class="d">Sun</div><div class="a"><span class="dot"></span>Rest</div></div>
+</div>
+<div class="legend"><span><span class="dot" style="background:#4169E1"></span>Lift</span><span><span class="dot" style="background:#3aa06a"></span>Run, lunch</span><span><span class="dot" style="background:#d98a2b"></span>Ride, 30 to 60k</span><span><span class="dot" style="background:#ccc"></span>Rest</span></div>
+<span class="note">Move the days around to fit work. Just keep a rest day either side of the ride.</span>
+
+<p class="gym-h2">The lifts</p>
+<div class="lifts">
+<div class="card">
+<p class="h">Lift A</p>
+<table class="ex">
+<tr><td>Bench press</td><td class="r">3 x 5</td></tr>
+<tr><td>Barbell row</td><td class="r">3 x 5</td></tr>
+<tr><td>Romanian deadlift</td><td class="r">3 x 8</td></tr>
+<tr><td>Dips</td><td class="r">3 x max</td></tr>
+</table>
+</div>
+<div class="card">
+<p class="h">Lift B</p>
+<table class="ex">
+<tr><td>Overhead press</td><td class="r">3 x 5</td></tr>
+<tr><td>Deadlift</td><td class="r">3 x 5</td></tr>
+<tr><td>Barbell row</td><td class="r">3 x 5</td></tr>
+<tr><td>Dips</td><td class="r">3 x max</td></tr>
+</table>
+</div>
+</div>
+<span class="note">Dips to a couple short of failure. Everything else is a straight weight across all sets.</span>
+
+<p class="gym-h2">Progression</p>
+<div class="callout"><b>Hit every rep, add weight next time.</b> 2.5kg on the bar lifts, 5kg on the deadlift. Miss reps and stay at the same weight until you get them.</div>
+
+<p class="gym-h2">Notes</p>
+<span class="note">Rest 2 to 3 minutes between the heavy sets. Warm up each lift with a couple of lighter sets first.</span>
+<span class="note">No squat rack, so your legs come from the deadlifts, the bike and the runs. Plenty for a lean, athletic build.</span>
+<span class="note">Rows on both days stand in for pull-ups. Add chin-ups to both days once you get the bar.</span>
+<span class="note">Keep the heavy deadlift day away from the day before your ride, so your legs are fresh for it.</span>
+
+<span class="note">Sources: <a href="https://thefitness.wiki/routines/r-fitness-basic-beginner-routine/">r/Fitness Basic Beginner Routine</a>, <a href="https://www.strengthlog.com/strength-training-for-cyclists/">StrengthLog</a>, <a href="https://www.simongpt.co.uk/pt-strength-and-conditioning-coach-for-cyclists-and-endurance-athletes/">simongPT</a>.</span>
