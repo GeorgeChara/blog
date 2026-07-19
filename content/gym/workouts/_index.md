@@ -63,7 +63,7 @@ layout: single
 
 <div class="week-head">
 <p class="gym-h2">The week</p>
-<div class="legend"><span><span class="sw" style="background:#4169E1"></span>Lift</span><span><span class="sw" style="background:#3aa06a"></span>Run</span><span><span class="sw" style="background:#d98a2b"></span>Ride</span><span><span class="sw" style="background:#d8d8d8"></span>Rest</span></div>
+<div class="legend"><span><span class="sw" style="background:#3aa06a"></span>Run</span><span><span class="sw" style="background:#4169E1"></span>Lift</span><span><span class="sw" style="background:#d98a2b"></span>Ride</span><span><span class="sw" style="background:#d8d8d8"></span>Rest</span></div>
 </div>
 <div class="week">
 <div class="day run"><div class="bar"></div><div class="in"><div class="d">Mon</div><div class="a">Run</div></div></div>
