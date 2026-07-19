@@ -16,12 +16,12 @@ layout: single
 </style>
 
 <h1>Kleftiko</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot slow-roast lamb, overnight marinade, 4 hr, serves 6-8</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot slow-roast lamb, one pot, 3 hr, serves 6-8</p>
 
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Lamb</span>
-lamb shoulder    2.5kg
+lamb shoulder    2.5kg, bone in
 garlic           8 cloves
 
 <span style="color: #888;">Marinade</span>
@@ -32,41 +32,31 @@ ground cinnamon  1 tsp
 dijon mustard    1 tbsp
 salt and pepper  to season
 
-<span style="color: #888;">In the parcel</span>
-potatoes         1.5kg, in wedges
-onions           2, sliced
-tomatoes         2, sliced
+<span style="color: #888;">In the pot</span>
+potatoes         1.5kg, in chunks
+onions           2, in wedges
+tomatoes         2, quartered
 halloumi         250g, thick slices
-rosemary         few sprigs
 bay leaves       3
+white wine       150ml
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder, not leg. The fat keeps it moist over the long cook. Cinnamon is the Cypriot touch. The halloumi goes soft in the parcel and soaks up the juices, nothing like grilled.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder, not leg. The fat keeps it moist. Cinnamon is the Cypriot touch. Halloumi soaks up the juices, nothing like grilled. Swap the wine for water if you prefer.</span>
 
 ## Recipe
 
-**1.** Mix the marinade. Cut deep slits all over the lamb and push a slice of garlic into each.
+**1.** Mix the marinade. Cut deep slits all over the lamb, push a slice of garlic into each, and rub the marinade all over. Chill overnight if you can.
 
-**2.** Rub the marinade all over, working it into the slits. Cover and chill overnight. Take it out 45 minutes before cooking.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Overnight makes a real difference, but you can cook it straight away.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Overnight makes a real difference, but a few hours still works.</span>
+**2.** Heat the oven to 160°C. Put the potatoes, onions, tomatoes and bay in the Le Creuset. Sit the lamb on top, tuck the halloumi around it, and pour in the wine with any leftover marinade.
 
-**3.** Heat the oven to 160°C. Line a deep roasting tin with two large sheets of baking paper in a cross.
+**3.** Lid on. Roast for 3 hours, until the lamb pulls apart.
 
-**4.** Layer in the potatoes, onions and tomatoes. Season, drizzle with oil, and add the rosemary and bay.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The heavy lid traps the steam, the same job as the foil parcel, with no wrapping.</span>
 
-**5.** Sit the lamb on top and tuck the halloumi around it. Pour over any leftover marinade.
+**4.** Lid off, turn up to 220°C, and roast 15 to 20 minutes to brown the top.
 
-**6.** Wrap the paper up over the lamb, then seal the whole tin tightly in foil. Roast 3.5 to 4 hours without opening.
-
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sealing traps the steam, which is what cooks the lamb to falling apart.</span>
-
-**7.** Open carefully, away from you, the steam is hot. The meat should fall off the bone.
-
-**8.** Turn the oven up to 220°C and return uncovered for 15 to 20 minutes to brown.
-
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is just for colour, the lamb is already cooked.</span>
-
-**9.** Rest 15 minutes. Serve from the tin with the juices spooned over and warm pita.
+**5.** Rest 15 minutes. Serve from the pot with the juices spooned over and warm pita.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://georginahayden.com/easter-kleftiko/">Georgina Hayden</a>, <a href="https://www.mygreekdish.com/recipe/lamb-kleftiko-recipe-greek-lamb-cooked-in-parchment-paper/">My Greek Dish</a>.</span>
