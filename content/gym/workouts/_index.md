@@ -17,18 +17,20 @@ layout: single
   /* week grid */
   .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4em; }
   @media (max-width: 560px) { .week { grid-template-columns: repeat(3, 1fr); } }
-  .day { border: 1px solid #eee; border-radius: 4px; padding: 0.5em 0.6em; }
+  .day { border: 1px solid #eee; border-radius: 4px; overflow: hidden; }
+  .day .bar { height: 4px; background: #d8d8d8; }
+  .day .in { padding: 0.5em 0.6em; }
   .day .d { font-size: 0.7em; letter-spacing: 0.05em; text-transform: uppercase; color: #aaa; }
-  .day .a { font-size: 0.85em; margin-top: 0.25em; display: flex; align-items: center; gap: 0.4em; }
+  .day .a { font-size: 0.85em; margin-top: 0.25em; }
   .day.rest .a { color: #bbb; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; display: inline-block; }
-  .lift .dot { background: #4169E1; }
-  .run  .dot { background: #3aa06a; }
-  .ride .dot { background: #d98a2b; }
-  .rest .dot { background: #ccc; }
+  .lift .bar { background: #4169E1; }
+  .run  .bar { background: #3aa06a; }
+  .ride .bar { background: #d98a2b; }
+  .rest .bar { background: #d8d8d8; }
 
-  .legend { display: flex; flex-wrap: wrap; gap: 1em; margin-top: 0.7em; font-size: 0.75em; color: #888; }
-  .legend span { display: inline-flex; align-items: center; gap: 0.4em; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1em; margin-top: 0.8em; font-size: 0.75em; color: #888; }
+  .legend span { display: inline-flex; align-items: center; gap: 0.45em; }
+  .legend .sw { width: 14px; height: 4px; border-radius: 2px; display: inline-block; }
 
   /* lift cards */
   .lifts { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
@@ -52,15 +54,15 @@ layout: single
 
 <p class="gym-h2">The week</p>
 <div class="week">
-<div class="day run"><div class="d">Mon</div><div class="a"><span class="dot"></span>Run</div></div>
-<div class="day lift"><div class="d">Tue</div><div class="a"><span class="dot"></span>Lift A</div></div>
-<div class="day run"><div class="d">Wed</div><div class="a"><span class="dot"></span>Run</div></div>
-<div class="day lift"><div class="d">Thu</div><div class="a"><span class="dot"></span>Lift B</div></div>
-<div class="day rest"><div class="d">Fri</div><div class="a"><span class="dot"></span>Rest</div></div>
-<div class="day ride"><div class="d">Sat</div><div class="a"><span class="dot"></span>Ride</div></div>
-<div class="day rest"><div class="d">Sun</div><div class="a"><span class="dot"></span>Rest</div></div>
+<div class="day run"><div class="bar"></div><div class="in"><div class="d">Mon</div><div class="a">Run</div></div></div>
+<div class="day lift"><div class="bar"></div><div class="in"><div class="d">Tue</div><div class="a">Lift A</div></div></div>
+<div class="day run"><div class="bar"></div><div class="in"><div class="d">Wed</div><div class="a">Run</div></div></div>
+<div class="day lift"><div class="bar"></div><div class="in"><div class="d">Thu</div><div class="a">Lift B</div></div></div>
+<div class="day rest"><div class="bar"></div><div class="in"><div class="d">Fri</div><div class="a">Rest</div></div></div>
+<div class="day ride"><div class="bar"></div><div class="in"><div class="d">Sat</div><div class="a">Ride</div></div></div>
+<div class="day rest"><div class="bar"></div><div class="in"><div class="d">Sun</div><div class="a">Rest</div></div></div>
 </div>
-<div class="legend"><span><span class="dot" style="background:#4169E1"></span>Lift</span><span><span class="dot" style="background:#3aa06a"></span>Run, lunch</span><span><span class="dot" style="background:#d98a2b"></span>Ride, 30 to 60k</span><span><span class="dot" style="background:#ccc"></span>Rest</span></div>
+<div class="legend"><span><span class="sw" style="background:#4169E1"></span>Lift</span><span><span class="sw" style="background:#3aa06a"></span>Run, lunch</span><span><span class="sw" style="background:#d98a2b"></span>Ride, 30 to 60k</span><span><span class="sw" style="background:#d8d8d8"></span>Rest</span></div>
 <span class="note">Move the days around to fit work. Just keep a rest day either side of the ride.</span>
 
 <p class="gym-h2">The lifts</p>
