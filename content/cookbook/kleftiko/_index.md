@@ -41,7 +41,7 @@ bay leaves       3
 white wine       150ml
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Swap the wine for water if you prefer.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.</span>
 
 ## Recipe
 
