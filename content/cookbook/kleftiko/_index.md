@@ -33,12 +33,12 @@ dijon mustard    1 tbsp
 salt and pepper  to season
 
 <span style="color: #888;">In the pot</span>
-potatoes         1.5kg, in chunks
+potatoes         2kg, in chunks
 onions           2, in wedges
 tomatoes         2, quartered
 halloumi         250g, thick slices
 bay leaves       3
-white wine       150ml
+white wine       250ml
 </pre>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.</span>
@@ -55,6 +55,6 @@ white wine       150ml
 
 **4.** Lid off, turn up to 220°C, and roast 15 to 20 minutes to brown the top.
 
-**5.** Rest 15 minutes. Serve from the pot with the juices spooned over and warm pita.
+**5.** Rest 15 minutes. Serve from the pot with the juices spooned over and a Greek salad on the side.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://georginahayden.com/easter-kleftiko/">Georgina Hayden</a>, <a href="https://www.mygreekdish.com/recipe/lamb-kleftiko-recipe-greek-lamb-cooked-in-parchment-paper/">My Greek Dish</a>.</span>
