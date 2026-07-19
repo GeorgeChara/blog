@@ -108,3 +108,15 @@ honey            1 tsp
 water or juice   250ml
 </pre>
 <span class="smoothie-note">Make the night before. Light and hydrating, the lemon keeps it bright overnight. Fill the jar to the top and shake in the morning.</span>
+
+<p class="smoothie-name">Ruby Booster</p>
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">cooked beetroot      1
+frozen berries       handful
+frozen mango         handful
+banana               1
+ginger               thumb
+lemon                squeeze
+greek yoghurt        2 tbsp
+coconut water        to blend
+</pre>
+<span class="smoothie-note">Make any day. The mango and yoghurt round off the earthy beetroot and add protein, the beetroot brings nitrates for circulation. Seeds out of the lemon, they go bitter.</span>
