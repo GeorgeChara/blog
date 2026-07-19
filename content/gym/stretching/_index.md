@@ -15,6 +15,8 @@ layout: single
   .gym-h2 { font-weight: bold; font-size: 1em; margin: 2em 0 0.7em 0; color: #000; }
 
   .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
+  .subh { font-size: 0.7em; letter-spacing: 0.06em; text-transform: uppercase; color: #aaa; margin: 1.1em 0 0.4em 0; }
+  .card > .subh:first-child { margin-top: 0; }
   table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
   table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; }
   table.ex td:first-child { width: 100%; }
@@ -53,14 +55,18 @@ layout: single
 
 <p class="gym-h2">Stretch, after, when warm</p>
 <div class="card">
+<p class="subh">Floor</p>
 <table class="ex">
-<tr><td>Kneeling hip flexor</td><td class="r">30s each side</td></tr>
-<tr><td>Hamstring fold</td><td class="r">30s each side</td></tr>
-<tr><td>Standing quad</td><td class="r">30s each side</td></tr>
-<tr><td>Calf on the wall</td><td class="r">30s each side</td></tr>
-<tr><td>Figure-4 glute</td><td class="r">30s each side</td></tr>
-<tr><td>Doorway chest</td><td class="r">30s</td></tr>
-<tr><td>Thoracic twist</td><td class="r">30s each side</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/gRwtTynOBcQ" target="_blank" rel="noopener">Kneeling hip flexor</a></td><td class="r">30s each side</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/ckHZyA99Das" target="_blank" rel="noopener">Figure-4 glute</a></td><td class="r">30s each side</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/l3Ze_9iXL-M" target="_blank" rel="noopener">Thoracic twist</a></td><td class="r">30s each side</td></tr>
+</table>
+<p class="subh">Standing</p>
+<table class="ex">
+<tr><td><a href="https://www.youtube.com/shorts/70X6nujeHiM" target="_blank" rel="noopener">Hamstring fold</a></td><td class="r">30s each side</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/aNXGOpP37CY" target="_blank" rel="noopener">Standing quad</a></td><td class="r">30s each side</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/KxliHPOmsTY" target="_blank" rel="noopener">Calf on the wall</a></td><td class="r">30s each side</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/PWGuI3rTRx0" target="_blank" rel="noopener">Doorway chest</a></td><td class="r">30s</td></tr>
 </table>
 </div>
 <span class="note">These are the spots cycling, running and pressing tighten most: hips, hamstrings, calves, glutes, chest and upper back.</span>
