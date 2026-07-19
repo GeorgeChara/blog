@@ -36,7 +36,7 @@ salt and pepper  to season
 potatoes         2kg, in chunks
 onions           2, in wedges
 tomatoes         2, quartered
-halloumi         250g, thick slices
+halloumi         1 block, thick slices
 bay leaves       3
 white wine       250ml
 </pre>
