@@ -23,7 +23,7 @@ layout: single
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Lamb</span>
-lamb shoulder    2.5kg, boneless
+lamb shoulder    2.5kg, bone in
 garlic           1 bulb, halved
 
 <span style="color: #888;">Marinade</span>
@@ -47,7 +47,7 @@ lemon            1/2, to squeeze
 dried mint       to scatter
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone in stays juiciest. Boneless is easier to carve but cooks faster and can dry, so check it earlier.<br>Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.<br>Doubling up? Use a bigger tin, give it longer, and go by feel. A probe reads about 90 to 95°C when it is ready to pull.</span>
 
 ## Recipe
 
@@ -77,9 +77,9 @@ dried mint       to scatter
 
 </details>
 
-**4.** Lid on. Roast for about 2.5 hours, until the lamb is nearly falling apart.
+**4.** Lid on. Roast until the lamb is nearly falling apart, about 3 hours for bone in or 2.5 for boneless.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Keep the lid on, no peeking, each time you open it lets the steam out and adds to the cook. Have one look around 2.5 hours: it is ready when a fork twists easily and the meat is soft, not stringy. Boneless gets there sooner than bone in.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Keep the lid on, no peeking, each open lets steam out and adds to the cook. Check once near the end with a fork in the thickest part: done means it twists and pulls apart with no resistance. If it still feels firm and springy, it needs longer.</span>
 
 **5.** Tuck the halloumi around the lamb, lid back on, and give it 20 minutes more.
 
