@@ -51,6 +51,8 @@ white wine       250ml
 
 **2.** Heat the oven to 160°C. Put the potatoes, onions, tomatoes and bay in the Le Creuset. Sit the lamb on top, tuck the halloumi around it, and pour in the wine with any leftover marinade.
 
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Veg on the bottom, lamb on top and above the liquid, not submerged. It should steam, not sit in it.</span>
+
 **3.** Lid on. Roast for 3 hours, until the lamb pulls apart.
 
 **4.** Lid off, turn up to 220°C, and roast 15 to 20 minutes to brown the top.
