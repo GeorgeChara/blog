@@ -74,7 +74,7 @@ layout: single
 <div class="day ride"><div class="bar"></div><div class="in"><div class="d">Sat</div><div class="a">Ride</div></div></div>
 <div class="day rest"><div class="bar"></div><div class="in"><div class="d">Sun</div><div class="a">Rest</div></div></div>
 </div>
-<span class="note">Runs at lunch, ride is 30 to 60k. Move the days around to fit work, and keep a rest day either side of the ride.</span>
+<span class="note">Runs at lunch, ride is 100k. Move the days around to fit work, and keep a rest day either side of the ride.</span>
 
 <p class="gym-h2">The lifts</p>
 <div class="lifts">
