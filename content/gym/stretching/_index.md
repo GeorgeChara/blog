@@ -17,8 +17,9 @@ layout: single
   .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
   table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
   table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; }
+  table.ex td:first-child { width: 100%; }
   table.ex tr:last-child td { border-bottom: none; }
-  table.ex td.r { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  table.ex td.r { text-align: left; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
   .callout { border-left: 3px solid #4169E1; background: #f3f6fd; border-radius: 0 4px 4px 0; padding: 0.7em 0.9em; font-size: 0.85em; color: #333; }
   .callout b { color: #000; }
