@@ -16,59 +16,57 @@ layout: single
 </style>
 
 <h1>Kleftiko</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot slow-roasted lamb, overnight marinade, 4 hr cook, serves 6-8</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot slow-roast lamb, overnight marinade, 4 hr, serves 6-8</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Serves 6-8</span>
-
-lamb shoulder      2.5kg
-garlic             8 cloves
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Lamb</span>
+lamb shoulder    2.5kg
+garlic           8 cloves
 
 <span style="color: #888;">Marinade</span>
-olive oil          60g
-lemon juice        60g
-lemon zest         1 lemon
-dried oregano      8g
-ground cinnamon    3g
-dijon mustard      15g
-salt               5g
-black pepper       3g
+olive oil        4 tbsp
+lemon            1, juice and zest
+dried oregano    1 tbsp
+ground cinnamon  1 tsp
+dijon mustard    1 tbsp
+salt and pepper  to season
 
 <span style="color: #888;">In the parcel</span>
-potatoes           1.5kg
-onions             2 large
-tomatoes           2 large
-halloumi           2 blocks
-fresh rosemary     4 sprigs
-bay leaves         3
-olive oil          drizzle
+potatoes         1.5kg, in wedges
+onions           2, sliced
+tomatoes         2, sliced
+halloumi         250g, thick slices
+rosemary         few sprigs
+bay leaves       3
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder only, not leg. The fat in the shoulder renders down over the long cook and keeps everything moist.<br>The overnight marinade is not optional. 12-16 hours makes a categorically different result to 2 hours.<br>Cinnamon is the Cypriot tell. Don't skip it.<br>The halloumi goes soft inside the parcel, nothing like grilled. It absorbs all the lamb juices and herbs. Cut into thick slices or large cubes and nestle in around the lamb before sealing.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder, not leg. The fat keeps it moist over the long cook. Cinnamon is the Cypriot touch. The halloumi goes soft in the parcel and soaks up the juices, nothing like grilled.</span>
 
 ## Recipe
 
-**Night before:**
+**1.** Mix the marinade. Cut deep slits all over the lamb and push a slice of garlic into each.
 
-**1.** Mix all the marinade ingredients together. Cut 10-12 deep slits all over the lamb and push a slice of garlic into each one.
+**2.** Rub the marinade all over, working it into the slits. Cover and chill overnight. Take it out 45 minutes before cooking.
 
-**2.** Rub the marinade all over the lamb, working it into the slits. Cover and refrigerate for 12-16 hours. Take it out 45 minutes before cooking.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Overnight makes a real difference, but a few hours still works.</span>
 
-**Cooking day:**
+**3.** Heat the oven to 160°C. Line a deep roasting tin with two large sheets of baking paper in a cross.
 
-**3.** Heat the oven to 160°C. Lay two large sheets of baking paper in a cross pattern inside a deep roasting tin, big enough to fully wrap everything.
+**4.** Layer in the potatoes, onions and tomatoes. Season, drizzle with oil, and add the rosemary and bay.
 
-**4.** Layer the potato wedges and onion rings in the centre. Season with salt, a drizzle of olive oil and a pinch of oregano. Add the bay leaves, rosemary and tomato slices on top.
+**5.** Sit the lamb on top and tuck the halloumi around it. Pour over any leftover marinade.
 
-**5.** Place the lamb on top of the vegetables. Pour over any remaining marinade.
+**6.** Wrap the paper up over the lamb, then seal the whole tin tightly in foil. Roast 3.5 to 4 hours without opening.
 
-**6.** Bring the baking paper up around the lamb and gather tightly to seal. Then wrap the whole thing in two layers of foil, sealing all edges. This traps the steam inside and is what makes kleftiko.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sealing traps the steam, which is what cooks the lamb to falling apart.</span>
 
-**7.** Roast for 3.5-4 hours. Do not open the parcel during this time.
+**7.** Open carefully, away from you, the steam is hot. The meat should fall off the bone.
 
-**8.** Open carefully away from you as the steam will be very hot. The meat should be completely falling off the bone.
+**8.** Turn the oven up to 220°C and return uncovered for 15 to 20 minutes to brown.
 
-**9.** Increase the oven to 220°C and return uncovered for 15-20 minutes to brown and caramelise the surface.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is just for colour, the lamb is already cooked.</span>
 
-**10.** Rest for 10-15 minutes. Serve straight from the tin with the cooking juices spooned over and warm pita on the side.
+**9.** Rest 15 minutes. Serve from the tin with the juices spooned over and warm pita.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://georginahayden.com/easter-kleftiko/">Georgina Hayden</a>, <a href="https://www.mygreekdish.com/recipe/lamb-kleftiko-recipe-greek-lamb-cooked-in-parchment-paper/">My Greek Dish</a>.</span>
