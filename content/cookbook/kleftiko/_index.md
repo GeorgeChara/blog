@@ -41,7 +41,7 @@ bay leaves       3
 white wine       150ml
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shoulder, not leg. The fat keeps it moist. Cinnamon is the Cypriot touch. Halloumi soaks up the juices, nothing like grilled. Swap the wine for water if you prefer.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Swap the wine for water if you prefer.</span>
 
 ## Recipe
 
