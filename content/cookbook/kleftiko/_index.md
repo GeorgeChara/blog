@@ -79,7 +79,7 @@ dried mint       to scatter
 
 **4.** Lid on. Roast until the lamb is nearly falling apart, about 3 hours for bone in or 2.5 for boneless.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Lid on, no peeking. Done when a fork twists and it pulls apart easily. Still firm, give it longer.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Done when a fork twists and it pulls apart easily. Still firm, give it longer.</span>
 
 **5.** Tuck the halloumi around the lamb, lid back on, and give it 20 minutes more.
 
