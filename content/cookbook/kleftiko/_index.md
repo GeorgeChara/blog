@@ -53,8 +53,6 @@ white wine       150ml
 
 **3.** Lid on. Roast for 3 hours, until the lamb pulls apart.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The heavy lid traps the steam, the same job as the foil parcel, with no wrapping.</span>
-
 **4.** Lid off, turn up to 220°C, and roast 15 to 20 minutes to brown the top.
 
 **5.** Rest 15 minutes. Serve from the pot with the juices spooned over and warm pita.
