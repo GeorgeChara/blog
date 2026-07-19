@@ -23,7 +23,7 @@ layout: single
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Lamb</span>
-lamb shoulder    2.5kg, bone in
+lamb shoulder    2.5kg, boneless
 garlic           1 bulb, halved
 
 <span style="color: #888;">Marinade</span>
@@ -41,6 +41,10 @@ tomatoes         2, quartered
 halloumi         1 block, thick slices
 bay leaves       3
 white wine       250ml
+
+<span style="color: #888;">To finish</span>
+lemon            1/2, to squeeze
+dried mint       to scatter
 </pre>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.</span>
@@ -62,7 +66,7 @@ white wine       250ml
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Overnight makes a real difference, but you can cook it straight away.</span>
 
-**3.** Heat the oven to 160°C. Drain the potatoes and add them to the Le Creuset with the onions, tomatoes, bay and the halved garlic. Sit the lamb on top, tuck the halloumi around it, and pour in the wine with any leftover marinade.
+**3.** Heat the oven to 160°C. Drain the potatoes and add them to the Le Creuset with the onions, tomatoes, bay and the halved garlic. Sit the lamb on top and pour in the wine with any leftover marinade.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Veg on the bottom, lamb on top and above the liquid, not submerged. It should steam, not sit in it.</span>
 
@@ -73,13 +77,19 @@ white wine       250ml
 
 </details>
 
-**4.** Lid on. Roast for 3 hours, until the lamb pulls apart.
+**4.** Lid on. Roast for about 2.5 hours, until the lamb is nearly falling apart.
 
-**5.** Lid off, turn up to 220°C, and roast 15 to 20 minutes to brown the top.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Keep the lid on, no peeking, each time you open it lets the steam out and adds to the cook. Have one look around 2.5 hours: it is ready when a fork twists easily and the meat is soft, not stringy. Boneless gets there sooner than bone in.</span>
+
+**5.** Tuck the halloumi around the lamb, lid back on, and give it 20 minutes more.
+
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Adding it late keeps its salty flavour. In from the start and it washes out into the juices.</span>
+
+**6.** Lid off, turn up to 220°C, and roast 15 minutes to brown the top and colour the halloumi.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is just for colour, the lamb is already cooked.</span>
 
-**6.** Rest 15 minutes. Serve from the pot with the juices spooned over and a Greek salad on the side.
+**7.** Rest 15 minutes. Squeeze over the lemon and scatter with dried mint. Serve from the pot with the juices spooned over and a Greek salad on the side.
 
 <details>
 <summary>show photo</summary>
