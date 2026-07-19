@@ -24,7 +24,13 @@ layout: single
   .callout { border-left: 3px solid #4169E1; background: #f3f6fd; border-radius: 0 4px 4px 0; padding: 0.7em 0.9em; font-size: 0.85em; color: #333; }
   .callout b { color: #000; }
 
+  .rules .rule { display: grid; grid-template-columns: 6em 1fr; gap: 0.8em; padding: 0.55em 0; border-bottom: 1px solid #f2efe8; font-size: 0.85em; }
+  .rules .rule:last-child { border-bottom: none; }
+  .rules .k { font-weight: bold; color: #000; }
+  .rules .v { color: #555; line-height: 1.5; }
+
   .note { display:block; color:#888; font-size:0.8em; line-height:1.6; border-left: 2px solid #E5DECF; padding-left: 0.6em; margin: 0.55em 0; }
+  .src { margin-top: 2.4em; }
 </style>
 
 <p class="gym-h1">Stretching</p>
@@ -60,9 +66,11 @@ layout: single
 <span class="note">These are the spots cycling, running and pressing tighten most: hips, hamstrings, calves, glutes, chest and upper back.</span>
 
 <p class="gym-h2">How to do it</p>
-<span class="note">Only stretch warm, never cold. After a lift, run or ride, or after a few minutes of the warm up.</span>
-<span class="note">Hold each for 30 seconds. Breathe out and ease a little deeper. Mild tension, never pain.</span>
-<span class="note">Dynamic moves before you train, static holds after. Long holds right before lifting or running can take the snap out of your legs.</span>
-<span class="note">Hit the tight ones, hips and hamstrings, every day. Run the full set after each session. Progress shows over a few weeks.</span>
+<div class="card rules">
+<div class="rule"><span class="k">Warm</span><span class="v">Only stretch warm, never cold. After a lift, run or ride, or a few minutes of the warm up.</span></div>
+<div class="rule"><span class="k">Hold</span><span class="v">Hold each for 30 seconds. Breathe out and ease a little deeper. Mild tension, never pain.</span></div>
+<div class="rule"><span class="k">Order</span><span class="v">Dynamic moves before you train, static holds after. Long holds right before lifting or running can dull your legs.</span></div>
+<div class="rule"><span class="k">Daily</span><span class="v">Hit the tight ones, hips and hamstrings, every day. Run the full set after each session. Progress shows over a few weeks.</span></div>
+</div>
 
-<span class="note">Sources: <a href="https://theconversation.com/new-research-shows-how-long-hard-and-often-you-need-to-stretch-to-improve-your-flexibility-242488">The Conversation</a>, <a href="https://www.hubermanlab.com/newsletter/stretching-protocols-to-increase-flexibility-and-support-general-health">Huberman Lab</a>, <a href="https://roadmancycling.com/blog/cycling-stretching-routine">Roadman Cycling</a>.</span>
+<span class="note src">Sources: <a href="https://theconversation.com/new-research-shows-how-long-hard-and-often-you-need-to-stretch-to-improve-your-flexibility-242488">The Conversation</a>, <a href="https://www.hubermanlab.com/newsletter/stretching-protocols-to-increase-flexibility-and-support-general-health">Huberman Lab</a>, <a href="https://roadmancycling.com/blog/cycling-stretching-routine">Roadman Cycling</a>.</span>
