@@ -40,10 +40,12 @@ layout: single
   .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
   .card .h { font-weight: bold; color: #000; margin: 0 0 0.5em 0; font-size: 0.95em; }
   table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
-  table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; }
+  table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
   table.ex td:first-child { width: 100%; }
   table.ex tr:last-child td { border-bottom: none; }
   table.ex td.r { text-align: left; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .alt { display: block; font-size: 0.78em; color: #999; margin-top: 0.25em; }
+  .alt .sw { color: #bbb; margin-right: 0.35em; }
 
   /* callout */
   .callout { border-left: 3px solid #4169E1; background: #f3f6fd; border-radius: 0 4px 4px 0; padding: 0.7em 0.9em; font-size: 0.85em; color: #333; margin: 0 0 0.8em 0; }
@@ -91,14 +93,14 @@ layout: single
 <p class="h">Lift B</p>
 <table class="ex">
 <tr><td><a href="https://www.youtube.com/shorts/4LBVP2Oe7fg" target="_blank" rel="noopener">Overhead press</a></td><td class="r">3 x 5</td></tr>
-<tr><td><a href="https://www.youtube.com/shorts/xNwpvDuZJ3k" target="_blank" rel="noopener">Deadlift</a></td><td class="r">3 x 5</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/xNwpvDuZJ3k" target="_blank" rel="noopener">Deadlift</a><span class="alt"><span class="sw">⇄</span>or <a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" rel="noopener">Romanian deadlift</a>, easier on the back</span></td><td class="r">3 x 5</td></tr>
 <tr><td><a href="https://www.youtube.com/shorts/phVtqawIgbk" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 5</td></tr>
 <tr><td>Dips</td><td class="r">3 x max</td></tr>
 </table>
 </div>
 </div>
 <span class="note">Dips to a couple short of failure. Everything else is a straight weight across all sets.</span>
-<span class="note">Swap the deadlift for a <a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" rel="noopener">Romanian deadlift</a> when your lower back is tired from riding. Same hinge, easier on the back.</span>
+<span class="note">A ⇄ line is a swap-in, do that instead when the main lift does not suit the day.</span>
 
 <p class="gym-h2">How it works</p>
 <div class="callout"><b>Hit every rep, add weight next time.</b> 2.5kg on the bar lifts, 5kg on the deadlift. Miss reps and stay at the same weight until you get them.</div>
