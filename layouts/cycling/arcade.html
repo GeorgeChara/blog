@@ -1,0 +1,187 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time, .terminal-nav, .path-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
+
+  .arc { --scr: #0a1524; --ph: #bfe6ff; --ph2: #7fc4ff; --ok: #56d98a; --hot: #ff7a52; --dim: #4f7196; --gold: #ffce54;
+    width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    background: #02060d; padding: 5vh 4vw 8vh; font-family: var(--font-family-mono, monospace);
+    display: flex; justify-content: center;
+    --color-text-primary: var(--ph);
+  }
+  .crt {
+    position: relative; width: 100%; max-width: 720px; background:
+      radial-gradient(120% 120% at 50% 0%, #12233d 0%, #0a1524 55%, #060f1c 100%);
+    border-radius: 14px; padding: 2.2em 2em 2.4em;
+    color: var(--ph); text-shadow: 0 0 6px rgba(120,190,255,0.45);
+    box-shadow: 0 0 0 2px #14243c, 0 0 60px rgba(60,130,220,0.25), 0 24px 60px rgba(0,0,0,0.6);
+    overflow: hidden; font-size: 0.92em; line-height: 1.7;
+    animation: flick 5s infinite;
+  }
+  .crt::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 3;
+    background: repeating-linear-gradient(0deg, rgba(0,10,20,0.18) 0 1px, transparent 1px 3px); }
+  .crt::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 3; border-radius: 14px;
+    box-shadow: inset 0 0 140px rgba(0,0,0,0.55); }
+  @keyframes flick { 0%,97%,100% { opacity: 1; } 98% { opacity: 0.94; } 99% { opacity: 0.99; } }
+
+  .crt .scr { position: relative; z-index: 2; white-space: pre-wrap; }
+  .boot { color: var(--dim); }
+  .boot .ok { color: var(--ok); }
+  .boot .hot { color: var(--hot); }
+
+  .sheet { opacity: 0; transition: opacity 0.5s ease; }
+  .sheet.on { opacity: 1; }
+  .hr { color: #27415f; letter-spacing: 0.02em; }
+  .k { color: var(--ph2); }
+  .bar { color: var(--hot); letter-spacing: 1px; }
+  .bar .off { color: #223a56; }
+  .v2 { color: var(--ph); }
+  .v { color: var(--ph); margin-left: auto; }
+  .vd { color: var(--dim); }
+  .hdr { color: var(--gold); }
+  .name { color: #fff; font-weight: bold; }
+  .lock { color: #3a5a7c; }
+  .spark { color: var(--ph2); letter-spacing: 1px; font-size: 1.1em; }
+  .cur { color: var(--ph); animation: blink 1.05s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .backlink { text-align: center; margin-top: 1.6em; }
+  .backlink a { color: #4169E1; text-decoration: none; font-size: 0.85em; }
+</style>
+
+<div class="arc">
+  <div class="crt">
+    <div class="scr"><span class="boot" id="boot"></span><span class="sheet" id="sheet"></span><span class="cur" id="cur">█</span></div>
+  </div>
+</div>
+<p class="backlink"><a href="/cycling/">&larr; back to /cycling</a></p>
+
+{{ $rides := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+{{ $rides = $rides | append (dict "date" $a.date "km" $a.distance_km "elev" $a.elevation_gain_m "maxSpeed" $a.max_speed_kmh "avgSpeed" $a.avg_speed_kmh "np" $a.normalized_power "maxPower" $a.max_power "cal" $a.calories) }}
+{{ end }}
+<script id="arc-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
+
+<script>
+(function() {
+  var data = JSON.parse(document.getElementById('arc-data').textContent);
+  if (typeof data === 'string') data = JSON.parse(data);
+  data.forEach(function(r) { r.d = new Date(r.date); });
+  data.sort(function(a, b) { return a.d - b.d; });
+  var n0 = function(x) { return (x == null || isNaN(x)) ? 0 : +x; };
+
+  // ---- aggregates ----
+  var totKm = 0, totElev = 0, totCal = 0, top = 0, longest = 0, maxNP = 0, maxPow = 0, spSum = 0, spN = 0;
+  var monthly = {};
+  data.forEach(function(r) {
+    totKm += n0(r.km); totElev += n0(r.elev); totCal += n0(r.cal);
+    top = Math.max(top, n0(r.maxSpeed)); longest = Math.max(longest, n0(r.km));
+    maxNP = Math.max(maxNP, n0(r.np)); maxPow = Math.max(maxPow, n0(r.maxPower));
+    if (r.avgSpeed) { spSum += r.avgSpeed; spN++; }
+    var mk = r.d.getFullYear() + '-' + String(r.d.getMonth() + 1).padStart(2, '0');
+    monthly[mk] = (monthly[mk] || 0) + n0(r.km);
+  });
+  var avgSpeed = spN ? spSum / spN : 0, everests = totElev / 8849;
+
+  // XP / level (same curve as Progress)
+  var xp = Math.round(data.reduce(function(s, r) { return s + n0(r.km) + n0(r.elev) / 10; }, 0) + data.length * 10);
+  var T = function(L) { return L <= 1 ? 0 : Math.round(250 * Math.pow(L - 1, 1.6)); };
+  var lvl = 1; while (xp >= T(lvl + 1)) lvl++;
+  var TITLES = ['ROOKIE', 'DOMESTIQUE', 'ROULEUR', 'PUNCHEUR', 'CLIMBER', 'BREAKAWAY', 'SPRINTER', 'ALL-ROUNDER', 'GC CONTENDER', 'GRAND TOUR LEGEND'];
+  var title = TITLES[Math.min(lvl - 1, TITLES.length - 1)];
+
+  // Eddington
+  var dayKm = {}; data.forEach(function(r) { var k = r.d.toISOString().slice(0, 10); dayKm[k] = (dayKm[k] || 0) + n0(r.km); });
+  var dists = Object.keys(dayKm).map(function(k) { return dayKm[k]; }).sort(function(a, b) { return b - a; });
+  var E = 0; for (var i = 0; i < dists.length; i++) { if (dists[i] >= i + 1) E = i + 1; else break; }
+  var needDays = (E + 1) - dists.filter(function(v) { return v >= E + 1; }).length;
+
+  var clamp = function(v) { return Math.max(1, Math.min(10, Math.round(v))); };
+  var stats = [
+    { k: 'POWER', v: clamp(maxNP / 25), d: maxNP.toFixed(0) + 'W NP' },
+    { k: 'STAMINA', v: clamp(longest / 19), d: longest.toFixed(0) + 'km max' },
+    { k: 'SPEED', v: clamp(top / 6), d: top.toFixed(0) + 'km/h top' },
+    { k: 'CLIMBING', v: clamp(everests * 6), d: everests.toFixed(2) + 'x Everest' },
+    { k: 'GRIT', v: clamp(data.length / 3), d: data.length + ' rides' }
+  ];
+
+  function bar(v, max) { max = max || 10; return '<span class="bar">' + '█'.repeat(v) + '<span class="off">' + '░'.repeat(max - v) + '</span></span>'; }
+  function pad(s, n) { s = '' + s; while (s.length < n) s += ' '; return s; }
+  function padl(s, n) { s = '' + s; while (s.length < n) s = ' ' + s; return s; }
+
+  // XP bar
+  var xbFill = Math.round((xp - T(lvl)) / (T(lvl + 1) - T(lvl)) * 14);
+
+  // monthly sparkline
+  var mkeys = Object.keys(monthly).sort();
+  var blocks = '▁▂▃▄▅▆▇█';
+  var mvals = mkeys.map(function(k) { return monthly[k]; });
+  var mmax = Math.max.apply(null, mvals) || 1;
+  var spark = mvals.map(function(v) { return blocks[Math.min(7, Math.floor(v / mmax * 7))]; }).join('');
+
+  var achievements = [
+    ['Century', longest >= 100], ['Everester', totElev >= 8849], ['1000 Club', totKm >= 1000],
+    ['Power Surge', maxPow >= 700], ['Speed Demon', top >= 45], ['Eddington 30', E >= 30]
+  ];
+
+  // ---- assemble the sheet ----
+  var L = [];
+  L.push('<span class="hr">╔' + '═'.repeat(42) + '╗</span>');
+  L.push('  <span class="name">RIDER</span>' + pad('', 22) + '<span class="hdr">LVL ' + lvl + '</span> · <span class="hot">' + title + '</span>');
+  L.push('  <span class="k">XP</span>  ' + bar(xbFill, 14) + '  <span class="vd">' + xp.toLocaleString() + ' / ' + T(lvl + 1).toLocaleString() + '</span>');
+  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
+  stats.forEach(function(s) {
+    L.push('  <span class="k">' + pad(s.k, 10) + '</span>' + bar(s.v, 10) + '  <span class="vd">' + s.d + '</span>');
+  });
+  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
+  L.push('  <span class="hdr">HIGH SCORES</span>');
+  L.push('   longest ride ' + '<span class="vd">' + '.'.repeat(10) + '</span> <span class="v2">' + longest.toFixed(0) + ' km</span>');
+  L.push('   most climbing ' + '<span class="vd">' + '.'.repeat(8) + '</span> ' + totElev.toLocaleString() + ' m');
+  L.push('   top speed ' + '<span class="vd">' + '.'.repeat(12) + '</span> ' + top.toFixed(1) + ' km/h');
+  L.push('   peak power ' + '<span class="vd">' + '.'.repeat(11) + '</span> ' + maxPow.toFixed(0) + ' W');
+  L.push('   total logged ' + '<span class="vd">' + '.'.repeat(9) + '</span> ' + totKm.toFixed(0) + ' km');
+  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
+  L.push('  <span class="hdr">MONTHLY OUTPUT</span>  <span class="spark">' + spark + '</span>');
+  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
+  L.push('  <span class="hdr">INVENTORY</span>');
+  var inv = '';
+  achievements.forEach(function(a, i) {
+    var cell = (a[1] ? '<span class="ok">[✓]</span> ' + a[0] : '<span class="lock">[ ] ' + a[0] + '</span>');
+    inv += '   ' + cell;
+    if (i % 2 === 1) { L.push(inv); inv = ''; }
+  });
+  if (inv) L.push(inv);
+  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
+  L.push('  <span class="hot">! QUEST</span>  reach EDDINGTON ' + (E + 1) + ' — ride ≥' + (E + 1) + 'km');
+  L.push('           on ' + needDays + ' more day' + (needDays === 1 ? '' : 's') + '  <span class="vd">(now E' + E + ')</span>');
+  L.push('<span class="hr">╚' + '═'.repeat(42) + '╝</span>');
+
+  // ---- boot typing then reveal ----
+  var bootLines = [
+    '<span class="dim">$</span> ./rider.sys --boot',
+    '<span class="dim">loading garmin link ....</span> <span class="ok">[OK]</span>',
+    '<span class="dim">reading ' + data.length + ' rides .......</span> <span class="ok">[OK]</span>',
+    '<span class="dim">computing character sheet</span> <span class="ok">[OK]</span>',
+    ''
+  ];
+  var bootEl = document.getElementById('boot'), sheetEl = document.getElementById('sheet');
+  var li = 0, done = '';
+  function typeLine() {
+    if (li >= bootLines.length) { reveal(); return; }
+    var html = bootLines[li], plain = html.replace(/<[^>]*>/g, ''), ci = 0;
+    (function step() {
+      ci++;
+      bootEl.innerHTML = done + plain.slice(0, ci);
+      if (ci < plain.length) { setTimeout(step, 13); }
+      else { done += html + '\n'; bootEl.innerHTML = done; li++; setTimeout(typeLine, 150); }
+    })();
+  }
+  function reveal() {
+    sheetEl.innerHTML = '\n' + L.join('\n') + '\n<span class="dim">$</span> ';
+    sheetEl.classList.add('on');
+  }
+  typeLine();
+})();
+</script>
+{{ end }}
