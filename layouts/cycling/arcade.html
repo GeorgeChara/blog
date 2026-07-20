@@ -39,13 +39,32 @@
   .cur { color: var(--ph); animation: blink 1.05s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
 
+  .sheet { white-space: normal; margin-top: 1.5em; }
+  .rule { border-top: 1px solid #dce2ee; margin: 0.85em 0; }
+  .line { display: flex; align-items: baseline; gap: 0.7em; }
+  .line .k { color: var(--ph2); min-width: 5.4em; flex: none; }
+  .line .push { margin-left: auto; text-align: right; }
+  .bar { flex: none; }
+  .sec-h { color: var(--gold); margin-bottom: 0.3em; }
+  .score > span:first-child { flex: none; }
+  .lead { flex: 1; border-bottom: 1px dotted #c7d0e0; margin: 0 0.5em; position: relative; top: -0.28em; }
+  .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.18em 1em; margin-top: 0.2em; }
+  .quest { margin-top: 0.2em; line-height: 1.6; }
+  .prompt { margin-top: 0.9em; color: var(--dim); }
+  .cur2 { animation: blink 1.05s steps(1) infinite; color: var(--ph); }
+  @media (max-width: 560px) {
+    .crt { padding: 1.5em 1.15em; font-size: 0.82em; }
+    .line .k { min-width: 4.8em; }
+    .ach-grid { grid-template-columns: 1fr; }
+  }
+
   .backlink { text-align: center; margin-top: 1.6em; }
   .backlink a { color: #4169E1; text-decoration: none; font-size: 0.85em; }
 </style>
 
 <div class="arc">
   <div class="crt">
-    <div class="scr"><span class="boot" id="boot"></span><span class="sheet" id="sheet"></span><span class="cur" id="cur">█</span></div>
+    <div class="scr"><span class="boot" id="boot"></span><span class="cur" id="cur">█</span><div class="sheet" id="sheet"></div></div>
   </div>
 </div>
 <p class="backlink"><a href="/cycling/">&larr; back to /cycling</a></p>
@@ -118,37 +137,33 @@
     ['Power Surge', maxPow >= 700], ['Speed Demon', top >= 45], ['Eddington 30', E >= 30]
   ];
 
-  // ---- assemble the sheet ----
-  var L = [];
-  L.push('<span class="hr">╔' + '═'.repeat(42) + '╗</span>');
-  L.push('  <span class="name">RIDER</span>' + pad('', 22) + '<span class="hdr">LVL ' + lvl + '</span> · <span class="hot">' + title + '</span>');
-  L.push('  <span class="k">XP</span>  ' + bar(xbFill, 14) + '  <span class="vd">' + xp.toLocaleString() + ' / ' + T(lvl + 1).toLocaleString() + '</span>');
-  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
+  // ---- assemble the sheet (block layout so borders always fit) ----
+  function score(l, v) { return '<div class="line score"><span>' + l + '</span><span class="lead"></span><span class="v2">' + v + '</span></div>'; }
+  var H = '';
+  H += '<div class="line"><span class="name">RIDER</span><span class="push"><span class="hdr">LVL ' + lvl + '</span> · <span class="hot">' + title + '</span></span></div>';
+  H += '<div class="line"><span class="k">XP</span>' + bar(xbFill, 14) + '<span class="vd">' + xp.toLocaleString() + ' / ' + T(lvl + 1).toLocaleString() + '</span></div>';
+  H += '<div class="rule"></div>';
   stats.forEach(function(s) {
-    L.push('  <span class="k">' + pad(s.k, 10) + '</span>' + bar(s.v, 10) + '  <span class="vd">' + s.d + '</span>');
+    H += '<div class="line"><span class="k">' + s.k + '</span>' + bar(s.v, 10) + '<span class="vd">' + s.d + '</span></div>';
   });
-  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
-  L.push('  <span class="hdr">HIGH SCORES</span>');
-  L.push('   longest ride ' + '<span class="vd">' + '.'.repeat(10) + '</span> <span class="v2">' + longest.toFixed(0) + ' km</span>');
-  L.push('   most climbing ' + '<span class="vd">' + '.'.repeat(8) + '</span> ' + totElev.toLocaleString() + ' m');
-  L.push('   top speed ' + '<span class="vd">' + '.'.repeat(12) + '</span> ' + top.toFixed(1) + ' km/h');
-  L.push('   peak power ' + '<span class="vd">' + '.'.repeat(11) + '</span> ' + maxPow.toFixed(0) + ' W');
-  L.push('   total logged ' + '<span class="vd">' + '.'.repeat(9) + '</span> ' + totKm.toFixed(0) + ' km');
-  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
-  L.push('  <span class="hdr">MONTHLY OUTPUT</span>  <span class="spark">' + spark + '</span>');
-  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
-  L.push('  <span class="hdr">ACHIEVEMENTS</span>');
-  var inv = '';
-  achievements.forEach(function(a, i) {
-    var cell = (a[1] ? '<span class="ok">[✓]</span> ' + a[0] : '<span class="lock">[ ] ' + a[0] + '</span>');
-    inv += '   ' + cell;
-    if (i % 2 === 1) { L.push(inv); inv = ''; }
+  H += '<div class="rule"></div>';
+  H += '<div class="sec-h">HIGH SCORES</div>';
+  H += score('longest ride', longest.toFixed(0) + ' km');
+  H += score('most climbing', totElev.toLocaleString() + ' m');
+  H += score('top speed', top.toFixed(1) + ' km/h');
+  H += score('peak power', maxPow.toFixed(0) + ' W');
+  H += score('total logged', totKm.toFixed(0) + ' km');
+  H += '<div class="rule"></div>';
+  H += '<div class="line"><span class="sec-h" style="margin:0">MONTHLY OUTPUT</span><span class="push spark">' + spark + '</span></div>';
+  H += '<div class="rule"></div>';
+  H += '<div class="sec-h">ACHIEVEMENTS</div><div class="ach-grid">';
+  achievements.forEach(function(a) {
+    H += '<div>' + (a[1] ? '<span class="ok">[✓]</span> ' + a[0] : '<span class="lock">[ ] ' + a[0] + '</span>') + '</div>';
   });
-  if (inv) L.push(inv);
-  L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
-  L.push('  <span class="hot">! QUEST</span>  reach EDDINGTON ' + (E + 1) + ': ride ≥' + (E + 1) + 'km');
-  L.push('           on ' + needDays + ' more day' + (needDays === 1 ? '' : 's') + '  <span class="vd">(now E' + E + ')</span>');
-  L.push('<span class="hr">╚' + '═'.repeat(42) + '╝</span>');
+  H += '</div>';
+  H += '<div class="rule"></div>';
+  H += '<div class="quest"><span class="hot">! QUEST</span>  reach EDDINGTON ' + (E + 1) + ': ride ≥' + (E + 1) + 'km on ' + needDays + ' more day' + (needDays === 1 ? '' : 's') + ' <span class="vd">(now E' + E + ')</span></div>';
+  H += '<div class="prompt">$ <span class="cur2">█</span></div>';
 
   // ---- boot typing then reveal ----
   var bootLines = [
@@ -171,8 +186,9 @@
     })();
   }
   function reveal() {
-    sheetEl.innerHTML = '\n' + L.join('\n') + '\n<span class="dim">$</span> ';
+    sheetEl.innerHTML = H;
     sheetEl.classList.add('on');
+    var c = document.getElementById('cur'); if (c) c.style.display = 'none';
   }
   typeLine();
 })();
