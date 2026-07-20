@@ -45,24 +45,16 @@
   <div class="stat"><span class="v">{{ printf "%.1f" .avg_speed_kmh }}</span><span class="l">km/h avg</span></div>
   <div class="stat"><span class="v">{{ printf "%.0f" .longest_ride_km }}</span><span class="l">km longest</span></div>
 </div>
-
-{{ if .monthly_distance }}
-<p class="cy-h2">Monthly distance, {{ .year }}</p>
-<div class="chart-card">
-  <canvas id="monthlyChart" height="70"></canvas>
-</div>
-{{ end }}
 {{ end }}
 
-{{ $np := slice }}
+{{ $rides := slice }}
 {{ range $id, $a := hugo.Data.cycling.activities }}
-{{ if $a.normalized_power }}{{ $np = $np | append (dict "d" (substr $a.date 0 10) "np" $a.normalized_power) }}{{ end }}
+{{ $rides = $rides | append (dict "d" (substr $a.date 0 7) "km" $a.distance_km "sp" $a.avg_speed_kmh "pw" $a.avg_power) }}
 {{ end }}
-{{ $np = sort $np "d" }}
-{{ if $np }}
-<p class="cy-h2">Normalized power per ride</p>
-<div class="chart-card"><canvas id="npChart" height="70"></canvas></div>
-<script id="np-data" type="application/json">{{ $np | jsonify | safeJS }}</script>
+{{ if $rides }}
+<p class="cy-h2">Volume and intensity by month</p>
+<div class="chart-card"><canvas id="trendChart" height="88"></canvas></div>
+<script id="trend-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
 {{ end }}
 
 <p class="cy-h2">Recent rides</p>
@@ -82,52 +74,58 @@
 
 {{ .Content }}
 
-{{ with $summary }}
-{{ if .monthly_distance }}
+{{ if hugo.Data.cycling.activities }}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
 (function() {
-  var raw = {{ .monthly_distance | jsonify }};
-  var monthly = (typeof raw === 'string') ? JSON.parse(raw) : raw;
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var keys = ['01','02','03','04','05','06','07','08','09','10','11','12'];
-  var data = keys.map(function(k) { return monthly[k] || monthly[String(parseInt(k))] || 0; });
+  var tag = document.getElementById('trend-data');
+  var el = document.getElementById('trendChart');
+  if (!tag || !el) return;
+  var rides = JSON.parse(tag.textContent);
 
-  new Chart(document.getElementById('monthlyChart'), {
-    type: 'bar',
+  var months = {};
+  rides.forEach(function(r) {
+    var m = months[r.d] || (months[r.d] = { km: 0, spSum: 0, spN: 0, pwSum: 0, pwN: 0 });
+    m.km += r.km || 0;
+    if (r.sp != null) { m.spSum += r.sp; m.spN++; }
+    if (r.pw != null && r.pw > 0) { m.pwSum += r.pw; m.pwN++; }
+  });
+  var keys = Object.keys(months).sort();
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var labels = keys.map(function(k) { var p = k.split('-'); return MON[+p[1] - 1] + ' ' + p[0].slice(2); });
+  var dist = keys.map(function(k) { return +months[k].km.toFixed(1); });
+  var speed = keys.map(function(k) { var m = months[k]; return m.spN ? +(m.spSum / m.spN).toFixed(1) : null; });
+  var power = keys.map(function(k) { var m = months[k]; return m.pwN ? Math.round(m.pwSum / m.pwN) : null; });
+  var mono = { family: 'monospace' };
+
+  new Chart(el, {
     data: {
-      labels: months,
-      datasets: [{
-        data: data,
-        backgroundColor: 'rgba(217,138,43,0.25)',
-        borderColor: '#d98a2b',
-        borderWidth: 1,
-        borderRadius: 3
-      }]
+      labels: labels,
+      datasets: [
+        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(217,138,43,0.25)', borderColor: '#d98a2b', borderWidth: 1, borderRadius: 3 },
+        { type: 'line', label: 'Avg speed', data: speed, yAxisID: 'ySpeed', order: 1, borderColor: '#4169E1', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 },
+        { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c0392b', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, borderDash: [4, 3], pointRadius: 3 }
+      ]
     },
     options: {
-      responsive: true,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.parsed.y + ' km'; } } } },
+      responsive: true, interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
+        tooltip: { callbacks: { label: function(c) {
+          if (c.parsed.y == null) return null;
+          var u = c.dataset.yAxisID === 'yKm' ? ' km' : c.dataset.yAxisID === 'ySpeed' ? ' km/h' : ' W';
+          return c.dataset.label + ': ' + c.parsed.y + u;
+        } } }
+      },
       scales: {
-        y: { beginAtZero: true, grid: { color: '#f2efe8' }, ticks: { font: { family: 'monospace' } } },
-        x: { grid: { display: false }, ticks: { font: { family: 'monospace' } } }
+        x: { grid: { display: false }, ticks: { font: mono } },
+        yKm: { position: 'left', beginAtZero: true, title: { display: true, text: 'km', font: mono }, grid: { color: '#f2efe8' }, ticks: { font: mono } },
+        ySpeed: { position: 'right', beginAtZero: true, title: { display: true, text: 'km/h', font: mono }, grid: { display: false }, ticks: { font: mono } },
+        yPower: { position: 'right', beginAtZero: true, title: { display: true, text: 'W', font: mono }, grid: { display: false }, ticks: { font: mono } }
       }
     }
   });
-
-  var npEl = document.getElementById('npChart');
-  var npTag = document.getElementById('np-data');
-  if (npEl && npTag) {
-    var np = JSON.parse(npTag.textContent);
-    new Chart(npEl, {
-      type: 'bar',
-      data: { labels: np.map(function(r) { return r.d.slice(5); }), datasets: [{ data: np.map(function(r) { return r.np; }), backgroundColor: 'rgba(217,138,43,0.35)', borderColor: '#d98a2b', borderWidth: 1, borderRadius: 3 }] },
-      options: { responsive: true, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.parsed.y + ' W'; } } } },
-        scales: { y: { beginAtZero: true, grid: { color: '#f2efe8' }, ticks: { font: { family: 'monospace' } } }, x: { grid: { display: false }, ticks: { font: { family: 'monospace' }, maxTicksLimit: 12 } } } }
-    });
-  }
 })();
 </script>
-{{ end }}
 {{ end }}
 {{ end }}
