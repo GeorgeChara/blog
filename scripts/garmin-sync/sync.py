@@ -14,7 +14,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from garmin_client import create_client, download_gpx, get_activities_since
-from hugo_writer import ACTIVITIES_DIR, DATA_DIR, update_summary, write_activity
+from hugo_writer import ACTIVITIES_DIR, DATA_DIR, slugify, update_summary, write_activity
 
 SYNC_STATE_PATH = DATA_DIR / "last_sync.json"
 
@@ -49,7 +49,7 @@ def collect_existing_summaries():
                 "elevation_gain_m": data.get("elevation_gain_m", 0),
                 "duration": _format_duration(data.get("duration_seconds", 0)),
                 "avg_speed_kmh": data.get("avg_speed_kmh", 0),
-                "slug": json_file.stem,  # Will be overwritten by write_activity
+                "slug": f"{data['date'][:10]}-{slugify(data['name'])}",
             })
         except (json.JSONDecodeError, KeyError) as e:
             print(f"Warning: skipping {json_file.name}: {e}")

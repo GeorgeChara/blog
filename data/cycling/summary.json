@@ -1,16 +1,22 @@
 {
-  "total_rides": 1,
-  "total_distance_km": 45.2,
-  "total_elevation_m": 380,
-  "total_duration_seconds": 5790,
-  "total_calories": 980,
-  "avg_distance_km": 45.2,
-  "avg_speed_kmh": 24.3,
-  "longest_ride_km": 45.2,
-  "max_elevation_m": 380,
+  "total_rides": 23,
+  "total_distance_km": 1504.6,
+  "total_elevation_m": 11802,
+  "avg_speed_kmh": 22.5,
+  "longest_ride_km": 168.5,
   "year": 2026,
   "monthly_distance": {
-    "01": 0, "02": 0, "03": 0, "04": 45.2, "05": 0, "06": 0,
-    "07": 0, "08": 0, "09": 0, "10": 0, "11": 0, "12": 0
+    "01": 0.0,
+    "02": 0.0,
+    "03": 0.0,
+    "04": 0.0,
+    "05": 0.0,
+    "06": 19.3,
+    "07": 0.0,
+    "08": 0.0,
+    "09": 0.0,
+    "10": 0.0,
+    "11": 0.0,
+    "12": 0.0
   }
 }

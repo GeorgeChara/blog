@@ -263,3 +263,148 @@ def update_summary(all_ride_summaries):
 
     summary_path = DATA_DIR / "summary.json"
     summary_path.write_text(json.dumps(summary, indent=2))
+
+
+# --- Strava-native writer -------------------------------------------------
+
+def _downsample(arr, n=60):
+    """Reduce a stream to ~n points for chart rendering."""
+    if not arr:
+        return []
+    if len(arr) <= n:
+        return [round(x, 1) if isinstance(x, (int, float)) else x for x in arr]
+    step = len(arr) / n
+    return [round(arr[int(i * step)], 1) for i in range(n)]
+
+
+def streams_to_gpx(streams, name):
+    """Build GPX XML from Strava latlng + altitude streams."""
+    latlng = (streams.get("latlng") or {}).get("data")
+    if not latlng:
+        return None
+    alt = (streams.get("altitude") or {}).get("data") or []
+    gpx = gpxpy.gpx.GPX()
+    trk = gpxpy.gpx.GPXTrack(name=name)
+    gpx.tracks.append(trk)
+    seg = gpxpy.gpx.GPXTrackSegment()
+    trk.segments.append(seg)
+    for i, pt in enumerate(latlng):
+        elev = alt[i] if i < len(alt) else None
+        seg.points.append(gpxpy.gpx.GPXTrackPoint(pt[0], pt[1], elevation=elev))
+    return gpx.to_xml()
+
+
+def streams_to_profiles(streams):
+    """Downsample Strava streams into chart profile arrays."""
+    def data(key):
+        return (streams.get(key) or {}).get("data") or []
+
+    dist_km = [round(x / 1000, 2) for x in data("distance")]
+    speed_kmh = [round(x * 3.6, 1) for x in data("velocity_smooth")]
+    return {
+        "distance_profile": _downsample(dist_km),
+        "elevation_profile": _downsample(data("altitude")),
+        "hr_profile": _downsample(data("heartrate")) or None,
+        "power_profile": _downsample(data("watts")) or None,
+        "speed_profile": _downsample(speed_kmh) or None,
+    }
+
+
+def write_strava_activity(detail, streams):
+    """Write all Hugo files for a single Strava activity."""
+    ensure_dirs()
+    activity_id = str(detail["id"])
+    name = detail.get("name") or "Ride"
+    title = name.replace('"', "'")
+    date_str = detail.get("start_date_local") or detail.get("start_date")
+    dt = (datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+          if date_str else datetime.now())
+
+    def r0(key):
+        v = detail.get(key)
+        return round(v) if v is not None else None
+
+    distance_km = round(detail.get("distance", 0) / 1000, 1)
+    elevation_m = round(detail.get("total_elevation_gain", 0))
+    duration_sec = detail.get("elapsed_time", 0)
+    moving_sec = detail.get("moving_time", duration_sec)
+    avg_speed = round(detail.get("average_speed", 0) * 3.6, 1)
+    max_speed = round(detail.get("max_speed", 0) * 3.6, 1)
+    avg_hr = r0("average_heartrate")
+    max_hr = r0("max_heartrate")
+    avg_power = r0("average_watts")
+    max_power = r0("max_watts")
+    normalized_power = detail.get("weighted_average_watts")
+    avg_cadence = r0("average_cadence")
+    calories = r0("calories")
+
+    slug = f"{dt.strftime('%Y-%m-%d')}-{slugify(name)}"
+
+    gpx_xml = streams_to_gpx(streams, name)
+    if gpx_xml:
+        (GPX_DIR / f"{activity_id}.gpx").write_text(simplify_gpx(gpx_xml))
+
+    activity_json = {
+        "id": activity_id,
+        "name": name,
+        "date": dt.isoformat(),
+        "type": detail.get("type", "Ride"),
+        "distance_km": distance_km,
+        "elevation_gain_m": elevation_m,
+        "duration_seconds": round(duration_sec),
+        "moving_time_seconds": round(moving_sec),
+        "avg_speed_kmh": avg_speed,
+        "max_speed_kmh": max_speed,
+        "avg_hr": avg_hr,
+        "max_hr": max_hr,
+        "avg_power": avg_power,
+        "max_power": max_power,
+        "normalized_power": normalized_power,
+        "avg_cadence": avg_cadence,
+        "calories": calories,
+    }
+    activity_json.update(streams_to_profiles(streams))
+    (ACTIVITIES_DIR / f"{activity_id}.json").write_text(json.dumps(activity_json, indent=2))
+
+    duration_fmt = format_duration(duration_sec)
+    fm = [
+        "---",
+        f'title: "{title}"',
+        f"date: {dt.isoformat()}",
+        "type: cycling",
+        f'garmin_id: "{activity_id}"',
+        f"distance_km: {distance_km}",
+        f"elevation_m: {elevation_m}",
+        f'duration: "{duration_fmt}"',
+        f"avg_speed_kmh: {avg_speed}",
+    ]
+    if avg_hr:
+        fm.append(f"avg_hr: {avg_hr}")
+    if max_hr:
+        fm.append(f"max_hr: {max_hr}")
+    if avg_power:
+        fm.append(f"avg_power: {avg_power}")
+    if normalized_power:
+        fm.append(f"normalized_power: {normalized_power}")
+    if avg_cadence:
+        fm.append(f"avg_cadence: {avg_cadence}")
+    if calories:
+        fm.append(f"calories: {calories}")
+    fm += [
+        f'gpx_file: "/cycling/gpx/{activity_id}.gpx"',
+        "toc: false",
+        "showreadingtime: false",
+        "---",
+    ]
+    (CONTENT_DIR / f"{slug}.md").write_text("\n".join(fm) + "\n")
+
+    return {
+        "id": activity_id,
+        "name": name,
+        "date": dt.strftime("%Y-%m-%d"),
+        "distance_km": distance_km,
+        "elevation_gain_m": elevation_m,
+        "duration": duration_fmt,
+        "avg_speed_kmh": avg_speed,
+        "slug": slug,
+    }

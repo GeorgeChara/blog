@@ -2,3 +2,7 @@
 /resources/_gen/
 /.hugo_build.lock
 /content/_drafts/
+
+# Local Strava/Garmin credentials (never commit)
+scripts/garmin-sync/.env
+scripts/garmin-sync/.venv/
