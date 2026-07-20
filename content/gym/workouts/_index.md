@@ -81,9 +81,9 @@ layout: single
 <div class="card">
 <p class="h">Lift A</p>
 <table class="ex">
+<tr><td>Squat</td><td class="r">3 x 5</td></tr>
 <tr><td>Bench press</td><td class="r">3 x 5</td></tr>
 <tr><td><a href="https://www.youtube.com/shorts/Nqh7q3zDCoQ" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 5</td></tr>
-<tr><td><a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" rel="noopener">Romanian deadlift</a></td><td class="r">3 x 8</td></tr>
 <tr><td>Dips</td><td class="r">3 x max</td></tr>
 </table>
 </div>
@@ -103,9 +103,9 @@ layout: single
 <div class="callout"><b>Hit every rep, add weight next time.</b> 2.5kg on the bar lifts, 5kg on the deadlift. Miss reps and stay at the same weight until you get them.</div>
 <div class="card rules">
 <div class="rule"><span class="k">Rest</span><span class="v">2 to 3 minutes between the heavy sets. Warm up each lift with a couple of lighter sets first.</span></div>
-<div class="rule"><span class="k">Legs</span><span class="v">No squat rack, so they come from the deadlifts, the bike and the runs. Plenty for a lean, athletic build.</span></div>
+<div class="rule"><span class="k">Legs</span><span class="v">Squat one day, deadlift the other, never both heavy on the same day. The bike and runs do the rest.</span></div>
 <div class="rule"><span class="k">Back</span><span class="v">Rows on both days stand in for pull-ups. Add chin-ups once you get the bar.</span></div>
-<div class="rule"><span class="k">Recovery</span><span class="v">Keep the heavy deadlift day away from the day before your ride.</span></div>
+<div class="rule"><span class="k">Recovery</span><span class="v">Keep your heavy leg days, squat and deadlift, away from the day before your ride.</span></div>
 </div>
 
 <span class="note src">Sources: <a href="https://thefitness.wiki/routines/r-fitness-basic-beginner-routine/">r/Fitness Basic Beginner Routine</a>, <a href="https://www.strengthlog.com/strength-training-for-cyclists/">StrengthLog</a>, <a href="https://www.simongpt.co.uk/pt-strength-and-conditioning-coach-for-cyclists-and-endurance-athletes/">simongPT</a>.</span>
