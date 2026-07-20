@@ -1,12 +1,102 @@
 [
   {
-    "id": "test-essex-loop",
-    "name": "Essex Loop - Braintree Circuit",
-    "date": "2026-04-06",
-    "distance_km": 45.2,
-    "elevation_gain_m": 380,
-    "duration": "1h 36m",
-    "avg_speed_kmh": 24.3,
-    "slug": "2026-04-06-essex-loop"
+    "id": "23409886658",
+    "name": "Braintree Road Cycling",
+    "date": "2026-06-28",
+    "distance_km": 19.3,
+    "elevation_gain_m": 174,
+    "duration": "50m",
+    "avg_speed_kmh": 22.9,
+    "slug": "2026-06-28-braintree-road-cycling"
+  },
+  {
+    "id": "17151106484",
+    "name": "Compi\u00e8gne Road Cycling",
+    "date": "2024-09-28",
+    "distance_km": 117.0,
+    "elevation_gain_m": 761,
+    "duration": "5h 12m",
+    "avg_speed_kmh": 22.5,
+    "slug": "2024-09-28-compi\u00e8gne-road-cycling"
+  },
+  {
+    "id": "17143267264",
+    "name": "Compi\u00e8gne Road Cycling",
+    "date": "2024-09-27",
+    "distance_km": 5.8,
+    "elevation_gain_m": 15,
+    "duration": "18m",
+    "avg_speed_kmh": 18.2,
+    "slug": "2024-09-27-compi\u00e8gne-road-cycling"
+  },
+  {
+    "id": "17143266557",
+    "name": "Arras Road Cycling",
+    "date": "2024-09-27",
+    "distance_km": 117.4,
+    "elevation_gain_m": 936,
+    "duration": "6h 13m",
+    "avg_speed_kmh": 18.9,
+    "slug": "2024-09-27-arras-road-cycling"
+  },
+  {
+    "id": "17135121971",
+    "name": "Calais Road Cycling",
+    "date": "2024-09-26",
+    "distance_km": 124.8,
+    "elevation_gain_m": 942,
+    "duration": "5h 53m",
+    "avg_speed_kmh": 21.2,
+    "slug": "2024-09-26-calais-road-cycling"
+  },
+  {
+    "id": "17132466495",
+    "name": "Croydon Road Cycling",
+    "date": "2024-09-25",
+    "distance_km": 136.5,
+    "elevation_gain_m": 1011,
+    "duration": "6h 32m",
+    "avg_speed_kmh": 20.8,
+    "slug": "2024-09-25-croydon-road-cycling"
+  },
+  {
+    "id": "17090799373",
+    "name": "Braintree Road Cycling",
+    "date": "2024-09-21",
+    "distance_km": 50.1,
+    "elevation_gain_m": 388,
+    "duration": "1h 59m",
+    "avg_speed_kmh": 25.1,
+    "slug": "2024-09-21-braintree-road-cycling"
+  },
+  {
+    "id": "17032376785",
+    "name": "Braintree Road Cycling",
+    "date": "2024-09-14",
+    "distance_km": 103.9,
+    "elevation_gain_m": 653,
+    "duration": "3h 50m",
+    "avg_speed_kmh": 27.0,
+    "slug": "2024-09-14-braintree-road-cycling"
+  },
+  {
+    "id": "17015286220",
+    "name": "Braintree Road Cycling",
+    "date": "2024-09-12",
+    "distance_km": 18.9,
+    "elevation_gain_m": 161,
+    "duration": "43m",
+    "avg_speed_kmh": 26.1,
+    "slug": "2024-09-12-braintree-road-cycling"
+  },
+  {
+    "id": "17006481230",
+    "name": "Braintree Road Cycling",
+    "date": "2024-09-11",
+    "distance_km": 19.1,
+    "elevation_gain_m": 176,
+    "duration": "44m",
+    "avg_speed_kmh": 25.6,
+    "slug": "2024-09-11-braintree-road-cycling"
   }
 ]
