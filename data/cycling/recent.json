@@ -1,5 +1,15 @@
 [
   {
+    "id": "23669773691",
+    "name": "Braintree Road Cycling",
+    "date": "2026-07-20",
+    "distance_km": 19.3,
+    "elevation_gain_m": 181,
+    "duration": "48m",
+    "avg_speed_kmh": 23.8,
+    "slug": "2026-07-20-braintree-road-cycling"
+  },
+  {
     "id": "23409886658",
     "name": "Braintree Road Cycling",
     "date": "2026-06-28",
@@ -88,15 +98,5 @@
     "duration": "43m",
     "avg_speed_kmh": 26.1,
     "slug": "2024-09-12-braintree-road-cycling"
-  },
-  {
-    "id": "17006481230",
-    "name": "Braintree Road Cycling",
-    "date": "2024-09-11",
-    "distance_km": 19.1,
-    "elevation_gain_m": 176,
-    "duration": "44m",
-    "avg_speed_kmh": 25.6,
-    "slug": "2024-09-11-braintree-road-cycling"
   }
 ]
