@@ -1,0 +1,170 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time, .terminal-nav, .path-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
+
+  .km { --ink: #14181f; --blue: #4169E1; --dim: #8a94a6; --line: #e6e9f2; --faint: #dfe4f0;
+    font-family: var(--font-family-mono, monospace); color: var(--ink); }
+  .km-h1 { font-weight: 800; font-size: clamp(1.8em, 5vw, 2.6em); letter-spacing: -0.02em; margin: 0 0 0.15em; }
+  .km-sub { color: var(--dim); font-size: 0.92em; line-height: 1.6; max-width: 52ch; margin: 0 0 1.8em; }
+
+  .grid-wrap { position: relative; border: 1px solid var(--line); border-radius: 8px; padding: 1.3em 1.2em 1em; }
+  .badge { position: absolute; top: 1.1em; left: 1.1em; z-index: 2; background: #fff; border: 1px solid var(--blue); color: var(--blue);
+    font-weight: 700; font-size: 0.82em; padding: 0.2em 0.6em; letter-spacing: 0.03em; }
+  #dots { display: block; width: 100%; }
+  .frontier { color: var(--dim); font-size: 0.75em; text-align: right; margin-top: 0.5em; }
+
+  .curve-wrap { margin-top: 1.4em; }
+  .curve-lab { display: flex; justify-content: space-between; color: var(--dim); font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3em; }
+  #curve { display: block; width: 100%; height: 90px; }
+
+  .scrub-wrap { margin: 1.4em 0 0.4em; }
+  input[type=range].scrub { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 3px; background: var(--faint); outline: none; }
+  input[type=range].scrub::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--blue); border: 3px solid #fff; box-shadow: 0 1px 6px rgba(65,105,225,0.5); cursor: grab; }
+  input[type=range].scrub::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--blue); border: 3px solid #fff; cursor: grab; }
+  .ends { display: flex; justify-content: space-between; color: var(--dim); font-size: 0.72em; }
+
+  .tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6em; margin: 1.8em 0 0.6em; }
+  @media (max-width: 560px) { .tiles { grid-template-columns: repeat(2, 1fr); } .badge { font-size: 0.72em; } }
+  .tile { border: 1px solid var(--line); border-radius: 6px; padding: 0.7em 0.8em; }
+  .tile b { display: block; font-size: 1.3em; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .tile span { display: block; font-size: 0.68em; color: var(--dim); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.25em; }
+
+  .legend { color: var(--dim); font-size: 0.8em; margin-top: 1em; }
+  .backlink { font-size: 0.85em; margin-top: 2em; }
+  .backlink a { color: var(--blue); text-decoration: none; border-bottom: 1px solid #c5ccee; }
+</style>
+
+<div class="km">
+  <p class="km-h1">Every kilometre</p>
+  <p class="km-sub">Each dot is one kilometre you have ridden. Drag the slider to travel through your riding, and watch the map of your distance fill in.</p>
+
+  <div class="grid-wrap">
+    <span class="badge" id="badge">—</span>
+    <canvas id="dots"></canvas>
+    <div class="frontier"><span id="fKm">0</span> of <span id="tot">0</span> km</div>
+  </div>
+
+  <div class="curve-wrap">
+    <div class="curve-lab"><span>Elevation climbed</span><span>across distance</span></div>
+    <svg id="curve" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <polyline id="curveLine" fill="none" stroke="#4169E1" stroke-width="2" points="" vector-effect="non-scaling-stroke"/>
+      <polygon id="curveFill" fill="rgba(65,105,225,0.08)" points=""/>
+      <line id="curveGuide" x1="0" y1="0" x2="0" y2="100" stroke="#c5ccee" stroke-width="1" vector-effect="non-scaling-stroke"/>
+      <circle id="curveDot" r="4" fill="#4169E1"/>
+    </svg>
+  </div>
+
+  <div class="scrub-wrap">
+    <input type="range" class="scrub" id="scrub" min="0" max="100" value="100" step="0.1">
+    <div class="ends"><span id="startDate">—</span><span id="endDate">now</span></div>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><b id="tKm">0</b><span>km ridden</span></div>
+    <div class="tile"><b id="tElev">0</b><span>m climbed</span></div>
+    <div class="tile"><b id="tEver">0</b><span>Everests</span></div>
+    <div class="tile"><b id="tRides">0</b><span>rides</span></div>
+    <div class="tile"><b id="tLvl">0</b><span>rider level</span></div>
+  </div>
+
+  <p class="legend">Blue = ridden, grey = still to come. The curve is your total climbing stacking up as the kilometres add on.</p>
+  <p class="backlink"><a href="/cycling/">&larr; back to /cycling</a></p>
+</div>
+
+{{ $rides := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+{{ $rides = $rides | append (dict "date" $a.date "km" $a.distance_km "elev" $a.elevation_gain_m) }}
+{{ end }}
+<script id="km-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
+
+<script>
+(function() {
+  var data = JSON.parse(document.getElementById('km-data').textContent);
+  if (typeof data === 'string') data = JSON.parse(data);
+  data.forEach(function(r) { r.d = new Date(r.date); });
+  data.sort(function(a, b) { return a.d - b.d; });
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  // ---- build cumulative segments (one per ride) ----
+  var segs = [], cum = 0, cumE = 0;
+  data.forEach(function(r) {
+    var d = +r.km || 0, e = +r.elev || 0;
+    segs.push({ s: cum, e: cum + d, dist: d || 1, elev: e, eb: cumE, date: r.d });
+    cum += d; cumE += e;
+  });
+  var TOTAL = Math.round(cum), TOTELEV = cumE;
+  var T = function(L) { return L <= 1 ? 0 : Math.round(250 * Math.pow(L - 1, 1.6)); };
+
+  document.getElementById('tot').textContent = TOTAL.toLocaleString();
+  document.getElementById('startDate').textContent = MON[segs[0].date.getMonth()] + ' ' + String(segs[0].date.getFullYear()).slice(2);
+
+  // ---- dot grid ----
+  var cvs = document.getElementById('dots'), ctx = cvs.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2), cw = 0, cols = 0, gap = 0, sq = 0, rows = 0;
+  function layoutGrid() {
+    cw = cvs.parentNode.clientWidth - 2;
+    cols = cw < 520 ? 34 : 56;
+    gap = cw / cols; sq = Math.max(2, gap * 0.42);
+    rows = Math.ceil(TOTAL / cols);
+    var chh = rows * gap + gap;
+    cvs.style.height = chh + 'px';
+    cvs.width = cw * dpr; cvs.height = chh * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function drawGrid(filled) {
+    ctx.clearRect(0, 0, cw, cvs.height);
+    for (var i = 0; i < TOTAL; i++) {
+      var col = i % cols, row = (i / cols) | 0;
+      var x = col * gap + gap / 2 - sq / 2, y = row * gap + gap / 2 - sq / 2;
+      ctx.fillStyle = i < filled ? '#4169E1' : '#dfe4f0';
+      ctx.fillRect(x, y, sq, sq);
+    }
+  }
+
+  // ---- curve (elevation vs km) ----
+  var curveLine = document.getElementById('curveLine'), curveFill = document.getElementById('curveFill');
+  var curveDot = document.getElementById('curveDot'), curveGuide = document.getElementById('curveGuide');
+  function cx(km) { return TOTAL ? km / TOTAL * 1000 : 0; }
+  function cy(el) { return TOTELEV ? 100 - el / TOTELEV * 96 - 2 : 98; }
+  (function buildCurve() {
+    var pts = '0,' + cy(0).toFixed(1);
+    segs.forEach(function(g) { pts += ' ' + cx(g.e).toFixed(1) + ',' + cy(g.eb + g.elev).toFixed(1); });
+    curveLine.setAttribute('points', pts);
+    curveFill.setAttribute('points', '0,100 ' + pts.split(' ').join(' ') + ' 1000,100');
+  })();
+  function elevAt(km) {
+    var g = segs.find(function(s) { return km <= s.e; }) || segs[segs.length - 1];
+    var frac = g.dist ? Math.max(0, Math.min(1, (km - g.s) / g.dist)) : 1;
+    return { elev: g.eb + frac * g.elev, seg: g };
+  }
+
+  // ---- scrub ----
+  function scrubTo(km) {
+    km = Math.max(0, Math.min(TOTAL, km));
+    var info = elevAt(km), elev = info.elev, seg = info.seg;
+    var rides = 0; for (var i = 0; i < segs.length; i++) { if (segs[i].s < km - 0.001) rides++; }
+    var xp = Math.round(km + elev / 10 + rides * 10);
+    var lvl = 1; while (xp >= T(lvl + 1)) lvl++;
+    document.getElementById('tKm').textContent = Math.round(km).toLocaleString();
+    document.getElementById('tElev').textContent = Math.round(elev).toLocaleString();
+    document.getElementById('tEver').textContent = (elev / 8849).toFixed(2);
+    document.getElementById('tRides').textContent = rides;
+    document.getElementById('tLvl').textContent = lvl;
+    document.getElementById('fKm').textContent = Math.round(km).toLocaleString();
+    document.getElementById('badge').textContent = MON[seg.date.getMonth()] + ' ' + seg.date.getFullYear();
+    drawGrid(Math.floor(km));
+    var mx = cx(km), my = cy(elev);
+    curveDot.setAttribute('cx', mx); curveDot.setAttribute('cy', my);
+    curveGuide.setAttribute('x1', mx); curveGuide.setAttribute('x2', mx);
+  }
+
+  var scrub = document.getElementById('scrub');
+  scrub.addEventListener('input', function() { scrubTo(scrub.value / 100 * TOTAL); });
+  function resize() { layoutGrid(); scrubTo(scrub.value / 100 * TOTAL); }
+  window.addEventListener('resize', resize);
+  layoutGrid();
+  scrubTo(TOTAL);
+})();
+</script>
+{{ end }}
