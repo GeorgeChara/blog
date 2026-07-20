@@ -6,3 +6,5 @@
 # Local Strava/Garmin credentials (never commit)
 scripts/garmin-sync/.env
 scripts/garmin-sync/.venv/
+
+scripts/garmin-sync/__pycache__/
