@@ -95,7 +95,20 @@
   var dist = (d.distance_profile || []).map(function(x) { return x == null ? '' : x.toFixed(1); });
   var mono = { family: 'monospace', size: 11 };
 
-  // Combined ride profile: elevation backdrop + power & heart rate (speed/cadence toggle)
+  // Moving-average smoothing so overlaid lines read as trends, not noise
+  function smooth(a, w) {
+    if (!a) return a;
+    w = w || 6; var half = Math.floor(w / 2), out = [];
+    for (var i = 0; i < a.length; i++) {
+      var s = 0, n = 0;
+      for (var j = i - half; j <= i + half; j++) { if (j >= 0 && j < a.length && a[j] != null) { s += a[j]; n++; } }
+      out.push(n ? s / n : null);
+    }
+    return out;
+  }
+
+  // Combined ride profile: elevation backdrop + power, heart rate, speed, cadence
+  var mob = window.innerWidth < 600;
   var pc = document.getElementById('profileChart');
   if (pc) {
     var ds = [];
@@ -103,30 +116,30 @@
     if (d.elevation_profile) {
       var ev = d.elevation_profile.filter(function(x) { return x != null; });
       var elevMax = ev.length ? Math.max.apply(null, ev) : 100;
-      ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.7)', backgroundColor: 'rgba(214,207,192,0.4)', fill: true, borderWidth: 1, order: 5 });
-      scales.yElev = { display: false, min: 0, max: elevMax * 2.6 };
+      ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.6)', backgroundColor: 'rgba(214,207,192,0.32)', fill: true, borderWidth: 1, order: 5 });
+      scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
     }
     if (d.power_profile) {
-      ds.push({ label: 'Power', data: d.power_profile, yAxisID: 'yPower', borderColor: '#d98a2b', backgroundColor: 'transparent', order: 1 });
+      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#d98a2b', backgroundColor: 'transparent', order: 1 });
       scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
     }
     if (d.hr_profile) {
-      ds.push({ label: 'Heart rate', data: d.hr_profile, yAxisID: 'yHr', borderColor: '#e05353', backgroundColor: 'transparent', order: 2 });
-      scales.yHr = { position: 'right', title: { display: true, text: 'bpm', font: mono }, ticks: { font: mono }, grid: { display: false } };
+      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e05353', backgroundColor: 'transparent', order: 2 });
+      scales.yHr = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.speed_profile) {
-      ds.push({ label: 'Speed', data: d.speed_profile, yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', hidden: !!d.power_profile, order: 3 });
+      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 3 });
       scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.cadence_profile) {
-      ds.push({ label: 'Cadence', data: d.cadence_profile, yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', hidden: true, order: 4 });
+      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4 });
       scales.yCad = { display: false, position: 'right', beginAtZero: true };
     }
     new Chart(pc, {
       type: 'line',
       data: { labels: dist, datasets: ds },
       options: {
-        responsive: true, aspectRatio: 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
+        responsive: true, aspectRatio: mob ? 1.15 : 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
         plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
           tooltip: { callbacks: { label: function(c) {
             if (c.parsed.y == null) return null;
@@ -134,7 +147,7 @@
             var u = id === 'yPower' ? ' W' : id === 'yHr' ? ' bpm' : id === 'ySpeed' ? ' km/h' : id === 'yCad' ? ' rpm' : ' m';
             return c.dataset.label + ': ' + Math.round(c.parsed.y) + u;
           } } } },
-        elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } },
+        elements: { point: { radius: 0 }, line: { tension: 0.4, borderWidth: 1.6 } },
         scales: scales
       }
     });

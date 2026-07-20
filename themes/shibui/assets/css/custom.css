@@ -1,6 +1,14 @@
 /* Hide taxonomy tag links on pages (tags stay in frontmatter for filtering) */
 .terms-list { display: none; }
 
+/* Mobile fix: the 64ch container is centred with a definite max, so it overflows
+   narrow screens instead of shrinking. Cap it at the viewport width. */
+:root { --container-width: min(64ch, 100%); }
+@media (max-width: 600px) {
+  html { margin-left: 0; }
+  body { max-width: 100vw; overflow-x: hidden; }
+}
+
 /* Keyboard key sprites */
 .key-sprite {
   display: inline-block;

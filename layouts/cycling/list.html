@@ -97,6 +97,7 @@
   var speed = keys.map(function(k) { var m = months[k]; return m.spN ? +(m.spSum / m.spN).toFixed(1) : null; });
   var power = keys.map(function(k) { var m = months[k]; return m.pwN ? Math.round(m.pwSum / m.pwN) : null; });
   var mono = { family: 'monospace' };
+  var mob = window.innerWidth < 600;
 
   new Chart(el, {
     data: {
@@ -108,7 +109,7 @@
       ]
     },
     options: {
-      responsive: true, interaction: { intersect: false, mode: 'index' },
+      responsive: true, aspectRatio: mob ? 1.1 : 2.2, interaction: { intersect: false, mode: 'index' },
       plugins: {
         legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
         tooltip: { callbacks: { label: function(c) {
