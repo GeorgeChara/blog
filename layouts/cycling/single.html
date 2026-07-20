@@ -54,9 +54,9 @@
 {{ $activityData := index hugo.Data.cycling.activities $activityId }}
 {{ if $activityData }}
 
-{{ if $activityData.power_profile }}
-<p class="cy-h2">Power and elevation</p>
-<div class="card"><canvas id="powerElevChart" height="90"></canvas></div>
+{{ if or $activityData.elevation_profile $activityData.power_profile $activityData.speed_profile }}
+<p class="cy-h2">Ride profile</p>
+<div class="card"><canvas id="profileChart"></canvas></div>
 {{ end }}
 
 {{ if $activityData.power_zones }}
@@ -65,21 +65,6 @@
   <div class="donut"><canvas id="zonesChart"></canvas></div>
   <div class="zlegend" id="zonesLegend"></div>
 </div>
-{{ end }}
-
-{{ if $activityData.speed_profile }}
-<p class="cy-h2">Speed</p>
-<div class="card"><canvas id="speedChart" height="55"></canvas></div>
-{{ end }}
-
-{{ if $activityData.hr_profile }}
-<p class="cy-h2">Heart rate</p>
-<div class="card"><canvas id="hrChart" height="55"></canvas></div>
-{{ end }}
-
-{{ if $activityData.cadence_profile }}
-<p class="cy-h2">Cadence</p>
-<div class="card"><canvas id="cadenceChart" height="55"></canvas></div>
 {{ end }}
 
 {{ end }}
@@ -110,48 +95,50 @@
   var dist = (d.distance_profile || []).map(function(x) { return x == null ? '' : x.toFixed(1); });
   var mono = { family: 'monospace', size: 11 };
 
-  function line(id, data, color, yLabel) {
-    var el = document.getElementById(id); if (!el) return;
-    new Chart(el, {
+  // Combined ride profile: elevation backdrop + power & heart rate (speed/cadence toggle)
+  var pc = document.getElementById('profileChart');
+  if (pc) {
+    var ds = [];
+    var scales = { x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } } };
+    if (d.elevation_profile) {
+      var ev = d.elevation_profile.filter(function(x) { return x != null; });
+      var elevMax = ev.length ? Math.max.apply(null, ev) : 100;
+      ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.7)', backgroundColor: 'rgba(214,207,192,0.4)', fill: true, borderWidth: 1, order: 5 });
+      scales.yElev = { display: false, min: 0, max: elevMax * 2.6 };
+    }
+    if (d.power_profile) {
+      ds.push({ label: 'Power', data: d.power_profile, yAxisID: 'yPower', borderColor: '#d98a2b', backgroundColor: 'transparent', order: 1 });
+      scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
+    }
+    if (d.hr_profile) {
+      ds.push({ label: 'Heart rate', data: d.hr_profile, yAxisID: 'yHr', borderColor: '#e05353', backgroundColor: 'transparent', order: 2 });
+      scales.yHr = { position: 'right', title: { display: true, text: 'bpm', font: mono }, ticks: { font: mono }, grid: { display: false } };
+    }
+    if (d.speed_profile) {
+      ds.push({ label: 'Speed', data: d.speed_profile, yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', hidden: !!d.power_profile, order: 3 });
+      scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
+    }
+    if (d.cadence_profile) {
+      ds.push({ label: 'Cadence', data: d.cadence_profile, yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', hidden: true, order: 4 });
+      scales.yCad = { display: false, position: 'right', beginAtZero: true };
+    }
+    new Chart(pc, {
       type: 'line',
-      data: { labels: dist, datasets: [{ data: data, borderColor: color, backgroundColor: color + '22', fill: true, spanGaps: true }] },
+      data: { labels: dist, datasets: ds },
       options: {
-        responsive: true, interaction: { intersect: false, mode: 'index' },
-        plugins: { legend: { display: false } },
+        responsive: true, aspectRatio: 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
+        plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
+          tooltip: { callbacks: { label: function(c) {
+            if (c.parsed.y == null) return null;
+            var id = c.dataset.yAxisID;
+            var u = id === 'yPower' ? ' W' : id === 'yHr' ? ' bpm' : id === 'ySpeed' ? ' km/h' : id === 'yCad' ? ' rpm' : ' m';
+            return c.dataset.label + ': ' + Math.round(c.parsed.y) + u;
+          } } } },
         elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } },
-        scales: {
-          x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } },
-          y: { title: { display: true, text: yLabel, font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } }
-        }
+        scales: scales
       }
     });
   }
-
-  // Power + elevation combined (dual axis)
-  var pe = document.getElementById('powerElevChart');
-  if (pe) {
-    new Chart(pe, {
-      type: 'line',
-      data: { labels: dist, datasets: [
-        { label: 'Power', data: d.power_profile, borderColor: '#d98a2b', backgroundColor: '#d98a2b22', fill: true, yAxisID: 'y', spanGaps: true },
-        { label: 'Elevation', data: d.elevation_profile, borderColor: '#c9c2b4', backgroundColor: '#c9c2b433', fill: true, yAxisID: 'y1', spanGaps: true }
-      ]},
-      options: {
-        responsive: true, interaction: { intersect: false, mode: 'index' },
-        plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12 } } },
-        elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } },
-        scales: {
-          x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } },
-          y: { position: 'left', title: { display: true, text: 'Watts', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } },
-          y1: { position: 'right', title: { display: true, text: 'm', font: mono }, ticks: { font: mono }, grid: { display: false } }
-        }
-      }
-    });
-  }
-
-  line('speedChart', d.speed_profile, '#4169E1', 'km/h');
-  line('hrChart', d.hr_profile, '#e05353', 'bpm');
-  line('cadenceChart', d.cadence_profile, '#3aa06a', 'rpm');
 
   // Power zones donut
   var zc = document.getElementById('zonesChart');
