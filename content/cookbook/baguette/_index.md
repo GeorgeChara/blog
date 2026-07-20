@@ -1,0 +1,141 @@
+---
+title: "Baguette"
+toc: false
+showreadingtime: false
+layout: single
+tags: [freezer]
+---
+
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  h2::before, h3::before { content: none !important; }
+  img:hover { transform: none !important; box-shadow: none !important; }
+  img { border-radius: 8px !important; border: none !important; padding: 0 !important; }
+  details { margin: -1em 0 0 0; padding: 0; }
+  details summary {
+    color: #888;
+    font-size: 0.8em;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+  }
+  details summary:hover { color: #555; }
+  details[open] { margin-bottom: 0.5em; }
+  .content pre { color: #000; }
+
+  /* Inline row: "▶ show photo  |  ↳ watch: xxx" */
+  .step-media { margin: -0.8em 0 0 0; font-size: 0.8em; color: #888; }
+  .step-media-row { display: flex; align-items: center; gap: 0.4em; line-height: 1; }
+  .step-link { cursor: pointer; user-select: none; color: #888; }
+  .step-link:hover { color: #555; }
+  .step-link.photo-link::before { content: '▶ '; font-size: 0.7em; }
+  .step-link.photo-link.open::before { content: '▼ '; font-size: 0.7em; }
+  .step-link.watch-link::before { content: '↳ '; }
+  .step-media-sep { color: #ccc; }
+  .media-content { display: none; margin-top: 0.5em; margin-bottom: 0.5em; }
+  .media-content.open { display: block; }
+  .media-content iframe { width: 100%; aspect-ratio: 16/9; display: block; }
+
+  /* Solo video (no photo on same step) */
+  details.video-embed { margin-top: -0.8em; }
+  details.video-embed > summary { list-style: none; }
+  details.video-embed > summary::-webkit-details-marker { display: none; }
+  details.video-embed > summary::before { content: '↳ '; }
+  details.video-embed iframe { margin-top: 0.5em; display: block; }
+
+</style>
+
+<h1>Baguette</h1>
+<p style="color: #888; margin-top: -0.5em;">recipe v2.1, 76% hydration, 25 min prep, 17 min bake</p>
+
+<img loading="lazy" src="/images/baguette/header.webp" alt="Baguette">
+
+## Ingredients
+
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Makes 2 baguettes</span>
+
+flour    420g
+water    320ml
+salt     9g
+yeast    2g
+</pre>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-bottom: 1.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use strong white bread flour. It makes a difference.</span>
+
+## Recipe
+
+**1.** Mix until no dry patches of flour are visible:
+
+{{< ingr "flour=420g, water=320ml, salt=9g, yeast=2g" >}}
+
+It should look shaggy at this point, close to porridge consistency. Cover and let rest for 30 mins.
+
+**2.** One set of stretch and fold. Cover and let rest for 30 mins.
+
+<div class="step-media">
+  <div class="step-media-row">
+    <span class="step-link photo-link" onclick="toggleMedia('s2-photo',this)">show photo</span>
+    <span class="step-media-sep">|</span>
+    <span class="step-link watch-link" onclick="toggleMedia('s2-video',this)">watch: stretch and fold</span>
+  </div>
+  <div class="media-content" id="s2-photo"><img loading="lazy" src="/images/baguette/foldandcoil.webp" alt="Fold and coil"></div>
+  <div class="media-content" id="s2-video"><iframe src="https://www.youtube.com/embed/mwtTZK7_t08?mute=1" frameborder="0" allowfullscreen></iframe></div>
+</div>
+
+**3.** Two sets of coil fold 30 mins apart. Cover and leave in fridge overnight.
+<details class="video-embed">
+<summary>watch: coil fold</summary>
+<iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/RcJWjGeoZbc?mute=1" frameborder="0" allowfullscreen></iframe>
+</details>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Open it out sideways too. Otherwise it gets stiff under its own tension, like folding paper too many times.</span>
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Baking across multiple days? Use the <a href="/cookbook/baguette/calculator/" style="color:#888;">dough storage calculator</a>.</span>
+
+**4.** Flour the work surface, turn out the dough and dust the top. Divide into two, shape into rough baguettes, cover and rest for 15 mins.
+
+<details>
+<summary>show photo</summary>
+
+![Shaped dough](/images/baguette/shaped-dough.webp)
+
+</details>
+
+**5. Final shape:** Flatten, fold and pinch into baguettes to ensure they are tight. This will allow them to spring in the oven. Place on tray, cover with tea towel and prove until 1.5x in size.
+
+<div class="step-media">
+  <div class="step-media-row">
+    <span class="step-link photo-link" onclick="toggleMedia('s5-photo',this)">show photo</span>
+    <span class="step-media-sep">|</span>
+    <span class="step-link watch-link" onclick="toggleMedia('s5-video',this)">watch: shaping baguettes</span>
+  </div>
+  <div class="media-content" id="s5-photo"><img loading="lazy" src="/images/baguette/baguettes-in-tray.webp" alt="Baguettes in tray"></div>
+  <div class="media-content" id="s5-video"><iframe src="https://www.youtube.com/embed/IRDL3lPQSkc?start=57&mute=1" frameborder="0" allowfullscreen></iframe></div>
+</div>
+
+**6.** Preheat oven to 230°C with an empty metal tray on the bottom rack.
+
+**7.** Score baguettes with 3/4 lines down the middle using a sharp blade.
+
+<details>
+<summary>show photo</summary>
+
+![Scored baguettes](/images/baguette/scored-baguettes.webp)
+
+</details>
+
+**8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. **Bake at 230°C for 10 mins then 210°C for 7 mins**.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: bake until just set but still pale, cool fully, then freeze in a bag.<br>Reheat: from frozen into a hot 230°C oven with a splash of water for steam, 14–18 mins until golden.<br>Keeps: 6–8 weeks frozen.</span>
+
+<script>
+function toggleMedia(id, el) {
+  const wrap = el.closest('.step-media');
+  const target = document.getElementById(id);
+  const isOpen = target.classList.contains('open');
+  wrap.querySelectorAll('.media-content').forEach(c => c.classList.remove('open'));
+  wrap.querySelectorAll('.step-link').forEach(l => l.classList.remove('open'));
+  if (!isOpen) { target.classList.add('open'); el.classList.add('open'); }
+}
+</script>

@@ -26,17 +26,21 @@ name = "George Charalambous"
 
 [menu]
   [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
+    name = "Dev"
+    url = "/dev/"
     weight = 1
   [[menu.main]]
-    name = "Baguette"
-    url = "/baguette/"
+    name = "Cookbook"
+    url = "/cookbook/"
     weight = 2
+  [[menu.main]]
+    name = "Gym"
+    url = "/gym/"
+    weight = 3
   [[menu.main]]
     name = "Cycling"
     url = "/cycling/"
-    weight = 3
+    weight = 4
 
 [build]
   writeStats = true
@@ -46,3 +50,6 @@ name = "George Charalambous"
   expiryDate = ['expiryDate']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
+
+[minify]
+  minifyOutput = true

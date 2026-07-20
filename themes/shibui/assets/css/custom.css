@@ -1,3 +1,6 @@
+/* Hide taxonomy tag links on pages (tags stay in frontmatter for filtering) */
+.terms-list { display: none; }
+
 /* Keyboard key sprites */
 .key-sprite {
   display: inline-block;
