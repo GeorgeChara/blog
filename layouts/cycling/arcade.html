@@ -4,26 +4,19 @@
   .time, .terminal-nav, .path-nav { display: none; }
   h2::before, h3::before { content: none !important; }
 
-  .arc { --scr: #0a1524; --ph: #bfe6ff; --ph2: #7fc4ff; --ok: #56d98a; --hot: #ff7a52; --dim: #4f7196; --gold: #ffce54;
+  .arc { --ph: #1a2030; --ph2: #4169E1; --ok: #4169E1; --hot: #4169E1; --dim: #98a2b4; --gold: #4169E1;
     width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
-    background: #02060d; padding: 5vh 4vw 8vh; font-family: var(--font-family-mono, monospace);
+    background: #eef2f8; padding: 5vh 4vw 8vh; font-family: var(--font-family-mono, monospace);
     display: flex; justify-content: center;
     --color-text-primary: var(--ph);
   }
   .crt {
-    position: relative; width: 100%; max-width: 720px; background:
-      radial-gradient(120% 120% at 50% 0%, #12233d 0%, #0a1524 55%, #060f1c 100%);
-    border-radius: 14px; padding: 2.2em 2em 2.4em;
-    color: var(--ph); text-shadow: 0 0 6px rgba(120,190,255,0.45);
-    box-shadow: 0 0 0 2px #14243c, 0 0 60px rgba(60,130,220,0.25), 0 24px 60px rgba(0,0,0,0.6);
+    position: relative; width: 100%; max-width: 720px; background: #ffffff;
+    border: 1px solid #e2e7f1; border-radius: 12px; padding: 2.2em 2em 2.4em;
+    color: var(--ph);
+    box-shadow: 0 12px 44px rgba(30,50,90,0.10);
     overflow: hidden; font-size: 0.92em; line-height: 1.7;
-    animation: flick 5s infinite;
   }
-  .crt::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 3;
-    background: repeating-linear-gradient(0deg, rgba(0,10,20,0.18) 0 1px, transparent 1px 3px); }
-  .crt::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 3; border-radius: 14px;
-    box-shadow: inset 0 0 140px rgba(0,0,0,0.55); }
-  @keyframes flick { 0%,97%,100% { opacity: 1; } 98% { opacity: 0.94; } 99% { opacity: 0.99; } }
 
   .crt .scr { position: relative; z-index: 2; white-space: pre-wrap; }
   .boot { color: var(--dim); }
@@ -32,16 +25,16 @@
 
   .sheet { opacity: 0; transition: opacity 0.5s ease; }
   .sheet.on { opacity: 1; }
-  .hr { color: #27415f; letter-spacing: 0.02em; }
+  .hr { color: #dce2ee; letter-spacing: 0.02em; }
   .k { color: var(--ph2); }
   .bar { color: var(--hot); letter-spacing: 1px; }
-  .bar .off { color: #223a56; }
+  .bar .off { color: #d6dce8; }
   .v2 { color: var(--ph); }
   .v { color: var(--ph); margin-left: auto; }
   .vd { color: var(--dim); }
   .hdr { color: var(--gold); }
-  .name { color: #fff; font-weight: bold; }
-  .lock { color: #3a5a7c; }
+  .name { color: #14181f; font-weight: bold; }
+  .lock { color: #aab2c2; }
   .spark { color: var(--ph2); letter-spacing: 1px; font-size: 1.1em; }
   .cur { color: var(--ph); animation: blink 1.05s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
@@ -144,7 +137,7 @@
   L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
   L.push('  <span class="hdr">MONTHLY OUTPUT</span>  <span class="spark">' + spark + '</span>');
   L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
-  L.push('  <span class="hdr">INVENTORY</span>');
+  L.push('  <span class="hdr">ACHIEVEMENTS</span>');
   var inv = '';
   achievements.forEach(function(a, i) {
     var cell = (a[1] ? '<span class="ok">[✓]</span> ' + a[0] : '<span class="lock">[ ] ' + a[0] + '</span>');
@@ -153,7 +146,7 @@
   });
   if (inv) L.push(inv);
   L.push('<span class="hr">╠' + '═'.repeat(42) + '╣</span>');
-  L.push('  <span class="hot">! QUEST</span>  reach EDDINGTON ' + (E + 1) + ' — ride ≥' + (E + 1) + 'km');
+  L.push('  <span class="hot">! QUEST</span>  reach EDDINGTON ' + (E + 1) + ': ride ≥' + (E + 1) + 'km');
   L.push('           on ' + needDays + ' more day' + (needDays === 1 ? '' : 's') + '  <span class="vd">(now E' + E + ')</span>');
   L.push('<span class="hr">╚' + '═'.repeat(42) + '╝</span>');
 
