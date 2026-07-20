@@ -85,7 +85,7 @@
   }).addTo(map);
   new L.GPX('{{ .Params.gpx_file }}', {
     async: true,
-    polyline_options: { color: '#d98a2b', weight: 3, opacity: 0.85 },
+    polyline_options: { color: '#2b7fd9', weight: 3, opacity: 0.85 },
     marker_options: { startIconUrl: null, endIconUrl: null, shadowUrl: null, wptIconUrls: { '': null } }
   }).on('loaded', function(e) { map.fitBounds(e.target.getBounds(), { padding: [20, 20] }); }).addTo(map);
 
@@ -120,7 +120,7 @@
       scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
     }
     if (d.power_profile) {
-      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#d98a2b', backgroundColor: 'transparent', order: 1 });
+      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#2b7fd9', backgroundColor: 'transparent', order: 1 });
       scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
     }
     if (d.hr_profile) {

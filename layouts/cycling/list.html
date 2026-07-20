@@ -36,6 +36,7 @@
 
 <p class="cy-h1">Cycling</p>
 <p class="cy-sub">Rides tracked with Garmin, synced automatically after every ride.</p>
+<p style="margin:-1em 0 1.6em 0; display:flex; gap:0.5em; flex-wrap:wrap;"><a href="/cycling/progress/" style="display:inline-block;font-size:0.85em;color:#fff;background:#2b7fd9;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">🏆 Progress &amp; achievements &rarr;</a><a href="/cycling/story/" style="display:inline-block;font-size:0.85em;color:#2b7fd9;background:#eef4fb;border:1px solid #cfe3f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">🎢 The ride so far &rarr;</a></p>
 
 {{ with $summary }}
 <div class="stats">
@@ -103,7 +104,7 @@
     data: {
       labels: labels,
       datasets: [
-        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(217,138,43,0.25)', borderColor: '#d98a2b', borderWidth: 1, borderRadius: 3 },
+        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(43,127,217,0.25)', borderColor: '#2b7fd9', borderWidth: 1, borderRadius: 3 },
         { type: 'line', label: 'Avg speed', data: speed, yAxisID: 'ySpeed', order: 1, borderColor: '#4169E1', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 },
         { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c0392b', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, borderDash: [4, 3], pointRadius: 3 }
       ]

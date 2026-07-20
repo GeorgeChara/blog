@@ -1,0 +1,324 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  .terminal-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
+
+  .pg { --amber: #2b7fd9; --line: #e5decf; --soft: #f2efe8; --ink: #000; --mut: #888; }
+  .pg-h1 { font-weight: bold; font-size: 1.5em; margin: 0 0 0.15em 0; color: var(--ink); }
+  .pg-sub { color: var(--mut); font-size: 0.9em; margin: 0 0 1.6em 0; }
+  .pg-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.7em 0; color: var(--ink); }
+  .pg-note { color: var(--mut); font-size: 0.8em; margin: 0.2em 0 0.9em 0; }
+
+  /* Level hero */
+  .level-card { border: 1px solid var(--line); border-radius: 6px; padding: 1.1em 1.2em; background: linear-gradient(180deg, #eef4fb, #fff); }
+  .level-top { display: flex; align-items: baseline; gap: 0.6em; flex-wrap: wrap; }
+  .level-num { font-size: 2.4em; font-weight: bold; line-height: 1; color: var(--amber); font-variant-numeric: tabular-nums; }
+  .level-title { font-size: 1.15em; font-weight: bold; }
+  .level-xp { margin-left: auto; color: var(--mut); font-size: 0.82em; font-variant-numeric: tabular-nums; }
+  .bar { height: 12px; background: var(--soft); border-radius: 6px; margin-top: 0.8em; overflow: hidden; }
+  .bar > span { display: block; height: 100%; background: linear-gradient(90deg, #5aa0ea, var(--amber)); border-radius: 6px; }
+  .level-next { color: var(--mut); font-size: 0.8em; margin-top: 0.5em; }
+
+  .grid { display: grid; gap: 0.6em; }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 560px) { .g3, .g4 { grid-template-columns: repeat(2, 1fr); } }
+
+  .tile { border: 1px solid var(--line); border-radius: 4px; padding: 0.7em 0.85em; }
+  .tile .v { font-weight: bold; font-size: 1.15em; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .tile .l { display: block; font-size: 0.68em; color: #999; margin-top: 0.2em; text-transform: uppercase; letter-spacing: 0.04em; }
+  .tile .s { display: block; font-size: 0.72em; color: var(--amber); margin-top: 0.35em; }
+
+  /* Rings */
+  .rings { display: flex; gap: 1.4em; flex-wrap: wrap; }
+  .ring { display: flex; align-items: center; gap: 0.8em; border: 1px solid var(--line); border-radius: 6px; padding: 0.8em 1em; flex: 1; min-width: 200px; }
+  .ring svg { flex: none; }
+  .ring .rt { font-size: 0.72em; color: #999; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ring .rv { font-weight: bold; font-size: 1.1em; font-variant-numeric: tabular-nums; }
+  .ring .rn { font-size: 0.76em; color: var(--mut); margin-top: 0.2em; }
+
+  /* Badges */
+  .badges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; }
+  @media (max-width: 560px) { .badges { grid-template-columns: repeat(2, 1fr); } }
+  .badge { border: 1px solid var(--line); border-radius: 6px; padding: 0.75em 0.6em; text-align: center; }
+  .badge.locked { opacity: 0.4; filter: grayscale(1); }
+  .badge .bi { font-size: 1.7em; line-height: 1; }
+  .badge .bn { font-weight: bold; font-size: 0.8em; margin-top: 0.35em; }
+  .badge .bd { font-size: 0.68em; color: var(--mut); margin-top: 0.2em; line-height: 1.35; }
+
+  /* Eddington */
+  .edd { display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 6px; padding: 1em 1.1em; }
+  .edd-num { font-size: 2.6em; font-weight: bold; color: var(--amber); line-height: 1; font-variant-numeric: tabular-nums; }
+  .edd-txt { font-size: 0.85em; }
+
+  /* Calendar heatmap */
+  .cal-wrap { border: 1px solid var(--line); border-radius: 6px; padding: 1em 1.1em; overflow-x: auto; }
+  .cal-head { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.7em; }
+  .cal-years button { font-family: inherit; font-size: 0.78em; border: 1px solid var(--line); background: #fff; border-radius: 4px; padding: 0.2em 0.6em; cursor: pointer; color: var(--mut); }
+  .cal-years button.on { background: var(--amber); color: #fff; border-color: var(--amber); }
+  .cal { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 12px); gap: 3px; }
+  .cal i { width: 12px; height: 12px; border-radius: 2px; background: var(--soft); }
+  .cal-legend { display: flex; align-items: center; gap: 0.4em; font-size: 0.72em; color: var(--mut); margin-top: 0.7em; }
+  .cal-legend i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+
+  .equiv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
+  @media (max-width: 560px) { .equiv { grid-template-columns: 1fr; } }
+  .eq { border: 1px solid var(--line); border-radius: 6px; padding: 0.9em 1em; }
+  .eq .eh { font-size: 0.72em; color: #999; text-transform: uppercase; letter-spacing: 0.04em; }
+  .eq .ev { font-weight: bold; font-size: 1.3em; margin: 0.2em 0; font-variant-numeric: tabular-nums; }
+  .eq .eb { font-size: 0.78em; color: var(--mut); line-height: 1.4; }
+  .eq .prog { height: 8px; background: var(--soft); border-radius: 4px; margin-top: 0.5em; overflow: hidden; }
+  .eq .prog > span { display: block; height: 100%; background: var(--amber); }
+
+  #heatmap { height: 340px; border: 1px solid var(--line); border-radius: 6px; z-index: 0; }
+
+  .backlink { font-size: 0.85em; margin-top: 2.2em; }
+  .backlink a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+</style>
+
+<div class="pg">
+<p class="pg-h1">Progress</p>
+<p class="pg-sub">Every ride earns XP. Level up, keep the streak alive, chase the badges.</p>
+
+<div class="level-card">
+  <div class="level-top">
+    <span class="level-num" id="lvlNum">-</span>
+    <span class="level-title" id="lvlTitle">-</span>
+    <span class="level-xp" id="lvlXp"></span>
+  </div>
+  <div class="bar"><span id="lvlBar" style="width:0%"></span></div>
+  <div class="level-next" id="lvlNext"></div>
+</div>
+
+<p class="pg-h2">Streak &amp; goals</p>
+<div class="rings">
+  <div class="ring">
+    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#f2efe8" stroke-width="8"/><circle id="ringWeek" cx="32" cy="32" r="27" fill="none" stroke="#2b7fd9" stroke-width="8" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="170" transform="rotate(-90 32 32)"/></svg>
+    <div><div class="rt">This week</div><div class="rv" id="weekKm">0 km</div><div class="rn" id="weekNote"></div></div>
+  </div>
+  <div class="ring">
+    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#f2efe8" stroke-width="8"/><circle id="ringMonth" cx="32" cy="32" r="27" fill="none" stroke="#4169E1" stroke-width="8" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="170" transform="rotate(-90 32 32)"/></svg>
+    <div><div class="rt">This month</div><div class="rv" id="monthKm">0 km</div><div class="rn" id="monthNote"></div></div>
+  </div>
+  <div class="ring">
+    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#f2efe8" stroke-width="8"/><circle cx="32" cy="32" r="27" fill="none" stroke="#e0533a" stroke-width="8" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="0" transform="rotate(-90 32 32)"/></svg>
+    <div><div class="rt">Weekly streak</div><div class="rv" id="streakVal">0</div><div class="rn" id="streakNote"></div></div>
+  </div>
+</div>
+
+<p class="pg-h2">Records</p>
+<div class="grid g4" id="records"></div>
+
+<p class="pg-h2">Eddington number</p>
+<div class="edd">
+  <div class="edd-num" id="eddNum">-</div>
+  <div class="edd-txt" id="eddTxt"></div>
+</div>
+<p class="pg-note">Your Eddington number E means you have ridden at least E km on E separate days. Famously hard to grow: doubling it is a lifetime goal.</p>
+
+<p class="pg-h2">Achievements</p>
+<div class="badges" id="badges"></div>
+
+<p class="pg-h2">Ride calendar</p>
+<div class="cal-wrap">
+  <div class="cal-head"><span class="cal-years" id="calYears"></span></div>
+  <div class="cal" id="cal"></div>
+  <div class="cal-legend">Less <i style="background:#f2efe8"></i><i style="background:#cfe3f7"></i><i style="background:#8fc0ef"></i><i style="background:#2b7fd9"></i><i style="background:#1e5fa8"></i> More</div>
+</div>
+
+<p class="pg-h2">Epic equivalents</p>
+<div class="equiv" id="equiv"></div>
+
+<p class="pg-h2">Where you ride</p>
+<div id="heatmap"></div>
+<p class="pg-note">Every recorded route overlaid. The bright lanes are your home roads.</p>
+
+<p class="backlink"><a href="/cycling/">&larr; Back to dashboard</a></p>
+</div>
+
+{{ $rides := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+{{ $rides = $rides | append (dict "id" $id "date" $a.date "km" $a.distance_km "elev" $a.elevation_gain_m "dur" $a.duration_seconds "avgSpeed" $a.avg_speed_kmh "maxSpeed" $a.max_speed_kmh "avgPower" $a.avg_power "maxPower" $a.max_power "np" $a.normalized_power "cad" $a.avg_cadence "cal" $a.calories) }}
+{{ end }}
+<script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function() {
+  var raw = document.getElementById('rides-data').textContent;
+  var rides = JSON.parse(raw);
+  if (typeof rides === 'string') rides = JSON.parse(rides);
+  rides.forEach(function(r) { r.d = new Date(r.date); });
+  rides.sort(function(a, b) { return a.d - b.d; });
+  var num = function(x) { return (x == null || isNaN(x)) ? 0 : +x; };
+
+  // ---- Aggregates ----
+  var totKm = 0, totElev = 0, totCal = 0, totSec = 0;
+  rides.forEach(function(r) { totKm += num(r.km); totElev += num(r.elev); totCal += num(r.cal); totSec += num(r.dur); });
+
+  // ---- Level / XP ----
+  var xp = 0;
+  rides.forEach(function(r) { xp += num(r.km) + num(r.elev) / 10; });
+  xp += rides.length * 10;
+  xp = Math.round(xp);
+  var TITLES = ['Rookie', 'Domestique', 'Rouleur', 'Puncheur', 'Climber', 'Breakaway', 'Sprinter', 'All-Rounder', 'GC Contender', 'Grand Tour Legend'];
+  var T = function(L) { return L <= 1 ? 0 : Math.round(250 * Math.pow(L - 1, 1.6)); };
+  var lvl = 1; while (xp >= T(lvl + 1)) lvl++;
+  var title = TITLES[Math.min(lvl - 1, TITLES.length - 1)] + (lvl > TITLES.length ? ' +' + (lvl - TITLES.length) : '');
+  var base = T(lvl), next = T(lvl + 1), pct = Math.max(0, Math.min(100, (xp - base) / (next - base) * 100));
+  document.getElementById('lvlNum').textContent = lvl;
+  document.getElementById('lvlTitle').textContent = title;
+  document.getElementById('lvlXp').textContent = xp.toLocaleString() + ' XP';
+  document.getElementById('lvlBar').style.width = pct.toFixed(1) + '%';
+  document.getElementById('lvlNext').textContent = (next - xp).toLocaleString() + ' XP to level ' + (lvl + 1) + '  ·  ' + TITLES[Math.min(lvl, TITLES.length - 1)];
+
+  // ---- Goals: this week / month ----
+  var now = new Date();
+  function isoWeek(dt) { var t = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate())); var day = (t.getUTCDay() + 6) % 7; t.setUTCDate(t.getUTCDate() - day + 3); var f = new Date(Date.UTC(t.getUTCFullYear(), 0, 4)); return t.getUTCFullYear() + '-' + String(1 + Math.round(((t - f) / 86400000 - 3 + ((f.getUTCDay() + 6) % 7)) / 7)).padStart(2, '0'); }
+  var curWeek = isoWeek(now), curMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+  var weekKm = 0, monthKm = 0;
+  rides.forEach(function(r) {
+    if (isoWeek(r.d) === curWeek) weekKm += num(r.km);
+    if (r.d.getFullYear() + '-' + String(r.d.getMonth() + 1).padStart(2, '0') === curMonth) monthKm += num(r.km);
+  });
+  var WEEK_GOAL = 60, MONTH_GOAL = 200, C = 170;
+  function setRing(id, frac) { document.getElementById(id).style.strokeDashoffset = (C * (1 - Math.min(1, frac))).toFixed(1); }
+  setRing('ringWeek', weekKm / WEEK_GOAL); setRing('ringMonth', monthKm / MONTH_GOAL);
+  document.getElementById('weekKm').textContent = weekKm.toFixed(1) + ' km';
+  document.getElementById('monthKm').textContent = monthKm.toFixed(0) + ' km';
+  document.getElementById('weekNote').textContent = weekKm >= WEEK_GOAL ? 'goal smashed ✔' : (WEEK_GOAL - weekKm).toFixed(0) + ' km to ' + WEEK_GOAL + ' km goal';
+  document.getElementById('monthNote').textContent = monthKm >= MONTH_GOAL ? 'goal smashed ✔' : (MONTH_GOAL - monthKm).toFixed(0) + ' km to ' + MONTH_GOAL + ' km goal';
+
+  // ---- Weekly streak ----
+  var weeks = {}; rides.forEach(function(r) { weeks[isoWeek(r.d)] = true; });
+  function weekKey(dt) { return isoWeek(dt); }
+  function prevWeek(dt) { var d = new Date(dt); d.setDate(d.getDate() - 7); return d; }
+  var cur = 0, probe = new Date(now);
+  if (!weeks[weekKey(probe)]) probe = prevWeek(probe); // allow "this week not yet ridden"
+  while (weeks[weekKey(probe)]) { cur++; probe = prevWeek(probe); }
+  var allWeeks = Object.keys(weeks).sort(), longest = 0, run = 0, prevW = null;
+  allWeeks.forEach(function(w) {
+    if (prevW) { var pd = new Date(prevW + '-1'); }
+    run = (prevW && adjWeeks(prevW, w)) ? run + 1 : 1; longest = Math.max(longest, run); prevW = w;
+  });
+  function adjWeeks(a, b) { var da = fromWeek(a), db = fromWeek(b); return Math.round((db - da) / 604800000) === 1; }
+  function fromWeek(w) { var p = w.split('-'), simple = new Date(Date.UTC(+p[0], 0, 1 + (+p[1] - 1) * 7)); var dow = simple.getUTCDay(); var iso = simple; if (dow <= 4) iso.setUTCDate(simple.getUTCDate() - simple.getUTCDay() + 1); else iso.setUTCDate(simple.getUTCDate() + 8 - simple.getUTCDay()); return iso; }
+  document.getElementById('streakVal').textContent = cur + (cur === 1 ? ' wk' : ' wks');
+  var daysSince = Math.floor((now - rides[rides.length - 1].d) / 86400000);
+  document.getElementById('streakNote').textContent = 'best ' + longest + ' wks · last ride ' + daysSince + 'd ago';
+
+  // ---- Records ----
+  function best(sel) { var b = null; rides.forEach(function(r) { var v = sel(r); if (v != null && !isNaN(v) && (b == null || v > b.v)) b = { v: v, r: r }; }); return b; }
+  function when(r) { return r.d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: '2-digit' }); }
+  var recs = [
+    { l: 'Longest ride', b: best(function(r) { return num(r.km); }), u: ' km', f: function(v) { return v.toFixed(1); } },
+    { l: 'Most climbing', b: best(function(r) { return num(r.elev); }), u: ' m', f: function(v) { return v.toFixed(0); } },
+    { l: 'Fastest avg', b: best(function(r) { return num(r.avgSpeed); }), u: ' km/h', f: function(v) { return v.toFixed(1); } },
+    { l: 'Top speed', b: best(function(r) { return num(r.maxSpeed); }), u: ' km/h', f: function(v) { return v.toFixed(1); } },
+    { l: 'Best power', b: best(function(r) { return num(r.np); }), u: ' W NP', f: function(v) { return v.toFixed(0); } },
+    { l: 'Power spike', b: best(function(r) { return num(r.maxPower); }), u: ' W', f: function(v) { return v.toFixed(0); } },
+    { l: 'Most calories', b: best(function(r) { return num(r.cal); }), u: '', f: function(v) { return v.toFixed(0); } },
+    { l: 'Total rides', b: { v: rides.length, r: null }, u: '', f: function(v) { return v; } }
+  ];
+  document.getElementById('records').innerHTML = recs.map(function(x) {
+    if (!x.b || x.b.v == null) return '';
+    return '<div class="tile"><span class="v">' + x.f(x.b.v) + x.u + '</span><span class="l">' + x.l + '</span>' + (x.b.r ? '<span class="s">' + when(x.b.r) + '</span>' : '') + '</div>';
+  }).join('');
+
+  // ---- Eddington (km on days) ----
+  var dayKm = {}; rides.forEach(function(r) { var k = r.d.toISOString().slice(0, 10); dayKm[k] = (dayKm[k] || 0) + num(r.km); });
+  var dists = Object.keys(dayKm).map(function(k) { return dayKm[k]; }).sort(function(a, b) { return b - a; });
+  var E = 0; for (var i = 0; i < dists.length; i++) { if (dists[i] >= i + 1) E = i + 1; else break; }
+  var needForNext = 0; dists.forEach(function(v) { if (v >= E + 1) needForNext++; });
+  var moreDays = (E + 1) - needForNext;
+  document.getElementById('eddNum').textContent = E;
+  document.getElementById('eddTxt').innerHTML = '<b>' + E + ' km on ' + E + ' separate days.</b><br>To reach E' + (E + 1) + ', ride at least ' + (E + 1) + ' km on ' + (moreDays > 0 ? moreDays + ' more day' + (moreDays > 1 ? 's' : '') : 'just a few more days') + '.';
+
+  // ---- Badges ----
+  var maxSingleKm = best(function(r) { return num(r.km); }); maxSingleKm = maxSingleKm ? maxSingleKm.v : 0;
+  var maxSingleElev = best(function(r) { return num(r.elev); }); maxSingleElev = maxSingleElev ? maxSingleElev.v : 0;
+  var maxSpike = best(function(r) { return num(r.maxPower); }); maxSpike = maxSpike ? maxSpike.v : 0;
+  var maxTop = best(function(r) { return num(r.maxSpeed); }); maxTop = maxTop ? maxTop.v : 0;
+  var hours = rides.map(function(r) { return r.d.getHours(); });
+  var earlyBird = hours.some(function(h) { return h < 7; });
+  var nightOwl = hours.some(function(h) { return h >= 20; });
+  // max rides in any 7-day window
+  var times = rides.map(function(r) { return r.d.getTime(); }).sort(function(a, b) { return a - b; }), maxWin = 0;
+  for (var a = 0; a < times.length; a++) { var c = 0; for (var b = a; b < times.length; b++) { if (times[b] - times[a] <= 7 * 86400000) c++; } maxWin = Math.max(maxWin, c); }
+  var BADGES = [
+    { i: '🚴', n: 'First Pedal', d: 'Log a ride', ok: rides.length >= 1 },
+    { i: '💯', n: 'Century', d: '100 km ride', ok: maxSingleKm >= 100 },
+    { i: '🏔️', n: 'Big Climb', d: '1000 m in a ride', ok: maxSingleElev >= 1000 },
+    { i: '⚡', n: 'Power Surge', d: '700 W spike', ok: maxSpike >= 700 },
+    { i: '🚀', n: 'Speed Demon', d: 'Hit 45 km/h', ok: maxTop >= 45 },
+    { i: '🌅', n: 'Early Bird', d: 'Ride before 7am', ok: earlyBird },
+    { i: '🦉', n: 'Night Owl', d: 'Ride after 8pm', ok: nightOwl },
+    { i: '🔥', n: 'On a Roll', d: '5 rides in a week', ok: maxWin >= 5 },
+    { i: '🗻', n: 'Everester', d: 'Climb 8849 m total', ok: totElev >= 8849 },
+    { i: '📏', n: '1000 Club', d: 'Ride 1000 km total', ok: totKm >= 1000 },
+    { i: '🍕', n: 'Fuelled Up', d: 'Burn 10k calories', ok: totCal >= 10000 },
+    { i: '🎯', n: 'Eddington 30', d: 'Reach E30', ok: E >= 30 }
+  ];
+  document.getElementById('badges').innerHTML = BADGES.map(function(b) {
+    return '<div class="badge' + (b.ok ? '' : ' locked') + '"><div class="bi">' + b.i + '</div><div class="bn">' + b.n + '</div><div class="bd">' + b.d + '</div></div>';
+  }).join('');
+
+  // ---- Calendar heatmap ----
+  var yearsWithRides = {}; rides.forEach(function(r) { yearsWithRides[r.d.getFullYear()] = (yearsWithRides[r.d.getFullYear()] || 0) + 1; });
+  var years = Object.keys(yearsWithRides).map(Number).sort();
+  var defaultYear = years.reduce(function(a, b) { return yearsWithRides[b] >= yearsWithRides[a] ? b : a; }, years[0]);
+  function palette(km) { if (km <= 0) return '#f2efe8'; if (km < 20) return '#cfe3f7'; if (km < 45) return '#8fc0ef'; if (km < 90) return '#2b7fd9'; return '#1e5fa8'; }
+  function renderCal(year) {
+    var start = new Date(year, 0, 1), end = new Date(year, 11, 31);
+    var pad = (start.getDay() + 6) % 7; // Monday-first offset
+    var html = '';
+    for (var p = 0; p < pad; p++) html += '<i style="background:transparent"></i>';
+    for (var dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
+      var k = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+      var km = dayKm[k] || 0;
+      html += '<i style="background:' + palette(km) + '" title="' + k + (km ? ': ' + km.toFixed(1) + ' km' : '') + '"></i>';
+    }
+    document.getElementById('cal').innerHTML = html;
+    Array.prototype.forEach.call(document.querySelectorAll('#calYears button'), function(btn) { btn.className = (+btn.dataset.y === year) ? 'on' : ''; });
+  }
+  document.getElementById('calYears').innerHTML = years.map(function(y) { return '<button data-y="' + y + '">' + y + '</button>'; }).join(' ');
+  Array.prototype.forEach.call(document.querySelectorAll('#calYears button'), function(btn) { btn.addEventListener('click', function() { renderCal(+btn.dataset.y); }); });
+  renderCal(defaultYear);
+
+  // ---- Epic equivalents ----
+  var everests = totElev / 8849;
+  var pizzaSlices = Math.round(totCal / 285);
+  var ROUND_BRITAIN = 4828; // km coastline-ish
+  var britainPct = Math.min(100, totKm / ROUND_BRITAIN * 100);
+  var equiv = [
+    { h: 'Everests climbed', v: everests.toFixed(2), b: totElev.toLocaleString() + ' m climbed, and counting. One Everest = 8,849 m.' },
+    { h: 'Round Britain', v: britainPct.toFixed(1) + '%', b: totKm.toFixed(0) + ' of 4,828 km coastline lap.', prog: britainPct },
+    { h: 'Pizza reclaimed', v: pizzaSlices.toLocaleString(), b: 'slices of pizza burned (' + totCal.toLocaleString() + ' kcal at ~285 each).' }
+  ];
+  document.getElementById('equiv').innerHTML = equiv.map(function(e) {
+    return '<div class="eq"><div class="eh">' + e.h + '</div><div class="ev">' + e.v + '</div><div class="eb">' + e.b + '</div>' + (e.prog != null ? '<div class="prog"><span style="width:' + e.prog.toFixed(1) + '%"></span></div>' : '') + '</div>';
+  }).join('');
+
+  // ---- Heatmap of all routes (parse GPX to polylines, no markers) ----
+  var map = L.map('heatmap', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap', maxZoom: 18 }).addTo(map);
+  var bounds = null;
+  function extend(b) { bounds = bounds ? bounds.extend(b) : b; map.fitBounds(bounds, { padding: [20, 20] }); }
+  rides.forEach(function(r) {
+    fetch('/cycling/gpx/' + r.id + '.gpx').then(function(res) { return res.ok ? res.text() : null; }).then(function(xml) {
+      if (!xml) return;
+      var pts = new DOMParser().parseFromString(xml, 'application/xml').getElementsByTagName('trkpt');
+      var ll = [];
+      for (var i = 0; i < pts.length; i++) { ll.push([parseFloat(pts[i].getAttribute('lat')), parseFloat(pts[i].getAttribute('lon'))]); }
+      if (ll.length < 2) return;
+      var pl = L.polyline(ll, { color: '#2b7fd9', weight: 2.5, opacity: 0.5 }).addTo(map);
+      extend(pl.getBounds());
+    }).catch(function() {});
+  });
+  setTimeout(function() { if (!bounds) map.setView([51.9, 0.5], 9); }, 3000);
+})();
+</script>
+{{ end }}
