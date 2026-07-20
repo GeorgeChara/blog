@@ -83,18 +83,18 @@ layout: single
 <div class="card">
 <p class="h">Lift A</p>
 <table class="ex">
-<tr><td>Squat<span class="alt"><span class="sw">⇄</span>or Front squat, more upright and easier on the back</span></td><td class="r">3 x 5</td></tr>
-<tr><td>Bench press</td><td class="r">3 x 5</td></tr>
-<tr><td><a href="https://www.youtube.com/shorts/Nqh7q3zDCoQ" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 5</td></tr>
+<tr><td>Squat<span class="alt"><span class="sw">⇄</span>or Front squat, more upright and easier on the back</span></td><td class="r">3 x 8</td></tr>
+<tr><td>Bench press</td><td class="r">3 x 8</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/Nqh7q3zDCoQ" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 8</td></tr>
 <tr><td>Dips</td><td class="r">3 x max</td></tr>
 </table>
 </div>
 <div class="card">
 <p class="h">Lift B</p>
 <table class="ex">
-<tr><td><a href="https://www.youtube.com/shorts/4LBVP2Oe7fg" target="_blank" rel="noopener">Overhead press</a><span class="alt"><span class="sw">⇄</span>or Push press, leg drive to move more weight</span></td><td class="r">3 x 5</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/4LBVP2Oe7fg" target="_blank" rel="noopener">Overhead press</a><span class="alt"><span class="sw">⇄</span>or Push press, leg drive to move more weight</span></td><td class="r">3 x 8</td></tr>
 <tr><td><a href="https://www.youtube.com/shorts/xNwpvDuZJ3k" target="_blank" rel="noopener">Deadlift</a><span class="alt"><span class="sw">⇄</span>or <a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" rel="noopener">Romanian deadlift</a>, easier on the back</span></td><td class="r">3 x 5</td></tr>
-<tr><td><a href="https://www.youtube.com/shorts/phVtqawIgbk" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 5</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/phVtqawIgbk" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 8</td></tr>
 <tr><td>Dips</td><td class="r">3 x max</td></tr>
 </table>
 </div>
