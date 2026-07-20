@@ -98,6 +98,7 @@ layout: single
 </div>
 </div>
 <span class="note">Dips to a couple short of failure. Everything else is a straight weight across all sets.</span>
+<span class="note">Swap the deadlift for a <a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" rel="noopener">Romanian deadlift</a> when your lower back is tired from riding. Same hinge, easier on the back.</span>
 
 <p class="gym-h2">How it works</p>
 <div class="callout"><b>Hit every rep, add weight next time.</b> 2.5kg on the bar lifts, 5kg on the deadlift. Miss reps and stay at the same weight until you get them.</div>
