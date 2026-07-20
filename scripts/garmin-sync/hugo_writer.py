@@ -134,6 +134,7 @@ def write_activity(activity, gpx_xml):
     max_hr = activity.get("maxHR")
     avg_power = activity.get("avgPower")
     max_power = activity.get("maxPower")
+    normalized_power = activity.get("normPower")
     avg_cadence = activity.get("averageBikingCadenceInRevPerMinute")
     calories = activity.get("calories")
 
@@ -161,6 +162,7 @@ def write_activity(activity, gpx_xml):
         "max_hr": max_hr,
         "avg_power": avg_power,
         "max_power": max_power,
+        "normalized_power": normalized_power,
         "avg_cadence": avg_cadence,
         "calories": calories,
     }
@@ -188,6 +190,10 @@ def write_activity(activity, gpx_xml):
         frontmatter_lines.append(f"max_hr: {max_hr}")
     if avg_power:
         frontmatter_lines.append(f"avg_power: {avg_power}")
+    if normalized_power:
+        frontmatter_lines.append(f"normalized_power: {normalized_power}")
+    if avg_cadence:
+        frontmatter_lines.append(f"avg_cadence: {avg_cadence}")
     if calories:
         frontmatter_lines.append(f"calories: {calories}")
     frontmatter_lines += [

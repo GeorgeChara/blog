@@ -10,6 +10,8 @@ avg_speed_kmh: 24.3
 avg_hr: 138
 max_hr: 165
 avg_power: 195
+normalized_power: 208
+avg_cadence: 82
 calories: 980
 gpx_file: "/cycling/gpx/test-essex-loop.gpx"
 toc: false

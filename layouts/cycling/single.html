@@ -75,6 +75,18 @@
     <span class="stat-label">Avg Power</span>
   </div>
   {{ end }}
+  {{ with .Params.normalized_power }}
+  <div class="stat">
+    <span class="stat-value">{{ . }} W</span>
+    <span class="stat-label">Normalized Power</span>
+  </div>
+  {{ end }}
+  {{ with .Params.avg_cadence }}
+  <div class="stat">
+    <span class="stat-value">{{ . }} rpm</span>
+    <span class="stat-label">Cadence</span>
+  </div>
+  {{ end }}
   {{ with .Params.calories }}
   <div class="stat">
     <span class="stat-value">{{ . }}</span>
