@@ -30,6 +30,150 @@
    <!-- Content -->
    {{ .Content }}
 
+  <style>
+    /* Copy button on ingredients block */
+    .ingr-wrap { position: relative; display: inline-block; }
+    .copy-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+      background: #fff;
+      border: 1px solid #E5DECF;
+      border-bottom: none;
+      border-radius: 3px 3px 0 0;
+      padding: 0.2em 0.5em;
+      font-size: 0.72em;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      color: #aaa;
+      cursor: pointer;
+      line-height: 1.4;
+      transition: color 0.15s;
+    }
+    .copy-btn:hover { color: #555; }
+
+    /* Ingredient tick-off list */
+    .ingr { cursor: pointer; }
+    .ingr-tick { margin: 0 0.5em 0 0; vertical-align: middle; }
+    .ingr:has(.ingr-tick:checked) { color: #bbb; text-decoration: line-through; }
+
+    /* Wake lock pill — fixed bottom right */
+    #wake-btn {
+      position: fixed;
+      bottom: 1.2em;
+      right: 1.2em;
+      background: #fff;
+      border: 1px solid #E5DECF;
+      border-radius: 3px;
+      padding: 0.35em 0.7em;
+      font-size: 0.75em;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      color: #aaa;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      z-index: 100;
+      display: none;
+    }
+    #wake-btn.active {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+    }
+  </style>
+
+  <button id="wake-btn" onclick="toggleWake()" title="Keep screen on">screen on</button>
+
+  <script>
+    (function() {
+      var pres = document.querySelectorAll('pre');
+      if (!pres.length) return;
+
+      function attrEsc(s) {
+        return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+                .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      pres.forEach(function(pre) {
+        var isIngr = (pre.getAttribute('style') || '').indexOf('inline-block') !== -1;
+
+        var wrap = document.createElement('div');
+        wrap.className = 'ingr-wrap';
+        pre.parentNode.insertBefore(wrap, pre);
+        wrap.appendChild(pre);
+
+        if (isIngr) {
+          // Put a tickbox on each ingredient line. Keep section labels (grey
+          // spans) as plain headers. Split by line so inline links survive.
+          pre.innerHTML = pre.innerHTML.split('\n').map(function(lineHTML) {
+            if (!lineHTML.trim()) return '';
+            if (/^<span[^>]*888[^>]*>[\s\S]*<\/span>$/.test(lineHTML.trim())) return lineHTML;
+            var tmp = document.createElement('div');
+            tmp.innerHTML = lineHTML;
+            var name = (tmp.textContent.split(/\s{2,}/)[0] || '').trim();
+            return '<label class="ingr" data-name="' + attrEsc(name) + '">'
+                 + '<input type="checkbox" class="ingr-tick">'
+                 + lineHTML.replace(/^\s+/, '') + '</label>';
+          }).join('\n');
+        }
+
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'copy';
+        btn.title = isIngr ? 'Copy a shopping list of what you have not ticked' : 'Copy';
+        btn.onclick = function() {
+          var text;
+          if (isIngr) {
+            var names = [];
+            pre.querySelectorAll('label.ingr').forEach(function(lab) {
+              if (!lab.querySelector('.ingr-tick').checked) names.push(lab.getAttribute('data-name'));
+            });
+            text = names.join('\n');
+            if (!text) {
+              btn.textContent = 'all ticked';
+              setTimeout(function() { btn.textContent = 'copy'; }, 2000);
+              return;
+            }
+          } else {
+            text = pre.textContent;
+          }
+          navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = '✓';
+            setTimeout(function() { btn.textContent = 'copy'; }, 2000);
+          });
+        };
+        wrap.appendChild(btn);
+      });
+
+      document.getElementById('wake-btn').style.display = 'block';
+    })();
+
+    var wakeLock = null;
+    function toggleWake() {
+      var btn = document.getElementById('wake-btn');
+      if (wakeLock) {
+        wakeLock.release();
+        wakeLock = null;
+        btn.textContent = 'screen on';
+        btn.classList.remove('active');
+      } else {
+        navigator.wakeLock.request('screen').then(function(lock) {
+          wakeLock = lock;
+          btn.textContent = 'screen on';
+          btn.classList.add('active');
+          lock.addEventListener('release', function() {
+            wakeLock = null;
+            btn.textContent = 'screen on';
+            btn.classList.remove('active');
+          });
+        }).catch(function() {
+          btn.textContent = 'not supported';
+          setTimeout(function() { btn.textContent = 'screen on'; }, 2000);
+        });
+      }
+    }
+  </script>
+
   <!-- Comments block -->
   {{ if and .Content (default true (default .Site.Params.comments
     .Params.comments))

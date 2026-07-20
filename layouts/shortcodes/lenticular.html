@@ -1,0 +1,216 @@
+{{/*
+  lenticular shortcode
+  ====================
+  Renders an interactive lenticular-style image that scrubs through frames
+  based on cursor X (desktop) or device tilt (mobile).
+
+  Usage:
+    {{< lenticular folder="stretch-fold" frames="5" alt="Stretch and fold technique" >}}
+
+  Parameters:
+    folder  - subfolder under /static/lenticular/ containing frame1.jpg ... frameN.jpg
+    frames  - number of frames (default 5)
+    alt     - alt text for accessibility
+    ext     - image extension, default "jpg" (use "png" if needed)
+    height  - optional CSS height override (default auto, full width)
+
+  Image files must be named frame1.{ext}, frame2.{ext}, ... frameN.{ext}
+*/}}
+
+{{- $folder := .Get "folder" -}}
+{{- $frames := default "5" (.Get "frames") -}}
+{{- $alt := default "Animated technique demonstration" (.Get "alt") -}}
+{{- $ext := default "jpg" (.Get "ext") -}}
+{{- $height := .Get "height" -}}
+{{- $framesInt := int $frames -}}
+{{- $base := printf "/lenticular/%s" $folder -}}
+{{- $uid := printf "lent-%s" (substr (md5 (printf "%s-%d" $folder now.UnixNano)) 0 8) -}}
+
+<div class="lenticular-wrap" id="{{ $uid }}" data-frames="{{ $framesInt }}" data-base="{{ $base }}" data-ext="{{ $ext }}"{{ with $height }} style="height: {{ . }}"{{ end }}>
+  <img class="lenticular-img" src="{{ $base }}/frame1.{{ $ext }}" alt="{{ $alt }}" draggable="false">
+  <div class="lenticular-hint" aria-hidden="true">
+    <span class="lenticular-hint-desktop">hover to scrub</span>
+    <span class="lenticular-hint-mobile">tilt to scrub</span>
+  </div>
+  <button class="lenticular-motion-prompt" type="button" hidden>tap to enable tilt</button>
+</div>
+
+{{ if not (.Page.Scratch.Get "lenticularInjected") }}
+{{ .Page.Scratch.Set "lenticularInjected" true }}
+<style>
+  .lenticular-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 5;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f6eee3;
+    margin-bottom: 1.5em;
+    cursor: ew-resize;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .lenticular-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+  .lenticular-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 11px;
+    color: #888;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  .lenticular-wrap.lenticular-active .lenticular-hint { opacity: 0; }
+  .lenticular-hint-mobile { display: none; }
+  @media (hover: none) and (pointer: coarse) {
+    .lenticular-hint-desktop { display: none; }
+    .lenticular-hint-mobile { display: inline; }
+    .lenticular-wrap { cursor: default; }
+  }
+  .lenticular-motion-prompt {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+(function () {
+  function initLenticular(wrap) {
+    var totalFrames = parseInt(wrap.dataset.frames, 10);
+    var base = wrap.dataset.base;
+    var ext = wrap.dataset.ext;
+    var img = wrap.querySelector('.lenticular-img');
+    var prompt = wrap.querySelector('.lenticular-motion-prompt');
+
+    var preloaded = [];
+    for (var i = 1; i <= totalFrames; i++) {
+      var p = new Image();
+      p.src = base + '/frame' + i + '.' + ext;
+      preloaded.push(p);
+    }
+
+    var currentFrame = 1;
+    function setFrame(n) {
+      n = Math.max(1, Math.min(totalFrames, n));
+      if (n === currentFrame) return;
+      currentFrame = n;
+      img.src = base + '/frame' + n + '.' + ext;
+    }
+
+    function frameForFraction(f) {
+      var clamped = Math.max(0, Math.min(0.9999, f));
+      return Math.floor(clamped * totalFrames) + 1;
+    }
+
+    var coarsePointer = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+    if (!coarsePointer) {
+      wrap.addEventListener('mousemove', function (e) {
+        var rect = wrap.getBoundingClientRect();
+        var f = (e.clientX - rect.left) / rect.width;
+        setFrame(frameForFraction(f));
+        wrap.classList.add('lenticular-active');
+      });
+      wrap.addEventListener('mouseleave', function () {
+        wrap.classList.remove('lenticular-active');
+      });
+    }
+
+    var motionEnabled = false;
+    function attachMotion() {
+      var smoothed = 0;
+      var alpha = 0.18;
+      window.addEventListener('deviceorientation', function (e) {
+        if (e.gamma === null) return;
+        var raw = Math.max(-30, Math.min(30, e.gamma));
+        smoothed = smoothed * (1 - alpha) + raw * alpha;
+        var f = (smoothed + 30) / 60;
+        setFrame(frameForFraction(f));
+        wrap.classList.add('lenticular-active');
+      }, true);
+      motionEnabled = true;
+    }
+
+    var dragging = false;
+    var dragStartX = 0;
+    var dragStartFrame = 1;
+    function attachTouchDrag() {
+      wrap.addEventListener('touchstart', function (e) {
+        dragging = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartFrame = currentFrame;
+        wrap.classList.add('lenticular-active');
+      }, { passive: true });
+      wrap.addEventListener('touchmove', function (e) {
+        if (!dragging) return;
+        var dx = e.touches[0].clientX - dragStartX;
+        var rect = wrap.getBoundingClientRect();
+        var deltaFrames = (dx / rect.width) * totalFrames;
+        setFrame(Math.round(dragStartFrame + deltaFrames));
+      }, { passive: true });
+      wrap.addEventListener('touchend', function () { dragging = false; });
+    }
+
+    if (coarsePointer) {
+      var needsPermission = (typeof DeviceOrientationEvent !== 'undefined' &&
+                             typeof DeviceOrientationEvent.requestPermission === 'function');
+      if (needsPermission) {
+        prompt.hidden = false;
+        prompt.addEventListener('click', function () {
+          DeviceOrientationEvent.requestPermission().then(function (state) {
+            if (state === 'granted') {
+              attachMotion();
+              prompt.hidden = true;
+            } else {
+              attachTouchDrag();
+              prompt.hidden = true;
+            }
+          }).catch(function () {
+            attachTouchDrag();
+            prompt.hidden = true;
+          });
+        });
+        attachTouchDrag();
+      } else {
+        attachMotion();
+        attachTouchDrag();
+      }
+    }
+  }
+
+  function initAll() {
+    var wraps = document.querySelectorAll('.lenticular-wrap');
+    for (var i = 0; i < wraps.length; i++) {
+      initLenticular(wraps[i]);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+})();
+</script>
+{{ end }}
