@@ -2,104 +2,72 @@
 <style>
   main > h1:first-of-type { display: none; }
   .time { display: none; }
-
-  .cycling-header { margin-bottom: var(--spacing-lg); }
-  .cycling-header h1 { margin-bottom: var(--spacing-xs); }
-  .cycling-header p { color: var(--color-text-muted); margin-top: 0; }
-
-  .summary-stats {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--pre-border-radius);
-  }
-  .stat { text-align: center; flex: 1; }
-  .stat-value { font-weight: bold; }
-  .stat-label { font-size: var(--font-size-small); color: var(--color-text-muted); margin-left: 0.3em; }
-
-  .chart-container {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--pre-border-radius);
-  }
-  .chart-container h3 { margin-top: 0; margin-bottom: var(--spacing-sm); }
+  .terminal-nav { display: none; }
   h2::before, h3::before { content: none !important; }
 
-  .recent-rides h2 { margin-bottom: var(--spacing-sm); }
-  .ride-list { list-style: none; margin-left: 0; padding: 0; }
-  .ride-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .ride-item:last-child { border-bottom: none; }
-  .ride-name a { text-decoration: none; }
-  .ride-meta {
-    font-size: var(--font-size-small);
-    color: var(--color-text-muted);
-    display: flex;
-    gap: var(--spacing-md);
-  }
+  .cy-h1 { font-weight: bold; font-size: 1.5em; margin: 0 0 0.2em 0; color: #000; }
+  .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
+  .cy-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.8em 0; color: #000; }
 
-  .view-all { margin-top: var(--spacing-sm); }
+  .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6em; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; }
+  .stat .v { font-weight: bold; font-size: 1.15em; color: #000; font-variant-numeric: tabular-nums; }
+  .stat .l { display: block; font-size: 0.7em; color: #999; margin-top: 0.2em; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
+
+  table.rides { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  table.rides td { padding: 0.55em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
+  table.rides td:first-child { width: 100%; }
+  table.rides tr:last-child td { border-bottom: none; }
+  table.rides a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+  table.rides a:hover { border-bottom-color: #4169E1; }
+  table.rides .date { display: block; font-size: 0.78em; color: #999; margin-top: 0.2em; }
+  table.rides td.meta { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  .note { display: block; color: #888; font-size: 0.8em; line-height: 1.6; border-left: 2px solid #E5DECF; padding-left: 0.6em; margin: 0.6em 0; }
+  .view-all { font-size: 0.85em; margin-top: 1em; }
+  .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
 </style>
 
 {{ $summary := hugo.Data.cycling.summary }}
 {{ $recent := hugo.Data.cycling.recent }}
 
-<div class="cycling-header">
-  <h1>Cycling</h1>
-  <p>Rides tracked with Garmin, synced automatically.</p>
-</div>
+<p class="cy-h1">Cycling</p>
+<p class="cy-sub">Rides tracked with Garmin, synced automatically after every ride.</p>
 
 {{ with $summary }}
-<div class="summary-stats">
-  <div class="stat"><span class="stat-value">{{ .total_rides }}</span><span class="stat-label">rides</span></div>
-  <div class="stat"><span class="stat-value">{{ printf "%.0f" .total_distance_km }} km</span></div>
-  <div class="stat"><span class="stat-value">{{ printf "%.0f" .total_elevation_m }} m</span><span class="stat-label">climbed</span></div>
-  <div class="stat"><span class="stat-value">{{ printf "%.1f" .avg_speed_kmh }}</span><span class="stat-label">km/h avg</span></div>
-  <div class="stat"><span class="stat-value">{{ printf "%.0f" .total_calories }}</span><span class="stat-label">kcal</span></div>
+<div class="stats">
+  <div class="stat"><span class="v">{{ .total_rides }}</span><span class="l">Rides</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .total_distance_km }}</span><span class="l">km total</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .total_elevation_m }}</span><span class="l">m climbed</span></div>
+  <div class="stat"><span class="v">{{ printf "%.1f" .avg_speed_kmh }}</span><span class="l">km/h avg</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .longest_ride_km }}</span><span class="l">km longest</span></div>
 </div>
 
 {{ if .monthly_distance }}
-<div class="chart-container">
-  <h3>Monthly Distance ({{ .year }})</h3>
-  <canvas id="monthlyChart" height="60"></canvas>
+<p class="cy-h2">Monthly distance, {{ .year }}</p>
+<div class="chart-card">
+  <canvas id="monthlyChart" height="70"></canvas>
 </div>
 {{ end }}
 {{ end }}
 
-<div class="recent-rides">
-  <h2>Recent Rides</h2>
-  {{ if $recent }}
-  <ul class="ride-list">
-    {{ range $recent }}
-    <li class="ride-item">
-      <span class="ride-name"><a href="/cycling/rides/{{ .slug }}/">{{ .name }}</a></span>
-      <span class="ride-meta">
-        <span>{{ .date }}</span>
-        <span>{{ .distance_km }} km</span>
-        <span>{{ .elevation_gain_m }} m</span>
-        <span>{{ .duration }}</span>
-      </span>
-    </li>
-    {{ end }}
-  </ul>
-  {{ else }}
-  <p class="text-muted">No rides yet. Get out there!</p>
+<p class="cy-h2">Recent rides</p>
+{{ if $recent }}
+<table class="rides">
+  {{ range $recent }}
+  <tr>
+    <td><a href="/cycling/rides/{{ .slug }}/">{{ .name }}</a><span class="date">{{ .date }}</span></td>
+    <td class="meta">{{ .distance_km }} km, {{ .elevation_gain_m }} m, {{ .duration }}</td>
+  </tr>
   {{ end }}
-  <p class="view-all"><a href="/cycling/rides/">View all rides &rarr;</a></p>
-</div>
+</table>
+<p class="view-all"><a href="/cycling/rides/">All rides &rarr;</a></p>
+{{ else }}
+<span class="note">No rides yet. Get out there.</span>
+{{ end }}
 
 {{ .Content }}
 
@@ -112,28 +80,26 @@
   var monthly = (typeof raw === 'string') ? JSON.parse(raw) : raw;
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var keys = ['01','02','03','04','05','06','07','08','09','10','11','12'];
-  var data = keys.map(function(k) {
-    return monthly[k] || monthly[String(parseInt(k))] || 0;
-  });
+  var data = keys.map(function(k) { return monthly[k] || monthly[String(parseInt(k))] || 0; });
 
   new Chart(document.getElementById('monthlyChart'), {
     type: 'bar',
     data: {
       labels: months,
       datasets: [{
-        label: 'Distance (km)',
         data: data,
-        backgroundColor: 'rgba(107,114,128,0.3)',
-        borderColor: '#6b7280',
+        backgroundColor: 'rgba(217,138,43,0.25)',
+        borderColor: '#d98a2b',
         borderWidth: 1,
-        borderRadius: 4
+        borderRadius: 3
       }]
     },
     options: {
       responsive: true,
-      plugins: { legend: { display: false } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.parsed.y + ' km'; } } } },
       scales: {
-        y: { beginAtZero: true, title: { display: true, text: 'km' } }
+        y: { beginAtZero: true, grid: { color: '#f2efe8' }, ticks: { font: { family: 'monospace' } } },
+        x: { grid: { display: false }, ticks: { font: { family: 'monospace' } } }
       }
     }
   });
