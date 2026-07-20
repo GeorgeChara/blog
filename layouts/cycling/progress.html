@@ -74,6 +74,12 @@
 
   #heatmap { height: 340px; border: 1px solid var(--line); border-radius: 6px; z-index: 0; }
 
+  .ridge-card { border: 1px solid var(--line); border-radius: 6px; padding: 0.9em 1em 0.8em; background: #f7f5ef; }
+  .ridge-controls { display: flex; gap: 0.4em; margin-bottom: 0.6em; }
+  .ridge-btn { font-family: inherit; font-size: 0.78em; color: var(--mut); background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 0.28em 0.7em; cursor: pointer; }
+  .ridge-btn.on { background: #4169E1; color: #fff; border-color: #4169E1; }
+  #ridge { display: block; width: 100%; }
+
   .backlink { font-size: 0.85em; margin-top: 2.2em; }
   .backlink a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
 </style>
@@ -111,6 +117,17 @@
 <p class="pg-h2">Records</p>
 <div class="grid g4" id="records"></div>
 
+<p class="pg-h2">Ride lines</p>
+<div class="ridge-card">
+  <div class="ridge-controls">
+    <button class="ridge-btn on" data-m="elev">Elevation</button>
+    <button class="ridge-btn" data-m="speed">Speed</button>
+    <button class="ridge-btn" data-m="power">Power</button>
+  </div>
+  <canvas id="ridge"></canvas>
+</div>
+<p class="pg-note">Every ride drawn as one contour, stacked into a landscape. Switch the metric to reshape it.</p>
+
 <p class="pg-h2">Eddington number</p>
 <div class="edd">
   <div class="edd-num" id="eddNum">-</div>
@@ -140,7 +157,7 @@
 
 {{ $rides := slice }}
 {{ range $id, $a := hugo.Data.cycling.activities }}
-{{ $rides = $rides | append (dict "id" $id "date" $a.date "km" $a.distance_km "elev" $a.elevation_gain_m "dur" $a.duration_seconds "avgSpeed" $a.avg_speed_kmh "maxSpeed" $a.max_speed_kmh "avgPower" $a.avg_power "maxPower" $a.max_power "np" $a.normalized_power "cad" $a.avg_cadence "cal" $a.calories) }}
+{{ $rides = $rides | append (dict "id" $id "date" $a.date "km" $a.distance_km "elev" $a.elevation_gain_m "dur" $a.duration_seconds "avgSpeed" $a.avg_speed_kmh "maxSpeed" $a.max_speed_kmh "avgPower" $a.avg_power "maxPower" $a.max_power "np" $a.normalized_power "cad" $a.avg_cadence "cal" $a.calories "elevP" $a.elevation_profile "speedP" $a.speed_profile "powerP" $a.power_profile) }}
 {{ end }}
 <script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
 
@@ -319,6 +336,44 @@
     }).catch(function() {});
   });
   setTimeout(function() { if (!bounds) map.setView([51.9, 0.5], 9); }, 3000);
+
+  // ---- Ride lines (ridgeline art: blue -> light blue on off-white) ----
+  var RBG = '#f7f5ef';
+  var rMetric = 'elev', rcvs = document.getElementById('ridge'), rctx = rcvs.getContext('2d');
+  var rcw = 0, rch = 0, rdpr = Math.min(window.devicePixelRatio || 1, 2);
+  var RMAP = { elev: 'elevP', speed: 'speedP', power: 'powerP' };
+  function rHave(r, k) { return Array.isArray(r[k]) && r[k].filter(function(x) { return x != null; }).length > 4; }
+  function rRidges() { var k = RMAP[rMetric]; return rides.filter(function(r) { return rHave(r, k); }).map(function(r) { return r[k]; }); }
+  function rClean(a) { var o = a.slice(), last = null; for (var i = 0; i < o.length; i++) { if (o[i] == null || isNaN(o[i])) o[i] = last; else last = o[i]; } var f = o.find(function(x) { return x != null; }); for (var j = 0; j < o.length; j++) { if (o[j] == null) o[j] = f || 0; } return o; }
+  function rLerp(a, b, t) { return Math.round(a + (b - a) * t); }
+  function rSize() { rcvs.style.width = '100%'; rcw = rcvs.clientWidth || (rcvs.parentNode.clientWidth - 2); rch = Math.max(280, Math.min(460, Math.round(rcw * 0.62))); rcvs.width = rcw * rdpr; rcvs.height = rch * rdpr; rcvs.style.height = rch + 'px'; rctx.setTransform(rdpr, 0, 0, rdpr, 0, 0); }
+  function rSmooth(a) { var half = 1, o = []; for (var i = 0; i < a.length; i++) { var s = 0, c = 0; for (var j = i - half; j <= i + half; j++) { if (j >= 0 && j < a.length) { s += a[j]; c++; } } o.push(s / c); } return o; }
+  function rRender() {
+    rctx.fillStyle = RBG; rctx.fillRect(0, 0, rcw, rch);
+    var rs = rRidges(), n = rs.length; if (!n) return;
+    var mL = 8, mR = 8, mT = 12, mB = 14, W = rcw - mL - mR, totalH = rch - mT - mB;
+    var amp = Math.min(totalH * 0.17, 95), gap = Math.min((totalH - amp) / Math.max(1, n - 1), 42);
+    var stackTop = mT + (totalH - (amp + (n - 1) * gap)) / 2;
+    for (var i = 0; i < n; i++) {
+      var vals = rSmooth(rClean(rs[i])), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals), span = (hi - lo) || 1, base = stackTop + amp + i * gap, Ln = vals.length;
+      rctx.beginPath();
+      for (var k = 0; k < Ln; k++) { var x = mL + (k / (Ln - 1)) * W, y = base - ((vals[k] - lo) / span) * amp; if (k === 0) rctx.moveTo(x, y); else rctx.lineTo(x, y); }
+      rctx.lineTo(mL + W, rch); rctx.lineTo(mL, rch); rctx.closePath(); rctx.fillStyle = RBG; rctx.fill();
+      rctx.beginPath();
+      for (var k2 = 0; k2 < Ln; k2++) { var x2 = mL + (k2 / (Ln - 1)) * W, y2 = base - ((vals[k2] - lo) / span) * amp; if (k2 === 0) rctx.moveTo(x2, y2); else rctx.lineTo(x2, y2); }
+      var t = n > 1 ? i / (n - 1) : 0;
+      rctx.strokeStyle = 'rgb(' + rLerp(43, 125, t) + ',' + rLerp(95, 170, t) + ',' + rLerp(210, 235, t) + ')';
+      rctx.lineWidth = 1.6; rctx.stroke();
+    }
+  }
+  function rGo() { rSize(); rcvs.style.transition = 'none'; rcvs.style.opacity = '0'; rRender(); requestAnimationFrame(function() { rcvs.style.transition = 'opacity 0.6s ease'; rcvs.style.opacity = '1'; }); }
+  Array.prototype.forEach.call(document.querySelectorAll('.ridge-btn'), function(b) {
+    b.addEventListener('click', function() { rMetric = b.dataset.m; Array.prototype.forEach.call(document.querySelectorAll('.ridge-btn'), function(x) { x.className = 'ridge-btn' + (x === b ? ' on' : ''); }); rGo(); });
+  });
+  var rrt; window.addEventListener('resize', function() { clearTimeout(rrt); rrt = setTimeout(function() { rSize(); rRender(); }, 150); });
+  rGo();
+  window.addEventListener('load', function() { rSize(); rRender(); });
+  setTimeout(function() { rSize(); rRender(); }, 300);
 })();
 </script>
 {{ end }}
