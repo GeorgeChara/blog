@@ -71,3 +71,29 @@ def download_gpx(client, activity_id):
 def get_activity_details(client, activity_id):
     """Get detailed metrics for an activity."""
     return client.get_activity(activity_id)
+
+
+def get_streams(client, activity_id):
+    """Per-second streams for charts: power, speed, hr, cadence, elevation, distance.
+
+    Returns a dict of aligned lists (some may be empty if the sensor wasn't used).
+    """
+    detail = client.get_activity_details(activity_id, 2000, 2000)
+    descriptors = detail.get("metricDescriptors", [])
+    idx = {d["key"]: d["metricsIndex"] for d in descriptors}
+    rows = detail.get("activityDetailMetrics", [])
+
+    def col(key):
+        i = idx.get(key)
+        if i is None:
+            return []
+        return [r["metrics"][i] for r in rows]
+
+    return {
+        "power": col("directPower"),
+        "speed": col("directSpeed"),        # m/s
+        "hr": col("directHeartRate"),
+        "cadence": col("directBikeCadence"),
+        "elevation": col("directElevation"),
+        "distance": col("sumDistance"),      # metres
+    }

@@ -107,12 +107,13 @@ def format_duration(seconds):
     return f"{minutes}m"
 
 
-def write_activity(activity, gpx_xml):
+def write_activity(activity, gpx_xml, streams=None):
     """Write all Hugo files for a single activity.
 
     Args:
         activity: Garmin activity dict from the API
         gpx_xml: Raw GPX XML string
+        streams: optional per-second streams dict (power, speed, hr, ...)
 
     Returns:
         Activity ID string
@@ -145,8 +146,12 @@ def write_activity(activity, gpx_xml):
     gpx_path = GPX_DIR / f"{activity_id}.gpx"
     gpx_path.write_text(simplified_gpx)
 
-    # 2. Extract profiles and write JSON
-    profiles = extract_profiles(gpx_xml)
+    # 2. Build profiles (rich per-second streams if we have them, else GPX)
+    if streams and streams.get("distance"):
+        profiles = build_profiles(streams)
+        profiles["power_zones"] = compute_power_zones(streams.get("power", []))
+    else:
+        profiles = extract_profiles(gpx_xml)
     activity_json = {
         "id": activity_id,
         "name": name,
@@ -408,3 +413,57 @@ def write_strava_activity(detail, streams):
         "avg_speed_kmh": avg_speed,
         "slug": slug,
     }
+
+
+# --- Rich stream profiles + power zones -----------------------------------
+
+FTP = 220  # Functional Threshold Power. Change this and re-sync to fix zones.
+
+
+def _downsample_stream(arr, n=80):
+    if not arr:
+        return []
+    if len(arr) <= n:
+        return [round(x, 1) if isinstance(x, (int, float)) else None for x in arr]
+    step = len(arr) / n
+    out = []
+    for i in range(n):
+        x = arr[int(i * step)]
+        out.append(round(x, 1) if isinstance(x, (int, float)) else None)
+    return out
+
+
+def build_profiles(streams):
+    dist_km = [round((x or 0) / 1000, 2) for x in streams.get("distance", [])]
+    speed_kmh = [round((x or 0) * 3.6, 1) for x in streams.get("speed", [])]
+    return {
+        "distance_profile": _downsample_stream(dist_km),
+        "elevation_profile": _downsample_stream(streams.get("elevation", [])),
+        "power_profile": _downsample_stream(streams.get("power", [])) or None,
+        "hr_profile": _downsample_stream(streams.get("hr", [])) or None,
+        "speed_profile": _downsample_stream(speed_kmh) or None,
+        "cadence_profile": _downsample_stream(streams.get("cadence", [])) or None,
+    }
+
+
+def compute_power_zones(power_stream, ftp=FTP):
+    """Seconds in each of 5 power zones (stream samples are ~1s apart)."""
+    if not power_stream:
+        return None
+    bounds = [0.55, 0.75, 0.90, 1.05]  # fractions of FTP splitting Z1..Z5
+    zones = [0, 0, 0, 0, 0]
+    for p in power_stream:
+        if p is None:
+            continue
+        frac = p / ftp
+        if frac < bounds[0]:
+            zones[0] += 1
+        elif frac < bounds[1]:
+            zones[1] += 1
+        elif frac < bounds[2]:
+            zones[2] += 1
+        elif frac < bounds[3]:
+            zones[3] += 1
+        else:
+            zones[4] += 1
+    return zones

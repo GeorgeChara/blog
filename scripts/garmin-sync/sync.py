@@ -13,7 +13,7 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from garmin_client import create_client, download_gpx, get_activities_since
+from garmin_client import create_client, download_gpx, get_activities_since, get_streams
 from hugo_writer import ACTIVITIES_DIR, DATA_DIR, slugify, update_summary, write_activity
 
 SYNC_STATE_PATH = DATA_DIR / "last_sync.json"
@@ -106,7 +106,8 @@ def main():
 
         try:
             gpx_xml = download_gpx(client, activity["activityId"])
-            summary = write_activity(activity, gpx_xml)
+            streams = get_streams(client, activity["activityId"])
+            summary = write_activity(activity, gpx_xml, streams)
             new_summaries.append(summary)
             known_ids.add(activity_id)
             new_count += 1

@@ -2,218 +2,178 @@
 <style>
   main > h1:first-of-type { display: none; }
   .time { display: none; }
+  .terminal-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
 
-  .ride-header { margin-bottom: var(--spacing-lg); }
-  .ride-header h1 { margin-bottom: var(--spacing-xs); }
-  .ride-date { color: var(--color-text-muted); font-size: var(--font-size-small); }
+  .cy-h1 { font-weight: bold; font-size: 1.4em; margin: 0 0 0.15em 0; color: #000; }
+  .cy-date { color: #888; font-size: 0.9em; margin: 0 0 1.6em 0; }
+  .cy-h2 { font-weight: bold; font-size: 0.95em; margin: 2em 0 0.7em 0; color: #000; }
 
-  .ride-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--pre-border-radius);
-  }
-  .stat { text-align: center; }
-  .stat-value { font-size: 1.4em; font-weight: bold; display: block; }
-  .stat-label { font-size: var(--font-size-small); color: var(--color-text-muted); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.65em 0.8em; }
+  .stat .v { font-weight: bold; font-size: 1.05em; color: #000; font-variant-numeric: tabular-nums; }
+  .stat .l { display: block; font-size: 0.68em; color: #999; margin-top: 0.2em; text-transform: uppercase; letter-spacing: 0.04em; }
 
-  #ride-map {
-    height: 400px;
-    width: 100%;
-    border-radius: var(--pre-border-radius);
-    border: 1px solid var(--color-border);
-    margin-bottom: var(--spacing-lg);
-    z-index: 0;
-  }
+  #ride-map { height: 360px; width: 100%; border: 1px solid #e5decf; border-radius: 4px; z-index: 0; }
 
-  .chart-container {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--pre-border-radius);
-  }
-  .chart-container h3 { margin-top: 0; margin-bottom: var(--spacing-sm); }
-  .chart-container canvas { width: 100% !important; }
+  .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
+  .card canvas { width: 100% !important; }
+
+  .zones { display: flex; align-items: center; gap: 1.4em; flex-wrap: wrap; }
+  .zones .donut { width: 150px; flex: none; }
+  .zlegend { font-size: 0.82em; }
+  .zrow { display: flex; align-items: center; gap: 0.5em; padding: 0.15em 0; }
+  .zsw { width: 12px; height: 12px; border-radius: 2px; flex: none; }
+  .zname { color: #333; }
+  .ztime { color: #888; margin-left: auto; font-variant-numeric: tabular-nums; padding-left: 1.5em; }
+
+  .view-all { font-size: 0.85em; margin-top: 2em; }
+  .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
 </style>
 
-<div class="ride-header">
-  <h1>{{ .Title }}</h1>
-  <span class="ride-date">{{ .Date.Format "Monday, 2 January 2006" }}</span>
+<p class="cy-h1">{{ .Title }}</p>
+<p class="cy-date">{{ .Date.Format "Monday, 2 January 2006" }}</p>
+
+<div class="stats">
+  <div class="stat"><span class="v">{{ .Params.distance_km }} km</span><span class="l">Distance</span></div>
+  <div class="stat"><span class="v">{{ .Params.elevation_m }} m</span><span class="l">Elevation</span></div>
+  <div class="stat"><span class="v">{{ .Params.duration }}</span><span class="l">Duration</span></div>
+  <div class="stat"><span class="v">{{ .Params.avg_speed_kmh }}</span><span class="l">km/h avg</span></div>
+  {{ with .Params.avg_power }}<div class="stat"><span class="v">{{ . }} W</span><span class="l">Avg Power</span></div>{{ end }}
+  {{ with .Params.normalized_power }}<div class="stat"><span class="v">{{ . }} W</span><span class="l">Normalized Power</span></div>{{ end }}
+  {{ with .Params.avg_cadence }}<div class="stat"><span class="v">{{ . }} rpm</span><span class="l">Cadence</span></div>{{ end }}
+  {{ with .Params.avg_hr }}<div class="stat"><span class="v">{{ . }} bpm</span><span class="l">Avg HR</span></div>{{ end }}
+  {{ with .Params.calories }}<div class="stat"><span class="v">{{ . }}</span><span class="l">Calories</span></div>{{ end }}
 </div>
 
-<div class="ride-stats">
-  <div class="stat">
-    <span class="stat-value">{{ .Params.distance_km }} km</span>
-    <span class="stat-label">Distance</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">{{ .Params.elevation_m }} m</span>
-    <span class="stat-label">Elevation</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">{{ .Params.duration }}</span>
-    <span class="stat-label">Duration</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">{{ .Params.avg_speed_kmh }} km/h</span>
-    <span class="stat-label">Avg Speed</span>
-  </div>
-  {{ with .Params.avg_hr }}
-  <div class="stat">
-    <span class="stat-value">{{ . }} bpm</span>
-    <span class="stat-label">Avg HR</span>
-  </div>
-  {{ end }}
-  {{ with .Params.avg_power }}
-  <div class="stat">
-    <span class="stat-value">{{ . }} W</span>
-    <span class="stat-label">Avg Power</span>
-  </div>
-  {{ end }}
-  {{ with .Params.normalized_power }}
-  <div class="stat">
-    <span class="stat-value">{{ . }} W</span>
-    <span class="stat-label">Normalized Power</span>
-  </div>
-  {{ end }}
-  {{ with .Params.avg_cadence }}
-  <div class="stat">
-    <span class="stat-value">{{ . }} rpm</span>
-    <span class="stat-label">Cadence</span>
-  </div>
-  {{ end }}
-  {{ with .Params.calories }}
-  <div class="stat">
-    <span class="stat-value">{{ . }}</span>
-    <span class="stat-label">Calories</span>
-  </div>
-  {{ end }}
-</div>
-
+<p class="cy-h2">Route</p>
 <div id="ride-map"></div>
 
 {{ $activityId := .Params.garmin_id }}
 {{ $activityData := index hugo.Data.cycling.activities $activityId }}
 {{ if $activityData }}
 
-<div class="chart-container">
-  <h3>Elevation Profile</h3>
-  <canvas id="elevationChart" height="80"></canvas>
-</div>
+{{ if $activityData.power_profile }}
+<p class="cy-h2">Power and elevation</p>
+<div class="card"><canvas id="powerElevChart" height="90"></canvas></div>
+{{ end }}
 
-{{ if $activityData.hr_profile }}
-<div class="chart-container">
-  <h3>Heart Rate</h3>
-  <canvas id="hrChart" height="60"></canvas>
+{{ if $activityData.power_zones }}
+<p class="cy-h2">Power zones</p>
+<div class="card zones">
+  <div class="donut"><canvas id="zonesChart"></canvas></div>
+  <div class="zlegend" id="zonesLegend"></div>
 </div>
 {{ end }}
 
 {{ if $activityData.speed_profile }}
-<div class="chart-container">
-  <h3>Speed</h3>
-  <canvas id="speedChart" height="60"></canvas>
-</div>
+<p class="cy-h2">Speed</p>
+<div class="card"><canvas id="speedChart" height="55"></canvas></div>
 {{ end }}
 
-{{ if $activityData.power_profile }}
-<div class="chart-container">
-  <h3>Power</h3>
-  <canvas id="powerChart" height="60"></canvas>
-</div>
+{{ if $activityData.hr_profile }}
+<p class="cy-h2">Heart rate</p>
+<div class="card"><canvas id="hrChart" height="55"></canvas></div>
+{{ end }}
+
+{{ if $activityData.cadence_profile }}
+<p class="cy-h2">Cadence</p>
+<div class="card"><canvas id="cadenceChart" height="55"></canvas></div>
 {{ end }}
 
 {{ end }}
 
 {{ .Content }}
 
-<div class="terminal-nav">
-  <div class="back-nav">
-    <a href="{{ (.Parent).RelPermalink }}" class="back-link">../</a>
-  </div>
-</div>
+<p class="view-all"><a href="{{ (.Parent).RelPermalink }}">&larr; All rides</a></p>
 
-<!-- Leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-gpx@2.1.2/gpx.js"></script>
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-
 <script>
 (function() {
-  // Map
   var map = L.map('ride-map', { scrollWheelZoom: false });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 18
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 18
   }).addTo(map);
-
-  var gpxUrl = '{{ .Params.gpx_file }}';
-  new L.GPX(gpxUrl, {
+  new L.GPX('{{ .Params.gpx_file }}', {
     async: true,
-    polyline_options: { color: '#e34234', weight: 3, opacity: 0.8 },
-    marker_options: {
-      startIconUrl: null,
-      endIconUrl: null,
-      shadowUrl: null,
-      wptIconUrls: { '': null }
-    }
-  }).on('loaded', function(e) {
-    map.fitBounds(e.target.getBounds(), { padding: [20, 20] });
-  }).on('error', function(e) {
-    console.error('GPX load error:', e);
-  }).addTo(map);
+    polyline_options: { color: '#d98a2b', weight: 3, opacity: 0.85 },
+    marker_options: { startIconUrl: null, endIconUrl: null, shadowUrl: null, wptIconUrls: { '': null } }
+  }).on('loaded', function(e) { map.fitBounds(e.target.getBounds(), { padding: [20, 20] }); }).addTo(map);
 
-  // Chart data
   {{ if $activityData }}
-  var activityData = {{ $activityData | jsonify }};
+  var d = {{ $activityData | jsonify | safeJS }};
+  if (typeof d === 'string') { d = JSON.parse(d); }
+  var dist = (d.distance_profile || []).map(function(x) { return x == null ? '' : x.toFixed(1); });
+  var mono = { family: 'monospace', size: 11 };
 
-  var distLabels = activityData.distance_profile.map(function(d) { return d.toFixed(1); });
-
-  var chartDefaults = {
-    responsive: true,
-    interaction: { intersect: false, mode: 'index' },
-    plugins: { legend: { display: false } },
-    scales: {
-      x: {
-        display: true,
-        title: { display: true, text: 'Distance (km)' },
-        ticks: { maxTicksLimit: 10 }
-      }
-    },
-    elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } }
-  };
-
-  function makeChart(id, data, label, color, yLabel, fill) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    var opts = JSON.parse(JSON.stringify(chartDefaults));
-    opts.scales.y = { title: { display: true, text: yLabel } };
+  function line(id, data, color, yLabel) {
+    var el = document.getElementById(id); if (!el) return;
     new Chart(el, {
       type: 'line',
-      data: {
-        labels: distLabels,
-        datasets: [{
-          label: label,
-          data: data,
-          borderColor: color,
-          backgroundColor: fill || (color + '20'),
-          fill: !!fill || true
-        }]
-      },
-      options: opts
+      data: { labels: dist, datasets: [{ data: data, borderColor: color, backgroundColor: color + '22', fill: true, spanGaps: true }] },
+      options: {
+        responsive: true, interaction: { intersect: false, mode: 'index' },
+        plugins: { legend: { display: false } },
+        elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } },
+        scales: {
+          x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } },
+          y: { title: { display: true, text: yLabel, font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } }
+        }
+      }
     });
   }
 
-  makeChart('elevationChart', activityData.elevation_profile, 'Elevation', '#6b7280', 'Elevation (m)', 'rgba(107,114,128,0.15)');
-  makeChart('hrChart', activityData.hr_profile, 'Heart Rate', '#ef4444', 'BPM', 'rgba(239,68,68,0.1)');
-  makeChart('speedChart', activityData.speed_profile, 'Speed', '#3b82f6', 'km/h', 'rgba(59,130,246,0.1)');
-  makeChart('powerChart', activityData.power_profile, 'Power', '#f59e0b', 'Watts', 'rgba(245,158,11,0.1)');
+  // Power + elevation combined (dual axis)
+  var pe = document.getElementById('powerElevChart');
+  if (pe) {
+    new Chart(pe, {
+      type: 'line',
+      data: { labels: dist, datasets: [
+        { label: 'Power', data: d.power_profile, borderColor: '#d98a2b', backgroundColor: '#d98a2b22', fill: true, yAxisID: 'y', spanGaps: true },
+        { label: 'Elevation', data: d.elevation_profile, borderColor: '#c9c2b4', backgroundColor: '#c9c2b433', fill: true, yAxisID: 'y1', spanGaps: true }
+      ]},
+      options: {
+        responsive: true, interaction: { intersect: false, mode: 'index' },
+        plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12 } } },
+        elements: { point: { radius: 0 }, line: { tension: 0.3, borderWidth: 2 } },
+        scales: {
+          x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } },
+          y: { position: 'left', title: { display: true, text: 'Watts', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } },
+          y1: { position: 'right', title: { display: true, text: 'm', font: mono }, ticks: { font: mono }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  line('speedChart', d.speed_profile, '#4169E1', 'km/h');
+  line('hrChart', d.hr_profile, '#e05353', 'bpm');
+  line('cadenceChart', d.cadence_profile, '#3aa06a', 'rpm');
+
+  // Power zones donut
+  var zc = document.getElementById('zonesChart');
+  if (zc && d.power_zones) {
+    var znames = ['Z1 Recovery', 'Z2 Endurance', 'Z3 Tempo', 'Z4 Threshold', 'Z5 VO2+'];
+    var zcolors = ['#cbd5e1', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
+    var secs = d.power_zones;
+    new Chart(zc, {
+      type: 'doughnut',
+      data: { labels: znames, datasets: [{ data: secs, backgroundColor: zcolors, borderWidth: 0 }] },
+      options: { responsive: true, cutout: '62%', plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: function(c) { var m = Math.round(c.parsed / 60); return c.label + ': ' + m + ' min'; } } } } }
+    });
+    var total = secs.reduce(function(a, b) { return a + b; }, 0) || 1;
+    var leg = document.getElementById('zonesLegend');
+    leg.innerHTML = znames.map(function(n, i) {
+      var m = Math.round(secs[i] / 60);
+      var pct = Math.round(secs[i] / total * 100);
+      return '<div class="zrow"><span class="zsw" style="background:' + zcolors[i] + '"></span>' +
+             '<span class="zname">' + n + '</span><span class="ztime">' + m + ' min (' + pct + '%)</span></div>';
+    }).join('');
+  }
   {{ end }}
 })();
 </script>

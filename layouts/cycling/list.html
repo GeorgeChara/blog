@@ -54,6 +54,17 @@
 {{ end }}
 {{ end }}
 
+{{ $np := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+{{ if $a.normalized_power }}{{ $np = $np | append (dict "d" (substr $a.date 0 10) "np" $a.normalized_power) }}{{ end }}
+{{ end }}
+{{ $np = sort $np "d" }}
+{{ if $np }}
+<p class="cy-h2">Normalized power per ride</p>
+<div class="chart-card"><canvas id="npChart" height="70"></canvas></div>
+<script id="np-data" type="application/json">{{ $np | jsonify | safeJS }}</script>
+{{ end }}
+
 <p class="cy-h2">Recent rides</p>
 {{ if $recent }}
 <table class="rides">
@@ -103,6 +114,18 @@
       }
     }
   });
+
+  var npEl = document.getElementById('npChart');
+  var npTag = document.getElementById('np-data');
+  if (npEl && npTag) {
+    var np = JSON.parse(npTag.textContent);
+    new Chart(npEl, {
+      type: 'bar',
+      data: { labels: np.map(function(r) { return r.d.slice(5); }), datasets: [{ data: np.map(function(r) { return r.np; }), backgroundColor: 'rgba(217,138,43,0.35)', borderColor: '#d98a2b', borderWidth: 1, borderRadius: 3 }] },
+      options: { responsive: true, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.parsed.y + ' W'; } } } },
+        scales: { y: { beginAtZero: true, grid: { color: '#f2efe8' }, ticks: { font: { family: 'monospace' } } }, x: { grid: { display: false }, ticks: { font: { family: 'monospace' }, maxTicksLimit: 12 } } } }
+    });
+  }
 })();
 </script>
 {{ end }}
