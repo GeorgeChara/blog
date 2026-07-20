@@ -27,13 +27,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/garmin-sync/requirements.txt
 
+      - name: Restore Garmin session token
+        env:
+          GARMIN_TOKEN_B64: ${{ secrets.GARMIN_TOKEN_B64 }}
+        run: |
+          echo "$GARMIN_TOKEN_B64" | base64 -d | tar xz -C /tmp
+          ls -la /tmp/garmin_tokens
+
       - name: Sync Garmin activities
         env:
-          GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
-          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
           GARMIN_TOKEN_PATH: /tmp/garmin_tokens
         working-directory: scripts/garmin-sync
-        run: python sync.py
+        run: python sync.py --days 14
 
       - name: Commit and push if changed
         run: |
