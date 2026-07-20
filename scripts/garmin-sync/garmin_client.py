@@ -10,18 +10,28 @@ from garminconnect import Garmin
 
 def create_client():
     """Create and authenticate a Garmin Connect client."""
-    email = os.environ["GARMIN_EMAIL"]
-    password = os.environ["GARMIN_PASSWORD"]
     token_path = str(Path(os.environ.get("GARMIN_TOKEN_PATH", "/tmp/garmin_tokens")))
 
-    # prompt_mfa lets Garmin ask for the 2FA code interactively when needed.
+    # If a saved session token exists, use it: no credentials, no MFA. This is
+    # what lets the GitHub Action run headlessly.
+    if Path(token_path).exists():
+        try:
+            client = Garmin()
+            client.login(token_path)
+            return client
+        except Exception as e:
+            print(f"Saved token login failed ({e}); trying a fresh login.")
+
+    # Fresh login needs credentials and a one-time MFA code, so this path only
+    # works interactively on your own machine, not in CI.
+    email = os.environ["GARMIN_EMAIL"]
+    password = os.environ["GARMIN_PASSWORD"]
+
     def _prompt_mfa():
         return input("Enter Garmin MFA code: ").strip()
 
     client = Garmin(email, password, prompt_mfa=_prompt_mfa)
-    # Passing the token path makes login() reuse a saved session if one exists
-    # (no MFA), otherwise log in fresh and save the session for next time.
-    client.login(token_path)
+    client.login(token_path)  # loads if present, else logs in and saves
     return client
 
 
