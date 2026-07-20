@@ -79,15 +79,24 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
 (function() {
-  var map = L.map('ride-map', { scrollWheelZoom: false });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 18
+  var map = L.map('ride-map', { scrollWheelZoom: false, attributionControl: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20
   }).addTo(map);
   new L.GPX('{{ .Params.gpx_file }}', {
     async: true,
     polyline_options: { color: '#2b7fd9', weight: 3, opacity: 0.85 },
     marker_options: { startIconUrl: null, endIconUrl: null, shadowUrl: null, wptIconUrls: { '': null } }
   }).on('loaded', function(e) { map.fitBounds(e.target.getBounds(), { padding: [20, 20] }); }).addTo(map);
+
+  // Route coordinates + a position marker synced to graph hover
+  var routeLatLngs = [];
+  var hoverMarker = L.circleMarker([0, 0], { radius: 7, color: '#fff', weight: 2, fillColor: '#c0392b', fillOpacity: 1 });
+  fetch('{{ .Params.gpx_file }}').then(function(r) { return r.ok ? r.text() : null; }).then(function(xml) {
+    if (!xml) return;
+    var pts = new DOMParser().parseFromString(xml, 'application/xml').getElementsByTagName('trkpt');
+    for (var i = 0; i < pts.length; i++) { routeLatLngs.push([parseFloat(pts[i].getAttribute('lat')), parseFloat(pts[i].getAttribute('lon'))]); }
+  }).catch(function() {});
 
   {{ if $activityData }}
   var d = {{ $activityData | jsonify | safeJS }};
@@ -113,33 +122,41 @@
   if (pc) {
     var ds = [];
     var scales = { x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } } };
+    // Consistent order + site colours: power (red dashed), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
+    if (d.power_profile) {
+      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#c0392b', backgroundColor: 'transparent', borderDash: [4, 3], order: 1 });
+      scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
+    }
+    if (d.speed_profile) {
+      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 2 });
+      scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
+    }
+    if (d.hr_profile) {
+      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 3 });
+      scales.yHr = { display: false, position: 'right', beginAtZero: true };
+    }
+    if (d.cadence_profile) {
+      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4 });
+      scales.yCad = { display: false, position: 'right', beginAtZero: true };
+    }
     if (d.elevation_profile) {
       var ev = d.elevation_profile.filter(function(x) { return x != null; });
       var elevMax = ev.length ? Math.max.apply(null, ev) : 100;
       ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.6)', backgroundColor: 'rgba(214,207,192,0.32)', fill: true, borderWidth: 1, order: 5 });
       scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
     }
-    if (d.power_profile) {
-      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#2b7fd9', backgroundColor: 'transparent', order: 1 });
-      scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
-    }
-    if (d.hr_profile) {
-      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e05353', backgroundColor: 'transparent', order: 2 });
-      scales.yHr = { display: false, position: 'right', beginAtZero: true };
-    }
-    if (d.speed_profile) {
-      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 3 });
-      scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
-    }
-    if (d.cadence_profile) {
-      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4 });
-      scales.yCad = { display: false, position: 'right', beginAtZero: true };
-    }
     new Chart(pc, {
       type: 'line',
       data: { labels: dist, datasets: ds },
       options: {
         responsive: true, aspectRatio: mob ? 1.15 : 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
+        onHover: function(evt, els) {
+          if (els.length && routeLatLngs.length) {
+            var n = dist.length, frac = n > 1 ? els[0].index / (n - 1) : 0;
+            var p = routeLatLngs[Math.round(frac * (routeLatLngs.length - 1))];
+            if (p) { hoverMarker.setLatLng(p); if (!map.hasLayer(hoverMarker)) hoverMarker.addTo(map); }
+          }
+        },
         plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
           tooltip: { callbacks: { label: function(c) {
             if (c.parsed.y == null) return null;
@@ -151,6 +168,7 @@
         scales: scales
       }
     });
+    pc.addEventListener('mouseleave', function() { if (map.hasLayer(hoverMarker)) map.removeLayer(hoverMarker); });
   }
 
   // Power zones donut

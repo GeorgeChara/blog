@@ -320,8 +320,8 @@
   }).join('');
 
   // ---- Heatmap of all routes (parse GPX to polylines, no markers) ----
-  var map = L.map('heatmap', { scrollWheelZoom: false });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap', maxZoom: 18 }).addTo(map);
+  var map = L.map('heatmap', { scrollWheelZoom: false, attributionControl: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
   var bounds = null;
   function extend(b) { bounds = bounds ? bounds.extend(b) : b; map.fitBounds(bounds, { padding: [20, 20] }); }
   rides.forEach(function(r) {
