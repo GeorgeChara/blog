@@ -27,7 +27,7 @@ def main():
         print("No scripts/home.json (or lat/lon blank). Copy scripts/home.json.example,")
         print("fill in your home lat/lon + radius_m, then re-run.")
         return
-    print(f"Home privacy zone: {home['lat']:.4f}, {home['lon']:.4f}  radius {home['radius_m']} m")
+    print(f"Home privacy zone loaded (radius {home['radius_m']} m). Coordinate not shown.")
     total = trimmed = 0
     for d in DIRS:
         for gpx in sorted(d.glob("*.gpx")):
