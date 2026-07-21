@@ -22,8 +22,12 @@
   .dnums { font-family: monospace; font-size: 0.78em; color: #aaa; font-variant-numeric: tabular-nums; }
 
   /* Route heading row with averages on the right */
-  .route-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.15em 1em; margin: 2em 0 0.7em; }
+  .route-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3em 1em; margin: 2em 0 0.7em; }
   .route-head .rtype { margin: 0; }
+  .rh-meta { display: flex; align-items: center; gap: 0.6em 0.9em; flex-wrap: wrap; }
+  .share-btn { font-family: monospace; font-size: 0.78em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 3px; padding: 0.35em 0.75em; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .share-btn:active { transform: translateY(1px); }
+  .share-btn[disabled] { opacity: 0.55; cursor: default; }
   @media (max-width: 560px) { .dnums { font-size: 0.68em; } }
 
   /* Map + stats overlay (Effort / Distance / Climb sit on the map) + the ride-profile graph layered over it */
@@ -103,7 +107,10 @@
 
 <div class="route-head">
   <p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
-  <span class="dnums">{{ .Params.duration }}{{ with .Params.avg_power }} | avg {{ . }} W{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.avg_speed_kmh }} | {{ . }} km/h{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span>
+  <div class="rh-meta">
+    <span class="dnums">{{ .Params.duration }} | {{ .Params.distance_km }} km{{ with .Params.avg_power }} | avg {{ . }} W{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span>
+    <button type="button" class="share-btn" id="shareBtn">Share</button>
+  </div>
 </div>
 <div class="map-wrap">
   <div id="ride-map"></div>
@@ -146,7 +153,7 @@
   var map = L.map('ride-map', { scrollWheelZoom: false, attributionControl: false });
   map.zoomControl.setPosition('bottomright'); // keep the map corners clear of the overlaid graph + stats
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20
+    attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20, crossOrigin: true
   }).addTo(map);
   // Route as a plain polyline (no markers, so home is never pinned) + hover position marker
   var routeLatLngs = [], gpxCum = [];
@@ -384,6 +391,39 @@
   }
 
   {{ end }}
+
+  // Share: snapshot the live map + graph (whatever series are toggled) and hand it to the native share sheet
+  var shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) {
+    var h2cP = null;
+    function loadH2C() {
+      if (window.html2canvas) return Promise.resolve();
+      if (!h2cP) h2cP = new Promise(function(res, rej) { var s = document.createElement('script'); s.src = 'https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js'; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+      return h2cP;
+    }
+    shareBtn.addEventListener('click', function() {
+      var orig = shareBtn.textContent;
+      shareBtn.disabled = true; shareBtn.textContent = 'Preparing…';
+      loadH2C().then(function() {
+        return html2canvas(document.querySelector('.map-wrap'), { useCORS: true, backgroundColor: '#ffffff', scale: 2, logging: false });
+      }).then(function(canvas) {
+        return new Promise(function(res) { canvas.toBlob(res, 'image/png'); });
+      }).then(function(blob) {
+        var title = {{ $type | jsonify }} + ' {{ .Params.distance_km }} km';
+        var file = new File([blob], 'ride.png', { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          return navigator.share({ title: title, text: title, files: [file] });
+        }
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a'); a.href = url;
+        a.download = title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function() { URL.revokeObjectURL(url); }, 1500);
+      }).catch(function() {}).then(function() {
+        shareBtn.disabled = false; shareBtn.textContent = orig;
+      });
+    });
+  }
 })();
 </script>
 {{ end }}
