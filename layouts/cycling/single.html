@@ -61,6 +61,7 @@
 {{ if or $activityData.elevation_profile $activityData.power_profile $activityData.speed_profile }}
 <p class="cy-h2">Ride profile</p>
 <div class="card"><canvas id="profileChart"></canvas></div>
+{{ if $activityData.power_profile }}<p class="znote">Shaded bands behind the power line are your effort zones, grey (easy) up through red (very hard). Same colours as the ring below.</p>{{ end }}
 {{ end }}
 
 {{ if $activityData.power_zones }}
@@ -153,8 +154,32 @@
       ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.6)', backgroundColor: 'rgba(214,207,192,0.32)', fill: true, borderWidth: 1, order: 5 });
       scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
     }
+    // Zwift-style faint power-zone bands behind the power line (mapped to the W axis)
+    var FTP = 220; // keep in sync with hugo_writer.py FTP
+    var zoneBands = {
+      id: 'zoneBands',
+      beforeDatasetsDraw: function(chart) {
+        var sc = chart.scales.yPower; if (!sc) return;
+        var ca = chart.chartArea, ctx = chart.ctx;
+        var edges = [0, 0.55 * FTP, 0.75 * FTP, 0.90 * FTP, 1.05 * FTP, sc.max];
+        var cols = ['rgba(203,213,225,0.16)', 'rgba(96,165,250,0.13)', 'rgba(52,211,153,0.13)', 'rgba(251,191,36,0.15)', 'rgba(248,113,113,0.15)'];
+        ctx.save();
+        for (var i = 0; i < 5; i++) {
+          if (edges[i] >= sc.max) break;
+          var yA = sc.getPixelForValue(Math.min(edges[i + 1], sc.max));
+          var yB = sc.getPixelForValue(edges[i]);
+          var top = Math.max(ca.top, Math.min(yA, yB));
+          var bot = Math.min(ca.bottom, Math.max(yA, yB));
+          if (bot <= top) continue;
+          ctx.fillStyle = cols[i];
+          ctx.fillRect(ca.left, top, ca.right - ca.left, bot - top);
+        }
+        ctx.restore();
+      }
+    };
     new Chart(pc, {
       type: 'line',
+      plugins: [zoneBands],
       data: { labels: dist, datasets: ds },
       options: {
         responsive: true, aspectRatio: mob ? 1.15 : 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
