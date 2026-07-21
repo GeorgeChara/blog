@@ -9,14 +9,17 @@
   .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.8em 0; color: #000; }
 
-  /* Milestone: one slim bar. km ridden inside the fill, target at the end, hover reveals % */
-  .ms1 { margin-top: 1.5em; }
+  /* Milestone bars: value inside the fill, target at the end, hover reveals % */
+  .ms1 { margin-top: 1.5em; display: flex; flex-direction: column; gap: 0.5em; }
   .ms1-bar { position: relative; height: 30px; border-radius: 3px; background: #e6e3da; overflow: hidden; font-family: monospace; }
-  .ms1-fill { position: absolute; left: 0; top: 0; height: 100%; background: #2b7fd9; }
-  .ms1-km { position: absolute; left: 0.75em; top: 0; height: 100%; display: flex; align-items: center; color: #fff; font-weight: bold; font-size: 0.82em; z-index: 2; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ms1-fill { position: absolute; left: 0; top: 0; height: 100%; }
+  .ms1-km { position: absolute; left: 0.75em; top: 0; height: 100%; display: flex; align-items: center; gap: 0.5em; color: #fff; font-weight: bold; font-size: 0.82em; z-index: 2; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ms1-km .sub { font-weight: normal; color: rgba(255,255,255,0.8); }
   .ms1-target { position: absolute; right: 0.75em; top: 0; height: 100%; display: flex; align-items: center; color: #8f8a7e; font-size: 0.78em; z-index: 2; font-variant-numeric: tabular-nums; }
-  .ms1-hover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(43,127,217,0.95); color: #fff; font-size: 0.8em; z-index: 3; opacity: 0; transition: opacity 0.12s; font-variant-numeric: tabular-nums; }
+  .ms1-hover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8em; z-index: 3; opacity: 0; transition: opacity 0.12s; font-variant-numeric: tabular-nums; }
   .ms1-bar:hover .ms1-hover { opacity: 1; }
+  .ms1-bar.b .ms1-fill { background: #2b7fd9; }  .ms1-bar.b .ms1-hover { background: rgba(43,127,217,0.95); }
+  .ms1-bar.g .ms1-fill { background: #3aa06a; }  .ms1-bar.g .ms1-hover { background: rgba(58,160,106,0.95); }
 
   /* Ride heatmap */
   .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 0.6em 0 0.9em; }
@@ -106,16 +109,25 @@
 */}}
 
 {{ with $summary }}
-{{/* Next distance milestone (next multiple of 500 above the running total) */}}
+{{/* Distance & climbing toward the next milestone (next 500 km / next 5000 m) */}}
 {{ $total := .total_distance_km }}
 {{ $ms := mul (math.Ceil (div (add $total 1) 500)) 500 }}
 {{ $pct := mul (div $total $ms) 100 }}
+{{ $climb := .total_elevation_m }}
+{{ $cms := mul (math.Ceil (div (add $climb 1) 5000)) 5000 }}
+{{ $cpct := mul (div $climb $cms) 100 }}
 <div class="ms1">
-  <div class="ms1-bar">
+  <div class="ms1-bar b">
     <span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"></span>
-    <span class="ms1-km">{{ printf "%.0f" $total }} km</span>
+    <span class="ms1-km">{{ printf "%.0f" $total }} km<span class="sub">&middot; {{ .total_rides }} rides</span></span>
     <span class="ms1-target">{{ printf "%.0f" $ms }} km</span>
     <span class="ms1-hover">{{ printf "%.0f" $pct }}% &middot; {{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
+  </div>
+  <div class="ms1-bar g">
+    <span class="ms1-fill" style="width:{{ printf "%.1f" $cpct }}%"></span>
+    <span class="ms1-km">{{ printf "%.0f" $climb }} m climbed</span>
+    <span class="ms1-target">{{ printf "%.0f" $cms }} m</span>
+    <span class="ms1-hover">{{ printf "%.0f" $cpct }}% &middot; {{ printf "%.0f" (sub $cms $climb) }} m to {{ printf "%.0f" $cms }}</span>
   </div>
 </div>
 {{ end }}
@@ -161,13 +173,6 @@
   {{ end }}
 </div>
 
-{{ with $summary }}
-<div class="stats">
-  <div class="stat"><span class="v">{{ .total_rides }}</span><span class="l">Rides</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .total_distance_km }}<span class="u">km</span></span><span class="l">Total distance</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .total_elevation_m }}<span class="u">m</span></span><span class="l">Total climbed</span></div>
-</div>
-{{ end }}
 
 {{ $rides := slice }}
 {{ range $id, $a := hugo.Data.cycling.activities }}
