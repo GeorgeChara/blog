@@ -255,7 +255,7 @@
     var idleHint = mob ? 'Touch the graph for stats' : 'Hover the graph for stats';
     function fmtReadout(i) {
       if (i == null || i < 0) return '<span class="hint">' + idleHint + '</span>';
-      function seg(arr, unit, color) { if (!arr || arr[i] == null) return ''; return '<span class="sep">·</span><span style="color:' + color + '">' + Math.round(arr[i]) + unit + '</span>'; }
+      function seg(arr, unit, color) { if (!arr || arr[i] == null) return ''; return '<span class="sep">|</span><span style="color:' + color + '">' + Math.round(arr[i]) + unit + '</span>'; }
       var km = (d.distance_profile && d.distance_profile[i] != null) ? d.distance_profile[i].toFixed(1) : '–';
       return '<span class="pk">' + km + ' km</span>' +
         seg(sPower, ' W', '#c0392b') + seg(sSpeed, ' km/h', '#4169E1') +
@@ -378,7 +378,7 @@
   var shareBtn = document.getElementById('shareBtn');
   if (shareBtn) {
     var SHARE_URL = window.location.href.split('#')[0];
-    var SHARE_TITLE = {{ .Title | jsonify }} + ' · {{ .Params.distance_km }} km';
+    var SHARE_TITLE = {{ .Title | jsonify }} + ' | {{ .Params.distance_km }} km';
     shareBtn.addEventListener('click', function() {
       if (navigator.share) {
         navigator.share({ title: SHARE_TITLE, url: SHARE_URL }).catch(function() {});

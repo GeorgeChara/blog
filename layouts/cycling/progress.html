@@ -194,7 +194,7 @@
   document.getElementById('lvlTitle').textContent = title;
   document.getElementById('lvlXp').textContent = xp.toLocaleString() + ' XP';
   document.getElementById('lvlBar').style.width = pct.toFixed(1) + '%';
-  document.getElementById('lvlNext').textContent = (next - xp).toLocaleString() + ' XP to level ' + (lvl + 1) + '  ·  ' + TITLES[Math.min(lvl, TITLES.length - 1)];
+  document.getElementById('lvlNext').textContent = (next - xp).toLocaleString() + ' XP to level ' + (lvl + 1) + '  |  ' + TITLES[Math.min(lvl, TITLES.length - 1)];
 
   // ---- Goals: this week / month ----
   var now = new Date();
@@ -230,7 +230,7 @@
   document.getElementById('streakVal').textContent = cur + (cur === 1 ? ' wk' : ' wks');
   setBar('streakBar', longest ? cur / longest : 1);
   var daysSince = Math.floor((now - rides[rides.length - 1].d) / 86400000);
-  document.getElementById('streakNote').textContent = 'best ' + longest + ' wks · last ride ' + daysSince + 'd ago';
+  document.getElementById('streakNote').textContent = 'best ' + longest + ' wks | last ride ' + daysSince + 'd ago';
 
   // ---- Records ----
   function best(sel) { var b = null; rides.forEach(function(r) { var v = sel(r); if (v != null && !isNaN(v) && (b == null || v > b.v)) b = { v: v, r: r }; }); return b; }

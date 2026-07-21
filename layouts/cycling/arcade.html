@@ -140,7 +140,7 @@
   // ---- assemble the sheet (block layout so borders always fit) ----
   function score(l, v) { return '<div class="line score"><span>' + l + '</span><span class="lead"></span><span class="v2">' + v + '</span></div>'; }
   var H = '';
-  H += '<div class="line"><span class="name">RIDER</span><span class="push"><span class="hdr">LVL ' + lvl + '</span> · <span class="hot">' + title + '</span></span></div>';
+  H += '<div class="line"><span class="name">RIDER</span><span class="push"><span class="hdr">LVL ' + lvl + '</span> | <span class="hot">' + title + '</span></span></div>';
   H += '<div class="line"><span class="k">XP</span>' + bar(xbFill, 14) + '<span class="vd">' + xp.toLocaleString() + ' / ' + T(lvl + 1).toLocaleString() + '</span></div>';
   H += '<div class="rule"></div>';
   stats.forEach(function(s) {
