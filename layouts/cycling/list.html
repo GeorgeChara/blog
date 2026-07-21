@@ -89,11 +89,11 @@
 {{ $pct := mul (div $total $ms) 100 }}
 <div class="milestone">
   <div class="ms-top">
-    <div><span class="ms-lab">All-time distance</span><br><span class="ms-big">{{ printf "%.0f" $total }}<span class="u">km</span></span></div>
+    <div><span class="ms-lab">All time distance</span><br><span class="ms-big">{{ printf "%.0f" $total }}<span class="u">km</span></span></div>
     <span class="ms-to">{{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
   </div>
   <div class="ms-bar"><span style="width:{{ printf "%.1f" $pct }}%"></span></div>
-  <div class="ms-pct">{{ printf "%.0f" $pct }}% there</div>
+  <div class="ms-pct">{{ printf "%.0f" $pct }}%</div>
 </div>
 {{ end }}
 
@@ -108,7 +108,6 @@
   {{ with $a.max_power }}{{ if gt (float .) $spkV }}{{ $spkV = float . }}{{ $spkD = $a.date }}{{ end }}{{ end }}
   {{ if gt (float $a.elevation_gain_m) $clmV }}{{ $clmV = float $a.elevation_gain_m }}{{ $clmD = $a.date }}{{ end }}
 {{ end }}
-<p class="pb-head">Personal bests &middot; beat them</p>
 <div class="pbs">
   <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $lonV }}<span class="u">km</span></span><span class="l">Longest ride</span><span class="d">{{ if $lonD }}{{ (time $lonD).Format "2 Jan 2006" }}{{ end }}</span></div>
   <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.1f" $fasV }}<span class="u">km/h</span></span><span class="l">Fastest average</span><span class="d">{{ if $fasD }}{{ (time $fasD).Format "2 Jan 2006" }}{{ end }}</span></div>
