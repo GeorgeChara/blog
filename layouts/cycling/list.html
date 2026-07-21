@@ -412,7 +412,7 @@
     if (ll.length < 2) { map.setView([51.9, 0.5], 9); return; }
     var draw = ll;
     if (ll.length > 2 && L.latLng(ll[0]).distanceTo(L.latLng(ll[ll.length - 1])) < 5000) { draw = ll.concat([ll[0]]); }
-    var pl = L.polyline(draw, { color: '#2b7fd9', weight: 3, opacity: 0.9 }).addTo(map);
+    var pl = L.polyline(draw, { color: '#2b7fd9', weight: 3, opacity: 0.9, smoothFactor: 0 }).addTo(map);
     map.fitBounds(pl.getBounds(), { padding: [26, 26] });
   }).catch(function() { map.setView([51.9, 0.5], 9); });
 })();

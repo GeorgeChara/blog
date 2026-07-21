@@ -150,7 +150,7 @@
     if (routeLatLngs.length > 2 && L.latLng(routeLatLngs[0]).distanceTo(L.latLng(routeLatLngs[routeLatLngs.length - 1])) < 5000) {
       draw = routeLatLngs.concat([routeLatLngs[0]]);
     }
-    var pl = L.polyline(draw, { color: '#2b7fd9', weight: 3, opacity: 0.85 }).addTo(map);
+    var pl = L.polyline(draw, { color: '#2b7fd9', weight: 3, opacity: 0.85, smoothFactor: 0 }).addTo(map);
     map.fitBounds(pl.getBounds(), { padding: [20, 20] });
   }).catch(function() { map.setView([51.9, 0.5], 9); });
 

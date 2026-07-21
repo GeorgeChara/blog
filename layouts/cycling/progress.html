@@ -336,7 +336,7 @@
       var ll = [];
       for (var i = 0; i < pts.length; i++) { ll.push([parseFloat(pts[i].getAttribute('lat')), parseFloat(pts[i].getAttribute('lon'))]); }
       if (ll.length < 2) return;
-      var pl = L.polyline(ll, { color: '#2b7fd9', weight: 2.5, opacity: 0.5 }).addTo(map);
+      var pl = L.polyline(ll, { color: '#2b7fd9', weight: 2.5, opacity: 0.5, smoothFactor: 0 }).addTo(map);
       extend(pl.getBounds());
     }).catch(function() {});
   });
