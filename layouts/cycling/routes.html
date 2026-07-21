@@ -70,19 +70,27 @@
   var rows = Array.prototype.slice.call(table.querySelectorAll('tr'));
   var active = null;
 
-  // ---- sort ----
-  var dirs = {};
-  Array.prototype.forEach.call(document.querySelectorAll('.ctl[data-sort]'), function(b) {
+  // ---- sort (switch key -> ascending; re-click -> flip direction; show arrow) ----
+  var curKey = 'score', curDir = 1;
+  var sortBtns = document.querySelectorAll('.ctl[data-sort]');
+  Array.prototype.forEach.call(sortBtns, function(x) { x.dataset.label = x.textContent; });
+  function applySort() {
+    rows.sort(function(a, b2) { return (parseFloat(a.dataset[curKey]) - parseFloat(b2.dataset[curKey])) * curDir; });
+    rows.forEach(function(r) { table.appendChild(r); });
+    Array.prototype.forEach.call(sortBtns, function(x) {
+      var on = x.dataset.sort === curKey;
+      x.className = 'ctl' + (on ? ' on' : '');
+      x.textContent = x.dataset.label + (on ? (curDir === 1 ? ' ↑' : ' ↓') : '');
+    });
+  }
+  Array.prototype.forEach.call(sortBtns, function(b) {
     b.addEventListener('click', function() {
       var key = b.dataset.sort;
-      Array.prototype.forEach.call(document.querySelectorAll('.ctl[data-sort]'), function(x) { x.className = 'ctl' + (x === b ? ' on' : ''); });
-      dirs[key] = dirs[key] === 'desc' ? 'asc' : 'desc';
-      var d = dirs[key] === 'desc' ? -1 : 1;
-      var attr = key === 'dist' ? 'dist' : key === 'climb' ? 'climb' : 'score';
-      rows.sort(function(a, b2) { return (parseFloat(a.dataset[attr]) - parseFloat(b2.dataset[attr])) * d; });
-      rows.forEach(function(r) { table.appendChild(r); });
+      if (key === curKey) curDir = -curDir; else { curKey = key; curDir = 1; }
+      applySort();
     });
   });
+  applySort();
 
   // ---- tag filter chips ----
   var allTags = {};

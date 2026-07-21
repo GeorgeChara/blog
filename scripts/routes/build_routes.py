@@ -14,8 +14,12 @@ source links are preserved across runs.
 import glob
 import math
 import re
+import sys
 from pathlib import Path
 from xml.etree import ElementTree as ET
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from privacy import load_home, trim_coords, write_gpx
 
 ROOT = Path(__file__).resolve().parents[2]
 GPX_DIR = ROOT / "static" / "cycling" / "routes"
@@ -74,10 +78,17 @@ def read_existing(md_path):
         mm = re.search(rf"^{key}:\s*(.*)$", fm, re.M)
         return mm.group(1).strip() if mm else None
 
-    return {"title": val("title"), "tags": val("tags") or "[]", "source": val("source") or '""'}
+    return {
+        "title": val("title"), "tags": val("tags") or "[]", "source": val("source") or '""',
+        "distance_km": val("distance_km"), "climb_m": val("climb_m"),
+        "difficulty": val("difficulty"), "difficulty_score": val("difficulty_score"),
+    }
 
 
 def main():
+    home = load_home()
+    if home:
+        print(f"Privacy: trimming {home['radius_m']} m around home from route starts/ends.")
     CONTENT_DIR.mkdir(parents=True, exist_ok=True)
     gpx_files = sorted(glob.glob(str(GPX_DIR / "*.gpx")))
     if not gpx_files:
@@ -94,12 +105,20 @@ def main():
         if len(coords) < 2:
             print(f"  skip {slug}: no track points")
             continue
-        dist_km, climb_m = compute(coords)
-        diff, score = difficulty(dist_km, climb_m)
         md_path = CONTENT_DIR / f"{slug}.md"
         existing = read_existing(md_path)
         is_new = slug not in known
         new_count += is_new
+
+        if existing and existing["distance_km"]:
+            # preserve stats from first ingest (GPX may have been privacy-trimmed since)
+            dist_str, climb_str = existing["distance_km"], existing["climb_m"]
+            diff = (existing["difficulty"] or "Moderate").strip().strip('"')
+            score = existing["difficulty_score"] or "0"
+        else:
+            dist_km, climb_m = compute(coords)
+            diff, score = difficulty(dist_km, climb_m)
+            dist_str, climb_str, score = f"{dist_km:.1f}", str(round(climb_m)), str(score)
 
         if existing:
             title = (existing["title"] or gpx_name or slug.replace("-", " ").title()).strip().strip('"')
@@ -108,13 +127,19 @@ def main():
             title = (gpx_name or slug.replace("-", " ").title()).strip().strip('"')
             tags, source = "[]", '""'
 
+        # privacy: strip the home vicinity from the served GPX (if home configured)
+        if home:
+            kept = trim_coords(coords, home)
+            if kept and len(kept) < len(coords):
+                write_gpx(Path(gpx), kept, title)
+
         md_path.write_text("\n".join([
             "---",
             f'title: "{title}"',
             "layout: route",
             f"gpx: /cycling/routes/{slug}.gpx",
-            f"distance_km: {dist_km:.1f}",
-            f"climb_m: {round(climb_m)}",
+            f"distance_km: {dist_str}",
+            f"climb_m: {climb_str}",
             f'difficulty: "{diff}"',
             f"difficulty_score: {score}",
             f"tags: {tags}",
@@ -123,7 +148,7 @@ def main():
             "---",
             "",
         ]))
-        print(f"  {slug}: {dist_km:.1f} km, {round(climb_m)} m, {diff}{' [NEW]' if is_new else ''}")
+        print(f"  {slug}: {dist_str} km, {climb_str} m, {diff}{' [NEW]' if is_new else ''}")
 
     idx = CONTENT_DIR / "_index.md"
     if not idx.exists():

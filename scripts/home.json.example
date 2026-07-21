@@ -1,0 +1,6 @@
+{
+  "_comment": "Copy this to scripts/home.json and fill in your home. Points within radius_m of it are stripped from the start and end of every published route/ride so your address stays hidden. scripts/home.json is gitignored.",
+  "lat": 51.8000,
+  "lon": 0.5500,
+  "radius_m": 500
+}

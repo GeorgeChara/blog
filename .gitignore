@@ -8,3 +8,6 @@ scripts/garmin-sync/.env
 scripts/garmin-sync/.venv/
 
 scripts/garmin-sync/__pycache__/
+
+# Private home location for GPX privacy trimming
+scripts/home.json
