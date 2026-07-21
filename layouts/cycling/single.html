@@ -61,7 +61,6 @@
 {{ if or $activityData.elevation_profile $activityData.power_profile $activityData.speed_profile }}
 <p class="cy-h2">Ride profile</p>
 <div class="card"><canvas id="profileChart"></canvas></div>
-{{ if $activityData.power_profile }}<p class="znote">The filled area is your power, coloured by effort zone: grey (easy) up through red (very hard). Same colours as the ring below.</p>{{ end }}
 {{ end }}
 
 {{ if $activityData.power_zones }}
@@ -135,22 +134,23 @@
     var FTP = 220; // keep in sync with hugo_writer.py FTP
     function zIdx(w) { if (w == null) return 0; var f = w / FTP; return f < 0.55 ? 0 : f < 0.75 ? 1 : f < 0.90 ? 2 : f < 1.05 ? 3 : 4; }
     var zFill = ['rgba(148,163,184,0.30)', 'rgba(96,165,250,0.32)', 'rgba(52,211,153,0.34)', 'rgba(251,191,36,0.40)', 'rgba(248,113,113,0.45)'];
-    // Consistent order + site colours: power (red, zone-filled), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
+    // Consistent order + site colours: power (red line, zones drawn by plugin), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
     if (d.power_profile) {
-      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#c0392b', borderWidth: 1.8, fill: 'origin', order: 4,
-        segment: { backgroundColor: function(c) { return zFill[zIdx(c.p1.parsed.y)]; } } });
-      scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
+      var pw = smooth(d.power_profile);
+      var pmax = Math.max.apply(null, pw.filter(function(x) { return x != null; }));
+      ds.push({ label: 'Power', data: pw, yAxisID: 'yPower', borderColor: '#c0392b', borderWidth: 1.8, backgroundColor: 'transparent', order: 1 });
+      scales.yPower = { position: 'left', beginAtZero: true, min: 0, suggestedMax: (pmax || 300), title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
     }
     if (d.speed_profile) {
-      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 1 });
+      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 2 });
       scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.hr_profile) {
-      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 2 });
+      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 3 });
       scales.yHr = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.cadence_profile) {
-      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 3 });
+      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4 });
       scales.yCad = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.elevation_profile) {
@@ -159,11 +159,36 @@
       ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.6)', backgroundColor: 'rgba(214,207,192,0.32)', fill: true, borderWidth: 1, order: 5 });
       scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
     }
+    // Zone fill under the power line, drawn behind the data lines. Skips cleanly when Power is toggled off.
+    var powerIdx = ds.findIndex(function(x) { return x.label === 'Power'; });
+    var powerZoneFill = {
+      id: 'powerZoneFill',
+      beforeDatasetsDraw: function(chart) {
+        if (powerIdx < 0) return;
+        var meta = chart.getDatasetMeta(powerIdx);
+        if (!meta || meta.hidden) return;
+        var sc = chart.scales.yPower; if (!sc) return;
+        var ca = chart.chartArea, ctx = chart.ctx, y0 = sc.getPixelForValue(0);
+        var pts = meta.data, data = chart.data.datasets[powerIdx].data;
+        ctx.save();
+        ctx.beginPath(); ctx.rect(ca.left, ca.top, ca.right - ca.left, ca.bottom - ca.top); ctx.clip();
+        for (var i = 1; i < pts.length; i++) {
+          var p0 = pts[i - 1], p1 = pts[i];
+          if (!p0 || !p1 || p0.skip || p1.skip || data[i] == null) continue;
+          ctx.fillStyle = zFill[zIdx(data[i])];
+          ctx.beginPath();
+          ctx.moveTo(p0.x, y0); ctx.lineTo(p0.x, p0.y); ctx.lineTo(p1.x, p1.y); ctx.lineTo(p1.x, y0);
+          ctx.closePath(); ctx.fill();
+        }
+        ctx.restore();
+      }
+    };
     new Chart(pc, {
       type: 'line',
+      plugins: [powerZoneFill],
       data: { labels: dist, datasets: ds },
       options: {
-        responsive: true, aspectRatio: mob ? 1.15 : 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
+        responsive: true, animation: false, aspectRatio: mob ? 1.15 : 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
         onHover: function(evt, els) {
           if (els.length && routeLatLngs.length && gpxCum.length) {
             var km = (d.distance_profile && d.distance_profile[els[0].index] != null) ? d.distance_profile[els[0].index] : null;
