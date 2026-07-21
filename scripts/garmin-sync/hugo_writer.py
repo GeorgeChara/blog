@@ -114,25 +114,22 @@ def slugify(text):
     return text
 
 
-def simplify_gpx(gpx_xml, max_points=500):
-    """Simplify a GPX track to reduce file size.
+def simplify_gpx(gpx_xml, max_points=2000):
+    """Simplify a GPX track just enough to trim file size while keeping the line
+    hugging the road through curves.
 
-    Uses the Ramer-Douglas-Peucker algorithm via gpxpy.
+    A low RDP tolerance (2 m) keeps enough vertices that bends follow the road
+    instead of chording across them. Tolerance only steps up if a very long ride
+    would otherwise blow past max_points.
     """
-    gpx = gpxpy.parse(gpx_xml)
-    gpx.simplify(max_distance=10)  # metres tolerance
+    def count(g):
+        return sum(len(s.points) for t in g.tracks for s in t.segments)
 
-    # If still too many points, increase tolerance
-    total_points = sum(
-        len(seg.points)
-        for track in gpx.tracks
-        for seg in track.segments
-    )
-    if total_points > max_points:
-        gpx_retry = gpxpy.parse(gpx_xml)
-        gpx_retry.simplify(max_distance=25)
-        return gpx_retry.to_xml()
-
+    for tol in (2, 4, 8, 16):
+        gpx = gpxpy.parse(gpx_xml)
+        gpx.simplify(max_distance=tol)
+        if count(gpx) <= max_points:
+            return gpx.to_xml()
     return gpx.to_xml()
 
 
