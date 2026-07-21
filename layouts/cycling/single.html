@@ -216,7 +216,7 @@
     }
     function setReadout(i) { hoverIdx = (i == null ? -1 : i); if (readoutEl) readoutEl.innerHTML = fmtReadout(hoverIdx); }
     setReadout(null);
-    function clearHover() { setReadout(null); if (typeof map !== 'undefined' && hoverMarker && map.hasLayer(hoverMarker)) map.removeLayer(hoverMarker); if (pchart) pchart.draw(); }
+    function clearHover() { setReadout(null); if (typeof map !== 'undefined' && hoverMarker && map.hasLayer(hoverMarker)) map.removeLayer(hoverMarker); if (pchart) { pchart.setActiveElements([]); pchart.update('none'); } }
     var crosshair = {
       id: 'crosshair',
       afterDatasetsDraw: function(chart) {
@@ -279,6 +279,7 @@
     });
     pc.addEventListener('mouseleave', clearHover);
     pc.addEventListener('touchend', clearHover);
+    pc.addEventListener('touchcancel', clearHover);
   }
 
   // Power zones donut
