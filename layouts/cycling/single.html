@@ -108,7 +108,7 @@
 <div class="route-head">
   <p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
   <div class="rh-meta">
-    <span class="dnums">{{ .Params.duration }} | {{ .Params.distance_km }} km{{ with .Params.avg_power }} | avg {{ . }} W{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span>
+    <span class="dnums">{{ .Params.duration }} | {{ .Params.distance_km }} km{{ with .Params.elevation_m }} | &uarr;{{ . }} m{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span>
     <button type="button" class="share-btn" id="shareBtn">Share</button>
   </div>
 </div>
