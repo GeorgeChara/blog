@@ -215,22 +215,22 @@
     if (d.power_profile) {
       var pmax = Math.max.apply(null, sPower.filter(function(x) { return x != null; }));
       var niceP = Math.max(50, Math.ceil((pmax || 150) / 50) * 50);
-      yMax = niceP * 2; // scale so the peak reaches ~halfway up the map, leaving the top half for the route
+      yMax = niceP; // scale so the peak reaches near the top of the map
       ds.push({ label: 'Power', data: pts(sPower), yAxisID: 'yPower', borderColor: 'rgba(192,57,43,0.92)', borderWidth: 1.8, backgroundColor: 'transparent', order: 1 });
       scales.yPower = { position: 'left', display: false, min: 0, max: yMax };
     }
-    function halfMax(arr) { return (Math.max.apply(null, arr.filter(function(x) { return x != null; })) || 1) * 2; } // axis = 2x peak so the line tops out mid-map
+    function seriesMax(arr) { return (Math.max.apply(null, arr.filter(function(x) { return x != null; })) || 1) * 1.05; } // small headroom so the line tops out near the top
     if (d.speed_profile) {
       ds.push({ label: 'Speed', data: pts(sSpeed), yAxisID: 'ySpeed', borderColor: 'rgba(65,105,225,0.9)', backgroundColor: 'transparent', order: 2, hidden: true });
-      scales.ySpeed = { display: false, position: 'right', min: 0, max: halfMax(sSpeed) };
+      scales.ySpeed = { display: false, position: 'right', min: 0, max: seriesMax(sSpeed) };
     }
     if (d.hr_profile) {
       ds.push({ label: 'Heart rate', data: pts(sHr), yAxisID: 'yHr', borderColor: 'rgba(232,133,12,0.9)', backgroundColor: 'transparent', order: 3, hidden: true });
-      scales.yHr = { display: false, position: 'right', min: 0, max: halfMax(sHr) };
+      scales.yHr = { display: false, position: 'right', min: 0, max: seriesMax(sHr) };
     }
     if (d.cadence_profile) {
       ds.push({ label: 'Cadence', data: pts(sCad), yAxisID: 'yCad', borderColor: 'rgba(58,160,106,0.9)', backgroundColor: 'transparent', order: 4, hidden: true });
-      scales.yCad = { display: false, position: 'right', min: 0, max: halfMax(sCad) };
+      scales.yCad = { display: false, position: 'right', min: 0, max: seriesMax(sCad) };
     }
     if (d.elevation_profile) {
       var ev = d.elevation_profile.filter(function(x) { return x != null; });
