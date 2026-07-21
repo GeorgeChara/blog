@@ -113,7 +113,7 @@
   <div id="ride-map"></div>
   <div class="map-stats">
     <div class="ms-row"><span class="ms-l">Distance</span><b>{{ .Params.distance_km }} km</b></div>
-    <div class="ms-row"><span class="ms-l">Climb</span><b>{{ .Params.elevation_m }} m</b> <span class="ms-mut">{{ $terrain }}</span></div>
+    <div class="ms-row"><span class="ms-l">Climb</span><b>{{ .Params.elevation_m }} m</b></div>
     <div class="ms-row"><span class="ms-l">Time</span><b>{{ .Params.duration }}</b></div>
     {{ with .Params.calories }}<div class="ms-row"><span class="ms-l">kcal</span><b>{{ . }}</b></div>{{ end }}
   </div>
