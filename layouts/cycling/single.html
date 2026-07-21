@@ -378,7 +378,7 @@
     var pinned = -1;
     function tzChip(i, text) { return '<span class="tiz-k"><span class="tiz-d" style="background:' + zcl[i] + '"></span>' + text + '</span>'; }
     function tzRender(i) {
-      if (i >= 0) { tzKey.innerHTML = tzChip(i, 'Z' + (i + 1) + ' ' + znm[i] + ' &middot; ' + Math.round(zsecs[i] / 60) + ' min &middot; ' + Math.round(zsecs[i] / ztot * 100) + '%'); }
+      if (i >= 0) { tzKey.innerHTML = tzChip(i, 'Z' + (i + 1) + ' ' + znm[i] + ' | ' + Math.round(zsecs[i] / 60) + ' min | ' + Math.round(zsecs[i] / ztot * 100) + '%'); }
       else { tzKey.innerHTML = zcl.map(function(c, k) { return tzChip(k, 'Z' + (k + 1)); }).join(''); }
     }
     tzRender(-1);
