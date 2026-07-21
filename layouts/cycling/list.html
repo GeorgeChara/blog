@@ -7,10 +7,10 @@
 
   .cy-h1 { font-weight: bold; font-size: 1.5em; margin: 0 0 0.2em 0; color: #000; }
   .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
-  .cy-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.8em 0; color: #000; }
+  .cy-h2 { font-weight: bold; font-size: 1em; margin: 1.4em 0 0.8em 0; color: #000; }
 
   /* Milestone bars: value inside the fill, target at the end. Hover shows a small tip above (nothing on the bar moves) */
-  .ms1 { margin-top: 1.5em; display: flex; flex-direction: column; gap: 0.5em; }
+  .ms1 { margin-top: 1.4em; display: flex; flex-direction: column; gap: 0.5em; }
   .ms1-item { position: relative; }
   .ms1-bar { position: relative; height: 30px; border-radius: 3px; background: #e6e3da; overflow: hidden; font-family: monospace; }
   .ms1-fill { position: absolute; left: 0; top: 0; height: 100%; display: flex; align-items: center; justify-content: flex-end; }
@@ -23,7 +23,7 @@
   .ms1-bar.g .ms1-fill { background: #3aa06a; }
 
   /* Ride heatmap */
-  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 0.6em 0 0.9em; }
+  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 1.4em 0 0; }
   .heat-head { margin-bottom: 0.5em; }
   .heat-title { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; }
   .heat-readout { font-family: monospace; font-size: 0.78em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.45em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
@@ -41,7 +41,7 @@
   .heat-legend i { width: 11px; height: 11px; border-radius: 1px; display: inline-block; }
 
   /* Personal-best leaderboards: top 3 per metric */
-  .lbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.9em; }
+  .lbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 1.4em; }
   @media (max-width: 640px) { .lbs { grid-template-columns: 1fr; } }
   .lb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.75em 0.85em; }
   .lb-head { font-size: 0.64em; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; margin-bottom: 0.5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -67,7 +67,7 @@
   .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
 
   /* Volume graph (tidied): fills a fixed-height card, readout sits inside at the top */
-  .vol-wrap { height: 300px; display: flex; flex-direction: column; margin-top: 1.5em; }
+  .vol-wrap { height: 300px; display: flex; flex-direction: column; margin-top: 1.4em; }
   @media (max-width: 600px) { .vol-wrap { height: 240px; } }
   .vol-wrap #trendChart { flex: 1 1 auto; min-height: 0; width: 100% !important; height: auto !important; }
   .vol-readout { flex: none; font-family: monospace; font-size: 0.8em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.35em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
@@ -76,7 +76,7 @@
   .vol-readout .vhint { color: #bbb; }
 
   /* Latest ride card: mini route map with stats overlaid, whole card links to the ride */
-  .latest { position: relative; border: 1px solid #e5decf; border-radius: 4px; overflow: hidden; }
+  .latest { position: relative; border: 1px solid #e5decf; border-radius: 4px; overflow: hidden; margin-top: 1.4em; }
   .latest-map { height: 230px; width: 100%; }
   .latest-panel { position: absolute; top: 8px; left: 8px; z-index: 500; pointer-events: none; background: rgba(255,255,255,0.82); backdrop-filter: blur(1.5px); -webkit-backdrop-filter: blur(1.5px); border: 1px solid #e5decf; border-radius: 4px; padding: 0.55em 0.75em; font-family: monospace; }
   .latest-name { font-weight: bold; color: #000; font-size: 0.9em; }
