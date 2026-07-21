@@ -390,41 +390,24 @@
 
   {{ end }}
 
-  // Share: snapshot the live map + graph (whatever series are toggled) and hand it to the native share sheet.
-  // html-to-image (not html2canvas) so Leaflet's translate3d transforms capture without shifting the route.
+  // Share the LINK to this ride. The rich map preview comes from the page's Open Graph tags,
+  // which the receiving app (Messages, Slack, WhatsApp, ...) unfurls into a card — reliable everywhere,
+  // no image generation at share time.
   var shareBtn = document.getElementById('shareBtn');
   if (shareBtn) {
-    var libP = null;
-    function loadLib() {
-      if (window.htmlToImage) return Promise.resolve();
-      if (!libP) libP = new Promise(function(res, rej) { var s = document.createElement('script'); s.src = 'https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js'; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
-      return libP;
-    }
-    var sharing = false;
+    var SHARE_URL = window.location.href.split('#')[0];
+    var SHARE_TITLE = {{ $type | jsonify }} + ' · {{ .Params.distance_km }} km';
     shareBtn.addEventListener('click', function() {
-      if (sharing) return; // guard against double-fire
-      sharing = true;
-      var orig = shareBtn.textContent;
-      shareBtn.disabled = true; shareBtn.textContent = 'Preparing…';
-      loadLib().then(function() {
-        return htmlToImage.toBlob(document.querySelector('.map-wrap'), {
-          pixelRatio: 2, backgroundColor: '#ffffff',
-          filter: function(node) { return !(node.classList && node.classList.contains('leaflet-control-container')); } // drop the zoom +/- from the shot
-        });
-      }).then(function(blob) {
-        var title = {{ $type | jsonify }} + ' {{ .Params.distance_km }} km';
-        var file = new File([blob], 'ride.png', { type: 'image/png' });
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          return navigator.share({ title: title, files: [file] });
-        }
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a'); a.href = url;
-        a.download = title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
-        document.body.appendChild(a); a.click(); a.remove();
-        setTimeout(function() { URL.revokeObjectURL(url); }, 1500);
-      }).catch(function() {}).then(function() {
-        shareBtn.disabled = false; shareBtn.textContent = orig; sharing = false;
-      });
+      if (navigator.share) {
+        navigator.share({ title: SHARE_TITLE, url: SHARE_URL }).catch(function() {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(SHARE_URL).then(function() {
+          var o = shareBtn.textContent; shareBtn.textContent = 'Link copied ✓';
+          setTimeout(function() { if (shareBtn.textContent === 'Link copied ✓') shareBtn.textContent = o; }, 1600);
+        }).catch(function() {});
+      } else {
+        window.prompt('Copy this link:', SHARE_URL);
+      }
     });
   }
 })();

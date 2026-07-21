@@ -15,32 +15,38 @@
 />{{ end }} {{/* Canonical URL */}}
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{/* Open Graph */}}
+{{/* Open Graph — ride pages get their own generated preview card + a large-image Twitter card */}}
+{{ $ogImage := "" }}{{ $twCard := "summary" }}
+{{ with .Site.Params.ogImage }}{{ $ogImage = . | absURL }}{{ end }}
+{{ $ogDesc := .Description | default .Site.Params.description }}
+{{ if .Params.garmin_id }}
+  {{ $ogImage = printf "/cycling/og/%s.png" .Params.garmin_id | absURL }}
+  {{ $twCard = "summary_large_image" }}
+  {{ $bits := slice }}
+  {{ with .Params.distance_km }}{{ $bits = $bits | append (printf "%v km" .) }}{{ end }}
+  {{ with .Params.elevation_m }}{{ $bits = $bits | append (printf "%v m climb" .) }}{{ end }}
+  {{ with .Params.duration }}{{ $bits = $bits | append . }}{{ end }}
+  {{ $ogDesc = delimit $bits " · " }}
+{{ end }}
 <meta property="og:title" content="{{ .Title }}" />
-{{ with .Description | default .Site.Params.description }}<meta
-  property="og:description"
-  content="{{ . }}"
-/>{{ end }}
+{{ with $ogDesc }}<meta property="og:description" content="{{ . }}" />{{ end }}
 <meta
   property="og:type"
   content="{{ if .IsPage }}article{{ else }}website{{ end }}"
 />
 <meta property="og:url" content="{{ .Permalink }}" />
-{{ with .Site.Params.ogImage }}<meta
-  property="og:image"
-  content="{{ . | absURL }}"
-/>{{ end }} {{/* Twitter Card */}}
-<meta name="twitter:card" content="summary" />
+{{ with $ogImage }}<meta property="og:image" content="{{ . }}" />{{ end }} {{/* Twitter Card */}}
+<meta name="twitter:card" content="{{ $twCard }}" />
 <meta name="twitter:title" content="{{ .Title }}" />
-{{ with .Description | default .Site.Params.description }}<meta
+{{ with $ogDesc }}<meta
   name="twitter:description"
   content="{{ . }}"
 />{{ end }} {{ with .Site.Params.twitterHandle }}<meta
   name="twitter:site"
   content="@{{ . }}"
-/>{{ end }} {{ with .Site.Params.ogImage }}<meta
+/>{{ end }} {{ with $ogImage }}<meta
   name="twitter:image"
-  content="{{ . | absURL }}"
+  content="{{ . }}"
 />{{ end }} {{/* RSS Feed */}} {{ with .OutputFormats.Get "rss" -}} {{ printf
 `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type
 .Permalink site.Title | safeHTML }} {{ end }} {{/* JSON-LD Structured Data for
