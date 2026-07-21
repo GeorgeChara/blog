@@ -11,3 +11,5 @@ scripts/garmin-sync/__pycache__/
 
 # Private home location for GPX privacy trimming
 scripts/home.json
+scripts/__pycache__/
+scripts/routes/__pycache__/
