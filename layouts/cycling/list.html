@@ -9,17 +9,18 @@
   .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.8em 0; color: #000; }
 
-  /* Milestone bars: value inside the fill, target at the end, hover reveals % */
+  /* Milestone bars: value inside the fill, target at the end. Hover shows a small tip above (nothing on the bar moves) */
   .ms1 { margin-top: 1.5em; display: flex; flex-direction: column; gap: 0.5em; }
+  .ms1-item { position: relative; }
   .ms1-bar { position: relative; height: 30px; border-radius: 3px; background: #e6e3da; overflow: hidden; font-family: monospace; }
   .ms1-fill { position: absolute; left: 0; top: 0; height: 100%; }
   .ms1-km { position: absolute; left: 0.75em; top: 0; height: 100%; display: flex; align-items: center; gap: 0.5em; color: #fff; font-weight: bold; font-size: 0.82em; z-index: 2; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .ms1-km .sub { font-weight: normal; color: rgba(255,255,255,0.8); }
   .ms1-target { position: absolute; right: 0.75em; top: 0; height: 100%; display: flex; align-items: center; color: #8f8a7e; font-size: 0.78em; z-index: 2; font-variant-numeric: tabular-nums; }
-  .ms1-hover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8em; z-index: 3; opacity: 0; transition: opacity 0.12s; font-variant-numeric: tabular-nums; }
-  .ms1-bar:hover .ms1-hover { opacity: 1; }
-  .ms1-bar.b .ms1-fill { background: #2b7fd9; }  .ms1-bar.b .ms1-hover { background: rgba(43,127,217,0.95); }
-  .ms1-bar.g .ms1-fill { background: #3aa06a; }  .ms1-bar.g .ms1-hover { background: rgba(58,160,106,0.95); }
+  .ms1-tip { position: absolute; bottom: calc(100% + 5px); left: 50%; transform: translateX(-50%); background: #2f2c26; color: #fff; font-family: monospace; font-size: 0.72em; padding: 0.24em 0.6em; border-radius: 3px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.12s; z-index: 5; font-variant-numeric: tabular-nums; }
+  .ms1-item:hover .ms1-tip { opacity: 1; }
+  .ms1-bar.b .ms1-fill { background: #2b7fd9; }
+  .ms1-bar.g .ms1-fill { background: #3aa06a; }
 
   /* Ride heatmap */
   .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 0.6em 0 0.9em; }
@@ -43,8 +44,10 @@
   .lbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.9em; }
   @media (max-width: 640px) { .lbs { grid-template-columns: 1fr; } }
   .lb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.75em 0.85em; }
-  .lb-head { font-size: 0.64em; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; margin-bottom: 0.5em; }
-  .lb-row { display: grid; grid-template-columns: 1em auto 1fr auto; align-items: center; gap: 0.5em; padding: 0.26em 0; font-size: 0.82em; }
+  .lb-head { font-size: 0.64em; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; margin-bottom: 0.5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lb-head.ride { color: #4169E1; }
+  .lb-row { display: grid; grid-template-columns: 1em auto 1fr auto; align-items: center; gap: 0.5em; padding: 0.3em 0.3em; margin: 0 -0.3em; font-size: 0.82em; text-decoration: none; color: inherit; border-radius: 3px; -webkit-tap-highlight-color: transparent; }
+  a.lb-row:hover { background: #f4f2ec; }
   .lb-rank { color: #c3bcac; font-variant-numeric: tabular-nums; }
   .lb-row.top .lb-rank { color: #c9a227; font-weight: bold; }
   .lb-val { font-weight: bold; color: #000; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -113,17 +116,21 @@
 {{ $cms := mul (math.Ceil (div (add $climb 1) 5000)) 5000 }}
 {{ $cpct := mul (div $climb $cms) 100 }}
 <div class="ms1">
-  <div class="ms1-bar b">
-    <span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"></span>
-    <span class="ms1-km">{{ printf "%.0f" $total }} km<span class="sub">| {{ .total_rides }} rides</span></span>
-    <span class="ms1-target">{{ printf "%.0f" $ms }} km</span>
-    <span class="ms1-hover">{{ printf "%.0f" $pct }}% | {{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
+  <div class="ms1-item">
+    <span class="ms1-tip">{{ printf "%.0f" $pct }}% | {{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
+    <div class="ms1-bar b">
+      <span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"></span>
+      <span class="ms1-km">{{ printf "%.0f" $total }} km<span class="sub">| {{ .total_rides }} rides</span></span>
+      <span class="ms1-target">{{ printf "%.0f" $ms }} km</span>
+    </div>
   </div>
-  <div class="ms1-bar g">
-    <span class="ms1-fill" style="width:{{ printf "%.1f" $cpct }}%"></span>
-    <span class="ms1-km">{{ printf "%.0f" $climb }} m climbed</span>
-    <span class="ms1-target">{{ printf "%.0f" $cms }} m</span>
-    <span class="ms1-hover">{{ printf "%.0f" $cpct }}% | {{ printf "%.0f" (sub $cms $climb) }} m to {{ printf "%.0f" $cms }}</span>
+  <div class="ms1-item">
+    <span class="ms1-tip">{{ printf "%.0f" $cpct }}% | {{ printf "%.0f" (sub $cms $climb) }} m to {{ printf "%.0f" $cms }}</span>
+    <div class="ms1-bar g">
+      <span class="ms1-fill" style="width:{{ printf "%.1f" $cpct }}%"></span>
+      <span class="ms1-km">{{ printf "%.0f" $climb }} m climbed</span>
+      <span class="ms1-target">{{ printf "%.0f" $cms }} m</span>
+    </div>
   </div>
 </div>
 {{ end }}
@@ -155,41 +162,41 @@
 {{ $fastest := first 3 (sort $acts "avg_speed_kmh" "desc") }}
 {{ $powers := first 3 (sort (where $acts "max_power" "!=" nil) "max_power" "desc") }}
 <div class="lbs">
-  <div class="lb">
+  <div class="lb" data-title="Longest rides">
     <div class="lb-head">Longest rides</div>
     {{ $mx := (index $longest 0).distance_km }}
     {{ range $i, $a := $longest }}
-    <div class="lb-row{{ if eq $i 0 }} top{{ end }}">
+    <a class="lb-row{{ if eq $i 0 }} top{{ end }}"{{ with (index $urls (substr $a.date 0 10)) }} href="{{ . }}"{{ end }} data-ride="{{ $a.name }}">
       <span class="lb-rank">{{ add $i 1 }}</span>
       <span class="lb-val">{{ printf "%.0f" $a.distance_km }}<span class="u"> km</span></span>
       <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.distance_km $mx) 100) }}%; background:#2b7fd9"></span></span>
       <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
-    </div>
+    </a>
     {{ end }}
   </div>
-  <div class="lb">
+  <div class="lb" data-title="Fastest average">
     <div class="lb-head">Fastest average</div>
     {{ $mx := (index $fastest 0).avg_speed_kmh }}
     {{ range $i, $a := $fastest }}
-    <div class="lb-row{{ if eq $i 0 }} top{{ end }}">
+    <a class="lb-row{{ if eq $i 0 }} top{{ end }}"{{ with (index $urls (substr $a.date 0 10)) }} href="{{ . }}"{{ end }} data-ride="{{ $a.name }}">
       <span class="lb-rank">{{ add $i 1 }}</span>
       <span class="lb-val">{{ printf "%.1f" $a.avg_speed_kmh }}<span class="u"> km/h</span></span>
       <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.avg_speed_kmh $mx) 100) }}%; background:#4169E1"></span></span>
       <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
-    </div>
+    </a>
     {{ end }}
   </div>
   {{ if $powers }}
-  <div class="lb">
+  <div class="lb" data-title="Power spikes">
     <div class="lb-head">Power spikes</div>
     {{ $mx := (index $powers 0).max_power }}
     {{ range $i, $a := $powers }}
-    <div class="lb-row{{ if eq $i 0 }} top{{ end }}">
+    <a class="lb-row{{ if eq $i 0 }} top{{ end }}"{{ with (index $urls (substr $a.date 0 10)) }} href="{{ . }}"{{ end }} data-ride="{{ $a.name }}">
       <span class="lb-rank">{{ add $i 1 }}</span>
       <span class="lb-val">{{ printf "%.0f" $a.max_power }}<span class="u"> W</span></span>
       <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.max_power $mx) 100) }}%; background:#c0392b"></span></span>
       <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
-    </div>
+    </a>
     {{ end }}
   </div>
   {{ end }}
@@ -301,6 +308,19 @@
   }
   heat.addEventListener('mouseleave', function() { setReadout(null); });
   function parse10(iso) { var p = iso.split('-'); return parseInt(p[2], 10) + ' ' + MON[parseInt(p[1], 10) - 1]; }
+})();
+
+// Leaderboards: hovering a row swaps the box title to that ride's short name
+(function() {
+  function shorten(n) { return (n || '').replace(/\s*(road\s+)?cycling\s*$/i, '').replace(/\s+ride\s*$/i, '').trim() || n; }
+  Array.prototype.forEach.call(document.querySelectorAll('.lb'), function(box) {
+    var head = box.querySelector('.lb-head'), def = box.getAttribute('data-title') || head.textContent;
+    Array.prototype.forEach.call(box.querySelectorAll('.lb-row'), function(row) {
+      var name = shorten(row.getAttribute('data-ride'));
+      row.addEventListener('mouseenter', function() { head.textContent = name; head.classList.add('ride'); });
+      row.addEventListener('mouseleave', function() { head.textContent = def; head.classList.remove('ride'); });
+    });
+  });
 })();
 
 (function() {
