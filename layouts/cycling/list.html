@@ -9,12 +9,35 @@
   .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.8em 0; color: #000; }
 
-  .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6em; margin-top: 1.5em; }
-  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; }
-  .stat .v { font-weight: bold; font-size: 1.5em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
-  .stat .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
-  .stat .l { display: block; font-size: 0.68em; color: #999; margin-top: 0.45em; text-transform: uppercase; letter-spacing: 0.04em; }
+  /* Milestone hero */
+  .milestone { border: 1px solid #e5decf; border-radius: 4px; padding: 0.95em 1.1em; margin-top: 1.5em; background: #f4f7fc; }
+  .ms-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  .ms-lab { font-size: 0.66em; color: #8a8fa0; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; }
+  .ms-big { font-weight: bold; font-size: 1.7em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; }
+  .ms-big .u { font-size: 0.45em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+  .ms-to { font-family: monospace; font-size: 0.82em; color: #4169E1; font-variant-numeric: tabular-nums; }
+  .ms-bar { height: 12px; border-radius: 1px; background: #e2e6ef; overflow: hidden; margin-top: 0.7em; }
+  .ms-bar > span { display: block; height: 100%; background: #2b7fd9; }
+  .ms-pct { font-family: monospace; font-size: 0.72em; color: #9aa0b0; margin-top: 0.3em; font-variant-numeric: tabular-nums; }
+
+  /* Personal bests */
+  .pb-head { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; margin: 1.6em 0 0.5em; }
+  .pbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
+  @media (max-width: 560px) { .pbs { grid-template-columns: 1fr; } }
+  .pb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; position: relative; }
+  .pb .v { font-weight: bold; font-size: 1.5em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
+  .pb .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+  .pb .l { display: block; font-size: 0.72em; color: #444; margin-top: 0.45em; }
+  .pb .d { display: block; font-size: 0.68em; color: #aaa; margin-top: 0.15em; font-variant-numeric: tabular-nums; }
+  .pb .tag { position: absolute; top: 0.6em; right: 0.7em; font-size: 0.6em; color: #c9a227; letter-spacing: 0.06em; font-weight: bold; }
+
+  /* Totals row */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.6em; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; }
+  .stat .v { font-weight: bold; font-size: 1.15em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.1em; }
+  .stat .u { font-size: 0.55em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+  .stat .l { display: block; font-size: 0.64em; color: #999; margin-top: 0.4em; text-transform: uppercase; letter-spacing: 0.04em; }
 
   .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
 
@@ -60,12 +83,47 @@
 */}}
 
 {{ with $summary }}
+{{/* Next distance milestone (next multiple of 500 above the running total) */}}
+{{ $total := .total_distance_km }}
+{{ $ms := mul (math.Ceil (div (add $total 1) 500)) 500 }}
+{{ $pct := mul (div $total $ms) 100 }}
+<div class="milestone">
+  <div class="ms-top">
+    <div><span class="ms-lab">All-time distance</span><br><span class="ms-big">{{ printf "%.0f" $total }}<span class="u">km</span></span></div>
+    <span class="ms-to">{{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
+  </div>
+  <div class="ms-bar"><span style="width:{{ printf "%.1f" $pct }}%"></span></div>
+  <div class="ms-pct">{{ printf "%.0f" $pct }}% there</div>
+</div>
+{{ end }}
+
+{{/* Personal bests: computed from all activities */}}
+{{ $lonV := 0.0 }}{{ $lonD := "" }}
+{{ $fasV := 0.0 }}{{ $fasD := "" }}
+{{ $spkV := 0.0 }}{{ $spkD := "" }}
+{{ $clmV := 0.0 }}{{ $clmD := "" }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+  {{ if gt (float $a.distance_km) $lonV }}{{ $lonV = float $a.distance_km }}{{ $lonD = $a.date }}{{ end }}
+  {{ if gt (float $a.avg_speed_kmh) $fasV }}{{ $fasV = float $a.avg_speed_kmh }}{{ $fasD = $a.date }}{{ end }}
+  {{ with $a.max_power }}{{ if gt (float .) $spkV }}{{ $spkV = float . }}{{ $spkD = $a.date }}{{ end }}{{ end }}
+  {{ if gt (float $a.elevation_gain_m) $clmV }}{{ $clmV = float $a.elevation_gain_m }}{{ $clmD = $a.date }}{{ end }}
+{{ end }}
+<p class="pb-head">Personal bests &middot; beat them</p>
+<div class="pbs">
+  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $lonV }}<span class="u">km</span></span><span class="l">Longest ride</span><span class="d">{{ if $lonD }}{{ (time $lonD).Format "2 Jan 2006" }}{{ end }}</span></div>
+  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.1f" $fasV }}<span class="u">km/h</span></span><span class="l">Fastest average</span><span class="d">{{ if $fasD }}{{ (time $fasD).Format "2 Jan 2006" }}{{ end }}</span></div>
+  {{ if gt $spkV 0.0 }}
+  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $spkV }}<span class="u">W</span></span><span class="l">Power spike</span><span class="d">{{ if $spkD }}{{ (time $spkD).Format "2 Jan 2006" }}{{ end }}</span></div>
+  {{ else }}
+  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $clmV }}<span class="u">m</span></span><span class="l">Biggest climb</span><span class="d">{{ if $clmD }}{{ (time $clmD).Format "2 Jan 2006" }}{{ end }}</span></div>
+  {{ end }}
+</div>
+
+{{ with $summary }}
 <div class="stats">
   <div class="stat"><span class="v">{{ .total_rides }}</span><span class="l">Rides</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .total_distance_km }}<span class="u">km</span></span><span class="l">Distance</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .total_elevation_m }}<span class="u">m</span></span><span class="l">Climbed</span></div>
-  <div class="stat"><span class="v">{{ printf "%.1f" .avg_speed_kmh }}<span class="u">km/h</span></span><span class="l">Avg speed</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .longest_ride_km }}<span class="u">km</span></span><span class="l">Longest</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .total_distance_km }}<span class="u">km</span></span><span class="l">Total distance</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .total_elevation_m }}<span class="u">m</span></span><span class="l">Total climbed</span></div>
 </div>
 {{ end }}
 
