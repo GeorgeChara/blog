@@ -22,6 +22,10 @@
   .vol-wrap { height: 300px; }
   @media (max-width: 600px) { .vol-wrap { height: 240px; } }
   .vol-wrap #trendChart { width: 100% !important; height: 100% !important; }
+  .vol-readout { font-family: monospace; font-size: 0.8em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.35em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+  .vol-readout .vk { color: #000; font-weight: bold; }
+  .vol-readout .vsep { color: #d8d2c4; padding: 0 0.2em; }
+  .vol-readout .vhint { color: #bbb; }
 
   /* Latest ride card: mini route map with stats overlaid, whole card links to the ride */
   .latest { position: relative; border: 1px solid #e5decf; border-radius: 4px; overflow: hidden; }
@@ -71,6 +75,7 @@
 {{ end }}
 {{ if $rides }}
 <p class="cy-h2">Volume and intensity by month</p>
+<div id="trendReadout" class="vol-readout"></div>
 <div class="chart-card vol-wrap">
   <canvas id="trendChart"></canvas>
 </div>
@@ -133,24 +138,45 @@
   var mono = { family: 'monospace' };
   var mob = window.innerWidth < 600;
 
-  new Chart(el, {
+  // External readout + crosshair (no covering tooltip box)
+  var roEl = document.getElementById('trendReadout');
+  var hoverIdx = -1, tchart = null;
+  var idleHint = (mob ? 'Touch' : 'Hover') + ' the graph for month stats';
+  function fmtReadout(i) {
+    if (i < 0) return '<span class="vhint">' + idleHint + '</span>';
+    function seg(v, unit, color) { return (v == null) ? '' : '<span class="vsep">·</span><span style="color:' + color + '">' + v + unit + '</span>'; }
+    return '<span class="vk">' + labels[i] + '</span>' +
+      seg(dist[i] != null ? dist[i].toFixed(0) : null, ' km', '#2b7fd9') +
+      seg(speed[i], ' km/h', '#4169E1') + seg(power[i], ' W', '#c0392b');
+  }
+  function setReadout(i) { hoverIdx = i; if (roEl) roEl.innerHTML = fmtReadout(i); }
+  setReadout(-1);
+  var crosshair = {
+    id: 'xhair',
+    afterDatasetsDraw: function(chart) {
+      if (hoverIdx < 0 || !chart.scales.x) return;
+      var x = chart.scales.x.getPixelForValue(hoverIdx), ca = chart.chartArea, ctx = chart.ctx;
+      ctx.save(); ctx.beginPath(); ctx.moveTo(x, ca.top); ctx.lineTo(x, ca.bottom);
+      ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(0,0,0,0.22)'; ctx.stroke(); ctx.restore();
+    }
+  };
+
+  tchart = new Chart(el, {
+    plugins: [crosshair],
     data: {
       labels: labels,
       datasets: [
         { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(43,127,217,0.25)', borderColor: '#2b7fd9', borderWidth: 1, borderRadius: 1 },
         { type: 'line', label: 'Avg speed', data: speed, yAxisID: 'ySpeed', order: 1, borderColor: '#4169E1', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 },
-        { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c0392b', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, borderDash: [4, 3], pointRadius: 3 }
+        { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c0392b', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 }
       ]
     },
     options: {
       responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' },
+      onHover: function(evt, els) { if (els.length) { setReadout(els[0].index); tchart.draw(); } },
       plugins: {
         legend: { display: true, labels: { font: mono, boxWidth: 11, boxHeight: 11, usePointStyle: false, color: '#555', padding: 12 } },
-        tooltip: { callbacks: { label: function(c) {
-          if (c.parsed.y == null) return null;
-          var u = c.dataset.yAxisID === 'yKm' ? ' km' : c.dataset.yAxisID === 'ySpeed' ? ' km/h' : ' W';
-          return c.dataset.label + ': ' + c.parsed.y + u;
-        } } }
+        tooltip: { enabled: false }
       },
       scales: {
         x: { grid: { display: false }, ticks: { font: mono, color: '#8a8378' }, border: { display: false } },
@@ -160,6 +186,7 @@
       }
     }
   });
+  el.addEventListener('mouseleave', function() { setReadout(-1); tchart.draw(); });
 })();
 </script>
 {{ end }}
