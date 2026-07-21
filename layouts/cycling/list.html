@@ -21,14 +21,20 @@
   .ms-pct { font-family: monospace; font-size: 0.72em; color: #9aa0b0; margin-top: 0.3em; font-variant-numeric: tabular-nums; }
 
   /* Ride heatmap */
-  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin-top: 0.6em; }
-  .heat-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; margin-bottom: 0.7em; }
+  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 0.6em 0 0.9em; }
+  .heat-head { margin-bottom: 0.5em; }
   .heat-title { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; }
-  .heat-count { font-family: monospace; font-size: 0.72em; color: #a49c8c; font-variant-numeric: tabular-nums; }
+  .heat-readout { font-family: monospace; font-size: 0.78em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.45em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+  .heat-readout .hk { color: #000; font-weight: bold; }
+  .heat-readout .hn { color: #333; }
+  .heat-readout .hsep { color: #d8d2c4; padding: 0 0.2em; }
+  .heat-readout .hhint { color: #bbb; }
   .heat-scroll { overflow-x: auto; padding-bottom: 2px; }
-  .heat-months { display: grid; grid-auto-flow: column; gap: 3px; font-size: 0.58em; color: #b3ab9a; letter-spacing: 0.03em; height: 1.2em; margin-bottom: 2px; width: max-content; }
-  .heat { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 12px); gap: 3px; width: max-content; }
-  .heat i { width: 12px; height: 12px; border-radius: 1px; background: #ece9e0; }
+  .heat-months { display: grid; font-size: 0.6em; color: #b3ab9a; letter-spacing: 0.03em; height: 1.3em; margin-bottom: 4px; width: max-content; }
+  .heat-months span { grid-row: 1; align-self: end; }
+  .heat { display: grid; grid-auto-flow: column; width: max-content; }
+  .heat i { border-radius: 1px; background: #ece9e0; }
+  .heat i.has { cursor: pointer; }
   .heat-legend { display: flex; align-items: center; gap: 0.35em; font-size: 0.66em; color: #b3ab9a; margin-top: 0.6em; }
   .heat-legend i { width: 11px; height: 11px; border-radius: 1px; display: inline-block; }
 
@@ -109,14 +115,15 @@
 </div>
 {{ end }}
 
-{{/* Ride heatmap — every ride day since you started */}}
+{{/* Ride heatmap — this calendar year */}}
 {{ $days := slice }}
 {{ range $id, $a := hugo.Data.cycling.activities }}
-{{ $days = $days | append (dict "d" (substr $a.date 0 10) "km" $a.distance_km) }}
+{{ $days = $days | append (dict "d" (substr $a.date 0 10) "km" $a.distance_km "name" $a.name) }}
 {{ end }}
 {{ if $days }}
 <div class="heat-card">
-  <div class="heat-head"><span class="heat-title">Riding rhythm</span><span class="heat-count" id="heatCount"></span></div>
+  <div class="heat-head"><span class="heat-title">Riding rhythm</span></div>
+  <div class="heat-readout" id="heatReadout"></div>
   <div class="heat-scroll" id="heatScroll">
     <div class="heat-months" id="heatMonths"></div>
     <div class="heat" id="heat"></div>
@@ -202,43 +209,63 @@
 {{ if hugo.Data.cycling.activities }}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
-// Ride heatmap: a shaded square per day since the first ride, GitHub/Strava style
+// Ride heatmap: a shaded square per day for THIS calendar year, with a themed hover readout
 (function() {
   var htag = document.getElementById('heat-data'), heat = document.getElementById('heat');
   if (!htag || !heat) return;
   var days = JSON.parse(htag.textContent);
-  var byDay = {}; days.forEach(function(r) { byDay[r.d] = (byDay[r.d] || 0) + (r.km || 0); });
-  var dates = Object.keys(byDay).sort();
-  if (!dates.length) return;
-  function parse(s) { var p = s.split('-'); return new Date(p[0], p[1] - 1, p[2]); }
-  var start = parse(dates[0]);
-  start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // back to Monday
-  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var byDay = {}; days.forEach(function(r) { byDay[r.d] = { km: (byDay[r.d] ? byDay[r.d].km : 0) + (r.km || 0), name: r.name }; });
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   function lvl(km) { return km <= 0 ? 0 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
   var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
+
+  var year = new Date().getFullYear();
+  var start = new Date(year, 0, 1); start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // Mon on/before Jan 1
+  var end = new Date(year, 11, 31);
+
+  // size cells to fit the year across the card (no scroll if it fits)
+  var scroll = document.getElementById('heatScroll');
+  var weeks = Math.ceil(((end - start) / 86400000 + 1) / 7);
+  var gap = 2, avail = (scroll.clientWidth || 480) - 2;
+  var cell = Math.max(6, Math.min(14, Math.floor((avail - (weeks - 1) * gap) / weeks)));
+  heat.style.gap = gap + 'px';
+  heat.style.gridTemplateRows = 'repeat(7, ' + cell + 'px)';
+
+  var readout = document.getElementById('heatReadout');
+  var HINT = '<span class="hhint">Hover a day to see the ride</span>';
+  function setReadout(html) { readout.innerHTML = html || HINT; }
+  setReadout(null);
+
   var monthsEl = document.getElementById('heatMonths');
-  var cur = new Date(start), weeks = 0, active = 0, lastMonth = -1;
-  var monthCells = [];
-  while (cur <= today) {
-    weeks++;
-    var weekStartMonth = cur.getMonth();
-    monthCells.push(weekStartMonth !== lastMonth ? (cur.getDate() <= 7 ? MON[weekStartMonth] : '') : '');
-    if (weekStartMonth !== lastMonth && cur.getDate() <= 7) lastMonth = weekStartMonth;
+  monthsEl.style.gridTemplateColumns = 'repeat(' + weeks + ', ' + cell + 'px)';
+  monthsEl.style.columnGap = gap + 'px';
+
+  var cur = new Date(start), lastMonth = -1;
+  for (var w = 0; w < weeks; w++) {
+    var wkMonth = cur.getMonth();
+    var lab = document.createElement('span');
+    if (cur.getFullYear() === year && wkMonth !== lastMonth) { lab.textContent = MON[wkMonth]; lastMonth = wkMonth; }
+    monthsEl.appendChild(lab);
     for (var d = 0; d < 7; d++) {
+      var inYear = cur.getFullYear() === year;
       var iso = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
-      var km = byDay[iso] || 0, L = (cur <= today) ? lvl(km) : 0;
-      if (km > 0) active++;
-      var cell = document.createElement('i');
-      cell.style.background = cols[L];
-      if (km > 0) cell.title = iso + ' · ' + Math.round(km) + ' km';
-      heat.appendChild(cell);
+      var rec = inYear ? byDay[iso] : null, km = rec ? rec.km : 0;
+      var i = document.createElement('i');
+      i.style.width = i.style.height = cell + 'px';
+      i.style.background = inYear ? cols[lvl(km)] : 'transparent';
+      if (km > 0) {
+        i.className = 'has';
+        var dd = parse10(iso);
+        (function(label) {
+          i.addEventListener('mouseenter', function() { setReadout(label); });
+        })('<span class="hk">' + dd + '</span><span class="hsep">·</span><span class="hn">' + (rec.name || 'Ride') + '</span><span class="hsep">·</span><span style="color:#2b7fd9">' + Math.round(km) + ' km</span>');
+      }
+      heat.appendChild(i);
       cur.setDate(cur.getDate() + 1);
     }
   }
-  monthsEl.style.gridTemplateColumns = 'repeat(' + weeks + ', 12px)';
-  monthCells.forEach(function(m) { var s = document.createElement('span'); s.textContent = m; monthsEl.appendChild(s); });
-  document.getElementById('heatCount').textContent = active + ' ride days';
+  heat.addEventListener('mouseleave', function() { setReadout(null); });
+  function parse10(iso) { var p = iso.split('-'); return parseInt(p[2], 10) + ' ' + MON[parseInt(p[1], 10) - 1]; }
 })();
 
 (function() {
