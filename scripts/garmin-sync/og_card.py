@@ -7,7 +7,7 @@ tiles and projects the route; Pillow draws the overlays.
 """
 import math
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from staticmap import StaticMap, Line
 
 import matplotlib.font_manager as fm
@@ -85,27 +85,54 @@ def _draw_power(base, power):
     return Image.alpha_composite(base, ov)
 
 
-def _draw_panel(base, ride_type, name, dist_km, climb_m, duration):
+def _draw_panel(base, name, dist_km, climb_m, duration, calories):
+    """Frosted-glass stats panel: name + DIST/CLMB/TIME/KCAL rows, with the map
+    blurred and lightened behind it so the blue route still shows through."""
+    d0 = ImageDraw.Draw(base)
+    f_name = _font(True, 40)
+    f_lab = _font(False, 25)
+    f_val = _font(True, 31)
+
+    rows = []
+    if dist_km is not None:
+        rows.append(("DIST", f"{dist_km} km"))
+    if climb_m is not None:
+        rows.append(("CLMB", f"{climb_m} m"))
+    if duration:
+        rows.append(("TIME", str(duration)))
+    if calories:
+        rows.append(("KCAL", str(int(round(float(calories))))))
+
+    pad, row_h, name_h, col_gap = 26, 42, 56, 22
+    label_w = int(max((d0.textlength(l, font=f_lab) for l, _ in rows), default=0))
+    val_w = int(max((d0.textlength(v, font=f_val) for _, v in rows), default=0))
+    content_w = max(int(d0.textlength(name, font=f_name)), label_w + col_gap + val_w)
+    x0, y0 = 22, 22
+    x1 = x0 + content_w + pad * 2
+    y1 = y0 + pad + name_h + len(rows) * row_h + pad - row_h + 30
+
+    # frosted glass: blur + lighten the map region under the panel
+    crop = base.crop((x0, y0, x1, y1)).filter(ImageFilter.GaussianBlur(7)).convert("RGBA")
+    crop = Image.blend(crop, Image.new("RGBA", crop.size, (255, 255, 255, 255)), 0.55)
+    mask = Image.new("L", crop.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, crop.size[0] - 1, crop.size[1] - 1], radius=12, fill=255)
+    base.paste(crop, (x0, y0), mask)
+
     d = ImageDraw.Draw(base)
-    f_type, f_name, f_stat = _font(True, 22), _font(True, 34), _font(False, 24)
-    stats = "   ".join([s for s in [
-        (f"{dist_km} km" if dist_km is not None else None),
-        (f"{climb_m} m up" if climb_m is not None else None),
-        (str(duration) if duration else None),
-    ] if s])
-    pad = 22
-    widths = [d.textlength(name, font=f_name), d.textlength(ride_type.upper(), font=f_type), d.textlength(stats, font=f_stat)]
-    pw = int(max(widths)) + pad * 2
-    ph = 150
-    d.rounded_rectangle([16, 16, 16 + pw, 16 + ph], radius=8, fill=(255, 255, 255, 224), outline=(229, 222, 207, 255), width=1)
-    d.text((16 + pad, 30), ride_type.upper(), font=f_type, fill=(65, 105, 225, 255))
-    d.text((16 + pad, 62), name, font=f_name, fill=(20, 20, 20, 255))
-    d.text((16 + pad, 114), stats, font=f_stat, fill=(90, 90, 90, 255))
+    d.rounded_rectangle([x0, y0, x1, y1], radius=12, outline=(205, 198, 182, 255), width=1)
+    tx = x0 + pad
+    d.text((tx, y0 + pad - 4), name, font=f_name, fill=(18, 18, 18, 255))
+    ty = y0 + pad + name_h
+    for lab, val in rows:
+        cy = ty + row_h / 2
+        d.text((tx, cy), lab, font=f_lab, fill=(140, 135, 124, 255), anchor="lm")
+        d.text((tx + label_w + col_gap, cy), val, font=f_val, fill=(18, 18, 18, 255), anchor="lm")
+        ty += row_h
     d.text((W - 18, H - 16), "charalambous.uk/cycling", font=_font(False, 16), fill=(120, 113, 98, 255), anchor="rs")
     return base
 
 
-def make_og_card(out_path, ride_type, name, dist_km, climb_m, duration, coords, power):
+def make_og_card(out_path, name, dist_km, climb_m, duration, calories, coords, power):
     """coords: (lat, lon) points.  power: power_profile list (may hold None)."""
     m = StaticMap(W, H, url_template=TILE_URL, padding_x=70, padding_y=80)
     if coords and len(coords) > 1:
@@ -117,5 +144,5 @@ def make_og_card(out_path, ride_type, name, dist_km, climb_m, duration, coords, 
         m.add_line(Line(lonlat, BLUE, 5))
     img = m.render().convert("RGBA")
     img = _draw_power(img, power)
-    img = _draw_panel(img, ride_type, name, dist_km, climb_m, duration)
+    img = _draw_panel(img, name, dist_km, climb_m, duration, calories)
     img.convert("RGB").save(out_path)

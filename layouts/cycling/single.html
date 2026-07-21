@@ -21,10 +21,11 @@
   .rtype .rtime { text-transform: none; font-weight: normal; color: #999; letter-spacing: 0; }
   .dnums { font-family: monospace; font-size: 0.78em; color: #aaa; font-variant-numeric: tabular-nums; }
 
-  /* Route heading row with averages on the right */
-  .route-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3em 1em; margin: 2em 0 0.7em; }
-  .route-head .rtype { margin: 0; }
-  .rh-meta { display: flex; align-items: center; gap: 0.6em 0.9em; flex-wrap: wrap; }
+  /* Title + Share on one line above the map */
+  .route-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3em 1em; margin: 0.5em 0 0.7em; }
+  .rh-title { display: flex; align-items: baseline; gap: 0.6em; flex-wrap: wrap; }
+  .rh-title .cy-h1 { margin: 0; }
+  .rh-title .cy-date { margin: 0; }
   .share-btn { font-family: monospace; font-size: 0.78em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 3px; padding: 0.35em 0.75em; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .share-btn:active { transform: translateY(1px); }
   .share-btn[disabled] { opacity: 0.55; cursor: default; }
@@ -82,31 +83,12 @@
   .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
 </style>
 
-<p class="cy-h1">{{ .Title }}</p>
-<p class="cy-date">{{ .Date.Format "Monday, 2 January 2006" }}</p>
-
-{{/* Effort dashboard: read the ride's character at a glance (FTP 220 placeholder, matches hugo_writer.py + the graph) */}}
-{{ $ftp := 220.0 }}
-{{ $np := or .Params.normalized_power .Params.avg_power }}
-{{ $if := 0.0 }}{{ if $np }}{{ $if = div (float $np) $ftp }}{{ end }}
-{{ $type := "Ride" }}{{ $effort := "" }}{{ $ecolor := "#4169E1" }}
-{{ if $np }}
-  {{ if lt $if 0.65 }}{{ $type = "Recovery ride" }}{{ $effort = "easy" }}{{ $ecolor = "#3aa06a" }}
-  {{ else if lt $if 0.80 }}{{ $type = "Endurance ride" }}{{ $effort = "moderate" }}{{ $ecolor = "#4169E1" }}
-  {{ else if lt $if 0.90 }}{{ $type = "Tempo ride" }}{{ $effort = "hard" }}{{ $ecolor = "#e8850c" }}
-  {{ else if lt $if 1.0 }}{{ $type = "Threshold ride" }}{{ $effort = "hard" }}{{ $ecolor = "#e8850c" }}
-  {{ else }}{{ $type = "Intervals" }}{{ $effort = "very hard" }}{{ $ecolor = "#c0392b" }}{{ end }}
-{{ end }}
-{{ $effpct := 0.0 }}{{ if $np }}{{ $effpct = mul (math.Max 0.0 (math.Min 1.0 (div (sub $if 0.5) 0.55))) 100 }}{{ end }}
-{{ $mpk := 0.0 }}{{ if gt (float .Params.distance_km) 0.0 }}{{ $mpk = div (float .Params.elevation_m) (float .Params.distance_km) }}{{ end }}
-{{ $terrain := cond (lt $mpk 6.0) "flat" (cond (lt $mpk 12.0) "rolling" (cond (lt $mpk 20.0) "hilly" "mountainous")) }}
-
 {{ $activityId := .Params.garmin_id }}
 {{ $activityData := index hugo.Data.cycling.activities $activityId }}
 {{ $hasProfile := false }}{{ if $activityData }}{{ $hasProfile = or $activityData.elevation_profile $activityData.power_profile $activityData.speed_profile }}{{ end }}
 
 <div class="route-head">
-  <p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
+  <div class="rh-title"><span class="cy-h1">{{ .Title }}</span><span class="cy-date">{{ .Date.Format "Monday, 2 January 2006" }}</span></div>
   <button type="button" class="share-btn" id="shareBtn">Share</button>
 </div>
 <div class="map-wrap">
@@ -396,7 +378,7 @@
   var shareBtn = document.getElementById('shareBtn');
   if (shareBtn) {
     var SHARE_URL = window.location.href.split('#')[0];
-    var SHARE_TITLE = {{ $type | jsonify }} + ' · {{ .Params.distance_km }} km';
+    var SHARE_TITLE = {{ .Title | jsonify }} + ' · {{ .Params.distance_km }} km';
     shareBtn.addEventListener('click', function() {
       if (navigator.share) {
         navigator.share({ title: SHARE_TITLE, url: SHARE_URL }).catch(function() {});
