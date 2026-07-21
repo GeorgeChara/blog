@@ -57,9 +57,10 @@
   .tiz-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.45em; }
   .tiz-title { font-weight: bold; font-size: 0.95em; color: #000; }
   .tiz-total { font-family: monospace; font-size: 0.8em; color: #999; font-variant-numeric: tabular-nums; }
-  .tiz-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: #eee; }
-  .tiz-bar span { display: block; height: 100%; }
-  .tiz-key { display: flex; flex-wrap: wrap; gap: 0.35em 1.1em; margin-top: 0.55em; font-family: monospace; font-size: 0.78em; color: #777; font-variant-numeric: tabular-nums; }
+  .tiz-bar { display: flex; height: 15px; border-radius: 7px; overflow: hidden; background: #eee; }
+  .tiz-bar span { display: block; height: 100%; cursor: pointer; transition: filter 0.12s; }
+  .tiz-bar span:hover { filter: brightness(1.08); }
+  .tiz-key { display: flex; flex-wrap: wrap; gap: 0.35em 1.1em; margin-top: 0.55em; min-height: 1.2em; font-family: monospace; font-size: 0.78em; color: #777; font-variant-numeric: tabular-nums; }
   .tiz-k { display: inline-flex; align-items: center; gap: 0.4em; }
   .tiz-d { width: 9px; height: 9px; border-radius: 2px; flex: none; }
 
@@ -103,7 +104,7 @@
     <span class="ds">{{ $terrain }}</span>
   </div>
 </div>
-<p class="dnums">{{ with .Params.avg_power }}avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} &middot; NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} &middot; {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} &middot; {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} &middot; {{ . }} km/h{{ end }}{{ with .Params.calories }} &middot; {{ . }} kcal{{ end }}</p>
+<p class="dnums">{{ with .Params.duration }}{{ . }}{{ end }}{{ with .Params.avg_power }} &middot; avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} &middot; NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} &middot; {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} &middot; {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} &middot; {{ . }} km/h{{ end }}{{ with .Params.calories }} &middot; {{ . }} kcal{{ end }}</p>
 
 <p class="cy-h2">Route</p>
 <div id="ride-map"></div>
@@ -122,11 +123,10 @@
 {{ $ztot := 0 }}{{ range $z }}{{ $ztot = add $ztot . }}{{ end }}
 {{ if gt $ztot 0 }}
 {{ $zcolors := slice "#cbd5e1" "#60a5fa" "#34d399" "#fbbf24" "#f87171" }}
-{{ $znames := slice "Z1" "Z2" "Z3" "Z4" "Z5" }}
 <div class="tiz">
   <div class="tiz-head"><span class="tiz-title">Time in zones</span><span class="tiz-total">{{ math.Round (div (float $ztot) 60) }} min</span></div>
-  <div class="tiz-bar">{{ range $i, $s := $z }}{{ if gt $s 0 }}<span style="width:{{ printf "%.2f" (mul (div (float $s) (float $ztot)) 100) }}%; background:{{ index $zcolors $i }}"></span>{{ end }}{{ end }}</div>
-  <div class="tiz-key">{{ range $i, $s := $z }}<span class="tiz-k"><span class="tiz-d" style="background:{{ index $zcolors $i }}"></span>{{ index $znames $i }} {{ math.Round (mul (div (float $s) (float $ztot)) 100) }}%</span>{{ end }}</div>
+  <div class="tiz-bar" id="tzBar">{{ range $i, $s := $z }}{{ if gt $s 0 }}<span data-z="{{ $i }}" style="width:{{ printf "%.2f" (mul (div (float $s) (float $ztot)) 100) }}%; background:{{ index $zcolors $i }}"></span>{{ end }}{{ end }}</div>
+  <div class="tiz-key" id="tzKey"></div>
 </div>
 {{ end }}
 {{ end }}
@@ -320,6 +320,28 @@
         legendHost.appendChild(chip);
       });
     }
+  }
+
+  // Time-in-zones: simple Z1..Z5 key by default, zone detail on hover; click to pin (works on touch)
+  var tzBar = document.getElementById('tzBar');
+  var tzKey = document.getElementById('tzKey');
+  if (tzBar && tzKey && d.power_zones) {
+    var zsecs = d.power_zones, ztot = zsecs.reduce(function(a, b) { return a + b; }, 0) || 1;
+    var znm = ['Recovery', 'Endurance', 'Tempo', 'Threshold', 'VO2+'];
+    var zcl = ['#cbd5e1', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
+    var pinned = -1;
+    function tzChip(i, text) { return '<span class="tiz-k"><span class="tiz-d" style="background:' + zcl[i] + '"></span>' + text + '</span>'; }
+    function tzRender(i) {
+      if (i >= 0) { tzKey.innerHTML = tzChip(i, 'Z' + (i + 1) + ' ' + znm[i] + ' &middot; ' + Math.round(zsecs[i] / 60) + ' min &middot; ' + Math.round(zsecs[i] / ztot * 100) + '%'); }
+      else { tzKey.innerHTML = zcl.map(function(c, k) { return tzChip(k, 'Z' + (k + 1)); }).join(''); }
+    }
+    tzRender(-1);
+    Array.prototype.forEach.call(tzBar.children, function(seg) {
+      var i = +seg.getAttribute('data-z');
+      seg.addEventListener('mouseenter', function() { tzRender(i); });
+      seg.addEventListener('mouseleave', function() { tzRender(pinned); });
+      seg.addEventListener('click', function() { pinned = (pinned === i ? -1 : i); tzRender(pinned); });
+    });
   }
 
   {{ end }}
