@@ -59,11 +59,11 @@
 
   .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
 
-  /* Volume graph (tidied): fills a fixed-height card */
-  .vol-wrap { height: 300px; }
+  /* Volume graph (tidied): fills a fixed-height card, readout sits inside at the top */
+  .vol-wrap { height: 300px; display: flex; flex-direction: column; margin-top: 1.5em; }
   @media (max-width: 600px) { .vol-wrap { height: 240px; } }
-  .vol-wrap #trendChart { width: 100% !important; height: 100% !important; }
-  .vol-readout { font-family: monospace; font-size: 0.8em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.35em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+  .vol-wrap #trendChart { flex: 1 1 auto; min-height: 0; width: 100% !important; height: auto !important; }
+  .vol-readout { flex: none; font-family: monospace; font-size: 0.8em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.35em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
   .vol-readout .vk { color: #000; font-weight: bold; }
   .vol-readout .vsep { color: #d8d2c4; padding: 0 0.2em; }
   .vol-readout .vhint { color: #bbb; }
@@ -168,9 +168,8 @@
 {{ $rides = $rides | append (dict "d" (substr $a.date 0 7) "km" $a.distance_km "sp" $a.avg_speed_kmh "pw" $a.avg_power) }}
 {{ end }}
 {{ if $rides }}
-<p class="cy-h2">Volume and intensity by month</p>
-<div id="trendReadout" class="vol-readout"></div>
 <div class="chart-card vol-wrap">
+  <div id="trendReadout" class="vol-readout"></div>
   <canvas id="trendChart"></canvas>
 </div>
 <script id="trend-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
