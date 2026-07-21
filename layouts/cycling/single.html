@@ -289,9 +289,9 @@
       id: 'crosshair',
       afterDatasetsDraw: function(chart) {
         if (hoverIdx < 0 || !chart.scales.x || distKm[hoverIdx] == null) return;
-        var x = chart.scales.x.getPixelForValue(distKm[hoverIdx]), ca = chart.chartArea, ctx = chart.ctx;
+        var x = chart.scales.x.getPixelForValue(distKm[hoverIdx]), ctx = chart.ctx;
         ctx.save();
-        ctx.beginPath(); ctx.moveTo(x, ca.top); ctx.lineTo(x, ca.bottom);
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, chart.height); // full map height, top to bottom
         ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(0,0,0,0.32)'; ctx.stroke();
         ctx.restore();
       }
@@ -392,22 +392,21 @@
 
   {{ end }}
 
-  // Share: snapshot the live map + graph (whatever series are toggled) and hand it to the native share sheet
+  // Share: snapshot the live map + graph (whatever series are toggled) and hand it to the native share sheet.
+  // html-to-image (not html2canvas) so Leaflet's translate3d transforms capture without shifting the route.
   var shareBtn = document.getElementById('shareBtn');
   if (shareBtn) {
-    var h2cP = null;
-    function loadH2C() {
-      if (window.html2canvas) return Promise.resolve();
-      if (!h2cP) h2cP = new Promise(function(res, rej) { var s = document.createElement('script'); s.src = 'https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js'; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
-      return h2cP;
+    var libP = null;
+    function loadLib() {
+      if (window.htmlToImage) return Promise.resolve();
+      if (!libP) libP = new Promise(function(res, rej) { var s = document.createElement('script'); s.src = 'https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js'; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+      return libP;
     }
     shareBtn.addEventListener('click', function() {
       var orig = shareBtn.textContent;
       shareBtn.disabled = true; shareBtn.textContent = 'Preparing…';
-      loadH2C().then(function() {
-        return html2canvas(document.querySelector('.map-wrap'), { useCORS: true, backgroundColor: '#ffffff', scale: 2, logging: false });
-      }).then(function(canvas) {
-        return new Promise(function(res) { canvas.toBlob(res, 'image/png'); });
+      loadLib().then(function() {
+        return htmlToImage.toBlob(document.querySelector('.map-wrap'), { pixelRatio: 2, backgroundColor: '#ffffff', cacheBust: true });
       }).then(function(blob) {
         var title = {{ $type | jsonify }} + ' {{ .Params.distance_km }} km';
         var file = new File([blob], 'ride.png', { type: 'image/png' });
