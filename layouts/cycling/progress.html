@@ -32,12 +32,13 @@
   .tile .s { display: block; font-size: 0.72em; color: var(--amber); margin-top: 0.35em; }
 
   /* Rings */
-  .rings { display: flex; gap: 1.4em; flex-wrap: wrap; }
-  .ring { display: flex; align-items: center; gap: 0.8em; border: 1px solid var(--line); border-radius: 4px; padding: 0.8em 1em; flex: 1; min-width: 200px; }
-  .ring svg { flex: none; }
+  .rings { display: flex; gap: 0.6em; flex-wrap: wrap; }
+  .ring { border: 1px solid var(--line); border-radius: 4px; padding: 0.8em 1em; flex: 1; min-width: 200px; }
   .ring .rt { font-size: 0.72em; color: #999; text-transform: uppercase; letter-spacing: 0.04em; }
-  .ring .rv { font-weight: bold; font-size: 1.1em; font-variant-numeric: tabular-nums; }
-  .ring .rn { font-size: 0.76em; color: var(--mut); margin-top: 0.2em; }
+  .ring .rv { font-weight: bold; font-size: 1.15em; font-variant-numeric: tabular-nums; margin-top: 0.15em; }
+  .rbar { height: 9px; background: var(--soft); border-radius: 1px; margin: 0.55em 0 0.4em; overflow: hidden; }
+  .rbar > span { display: block; height: 100%; }
+  .ring .rn { font-size: 0.76em; color: var(--mut); }
 
   /* Badges */
   .badges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; }
@@ -101,16 +102,19 @@
 <p class="pg-h2">Streak &amp; goals</p>
 <div class="rings">
   <div class="ring">
-    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#f2efe8" stroke-width="8"/><circle id="ringWeek" cx="32" cy="32" r="27" fill="none" stroke="#2b7fd9" stroke-width="8" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="170" transform="rotate(-90 32 32)"/></svg>
-    <div><div class="rt">This week</div><div class="rv" id="weekKm">0 km</div><div class="rn" id="weekNote"></div></div>
+    <div class="rt">This week</div><div class="rv" id="weekKm">0 km</div>
+    <div class="rbar"><span id="weekBar" style="width:0%; background:#2b7fd9"></span></div>
+    <div class="rn" id="weekNote"></div>
   </div>
   <div class="ring">
-    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#f2efe8" stroke-width="8"/><circle id="ringMonth" cx="32" cy="32" r="27" fill="none" stroke="#4169E1" stroke-width="8" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="170" transform="rotate(-90 32 32)"/></svg>
-    <div><div class="rt">This month</div><div class="rv" id="monthKm">0 km</div><div class="rn" id="monthNote"></div></div>
+    <div class="rt">This month</div><div class="rv" id="monthKm">0 km</div>
+    <div class="rbar"><span id="monthBar" style="width:0%; background:#4169E1"></span></div>
+    <div class="rn" id="monthNote"></div>
   </div>
   <div class="ring">
-    <svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#f2efe8" stroke-width="8"/><circle cx="32" cy="32" r="27" fill="none" stroke="#e0533a" stroke-width="8" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="0" transform="rotate(-90 32 32)"/></svg>
-    <div><div class="rt">Weekly streak</div><div class="rv" id="streakVal">0</div><div class="rn" id="streakNote"></div></div>
+    <div class="rt">Weekly streak</div><div class="rv" id="streakVal">0</div>
+    <div class="rbar"><span id="streakBar" style="width:0%; background:#e0533a"></span></div>
+    <div class="rn" id="streakNote"></div>
   </div>
 </div>
 
@@ -201,9 +205,9 @@
     if (isoWeek(r.d) === curWeek) weekKm += num(r.km);
     if (r.d.getFullYear() + '-' + String(r.d.getMonth() + 1).padStart(2, '0') === curMonth) monthKm += num(r.km);
   });
-  var WEEK_GOAL = 60, MONTH_GOAL = 200, C = 170;
-  function setRing(id, frac) { document.getElementById(id).style.strokeDashoffset = (C * (1 - Math.min(1, frac))).toFixed(1); }
-  setRing('ringWeek', weekKm / WEEK_GOAL); setRing('ringMonth', monthKm / MONTH_GOAL);
+  var WEEK_GOAL = 60, MONTH_GOAL = 200;
+  function setBar(id, frac) { document.getElementById(id).style.width = (Math.min(1, frac) * 100).toFixed(1) + '%'; }
+  setBar('weekBar', weekKm / WEEK_GOAL); setBar('monthBar', monthKm / MONTH_GOAL);
   document.getElementById('weekKm').textContent = weekKm.toFixed(1) + ' km';
   document.getElementById('monthKm').textContent = monthKm.toFixed(0) + ' km';
   document.getElementById('weekNote').textContent = weekKm >= WEEK_GOAL ? 'goal smashed ✔' : (WEEK_GOAL - weekKm).toFixed(0) + ' km to ' + WEEK_GOAL + ' km goal';
@@ -224,6 +228,7 @@
   function adjWeeks(a, b) { var da = fromWeek(a), db = fromWeek(b); return Math.round((db - da) / 604800000) === 1; }
   function fromWeek(w) { var p = w.split('-'), simple = new Date(Date.UTC(+p[0], 0, 1 + (+p[1] - 1) * 7)); var dow = simple.getUTCDay(); var iso = simple; if (dow <= 4) iso.setUTCDate(simple.getUTCDate() - simple.getUTCDay() + 1); else iso.setUTCDate(simple.getUTCDate() + 8 - simple.getUTCDay()); return iso; }
   document.getElementById('streakVal').textContent = cur + (cur === 1 ? ' wk' : ' wks');
+  setBar('streakBar', longest ? cur / longest : 1);
   var daysSince = Math.floor((now - rides[rides.length - 1].d) / 86400000);
   document.getElementById('streakNote').textContent = 'best ' + longest + ' wks · last ride ' + daysSince + 'd ago';
 
