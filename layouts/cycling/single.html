@@ -23,7 +23,7 @@
 
   /* Route heading row with averages on the right */
   .route-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.15em 1em; margin: 2em 0 0.7em; }
-  .route-head .rh-title { margin: 0; }
+  .route-head .rtype { margin: 0; }
   @media (max-width: 560px) { .dnums { font-size: 0.68em; } }
 
   /* Map + stats overlay (Effort / Distance / Climb sit on the map) */
@@ -95,9 +95,10 @@
 {{ $mpk := 0.0 }}{{ if gt (float .Params.distance_km) 0.0 }}{{ $mpk = div (float .Params.elevation_m) (float .Params.distance_km) }}{{ end }}
 {{ $terrain := cond (lt $mpk 6.0) "flat" (cond (lt $mpk 12.0) "rolling" (cond (lt $mpk 20.0) "hilly" "mountainous")) }}
 
-<p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}<span class="rtime">&middot; {{ .Params.duration }}</span></p>
-
-<div class="route-head"><span class="cy-h2 rh-title">Route</span><span class="dnums">{{ with .Params.avg_power }}avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} | NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} | {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} | {{ . }} km/h{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span></div>
+<div class="route-head">
+  <p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
+  <span class="dnums">{{ .Params.duration }}{{ with .Params.avg_power }} | avg {{ . }} W{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.avg_speed_kmh }} | {{ . }} km/h{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span>
+</div>
 <div class="map-wrap">
   <div id="ride-map"></div>
   <div class="map-stats">
