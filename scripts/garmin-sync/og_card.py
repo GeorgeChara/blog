@@ -110,10 +110,9 @@ def _draw_panel(base, title, dist_km, climb_m, duration, calories):
     content_w = max(int(d0.textlength(title, font=f_title)), label_w + col_gap + val_w)
     pw = content_w + pad * 2
     ph = pad + title_h + len(rows) * row_h + pad
-    x0 = (W - pw) // 2
-    y0 = max(24, int((H * 0.60 - ph) / 2))  # centred in the map area above the graph
+    margin = 40  # keep clear of the edges so preview crops never clip it
+    x0, y0 = margin, margin
     x1, y1 = x0 + pw, y0 + ph
-    cx = (x0 + x1) / 2
 
     # frosted glass: blur + lighten the map region under the panel
     crop = base.crop((x0, y0, x1, y1)).filter(ImageFilter.GaussianBlur(7)).convert("RGBA")
@@ -124,9 +123,8 @@ def _draw_panel(base, title, dist_km, climb_m, duration, calories):
 
     d = ImageDraw.Draw(base)
     d.rounded_rectangle([x0, y0, x1, y1], radius=12, outline=(205, 198, 182, 255), width=1)
-    d.text((cx, y0 + pad - 2), title, font=f_title, fill=(18, 18, 18, 255), anchor="ma")
-    # rows: the label/value block is centred within the panel
     tx = x0 + pad
+    d.text((tx, y0 + pad - 2), title, font=f_title, fill=(18, 18, 18, 255), anchor="la")
     ty = y0 + pad + title_h
     for lab, val in rows:
         cy = ty + row_h / 2
