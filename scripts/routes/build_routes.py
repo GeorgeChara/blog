@@ -129,7 +129,7 @@ def main():
 
         # privacy: strip the home vicinity from the served GPX (if home configured)
         if home:
-            kept = trim_coords(coords, home)
+            kept = trim_coords(coords, home, seed=slug)
             if kept and len(kept) < len(coords):
                 write_gpx(Path(gpx), kept, title)
 

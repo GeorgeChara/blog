@@ -33,7 +33,7 @@ def main():
         for gpx in sorted(d.glob("*.gpx")):
             total += 1
             coords, name = parse_gpx(gpx)
-            kept = trim_coords(coords, home)
+            kept = trim_coords(coords, home, seed=gpx.stem)
             if len(kept) == len(coords):
                 continue  # nothing near home / already trimmed
             if not kept:

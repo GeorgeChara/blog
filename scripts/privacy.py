@@ -6,6 +6,7 @@ published route never reveals where you live.
 """
 import json
 import math
+import random
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -43,17 +44,27 @@ def parse_gpx(path):
     return coords, name
 
 
-def trim_coords(coords, home):
+def trim_coords(coords, home, seed=""):
+    """Remove points near home from start & end. A moderate base radius keeps most
+    of the ride; a seeded, asymmetric random extra (jitter) means the two ends
+    don't sit at a fixed distance pointing at home, defeating the convergence
+    attack. Seeded so the result is stable across runs for a given ride."""
     if not home or not coords:
         return coords
     hp = (home["lat"], home["lon"])
-    r = home["radius_m"]
+    jit = home.get("jitter_m", 0)
+    if jit:
+        rnd = random.Random(str(seed))
+        r_start = home["radius_m"] + rnd.random() * jit
+        r_end = home["radius_m"] + rnd.random() * jit
+    else:
+        r_start = r_end = home["radius_m"]
     n = len(coords)
     s = 0
-    while s < n and haversine(coords[s], hp) <= r:
+    while s < n and haversine(coords[s], hp) <= r_start:
         s += 1
     e = n - 1
-    while e >= 0 and haversine(coords[e], hp) <= r:
+    while e >= 0 and haversine(coords[e], hp) <= r_end:
         e -= 1
     return coords[s:e + 1] if s <= e else []
 

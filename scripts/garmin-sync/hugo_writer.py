@@ -3,6 +3,7 @@
 import json
 import math
 import os
+import random
 import re
 from datetime import datetime
 from pathlib import Path
@@ -38,21 +39,29 @@ def _haversine(la1, lo1, la2, lo2):
     return 2 * R * math.asin(math.sqrt(h))
 
 
-def trim_home(gpx_xml):
-    """Strip points within the home radius from the start and end of each segment."""
+def trim_home(gpx_xml, seed=""):
+    """Strip points near home from the start and end of each segment. Moderate base
+    radius + seeded asymmetric jitter so the ends don't point straight at home."""
     home = _load_home()
     if not home:
         return gpx_xml
-    hlat, hlon, r = home["lat"], home["lon"], home["radius_m"]
+    hlat, hlon = home["lat"], home["lon"]
+    jit = home.get("jitter_m", 0)
+    if jit:
+        rnd = random.Random(str(seed))
+        r_start = home["radius_m"] + rnd.random() * jit
+        r_end = home["radius_m"] + rnd.random() * jit
+    else:
+        r_start = r_end = home["radius_m"]
     gpx = gpxpy.parse(gpx_xml)
     for track in gpx.tracks:
         for seg in track.segments:
             pts = seg.points
             s = 0
-            while s < len(pts) and _haversine(pts[s].latitude, pts[s].longitude, hlat, hlon) <= r:
+            while s < len(pts) and _haversine(pts[s].latitude, pts[s].longitude, hlat, hlon) <= r_start:
                 s += 1
             e = len(pts) - 1
-            while e >= 0 and _haversine(pts[e].latitude, pts[e].longitude, hlat, hlon) <= r:
+            while e >= 0 and _haversine(pts[e].latitude, pts[e].longitude, hlat, hlon) <= r_end:
                 e -= 1
             seg.points = pts[s:e + 1] if s <= e else []
     return gpx.to_xml()
@@ -184,7 +193,7 @@ def write_activity(activity, gpx_xml, streams=None):
     slug = f"{dt.strftime('%Y-%m-%d')}-{slugify(name)}"
 
     # 1. Write simplified GPX
-    simplified_gpx = trim_home(simplify_gpx(gpx_xml))
+    simplified_gpx = trim_home(simplify_gpx(gpx_xml), str(activity_id))
     gpx_path = GPX_DIR / f"{activity_id}.gpx"
     gpx_path.write_text(simplified_gpx)
 
