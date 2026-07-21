@@ -52,17 +52,16 @@
     .preadout { font-size: 0.72em; padding-left: 0.4em; }
   }
 
-  .zones { display: flex; align-items: center; gap: 1.4em; flex-wrap: wrap; }
-  .zones .donut { width: 150px; flex: none; }
-  .zlegend { font-size: 0.82em; min-width: 260px; flex: 1; }
-  .zrow { display: flex; align-items: flex-start; gap: 0.5em; padding: 0.3em 0; }
-  .zsw { width: 12px; height: 12px; border-radius: 2px; flex: none; margin-top: 0.25em; }
-  .zbody { flex: 1; }
-  .ztop { display: flex; align-items: baseline; }
-  .zname { color: #333; font-weight: 600; }
-  .ztime { color: #888; margin-left: auto; font-variant-numeric: tabular-nums; padding-left: 1.5em; }
-  .zdesc { color: #999; font-size: 0.92em; margin-top: 0.1em; }
-  .znote { color: #999; font-size: 0.78em; margin-top: 0.7em; line-height: 1.5; }
+  /* Time-in-zones slim stacked bar (replaces the donut) */
+  .tiz { margin: 2em 0 0; }
+  .tiz-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.45em; }
+  .tiz-title { font-weight: bold; font-size: 0.95em; color: #000; }
+  .tiz-total { font-family: monospace; font-size: 0.8em; color: #999; font-variant-numeric: tabular-nums; }
+  .tiz-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: #eee; }
+  .tiz-bar span { display: block; height: 100%; }
+  .tiz-key { display: flex; flex-wrap: wrap; gap: 0.35em 1.1em; margin-top: 0.55em; font-family: monospace; font-size: 0.78em; color: #777; font-variant-numeric: tabular-nums; }
+  .tiz-k { display: inline-flex; align-items: center; gap: 0.4em; }
+  .tiz-d { width: 9px; height: 9px; border-radius: 2px; flex: none; }
 
   .view-all { font-size: 0.85em; margin-top: 2em; }
   .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
@@ -119,12 +118,17 @@
 {{ end }}
 
 {{ if $activityData.power_zones }}
-<p class="cy-h2">Power zones</p>
-<div class="card zones">
-  <div class="donut"><canvas id="zonesChart"></canvas></div>
-  <div class="zlegend" id="zonesLegend"></div>
+{{ $z := $activityData.power_zones }}
+{{ $ztot := 0 }}{{ range $z }}{{ $ztot = add $ztot . }}{{ end }}
+{{ if gt $ztot 0 }}
+{{ $zcolors := slice "#cbd5e1" "#60a5fa" "#34d399" "#fbbf24" "#f87171" }}
+{{ $znames := slice "Z1" "Z2" "Z3" "Z4" "Z5" }}
+<div class="tiz">
+  <div class="tiz-head"><span class="tiz-title">Time in zones</span><span class="tiz-total">{{ math.Round (div (float $ztot) 60) }} min</span></div>
+  <div class="tiz-bar">{{ range $i, $s := $z }}{{ if gt $s 0 }}<span style="width:{{ printf "%.2f" (mul (div (float $s) (float $ztot)) 100) }}%; background:{{ index $zcolors $i }}"></span>{{ end }}{{ end }}</div>
+  <div class="tiz-key">{{ range $i, $s := $z }}<span class="tiz-k"><span class="tiz-d" style="background:{{ index $zcolors $i }}"></span>{{ index $znames $i }} {{ math.Round (mul (div (float $s) (float $ztot)) 100) }}%</span>{{ end }}</div>
 </div>
-<p class="znote">How long you held each effort level. Zones are shares of your threshold power (~220 W): the hardest pace you could hold for about an hour.</p>
+{{ end }}
 {{ end }}
 
 {{ end }}
@@ -318,30 +322,6 @@
     }
   }
 
-  // Power zones donut
-  var zc = document.getElementById('zonesChart');
-  if (zc && d.power_zones) {
-    var znames = ['Z1 Recovery', 'Z2 Endurance', 'Z3 Tempo', 'Z4 Threshold', 'Z5 VO2+'];
-    var zdesc = ['Spinning easy, catching your breath', 'All-day steady pace, easy to chat', 'Comfortably hard, breathing picks up', 'Hard, sustainable for about an hour', 'Very hard, short punchy efforts'];
-    var zcolors = ['#cbd5e1', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
-    var secs = d.power_zones;
-    new Chart(zc, {
-      type: 'doughnut',
-      data: { labels: znames, datasets: [{ data: secs, backgroundColor: zcolors, borderWidth: 0 }] },
-      options: { responsive: true, cutout: '62%', plugins: { legend: { display: false },
-        tooltip: { callbacks: { label: function(c) { var m = Math.round(c.parsed / 60); return c.label + ': ' + m + ' min'; } } } } }
-    });
-    var total = secs.reduce(function(a, b) { return a + b; }, 0) || 1;
-    var leg = document.getElementById('zonesLegend');
-    leg.innerHTML = znames.map(function(n, i) {
-      var m = Math.round(secs[i] / 60);
-      var pct = Math.round(secs[i] / total * 100);
-      return '<div class="zrow"><span class="zsw" style="background:' + zcolors[i] + '"></span>' +
-             '<span class="zbody"><span class="ztop"><span class="zname">' + n + '</span>' +
-             '<span class="ztime">' + m + ' min (' + pct + '%)</span></span>' +
-             '<span class="zdesc">' + zdesc[i] + '</span></span></div>';
-    }).join('');
-  }
   {{ end }}
 })();
 </script>
