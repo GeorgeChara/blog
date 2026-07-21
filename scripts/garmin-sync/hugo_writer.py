@@ -297,9 +297,10 @@ def write_activity(activity, gpx_xml, streams=None):
     # 4. Open Graph preview card for rich link unfurls
     if make_og_card:
         try:
+            og_title = dt.strftime("%A, ") + str(dt.day) + dt.strftime(" %B %Y")
             make_og_card(
                 str(OG_DIR / f"{activity_id}.png"),
-                name, distance_km, elevation_m, duration_fmt, calories,
+                og_title, distance_km, elevation_m, duration_fmt, calories,
                 gpx_coords(simplified_gpx), profiles.get("power_profile") or [],
             )
         except Exception as e:

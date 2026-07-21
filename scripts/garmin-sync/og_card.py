@@ -85,11 +85,12 @@ def _draw_power(base, power):
     return Image.alpha_composite(base, ov)
 
 
-def _draw_panel(base, name, dist_km, climb_m, duration, calories):
-    """Frosted-glass stats panel: name + DIST/CLMB/TIME/KCAL rows, with the map
-    blurred and lightened behind it so the blue route still shows through."""
+def _draw_panel(base, title, dist_km, climb_m, duration, calories):
+    """Frosted-glass stats panel, centred over the map: the ride date + the
+    DIST/CLMB/TIME/KCAL rows, with the map blurred and lightened behind it so the
+    blue route still shows through."""
     d0 = ImageDraw.Draw(base)
-    f_name = _font(True, 40)
+    f_title = _font(True, 34)
     f_lab = _font(False, 25)
     f_val = _font(True, 31)
 
@@ -103,13 +104,16 @@ def _draw_panel(base, name, dist_km, climb_m, duration, calories):
     if calories:
         rows.append(("KCAL", str(int(round(float(calories))))))
 
-    pad, row_h, name_h, col_gap = 26, 42, 56, 22
+    pad, row_h, title_h, col_gap = 28, 42, 50, 22
     label_w = int(max((d0.textlength(l, font=f_lab) for l, _ in rows), default=0))
     val_w = int(max((d0.textlength(v, font=f_val) for _, v in rows), default=0))
-    content_w = max(int(d0.textlength(name, font=f_name)), label_w + col_gap + val_w)
-    x0, y0 = 22, 22
-    x1 = x0 + content_w + pad * 2
-    y1 = y0 + pad + name_h + len(rows) * row_h + pad - row_h + 30
+    content_w = max(int(d0.textlength(title, font=f_title)), label_w + col_gap + val_w)
+    pw = content_w + pad * 2
+    ph = pad + title_h + len(rows) * row_h + pad
+    x0 = (W - pw) // 2
+    y0 = max(24, int((H * 0.60 - ph) / 2))  # centred in the map area above the graph
+    x1, y1 = x0 + pw, y0 + ph
+    cx = (x0 + x1) / 2
 
     # frosted glass: blur + lighten the map region under the panel
     crop = base.crop((x0, y0, x1, y1)).filter(ImageFilter.GaussianBlur(7)).convert("RGBA")
@@ -120,9 +124,10 @@ def _draw_panel(base, name, dist_km, climb_m, duration, calories):
 
     d = ImageDraw.Draw(base)
     d.rounded_rectangle([x0, y0, x1, y1], radius=12, outline=(205, 198, 182, 255), width=1)
+    d.text((cx, y0 + pad - 2), title, font=f_title, fill=(18, 18, 18, 255), anchor="ma")
+    # rows: the label/value block is centred within the panel
     tx = x0 + pad
-    d.text((tx, y0 + pad - 4), name, font=f_name, fill=(18, 18, 18, 255))
-    ty = y0 + pad + name_h
+    ty = y0 + pad + title_h
     for lab, val in rows:
         cy = ty + row_h / 2
         d.text((tx, cy), lab, font=f_lab, fill=(140, 135, 124, 255), anchor="lm")
@@ -132,7 +137,7 @@ def _draw_panel(base, name, dist_km, climb_m, duration, calories):
     return base
 
 
-def make_og_card(out_path, name, dist_km, climb_m, duration, calories, coords, power):
+def make_og_card(out_path, title, dist_km, climb_m, duration, calories, coords, power):
     """coords: (lat, lon) points.  power: power_profile list (may hold None)."""
     m = StaticMap(W, H, url_template=TILE_URL, padding_x=70, padding_y=80)
     if coords and len(coords) > 1:
@@ -144,5 +149,5 @@ def make_og_card(out_path, name, dist_km, climb_m, duration, calories, coords, p
         m.add_line(Line(lonlat, BLUE, 5))
     img = m.render().convert("RGBA")
     img = _draw_power(img, power)
-    img = _draw_panel(img, name, dist_km, climb_m, duration, calories)
+    img = _draw_panel(img, title, dist_km, climb_m, duration, calories)
     img.convert("RGB").save(out_path)
