@@ -18,6 +18,7 @@
   /* Effort dashboard: glanceable ride character */
   .rtype { font-weight: bold; font-size: 0.95em; color: #000; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.7em; display: flex; align-items: center; gap: 0.5em; }
   .rtype .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .rtype .rtime { text-transform: none; font-weight: normal; color: #999; letter-spacing: 0; }
   .dash { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
   .dcell { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; display: flex; flex-direction: column; gap: 0.28em; }
   .dl { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -87,7 +88,7 @@
 {{ $mpk := 0.0 }}{{ if gt (float .Params.distance_km) 0.0 }}{{ $mpk = div (float .Params.elevation_m) (float .Params.distance_km) }}{{ end }}
 {{ $terrain := cond (lt $mpk 6.0) "flat" (cond (lt $mpk 12.0) "rolling" (cond (lt $mpk 20.0) "hilly" "mountainous")) }}
 
-<p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
+<p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}<span class="rtime">&middot; {{ .Params.duration }}</span></p>
 <div class="dash">
   <div class="dcell">
     <span class="dl">Effort</span>
@@ -104,7 +105,7 @@
     <span class="ds">{{ $terrain }}</span>
   </div>
 </div>
-<p class="dnums">{{ with .Params.duration }}{{ . }}{{ end }}{{ with .Params.avg_power }} &middot; avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} &middot; NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} &middot; {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} &middot; {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} &middot; {{ . }} km/h{{ end }}{{ with .Params.calories }} &middot; {{ . }} kcal{{ end }}</p>
+<p class="dnums">{{ with .Params.avg_power }}avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} &middot; NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} &middot; {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} &middot; {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} &middot; {{ . }} km/h{{ end }}{{ with .Params.calories }} &middot; {{ . }} kcal{{ end }}</p>
 
 <p class="cy-h2">Route</p>
 <div id="ride-map"></div>
@@ -124,7 +125,7 @@
 {{ if gt $ztot 0 }}
 {{ $zcolors := slice "#cbd5e1" "#60a5fa" "#34d399" "#fbbf24" "#f87171" }}
 <div class="tiz">
-  <div class="tiz-head"><span class="tiz-title">Time in zones</span><span class="tiz-total">{{ math.Round (div (float $ztot) 60) }} min</span></div>
+  <div class="tiz-head"><span class="tiz-title">Time in zones</span><span class="tiz-total">{{ .Params.duration }}</span></div>
   <div class="tiz-bar" id="tzBar">{{ range $i, $s := $z }}{{ if gt $s 0 }}<span data-z="{{ $i }}" style="width:{{ printf "%.2f" (mul (div (float $s) (float $ztot)) 100) }}%; background:{{ index $zcolors $i }}"></span>{{ end }}{{ end }}</div>
   <div class="tiz-key" id="tzKey"></div>
 </div>
