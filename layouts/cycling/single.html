@@ -222,11 +222,11 @@
     if (d.power_profile) {
       var pmax = Math.max.apply(null, sPower.filter(function(x) { return x != null; }));
       var niceP = Math.max(50, Math.ceil((pmax || 150) / 50) * 50);
-      yMax = niceP; // scale so the peak reaches near the top of the map
+      yMax = niceP * 4; // scale so the peak reaches ~a quarter of the way up the map
       ds.push({ label: 'Power', data: pts(sPower), yAxisID: 'yPower', borderColor: 'rgba(192,57,43,0.92)', borderWidth: 1.8, backgroundColor: 'transparent', order: 1 });
       scales.yPower = { position: 'left', display: false, min: 0, max: yMax };
     }
-    function seriesMax(arr) { return (Math.max.apply(null, arr.filter(function(x) { return x != null; })) || 1) * 1.05; } // small headroom so the line tops out near the top
+    function seriesMax(arr) { return (Math.max.apply(null, arr.filter(function(x) { return x != null; })) || 1) * 4; } // peak tops out ~a quarter up, matching power
     if (d.speed_profile) {
       ds.push({ label: 'Speed', data: pts(sSpeed), yAxisID: 'ySpeed', borderColor: 'rgba(65,105,225,0.9)', backgroundColor: 'transparent', order: 2, hidden: true });
       scales.ySpeed = { display: false, position: 'right', min: 0, max: seriesMax(sSpeed) };
@@ -314,7 +314,7 @@
         }
         if (ys) {
           ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
-          ctx.fillText(String(yMax / 2), ca.left + 2, ys.getPixelForValue(yMax / 2)); // just the peak value at mid-map
+          ctx.fillText(String(yMax / 4), ca.left + 2, ys.getPixelForValue(yMax / 4)); // peak value, sitting at the ~quarter line where the line tops out
         }
         ctx.restore();
       }
