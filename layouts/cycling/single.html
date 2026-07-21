@@ -22,11 +22,15 @@
 
   .zones { display: flex; align-items: center; gap: 1.4em; flex-wrap: wrap; }
   .zones .donut { width: 150px; flex: none; }
-  .zlegend { font-size: 0.82em; }
-  .zrow { display: flex; align-items: center; gap: 0.5em; padding: 0.15em 0; }
-  .zsw { width: 12px; height: 12px; border-radius: 2px; flex: none; }
-  .zname { color: #333; }
+  .zlegend { font-size: 0.82em; min-width: 260px; flex: 1; }
+  .zrow { display: flex; align-items: flex-start; gap: 0.5em; padding: 0.3em 0; }
+  .zsw { width: 12px; height: 12px; border-radius: 2px; flex: none; margin-top: 0.25em; }
+  .zbody { flex: 1; }
+  .ztop { display: flex; align-items: baseline; }
+  .zname { color: #333; font-weight: 600; }
   .ztime { color: #888; margin-left: auto; font-variant-numeric: tabular-nums; padding-left: 1.5em; }
+  .zdesc { color: #999; font-size: 0.92em; margin-top: 0.1em; }
+  .znote { color: #999; font-size: 0.78em; margin-top: 0.7em; line-height: 1.5; }
 
   .view-all { font-size: 0.85em; margin-top: 2em; }
   .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
@@ -65,6 +69,7 @@
   <div class="donut"><canvas id="zonesChart"></canvas></div>
   <div class="zlegend" id="zonesLegend"></div>
 </div>
+<p class="znote">How long you held each effort level. Zones are shares of your threshold power (~220 W): the hardest pace you could hold for about an hour.</p>
 {{ end }}
 
 {{ end }}
@@ -181,6 +186,7 @@
   var zc = document.getElementById('zonesChart');
   if (zc && d.power_zones) {
     var znames = ['Z1 Recovery', 'Z2 Endurance', 'Z3 Tempo', 'Z4 Threshold', 'Z5 VO2+'];
+    var zdesc = ['Spinning easy, catching your breath', 'All-day steady pace, easy to chat', 'Comfortably hard, breathing picks up', 'Hard, sustainable for about an hour', 'Very hard, short punchy efforts'];
     var zcolors = ['#cbd5e1', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
     var secs = d.power_zones;
     new Chart(zc, {
@@ -195,7 +201,9 @@
       var m = Math.round(secs[i] / 60);
       var pct = Math.round(secs[i] / total * 100);
       return '<div class="zrow"><span class="zsw" style="background:' + zcolors[i] + '"></span>' +
-             '<span class="zname">' + n + '</span><span class="ztime">' + m + ' min (' + pct + '%)</span></div>';
+             '<span class="zbody"><span class="ztop"><span class="zname">' + n + '</span>' +
+             '<span class="ztime">' + m + ' min (' + pct + '%)</span></span>' +
+             '<span class="zdesc">' + zdesc[i] + '</span></span></div>';
     }).join('');
   }
   {{ end }}

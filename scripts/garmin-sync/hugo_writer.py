@@ -200,7 +200,7 @@ def write_activity(activity, gpx_xml, streams=None):
 
     # 2. Build profiles from the SAME trimmed window so the chart aligns with the map
     if streams and streams.get("distance"):
-        power_zones = compute_power_zones(streams.get("power", []))  # whole ride, before trimming
+        power_zones = compute_power_zones(streams.get("power", []), moving_sec)  # whole ride, before trimming
         streams = trim_streams(streams, start_m, end_m)
         profiles = build_profiles(streams)
         profiles["power_zones"] = power_zones
@@ -554,15 +554,22 @@ def build_profiles(streams):
     }
 
 
-def compute_power_zones(power_stream, ftp=FTP):
-    """Seconds in each of 5 power zones (stream samples are ~1s apart)."""
+def compute_power_zones(power_stream, moving_seconds=None, ftp=FTP):
+    """Seconds in each of 5 power zones.
+
+    The stream is downsampled (~2000 pts max), so a sample is NOT one second.
+    We tally samples per zone, then distribute the ride's real moving time
+    across the zones by proportion, so the parts sum to the whole ride.
+    """
     if not power_stream:
         return None
     bounds = [0.55, 0.75, 0.90, 1.05]  # fractions of FTP splitting Z1..Z5
     zones = [0, 0, 0, 0, 0]
+    total = 0
     for p in power_stream:
         if p is None:
             continue
+        total += 1
         frac = p / ftp
         if frac < bounds[0]:
             zones[0] += 1
@@ -574,4 +581,8 @@ def compute_power_zones(power_stream, ftp=FTP):
             zones[3] += 1
         else:
             zones[4] += 1
+    if not total:
+        return None
+    if moving_seconds:
+        return [round(z / total * moving_seconds) for z in zones]
     return zones
