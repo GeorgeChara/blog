@@ -9,16 +9,14 @@
   .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 2.2em 0 0.8em 0; color: #000; }
 
-  /* Milestone hero */
-  .milestone { border: 1px solid #e5decf; border-radius: 4px; padding: 0.95em 1.1em; margin-top: 1.5em; background: #f4f7fc; }
-  .ms-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
-  .ms-lab { font-size: 0.66em; color: #8a8fa0; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; }
-  .ms-big { font-weight: bold; font-size: 1.7em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; }
-  .ms-big .u { font-size: 0.45em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
-  .ms-to { font-family: monospace; font-size: 0.82em; color: #4169E1; font-variant-numeric: tabular-nums; }
-  .ms-pctinline { color: #9aa0b0; }
-  .ms-bar { height: 12px; border-radius: 1px; background: #e2e6ef; overflow: hidden; margin-top: 0.7em; }
-  .ms-bar > span { display: block; height: 100%; background: #2b7fd9; }
+  /* Milestone: one slim bar. km ridden inside the fill, target at the end, hover reveals % */
+  .ms1 { margin-top: 1.5em; }
+  .ms1-bar { position: relative; height: 30px; border-radius: 3px; background: #e6e3da; overflow: hidden; font-family: monospace; }
+  .ms1-fill { position: absolute; left: 0; top: 0; height: 100%; background: #2b7fd9; }
+  .ms1-km { position: absolute; left: 0.75em; top: 0; height: 100%; display: flex; align-items: center; color: #fff; font-weight: bold; font-size: 0.82em; z-index: 2; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ms1-target { position: absolute; right: 0.75em; top: 0; height: 100%; display: flex; align-items: center; color: #8f8a7e; font-size: 0.78em; z-index: 2; font-variant-numeric: tabular-nums; }
+  .ms1-hover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(43,127,217,0.95); color: #fff; font-size: 0.8em; z-index: 3; opacity: 0; transition: opacity 0.12s; font-variant-numeric: tabular-nums; }
+  .ms1-bar:hover .ms1-hover { opacity: 1; }
 
   /* Ride heatmap */
   .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 0.6em 0 0.9em; }
@@ -112,12 +110,13 @@
 {{ $total := .total_distance_km }}
 {{ $ms := mul (math.Ceil (div (add $total 1) 500)) 500 }}
 {{ $pct := mul (div $total $ms) 100 }}
-<div class="milestone">
-  <div class="ms-top">
-    <div><span class="ms-lab">All time distance</span><br><span class="ms-big">{{ printf "%.0f" $total }}<span class="u">km</span></span></div>
-    <span class="ms-to">{{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }} <span class="ms-pctinline">&middot; {{ printf "%.0f" $pct }}%</span></span>
+<div class="ms1">
+  <div class="ms1-bar">
+    <span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"></span>
+    <span class="ms1-km">{{ printf "%.0f" $total }} km</span>
+    <span class="ms1-target">{{ printf "%.0f" $ms }} km</span>
+    <span class="ms1-hover">{{ printf "%.0f" $pct }}% &middot; {{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
   </div>
-  <div class="ms-bar"><span style="width:{{ printf "%.1f" $pct }}%"></span></div>
 </div>
 {{ end }}
 
@@ -183,11 +182,10 @@
 {{ end }}
 
 {{ with $recent }}{{ $r := index . 0 }}
-<p class="cy-h2">Latest ride</p>
 <div class="latest">
   <div class="latest-map" id="latestMap" data-gpx="/cycling/gpx/{{ $r.id }}.gpx"></div>
   <div class="latest-panel">
-    <div class="latest-name">{{ $r.name }}</div>
+    <div class="latest-name">Latest ride</div>
     <div class="latest-date">{{ $r.date }}</div>
     <div class="latest-stats">{{ $r.distance_km }} km | &uarr;{{ $r.elevation_gain_m }} m | {{ $r.duration }}</div>
   </div>
