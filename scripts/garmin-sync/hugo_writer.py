@@ -200,9 +200,10 @@ def write_activity(activity, gpx_xml, streams=None):
 
     # 2. Build profiles from the SAME trimmed window so the chart aligns with the map
     if streams and streams.get("distance"):
+        power_zones = compute_power_zones(streams.get("power", []))  # whole ride, before trimming
         streams = trim_streams(streams, start_m, end_m)
         profiles = build_profiles(streams)
-        profiles["power_zones"] = compute_power_zones(streams.get("power", []))
+        profiles["power_zones"] = power_zones
     else:
         profiles = extract_profiles(trimmed_gpx)
     activity_json = {
