@@ -133,7 +133,10 @@
     // The power area is filled and coloured by effort zone (Zwift-style): grey easy -> red hard.
     var FTP = 220; // keep in sync with hugo_writer.py FTP
     function zIdx(w) { if (w == null) return 0; var f = w / FTP; return f < 0.55 ? 0 : f < 0.75 ? 1 : f < 0.90 ? 2 : f < 1.05 ? 3 : 4; }
-    var zFill = ['rgba(148,163,184,0.30)', 'rgba(96,165,250,0.32)', 'rgba(52,211,153,0.34)', 'rgba(251,191,36,0.40)', 'rgba(248,113,113,0.45)'];
+    var zFillBase = [[148, 163, 184, 0.30], [96, 165, 250, 0.32], [52, 211, 153, 0.34], [251, 191, 36, 0.40], [248, 113, 113, 0.45]];
+    function zFill(i, a) { var z = zFillBase[i]; return 'rgba(' + z[0] + ',' + z[1] + ',' + z[2] + ',' + (z[3] * a) + ')'; }
+    // Power visibility is faded manually (opacity), so the line + zone fill dissolve together on legend toggle.
+    var powerAlpha = 1, powerShown = true, powerRAF = null, pchart = null;
     // Consistent order + site colours: power (red line, zones drawn by plugin), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
     if (d.power_profile) {
       var pw = smooth(d.power_profile);
@@ -164,9 +167,9 @@
     var powerZoneFill = {
       id: 'powerZoneFill',
       beforeDatasetsDraw: function(chart) {
-        if (powerIdx < 0) return;
+        if (powerIdx < 0 || powerAlpha <= 0.01) return;
         var meta = chart.getDatasetMeta(powerIdx);
-        if (!meta || meta.hidden) return;
+        if (!meta) return;
         var sc = chart.scales.yPower; if (!sc) return;
         var ca = chart.chartArea, ctx = chart.ctx, y0 = sc.getPixelForValue(0);
         var pts = meta.data, data = chart.data.datasets[powerIdx].data;
@@ -175,7 +178,7 @@
         for (var i = 1; i < pts.length; i++) {
           var p0 = pts[i - 1], p1 = pts[i];
           if (!p0 || !p1 || p0.skip || p1.skip || data[i] == null) continue;
-          ctx.fillStyle = zFill[zIdx(data[i])];
+          ctx.fillStyle = zFill(zIdx(data[i]), powerAlpha);
           ctx.beginPath();
           ctx.moveTo(p0.x, y0); ctx.lineTo(p0.x, p0.y); ctx.lineTo(p1.x, p1.y); ctx.lineTo(p1.x, y0);
           ctx.closePath(); ctx.fill();
@@ -183,7 +186,21 @@
         ctx.restore();
       }
     };
-    new Chart(pc, {
+    function fadePower(show) {
+      if (!pchart || powerIdx < 0) return;
+      if (powerRAF) cancelAnimationFrame(powerRAF);
+      var from = powerAlpha, to = show ? 1 : 0, t0 = null;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / 300);
+        powerAlpha = from + (to - from) * k;
+        pchart.data.datasets[powerIdx].borderColor = 'rgba(192,57,43,' + powerAlpha + ')';
+        pchart.update('none');
+        if (k < 1) powerRAF = requestAnimationFrame(step);
+      }
+      powerRAF = requestAnimationFrame(step);
+    }
+    pchart = new Chart(pc, {
       type: 'line',
       plugins: [powerZoneFill],
       data: { labels: dist, datasets: ds },
@@ -199,8 +216,15 @@
             if (p) { hoverMarker.setLatLng(p); if (!map.hasLayer(hoverMarker)) hoverMarker.addTo(map); }
           }
         },
-        plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true, sort: function(a, b) { var o = ['Power', 'Speed', 'Heart rate', 'Cadence', 'Elevation']; return o.indexOf(a.text) - o.indexOf(b.text); } } },
-          tooltip: { callbacks: { label: function(c) {
+        plugins: { legend: { display: true,
+            onClick: function(e, item, legend) {
+              if (item.text === 'Power') { powerShown = powerAlpha < 0.5; fadePower(powerShown); }
+              else { Chart.defaults.plugins.legend.onClick.call(this, e, item, legend); }
+            },
+            labels: { font: mono, boxWidth: 12, usePointStyle: true,
+              sort: function(a, b) { var o = ['Power', 'Speed', 'Heart rate', 'Cadence', 'Elevation']; return o.indexOf(a.text) - o.indexOf(b.text); },
+              generateLabels: function(chart) { var items = Chart.defaults.plugins.legend.labels.generateLabels(chart); items.forEach(function(it) { if (it.text === 'Power') it.hidden = !powerShown; }); return items; } } },
+          tooltip: { filter: function(it) { return !(it.dataset.label === 'Power' && powerAlpha <= 0.01); }, callbacks: { label: function(c) {
             if (c.parsed.y == null) return null;
             var id = c.dataset.yAxisID;
             var u = id === 'yPower' ? ' W' : id === 'yHr' ? ' bpm' : id === 'ySpeed' ? ' km/h' : id === 'yCad' ? ' rpm' : ' m';
