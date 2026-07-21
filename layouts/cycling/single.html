@@ -48,8 +48,9 @@
   .preadout .sep { color: #d8d2c4; padding: 0 0.15em; }
   .preadout .hint { color: #bbb; }
 
-  /* Series toggle chips (replace the canvas legend, bigger tap targets) */
-  .plegend { display: flex; flex-wrap: wrap; gap: 0.4em; margin-bottom: 0.6em; }
+  /* Series toggle chips, overlaid top-right on the map */
+  .plegend { display: flex; flex-wrap: wrap; gap: 0.4em; }
+  .map-wrap .plegend { position: absolute; top: 8px; right: 8px; z-index: 500; flex-direction: column; align-items: flex-end; gap: 0.3em; }
   .lchip { font-family: monospace; font-size: 0.8em; display: inline-flex; align-items: center; gap: 0.45em; padding: 0.4em 0.75em; border: 1px solid #e5decf; border-radius: 3px; background: #fff; color: #333; cursor: pointer; line-height: 1; -webkit-tap-highlight-color: transparent; }
   .lchip .lc { width: 10px; height: 10px; border-radius: 1px; flex: none; }
   .lchip.off { color: #bbb; background: #faf8f3; }
@@ -111,11 +112,10 @@
     <div class="ms-row"><span class="ms-l">Distance</span><b>{{ .Params.distance_km }} km</b></div>
     <div class="ms-row"><span class="ms-l">Climb</span><b>{{ .Params.elevation_m }} m</b> <span class="ms-mut">{{ $terrain }}</span></div>
   </div>
-  {{ if $hasProfile }}<canvas id="profileChart"></canvas>{{ end }}
+  {{ if $hasProfile }}<canvas id="profileChart"></canvas><div id="profileLegend" class="plegend"></div>{{ end }}
 </div>
 {{ if $hasProfile }}
 <div id="profileReadout" class="preadout"></div>
-<div id="profileLegend" class="plegend"></div>
 {{ end }}
 
 {{ if $activityData }}
@@ -126,7 +126,6 @@
 {{ if gt $ztot 0 }}
 {{ $zcolors := slice "#cbd5e1" "#60a5fa" "#34d399" "#fbbf24" "#f87171" }}
 <div class="tiz">
-  <div class="tiz-head"><span class="tiz-title">Time in zones</span><span class="tiz-total">{{ .Params.duration }}</span></div>
   <div class="tiz-bar" id="tzBar">{{ range $i, $s := $z }}{{ if gt $s 0 }}<span data-z="{{ $i }}" style="width:{{ printf "%.2f" (mul (div (float $s) (float $ztot)) 100) }}%; background:{{ index $zcolors $i }}"></span>{{ end }}{{ end }}</div>
   <div class="tiz-key" id="tzKey"></div>
 </div>
@@ -209,27 +208,29 @@
     var xMaxData = Math.max.apply(null, distKm.filter(function(x) { return x != null; }));
     function niceStep(total, target) { var c = [1, 2, 5, 10, 20, 25, 50, 100, 200, 500]; for (var i = 0; i < c.length; i++) { if (total / c[i] <= target) return c[i]; } return c[c.length - 1]; }
     var stepX = niceStep(xMaxData, 4.5);
-    var xMax = Math.ceil(xMaxData / stepX) * stepX;
+    var xMax = xMaxData; // stretch the graph to the full width: it ends where the ride ends
     var yMax = 300;
     scales.x = { type: 'linear', display: false, min: 0, max: xMax };
     // Consistent order + site colours: power (red line, zones drawn by plugin), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
     if (d.power_profile) {
       var pmax = Math.max.apply(null, sPower.filter(function(x) { return x != null; }));
-      yMax = Math.max(100, Math.ceil((pmax || 300) / 100) * 100);
+      var niceP = Math.max(50, Math.ceil((pmax || 150) / 50) * 50);
+      yMax = niceP * 2; // scale so the peak reaches ~halfway up the map, leaving the top half for the route
       ds.push({ label: 'Power', data: pts(sPower), yAxisID: 'yPower', borderColor: 'rgba(192,57,43,0.92)', borderWidth: 1.8, backgroundColor: 'transparent', order: 1 });
       scales.yPower = { position: 'left', display: false, min: 0, max: yMax };
     }
+    function halfMax(arr) { return (Math.max.apply(null, arr.filter(function(x) { return x != null; })) || 1) * 2; } // axis = 2x peak so the line tops out mid-map
     if (d.speed_profile) {
       ds.push({ label: 'Speed', data: pts(sSpeed), yAxisID: 'ySpeed', borderColor: 'rgba(65,105,225,0.9)', backgroundColor: 'transparent', order: 2, hidden: true });
-      scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
+      scales.ySpeed = { display: false, position: 'right', min: 0, max: halfMax(sSpeed) };
     }
     if (d.hr_profile) {
       ds.push({ label: 'Heart rate', data: pts(sHr), yAxisID: 'yHr', borderColor: 'rgba(232,133,12,0.9)', backgroundColor: 'transparent', order: 3, hidden: true });
-      scales.yHr = { display: false, position: 'right', beginAtZero: true };
+      scales.yHr = { display: false, position: 'right', min: 0, max: halfMax(sHr) };
     }
     if (d.cadence_profile) {
       ds.push({ label: 'Cadence', data: pts(sCad), yAxisID: 'yCad', borderColor: 'rgba(58,160,106,0.9)', backgroundColor: 'transparent', order: 4, hidden: true });
-      scales.yCad = { display: false, position: 'right', beginAtZero: true };
+      scales.yCad = { display: false, position: 'right', min: 0, max: halfMax(sCad) };
     }
     if (d.elevation_profile) {
       var ev = d.elevation_profile.filter(function(x) { return x != null; });
@@ -306,9 +307,9 @@
         }
         if (ys) {
           ctx.textAlign = 'left';
-          [0, yMax / 2, yMax].forEach(function(v) {
+          [0, yMax / 2].forEach(function(v) { // 0 at the bottom, the peak value at mid-map; top (empty) label omitted
             var py = ys.getPixelForValue(v);
-            ctx.textBaseline = v === 0 ? 'bottom' : (v >= yMax ? 'top' : 'middle');
+            ctx.textBaseline = v === 0 ? 'bottom' : 'middle';
             ctx.fillText(String(v), ca.left + 2, py);
           });
         }
@@ -321,7 +322,7 @@
       data: { datasets: ds },
       options: {
         responsive: true, maintainAspectRatio: false, animation: false, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
-        layout: { padding: { top: 4, bottom: 2 } },
+        layout: { padding: { top: 9, bottom: 2 } },
         onHover: function(evt, els) {
           if (!els.length) { clearHover(); return; }
           var idx = els[0].index;
