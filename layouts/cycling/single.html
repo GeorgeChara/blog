@@ -243,7 +243,7 @@
       var ev = d.elevation_profile.filter(function(x) { return x != null; });
       var elevMax = ev.length ? Math.max.apply(null, ev) : 100;
       ds.push({ label: 'Elevation', data: pts(d.elevation_profile), yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.5)', backgroundColor: 'rgba(214,207,192,0.2)', fill: true, borderWidth: 1, order: 5 });
-      scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
+      scales.yElev = { display: false, min: 0, max: elevMax * 4 }; // match the ~quarter-height scaling of the other series
     }
     // Zone fill under the power line, drawn behind the data lines. Skips cleanly when Power is toggled off.
     var powerIdx = ds.findIndex(function(x) { return x.label === 'Power'; });
