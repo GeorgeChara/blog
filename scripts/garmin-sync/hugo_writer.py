@@ -10,6 +10,11 @@ from pathlib import Path
 
 import gpxpy
 
+try:
+    from og_card import make_og_card
+except Exception:  # matplotlib missing -> skip OG cards, don't break the sync
+    make_og_card = None
+
 # Repo root is two levels up from this script
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
@@ -17,6 +22,7 @@ CONTENT_DIR = REPO_ROOT / "content" / "cycling" / "rides"
 DATA_DIR = REPO_ROOT / "data" / "cycling"
 ACTIVITIES_DIR = DATA_DIR / "activities"
 GPX_DIR = REPO_ROOT / "static" / "cycling" / "gpx"
+OG_DIR = REPO_ROOT / "static" / "cycling" / "og"
 
 
 def _load_home():
@@ -69,8 +75,34 @@ def trim_home(gpx_xml, seed=""):
 
 def ensure_dirs():
     """Create output directories if they don't exist."""
-    for d in [CONTENT_DIR, ACTIVITIES_DIR, GPX_DIR]:
+    for d in [CONTENT_DIR, ACTIVITIES_DIR, GPX_DIR, OG_DIR]:
         d.mkdir(parents=True, exist_ok=True)
+
+
+def ride_type_label(normalized_power, avg_power):
+    """Same buckets the ride page uses, so the share card matches the badge."""
+    np = normalized_power or avg_power
+    if not np:
+        return "Ride"
+    r = np / FTP
+    if r < 0.65:
+        return "Recovery ride"
+    if r < 0.80:
+        return "Endurance ride"
+    if r < 0.90:
+        return "Tempo ride"
+    if r < 1.0:
+        return "Threshold ride"
+    return "Intervals"
+
+
+def gpx_coords(gpx_xml):
+    """(lat, lon) points from a GPX string, for drawing the route outline."""
+    try:
+        g = gpxpy.parse(gpx_xml)
+        return [(p.latitude, p.longitude) for t in g.tracks for s in t.segments for p in s.points]
+    except Exception:
+        return []
 
 
 def slugify(text):
@@ -264,6 +296,18 @@ def write_activity(activity, gpx_xml, streams=None):
 
     md_path = CONTENT_DIR / f"{slug}.md"
     md_path.write_text("\n".join(frontmatter_lines) + "\n")
+
+    # 4. Open Graph preview card for rich link unfurls
+    if make_og_card:
+        try:
+            make_og_card(
+                str(OG_DIR / f"{activity_id}.png"),
+                ride_type_label(normalized_power, avg_power),
+                name, distance_km, elevation_m, duration_fmt,
+                gpx_coords(simplified_gpx), profiles.get("elevation_profile") or [],
+            )
+        except Exception as e:
+            print(f"  OG card failed for {activity_id}: {e}")
 
     return {
         "id": activity_id,
