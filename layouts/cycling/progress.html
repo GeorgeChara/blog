@@ -12,13 +12,13 @@
   .pg-note { color: var(--mut); font-size: 0.8em; margin: 0.2em 0 0.9em 0; }
 
   /* Level hero */
-  .level-card { border: 1px solid var(--line); border-radius: 6px; padding: 1.1em 1.2em; background: linear-gradient(180deg, #eef4fb, #fff); }
+  .level-card { border: 1px solid var(--line); border-radius: 4px; padding: 1.1em 1.2em; background: #f4f7fc; }
   .level-top { display: flex; align-items: baseline; gap: 0.6em; flex-wrap: wrap; }
   .level-num { font-size: 2.4em; font-weight: bold; line-height: 1; color: var(--amber); font-variant-numeric: tabular-nums; }
   .level-title { font-size: 1.15em; font-weight: bold; }
   .level-xp { margin-left: auto; color: var(--mut); font-size: 0.82em; font-variant-numeric: tabular-nums; }
-  .bar { height: 12px; background: var(--soft); border-radius: 6px; margin-top: 0.8em; overflow: hidden; }
-  .bar > span { display: block; height: 100%; background: linear-gradient(90deg, #5aa0ea, var(--amber)); border-radius: 6px; }
+  .bar { height: 12px; background: var(--soft); border-radius: 1px; margin-top: 0.8em; overflow: hidden; }
+  .bar > span { display: block; height: 100%; background: var(--amber); }
   .level-next { color: var(--mut); font-size: 0.8em; margin-top: 0.5em; }
 
   .grid { display: grid; gap: 0.6em; }
@@ -33,7 +33,7 @@
 
   /* Rings */
   .rings { display: flex; gap: 1.4em; flex-wrap: wrap; }
-  .ring { display: flex; align-items: center; gap: 0.8em; border: 1px solid var(--line); border-radius: 6px; padding: 0.8em 1em; flex: 1; min-width: 200px; }
+  .ring { display: flex; align-items: center; gap: 0.8em; border: 1px solid var(--line); border-radius: 4px; padding: 0.8em 1em; flex: 1; min-width: 200px; }
   .ring svg { flex: none; }
   .ring .rt { font-size: 0.72em; color: #999; text-transform: uppercase; letter-spacing: 0.04em; }
   .ring .rv { font-weight: bold; font-size: 1.1em; font-variant-numeric: tabular-nums; }
@@ -42,39 +42,39 @@
   /* Badges */
   .badges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; }
   @media (max-width: 560px) { .badges { grid-template-columns: repeat(2, 1fr); } }
-  .badge { border: 1px solid var(--line); border-radius: 6px; padding: 0.75em 0.6em; text-align: center; }
+  .badge { border: 1px solid var(--line); border-radius: 4px; padding: 0.75em 0.6em; text-align: center; }
   .badge.locked { opacity: 0.4; filter: grayscale(1); }
   .badge .bi { font-size: 1.7em; line-height: 1; }
   .badge .bn { font-weight: bold; font-size: 0.8em; margin-top: 0.35em; }
   .badge .bd { font-size: 0.68em; color: var(--mut); margin-top: 0.2em; line-height: 1.35; }
 
   /* Eddington */
-  .edd { display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 6px; padding: 1em 1.1em; }
+  .edd { display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 4px; padding: 1em 1.1em; }
   .edd-num { font-size: 2.6em; font-weight: bold; color: var(--amber); line-height: 1; font-variant-numeric: tabular-nums; }
   .edd-txt { font-size: 0.85em; }
 
   /* Calendar heatmap */
-  .cal-wrap { border: 1px solid var(--line); border-radius: 6px; padding: 1em 1.1em; overflow-x: auto; }
+  .cal-wrap { border: 1px solid var(--line); border-radius: 4px; padding: 1em 1.1em; overflow-x: auto; }
   .cal-head { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.7em; }
   .cal-years button { font-family: inherit; font-size: 0.78em; border: 1px solid var(--line); background: #fff; border-radius: 4px; padding: 0.2em 0.6em; cursor: pointer; color: var(--mut); }
   .cal-years button.on { background: var(--amber); color: #fff; border-color: var(--amber); }
   .cal { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 12px); gap: 3px; }
-  .cal i { width: 12px; height: 12px; border-radius: 2px; background: var(--soft); }
+  .cal i { width: 12px; height: 12px; border-radius: 1px; background: var(--soft); }
   .cal-legend { display: flex; align-items: center; gap: 0.4em; font-size: 0.72em; color: var(--mut); margin-top: 0.7em; }
-  .cal-legend i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+  .cal-legend i { width: 12px; height: 12px; border-radius: 1px; display: inline-block; }
 
   .equiv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
   @media (max-width: 560px) { .equiv { grid-template-columns: 1fr; } }
-  .eq { border: 1px solid var(--line); border-radius: 6px; padding: 0.9em 1em; }
+  .eq { border: 1px solid var(--line); border-radius: 4px; padding: 0.9em 1em; }
   .eq .eh { font-size: 0.72em; color: #999; text-transform: uppercase; letter-spacing: 0.04em; }
   .eq .ev { font-weight: bold; font-size: 1.3em; margin: 0.2em 0; font-variant-numeric: tabular-nums; }
   .eq .eb { font-size: 0.78em; color: var(--mut); line-height: 1.4; }
-  .eq .prog { height: 8px; background: var(--soft); border-radius: 4px; margin-top: 0.5em; overflow: hidden; }
+  .eq .prog { height: 8px; background: var(--soft); border-radius: 1px; margin-top: 0.5em; overflow: hidden; }
   .eq .prog > span { display: block; height: 100%; background: var(--amber); }
 
-  #heatmap { height: 340px; border: 1px solid var(--line); border-radius: 6px; z-index: 0; }
+  #heatmap { height: 340px; border: 1px solid var(--line); border-radius: 4px; z-index: 0; }
 
-  .ridge-card { border: 1px solid var(--line); border-radius: 6px; padding: 0.9em 1em 0.8em; background: #f7f5ef; }
+  .ridge-card { border: 1px solid var(--line); border-radius: 4px; padding: 0.9em 1em 0.8em; background: #f7f5ef; }
   .ridge-controls { display: flex; gap: 0.4em; margin-bottom: 0.6em; }
   .ridge-btn { font-family: inherit; font-size: 0.78em; color: var(--mut); background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 0.28em 0.7em; cursor: pointer; }
   .ridge-btn.on { background: #4169E1; color: #fff; border-color: #4169E1; }

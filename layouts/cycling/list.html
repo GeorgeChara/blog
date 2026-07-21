@@ -104,7 +104,7 @@
     data: {
       labels: labels,
       datasets: [
-        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(43,127,217,0.25)', borderColor: '#2b7fd9', borderWidth: 1, borderRadius: 3 },
+        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(43,127,217,0.25)', borderColor: '#2b7fd9', borderWidth: 1, borderRadius: 1 },
         { type: 'line', label: 'Avg speed', data: speed, yAxisID: 'ySpeed', order: 1, borderColor: '#4169E1', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 },
         { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c0392b', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, borderDash: [4, 3], pointRadius: 3 }
       ]
@@ -112,7 +112,7 @@
     options: {
       responsive: true, aspectRatio: mob ? 1.1 : 2.2, interaction: { intersect: false, mode: 'index' },
       plugins: {
-        legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
+        legend: { display: true, labels: { font: mono, boxWidth: 12, boxHeight: 12, usePointStyle: false } },
         tooltip: { callbacks: { label: function(c) {
           if (c.parsed.y == null) return null;
           var u = c.dataset.yAxisID === 'yKm' ? ' km' : c.dataset.yAxisID === 'ySpeed' ? ' km/h' : ' W';
