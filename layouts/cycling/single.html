@@ -349,12 +349,13 @@
     // Custom HTML toggle chips (bigger, more reliable tap targets than the canvas legend, esp. on mobile)
     var legendHost = document.getElementById('profileLegend');
     var chipColors = { 'Power': '#c0392b', 'Speed': '#4169E1', 'Heart rate': '#e8850c', 'Cadence': '#3aa06a', 'Elevation': '#c6beaf' };
+    var chipAbbr = { 'Power': 'PWR', 'Speed': 'SPD', 'Heart rate': 'HR', 'Cadence': 'CAD', 'Elevation': 'ELEV' };
     if (legendHost) {
       ds.forEach(function(dset, idx) {
         var chip = document.createElement('button');
         chip.type = 'button';
         chip.className = 'lchip' + (dset.hidden ? ' off' : '');
-        chip.innerHTML = '<span class="lc" style="background:' + (chipColors[dset.label] || '#999') + '"></span>' + dset.label;
+        chip.innerHTML = '<span class="lc" style="background:' + (chipColors[dset.label] || '#999') + '"></span>' + (chipAbbr[dset.label] || dset.label);
         chip.addEventListener('click', function() {
           if (pchart.isDatasetVisible(idx)) { pchart.hide(idx); chip.classList.add('off'); }
           else { pchart.show(idx); chip.classList.remove('off'); }
