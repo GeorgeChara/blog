@@ -115,10 +115,13 @@
 </div>
 {{ end }}
 
-{{/* Ride heatmap — this calendar year */}}
+{{/* Ride heatmap — this calendar year; map each ride day to its page URL for click-through */}}
+{{ $urls := dict }}
+{{ range site.RegularPages }}{{ if .Params.garmin_id }}{{ $urls = merge $urls (dict (.Date.Format "2006-01-02") .RelPermalink) }}{{ end }}{{ end }}
 {{ $days := slice }}
 {{ range $id, $a := hugo.Data.cycling.activities }}
-{{ $days = $days | append (dict "d" (substr $a.date 0 10) "km" $a.distance_km "name" $a.name) }}
+{{ $dk := substr $a.date 0 10 }}
+{{ $days = $days | append (dict "d" $dk "km" $a.distance_km "name" $a.name "url" (index $urls $dk)) }}
 {{ end }}
 {{ if $days }}
 <div class="heat-card">
@@ -214,20 +217,21 @@
   var htag = document.getElementById('heat-data'), heat = document.getElementById('heat');
   if (!htag || !heat) return;
   var days = JSON.parse(htag.textContent);
-  var byDay = {}; days.forEach(function(r) { byDay[r.d] = { km: (byDay[r.d] ? byDay[r.d].km : 0) + (r.km || 0), name: r.name }; });
+  var byDay = {}; days.forEach(function(r) { byDay[r.d] = { km: (byDay[r.d] ? byDay[r.d].km : 0) + (r.km || 0), name: r.name, url: r.url }; });
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   function lvl(km) { return km <= 0 ? 0 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
   var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
 
   var year = new Date().getFullYear();
   var start = new Date(year, 0, 1); start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // Mon on/before Jan 1
-  var end = new Date(year, 11, 31);
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var lastDay = new Date(today); lastDay.setDate(lastDay.getDate() + (7 - ((lastDay.getDay() + 6) % 7) - 1)); // to end of this week
 
-  // size cells to fit the year across the card (no scroll if it fits)
+  // size cells to fit Jan -> now across the card (no empty future months, so cells stay a comfortable size)
   var scroll = document.getElementById('heatScroll');
-  var weeks = Math.ceil(((end - start) / 86400000 + 1) / 7);
-  var gap = 2, avail = (scroll.clientWidth || 480) - 2;
-  var cell = Math.max(6, Math.min(14, Math.floor((avail - (weeks - 1) * gap) / weeks)));
+  var weeks = Math.round(((lastDay - start) / 86400000 + 1) / 7);
+  var gap = 3, avail = (scroll.clientWidth || 480) - 2;
+  var cell = Math.max(9, Math.min(16, Math.floor((avail - (weeks - 1) * gap) / weeks)));
   heat.style.gap = gap + 'px';
   heat.style.gridTemplateRows = 'repeat(7, ' + cell + 'px)';
 
@@ -247,18 +251,19 @@
     if (cur.getFullYear() === year && wkMonth !== lastMonth) { lab.textContent = MON[wkMonth]; lastMonth = wkMonth; }
     monthsEl.appendChild(lab);
     for (var d = 0; d < 7; d++) {
-      var inYear = cur.getFullYear() === year;
+      var inRange = cur.getFullYear() === year && cur <= today;
       var iso = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
-      var rec = inYear ? byDay[iso] : null, km = rec ? rec.km : 0;
+      var rec = inRange ? byDay[iso] : null, km = rec ? rec.km : 0;
       var i = document.createElement('i');
       i.style.width = i.style.height = cell + 'px';
-      i.style.background = inYear ? cols[lvl(km)] : 'transparent';
+      i.style.background = inRange ? cols[lvl(km)] : 'transparent';
       if (km > 0) {
         i.className = 'has';
         var dd = parse10(iso);
-        (function(label) {
+        (function(label, url) {
           i.addEventListener('mouseenter', function() { setReadout(label); });
-        })('<span class="hk">' + dd + '</span><span class="hsep">·</span><span class="hn">' + (rec.name || 'Ride') + '</span><span class="hsep">·</span><span style="color:#2b7fd9">' + Math.round(km) + ' km</span>');
+          if (url) i.addEventListener('click', function() { window.location.href = url; });
+        })('<span class="hk">' + dd + '</span><span class="hsep">·</span><span class="hn">' + (rec.name || 'Ride') + '</span><span class="hsep">·</span><span style="color:#2b7fd9">' + Math.round(km) + ' km</span>', rec.url);
       }
       heat.appendChild(i);
       cur.setDate(cur.getDate() + 1);
