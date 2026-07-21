@@ -18,6 +18,12 @@
 
   .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
 
+  /* Volume graph layered over the "ride lines" ridgeline backdrop */
+  .vol-wrap { position: relative; padding: 0; overflow: hidden; background: #f7f5ef; height: 300px; }
+  @media (max-width: 600px) { .vol-wrap { height: 240px; } }
+  .vol-wrap #ridgeBg { position: absolute; inset: 0; width: 100% !important; height: 100% !important; z-index: 0; }
+  .vol-wrap #trendChart { position: absolute; inset: 0; width: 100% !important; height: 100% !important; z-index: 1; padding: 0.8em 0.9em; box-sizing: border-box; }
+
   /* Latest ride card: mini route map with stats overlaid, whole card links to the ride */
   .latest { position: relative; border: 1px solid #e5decf; border-radius: 4px; overflow: hidden; }
   .latest-map { height: 230px; width: 100%; }
@@ -59,13 +65,19 @@
 {{ end }}
 
 {{ $rides := slice }}
+{{ $ridge := slice }}
 {{ range $id, $a := hugo.Data.cycling.activities }}
 {{ $rides = $rides | append (dict "d" (substr $a.date 0 7) "km" $a.distance_km "sp" $a.avg_speed_kmh "pw" $a.avg_power) }}
+{{ with $a.elevation_profile }}{{ $ridge = $ridge | append (dict "d" $a.date "e" .) }}{{ end }}
 {{ end }}
 {{ if $rides }}
 <p class="cy-h2">Volume and intensity by month</p>
-<div class="chart-card"><canvas id="trendChart" height="88"></canvas></div>
+<div class="chart-card vol-wrap">
+  <canvas id="ridgeBg"></canvas>
+  <canvas id="trendChart"></canvas>
+</div>
 <script id="trend-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
+<script id="ridge-data" type="application/json">{{ $ridge | jsonify | safeJS }}</script>
 {{ end }}
 
 {{ with $recent }}{{ $r := index . 0 }}
@@ -103,6 +115,41 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
 (function() {
+  // "Ride lines" ridgeline backdrop behind the volume chart (elevation, faint blue on off-white)
+  var rtag = document.getElementById('ridge-data'), rc = document.getElementById('ridgeBg');
+  if (rtag && rc) {
+    var rdata = JSON.parse(rtag.textContent);
+    rdata.sort(function(a, b) { return a.d < b.d ? -1 : 1; });
+    var series = rdata.map(function(x) { return x.e; }).filter(function(e) { return e && e.filter(function(v) { return v != null; }).length > 4; });
+    var rctx = rc.getContext('2d'), rdpr = Math.min(window.devicePixelRatio || 1, 2), RBG = '#f7f5ef';
+    function rClean(a) { var o = a.slice(), last = null, i; for (i = 0; i < o.length; i++) { if (o[i] == null || isNaN(o[i])) o[i] = last; else last = o[i]; } var f = o.find(function(x) { return x != null; }); for (i = 0; i < o.length; i++) { if (o[i] == null) o[i] = f || 0; } return o; }
+    function rSmooth(a) { var o = []; for (var i = 0; i < a.length; i++) { var s = 0, c = 0; for (var j = i - 1; j <= i + 1; j++) { if (j >= 0 && j < a.length) { s += a[j]; c++; } } o.push(s / c); } return o; }
+    function rLerp(a, b, t) { return Math.round(a + (b - a) * t); }
+    function rRender() {
+      var w = rc.clientWidth, h = rc.clientHeight; if (!w || !h) return;
+      rc.width = w * rdpr; rc.height = h * rdpr; rctx.setTransform(rdpr, 0, 0, rdpr, 0, 0);
+      rctx.fillStyle = RBG; rctx.fillRect(0, 0, w, h);
+      var n = series.length; if (!n) return;
+      var mL = 6, mR = 6, mT = 8, mB = 8, W = w - mL - mR, H = h - mT - mB;
+      var amp = Math.min(H * 0.22, 85), gap = Math.min((H - amp) / Math.max(1, n - 1), 38);
+      var top = mT + (H - (amp + (n - 1) * gap)) / 2, i, k, x, y;
+      for (i = 0; i < n; i++) {
+        var vals = rSmooth(rClean(series[i])), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals), span = (hi - lo) || 1, base = top + amp + i * gap, Ln = vals.length;
+        rctx.beginPath();
+        for (k = 0; k < Ln; k++) { x = mL + (k / (Ln - 1)) * W; y = base - ((vals[k] - lo) / span) * amp; if (k === 0) rctx.moveTo(x, y); else rctx.lineTo(x, y); }
+        rctx.lineTo(mL + W, h); rctx.lineTo(mL, h); rctx.closePath(); rctx.fillStyle = RBG; rctx.fill();
+        rctx.beginPath();
+        for (k = 0; k < Ln; k++) { x = mL + (k / (Ln - 1)) * W; y = base - ((vals[k] - lo) / span) * amp; if (k === 0) rctx.moveTo(x, y); else rctx.lineTo(x, y); }
+        var t = n > 1 ? i / (n - 1) : 0;
+        rctx.strokeStyle = 'rgba(' + rLerp(120, 178, t) + ',' + rLerp(160, 202, t) + ',' + rLerp(215, 236, t) + ',0.7)';
+        rctx.lineWidth = 1.2; rctx.stroke();
+      }
+    }
+    rRender();
+    var rrt; window.addEventListener('resize', function() { clearTimeout(rrt); rrt = setTimeout(rRender, 150); });
+    window.addEventListener('load', rRender); setTimeout(rRender, 350);
+  }
+
   var tag = document.getElementById('trend-data');
   var el = document.getElementById('trendChart');
   if (!tag || !el) return;
@@ -134,9 +181,9 @@
       ]
     },
     options: {
-      responsive: true, aspectRatio: mob ? 1.1 : 2.2, interaction: { intersect: false, mode: 'index' },
+      responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' },
       plugins: {
-        legend: { display: true, labels: { font: mono, boxWidth: 12, boxHeight: 12, usePointStyle: false } },
+        legend: { display: true, labels: { font: mono, boxWidth: 11, boxHeight: 11, usePointStyle: false, color: '#555', padding: 12 } },
         tooltip: { callbacks: { label: function(c) {
           if (c.parsed.y == null) return null;
           var u = c.dataset.yAxisID === 'yKm' ? ' km' : c.dataset.yAxisID === 'ySpeed' ? ' km/h' : ' W';
@@ -144,10 +191,10 @@
         } } }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: mono } },
-        yKm: { position: 'left', beginAtZero: true, title: { display: true, text: 'km', font: mono }, grid: { color: '#f2efe8' }, ticks: { font: mono } },
-        ySpeed: { position: 'right', beginAtZero: true, title: { display: true, text: 'km/h', font: mono }, grid: { display: false }, ticks: { font: mono } },
-        yPower: { position: 'right', beginAtZero: true, title: { display: true, text: 'W', font: mono }, grid: { display: false }, ticks: { font: mono } }
+        x: { grid: { display: false }, ticks: { font: mono, color: '#8a8378' }, border: { display: false } },
+        yKm: { position: 'left', beginAtZero: true, grid: { color: 'rgba(120,110,90,0.12)' }, ticks: { font: mono, color: '#a49c8c', maxTicksLimit: 5 }, border: { display: false } },
+        ySpeed: { display: false, position: 'right', beginAtZero: true },
+        yPower: { display: false, position: 'right', beginAtZero: true }
       }
     }
   });
