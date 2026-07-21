@@ -61,7 +61,7 @@
 {{ if or $activityData.elevation_profile $activityData.power_profile $activityData.speed_profile }}
 <p class="cy-h2">Ride profile</p>
 <div class="card"><canvas id="profileChart"></canvas></div>
-{{ if $activityData.power_profile }}<p class="znote">Shaded bands behind the power line are your effort zones, grey (easy) up through red (very hard). Same colours as the ring below.</p>{{ end }}
+{{ if $activityData.power_profile }}<p class="znote">The filled area is your power, coloured by effort zone: grey (easy) up through red (very hard). Same colours as the ring below.</p>{{ end }}
 {{ end }}
 
 {{ if $activityData.power_zones }}
@@ -131,21 +131,26 @@
   if (pc) {
     var ds = [];
     var scales = { x: { title: { display: true, text: 'km', font: mono }, ticks: { maxTicksLimit: 8, font: mono }, grid: { display: false } } };
-    // Consistent order + site colours: power (red dashed), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
+    // The power area is filled and coloured by effort zone (Zwift-style): grey easy -> red hard.
+    var FTP = 220; // keep in sync with hugo_writer.py FTP
+    function zIdx(w) { if (w == null) return 0; var f = w / FTP; return f < 0.55 ? 0 : f < 0.75 ? 1 : f < 0.90 ? 2 : f < 1.05 ? 3 : 4; }
+    var zFill = ['rgba(148,163,184,0.30)', 'rgba(96,165,250,0.32)', 'rgba(52,211,153,0.34)', 'rgba(251,191,36,0.40)', 'rgba(248,113,113,0.45)'];
+    // Consistent order + site colours: power (red, zone-filled), speed (blue), heart rate (orange), cadence (green), elevation (grey backdrop)
     if (d.power_profile) {
-      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#c0392b', backgroundColor: 'transparent', borderDash: [4, 3], order: 1 });
+      ds.push({ label: 'Power', data: smooth(d.power_profile), yAxisID: 'yPower', borderColor: '#c0392b', borderWidth: 1.8, fill: 'origin', order: 4,
+        segment: { backgroundColor: function(c) { return zFill[zIdx(c.p1.parsed.y)]; } } });
       scales.yPower = { position: 'left', beginAtZero: true, title: { display: true, text: 'W', font: mono }, ticks: { font: mono }, grid: { color: '#f2efe8' } };
     }
     if (d.speed_profile) {
-      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 2 });
+      ds.push({ label: 'Speed', data: smooth(d.speed_profile), yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 1 });
       scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.hr_profile) {
-      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 3 });
+      ds.push({ label: 'Heart rate', data: smooth(d.hr_profile), yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 2 });
       scales.yHr = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.cadence_profile) {
-      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4 });
+      ds.push({ label: 'Cadence', data: smooth(d.cadence_profile), yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 3 });
       scales.yCad = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.elevation_profile) {
@@ -154,32 +159,8 @@
       ds.push({ label: 'Elevation', data: d.elevation_profile, yAxisID: 'yElev', borderColor: 'rgba(198,190,175,0.6)', backgroundColor: 'rgba(214,207,192,0.32)', fill: true, borderWidth: 1, order: 5 });
       scales.yElev = { display: false, min: 0, max: elevMax * 3.2 };
     }
-    // Zwift-style faint power-zone bands behind the power line (mapped to the W axis)
-    var FTP = 220; // keep in sync with hugo_writer.py FTP
-    var zoneBands = {
-      id: 'zoneBands',
-      beforeDatasetsDraw: function(chart) {
-        var sc = chart.scales.yPower; if (!sc) return;
-        var ca = chart.chartArea, ctx = chart.ctx;
-        var edges = [0, 0.55 * FTP, 0.75 * FTP, 0.90 * FTP, 1.05 * FTP, sc.max];
-        var cols = ['rgba(203,213,225,0.16)', 'rgba(96,165,250,0.13)', 'rgba(52,211,153,0.13)', 'rgba(251,191,36,0.15)', 'rgba(248,113,113,0.15)'];
-        ctx.save();
-        for (var i = 0; i < 5; i++) {
-          if (edges[i] >= sc.max) break;
-          var yA = sc.getPixelForValue(Math.min(edges[i + 1], sc.max));
-          var yB = sc.getPixelForValue(edges[i]);
-          var top = Math.max(ca.top, Math.min(yA, yB));
-          var bot = Math.min(ca.bottom, Math.max(yA, yB));
-          if (bot <= top) continue;
-          ctx.fillStyle = cols[i];
-          ctx.fillRect(ca.left, top, ca.right - ca.left, bot - top);
-        }
-        ctx.restore();
-      }
-    };
     new Chart(pc, {
       type: 'line',
-      plugins: [zoneBands],
       data: { labels: dist, datasets: ds },
       options: {
         responsive: true, aspectRatio: mob ? 1.15 : 2.4, interaction: { intersect: false, mode: 'index' }, spanGaps: true,
@@ -193,7 +174,7 @@
             if (p) { hoverMarker.setLatLng(p); if (!map.hasLayer(hoverMarker)) hoverMarker.addTo(map); }
           }
         },
-        plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true } },
+        plugins: { legend: { display: true, labels: { font: mono, boxWidth: 12, usePointStyle: true, sort: function(a, b) { var o = ['Power', 'Speed', 'Heart rate', 'Cadence', 'Elevation']; return o.indexOf(a.text) - o.indexOf(b.text); } } },
           tooltip: { callbacks: { label: function(c) {
             if (c.parsed.y == null) return null;
             var id = c.dataset.yAxisID;
