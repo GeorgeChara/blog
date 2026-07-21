@@ -300,18 +300,14 @@
         ctx.fillStyle = 'rgba(40,40,40,0.6)';
         ctx.shadowColor = 'rgba(255,255,255,0.9)'; ctx.shadowBlur = 3;
         ctx.textBaseline = 'bottom';
-        for (var v = 0; v <= xMax + 0.001; v += stepX) {
+        for (var v = stepX; v <= xMax + 0.001; v += stepX) { // skip 0 (it's the origin, and overlaps the y-axis 0)
           var px = xs.getPixelForValue(v);
-          ctx.textAlign = v === 0 ? 'left' : (v >= xMax ? 'right' : 'center');
+          ctx.textAlign = v >= xMax ? 'right' : 'center';
           ctx.fillText(v.toFixed(1), Math.min(Math.max(px, ca.left + 2), ca.right - 2), ca.bottom - 2);
         }
         if (ys) {
-          ctx.textAlign = 'left';
-          [0, yMax / 2].forEach(function(v) { // 0 at the bottom, the peak value at mid-map; top (empty) label omitted
-            var py = ys.getPixelForValue(v);
-            ctx.textBaseline = v === 0 ? 'bottom' : 'middle';
-            ctx.fillText(String(v), ca.left + 2, py);
-          });
+          ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+          ctx.fillText(String(yMax / 2), ca.left + 2, ys.getPixelForValue(yMax / 2)); // just the peak value at mid-map
         }
         ctx.restore();
       }
