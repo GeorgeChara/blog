@@ -1,0 +1,76 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  .terminal-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
+
+  .cy-h1 { font-weight: bold; font-size: 1.4em; margin: 0 0 0.15em 0; color: #000; }
+  .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 1.4em 0; }
+  .cy-h2 { font-weight: bold; font-size: 0.95em; margin: 2em 0 0.7em 0; color: #000; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.65em 0.8em; }
+  .stat .v { font-weight: bold; font-size: 1.05em; color: #000; font-variant-numeric: tabular-nums; }
+  .stat .l { display: block; font-size: 0.68em; color: #999; margin-top: 0.2em; text-transform: uppercase; letter-spacing: 0.04em; }
+  .diff-Easy { color: #3aa06a; } .diff-Moderate { color: #4169E1; } .diff-Hard { color: #e8850c; } .diff-Severe { color: #c0392b; }
+
+  .rtags { margin: 1.1em 0 0; }
+  .rtag { display: inline-block; font-size: 0.76em; color: #555; background: #f4f6fb; border: 1px solid #e7ebf5; border-radius: 3px; padding: 0.15em 0.55em; margin: 0 0.3em 0.3em 0; }
+  .badge-new { color: #c0392b; font-size: 0.75em; font-weight: bold; margin-left: 0.5em; }
+
+  #route-map { height: 420px; width: 100%; border: 1px solid #e5decf; border-radius: 4px; z-index: 0; }
+  .maphint { color: #888; font-size: 0.8em; margin-top: 0.5em; }
+  .maphint b { color: #3aa06a; } .maphint i { color: #4169E1; font-style: normal; }
+
+  .src { font-size: 0.85em; margin-top: 1.2em; }
+  .src a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+  .view-all { font-size: 0.85em; margin-top: 2em; }
+  .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+</style>
+
+<p class="cy-h1">{{ .Title }}{{ if .Params.new }} <span class="badge-new">[new]</span>{{ end }}</p>
+<p class="cy-sub">Route to ride from home.</p>
+
+<div class="stats">
+  <div class="stat"><span class="v">{{ .Params.distance_km }} km</span><span class="l">Distance</span></div>
+  <div class="stat"><span class="v">{{ .Params.climb_m }} m</span><span class="l">Climbing</span></div>
+  <div class="stat"><span class="v diff-{{ .Params.difficulty }}">{{ .Params.difficulty }}</span><span class="l">Difficulty</span></div>
+</div>
+
+{{ with .Params.tags }}<p class="rtags">{{ range . }}<span class="rtag">{{ . }}</span>{{ end }}</p>{{ end }}
+
+<p class="cy-h2">Route</p>
+<div id="route-map"></div>
+<p class="maphint">Arrows show the direction to ride. <b>Green</b> marker is the start.</p>
+
+{{ with .Params.source }}<p class="src">Source: <a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a></p>{{ end }}
+
+{{ .Content }}
+
+<p class="view-all"><a href="/cycling/routes/">&larr; All routes</a></p>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+<script>
+(function() {
+  var map = L.map('route-map', { scrollWheelZoom: false, attributionControl: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+  fetch('{{ .Params.gpx }}').then(function(r) { return r.ok ? r.text() : null; }).then(function(xml) {
+    if (!xml) { map.setView([51.9, 0.5], 9); return; }
+    var pts = new DOMParser().parseFromString(xml, 'application/xml').getElementsByTagName('trkpt');
+    var ll = [];
+    for (var i = 0; i < pts.length; i++) { ll.push([parseFloat(pts[i].getAttribute('lat')), parseFloat(pts[i].getAttribute('lon'))]); }
+    if (ll.length < 2) { map.setView([51.9, 0.5], 9); return; }
+    var pl = L.polyline(ll, { color: '#2b7fd9', weight: 4, opacity: 0.9 }).addTo(map);
+    L.polylineDecorator(pl, {
+      patterns: [{ offset: 24, repeat: 75, symbol: L.Symbol.arrowHead({ pixelSize: 11, polygon: false, pathOptions: { stroke: true, color: '#1e5fa8', weight: 2, opacity: 0.95 } }) }]
+    }).addTo(map);
+    L.circleMarker(ll[0], { radius: 7, color: '#fff', weight: 2, fillColor: '#3aa06a', fillOpacity: 1 }).addTo(map);
+    map.fitBounds(pl.getBounds(), { padding: [25, 25] });
+  }).catch(function() { map.setView([51.9, 0.5], 9); });
+})();
+</script>
+{{ end }}

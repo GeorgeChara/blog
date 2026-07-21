@@ -1,0 +1,110 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  .terminal-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
+
+  .cy-h1 { font-weight: bold; font-size: 1.5em; margin: 0 0 0.15em 0; color: #000; }
+  .cy-sub { color: #888; font-size: 0.9em; margin: 0 0 1.6em 0; }
+
+  .controls { display: flex; align-items: center; gap: 0.4em; flex-wrap: wrap; margin-bottom: 1.2em; }
+  .controls .lab { color: #999; font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0.2em 0 0.4em; }
+  .controls .lab:first-child { margin-left: 0; }
+  .ctl { font-family: inherit; font-size: 0.8em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 4px; padding: 0.3em 0.7em; cursor: pointer; }
+  .ctl.on { background: #4169E1; color: #fff; border-color: #4169E1; }
+
+  table.routes { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  table.routes td { padding: 0.65em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
+  table.routes td:first-child { width: 100%; }
+  table.routes tr:last-child td { border-bottom: none; }
+  table.routes a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+  table.routes a:hover { border-bottom-color: #4169E1; }
+  table.routes td.n { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; padding-left: 1.2em; }
+  .badge-new { color: #c0392b; font-size: 0.72em; font-weight: bold; margin-left: 0.4em; letter-spacing: 0.03em; }
+  .rtags { display: block; margin-top: 0.25em; }
+  .rtag { display: inline-block; font-size: 0.72em; color: #888; background: #f4f6fb; border: 1px solid #e7ebf5; border-radius: 3px; padding: 0.05em 0.4em; margin: 0.15em 0.25em 0 0; }
+  .diff { font-size: 0.82em; font-weight: bold; }
+  .diff-Easy { color: #3aa06a; } .diff-Moderate { color: #4169E1; } .diff-Hard { color: #e8850c; } .diff-Severe { color: #c0392b; }
+
+  .empty { color: #888; font-size: 0.85em; border-left: 2px solid #e5decf; padding-left: 0.6em; }
+</style>
+
+<p class="cy-h1">Routes</p>
+<p class="cy-sub">Well-rated loops to ride from home. Sort by effort, filter by what you fancy.</p>
+
+{{ $routes := where .Pages "Params.distance_km" "!=" nil }}
+{{ if $routes }}
+<div class="controls">
+  <span class="lab">Sort</span>
+  <button class="ctl on" data-sort="score">Difficulty</button>
+  <button class="ctl" data-sort="dist">Distance</button>
+  <button class="ctl" data-sort="climb">Climb</button>
+  <span class="lab">Filter</span>
+  <span id="chips"></span>
+</div>
+
+<table class="routes" id="routeTable">
+  {{ range sort $routes "Params.difficulty_score" }}
+  <tr data-dist="{{ .Params.distance_km }}" data-climb="{{ .Params.climb_m }}" data-score="{{ .Params.difficulty_score }}" data-tags="{{ delimit .Params.tags "," }}">
+    <td>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Params.new }} <span class="badge-new">[new]</span>{{ end }}
+      {{ with .Params.tags }}<span class="rtags">{{ range . }}<span class="rtag">{{ . }}</span>{{ end }}</span>{{ end }}
+    </td>
+    <td class="n">{{ .Params.distance_km }} km</td>
+    <td class="n">{{ .Params.climb_m }} m</td>
+    <td class="n"><span class="diff diff-{{ .Params.difficulty }}">{{ .Params.difficulty }}</span></td>
+  </tr>
+  {{ end }}
+</table>
+{{ else }}
+<p class="empty">No routes yet. Drop a GPX into <code>static/cycling/routes/</code> and run <code>python scripts/routes/build_routes.py</code>.</p>
+{{ end }}
+
+<p class="cy-sub" style="margin-top:2em;"><a href="/cycling/" style="color:#4169E1;text-decoration:none;border-bottom:1px solid #c5ccee;">&larr; Back to cycling</a></p>
+
+<script>
+(function() {
+  var table = document.getElementById('routeTable');
+  if (!table) return;
+  var rows = Array.prototype.slice.call(table.querySelectorAll('tr'));
+  var active = null;
+
+  // ---- sort ----
+  var dirs = {};
+  Array.prototype.forEach.call(document.querySelectorAll('.ctl[data-sort]'), function(b) {
+    b.addEventListener('click', function() {
+      var key = b.dataset.sort;
+      Array.prototype.forEach.call(document.querySelectorAll('.ctl[data-sort]'), function(x) { x.className = 'ctl' + (x === b ? ' on' : ''); });
+      dirs[key] = dirs[key] === 'desc' ? 'asc' : 'desc';
+      var d = dirs[key] === 'desc' ? -1 : 1;
+      var attr = key === 'dist' ? 'dist' : key === 'climb' ? 'climb' : 'score';
+      rows.sort(function(a, b2) { return (parseFloat(a.dataset[attr]) - parseFloat(b2.dataset[attr])) * d; });
+      rows.forEach(function(r) { table.appendChild(r); });
+    });
+  });
+
+  // ---- tag filter chips ----
+  var allTags = {};
+  rows.forEach(function(r) { (r.dataset.tags || '').split(',').forEach(function(t) { t = t.trim(); if (t) allTags[t] = 1; }); });
+  var chips = document.getElementById('chips');
+  Object.keys(allTags).sort().forEach(function(t) {
+    var c = document.createElement('button');
+    c.className = 'ctl'; c.textContent = t;
+    c.addEventListener('click', function() {
+      if (active === t) { active = null; c.className = 'ctl'; }
+      else {
+        active = t;
+        Array.prototype.forEach.call(chips.querySelectorAll('.ctl'), function(x) { x.className = 'ctl'; });
+        c.className = 'ctl on';
+      }
+      rows.forEach(function(r) {
+        var tags = (r.dataset.tags || '').split(',').map(function(x) { return x.trim(); });
+        r.style.display = (!active || tags.indexOf(active) >= 0) ? '' : 'none';
+      });
+    });
+    chips.appendChild(c);
+  });
+})();
+</script>
+{{ end }}
