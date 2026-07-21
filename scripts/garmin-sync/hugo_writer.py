@@ -304,7 +304,7 @@ def write_activity(activity, gpx_xml, streams=None):
                 str(OG_DIR / f"{activity_id}.png"),
                 ride_type_label(normalized_power, avg_power),
                 name, distance_km, elevation_m, duration_fmt,
-                gpx_coords(simplified_gpx), profiles.get("elevation_profile") or [],
+                gpx_coords(simplified_gpx), profiles.get("power_profile") or [],
             )
         except Exception as e:
             print(f"  OG card failed for {activity_id}: {e}")
