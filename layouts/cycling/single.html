@@ -34,7 +34,7 @@
   .map-wrap { position: relative; }
   #ride-map { height: 360px; width: 100%; border: 1px solid #e5decf; border-radius: 4px; }
   .map-wrap #profileChart { position: absolute; inset: 0; width: 100% !important; height: 100% !important; z-index: 450; pointer-events: auto; }
-  .map-stats { position: absolute; top: 8px; left: 8px; z-index: 500; pointer-events: none; background: rgba(255,255,255,0.9); border: 1px solid #e5decf; border-radius: 4px; padding: 0.5em 0.7em; font-family: monospace; font-size: 0.78em; line-height: 1.55; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .map-stats { position: absolute; top: 8px; left: 8px; z-index: 500; pointer-events: none; background: rgba(255,255,255,0.78); backdrop-filter: blur(1.5px); -webkit-backdrop-filter: blur(1.5px); border: 1px solid #e5decf; border-radius: 4px; padding: 0.5em 0.7em; font-family: monospace; font-size: 0.78em; line-height: 1.55; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
   .ms-row { display: flex; align-items: center; gap: 0.45em; }
   .ms-row b { color: #000; font-weight: bold; font-variant-numeric: tabular-nums; }
   .ms-l { color: #999; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.9em; min-width: 4.7em; }
@@ -107,17 +107,15 @@
 
 <div class="route-head">
   <p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
-  <div class="rh-meta">
-    <span class="dnums">{{ .Params.duration }} | {{ .Params.distance_km }} km{{ with .Params.elevation_m }} | &uarr;{{ . }} m{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span>
-    <button type="button" class="share-btn" id="shareBtn">Share</button>
-  </div>
+  <button type="button" class="share-btn" id="shareBtn">Share</button>
 </div>
 <div class="map-wrap">
   <div id="ride-map"></div>
   <div class="map-stats">
-    <div class="ms-row"><span class="ms-l">Effort</span>{{ if $np }}<span class="ms-ebar"><span style="width:{{ $effpct }}%; background:{{ $ecolor }}"></span></span><span class="ms-mut">{{ $effort }}</span>{{ else }}<span class="ms-mut">no power</span>{{ end }}</div>
     <div class="ms-row"><span class="ms-l">Distance</span><b>{{ .Params.distance_km }} km</b></div>
     <div class="ms-row"><span class="ms-l">Climb</span><b>{{ .Params.elevation_m }} m</b> <span class="ms-mut">{{ $terrain }}</span></div>
+    <div class="ms-row"><span class="ms-l">Time</span><b>{{ .Params.duration }}</b></div>
+    {{ with .Params.calories }}<div class="ms-row"><span class="ms-l">kcal</span><b>{{ . }}</b></div>{{ end }}
   </div>
   {{ if $hasProfile }}<canvas id="profileChart"></canvas><div id="profileLegend" class="plegend"></div>{{ end }}
 </div>
