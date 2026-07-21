@@ -11,11 +11,22 @@
 
   .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6em; }
   @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; }
-  .stat .v { font-weight: bold; font-size: 1.15em; color: #000; font-variant-numeric: tabular-nums; }
-  .stat .l { display: block; font-size: 0.7em; color: #999; margin-top: 0.2em; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; }
+  .stat .v { font-weight: bold; font-size: 1.5em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
+  .stat .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+  .stat .l { display: block; font-size: 0.68em; color: #999; margin-top: 0.45em; text-transform: uppercase; letter-spacing: 0.04em; }
 
   .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
+
+  /* Latest ride card: mini route map with stats overlaid, whole card links to the ride */
+  .latest { position: relative; border: 1px solid #e5decf; border-radius: 4px; overflow: hidden; }
+  .latest-map { height: 230px; width: 100%; }
+  .latest-panel { position: absolute; top: 8px; left: 8px; z-index: 500; pointer-events: none; background: rgba(255,255,255,0.82); backdrop-filter: blur(1.5px); -webkit-backdrop-filter: blur(1.5px); border: 1px solid #e5decf; border-radius: 4px; padding: 0.55em 0.75em; font-family: monospace; }
+  .latest-name { font-weight: bold; color: #000; font-size: 0.9em; }
+  .latest-date { color: #999; font-size: 0.74em; margin-top: 0.1em; }
+  .latest-stats { color: #555; font-size: 0.78em; margin-top: 0.4em; font-variant-numeric: tabular-nums; }
+  .latest-cta { position: absolute; right: 8px; bottom: 8px; z-index: 500; pointer-events: none; font-family: monospace; font-size: 0.78em; color: #4169E1; background: rgba(238,242,254,0.92); border: 1px solid #cdd8f7; border-radius: 3px; padding: 0.3em 0.6em; }
+  .latest-link { position: absolute; inset: 0; z-index: 600; }
 
   table.rides { width: 100%; border-collapse: collapse; font-size: 0.9em; }
   table.rides td { padding: 0.55em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
@@ -35,16 +46,15 @@
 {{ $recent := hugo.Data.cycling.recent }}
 
 <p class="cy-h1">Cycling</p>
-<p class="cy-sub">Rides tracked with Garmin, synced automatically after every ride.</p>
-<p style="margin:-1em 0 1.6em 0; display:flex; gap:0.5em; flex-wrap:wrap;"><a href="/cycling/routes/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Routes &rarr;</a><a href="/cycling/progress/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Progress &amp; achievements &rarr;</a><a href="/cycling/arcade/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">RIDER.SYS &rarr;</a></p>
+<p style="margin:0.2em 0 1.6em 0; display:flex; gap:0.5em; flex-wrap:wrap;"><a href="/cycling/routes/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Routes &rarr;</a><a href="/cycling/progress/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Progress &amp; achievements &rarr;</a><a href="/cycling/arcade/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">RIDER.SYS &rarr;</a></p>
 
 {{ with $summary }}
 <div class="stats">
   <div class="stat"><span class="v">{{ .total_rides }}</span><span class="l">Rides</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .total_distance_km }}</span><span class="l">km total</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .total_elevation_m }}</span><span class="l">m climbed</span></div>
-  <div class="stat"><span class="v">{{ printf "%.1f" .avg_speed_kmh }}</span><span class="l">km/h avg</span></div>
-  <div class="stat"><span class="v">{{ printf "%.0f" .longest_ride_km }}</span><span class="l">km longest</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .total_distance_km }}<span class="u">km</span></span><span class="l">Distance</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .total_elevation_m }}<span class="u">m</span></span><span class="l">Climbed</span></div>
+  <div class="stat"><span class="v">{{ printf "%.1f" .avg_speed_kmh }}<span class="u">km/h</span></span><span class="l">Avg speed</span></div>
+  <div class="stat"><span class="v">{{ printf "%.0f" .longest_ride_km }}<span class="u">km</span></span><span class="l">Longest</span></div>
 </div>
 {{ end }}
 
@@ -56,6 +66,20 @@
 <p class="cy-h2">Volume and intensity by month</p>
 <div class="chart-card"><canvas id="trendChart" height="88"></canvas></div>
 <script id="trend-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
+{{ end }}
+
+{{ with $recent }}{{ $r := index . 0 }}
+<p class="cy-h2">Latest ride</p>
+<div class="latest">
+  <div class="latest-map" id="latestMap" data-gpx="/cycling/gpx/{{ $r.id }}.gpx"></div>
+  <div class="latest-panel">
+    <div class="latest-name">{{ $r.name }}</div>
+    <div class="latest-date">{{ $r.date }}</div>
+    <div class="latest-stats">{{ $r.distance_km }} km | &uarr;{{ $r.elevation_gain_m }} m | {{ $r.duration }}</div>
+  </div>
+  <span class="latest-cta">View ride &rarr;</span>
+  <a class="latest-link" href="/cycling/rides/{{ $r.slug }}/" aria-label="View {{ $r.name }}"></a>
+</div>
 {{ end }}
 
 <p class="cy-h2">Recent rides</p>
@@ -127,6 +151,29 @@
       }
     }
   });
+})();
+</script>
+{{ end }}
+
+{{ if $recent }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function() {
+  var lm = document.getElementById('latestMap');
+  if (!lm || !window.L) return;
+  var map = L.map('latestMap', { zoomControl: false, attributionControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, touchZoom: false, boxZoom: false, keyboard: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+  fetch(lm.dataset.gpx).then(function(r) { return r.ok ? r.text() : null; }).then(function(xml) {
+    if (!xml) { map.setView([51.9, 0.5], 9); return; }
+    var pts = new DOMParser().parseFromString(xml, 'application/xml').getElementsByTagName('trkpt'), ll = [];
+    for (var i = 0; i < pts.length; i++) { ll.push([parseFloat(pts[i].getAttribute('lat')), parseFloat(pts[i].getAttribute('lon'))]); }
+    if (ll.length < 2) { map.setView([51.9, 0.5], 9); return; }
+    var draw = ll;
+    if (ll.length > 2 && L.latLng(ll[0]).distanceTo(L.latLng(ll[ll.length - 1])) < 5000) { draw = ll.concat([ll[0]]); }
+    var pl = L.polyline(draw, { color: '#2b7fd9', weight: 3, opacity: 0.9 }).addTo(map);
+    map.fitBounds(pl.getBounds(), { padding: [26, 26] });
+  }).catch(function() { map.setView([51.9, 0.5], 9); });
 })();
 </script>
 {{ end }}
