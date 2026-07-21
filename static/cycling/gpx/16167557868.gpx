@@ -10,16 +10,16 @@
     <name>Braintree Cycling</name>
     <type>cycling</type>
     <trkseg>
-      <trkpt lat="51.885633543133736" lon="0.5566721968352795">
-        <ele>47.20000076293945</ele>
-        <time>2024-06-27T05:31:33Z</time>
+      <trkpt lat="51.88469083048403" lon="0.5560929235070944">
+        <ele>51.400001525878906</ele>
+        <time>2024-06-27T05:31:23Z</time>
         <extensions>
           <ns3:TrackPointExtension></ns3:TrackPointExtension>
         </extensions>
       </trkpt>
-      <trkpt lat="51.88622580841184" lon="0.556747717782855">
-        <ele>47.79999923706055</ele>
-        <time>2024-06-27T05:31:39Z</time>
+      <trkpt lat="51.88583688810468" lon="0.5567263439297676">
+        <ele>47.400001525878906</ele>
+        <time>2024-06-27T05:31:35Z</time>
         <extensions>
           <ns3:TrackPointExtension></ns3:TrackPointExtension>
         </extensions>

@@ -192,17 +192,19 @@ def write_activity(activity, gpx_xml, streams=None):
 
     slug = f"{dt.strftime('%Y-%m-%d')}-{slugify(name)}"
 
-    # 1. Write simplified GPX
-    simplified_gpx = trim_home(simplify_gpx(gpx_xml), str(activity_id))
+    # 1. Home-trim the GPX and get the kept ride-distance window
+    trimmed_gpx, start_m, end_m = trim_range(gpx_xml, str(activity_id))
+    simplified_gpx = simplify_gpx(trimmed_gpx)
     gpx_path = GPX_DIR / f"{activity_id}.gpx"
     gpx_path.write_text(simplified_gpx)
 
-    # 2. Build profiles (rich per-second streams if we have them, else GPX)
+    # 2. Build profiles from the SAME trimmed window so the chart aligns with the map
     if streams and streams.get("distance"):
+        streams = trim_streams(streams, start_m, end_m)
         profiles = build_profiles(streams)
         profiles["power_zones"] = compute_power_zones(streams.get("power", []))
     else:
-        profiles = extract_profiles(gpx_xml)
+        profiles = extract_profiles(trimmed_gpx)
     activity_json = {
         "id": activity_id,
         "name": name,
@@ -484,8 +486,62 @@ def _downsample_stream(arr, n=80):
     return out
 
 
+def trim_range(gpx_xml, seed=""):
+    """Trim near-home points from start/end; return (trimmed_xml, start_m, end_m)
+    where start_m/end_m are the ride-distance bounds of the kept portion. Used to
+    trim the profile streams to the SAME extent so the chart aligns with the map."""
+    home = _load_home()
+    if not home:
+        return gpx_xml, None, None
+    hlat, hlon = home["lat"], home["lon"]
+    jit = home.get("jitter_m", 0)
+    if jit:
+        rnd = random.Random(str(seed))
+        r_start = home["radius_m"] + rnd.random() * jit
+        r_end = home["radius_m"] + rnd.random() * jit
+    else:
+        r_start = r_end = home["radius_m"]
+    gpx = gpxpy.parse(gpx_xml)
+    start_m = end_m = None
+    for track in gpx.tracks:
+        for seg in track.segments:
+            pts = seg.points
+            if not pts:
+                continue
+            cum = [0.0]
+            for i in range(1, len(pts)):
+                cum.append(cum[-1] + (pts[i].distance_2d(pts[i - 1]) or 0.0))
+            s = 0
+            while s < len(pts) and _haversine(pts[s].latitude, pts[s].longitude, hlat, hlon) <= r_start:
+                s += 1
+            e = len(pts) - 1
+            while e >= 0 and _haversine(pts[e].latitude, pts[e].longitude, hlat, hlon) <= r_end:
+                e -= 1
+            if s <= e:
+                if start_m is None:
+                    start_m, end_m = cum[s], cum[e]
+                seg.points = pts[s:e + 1]
+            else:
+                seg.points = []
+    return gpx.to_xml(), start_m, end_m
+
+
+def trim_streams(streams, start_m, end_m):
+    """Slice per-second streams to the [start_m, end_m] ride-distance window."""
+    if start_m is None or not streams or not streams.get("distance"):
+        return streams
+    d = streams["distance"]
+    keep = [i for i, x in enumerate(d) if x is not None and start_m <= x <= end_m]
+    if not keep:
+        return streams
+    lo, hi = keep[0], keep[-1] + 1
+    return {k: (v[lo:hi] if isinstance(v, list) else v) for k, v in streams.items()}
+
+
 def build_profiles(streams):
-    dist_km = [round((x or 0) / 1000, 2) for x in streams.get("distance", [])]
+    raw = streams.get("distance", [])
+    base = next((x for x in raw if x is not None), 0) or 0
+    dist_km = [round(((x or 0) - base) / 1000, 2) for x in raw]
     speed_kmh = [round((x or 0) * 3.6, 1) for x in streams.get("speed", [])]
     return {
         "distance_profile": _downsample_stream(dist_km),

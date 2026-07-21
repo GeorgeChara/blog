@@ -10,6 +10,15 @@
     <name>Braintree Road Cycling</name>
     <type>road_biking</type>
     <trkseg>
+      <trkpt lat="51.8859376385808" lon="0.5566887091845274">
+        <ele>48.400001525878906</ele>
+        <time>2024-07-18T05:14:03Z</time>
+        <extensions>
+          <ns3:TrackPointExtension>
+            <ns3:atemp>18.0</ns3:atemp>
+          </ns3:TrackPointExtension>
+        </extensions>
+      </trkpt>
       <trkpt lat="51.88720062375069" lon="0.5564691033214331">
         <ele>44.599998474121094</ele>
         <time>2024-07-18T05:14:17Z</time>
@@ -145,9 +154,18 @@
           </ns3:TrackPointExtension>
         </extensions>
       </trkpt>
-      <trkpt lat="51.93056381307542" lon="0.5957110784947872">
-        <ele>62.599998474121094</ele>
-        <time>2024-07-18T05:26:49Z</time>
+      <trkpt lat="51.93047236651182" lon="0.5956483818590641">
+        <ele>63.20000076293945</ele>
+        <time>2024-07-18T05:26:48Z</time>
+        <extensions>
+          <ns3:TrackPointExtension>
+            <ns3:atemp>15.0</ns3:atemp>
+          </ns3:TrackPointExtension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="51.931162951514125" lon="0.5959284212440252">
+        <ele>59.400001525878906</ele>
+        <time>2024-07-18T05:26:55Z</time>
         <extensions>
           <ns3:TrackPointExtension>
             <ns3:atemp>15.0</ns3:atemp>

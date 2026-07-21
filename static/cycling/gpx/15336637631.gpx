@@ -2537,6 +2537,13 @@
           <ns3:TrackPointExtension></ns3:TrackPointExtension>
         </extensions>
       </trkpt>
+      <trkpt lat="51.8791785556823" lon="0.5476809293031693">
+        <ele>69.5999984741211</ele>
+        <time>2024-05-11T11:40:53Z</time>
+        <extensions>
+          <ns3:TrackPointExtension></ns3:TrackPointExtension>
+        </extensions>
+      </trkpt>
     </trkseg>
   </trk>
 </gpx>
