@@ -14,7 +14,9 @@ import matplotlib.font_manager as fm
 
 W, H = 1200, 630
 FTP = 220
-TILE_URL = "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+# Voyager (not light_all): its roads are clearly visible, so the route reads as
+# following real roads rather than floating over the near-white light basemap.
+TILE_URL = "https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
 BLUE = "#2b7fd9"
 # zone fill (Zwift-style, translucent) and the power line
 ZBOUNDS = [0.55, 0.75, 0.90, 1.05]
