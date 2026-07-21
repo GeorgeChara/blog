@@ -39,23 +39,19 @@
   .heat-legend { display: flex; align-items: center; gap: 0.35em; font-size: 0.66em; color: #b3ab9a; margin-top: 0.6em; }
   .heat-legend i { width: 11px; height: 11px; border-radius: 1px; display: inline-block; }
 
-  /* Personal bests */
-  .pb-head { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; margin: 1.6em 0 0.5em; }
-  .pbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
-  .pb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; position: relative; }
-  .pb .v { font-weight: bold; font-size: 1.5em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
-  .pb .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
-  .pb .l { display: block; font-size: 0.72em; color: #444; margin-top: 0.45em; }
-  .pb .d { display: block; font-size: 0.68em; color: #aaa; margin-top: 0.15em; font-variant-numeric: tabular-nums; }
-  .pb .tag { position: absolute; top: 0.6em; right: 0.7em; font-size: 0.6em; color: #c9a227; letter-spacing: 0.06em; font-weight: bold; }
-  @media (max-width: 560px) {
-    .pbs { gap: 0.4em; }
-    .pb { padding: 0.6em 0.5em; }
-    .pb .v { font-size: 1.05em; }
-    .pb .l { font-size: 0.64em; }
-    .pb .d { font-size: 0.6em; }
-    .pb .tag { top: 0.45em; right: 0.5em; font-size: 0.52em; }
-  }
+  /* Personal-best leaderboards: top 3 per metric */
+  .lbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.9em; }
+  @media (max-width: 640px) { .lbs { grid-template-columns: 1fr; } }
+  .lb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.75em 0.85em; }
+  .lb-head { font-size: 0.64em; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; margin-bottom: 0.5em; }
+  .lb-row { display: grid; grid-template-columns: 1em auto 1fr auto; align-items: center; gap: 0.5em; padding: 0.26em 0; font-size: 0.82em; }
+  .lb-rank { color: #c3bcac; font-variant-numeric: tabular-nums; }
+  .lb-row.top .lb-rank { color: #c9a227; font-weight: bold; }
+  .lb-val { font-weight: bold; color: #000; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lb-val .u { font-weight: normal; color: #aaa; font-size: 0.8em; }
+  .lb-bar { height: 6px; background: #eee; border-radius: 1px; overflow: hidden; }
+  .lb-bar > span { display: block; height: 100%; }
+  .lb-date { color: #b3ab9a; font-size: 0.85em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
   /* Totals row */
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.6em; }
@@ -152,24 +148,50 @@
 <script id="heat-data" type="application/json">{{ $days | jsonify | safeJS }}</script>
 {{ end }}
 
-{{/* Personal bests: computed from all activities */}}
-{{ $lonV := 0.0 }}{{ $lonD := "" }}
-{{ $fasV := 0.0 }}{{ $fasD := "" }}
-{{ $spkV := 0.0 }}{{ $spkD := "" }}
-{{ $clmV := 0.0 }}{{ $clmD := "" }}
-{{ range $id, $a := hugo.Data.cycling.activities }}
-  {{ if gt (float $a.distance_km) $lonV }}{{ $lonV = float $a.distance_km }}{{ $lonD = $a.date }}{{ end }}
-  {{ if gt (float $a.avg_speed_kmh) $fasV }}{{ $fasV = float $a.avg_speed_kmh }}{{ $fasD = $a.date }}{{ end }}
-  {{ with $a.max_power }}{{ if gt (float .) $spkV }}{{ $spkV = float . }}{{ $spkD = $a.date }}{{ end }}{{ end }}
-  {{ if gt (float $a.elevation_gain_m) $clmV }}{{ $clmV = float $a.elevation_gain_m }}{{ $clmD = $a.date }}{{ end }}
-{{ end }}
-<div class="pbs">
-  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $lonV }}<span class="u">km</span></span><span class="l">Longest ride</span><span class="d">{{ if $lonD }}{{ (time $lonD).Format "2 Jan 2006" }}{{ end }}</span></div>
-  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.1f" $fasV }}<span class="u">km/h</span></span><span class="l">Fastest average</span><span class="d">{{ if $fasD }}{{ (time $fasD).Format "2 Jan 2006" }}{{ end }}</span></div>
-  {{ if gt $spkV 0.0 }}
-  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $spkV }}<span class="u">W</span></span><span class="l">Power spike</span><span class="d">{{ if $spkD }}{{ (time $spkD).Format "2 Jan 2006" }}{{ end }}</span></div>
-  {{ else }}
-  <div class="pb"><span class="tag">PB</span><span class="v">{{ printf "%.0f" $clmV }}<span class="u">m</span></span><span class="l">Biggest climb</span><span class="d">{{ if $clmD }}{{ (time $clmD).Format "2 Jan 2006" }}{{ end }}</span></div>
+{{/* Personal-best leaderboards: top 3 per metric */}}
+{{ $acts := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}{{ $acts = $acts | append $a }}{{ end }}
+{{ $longest := first 3 (sort $acts "distance_km" "desc") }}
+{{ $fastest := first 3 (sort $acts "avg_speed_kmh" "desc") }}
+{{ $powers := first 3 (sort (where $acts "max_power" "!=" nil) "max_power" "desc") }}
+<div class="lbs">
+  <div class="lb">
+    <div class="lb-head">Longest rides</div>
+    {{ $mx := (index $longest 0).distance_km }}
+    {{ range $i, $a := $longest }}
+    <div class="lb-row{{ if eq $i 0 }} top{{ end }}">
+      <span class="lb-rank">{{ add $i 1 }}</span>
+      <span class="lb-val">{{ printf "%.0f" $a.distance_km }}<span class="u"> km</span></span>
+      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.distance_km $mx) 100) }}%; background:#2b7fd9"></span></span>
+      <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
+    </div>
+    {{ end }}
+  </div>
+  <div class="lb">
+    <div class="lb-head">Fastest average</div>
+    {{ $mx := (index $fastest 0).avg_speed_kmh }}
+    {{ range $i, $a := $fastest }}
+    <div class="lb-row{{ if eq $i 0 }} top{{ end }}">
+      <span class="lb-rank">{{ add $i 1 }}</span>
+      <span class="lb-val">{{ printf "%.1f" $a.avg_speed_kmh }}<span class="u"> km/h</span></span>
+      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.avg_speed_kmh $mx) 100) }}%; background:#4169E1"></span></span>
+      <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{ if $powers }}
+  <div class="lb">
+    <div class="lb-head">Power spikes</div>
+    {{ $mx := (index $powers 0).max_power }}
+    {{ range $i, $a := $powers }}
+    <div class="lb-row{{ if eq $i 0 }} top{{ end }}">
+      <span class="lb-rank">{{ add $i 1 }}</span>
+      <span class="lb-val">{{ printf "%.0f" $a.max_power }}<span class="u"> W</span></span>
+      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.max_power $mx) 100) }}%; background:#c0392b"></span></span>
+      <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
+    </div>
+    {{ end }}
+  </div>
   {{ end }}
 </div>
 
