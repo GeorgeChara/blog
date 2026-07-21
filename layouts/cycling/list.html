@@ -20,6 +20,18 @@
   .ms-bar > span { display: block; height: 100%; background: #2b7fd9; }
   .ms-pct { font-family: monospace; font-size: 0.72em; color: #9aa0b0; margin-top: 0.3em; font-variant-numeric: tabular-nums; }
 
+  /* Ride heatmap */
+  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin-top: 0.6em; }
+  .heat-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; margin-bottom: 0.7em; }
+  .heat-title { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; }
+  .heat-count { font-family: monospace; font-size: 0.72em; color: #a49c8c; font-variant-numeric: tabular-nums; }
+  .heat-scroll { overflow-x: auto; padding-bottom: 2px; }
+  .heat-months { display: grid; grid-auto-flow: column; gap: 3px; font-size: 0.58em; color: #b3ab9a; letter-spacing: 0.03em; height: 1.2em; margin-bottom: 2px; width: max-content; }
+  .heat { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 12px); gap: 3px; width: max-content; }
+  .heat i { width: 12px; height: 12px; border-radius: 1px; background: #ece9e0; }
+  .heat-legend { display: flex; align-items: center; gap: 0.35em; font-size: 0.66em; color: #b3ab9a; margin-top: 0.6em; }
+  .heat-legend i { width: 11px; height: 11px; border-radius: 1px; display: inline-block; }
+
   /* Personal bests */
   .pb-head { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; margin: 1.6em 0 0.5em; }
   .pbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
@@ -95,6 +107,23 @@
   <div class="ms-bar"><span style="width:{{ printf "%.1f" $pct }}%"></span></div>
   <div class="ms-pct">{{ printf "%.0f" $pct }}%</div>
 </div>
+{{ end }}
+
+{{/* Ride heatmap — every ride day since you started */}}
+{{ $days := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+{{ $days = $days | append (dict "d" (substr $a.date 0 10) "km" $a.distance_km) }}
+{{ end }}
+{{ if $days }}
+<div class="heat-card">
+  <div class="heat-head"><span class="heat-title">Riding rhythm</span><span class="heat-count" id="heatCount"></span></div>
+  <div class="heat-scroll" id="heatScroll">
+    <div class="heat-months" id="heatMonths"></div>
+    <div class="heat" id="heat"></div>
+  </div>
+  <div class="heat-legend">less <i style="background:#ece9e0"></i><i style="background:#cfe0f4"></i><i style="background:#9ec4ec"></i><i style="background:#5c9de0"></i><i style="background:#2b7fd9"></i> more</div>
+</div>
+<script id="heat-data" type="application/json">{{ $days | jsonify | safeJS }}</script>
 {{ end }}
 
 {{/* Personal bests: computed from all activities */}}
@@ -173,6 +202,45 @@
 {{ if hugo.Data.cycling.activities }}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
+// Ride heatmap: a shaded square per day since the first ride, GitHub/Strava style
+(function() {
+  var htag = document.getElementById('heat-data'), heat = document.getElementById('heat');
+  if (!htag || !heat) return;
+  var days = JSON.parse(htag.textContent);
+  var byDay = {}; days.forEach(function(r) { byDay[r.d] = (byDay[r.d] || 0) + (r.km || 0); });
+  var dates = Object.keys(byDay).sort();
+  if (!dates.length) return;
+  function parse(s) { var p = s.split('-'); return new Date(p[0], p[1] - 1, p[2]); }
+  var start = parse(dates[0]);
+  start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // back to Monday
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function lvl(km) { return km <= 0 ? 0 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
+  var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
+  var monthsEl = document.getElementById('heatMonths');
+  var cur = new Date(start), weeks = 0, active = 0, lastMonth = -1;
+  var monthCells = [];
+  while (cur <= today) {
+    weeks++;
+    var weekStartMonth = cur.getMonth();
+    monthCells.push(weekStartMonth !== lastMonth ? (cur.getDate() <= 7 ? MON[weekStartMonth] : '') : '');
+    if (weekStartMonth !== lastMonth && cur.getDate() <= 7) lastMonth = weekStartMonth;
+    for (var d = 0; d < 7; d++) {
+      var iso = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
+      var km = byDay[iso] || 0, L = (cur <= today) ? lvl(km) : 0;
+      if (km > 0) active++;
+      var cell = document.createElement('i');
+      cell.style.background = cols[L];
+      if (km > 0) cell.title = iso + ' · ' + Math.round(km) + ' km';
+      heat.appendChild(cell);
+      cur.setDate(cur.getDate() + 1);
+    }
+  }
+  monthsEl.style.gridTemplateColumns = 'repeat(' + weeks + ', 12px)';
+  monthCells.forEach(function(m) { var s = document.createElement('span'); s.textContent = m; monthsEl.appendChild(s); });
+  document.getElementById('heatCount').textContent = active + ' ride days';
+})();
+
 (function() {
   var tag = document.getElementById('trend-data');
   var el = document.getElementById('trendChart');
