@@ -16,9 +16,9 @@
   .ms-big { font-weight: bold; font-size: 1.7em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; }
   .ms-big .u { font-size: 0.45em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
   .ms-to { font-family: monospace; font-size: 0.82em; color: #4169E1; font-variant-numeric: tabular-nums; }
+  .ms-pctinline { color: #9aa0b0; }
   .ms-bar { height: 12px; border-radius: 1px; background: #e2e6ef; overflow: hidden; margin-top: 0.7em; }
   .ms-bar > span { display: block; height: 100%; background: #2b7fd9; }
-  .ms-pct { font-family: monospace; font-size: 0.72em; color: #9aa0b0; margin-top: 0.3em; font-variant-numeric: tabular-nums; }
 
   /* Ride heatmap */
   .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 0.6em 0 0.9em; }
@@ -108,10 +108,9 @@
 <div class="milestone">
   <div class="ms-top">
     <div><span class="ms-lab">All time distance</span><br><span class="ms-big">{{ printf "%.0f" $total }}<span class="u">km</span></span></div>
-    <span class="ms-to">{{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }}</span>
+    <span class="ms-to">{{ printf "%.0f" (sub $ms $total) }} km to {{ printf "%.0f" $ms }} <span class="ms-pctinline">&middot; {{ printf "%.0f" $pct }}%</span></span>
   </div>
   <div class="ms-bar"><span style="width:{{ printf "%.1f" $pct }}%"></span></div>
-  <div class="ms-pct">{{ printf "%.0f" $pct }}%</div>
 </div>
 {{ end }}
 
@@ -125,7 +124,6 @@
 {{ end }}
 {{ if $days }}
 <div class="heat-card">
-  <div class="heat-head"><span class="heat-title">Riding rhythm</span></div>
   <div class="heat-readout" id="heatReadout"></div>
   <div class="heat-scroll" id="heatScroll">
     <div class="heat-months" id="heatMonths"></div>
@@ -222,12 +220,12 @@
   function lvl(km) { return km <= 0 ? 0 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
   var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
 
-  var year = new Date().getFullYear();
-  var start = new Date(year, 0, 1); start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // Mon on/before Jan 1
   var today = new Date(); today.setHours(0, 0, 0, 0);
+  var start = new Date(today); start.setMonth(start.getMonth() - 6); // rolling 6-month window
+  start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // back to Monday
   var lastDay = new Date(today); lastDay.setDate(lastDay.getDate() + (7 - ((lastDay.getDay() + 6) % 7) - 1)); // to end of this week
 
-  // size cells to fit Jan -> now across the card (no empty future months, so cells stay a comfortable size)
+  // size cells to fit the 6-month window across the card
   var scroll = document.getElementById('heatScroll');
   var weeks = Math.round(((lastDay - start) / 86400000 + 1) / 7);
   var gap = 3, avail = (scroll.clientWidth || 480) - 2;
@@ -248,10 +246,10 @@
   for (var w = 0; w < weeks; w++) {
     var wkMonth = cur.getMonth();
     var lab = document.createElement('span');
-    if (cur.getFullYear() === year && wkMonth !== lastMonth) { lab.textContent = MON[wkMonth]; lastMonth = wkMonth; }
+    if (wkMonth !== lastMonth) { lab.textContent = MON[wkMonth]; lastMonth = wkMonth; }
     monthsEl.appendChild(lab);
     for (var d = 0; d < 7; d++) {
-      var inRange = cur.getFullYear() === year && cur <= today;
+      var inRange = cur <= today;
       var iso = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
       var rec = inRange ? byDay[iso] : null, km = rec ? rec.km : 0;
       var i = document.createElement('i');
