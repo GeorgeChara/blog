@@ -1,6 +1,8 @@
 """Generate Hugo content files from Garmin activity data."""
 
 import json
+import math
+import os
 import re
 from datetime import datetime
 from pathlib import Path
@@ -14,6 +16,46 @@ CONTENT_DIR = REPO_ROOT / "content" / "cycling" / "rides"
 DATA_DIR = REPO_ROOT / "data" / "cycling"
 ACTIVITIES_DIR = DATA_DIR / "activities"
 GPX_DIR = REPO_ROOT / "static" / "cycling" / "gpx"
+
+
+def _load_home():
+    """Home privacy zone: from HOME_JSON env (CI secret) or scripts/home.json (local)."""
+    raw = os.environ.get("HOME_JSON")
+    try:
+        d = json.loads(raw) if raw else json.loads((REPO_ROOT / "scripts" / "home.json").read_text())
+    except Exception:
+        return None
+    if not d.get("lat") or not d.get("lon"):
+        return None
+    d.setdefault("radius_m", 2500)
+    return d
+
+
+def _haversine(la1, lo1, la2, lo2):
+    R = 6371000.0
+    a1, o1, a2, o2 = map(math.radians, [la1, lo1, la2, lo2])
+    h = math.sin((a2 - a1) / 2) ** 2 + math.cos(a1) * math.cos(a2) * math.sin((o2 - o1) / 2) ** 2
+    return 2 * R * math.asin(math.sqrt(h))
+
+
+def trim_home(gpx_xml):
+    """Strip points within the home radius from the start and end of each segment."""
+    home = _load_home()
+    if not home:
+        return gpx_xml
+    hlat, hlon, r = home["lat"], home["lon"], home["radius_m"]
+    gpx = gpxpy.parse(gpx_xml)
+    for track in gpx.tracks:
+        for seg in track.segments:
+            pts = seg.points
+            s = 0
+            while s < len(pts) and _haversine(pts[s].latitude, pts[s].longitude, hlat, hlon) <= r:
+                s += 1
+            e = len(pts) - 1
+            while e >= 0 and _haversine(pts[e].latitude, pts[e].longitude, hlat, hlon) <= r:
+                e -= 1
+            seg.points = pts[s:e + 1] if s <= e else []
+    return gpx.to_xml()
 
 
 def ensure_dirs():
@@ -142,7 +184,7 @@ def write_activity(activity, gpx_xml, streams=None):
     slug = f"{dt.strftime('%Y-%m-%d')}-{slugify(name)}"
 
     # 1. Write simplified GPX
-    simplified_gpx = simplify_gpx(gpx_xml)
+    simplified_gpx = trim_home(simplify_gpx(gpx_xml))
     gpx_path = GPX_DIR / f"{activity_id}.gpx"
     gpx_path.write_text(simplified_gpx)
 

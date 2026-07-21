@@ -37,6 +37,7 @@ jobs:
       - name: Sync Garmin activities
         env:
           GARMIN_TOKEN_PATH: /tmp/garmin_tokens
+          HOME_JSON: ${{ secrets.HOME_JSON }}
         working-directory: scripts/garmin-sync
         run: python sync.py --days 14
 
