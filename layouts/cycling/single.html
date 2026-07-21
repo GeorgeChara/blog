@@ -19,17 +19,24 @@
   .rtype { font-weight: bold; font-size: 0.95em; color: #000; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.7em; display: flex; align-items: center; gap: 0.5em; }
   .rtype .dot { width: 9px; height: 9px; border-radius: 1px; flex: none; }
   .rtype .rtime { text-transform: none; font-weight: normal; color: #999; letter-spacing: 0; }
-  .dash { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
-  .dcell { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; display: flex; flex-direction: column; gap: 0.28em; }
-  .dl { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
-  .dbig { font-weight: bold; font-size: 1.25em; color: #000; font-variant-numeric: tabular-nums; line-height: 1.1; }
-  .ds { font-size: 0.78em; color: #888; }
-  .ebar { height: 9px; border-radius: 1px; background: #eee; overflow: hidden; margin: 0.35em 0 0.15em; }
-  .ebar span { display: block; height: 100%; }
-  .dnums { font-family: monospace; font-size: 0.78em; color: #aaa; margin: 0.7em 0 0; font-variant-numeric: tabular-nums; }
-  @media (max-width: 560px) { .dcell { padding: 0.55em 0.5em; } .dbig { font-size: 1.02em; } .dnums { font-size: 0.68em; white-space: nowrap; overflow-x: auto; } }
+  .dnums { font-family: monospace; font-size: 0.78em; color: #aaa; font-variant-numeric: tabular-nums; }
 
+  /* Route heading row with averages on the right */
+  .route-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.15em 1em; margin: 2em 0 0.7em; }
+  .route-head .rh-title { margin: 0; }
+  @media (max-width: 560px) { .dnums { font-size: 0.68em; } }
+
+  /* Map + stats overlay (Effort / Distance / Climb sit on the map) */
+  .map-wrap { position: relative; }
   #ride-map { height: 360px; width: 100%; border: 1px solid #e5decf; border-radius: 4px; z-index: 0; }
+  .map-stats { position: absolute; top: 8px; left: 8px; z-index: 500; background: rgba(255,255,255,0.93); border: 1px solid #e5decf; border-radius: 4px; padding: 0.5em 0.7em; font-family: monospace; font-size: 0.78em; line-height: 1.55; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .ms-row { display: flex; align-items: center; gap: 0.45em; }
+  .ms-row b { color: #000; font-weight: bold; font-variant-numeric: tabular-nums; }
+  .ms-l { color: #999; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.9em; min-width: 4.7em; }
+  .ms-mut { color: #888; }
+  .ms-ebar { display: inline-block; width: 46px; height: 8px; background: #e6e6e6; border-radius: 1px; overflow: hidden; }
+  .ms-ebar > span { display: block; height: 100%; }
+  @media (max-width: 560px) { .map-stats { font-size: 0.72em; } .ms-l { min-width: 4.4em; } }
 
   .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
   .card canvas { width: 100% !important; }
@@ -89,26 +96,16 @@
 {{ $terrain := cond (lt $mpk 6.0) "flat" (cond (lt $mpk 12.0) "rolling" (cond (lt $mpk 20.0) "hilly" "mountainous")) }}
 
 <p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}<span class="rtime">&middot; {{ .Params.duration }}</span></p>
-<div class="dash">
-  <div class="dcell">
-    <span class="dl">Effort</span>
-    {{ if $np }}<div class="ebar"><span style="width:{{ $effpct }}%; background:{{ $ecolor }}"></span></div><span class="ds">{{ $effort }} &middot; IF {{ printf "%.2f" $if }}</span>{{ else }}<span class="dbig">&ndash;</span><span class="ds">no power data</span>{{ end }}
-  </div>
-  <div class="dcell">
-    <span class="dl">Distance</span>
-    <span class="dbig">{{ .Params.distance_km }} km</span>
-    <span class="ds">{{ .Params.duration }}</span>
-  </div>
-  <div class="dcell">
-    <span class="dl">Climb</span>
-    <span class="dbig">{{ .Params.elevation_m }} m</span>
-    <span class="ds">{{ $terrain }}</span>
+
+<div class="route-head"><span class="cy-h2 rh-title">Route</span><span class="dnums">{{ with .Params.avg_power }}avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} | NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} | {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} | {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} | {{ . }} km/h{{ end }}{{ with .Params.calories }} | {{ . }} kcal{{ end }}</span></div>
+<div class="map-wrap">
+  <div id="ride-map"></div>
+  <div class="map-stats">
+    <div class="ms-row"><span class="ms-l">Effort</span>{{ if $np }}<span class="ms-ebar"><span style="width:{{ $effpct }}%; background:{{ $ecolor }}"></span></span><span class="ms-mut">{{ $effort }}</span>{{ else }}<span class="ms-mut">no power</span>{{ end }}</div>
+    <div class="ms-row"><span class="ms-l">Distance</span><b>{{ .Params.distance_km }} km</b></div>
+    <div class="ms-row"><span class="ms-l">Climb</span><b>{{ .Params.elevation_m }} m</b> <span class="ms-mut">{{ $terrain }}</span></div>
   </div>
 </div>
-<p class="dnums">{{ with .Params.avg_power }}avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} &middot; NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} &middot; {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} &middot; {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} &middot; {{ . }} km/h{{ end }}{{ with .Params.calories }} &middot; {{ . }} kcal{{ end }}</p>
-
-<p class="cy-h2">Route</p>
-<div id="ride-map"></div>
 
 {{ $activityId := .Params.garmin_id }}
 {{ $activityData := index hugo.Data.cycling.activities $activityId }}
@@ -144,6 +141,7 @@
 <script>
 (function() {
   var map = L.map('ride-map', { scrollWheelZoom: false, attributionControl: false });
+  map.zoomControl.setPosition('topright'); // keep top-left clear for the stats overlay
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20
   }).addTo(map);
