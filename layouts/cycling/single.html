@@ -17,15 +17,15 @@
 
   /* Effort dashboard: glanceable ride character */
   .rtype { font-weight: bold; font-size: 0.95em; color: #000; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.7em; display: flex; align-items: center; gap: 0.5em; }
-  .rtype .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .rtype .dot { width: 9px; height: 9px; border-radius: 1px; flex: none; }
   .rtype .rtime { text-transform: none; font-weight: normal; color: #999; letter-spacing: 0; }
   .dash { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
   .dcell { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; display: flex; flex-direction: column; gap: 0.28em; }
   .dl { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
   .dbig { font-weight: bold; font-size: 1.25em; color: #000; font-variant-numeric: tabular-nums; line-height: 1.1; }
   .ds { font-size: 0.78em; color: #888; }
-  .ebar { height: 9px; border-radius: 5px; background: #eee; overflow: hidden; margin: 0.35em 0 0.15em; }
-  .ebar span { display: block; height: 100%; border-radius: 5px; }
+  .ebar { height: 9px; border-radius: 1px; background: #eee; overflow: hidden; margin: 0.35em 0 0.15em; }
+  .ebar span { display: block; height: 100%; }
   .dnums { font-family: monospace; font-size: 0.78em; color: #aaa; margin: 0.7em 0 0; font-variant-numeric: tabular-nums; }
   @media (max-width: 560px) { .dcell { padding: 0.55em 0.5em; } .dbig { font-size: 1.02em; } .dnums { font-size: 0.68em; white-space: nowrap; overflow-x: auto; } }
 
@@ -42,8 +42,8 @@
 
   /* Series toggle chips (replace the canvas legend, bigger tap targets) */
   .plegend { display: flex; flex-wrap: wrap; gap: 0.4em; margin-bottom: 0.6em; }
-  .lchip { font-family: monospace; font-size: 0.8em; display: inline-flex; align-items: center; gap: 0.45em; padding: 0.4em 0.75em; border: 1px solid #e5decf; border-radius: 999px; background: #fff; color: #333; cursor: pointer; line-height: 1; -webkit-tap-highlight-color: transparent; }
-  .lchip .lc { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .lchip { font-family: monospace; font-size: 0.8em; display: inline-flex; align-items: center; gap: 0.45em; padding: 0.4em 0.75em; border: 1px solid #e5decf; border-radius: 3px; background: #fff; color: #333; cursor: pointer; line-height: 1; -webkit-tap-highlight-color: transparent; }
+  .lchip .lc { width: 10px; height: 10px; border-radius: 1px; flex: none; }
   .lchip.off { color: #bbb; background: #faf8f3; }
   .lchip.off .lc { opacity: 0.28; }
   @media (max-width: 600px) { .lchip { font-size: 0.86em; padding: 0.55em 0.9em; gap: 0.5em; } }
@@ -58,12 +58,12 @@
   .tiz-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.45em; }
   .tiz-title { font-weight: bold; font-size: 0.95em; color: #000; }
   .tiz-total { font-family: monospace; font-size: 0.8em; color: #999; font-variant-numeric: tabular-nums; }
-  .tiz-bar { display: flex; height: 15px; border-radius: 7px; overflow: hidden; background: #eee; }
+  .tiz-bar { display: flex; height: 15px; border-radius: 1px; overflow: hidden; background: #eee; }
   .tiz-bar span { display: block; height: 100%; cursor: pointer; transition: filter 0.12s; }
   .tiz-bar span:hover { filter: brightness(1.08); }
   .tiz-key { display: flex; flex-wrap: wrap; gap: 0.35em 1.1em; margin-top: 0.55em; min-height: 1.2em; font-family: monospace; font-size: 0.78em; color: #777; font-variant-numeric: tabular-nums; }
   .tiz-k { display: inline-flex; align-items: center; gap: 0.4em; }
-  .tiz-d { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+  .tiz-d { width: 9px; height: 9px; border-radius: 1px; flex: none; }
 
   .view-all { font-size: 0.85em; margin-top: 2em; }
   .view-all a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
