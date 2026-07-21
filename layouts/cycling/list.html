@@ -41,13 +41,20 @@
   /* Personal bests */
   .pb-head { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; margin: 1.6em 0 0.5em; }
   .pbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
-  @media (max-width: 560px) { .pbs { grid-template-columns: 1fr; } }
   .pb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; position: relative; }
   .pb .v { font-weight: bold; font-size: 1.5em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
   .pb .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
   .pb .l { display: block; font-size: 0.72em; color: #444; margin-top: 0.45em; }
   .pb .d { display: block; font-size: 0.68em; color: #aaa; margin-top: 0.15em; font-variant-numeric: tabular-nums; }
   .pb .tag { position: absolute; top: 0.6em; right: 0.7em; font-size: 0.6em; color: #c9a227; letter-spacing: 0.06em; font-weight: bold; }
+  @media (max-width: 560px) {
+    .pbs { gap: 0.4em; }
+    .pb { padding: 0.6em 0.5em; }
+    .pb .v { font-size: 1.05em; }
+    .pb .l { font-size: 0.64em; }
+    .pb .d { font-size: 0.6em; }
+    .pb .tag { top: 0.45em; right: 0.5em; font-size: 0.52em; }
+  }
 
   /* Totals row */
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.6em; }
@@ -220,7 +227,8 @@
   var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
 
   var today = new Date(); today.setHours(0, 0, 0, 0);
-  var start = new Date(today); start.setMonth(start.getMonth() - 6); // rolling 6-month window
+  var monthsBack = window.innerWidth < 600 ? 4 : 6; // fewer months on mobile so cells stay readable
+  var start = new Date(today); start.setMonth(start.getMonth() - monthsBack); // rolling window
   start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // back to Monday
   var lastDay = new Date(today); lastDay.setDate(lastDay.getDate() + (7 - ((lastDay.getDay() + 6) % 7) - 1)); // to end of this week
 
