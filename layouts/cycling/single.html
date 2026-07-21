@@ -150,7 +150,7 @@
 (function() {
   var map = L.map('ride-map', { scrollWheelZoom: false, attributionControl: false });
   map.zoomControl.setPosition('bottomright'); // keep the map corners clear of the overlaid graph + stats
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20, crossOrigin: true
   }).addTo(map);
   // Route as a plain polyline (no markers, so home is never pinned) + hover position marker
