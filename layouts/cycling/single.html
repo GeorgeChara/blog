@@ -15,6 +15,19 @@
   .stat .v { font-weight: bold; font-size: 1.05em; color: #000; font-variant-numeric: tabular-nums; }
   .stat .l { display: block; font-size: 0.68em; color: #999; margin-top: 0.2em; text-transform: uppercase; letter-spacing: 0.04em; }
 
+  /* Effort dashboard: glanceable ride character */
+  .rtype { font-weight: bold; font-size: 0.95em; color: #000; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.7em; display: flex; align-items: center; gap: 0.5em; }
+  .rtype .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .dash { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
+  .dcell { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; display: flex; flex-direction: column; gap: 0.28em; }
+  .dl { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
+  .dbig { font-weight: bold; font-size: 1.25em; color: #000; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .ds { font-size: 0.78em; color: #888; }
+  .ebar { height: 9px; border-radius: 5px; background: #eee; overflow: hidden; margin: 0.35em 0 0.15em; }
+  .ebar span { display: block; height: 100%; border-radius: 5px; }
+  .dnums { font-family: monospace; font-size: 0.78em; color: #aaa; margin: 0.7em 0 0; font-variant-numeric: tabular-nums; }
+  @media (max-width: 560px) { .dcell { padding: 0.55em 0.5em; } .dbig { font-size: 1.02em; } .dnums { font-size: 0.68em; white-space: nowrap; overflow-x: auto; } }
+
   #ride-map { height: 360px; width: 100%; border: 1px solid #e5decf; border-radius: 4px; z-index: 0; }
 
   .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
@@ -25,6 +38,14 @@
   .preadout .pk { color: #000; font-weight: bold; }
   .preadout .sep { color: #d8d2c4; padding: 0 0.15em; }
   .preadout .hint { color: #bbb; }
+
+  /* Series toggle chips (replace the canvas legend, bigger tap targets) */
+  .plegend { display: flex; flex-wrap: wrap; gap: 0.4em; margin-bottom: 0.6em; }
+  .lchip { font-family: monospace; font-size: 0.8em; display: inline-flex; align-items: center; gap: 0.45em; padding: 0.4em 0.75em; border: 1px solid #e5decf; border-radius: 999px; background: #fff; color: #333; cursor: pointer; line-height: 1; -webkit-tap-highlight-color: transparent; }
+  .lchip .lc { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .lchip.off { color: #bbb; background: #faf8f3; }
+  .lchip.off .lc { opacity: 0.28; }
+  @media (max-width: 600px) { .lchip { font-size: 0.86em; padding: 0.55em 0.9em; gap: 0.5em; } }
 
   @media (max-width: 600px) {
     .card.profile { padding: 0.7em 0.35em 0.6em; }
@@ -50,17 +71,40 @@
 <p class="cy-h1">{{ .Title }}</p>
 <p class="cy-date">{{ .Date.Format "Monday, 2 January 2006" }}</p>
 
-<div class="stats">
-  <div class="stat"><span class="v">{{ .Params.distance_km }} km</span><span class="l">Distance</span></div>
-  <div class="stat"><span class="v">{{ .Params.elevation_m }} m</span><span class="l">Elevation</span></div>
-  <div class="stat"><span class="v">{{ .Params.duration }}</span><span class="l">Duration</span></div>
-  <div class="stat"><span class="v">{{ .Params.avg_speed_kmh }}</span><span class="l">km/h avg</span></div>
-  {{ with .Params.avg_power }}<div class="stat"><span class="v">{{ . }} W</span><span class="l">Avg Power</span></div>{{ end }}
-  {{ with .Params.normalized_power }}<div class="stat"><span class="v">{{ . }} W</span><span class="l">Normalized Power</span></div>{{ end }}
-  {{ with .Params.avg_cadence }}<div class="stat"><span class="v">{{ . }} rpm</span><span class="l">Cadence</span></div>{{ end }}
-  {{ with .Params.avg_hr }}<div class="stat"><span class="v">{{ . }} bpm</span><span class="l">Avg HR</span></div>{{ end }}
-  {{ with .Params.calories }}<div class="stat"><span class="v">{{ . }}</span><span class="l">Calories</span></div>{{ end }}
+{{/* Effort dashboard: read the ride's character at a glance (FTP 220 placeholder, matches hugo_writer.py + the graph) */}}
+{{ $ftp := 220.0 }}
+{{ $np := or .Params.normalized_power .Params.avg_power }}
+{{ $if := 0.0 }}{{ if $np }}{{ $if = div (float $np) $ftp }}{{ end }}
+{{ $type := "Ride" }}{{ $effort := "" }}{{ $ecolor := "#4169E1" }}
+{{ if $np }}
+  {{ if lt $if 0.65 }}{{ $type = "Recovery ride" }}{{ $effort = "easy" }}{{ $ecolor = "#3aa06a" }}
+  {{ else if lt $if 0.80 }}{{ $type = "Endurance ride" }}{{ $effort = "moderate" }}{{ $ecolor = "#4169E1" }}
+  {{ else if lt $if 0.90 }}{{ $type = "Tempo ride" }}{{ $effort = "hard" }}{{ $ecolor = "#e8850c" }}
+  {{ else if lt $if 1.0 }}{{ $type = "Threshold ride" }}{{ $effort = "hard" }}{{ $ecolor = "#e8850c" }}
+  {{ else }}{{ $type = "Intervals" }}{{ $effort = "very hard" }}{{ $ecolor = "#c0392b" }}{{ end }}
+{{ end }}
+{{ $effpct := 0.0 }}{{ if $np }}{{ $effpct = mul (math.Max 0.0 (math.Min 1.0 (div (sub $if 0.5) 0.55))) 100 }}{{ end }}
+{{ $mpk := 0.0 }}{{ if gt (float .Params.distance_km) 0.0 }}{{ $mpk = div (float .Params.elevation_m) (float .Params.distance_km) }}{{ end }}
+{{ $terrain := cond (lt $mpk 6.0) "flat" (cond (lt $mpk 12.0) "rolling" (cond (lt $mpk 20.0) "hilly" "mountainous")) }}
+
+<p class="rtype"><span class="dot" style="background:{{ $ecolor }}"></span>{{ $type }}</p>
+<div class="dash">
+  <div class="dcell">
+    <span class="dl">Effort</span>
+    {{ if $np }}<div class="ebar"><span style="width:{{ $effpct }}%; background:{{ $ecolor }}"></span></div><span class="ds">{{ $effort }} &middot; IF {{ printf "%.2f" $if }}</span>{{ else }}<span class="dbig">&ndash;</span><span class="ds">no power data</span>{{ end }}
+  </div>
+  <div class="dcell">
+    <span class="dl">Distance</span>
+    <span class="dbig">{{ .Params.distance_km }} km</span>
+    <span class="ds">{{ .Params.duration }}</span>
+  </div>
+  <div class="dcell">
+    <span class="dl">Climb</span>
+    <span class="dbig">{{ .Params.elevation_m }} m</span>
+    <span class="ds">{{ $terrain }}</span>
+  </div>
 </div>
+<p class="dnums">{{ with .Params.avg_power }}avg {{ . }} W{{ end }}{{ with .Params.normalized_power }} &middot; NP {{ . }} W{{ end }}{{ with .Params.avg_hr }} &middot; {{ . }} bpm{{ end }}{{ with .Params.avg_cadence }} &middot; {{ . }} rpm{{ end }}{{ with .Params.avg_speed_kmh }} &middot; {{ . }} km/h{{ end }}{{ with .Params.calories }} &middot; {{ . }} kcal{{ end }}</p>
 
 <p class="cy-h2">Route</p>
 <div id="ride-map"></div>
@@ -71,7 +115,7 @@
 
 {{ if or $activityData.elevation_profile $activityData.power_profile $activityData.speed_profile }}
 <p class="cy-h2">Ride profile</p>
-<div class="card profile"><div id="profileReadout" class="preadout"></div><canvas id="profileChart"></canvas></div>
+<div class="card profile"><div id="profileReadout" class="preadout"></div><div id="profileLegend" class="plegend"></div><canvas id="profileChart"></canvas></div>
 {{ end }}
 
 {{ if $activityData.power_zones }}
@@ -146,8 +190,7 @@
     function zIdx(w) { if (w == null) return 0; var f = w / FTP; return f < 0.55 ? 0 : f < 0.75 ? 1 : f < 0.90 ? 2 : f < 1.05 ? 3 : 4; }
     var zFillBase = [[148, 163, 184, 0.30], [96, 165, 250, 0.32], [52, 211, 153, 0.34], [251, 191, 36, 0.40], [248, 113, 113, 0.45]];
     function zFill(i, a) { var z = zFillBase[i]; return 'rgba(' + z[0] + ',' + z[1] + ',' + z[2] + ',' + (z[3] * a) + ')'; }
-    // Power visibility is faded manually (opacity), so the line + zone fill dissolve together on legend toggle.
-    var powerAlpha = 1, powerShown = true, powerRAF = null, pchart = null;
+    var pchart = null;
     // Smoothed series shared by the chart lines AND the hover readout, so both agree.
     var sPower = d.power_profile ? smooth(d.power_profile) : null;
     var sSpeed = d.speed_profile ? smooth(d.speed_profile) : null;
@@ -160,15 +203,15 @@
       scales.yPower = { position: 'left', beginAtZero: true, min: 0, suggestedMax: (pmax || 300), title: { display: !mob, text: 'W', font: mono }, ticks: { font: mono, maxTicksLimit: mob ? 6 : 8, padding: mob ? 1 : 3 }, grid: { color: '#f2efe8' } };
     }
     if (d.speed_profile) {
-      ds.push({ label: 'Speed', data: sSpeed, yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 2 });
+      ds.push({ label: 'Speed', data: sSpeed, yAxisID: 'ySpeed', borderColor: '#4169E1', backgroundColor: 'transparent', order: 2, hidden: true });
       scales.ySpeed = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.hr_profile) {
-      ds.push({ label: 'Heart rate', data: sHr, yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 3 });
+      ds.push({ label: 'Heart rate', data: sHr, yAxisID: 'yHr', borderColor: '#e8850c', backgroundColor: 'transparent', order: 3, hidden: true });
       scales.yHr = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.cadence_profile) {
-      ds.push({ label: 'Cadence', data: sCad, yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4 });
+      ds.push({ label: 'Cadence', data: sCad, yAxisID: 'yCad', borderColor: '#3aa06a', backgroundColor: 'transparent', order: 4, hidden: true });
       scales.yCad = { display: false, position: 'right', beginAtZero: true };
     }
     if (d.elevation_profile) {
@@ -182,9 +225,9 @@
     var powerZoneFill = {
       id: 'powerZoneFill',
       beforeDatasetsDraw: function(chart) {
-        if (powerIdx < 0 || powerAlpha <= 0.01) return;
+        if (powerIdx < 0) return;
         var meta = chart.getDatasetMeta(powerIdx);
-        if (!meta) return;
+        if (!meta || meta.hidden) return;
         var sc = chart.scales.yPower; if (!sc) return;
         var ca = chart.chartArea, ctx = chart.ctx, y0 = sc.getPixelForValue(0);
         var pts = meta.data, data = chart.data.datasets[powerIdx].data;
@@ -193,7 +236,7 @@
         for (var i = 1; i < pts.length; i++) {
           var p0 = pts[i - 1], p1 = pts[i];
           if (!p0 || !p1 || p0.skip || p1.skip || data[i] == null) continue;
-          ctx.fillStyle = zFill(zIdx(data[i]), powerAlpha);
+          ctx.fillStyle = zFill(zIdx(data[i]), 1);
           ctx.beginPath();
           ctx.moveTo(p0.x, y0); ctx.lineTo(p0.x, p0.y); ctx.lineTo(p1.x, p1.y); ctx.lineTo(p1.x, y0);
           ctx.closePath(); ctx.fill();
@@ -220,30 +263,14 @@
     var crosshair = {
       id: 'crosshair',
       afterDatasetsDraw: function(chart) {
-        if (hoverIdx < 0) return;
-        var meta = chart.getDatasetMeta(0);
-        if (!meta || !meta.data || !meta.data[hoverIdx]) return;
-        var x = meta.data[hoverIdx].x, ca = chart.chartArea, ctx = chart.ctx;
+        if (hoverIdx < 0 || !chart.scales.x) return;
+        var x = chart.scales.x.getPixelForValue(hoverIdx), ca = chart.chartArea, ctx = chart.ctx;
         ctx.save();
         ctx.beginPath(); ctx.moveTo(x, ca.top); ctx.lineTo(x, ca.bottom);
         ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(0,0,0,0.32)'; ctx.stroke();
         ctx.restore();
       }
     };
-    function fadePower(show) {
-      if (!pchart || powerIdx < 0) return;
-      if (powerRAF) cancelAnimationFrame(powerRAF);
-      var from = powerAlpha, to = show ? 1 : 0, t0 = null;
-      function step(ts) {
-        if (t0 === null) t0 = ts;
-        var k = Math.min(1, (ts - t0) / 300);
-        powerAlpha = from + (to - from) * k;
-        pchart.data.datasets[powerIdx].borderColor = 'rgba(192,57,43,' + powerAlpha + ')';
-        pchart.update('none');
-        if (k < 1) powerRAF = requestAnimationFrame(step);
-      }
-      powerRAF = requestAnimationFrame(step);
-    }
     pchart = new Chart(pc, {
       type: 'line',
       plugins: [powerZoneFill, crosshair],
@@ -264,15 +291,7 @@
             if (p) { hoverMarker.setLatLng(p); if (!map.hasLayer(hoverMarker)) hoverMarker.addTo(map); }
           }
         },
-        plugins: { legend: { display: true,
-            onClick: function(e, item, legend) {
-              if (item.text === 'Power') { powerShown = powerAlpha < 0.5; fadePower(powerShown); }
-              else { Chart.defaults.plugins.legend.onClick.call(this, e, item, legend); }
-            },
-            labels: { font: mono, boxWidth: 12, usePointStyle: true,
-              sort: function(a, b) { var o = ['Power', 'Speed', 'Heart rate', 'Cadence', 'Elevation']; return o.indexOf(a.text) - o.indexOf(b.text); },
-              generateLabels: function(chart) { var items = Chart.defaults.plugins.legend.labels.generateLabels(chart); items.forEach(function(it) { if (it.text === 'Power') it.hidden = !powerShown; }); return items; } } },
-          tooltip: { enabled: false } },
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
         elements: { point: { radius: 0 }, line: { tension: 0.4, borderWidth: 1.6 } },
         scales: scales
       }
@@ -280,6 +299,23 @@
     pc.addEventListener('mouseleave', clearHover);
     pc.addEventListener('touchend', clearHover);
     pc.addEventListener('touchcancel', clearHover);
+
+    // Custom HTML toggle chips (bigger, more reliable tap targets than the canvas legend, esp. on mobile)
+    var legendHost = document.getElementById('profileLegend');
+    var chipColors = { 'Power': '#c0392b', 'Speed': '#4169E1', 'Heart rate': '#e8850c', 'Cadence': '#3aa06a', 'Elevation': '#c6beaf' };
+    if (legendHost) {
+      ds.forEach(function(dset, idx) {
+        var chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'lchip' + (dset.hidden ? ' off' : '');
+        chip.innerHTML = '<span class="lc" style="background:' + (chipColors[dset.label] || '#999') + '"></span>' + dset.label;
+        chip.addEventListener('click', function() {
+          if (pchart.isDatasetVisible(idx)) { pchart.hide(idx); chip.classList.add('off'); }
+          else { pchart.show(idx); chip.classList.remove('off'); }
+        });
+        legendHost.appendChild(chip);
+      });
+    }
   }
 
   // Power zones donut
