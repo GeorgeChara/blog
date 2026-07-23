@@ -13,16 +13,16 @@ layout: single
   .cookbook { display: flex; gap: 3em; align-items: flex-start; }
 
   /* Search stays pinned at the top on every viewport */
-  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; }
+  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; border-bottom: 1px solid var(--color-border); }
 
-  .cb-nav { position: sticky; top: 3.2em; flex: 0 0 120px; display: flex; flex-direction: column; gap: 0.55em; }
+  .cb-nav { position: sticky; top: 4em; flex: 0 0 120px; display: flex; flex-direction: column; gap: 0.55em; }
   .cb-nav a { color: #4169E1; text-decoration: none; align-self: flex-start; }
   .cb-nav a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .cb-nav a.is-hidden { display: none; }
 
   .cb-main { flex: 1 1 auto; min-width: 0; }
 
-  .cat { margin: 0 0 1.9em 0; scroll-margin-top: 3.6em; }
+  .cat { margin: 0 0 1.9em 0; scroll-margin-top: 4em; }
   .cat-heading { font-weight: bold; font-size: 1.05em; margin: 0 0 0.6em 0; color: #000; }
 
   .subcat { margin: 0 0 1.1em 0; }
@@ -44,19 +44,23 @@ layout: single
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
-    .cookbook { flex-direction: column; gap: 1em; }
-    /* Tabs become a horizontal bar pinned under the search */
+    /* stretch so children fill the width — otherwise the no-wrap tab bar
+       balloons to content width and scrolls the whole page sideways */
+    .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
+    .cb-searchbar { border-bottom: none; }
+    /* Tabs become a horizontal bar pinned right under the search */
     .cb-nav {
-      position: sticky; top: 2.9em; z-index: 25;
+      position: sticky; top: 3em; z-index: 25;
       flex-direction: row; flex-wrap: nowrap; flex-basis: auto;
-      gap: 1.2em;
+      gap: 1.3em;
       overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
       background: var(--color-bg-primary);
-      padding: 0.5em 0;
+      padding: 0.55em 0;
+      border-bottom: 1px solid var(--color-border);
     }
     .cb-nav::-webkit-scrollbar { display: none; }
-    .cb-nav a { white-space: nowrap; align-self: auto; }
-    .cat { scroll-margin-top: 5.6em; }
+    .cb-nav a { white-space: nowrap; align-self: center; }
+    .cat { scroll-margin-top: 5.8em; }
   }
 </style>
 
