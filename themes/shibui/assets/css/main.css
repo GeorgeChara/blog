@@ -315,7 +315,6 @@ h5 > code {
 
 .path-nav li a {
   text-decoration: none;
-  border-bottom: none;
   padding: 0 0.25em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -329,7 +328,7 @@ h5 > code {
 }
 
 .path-nav a:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid;
 }
 
 .back-nav {
@@ -338,7 +337,6 @@ h5 > code {
 
 .back-link {
   color: var(--color-text-muted);
-  border-bottom: none;
 }
 
 .back-link:hover {
@@ -430,7 +428,6 @@ h5 > code {
 .terminal-nav nav ul li a,
 .terminal-nav .back-link {
   color: var(--color-text-muted);
-  border-bottom: none;
   text-decoration: none;
 }
 
