@@ -60,12 +60,17 @@ layout: single
        nothing jumps. It slides down as it pins. */
     .cb-searchwrap { display: block; }
     .cb-searchbar { position: static; margin: 0 0 1.2em; padding: 0.55em 0; }
-    /* Pin at the exact same position/width it already occupies in flow, so the
-       handoff is seamless (no jump in position, width or background) — it simply
-       stays put at the top as you scroll past it. */
+    /* iOS doesn't fire scroll events mid-momentum, so the bar pins when the flick
+       settles. A gentle fade + small slide softens that moment (a full-height
+       slide read as a snap; no animation read as an abrupt pop). */
     .cb-searchbar.stuck {
-      position: fixed; top: 0; left: var(--spacing-lg); right: var(--spacing-lg); margin: 0;
-      padding: 0.55em 0;
+      position: fixed; top: 0; left: 0; right: 0; margin: 0;
+      padding: 0.55em var(--spacing-lg);
+      animation: cb-slide-in 0.28s ease-out;
+    }
+    @keyframes cb-slide-in {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Single column; stretch so the recipe list fills the width */
