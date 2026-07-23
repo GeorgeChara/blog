@@ -49,14 +49,18 @@ layout: single
        scrolls INTERNALLY instead of ballooning the whole page sideways */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
     .cb-searchbar { border-bottom: none; margin-bottom: 0; }
+    /* fixed input height so the tab bar's sticky offset can match it exactly */
+    .cookbook-search { height: 2.4em; }
 
     /* Tab bar: pinned header just under the search. The wrap holds the sticky,
        divider and right-edge fade; the inner nav does the horizontal scroll.
-       align-self:stretch is REQUIRED — it overrides the desktop flex-start,
-       otherwise the wrap sizes to the wide nav and scrolls the page sideways. */
+       flex:none  -> overrides the desktop flex:0 0 120px, which in this column
+                     layout was forcing the bar to 120px TALL (big empty box).
+       align-self:stretch -> overrides desktop flex-start so the bar fills the
+                     width and scrolls internally instead of widening the page. */
     .cb-navwrap {
-      position: sticky; top: 2.6em; z-index: 25;
-      align-self: stretch; min-width: 0; padding-left: 0;
+      position: sticky; top: 3.3em; z-index: 25;
+      flex: none; align-self: stretch; min-width: 0; padding-left: 0;
       background: var(--color-bg-primary);
       border-bottom: 1px solid var(--color-border);
     }
@@ -73,7 +77,7 @@ layout: single
     }
     .cb-nav::-webkit-scrollbar { display: none; }
     .cb-nav a { white-space: nowrap; align-self: center; }
-    .cat { scroll-margin-top: 5.8em; }
+    .cat { scroll-margin-top: 6em; }
   }
 </style>
 
