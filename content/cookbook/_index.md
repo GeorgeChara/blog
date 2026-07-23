@@ -49,21 +49,25 @@ layout: single
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
-    /* The theme sets body{overflow-x:clip} on mobile; on iOS Safari that can
-       stop position:sticky from pinning (search bleeds). This page has no wide
-       content once the tabs are hidden, so restore visible to fix the search. */
     body { overflow-x: visible; }
 
-    /* Force the sticky search onto its own compositing layer so iOS Safari
-       repaints it in lockstep with the scroll (otherwise content lags ABOVE it
-       during momentum scroll — the "Flour Tortillas at the top" artifact). */
-    .cb-searchbar { -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; }
+    /* iOS Safari's position:sticky lags during momentum scroll on this theme's
+       html{height:100%} grid layout, letting recipes smear above the bar. Use
+       position:fixed instead — it's pinned to the VIEWPORT, immune to that lag.
+       Push the whole page down so nothing hides beneath it. */
+    body { padding-top: 4em; }
+    .cb-searchbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+      margin: 0; padding: 0.55em var(--spacing-lg);
+      background: var(--color-bg-primary);
+      border-bottom: 1px solid var(--color-border);
+    }
 
     /* Single column; stretch so the recipe list fills the width */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
-    /* Hide the section tabs on mobile — just the sticky search */
+    /* Hide the section tabs on mobile — just the fixed search */
     .cb-navwrap { display: none; }
-    .cat { scroll-margin-top: 3.6em; }
+    .cat { scroll-margin-top: 4.5em; }
   }
 </style>
 
