@@ -18,7 +18,7 @@ except Exception:  # matplotlib missing -> skip OG cards, don't break the sync
 # Repo root is two levels up from this script
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
-CONTENT_DIR = REPO_ROOT / "content" / "cycling" / "rides"
+CONTENT_DIR = REPO_ROOT / "content" / "fitness" / "cycling" / "rides"
 DATA_DIR = REPO_ROOT / "data" / "cycling"
 ACTIVITIES_DIR = DATA_DIR / "activities"
 GPX_DIR = REPO_ROOT / "static" / "cycling" / "gpx"

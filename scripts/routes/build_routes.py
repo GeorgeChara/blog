@@ -23,7 +23,7 @@ from privacy import load_home, trim_coords, write_gpx
 
 ROOT = Path(__file__).resolve().parents[2]
 GPX_DIR = ROOT / "static" / "cycling" / "routes"
-CONTENT_DIR = ROOT / "content" / "cycling" / "routes"
+CONTENT_DIR = ROOT / "content" / "fitness" / "cycling" / "routes"
 
 
 def haversine(a, b):
@@ -136,6 +136,7 @@ def main():
         md_path.write_text("\n".join([
             "---",
             f'title: "{title}"',
+            "type: cycling",
             "layout: route",
             f"gpx: /cycling/routes/{slug}.gpx",
             f"distance_km: {dist_str}",
@@ -152,7 +153,7 @@ def main():
 
     idx = CONTENT_DIR / "_index.md"
     if not idx.exists():
-        idx.write_text('---\ntitle: "Routes"\nlayout: routes\n---\n')
+        idx.write_text('---\ntitle: "Routes"\ntype: cycling\nlayout: routes\n---\n')
 
     for orphan in known - seen:
         print(f"  note: {orphan}.md has no matching GPX (left in place)")

@@ -43,9 +43,9 @@
   table.acts .date { display: block; font-size: 0.78em; color: #999; margin-top: 0.2em; }
   table.acts td.meta { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-  .fnav { display: flex; gap: 0.5em; flex-wrap: wrap; margin: 0.2em 0 0.2em; }
-  .fnav a { display: inline-block; font-size: 0.85em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 4px; padding: 0.4em 0.9em; text-decoration: none; }
-  .fnav a:hover { border-color: #4169E1; }
+  .fnav { display: flex; gap: 1.2em; flex-wrap: wrap; margin: 0.2em 0 1.2em; font-family: var(--font-family-mono); }
+  .fnav a { color: var(--color-text-muted); text-decoration: none; border-bottom: none; }
+  .fnav a:hover { color: var(--color-text-primary); }
 </style>
 
 {{/* Rides: date -> {km, name, url} */}}
@@ -60,8 +60,8 @@
 {{ with hugo.Data.fitness }}{{ with .gym }}{{ with .dates }}{{ $gym = . }}{{ end }}{{ end }}{{ end }}
 
 <div class="fnav">
-  <a href="/cycling/">Cycling &rarr;</a>
-  <a href="/gym/">Gym &rarr;</a>
+  <a href="/fitness/cycling/">Cycling</a>
+  <a href="/fitness/gym/">Gym</a>
 </div>
 
 <div class="fstats" id="fstats">

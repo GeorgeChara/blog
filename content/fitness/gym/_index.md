@@ -25,11 +25,11 @@ layout: single
 <p class="gym-sub">Simple and consistent.</p>
 
 <div class="hub">
-<a class="hubcard" href="/gym/stretching/">
+<a class="hubcard" href="/fitness/gym/stretching/">
 <p class="t">Stretching</p>
 <p class="d">Warm up, stretch, get flexible.</p>
 </a>
-<a class="hubcard" href="/gym/workouts/">
+<a class="hubcard" href="/fitness/gym/workouts/">
 <p class="t">Workouts</p>
 <p class="d">Two lifts, two runs, one ride a week.</p>
 </a>

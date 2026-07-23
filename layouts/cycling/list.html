@@ -104,7 +104,7 @@
 
 {{/* Title hidden — the breadcrumb path already shows "Cycling". Nav links hidden for now too — restore this block to bring them back
 <p class="cy-h1">Cycling</p>
-<p style="margin:0.2em 0 1.6em 0; display:flex; gap:0.5em; flex-wrap:wrap;"><a href="/cycling/routes/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Routes &rarr;</a><a href="/cycling/progress/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Progress &amp; achievements &rarr;</a><a href="/cycling/arcade/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">RIDER.SYS &rarr;</a></p>
+<p style="margin:0.2em 0 1.6em 0; display:flex; gap:0.5em; flex-wrap:wrap;"><a href="/fitness/cycling/routes/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Routes &rarr;</a><a href="/fitness/cycling/progress/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">Progress &amp; achievements &rarr;</a><a href="/fitness/cycling/arcade/" style="display:inline-block;font-size:0.85em;color:#4169E1;background:#eef2fe;border:1px solid #cdd8f7;border-radius:4px;padding:0.4em 0.8em;text-decoration:none;">RIDER.SYS &rarr;</a></p>
 */}}
 
 {{ with $summary }}
@@ -222,7 +222,7 @@
     <div class="latest-stats">{{ $r.distance_km }} km | &uarr;{{ $r.elevation_gain_m }} m | {{ $r.duration }}</div>
   </div>
   <span class="latest-cta">View ride &rarr;</span>
-  <a class="latest-link" href="/cycling/rides/{{ $r.slug }}/" aria-label="View {{ $r.name }}"></a>
+  <a class="latest-link" href="/fitness/cycling/rides/{{ $r.slug }}/" aria-label="View {{ $r.name }}"></a>
 </div>
 {{ end }}
 
@@ -231,12 +231,12 @@
 <table class="rides">
   {{ range $recent }}
   <tr>
-    <td><a href="/cycling/rides/{{ .slug }}/">{{ .name }}</a><span class="date">{{ .date }}</span></td>
+    <td><a href="/fitness/cycling/rides/{{ .slug }}/">{{ .name }}</a><span class="date">{{ .date }}</span></td>
     <td class="meta">{{ .distance_km }} km, {{ .elevation_gain_m }} m, {{ .duration }}</td>
   </tr>
   {{ end }}
 </table>
-<p class="view-all"><a href="/cycling/rides/">All rides &rarr;</a></p>
+<p class="view-all"><a href="/fitness/cycling/rides/">All rides &rarr;</a></p>
 {{ else }}
 <span class="note">No rides yet. Get out there.</span>
 {{ end }}
