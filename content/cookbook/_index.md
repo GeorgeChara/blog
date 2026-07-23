@@ -50,6 +50,11 @@ layout: single
        content once the tabs are hidden, so restore visible to fix the search. */
     body { overflow-x: visible; }
 
+    /* Force the sticky search onto its own compositing layer so iOS Safari
+       repaints it in lockstep with the scroll (otherwise content lags ABOVE it
+       during momentum scroll — the "Flour Tortillas at the top" artifact). */
+    .cb-searchbar { -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; }
+
     /* Single column; stretch so the recipe list fills the width */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
     /* Hide the section tabs on mobile — just the sticky search */
