@@ -12,14 +12,17 @@ layout: single
 
   .cookbook { display: flex; gap: 3em; align-items: flex-start; }
 
-  .cb-nav { position: sticky; top: 1.5em; flex: 0 0 120px; display: flex; flex-direction: column; gap: 0.55em; }
+  /* Search stays pinned at the top on every viewport */
+  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; }
+
+  .cb-nav { position: sticky; top: 3.2em; flex: 0 0 120px; display: flex; flex-direction: column; gap: 0.55em; }
   .cb-nav a { color: #4169E1; text-decoration: none; align-self: flex-start; }
   .cb-nav a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .cb-nav a.is-hidden { display: none; }
 
   .cb-main { flex: 1 1 auto; min-width: 0; }
 
-  .cat { margin: 0 0 1.9em 0; scroll-margin-top: 1em; }
+  .cat { margin: 0 0 1.9em 0; scroll-margin-top: 3.6em; }
   .cat-heading { font-weight: bold; font-size: 1.05em; margin: 0 0 0.6em 0; color: #000; }
 
   .subcat { margin: 0 0 1.1em 0; }
@@ -34,19 +37,32 @@ layout: single
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
   .frz { color: #3f9fd4; font-size: 1em; margin-left: 0.35em; }
 
-  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0 0 1.3em 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
+  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
   .cookbook-search::placeholder { color: #b3b3b3; font-size: 13px; }
   .cookbook-search:focus { outline: none; border-color: #4169E1; }
   .cat.is-hidden, .recipe-list li.is-hidden { display: none; }
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
-    .cookbook { flex-direction: column; gap: 1.2em; }
-    .cb-nav { position: static; flex-direction: row; flex-wrap: wrap; gap: 0.5em 1.1em; flex-basis: auto; }
+    .cookbook { flex-direction: column; gap: 1em; }
+    /* Tabs become a horizontal bar pinned under the search */
+    .cb-nav {
+      position: sticky; top: 2.9em; z-index: 25;
+      flex-direction: row; flex-wrap: nowrap; flex-basis: auto;
+      gap: 1.2em;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      background: var(--color-bg-primary);
+      padding: 0.5em 0;
+    }
+    .cb-nav::-webkit-scrollbar { display: none; }
+    .cb-nav a { white-space: nowrap; align-self: auto; }
+    .cat { scroll-margin-top: 5.6em; }
   }
 </style>
 
+<div class="cb-searchbar">
 <input type="search" id="cookbook-search" class="cookbook-search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
+</div>
 <p id="cookbook-noresults" class="cookbook-noresults">No recipes match that search.</p>
 
 <div class="cookbook">
