@@ -16,7 +16,10 @@ layout: single
      iOS Safari bug where recipes smeared above the sticky bar during scroll. */
   .cookbook { display: flex; gap: 3em; align-items: flex-start; position: relative; z-index: 0; }
 
-  /* Search stays pinned at the top on every viewport */
+  /* Desktop: search is a normal sticky element (works fine on desktop).
+     display:contents makes the wrapper invisible to layout so the sticky
+     element behaves as a direct child of the column. */
+  .cb-searchwrap { display: contents; }
   .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); }
 
   .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; padding-left: 0.7em; }
@@ -51,28 +54,31 @@ layout: single
   @media (max-width: 600px) {
     body { overflow-x: visible; }
 
-    /* iOS Safari's position:sticky lags during momentum scroll on this theme's
-       html{height:100%} grid layout, letting recipes smear above the bar. Use
-       position:fixed instead — it's pinned to the VIEWPORT, immune to that lag.
-       Push the whole page down so nothing hides beneath it. */
-    body { padding-top: 4em; }
-    .cb-searchbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 30;
-      margin: 0; padding: 0.55em var(--spacing-lg);
-      background: var(--color-bg-primary);
-      border-bottom: 1px solid var(--color-border);
+    /* Mobile: the search sits normally at the top (breadcrumb stays put), then
+       JS adds .stuck once you scroll past it. .stuck uses position:fixed (which
+       works on iOS, unlike sticky) and the wrapper reserves the height so
+       nothing jumps. It slides down as it pins. */
+    .cb-searchwrap { display: block; }
+    .cb-searchbar { position: static; margin: 0 0 1.2em; padding: 0.55em 0; }
+    .cb-searchbar.stuck {
+      position: fixed; top: 0; left: 0; right: 0; margin: 0;
+      padding: 0.55em var(--spacing-lg);
+      animation: cb-slide-in 0.2s ease-out;
     }
+    @keyframes cb-slide-in { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
     /* Single column; stretch so the recipe list fills the width */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
-    /* Hide the section tabs on mobile — just the fixed search */
+    /* Hide the section tabs on mobile — just the search */
     .cb-navwrap { display: none; }
     .cat { scroll-margin-top: 4.5em; }
   }
 </style>
 
+<div class="cb-searchwrap">
 <div class="cb-searchbar">
 <input type="search" id="cookbook-search" class="cookbook-search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
+</div>
 </div>
 <p id="cookbook-noresults" class="cookbook-noresults">No recipes match that search.</p>
 
@@ -370,5 +376,35 @@ layout: single
   // Reset to a clean, consistent state on every (re)visit, including Back via
   // the bfcache (where the input clears but the filtered DOM is restored stale).
   window.addEventListener('pageshow', function () { input.value = ''; filter(); });
+})();
+</script>
+
+<script>
+// Mobile: pin the search (position:fixed) once you scroll past it, release at top.
+// The wrapper reserves the search's height while it's detached so nothing jumps.
+(function () {
+  var wrap = document.querySelector('.cb-searchwrap');
+  var bar = document.querySelector('.cb-searchbar');
+  if (!wrap || !bar) return;
+  var stuck = false;
+  function update() {
+    if (window.innerWidth > 600) {
+      if (stuck) { bar.classList.remove('stuck'); wrap.style.height = ''; stuck = false; }
+      return;
+    }
+    var top = wrap.getBoundingClientRect().top;
+    if (!stuck && top <= 0) {
+      wrap.style.height = bar.offsetHeight + 'px'; // reserve space before detaching
+      bar.classList.add('stuck');
+      stuck = true;
+    } else if (stuck && top > 0) {
+      bar.classList.remove('stuck');
+      wrap.style.height = '';
+      stuck = false;
+    }
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
