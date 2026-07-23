@@ -15,7 +15,8 @@ layout: single
   /* Search stays pinned at the top on every viewport */
   .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; border-bottom: 1px solid var(--color-border); }
 
-  .cb-nav { position: sticky; top: 4em; flex: 0 0 120px; display: flex; flex-direction: column; gap: 0.55em; }
+  .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; }
+  .cb-nav { display: flex; flex-direction: column; gap: 0.55em; }
   .cb-nav a { color: #4169E1; text-decoration: none; align-self: flex-start; }
   .cb-nav a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .cb-nav a.is-hidden { display: none; }
@@ -44,19 +45,29 @@ layout: single
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
-    /* stretch so children fill the width — otherwise the no-wrap tab bar
-       balloons to content width and scrolls the whole page sideways */
+    /* stretch + min-width:0 so children fill the width and the no-wrap tab bar
+       scrolls INTERNALLY instead of ballooning the whole page sideways */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
     .cb-searchbar { border-bottom: none; }
-    /* Tabs become a horizontal bar pinned right under the search */
-    .cb-nav {
-      position: sticky; top: 3em; z-index: 25;
-      flex-direction: row; flex-wrap: nowrap; flex-basis: auto;
-      gap: 1.3em;
-      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+
+    /* Tab bar: pinned header just under the search. The wrap holds the sticky,
+       divider and right-edge fade; the inner nav does the horizontal scroll. */
+    .cb-navwrap {
+      position: sticky; top: 2.6em; z-index: 25;
+      flex: 0 1 auto; min-width: 0;
       background: var(--color-bg-primary);
-      padding: 0.55em 0;
       border-bottom: 1px solid var(--color-border);
+    }
+    .cb-navwrap::after {
+      content: ""; position: absolute; top: 0; right: 0; bottom: 1px; width: 2.2em;
+      background: linear-gradient(to right, rgba(252,252,252,0), var(--color-bg-primary));
+      pointer-events: none;
+    }
+    .cb-nav {
+      flex-direction: row; flex-wrap: nowrap; min-width: 0;
+      gap: 1.4em;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      padding: 0.55em 1.6em 0.55em 0;
     }
     .cb-nav::-webkit-scrollbar { display: none; }
     .cb-nav a { white-space: nowrap; align-self: center; }
@@ -71,6 +82,7 @@ layout: single
 
 <div class="cookbook">
 
+<div class="cb-navwrap">
 <nav class="cb-nav">
 <a href="#signature">Signature</a>
 <a href="#bread">Bread</a>
@@ -82,6 +94,7 @@ layout: single
 <a href="#drinks">Drinks</a>
 <a href="#growing">Growing</a>
 </nav>
+</div>
 
 <div class="cb-main">
 
