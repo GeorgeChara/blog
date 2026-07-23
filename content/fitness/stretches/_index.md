@@ -1,5 +1,5 @@
 ---
-title: "Stretching"
+title: "Stretches"
 toc: false
 showreadingtime: false
 layout: single
@@ -35,7 +35,6 @@ layout: single
   .src { margin-top: 2.4em; }
 </style>
 
-<p class="gym-h1">Stretching</p>
 <p class="gym-sub">Stretch warm, most days. That is how you get flexible.</p>
 
 <p class="gym-h2">The rule</p>

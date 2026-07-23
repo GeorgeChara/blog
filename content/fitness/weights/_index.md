@@ -1,5 +1,5 @@
 ---
-title: "Workouts"
+title: "Weights"
 toc: false
 showreadingtime: false
 layout: single
@@ -60,7 +60,6 @@ layout: single
   .src { margin-top: 2.4em; }
 </style>
 
-<p class="gym-h1">Workouts</p>
 <p class="gym-sub">Two lifts, two runs, one ride a week.</p>
 
 <div class="week-head">
