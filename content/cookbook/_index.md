@@ -10,7 +10,11 @@ layout: single
   .time { display: none; }
   .terminal-nav { display: none; }
 
-  .cookbook { display: flex; gap: 3em; align-items: flex-start; }
+  /* z-index:0 traps every recipe inside its own stacking context BELOW the
+     search (z-index:30). A whole stacking context composites as one unit, so
+     content physically cannot paint above the search — this is what kills the
+     iOS Safari bug where recipes smeared above the sticky bar during scroll. */
+  .cookbook { display: flex; gap: 3em; align-items: flex-start; position: relative; z-index: 0; }
 
   /* Search stays pinned at the top on every viewport */
   .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); }
