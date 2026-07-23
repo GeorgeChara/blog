@@ -88,7 +88,6 @@
 <script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
 <script id="gym-data" type="application/json">{{ $gym | jsonify | safeJS }}</script>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script>
 (function () {
   var rides = JSON.parse(document.getElementById('rides-data').textContent) || [];
