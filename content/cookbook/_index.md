@@ -45,6 +45,11 @@ layout: single
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
+    /* The theme sets body{overflow-x:clip} on mobile; on iOS Safari that can
+       stop position:sticky from pinning (search bleeds). This page has no wide
+       content once the tabs are hidden, so restore visible to fix the search. */
+    body { overflow-x: visible; }
+
     /* Single column; stretch so the recipe list fills the width */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
     /* Hide the section tabs on mobile — just the sticky search */
