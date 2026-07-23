@@ -1,0 +1,205 @@
+{{ define "main" }}
+<style>
+  main > h1:first-of-type { display: none; }
+  .time { display: none; }
+  .terminal-nav { display: none; }
+  h2::before, h3::before { content: none !important; }
+
+  .cy-h2 { font-weight: bold; font-size: 1em; margin: 1.4em 0 0.8em 0; color: #000; }
+
+  /* Consistency stat tiles */
+  .fstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; margin-top: 1.5em; }
+  @media (max-width: 560px) { .fstats { grid-template-columns: repeat(2, 1fr); } }
+  .fstat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; }
+  .fstat .v { font-weight: bold; font-size: 1.4em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
+  .fstat .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+  .fstat .l { display: block; font-size: 0.66em; color: #999; margin-top: 0.45em; text-transform: uppercase; letter-spacing: 0.04em; }
+  .fstat .rd { color: #2b7fd9; } .fstat .gy { color: #3aa06a; }
+
+  /* Combined heatmap (blue = ride, green = gym) */
+  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 1.4em 0 0; }
+  .heat-readout { font-family: monospace; font-size: 0.78em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.45em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+  .heat-readout .hk { color: #000; font-weight: bold; }
+  .heat-readout .hsep { color: #d8d2c4; padding: 0 0.2em; }
+  .heat-readout .hhint { color: #bbb; }
+  .heat-scroll { overflow-x: auto; padding-bottom: 2px; }
+  .heat-months { display: grid; font-size: 0.6em; color: #b3ab9a; letter-spacing: 0.03em; height: 1.3em; margin-bottom: 4px; width: max-content; }
+  .heat-months span { grid-row: 1; align-self: end; }
+  .heat { display: grid; grid-auto-flow: column; width: max-content; }
+  .heat i { border-radius: 1px; background: #ece9e0; }
+  .heat i.has { cursor: pointer; }
+  .heat-legend { display: flex; align-items: center; gap: 1.1em; font-size: 0.68em; color: #b3ab9a; margin-top: 0.7em; flex-wrap: wrap; }
+  .heat-legend span { display: inline-flex; align-items: center; gap: 0.4em; }
+  .heat-legend i { width: 11px; height: 11px; border-radius: 1px; display: inline-block; }
+
+  /* Recent activity */
+  table.acts { width: 100%; border-collapse: collapse; font-size: 0.9em; margin-top: 0.3em; }
+  table.acts td { padding: 0.55em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
+  table.acts tr:last-child td { border-bottom: none; }
+  table.acts a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+  table.acts .tag { display: inline-block; font-size: 0.7em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1em 0.45em; border-radius: 3px; margin-right: 0.6em; }
+  table.acts .tag.ride { color: #2b7fd9; background: #eaf2fc; }
+  table.acts .tag.gym { color: #3aa06a; background: #eaf5ee; }
+  table.acts .date { display: block; font-size: 0.78em; color: #999; margin-top: 0.2em; }
+  table.acts td.meta { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  .flinks { display: flex; gap: 0.5em; flex-wrap: wrap; margin-top: 1.4em; }
+  .flinks a { display: inline-block; font-size: 0.85em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 4px; padding: 0.4em 0.8em; text-decoration: none; }
+</style>
+
+{{/* Rides: date -> {km, name, url} */}}
+{{ $urls := dict }}
+{{ range site.RegularPages }}{{ if .Params.garmin_id }}{{ $urls = merge $urls (dict (.Date.Format "2006-01-02") .RelPermalink) }}{{ end }}{{ end }}
+{{ $rides := slice }}
+{{ range $id, $a := hugo.Data.cycling.activities }}
+{{ $dk := substr $a.date 0 10 }}
+{{ $rides = $rides | append (dict "d" $dk "km" $a.distance_km "name" $a.name "url" (index $urls $dk)) }}
+{{ end }}
+{{ $gym := slice }}
+{{ with hugo.Data.fitness }}{{ with .gym }}{{ with .dates }}{{ $gym = . }}{{ end }}{{ end }}{{ end }}
+
+<div class="fstats" id="fstats">
+  <div class="fstat"><span class="v" id="stActive">–</span><span class="l">Active days this month</span></div>
+  <div class="fstat"><span class="v" id="stStreak">–</span><span class="l">Week streak</span></div>
+  <div class="fstat"><span class="v" id="stWeek">–</span><span class="l">This week</span></div>
+  <div class="fstat"><span class="v" id="stSplit">–</span><span class="l">Rides / gym (month)</span></div>
+</div>
+
+<div class="heat-card">
+  <div class="heat-readout" id="heatReadout"></div>
+  <div class="heat-scroll" id="heatScroll">
+    <div class="heat-months" id="heatMonths"></div>
+    <div class="heat" id="heat"></div>
+  </div>
+  <div class="heat-legend">
+    <span><i style="background:#2b7fd9"></i> Ride</span>
+    <span><i style="background:#3aa06a"></i> Gym</span>
+    <span><i style="background:linear-gradient(135deg,#2b7fd9 50%,#3aa06a 50%)"></i> Both</span>
+  </div>
+</div>
+
+<p class="cy-h2">Recent activity</p>
+<table class="acts" id="actsTable"></table>
+
+<div class="flinks">
+  <a href="/cycling/">Cycling &rarr;</a>
+</div>
+
+<script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
+<script id="gym-data" type="application/json">{{ $gym | jsonify | safeJS }}</script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script>
+(function () {
+  var rides = JSON.parse(document.getElementById('rides-data').textContent) || [];
+  var gymDates = JSON.parse(document.getElementById('gym-data').textContent) || [];
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  // merge into byDay: { ride:{km,name,url}|null, gym:bool }
+  var byDay = {};
+  rides.forEach(function (r) { (byDay[r.d] = byDay[r.d] || {}).ride = { km: r.km, name: r.name, url: r.url }; });
+  gymDates.forEach(function (d) { (byDay[d] = byDay[d] || {}).gym = true; });
+
+  // ---- consistency stats ----
+  function parse(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function iso(dt) { return dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0'); }
+  function weekKey(dt) { var t = new Date(dt); t.setDate(t.getDate() - ((t.getDay() + 6) % 7)); return iso(t); } // Monday of that week
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var ym = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
+
+  var activeDays = Object.keys(byDay);
+  var monthDays = activeDays.filter(function (d) { return d.slice(0, 7) === ym; });
+  var ridesMonth = monthDays.filter(function (d) { return byDay[d].ride; }).length;
+  var gymMonth = monthDays.filter(function (d) { return byDay[d].gym; }).length;
+  var thisWeekKey = weekKey(today);
+  var weekDays = activeDays.filter(function (d) { return weekKey(parse(d)) === thisWeekKey; }).length;
+
+  // week streak: consecutive weeks (ending this week) with >=1 active day
+  var weeksActive = {}; activeDays.forEach(function (d) { weeksActive[weekKey(parse(d))] = true; });
+  var streak = 0, probe = new Date(today);
+  if (!weeksActive[weekKey(probe)]) probe.setDate(probe.getDate() - 7); // allow current week not yet done
+  while (weeksActive[weekKey(probe)]) { streak++; probe.setDate(probe.getDate() - 7); }
+
+  document.getElementById('stActive').textContent = monthDays.length;
+  document.getElementById('stStreak').innerHTML = streak + '<span class="u"> wk</span>';
+  document.getElementById('stWeek').textContent = weekDays;
+  document.getElementById('stSplit').innerHTML = '<span class="rd">' + ridesMonth + '</span> / <span class="gy">' + gymMonth + '</span>';
+
+  // ---- heatmap (rolling window; 4 months on mobile, 6 on desktop) ----
+  var heat = document.getElementById('heat'), monthsEl = document.getElementById('heatMonths');
+  var readout = document.getElementById('heatReadout');
+  var HINT = '<span class="hhint">Hover a day for the session</span>';
+  function setReadout(h) { readout.innerHTML = h || HINT; }
+  setReadout(null);
+
+  function lvl(km) { return km <= 0 ? 1 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
+  var blues = ['#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
+  var GREEN = '#3aa06a';
+  var monthsBack = window.innerWidth < 600 ? 4 : 6;
+  var start = new Date(today); start.setMonth(start.getMonth() - monthsBack);
+  start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
+  var lastDay = new Date(today); lastDay.setDate(lastDay.getDate() + (7 - ((lastDay.getDay() + 6) % 7) - 1));
+
+  var scroll = document.getElementById('heatScroll');
+  var weeks = Math.round((lastDay - start) / 86400000 / 7);
+  var gap = 3, avail = (scroll.clientWidth || 480) - 2;
+  var cell = Math.max(9, Math.min(16, Math.floor((avail - (weeks - 1) * gap) / weeks)));
+  heat.style.gap = gap + 'px';
+  heat.style.gridTemplateRows = 'repeat(7, ' + cell + 'px)';
+  monthsEl.style.gridTemplateColumns = 'repeat(' + weeks + ', ' + cell + 'px)';
+  monthsEl.style.columnGap = gap + 'px';
+
+  function dstr(d) { var p = d.split('-'); return parseInt(p[2], 10) + ' ' + MON[parseInt(p[1], 10) - 1]; }
+  var cur = new Date(start), lastMonth = -1;
+  for (var w = 0; w < weeks; w++) {
+    var lab = document.createElement('span');
+    if (cur.getMonth() !== lastMonth) { lab.textContent = MON[cur.getMonth()]; lastMonth = cur.getMonth(); }
+    monthsEl.appendChild(lab);
+    for (var d = 0; d < 7; d++) {
+      var inRange = cur <= today;
+      var key = iso(cur), rec = inRange ? byDay[key] : null;
+      var i = document.createElement('i');
+      i.style.width = i.style.height = cell + 'px';
+      if (rec && rec.ride && rec.gym) { i.style.background = 'linear-gradient(135deg,' + blues[lvl(rec.ride.km) - 1] + ' 50%,' + GREEN + ' 50%)'; }
+      else if (rec && rec.ride) { i.style.background = blues[lvl(rec.ride.km) - 1]; }
+      else if (rec && rec.gym) { i.style.background = GREEN; }
+      else { i.style.background = inRange ? '#ece9e0' : 'transparent'; }
+      if (rec) {
+        i.className = 'has';
+        (function (label, url) {
+          i.addEventListener('mouseenter', function () { setReadout(label); });
+          if (url) i.addEventListener('click', function () { window.location.href = url; });
+        })(fmt(key, rec), rec.ride ? rec.ride.url : null);
+      }
+      heat.appendChild(i);
+      cur.setDate(cur.getDate() + 1);
+    }
+  }
+  heat.addEventListener('mouseleave', function () { setReadout(null); });
+  function fmt(key, rec) {
+    var parts = ['<span class="hk">' + dstr(key) + '</span>'];
+    if (rec.gym) parts.push('<span style="color:#3aa06a">Gym</span>');
+    if (rec.ride) parts.push('<span style="color:#2b7fd9">' + (rec.ride.name || 'Ride') + '</span>' + '<span class="hsep">|</span><span>' + Math.round(rec.ride.km) + ' km</span>');
+    return parts.join('<span class="hsep">|</span>');
+  }
+
+  // ---- recent activity (merged, newest first) ----
+  var all = [];
+  Object.keys(byDay).forEach(function (d) { all.push({ d: d, rec: byDay[d] }); });
+  all.sort(function (a, b) { return a.d < b.d ? 1 : -1; });
+  var rows = all.slice(0, 12).map(function (x) {
+    var r = x.rec, dstr2 = new Date(x.d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    var cells = [];
+    if (r.ride) {
+      var nm = r.ride.url ? '<a href="' + r.ride.url + '">' + (r.ride.name || 'Ride') + '</a>' : (r.ride.name || 'Ride');
+      cells.push('<tr><td><span class="tag ride">Ride</span>' + nm + '<span class="date">' + dstr2 + '</span></td><td class="meta">' + Math.round(r.ride.km) + ' km</td></tr>');
+    }
+    if (r.gym) {
+      cells.push('<tr><td><span class="tag gym">Gym</span>Workout<span class="date">' + dstr2 + '</span></td><td class="meta"></td></tr>');
+    }
+    return cells.join('');
+  }).join('');
+  document.getElementById('actsTable').innerHTML = rows || '<tr><td style="color:#999">No activity yet.</td></tr>';
+})();
+</script>
+{{ end }}

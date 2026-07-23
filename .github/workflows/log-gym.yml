@@ -1,0 +1,53 @@
+name: Log gym workout
+
+# Tick off a gym workout. Trigger from the GitHub app (Actions > Run workflow)
+# or from an iOS Shortcut that POSTs to this workflow's dispatch endpoint.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Workout date (YYYY-MM-DD). Blank = today (Europe/London)."
+        required: false
+        default: ""
+      remove:
+        description: "Set to true to remove that date instead of adding it."
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update gym log
+        run: |
+          DATE="${{ github.event.inputs.date }}"
+          [ -z "$DATE" ] && DATE=$(TZ=Europe/London date +%F)
+          FILE=data/fitness/gym.json
+          mkdir -p data/fitness
+          [ -f "$FILE" ] || echo '{"dates":[]}' > "$FILE"
+          tmp=$(mktemp)
+          if [ "${{ github.event.inputs.remove }}" = "true" ]; then
+            jq --arg d "$DATE" '.dates = (.dates - [$d])' "$FILE" > "$tmp"
+            echo "Removed $DATE"
+          else
+            jq --arg d "$DATE" '.dates = ((.dates + [$d]) | unique | sort)' "$FILE" > "$tmp"
+            echo "Logged $DATE"
+          fi
+          mv "$tmp" "$FILE"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fitness/gym.json
+          if git diff --staged --quiet; then
+            echo "No change (already in that state)"
+          else
+            git commit -m "Log gym workout"
+            git push
+          fi

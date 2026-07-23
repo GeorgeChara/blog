@@ -7,7 +7,7 @@ on:
   # The Garmin sync commits with GITHUB_TOKEN, which does not trigger the push
   # event above, so chain the deploy off the sync workflow finishing instead.
   workflow_run:
-    workflows: ["Sync Garmin Activities"]
+    workflows: ["Sync Garmin Activities", "Log gym workout"]
     types: [completed]
 
 permissions:
