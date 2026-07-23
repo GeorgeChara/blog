@@ -34,13 +34,9 @@ name = "George Charalambous"
     url = "/cookbook/"
     weight = 2
   [[menu.main]]
-    name = "Gym"
-    url = "/gym/"
+    name = "Fitness"
+    url = "/fitness/"
     weight = 3
-  [[menu.main]]
-    name = "Cycling"
-    url = "/cycling/"
-    weight = 4
 
 [build]
   writeStats = true

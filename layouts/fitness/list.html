@@ -43,8 +43,9 @@
   table.acts .date { display: block; font-size: 0.78em; color: #999; margin-top: 0.2em; }
   table.acts td.meta { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-  .flinks { display: flex; gap: 0.5em; flex-wrap: wrap; margin-top: 1.4em; }
-  .flinks a { display: inline-block; font-size: 0.85em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 4px; padding: 0.4em 0.8em; text-decoration: none; }
+  .fnav { display: flex; gap: 0.5em; flex-wrap: wrap; margin: 0.2em 0 0.2em; }
+  .fnav a { display: inline-block; font-size: 0.85em; color: #4169E1; background: #eef2fe; border: 1px solid #cdd8f7; border-radius: 4px; padding: 0.4em 0.9em; text-decoration: none; }
+  .fnav a:hover { border-color: #4169E1; }
 </style>
 
 {{/* Rides: date -> {km, name, url} */}}
@@ -57,6 +58,11 @@
 {{ end }}
 {{ $gym := slice }}
 {{ with hugo.Data.fitness }}{{ with .gym }}{{ with .dates }}{{ $gym = . }}{{ end }}{{ end }}{{ end }}
+
+<div class="fnav">
+  <a href="/cycling/">Cycling &rarr;</a>
+  <a href="/gym/">Gym &rarr;</a>
+</div>
 
 <div class="fstats" id="fstats">
   <div class="fstat"><span class="v" id="stActive">–</span><span class="l">Active days this month</span></div>
@@ -80,10 +86,6 @@
 
 <p class="cy-h2">Recent activity</p>
 <table class="acts" id="actsTable"></table>
-
-<div class="flinks">
-  <a href="/cycling/">Cycling &rarr;</a>
-</div>
 
 <script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
 <script id="gym-data" type="application/json">{{ $gym | jsonify | safeJS }}</script>
