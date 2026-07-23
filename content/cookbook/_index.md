@@ -22,13 +22,13 @@ layout: single
   .cb-searchwrap { display: contents; }
   .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); }
 
-  .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; padding-left: 0.7em; }
+  .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; padding-left: 0.3em; }
   .cb-nav { display: flex; flex-direction: column; gap: 0.55em; }
   .cb-nav a { color: #4169E1; text-decoration: none; align-self: flex-start; }
   .cb-nav a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .cb-nav a.is-hidden { display: none; }
 
-  .cb-main { flex: 1 1 auto; min-width: 0; }
+  .cb-main { flex: 1 1 auto; min-width: 0; padding-left: 0.5em; }
 
   .cat { margin: 0 0 1.9em 0; scroll-margin-top: 4em; }
   .cat-heading { font-weight: bold; font-size: 1.05em; margin: 0 0 0.6em 0; color: #000; }
@@ -75,6 +75,7 @@ layout: single
 
     /* Single column; stretch so the recipe list fills the width */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
+    .cb-main { padding-left: 0; }
     /* Hide the section tabs on mobile — just the search */
     .cb-navwrap { display: none; }
     .cat { scroll-margin-top: 4.5em; }
