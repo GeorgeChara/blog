@@ -10,7 +10,7 @@ layout: single
   .time { display: none; }
   .terminal-nav { display: none; }
 
-  .gym-links { display: flex; flex-direction: column; gap: 0.6em; align-items: flex-start; }
+  .gym-links { display: flex; gap: 1em; flex-wrap: wrap; }
 </style>
 
 <div class="gym-links">
