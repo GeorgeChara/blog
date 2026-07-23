@@ -13,7 +13,7 @@ layout: single
   .cookbook { display: flex; gap: 3em; align-items: flex-start; }
 
   .cb-nav { position: sticky; top: 1.5em; flex: 0 0 120px; display: flex; flex-direction: column; gap: 0.55em; }
-  .cb-nav a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; align-self: flex-start; }
+  .cb-nav a { color: #4169E1; text-decoration: none; align-self: flex-start; }
   .cb-nav a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .cb-nav a.is-hidden { display: none; }
 
@@ -28,7 +28,7 @@ layout: single
 
   .recipe-list { list-style: none; padding: 0; margin: 0; }
   .recipe-list li { margin: 0.6em 0; }
-  .recipe-list a { color: #4169E1; text-decoration: none; border-bottom: 1px solid #c5ccee; }
+  .recipe-list a { color: #4169E1; text-decoration: none; }
   .recipe-list a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
