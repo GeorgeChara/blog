@@ -45,39 +45,11 @@ layout: single
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
-    /* stretch + min-width:0 so children fill the width and the no-wrap tab bar
-       scrolls INTERNALLY instead of ballooning the whole page sideways */
+    /* Single column; stretch so the recipe list fills the width */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
-    .cb-searchbar { border-bottom: none; margin-bottom: 0; }
-    /* fixed input height so the tab bar's sticky offset can match it exactly */
-    .cookbook-search { height: 2.4em; }
-
-    /* Tab bar: pinned header just under the search. The wrap holds the sticky,
-       divider and right-edge fade; the inner nav does the horizontal scroll.
-       flex:none  -> overrides the desktop flex:0 0 120px, which in this column
-                     layout was forcing the bar to 120px TALL (big empty box).
-       align-self:stretch -> overrides desktop flex-start so the bar fills the
-                     width and scrolls internally instead of widening the page. */
-    .cb-navwrap {
-      position: sticky; top: 3.3em; z-index: 25;
-      flex: none; align-self: stretch; min-width: 0; padding-left: 0;
-      background: var(--color-bg-primary);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .cb-navwrap::after {
-      content: ""; position: absolute; top: 0; right: 0; bottom: 1px; width: 2.2em;
-      background: linear-gradient(to right, rgba(252,252,252,0), var(--color-bg-primary));
-      pointer-events: none;
-    }
-    .cb-nav {
-      flex-direction: row; flex-wrap: nowrap; min-width: 0;
-      gap: 1.4em;
-      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-      padding: 0.55em 1.6em 0.55em 0;
-    }
-    .cb-nav::-webkit-scrollbar { display: none; }
-    .cb-nav a { white-space: nowrap; align-self: center; }
-    .cat { scroll-margin-top: 6em; }
+    /* Hide the section tabs on mobile — just the sticky search */
+    .cb-navwrap { display: none; }
+    .cat { scroll-margin-top: 3.6em; }
   }
 </style>
 
