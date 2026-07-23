@@ -13,9 +13,9 @@ layout: single
   .cookbook { display: flex; gap: 3em; align-items: flex-start; }
 
   /* Search stays pinned at the top on every viewport */
-  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; border-bottom: 1px solid var(--color-border); }
+  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); }
 
-  .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; }
+  .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; padding-left: 0.7em; }
   .cb-nav { display: flex; flex-direction: column; gap: 0.55em; }
   .cb-nav a { color: #4169E1; text-decoration: none; align-self: flex-start; }
   .cb-nav a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
@@ -48,13 +48,15 @@ layout: single
     /* stretch + min-width:0 so children fill the width and the no-wrap tab bar
        scrolls INTERNALLY instead of ballooning the whole page sideways */
     .cookbook { flex-direction: column; gap: 1em; align-items: stretch; }
-    .cb-searchbar { border-bottom: none; }
+    .cb-searchbar { border-bottom: none; margin-bottom: 0; }
 
     /* Tab bar: pinned header just under the search. The wrap holds the sticky,
-       divider and right-edge fade; the inner nav does the horizontal scroll. */
+       divider and right-edge fade; the inner nav does the horizontal scroll.
+       align-self:stretch is REQUIRED — it overrides the desktop flex-start,
+       otherwise the wrap sizes to the wide nav and scrolls the page sideways. */
     .cb-navwrap {
       position: sticky; top: 2.6em; z-index: 25;
-      flex: 0 1 auto; min-width: 0;
+      align-self: stretch; min-width: 0; padding-left: 0;
       background: var(--color-bg-primary);
       border-bottom: 1px solid var(--color-border);
     }
