@@ -4,31 +4,21 @@ date: 2026-07-25
 draft: true
 ---
 
-<!-- Skeleton only. Write in your own words. Delete these hint comments as you fill each part in. -->
-
-<!-- Intro: a line or two. What it is in one sentence, and the itch it scratches. -->
-
 
 ## What it does
 
-<!-- Plain description. A browser extension that resets your tab groups back to a saved set of tabs and their order. -->
+I really liked the tab group feature that any modern browser uses these days, but the problem with them is that when you create a group, those pages never stay clean. By default, the way chromes tab groups work is:
 
+- create a group, colour code and name it
+- open tabs within this group
+- every tab you open and close is how this group stays
 
-<!-- media: gif of a messy window snapping back to the saved layout in one click -->
+What I built to solve this issue is a single button chrome extension which resets your tabs to their orignal form and order. You simply set the tabs and order in the settings and click the button to resort them.
 
+![Tab Group Reset restoring a tab group to its saved set](/images/tab-group-reset/demo.webp)
 
-## Why I built it
-
-<!-- The productivity angle. How tabs drift during a work session, and why getting back to a known set matters. In work and out of work. -->
-
-
-## How it works
-
-<!-- Save a set, reset to it. Where the saved set lives, what one click does, any keyboard shortcut. -->
-
+> Here's a dead simple example of 4 tabs that got muddled up, and ended up on different pages resseting to my original `dev` group root tabs.
 
 ## Get it
-
-<!-- How to install / load it. -->
 
 - Repo: https://github.com/GeorgeChara/tab-group-reset
