@@ -47,7 +47,7 @@ lemon            1/2, to squeeze
 dried mint       to scatter
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone in stays juiciest. Boneless is easier to carve but cooks faster and can dry, so check it earlier.<br>Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.<br>Doubling up? Use a bigger tin, give it longer, and go by feel. A probe reads about 90 to 95°C when it is ready to pull.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone in stays juiciest. Boneless is easier to carve but cooks faster and can dry, so check it earlier.<br>Swap the wine for chicken or veg stock, or water. A squeeze of lemon with the stock adds the acidity the wine gives.<br></span>
 
 ## Recipe
 
@@ -81,7 +81,7 @@ dried mint       to scatter
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Done when a fork twists and it pulls apart easily. Still firm, give it longer.</span>
 
-**5.** Tuck the halloumi around the lamb, lid back on, and give it 20 minutes more.
+**5.** Tuck the halloumi around the lamb, lid back on, and give it 15 minutes more.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Adding it late keeps its salty flavour. In from the start and it washes out into the juices.</span>
 
