@@ -295,9 +295,11 @@ layout: single
 <section id="cypriot" class="cat">
 <p class="cat-heading">Cypriot</p>
 <ul class="recipe-list">
+<li><a href="/cookbook/afelia/">Afelia</a><span class="frz">❄</span></li>
 <li><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/avgolemoni/">Avgolemoni</a></li>
 <li class="pending"><a href="/cookbook/bourekia/">Bourekia</a></li>
+<li><a href="/cookbook/giouvetsi/">Giouvetsi</a></li>
 <li><a href="/cookbook/kleftiko/">Kleftiko</a></li>
 <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
 <li class="pending"><a href="/cookbook/koupepia/">Koupepia</a></li>
@@ -308,6 +310,8 @@ layout: single
 <li class="pending"><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
 <li class="pending"><a href="/cookbook/saganaki/">Saganaki</a></li>
 <li><a href="/cookbook/souvla/">Souvla</a></li>
+<li><a href="/cookbook/stifado/">Stifado</a><span class="frz">❄</span></li>
+<li><a href="/cookbook/tavas/">Tavas</a></li>
 </ul>
 </section>
 
