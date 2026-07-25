@@ -58,13 +58,20 @@ dried mint       to scatter
 <details>
 <summary>show photo</summary>
 
-![Peeled potatoes in water](/images/kleftiko/step1.webp)
+![Peeled and chunked potatoes](/images/kleftiko/step1.webp)
 
 </details>
 
 **2.** Mix the marinade and rub it all over the lamb. Chill overnight if you can.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Overnight makes a real difference, but you can cook it straight away.</span>
+
+<details>
+<summary>show photo</summary>
+
+![The lamb rubbed in the marinade](/images/kleftiko/step2.webp)
+
+</details>
 
 **3.** Heat the oven to 160°C. Drain the potatoes and add them to the Le Creuset with the onions, tomatoes, bay and the halved garlic. Sit the lamb on top and pour in the wine with any leftover marinade.
 
@@ -81,21 +88,35 @@ dried mint       to scatter
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Done when a fork twists and it pulls apart easily. Still firm, give it longer.</span>
 
+<details>
+<summary>show photo</summary>
+
+![The lamb after roasting](/images/kleftiko/step4.webp)
+
+</details>
+
 **5.** Tuck the halloumi around the lamb, lid back on, and give it 15 minutes more.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Adding it late keeps its salty flavour. In from the start and it washes out into the juices.</span>
+
+<details>
+<summary>show photo</summary>
+
+![Halloumi tucked around the lamb](/images/kleftiko/step5.webp)
+
+</details>
 
 **6.** Lid off, turn up to 220°C, and roast 15 minutes to brown the top and colour the halloumi.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is just for colour, the lamb is already cooked.</span>
 
-**7.** Rest 15 minutes. Squeeze over the lemon and scatter with dried mint. Serve from the pot with the juices spooned over and a Greek salad on the side.
-
 <details>
 <summary>show photo</summary>
 
-![Rested kleftiko lamb in the pot](/images/kleftiko/step6.webp)
+![Browned lamb and golden halloumi](/images/kleftiko/step6.webp)
 
 </details>
+
+**7.** Rest 15 minutes. Squeeze over the lemon and scatter with dried mint. Serve from the pot with the juices spooned over and a Greek salad on the side.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://georginahayden.com/easter-kleftiko/">Georgina Hayden</a>, <a href="https://www.mygreekdish.com/recipe/lamb-kleftiko-recipe-greek-lamb-cooked-in-parchment-paper/">My Greek Dish</a>.</span>
