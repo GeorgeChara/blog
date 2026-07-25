@@ -32,11 +32,7 @@ draft: true
 
 ## Bootstrap
 
-<!-- Getting it onto a fresh machine in a few commands. -->
-
-```bash
-
-```
+<!-- Getting it onto a fresh machine in a few commands. Paste them in a ```bash block when you write it. -->
 
 
 ## Links
