@@ -16,3 +16,6 @@ scripts/routes/__pycache__/
 
 # Photo inbox (originals, never deployed)
 /_inbox/
+
+# Hugo build stats (writeStats=true), auto-generated, nothing consumes it
+/hugo_stats.json
