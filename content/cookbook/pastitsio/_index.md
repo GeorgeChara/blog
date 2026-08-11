@@ -54,7 +54,7 @@ ground nutmeg    pinch
 salt and pepper  to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cypriot pastitsio uses pork, or a pork and beef mix, and halloumi in the bechamel where the Greek version uses kefalograviera.<br>Ziti lunghi are the long tubes this is made for. Snap them into thirds to fit the dish. Penne rigate works at a push.<br>Anari, a soft Cypriot whey cheese like ricotta, works in place of the cheddar if you find it.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cypriot pastitsio uses pork, or a pork and beef mix, and halloumi in the bechamel where the Greek version uses kefalograviera.<br>Ziti lunghi are the long tubes this is made for. Lay them whole, never snapped. Penne rigate works at a push.<br>Anari, a soft Cypriot whey cheese like ricotta, works in place of the cheddar if you find it.</span>
 
 ## Recipe
 
@@ -84,7 +84,7 @@ salt and pepper  to season
 
 **8.** Heat the oven to 180°C (160°C fan). Grease a deep baking dish, about 32x22cm.
 
-**9.** Spread the pasta in the dish. Meat sauce over and level it, then the bechamel over that, levelled into a thick even layer.
+**9.** Lay the pasta in the dish, all the tubes facing the same way so it slices cleanly. Meat sauce over and level it, then the bechamel over that, levelled into a thick even layer.
 
 **10.** Scatter a little grated halloumi on top. Bake 40 minutes until bubbling and deep golden.
 
