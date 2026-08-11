@@ -28,7 +28,7 @@ salt             1/2 tsp
 butter           knob
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The ratio is the whole trick: 1.5 parts water to 1 part rice for basmati or long grain. Brown rice needs more water and longer.<br>The heavy base and tight lid do the work, so keep the heat low and the lid shut.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The ratio is the whole trick: 1.5 parts water to 1 part rice for basmati or long grain. Brown rice needs more water and longer.</span>
 
 ## Recipe
 
