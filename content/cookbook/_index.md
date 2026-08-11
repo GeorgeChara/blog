@@ -334,7 +334,7 @@ layout: single
 <div class="subcat">
 <p class="subcat-heading">Rice</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="dutch-oven"><a href="/cookbook/chicken-and-chorizo-rice/">Chicken and Chorizo Rice</a></li>
+<li data-tags="dutch-oven"><a href="/cookbook/chicken-and-chorizo-rice/">Chicken and Chorizo Rice</a></li>
 <li class="pending" data-tags="freezer make-ahead"><a href="/cookbook/chicken-biryani/">Chicken Biryani</a><span class="frz">❄</span></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
 <li class="pending" data-tags="freezer make-ahead vegetarian"><a href="/cookbook/mujadara/">Mujadara</a><span class="frz">❄</span></li>

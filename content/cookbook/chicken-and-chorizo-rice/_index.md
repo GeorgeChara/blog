@@ -1,6 +1,6 @@
 ---
 title: "Chicken and Chorizo Rice"
-cooked: false
+cooked: true
 tags: [dutch-oven]
 toc: false
 showreadingtime: false
