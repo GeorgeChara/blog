@@ -1,6 +1,6 @@
 ---
 title: "Baked Cod"
-cooked: false
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

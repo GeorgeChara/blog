@@ -285,7 +285,7 @@ layout: single
 <div class="subcat">
 <p class="subcat-heading">Fish</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="dutch-oven"><a href="/cookbook/baked-cod/">Baked Cod</a></li>
+<li data-tags="dutch-oven"><a href="/cookbook/baked-cod/">Baked Cod</a></li>
 <li><a href="/cookbook/creamy-salmon-salad/">Creamy Salmon Salad</a></li>
 <li class="pending" data-tags="cast-iron"><a href="/cookbook/mediterranean-cod/">Mediterranean Cod</a></li>
 <li class="pending" data-tags="cast-iron make-ahead"><a href="/cookbook/miso-cod/">Miso Cod</a></li>
