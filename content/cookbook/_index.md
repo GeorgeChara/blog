@@ -74,23 +74,15 @@ layout: single
   }
   /* Each chip carries its own hue: coloured text at rest, filled when active.
      --c is the colour, --fg the text once it's filled. */
-  .cb-chip { --c: #888; --fg: #fff; }
-  .cb-chip[data-tag="freezer"]     { --c: #3f9fd4; }
+  .cb-chip { --c: #4169E1; --fg: #fff; }
   .cb-chip[data-tag="vegetarian"],
-  .cb-chip[data-tag="vegan"]       { --c: #6aa84f; }
-  .cb-chip[data-tag="dutch-oven"]  { --c: #4169E1; }
-  .cb-chip[data-tag="cast-iron"]   { --c: #4a4a4a; }
-  .cb-chip[data-tag="stand-mixer"] { --c: #dcc49a; --fg: #5a4632; }
-  .cb-chip[data-tag] { color: var(--c); }
+  .cb-chip[data-tag="vegan"]       { --c: #6aa84f; color: #6aa84f; }
   .cb-chip[data-tag]:hover { border-color: var(--c); }
   .cb-chip.is-active { background: var(--c); border-color: var(--c); color: var(--fg); }
   .cb-chip.is-empty { opacity: 0.35; cursor: default; }
   /* Forces a wrap so diet/storage and equipment are always separate rows,
      rather than whichever chips happen to fit on line one. */
   .cb-chip-break { flex-basis: 100%; height: 0; }
-  .cb-chip-clear { display: none; margin-left: auto; }
-  .cb-chip-clear.is-shown { display: inline-block; }
-  @media (max-width: 600px) { .cb-chip-clear { margin-left: 0; } }
   .cookbook-noresults { display: none; color: #888; font-size: 0.9em; margin: 0 0 1.3em 0; }
 
   @media (max-width: 600px) {
@@ -120,6 +112,10 @@ layout: single
     .cb-main { padding-left: 0; }
     /* Hide the section tabs on mobile — just the search */
     .cb-navwrap { display: none; }
+    /* The forced diet/equipment split only reads well when each group fits one
+       line. On a phone both groups wrap anyway, so the break just leaves a gap
+       mid-row. Drop it and let all the chips flow evenly. */
+    .cb-chip-break { display: none; }
     .cat { scroll-margin-top: 4.5em; }
   }
 </style>
@@ -141,7 +137,6 @@ layout: single
 <button class="cb-chip" data-tag="cast-iron">cast iron</button>
 <button class="cb-chip" data-tag="stand-mixer">stand mixer</button>
 <button class="cb-chip" data-tag="microwave">microwave</button>
-<button class="cb-chip cb-chip-clear" id="cb-chip-clear">clear</button>
 </div>
 </div>
 </div>
@@ -457,15 +452,20 @@ layout: single
     li._tags = (li.getAttribute('data-tags') || '').split(' ').filter(Boolean);
   });
   var chips = [].slice.call(document.querySelectorAll('.cb-chip[data-tag]'));
-  var clearBtn = document.getElementById('cb-chip-clear');
   var chipRow = document.getElementById('cb-chips');
   var tagBtn = document.getElementById('cb-tagbtn');
   var active = [];
-  // The row can be collapsed while filters are on, so the button carries the
-  // count. Without it a hidden filter would silently shrink the list.
+  // One button, two jobs: it opens the row when nothing is selected, and turns
+  // into the clear control once something is. The count matters because the row
+  // can be collapsed while filters are on.
   function syncTagBtn() {
-    tagBtn.textContent = active.length ? 'tags (' + active.length + ')' : 'tags';
+    tagBtn.textContent = active.length ? 'clear (' + active.length + ')' : 'tags';
     tagBtn.classList.toggle('has-active', active.length > 0);
+  }
+  function clearTags() {
+    active = [];
+    chips.forEach(function (c) { c.classList.remove('is-active'); });
+    syncTagBtn();
   }
   // Grey out chips no recipe carries, so the row never lies about what's there.
   chips.forEach(function (c) {
@@ -501,19 +501,13 @@ layout: single
       var i = active.indexOf(tag);
       if (i === -1) { active.push(tag); } else { active.splice(i, 1); }
       c.classList.toggle('is-active', i === -1);
-      clearBtn.classList.toggle('is-shown', active.length > 0);
       syncTagBtn();
       filter();
     });
   });
-  clearBtn.addEventListener('click', function () {
-    active = [];
-    chips.forEach(function (c) { c.classList.remove('is-active'); });
-    clearBtn.classList.remove('is-shown');
-    syncTagBtn();
-    filter();
-  });
   tagBtn.addEventListener('click', function () {
+    // Clearing takes priority, and leaves the row open so you can pick again.
+    if (active.length) { clearTags(); filter(); return; }
     var open = chipRow.classList.toggle('is-collapsed') === false;
     tagBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
@@ -521,9 +515,7 @@ layout: single
   // the bfcache (where the input clears but the filtered DOM is restored stale).
   window.addEventListener('pageshow', function () {
     input.value = '';
-    active = [];
-    chips.forEach(function (c) { c.classList.remove('is-active'); });
-    clearBtn.classList.remove('is-shown');
+    clearTags();
     chipRow.classList.add('is-collapsed');
     tagBtn.setAttribute('aria-expanded', 'false');
     syncTagBtn();
