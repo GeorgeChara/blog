@@ -20,7 +20,10 @@ layout: single
      display:contents makes the wrapper invisible to layout so the sticky
      element behaves as a direct child of the column. */
   .cb-searchwrap { display: contents; }
-  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; gap: 0.5em; }
+  /* Column so the chips sit inside the bar, above its bottom border, and read
+     as part of the search rather than a separate strip below the line. */
+  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; }
+  .cb-searchrow { display: flex; align-items: center; gap: 0.5em; }
 
   .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; padding-left: 0.3em; }
   .cb-nav { display: flex; flex-direction: column; gap: 0.55em; }
@@ -63,14 +66,24 @@ layout: single
 
   /* Tag chips. Click to filter, multiple chips are AND (recipe must have all).
      Deliberately outside .cb-searchbar so the mobile sticky logic is untouched. */
-  .cb-chips { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 1.3em 0; }
+  .cb-chips { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.6em 0 0.15em 0; }
   .cb-chip {
     font-family: inherit; font-size: 0.75em; line-height: 1.4;
     padding: 0.25em 0.7em; border: 1px solid #e0d9d0; border-radius: 3px;
     background: #fff; color: #888; cursor: pointer; transition: all .15s;
   }
-  .cb-chip:hover { color: #555; border-color: #cfc6ba; }
-  .cb-chip.is-active { background: #4169E1; border-color: #4169E1; color: #fff; }
+  /* Each chip carries its own hue: coloured text at rest, filled when active.
+     --c is the colour, --fg the text once it's filled. */
+  .cb-chip { --c: #888; --fg: #fff; }
+  .cb-chip[data-tag="freezer"]     { --c: #3f9fd4; }
+  .cb-chip[data-tag="vegetarian"],
+  .cb-chip[data-tag="vegan"]       { --c: #6aa84f; }
+  .cb-chip[data-tag="dutch-oven"]  { --c: #4169E1; }
+  .cb-chip[data-tag="cast-iron"]   { --c: #4a4a4a; }
+  .cb-chip[data-tag="stand-mixer"] { --c: #dcc49a; --fg: #5a4632; }
+  .cb-chip[data-tag] { color: var(--c); }
+  .cb-chip[data-tag]:hover { border-color: var(--c); }
+  .cb-chip.is-active { background: var(--c); border-color: var(--c); color: var(--fg); }
   .cb-chip.is-empty { opacity: 0.35; cursor: default; }
   /* Forces a wrap so diet/storage and equipment are always separate rows,
      rather than whichever chips happen to fit on line one. */
@@ -113,9 +126,9 @@ layout: single
 
 <div class="cb-searchwrap">
 <div class="cb-searchbar">
+<div class="cb-searchrow">
 <input type="search" id="cookbook-search" class="cookbook-search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
 <button type="button" class="cb-tagbtn" id="cb-tagbtn" aria-expanded="false" aria-controls="cb-chips">tags</button>
-</div>
 </div>
 <div class="cb-chips is-collapsed" id="cb-chips">
 <button class="cb-chip" data-tag="freezer">❄ freezer</button>
@@ -129,6 +142,8 @@ layout: single
 <button class="cb-chip" data-tag="stand-mixer">stand mixer</button>
 <button class="cb-chip" data-tag="microwave">microwave</button>
 <button class="cb-chip cb-chip-clear" id="cb-chip-clear">clear</button>
+</div>
+</div>
 </div>
 
 <p id="cookbook-noresults" class="cookbook-noresults">No recipes match that search.</p>
