@@ -202,13 +202,13 @@ layout: single
 <li class="pending" data-tags="freezer microwave"><a href="/cookbook/apple-sauce/">Apple Sauce</a><span class="frz">❄</span></li>
 <li data-tags="freezer stand-mixer"><a href="/cookbook/butter/">Butter</a><span class="frz">❄</span></li>
 <li data-tags="freezer"><a href="/cookbook/buttercream/">Buttercream</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>
+<li data-tags="freezer"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>
 <li data-tags="make-ahead vegetarian"><a href="/cookbook/egg-mayo/">Egg Mayo</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
 <li data-tags="freezer"><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
 <li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/mashed-potato/">Mashed Potato</a><span class="frz">❄</span></li>
 <li class="pending" data-tags="freezer make-ahead microwave"><a href="/cookbook/quick-mash/">Quick Mash</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="dutch-oven freezer microwave"><a href="/cookbook/rice/">Rice</a><span class="frz">❄</span></li>
+<li data-tags="dutch-oven freezer microwave"><a href="/cookbook/rice/">Rice</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
 <li class="pending" data-tags="freezer"><a href="/cookbook/soffritto/">Soffritto</a><span class="frz">❄</span></li>
 </ul>
@@ -250,7 +250,7 @@ layout: single
 <li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/beef-shin-stew/">Beef Shin Stew</a><span class="frz">❄</span></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
 <li class="pending" data-tags="cast-iron"><a href="/cookbook/skillet-steak/">Skillet Steak</a></li>
-<li class="pending" data-tags="cast-iron"><a href="/cookbook/smash-burgers/">Smash Burgers</a></li>
+<li data-tags="cast-iron"><a href="/cookbook/smash-burgers/">Smash Burgers</a></li>
 <li class="pending" data-tags="freezer"><a href="/cookbook/steak-pie/">Steak Pie</a><span class="frz">❄</span></li>
 </ul>
 </div>
@@ -347,7 +347,7 @@ layout: single
 <p class="subcat-heading">Sandwiches</p>
 <ul class="recipe-list">
 <li data-tags="make-ahead"><a href="/cookbook/blt-baguettes/">BLT Baguettes</a></li>
-<li class="pending"><a href="/cookbook/cheese-toastie/">Cheese Toastie</a></li>
+<li><a href="/cookbook/cheese-toastie/">Cheese Toastie</a></li>
 <li data-tags="cast-iron"><a href="/cookbook/cheesesteak/">Cheesesteak</a></li>
 </ul>
 </div>
@@ -387,12 +387,12 @@ layout: single
 <li class="pending" data-tags="dutch-oven make-ahead"><a href="/cookbook/giouvetsi/">Giouvetsi</a></li>
 <li data-tags="dutch-oven"><a href="/cookbook/kleftiko/">Kleftiko</a></li>
 <li class="pending"><a href="/cookbook/kolouri/">Kolouri</a></li>
-<li class="pending"><a href="/cookbook/koupepia/">Koupepia</a></li>
+<li><a href="/cookbook/koupepia/">Koupepia</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/loukanika/">Loukanika</a></li>
-<li class="pending"><a href="/cookbook/louvi/">Louvi</a></li>
-<li class="pending" data-tags="stand-mixer"><a href="/cookbook/moussaka/">Moussaka</a></li>
-<li class="pending" data-tags="stand-mixer"><a href="/cookbook/pastitsio/">Pastitsio</a></li>
-<li class="pending"><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
+<li><a href="/cookbook/louvi/">Louvi</a></li>
+<li data-tags="stand-mixer"><a href="/cookbook/moussaka/">Moussaka</a></li>
+<li data-tags="stand-mixer"><a href="/cookbook/pastitsio/">Pastitsio</a></li>
+<li><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
 <li class="pending" data-tags="cast-iron vegetarian"><a href="/cookbook/saganaki/">Saganaki</a></li>
 <li><a href="/cookbook/souvla/">Souvla</a></li>
 <li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/stifado/">Stifado</a><span class="frz">❄</span></li>
@@ -403,7 +403,7 @@ layout: single
 <section id="sauces" class="cat">
 <p class="cat-heading">Sauces &amp; Preserves</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="freezer"><a href="/cookbook/aji-verde/">Aji Verde</a><span class="frz">❄</span></li>
+<li data-tags="freezer"><a href="/cookbook/aji-verde/">Aji Verde</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
 <li data-tags="freezer vegan"><a href="/cookbook/cosmic-souvla-sauce/">Cosmic Souvla Sauce</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
