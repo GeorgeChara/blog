@@ -41,7 +41,7 @@ olive oil        30g
 salt and pepper  to season
 
 <span style="color: #888;">Pasta</span>
-penne rigate     500g, or any thick tube
+ziti lunghi      500g
 
 <span style="color: #888;">Halloumi bechamel</span>
 full fat milk    1 litre
@@ -54,7 +54,7 @@ ground nutmeg    pinch
 salt and pepper  to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cypriot pastitsio uses pork, or a pork and beef mix, and halloumi in the bechamel where the Greek version uses kefalograviera.<br>Penne rigate is the best supermarket stand in for the long tubes. The ridges hold the sauce.<br>Anari, a soft Cypriot whey cheese like ricotta, works in place of the cheddar if you find it.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cypriot pastitsio uses pork, or a pork and beef mix, and halloumi in the bechamel where the Greek version uses kefalograviera.<br>Ziti lunghi are the long tubes this is made for. Snap them into thirds to fit the dish. Penne rigate works at a push.<br>Anari, a soft Cypriot whey cheese like ricotta, works in place of the cheddar if you find it.</span>
 
 ## Recipe
 
