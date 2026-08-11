@@ -1,0 +1,149 @@
+#!/usr/bin/env python3
+"""Move a draft into the cookbook and insert it into the index alphabetically.
+
+Usage:
+    blog-publish <slug> --cat savoury [--subcat Chicken] [--live] [--dry-run]
+    blog-publish --cats            # list sections and subcategories
+
+New entries land greyed out (class="pending") because you haven't cooked them
+yet. Pass --live once you've made it. The freezer icon comes from frontmatter
+tags automatically.
+"""
+
+import argparse
+import html
+import re
+import shutil
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DRAFTS = ROOT / "content" / "_drafts"
+COOKBOOK = ROOT / "content" / "cookbook"
+INDEX = COOKBOOK / "_index.md"
+
+LI_RE = re.compile(r'<li[^>]*><a href="/cookbook/[^"]*/">([^<]+)</a>')
+
+
+def die(msg):
+    print(f"error: {msg}", file=sys.stderr)
+    sys.exit(1)
+
+
+def read_index():
+    return INDEX.read_text().splitlines()
+
+
+def list_cats(lines):
+    """Return {section_id: [subcat names]} in document order."""
+    cats, cur = {}, None
+    for line in lines:
+        m = re.match(r'<section id="([^"]+)" class="cat">', line)
+        if m:
+            cur = m.group(1)
+            cats[cur] = []
+        m = re.match(r'<p class="subcat-heading">(.+)</p>', line)
+        if m and cur:
+            cats[cur].append(html.unescape(m.group(1)))
+    return cats
+
+
+def find_list(lines, cat, subcat):
+    """Return (start, end) line indices of the <ul> body to insert into."""
+    start = next((i for i, l in enumerate(lines)
+                  if re.match(rf'<section id="{re.escape(cat)}" class="cat">', l)), None)
+    if start is None:
+        die(f'no section id="{cat}" in the index (try --cats)')
+    end = next(i for i in range(start, len(lines)) if lines[i].strip() == "</section>")
+
+    if subcat:
+        want = subcat.strip().lower()
+        head = None
+        for i in range(start, end):
+            m = re.match(r'<p class="subcat-heading">(.+)</p>', lines[i].strip())
+            if m and html.unescape(m.group(1)).lower() == want:
+                head = i
+                break
+        if head is None:
+            die(f'no subcategory "{subcat}" under {cat} (try --cats)')
+        start = head
+
+    ul = next((i for i in range(start, end) if '<ul class="recipe-list">' in lines[i]), None)
+    if ul is None:
+        die(f"no recipe list found in {cat}")
+    close = next(i for i in range(ul, end) if lines[i].strip() == "</ul>")
+    return ul + 1, close
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug", nargs="?")
+    ap.add_argument("--cat")
+    ap.add_argument("--subcat")
+    ap.add_argument("--live", action="store_true", help="not pending, you've cooked it")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--cats", action="store_true", help="list sections")
+    args = ap.parse_args()
+
+    lines = read_index()
+
+    if args.cats or not args.slug:
+        for cat, subs in list_cats(lines).items():
+            print(f"  {cat}" + (f"  [{', '.join(subs)}]" if subs else ""))
+        return
+
+    slug = args.slug.strip("/").lower()
+    src = DRAFTS / slug / "_index.md"
+    dest = COOKBOOK / slug / "_index.md"
+
+    if not src.exists():
+        die(f"no draft at content/_drafts/{slug}/")
+    if dest.exists():
+        die(f"content/cookbook/{slug}/ already exists")
+    if not args.cat:
+        die("--cat is required (try --cats to list sections)")
+
+    body = src.read_text()
+    m = re.search(r'^title:\s*"?([^"\n]+)"?', body, re.M)
+    title = m.group(1).strip() if m else slug.replace("-", " ").title()
+
+    tags = re.search(r"^tags:\s*\[([^\]]*)\]", body, re.M)
+    freezer = "freezer" in (tags.group(1) if tags else "")
+
+    cls = "" if args.live else ' class="pending"'
+    icon = '<span class="frz">❄</span>' if freezer else ""
+    entry = f'<li{cls}><a href="/cookbook/{slug}/">{title}</a>{icon}</li>'
+
+    lo, hi = find_list(lines, args.cat, args.subcat)
+    pos = hi
+    for i in range(lo, hi):
+        m = LI_RE.search(lines[i])
+        if m and html.unescape(m.group(1)).lower() > title.lower():
+            pos = i
+            break
+
+    if args.dry_run:
+        print(f"content/_drafts/{slug}/ -> content/cookbook/{slug}/")
+        print(f"index: {args.cat}" + (f" / {args.subcat}" if args.subcat else "")
+              + f", line {pos + 1}")
+        print(f"  {entry}")
+        return
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(src), str(dest))
+    try:
+        (DRAFTS / slug).rmdir()
+    except OSError:
+        pass
+
+    lines.insert(pos, entry)
+    INDEX.write_text("\n".join(lines) + "\n")
+
+    print(f"published content/cookbook/{slug}/")
+    print(f"indexed under {args.cat}" + (f" / {args.subcat}" if args.subcat else "")
+          + (" (pending/grey)" if not args.live else ""))
+    print(f"  {entry}")
+
+
+if __name__ == "__main__":
+    main()

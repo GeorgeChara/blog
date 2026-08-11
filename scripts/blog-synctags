@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+"""Sync data-tags onto each cookbook index entry from recipe frontmatter.
+
+Usage:
+    blog-synctags --dry-run
+    blog-synctags
+    blog-synctags --counts     tag counts, for the chip row
+
+The index is hand-maintained HTML, so anything duplicated into it drifts. This
+regenerates the data-tags attribute (and the ❄ icon) from frontmatter every run,
+the same way blog-live does for a single recipe. Run it after changing any tags.
+"""
+
+import argparse
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+COOKBOOK = ROOT / "content" / "cookbook"
+INDEX = COOKBOOK / "_index.md"
+FRZ = '<span class="frz">❄</span>'
+
+
+def tags_for(slug):
+    p = COOKBOOK / slug / "_index.md"
+    if not p.exists():
+        return None
+    m = re.search(r"^tags:\s*\[([^\]]*)\]", p.read_text(), re.M)
+    if not m:
+        return []
+    return sorted(t.strip() for t in m.group(1).split(",") if t.strip())
+
+
+def rewrite(line):
+    """Return (new_line, slug, tags) or (line, None, None) if not a recipe entry."""
+    m = re.match(r'(<li)((?: [^>]*)?)(><a href="/cookbook/([^"]+)/">)(.*?)(</a>)(.*?)(</li>)$',
+                 line.strip())
+    if not m:
+        return line, None, None
+    _, attrs, mid, slug, name, close, tail, end = m.groups()
+
+    tags = tags_for(slug)
+    if tags is None:
+        print(f"warn: no recipe page for {slug}", file=sys.stderr)
+        return line, None, None
+
+    pending = 'class="pending"' in attrs
+    parts = []
+    if pending:
+        parts.append('class="pending"')
+    if tags:
+        parts.append(f'data-tags="{" ".join(tags)}"')
+    attr = (" " + " ".join(parts)) if parts else ""
+
+    icon = FRZ if "freezer" in tags else ""
+    return f"<li{attr}><a href=\"/cookbook/{slug}/\">{name}</a>{icon}</li>", slug, tags
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--counts", action="store_true")
+    args = ap.parse_args()
+
+    lines = INDEX.read_text().splitlines()
+
+    if args.counts:
+        counts = {}
+        for line in lines:
+            _, slug, tags = rewrite(line)
+            for t in tags or []:
+                counts[t] = counts.get(t, 0) + 1
+        for t, n in sorted(counts.items(), key=lambda x: (-x[1], x[0])):
+            print(f"  {t:<14}{n}")
+        return
+
+    out, changed = [], 0
+    for line in lines:
+        new, slug, _ = rewrite(line)
+        if slug and new != line.strip():
+            changed += 1
+            if args.dry_run:
+                print(f"  - {line.strip()[:110]}")
+                print(f"  + {new[:110]}\n")
+        out.append(new if slug else line)
+
+    if not args.dry_run:
+        INDEX.write_text("\n".join(out) + "\n")
+    print(f"{'would sync' if args.dry_run else 'synced'} {changed} entries")
+
+
+if __name__ == "__main__":
+    main()

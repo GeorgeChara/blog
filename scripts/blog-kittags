@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+"""Seed frontmatter tags so the frontmatter becomes the real source of truth.
+
+Usage:
+    blog-kittags --dry-run     show every change, with the evidence
+    blog-kittags               apply
+    blog-kittags --audit       tag counts across the cookbook
+
+Three jobs, in this order:
+  1. add a `tags:` field to recipes that have none
+  2. backfill `freezer` from the ❄ icons already in the cookbook index, which
+     currently knows about 22 freezer recipes the frontmatter does not
+  3. add equipment tags detected from the recipe text
+
+Equipment detection is a starting point, not gospel: a passing mention ("cast
+iron holds more heat than most pans") is not the same as the recipe needing that
+pan. Check the dry run before applying, and add misses to EXCLUDE.
+
+No air-fryer tag, George doesn't have one any more.
+"""
+
+import argparse
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+COOKBOOK = ROOT / "content" / "cookbook"
+
+# skillet and cast iron are the same pan here, so they share a tag
+KIT = {
+    "dutch-oven":  r"dutch oven|le creuset",
+    "cast-iron":   r"cast iron|skillet",
+    "stand-mixer": r"stand mixer|kitchenaid|mixer bowl",
+    "microwave":   r"microwave",
+}
+
+# recipes where the phrase appears but the kit isn't actually needed
+EXCLUDE = {
+    "tahdig": ["cast-iron"],          # the note compares pans, the kit is the Le Creuset
+}
+
+DIET = {"freezer", "make-ahead", "no-cook", "vegetarian", "vegan"}
+
+
+def detect(slug, text):
+    body = re.sub(r"<style>.*?</style>", "", text, flags=re.S)
+    found = {}
+    for tag, pat in KIT.items():
+        if tag in EXCLUDE.get(slug, []):
+            continue
+        m = re.search(pat, body, re.I)
+        if m:
+            line = next((l for l in body.splitlines() if m.group(0).lower() in l.lower()), "")
+            found[tag] = re.sub(r"<[^>]+>", "", line).strip()
+    return found
+
+
+def read_tags(text):
+    m = re.search(r"^tags:\s*\[([^\]]*)\]", text, re.M)
+    if not m:
+        return None, None
+    raw = [t.strip() for t in m.group(1).split(",") if t.strip()]
+    return raw, m
+
+
+def freezer_slugs():
+    """Slugs carrying a ❄ in the hand-maintained index."""
+    idx = (COOKBOOK / "_index.md").read_text()
+    return {m.group(1) for m in
+            re.finditer(r'href="/cookbook/([^"]+)/"[^<]*</a><span class="frz">', idx)}
+
+
+def insert_tags_field(text, line):
+    """Add a tags: line to frontmatter that has none, after layout: or title:."""
+    m = re.search(r"^(layout:.*|showreadingtime:.*|title:.*)$", text, re.M)
+    if not m:
+        return None
+    return text[:m.end()] + "\n" + line + text[m.end():]
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--audit", action="store_true")
+    args = ap.parse_args()
+
+    if args.audit:
+        rows = []
+        for p in sorted(COOKBOOK.glob("*/_index.md")):
+            tags, _ = read_tags(p.read_text())
+            kit = sorted(set(tags or []) & set(KIT))
+            if kit:
+                rows.append((p.parent.name, kit))
+        counts = {}
+        for _, kit in rows:
+            for k in kit:
+                counts[k] = counts.get(k, 0) + 1
+        print(f"{len(rows)} recipes carry equipment tags\n")
+        for k, n in sorted(counts.items(), key=lambda x: -x[1]):
+            print(f"  {k:<14}{n}")
+        return
+
+    frz = freezer_slugs()
+    changed = added_field = backfilled = 0
+
+    for p in sorted(COOKBOOK.glob("*/_index.md")):
+        slug = p.parent.name
+        text = p.read_text()
+        tags, m = read_tags(text)
+        missing_field = tags is None
+        tags = tags or []
+
+        new = set(detect(slug, text)) - set(tags)
+        if slug in frz and "freezer" not in tags:
+            new.add("freezer")
+            backfilled += 1
+        if not new and not missing_field:
+            continue
+
+        # diet/storage tags first, then equipment, both alphabetical
+        allt = set(tags) | new
+        merged = sorted(allt & DIET) + sorted(allt - DIET)
+        line = f"tags: [{', '.join(merged)}]"
+
+        if args.dry_run:
+            print(f"\n{slug}{'   (no tags field)' if missing_field else ''}")
+            print(f"  -  tags: [{', '.join(tags)}]")
+            print(f"  +  {line}")
+            ev = detect(slug, text)
+            for t in sorted(new):
+                why = "❄ in the cookbook index" if t == "freezer" else ev.get(t, "")
+                print(f"     {t:<13} {why[:92]}")
+        else:
+            if missing_field:
+                out = insert_tags_field(text, line)
+                if out is None:
+                    print(f"skip {slug}: no frontmatter anchor", file=sys.stderr)
+                    continue
+                p.write_text(out)
+            else:
+                p.write_text(text[:m.start()] + line + text[m.end():])
+        changed += 1
+        added_field += missing_field
+
+    verb = "would update" if args.dry_run else "updated"
+    print(f"\n{verb} {changed} recipe(s): "
+          f"{added_field} gaining a tags field, {backfilled} backfilled with freezer")
+
+
+if __name__ == "__main__":
+    main()

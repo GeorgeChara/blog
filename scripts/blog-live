@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Flip a cookbook link from grey (pending) to blue (cooked and verified).
+
+Usage:
+    blog-live <slug>            grey -> blue
+    blog-live <slug> --undo     blue -> grey
+    blog-live --pending         list everything still grey
+
+Also re-syncs the ❄ freezer icon from the recipe's frontmatter tags, so fixing a
+tag and re-running is enough to correct the index.
+"""
+
+import argparse
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+COOKBOOK = ROOT / "content" / "cookbook"
+INDEX = COOKBOOK / "_index.md"
+
+FRZ = '<span class="frz">❄</span>'
+
+
+def die(msg):
+    print(f"error: {msg}", file=sys.stderr)
+    sys.exit(1)
+
+
+def is_freezer(slug):
+    page = COOKBOOK / slug / "_index.md"
+    if not page.exists():
+        return None
+    m = re.search(r"^tags:\s*\[([^\]]*)\]", page.read_text(), re.M)
+    return "freezer" in (m.group(1) if m else "")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug", nargs="?")
+    ap.add_argument("--undo", action="store_true", help="back to grey")
+    ap.add_argument("--pending", action="store_true", help="list grey recipes")
+    args = ap.parse_args()
+
+    lines = INDEX.read_text().splitlines()
+
+    if args.pending or not args.slug:
+        grey = [re.search(r">([^<]+)</a>", l).group(1)
+                for l in lines if 'class="pending"' in l]
+        print(f"{len(grey)} recipe(s) still grey:\n")
+        for name in grey:
+            print(f"  {name}")
+        return
+
+    slug = args.slug.strip("/").lower()
+    href = f'/cookbook/{slug}/'
+    hits = [i for i, l in enumerate(lines) if f'href="{href}"' in l]
+
+    if not hits:
+        die(f"{slug} is not in the cookbook index")
+    if len(hits) > 1:
+        die(f"{slug} appears {len(hits)} times in the index, fix that by hand")
+
+    i = hits[0]
+    before = lines[i]
+
+    if args.undo:
+        line = re.sub(r"^<li(?: class=\"pending\")?>", '<li class="pending">', before)
+    else:
+        line = re.sub(r"^<li class=\"pending\">", "<li>", before)
+
+    frz = is_freezer(slug)
+    if frz is not None:
+        line = line.replace(FRZ, "")
+        if frz:
+            line = line.replace("</a>", f"</a>{FRZ}")
+
+    if line == before:
+        state = "already grey" if args.undo else "already blue"
+        print(f"{slug}: {state}, nothing to do")
+        return
+
+    lines[i] = line
+    INDEX.write_text("\n".join(lines) + "\n")
+    print(f"{slug}: {'blue -> grey' if args.undo else 'grey -> blue'}")
+    print(f"  {line}")
+
+
+if __name__ == "__main__":
+    main()

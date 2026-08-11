@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+"""One-off sweep: annotate every oven temperature with its fan equivalent.
+
+Usage:
+    blog-fantemps --dry-run     show every proposed change
+    blog-fantemps               apply
+    blog-fantemps --audit       list remaining bare oven temps
+
+House format is conventional first, fan in brackets, always -20:
+    180°C  ->  180°C (160°C fan)
+
+Only temps >= 100°C are touched. Everything below that is a proving temp, a
+warm-liquid temp, a butter temp or an internal meat temp, none of which have a
+fan equivalent. Above 100°C there are still four non-oven cases, excluded by
+line match in SKIP_LINES.
+"""
+
+import argparse
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+COOKBOOK = ROOT / "content" / "cookbook"
+
+MIN_OVEN = 100
+OFFSET = 20
+
+# Temps >= 100°C that are NOT oven air temps. Matched as substrings of the line.
+SKIP_LINES = {
+    "buttermilk-fried-chicken": ["Heat the oil to"],          # frying oil
+    "scotch-eggs":              ["Heat oil to", "°C fry"],    # frying oil
+    "mille-feuille":            ["under the grill"],          # grill, no fan setting
+    "moussaka":                 ["air fry at"],               # air fryer is already a fan
+    "piccalilli":               ["Sterilise"],                # drying jars, not cooking
+    "pikla":                    ["Sterilise"],
+}
+
+# banana-bread is the only recipe written in FAN rather than conventional.
+# Its main bake says "170°C fan", so conventional is 190°C, not 150°C.
+FAN_WRITTEN = {"banana-bread": ["170°C fan"], "gingerbread-men": ["170°C fan"]}
+
+TEMP = re.compile(r"(\d{2,3})\s*°C")
+
+
+def skip_line(slug, line):
+    return any(s in line for s in SKIP_LINES.get(slug, []))
+
+
+def convert(slug, line):
+    """Return the rewritten line, or None if unchanged."""
+    for marker in FAN_WRITTEN.get(slug, []):
+        # Only when it stands alone. "190°C (170°C fan)" is already correct.
+        if marker in line and not re.search(r"°C\s*\(\s*" + re.escape(marker), line):
+            fan = int(marker.split("°C")[0])
+            return line.replace(marker, f"{fan + OFFSET}°C ({fan}°C fan)")
+
+    if skip_line(slug, line):
+        return None
+
+    out, last, changed = [], 0, False
+    for m in TEMP.finditer(line):
+        temp = int(m.group(1))
+        tail = line[m.end():m.end() + 14]
+        head = line[max(0, m.start() - 2):m.start()]
+        already = tail.lstrip().startswith("fan") or re.match(r"\s*\(\d{2,3}\s*°C fan\)", tail)
+        inside = head.strip().endswith("(")
+        if temp < MIN_OVEN or already or inside:
+            continue
+        out.append(line[last:m.end()])
+        out.append(f" ({temp - OFFSET}°C fan)")
+        last = m.end()
+        changed = True
+    if not changed:
+        return None
+    out.append(line[last:])
+    return "".join(out)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--audit", action="store_true")
+    args = ap.parse_args()
+
+    if args.audit:
+        bare = []
+        for p in sorted(COOKBOOK.glob("*/_index.md")):
+            for line in p.read_text().splitlines():
+                for m in TEMP.finditer(line):
+                    t, tail = int(m.group(1)), line[m.end():m.end() + 14]
+                    head = line[max(0, m.start() - 2):m.start()]
+                    if t < MIN_OVEN or tail.lstrip().startswith("fan"):
+                        continue
+                    if re.match(r"\s*\(\d{2,3}\s*°C fan\)", tail) or head.strip().endswith("("):
+                        continue
+                    bare.append((p.parent.name, t, skip_line(p.parent.name, line)))
+        left = [b for b in bare if not b[2]]
+        print(f"{len(left)} bare oven temp(s) remaining, "
+              f"{sum(1 for b in bare if b[2])} deliberately excluded")
+        for slug, t, _ in left:
+            print(f"  {slug:<28}{t}°C")
+        return
+
+    files = touched = 0
+    for p in sorted(COOKBOOK.glob("*/_index.md")):
+        slug = p.parent.name
+        lines = p.read_text().splitlines(keepends=True)
+        new, hit = [], False
+        for line in lines:
+            stripped = line.rstrip("\n")
+            res = convert(slug, stripped)
+            if res is None:
+                new.append(line)
+                continue
+            hit = True
+            touched += 1
+            if args.dry_run:
+                print(f"\n{slug}")
+                print(f"  -  {stripped.strip()[:130]}")
+                print(f"  +  {res.strip()[:130]}")
+            new.append(res + ("\n" if line.endswith("\n") else ""))
+        if hit:
+            files += 1
+            if not args.dry_run:
+                p.write_text("".join(new))
+
+    verb = "would change" if args.dry_run else "changed"
+    print(f"\n{verb} {touched} line(s) across {files} recipe(s)")
+
+
+if __name__ == "__main__":
+    main()

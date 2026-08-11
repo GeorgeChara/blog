@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+"""Inject the SETTINGS cheatsheet and <style> block into a bare draft.
+
+Usage:  blog-wrap <slug> [--photos] [--cat savoury --subcat Chicken]
+
+A bare draft is frontmatter followed straight by <h1>. This splices in the two
+boilerplate blocks that blog-new would have added, so drafts written by hand or
+by Claude end up identical to scaffolded ones. Idempotent.
+"""
+
+import argparse
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DRAFTS = ROOT / "content" / "_drafts"
+
+SETTINGS = """<!-- ============================================================
+     SETTINGS  (delete this block once you're done)
+
+     tags:  freezer | make-ahead | no-cook | vegetarian | vegan
+            freezer also puts a blue ❄ next to the index link
+
+     grey link -> blue link
+            new recipes go in the cookbook GREY (not cooked yet).
+            once you've actually made it:   blog-live {slug}
+            to put it back grey:            blog-live {slug} --undo
+
+     photos
+            drop them in  _inbox/{slug}/  , crop in Preview, then:
+            blog-img {slug}
+            it prints the markdown, paste it where you want it
+
+     publish
+            blog-publish {slug} --cat {cat}{subcat}
+            blog-publish --cats     lists every section
+     ============================================================ -->"""
+
+STYLE = """<style>
+  main > h1:first-of-type {{ display: none; }}
+  .time {{ display: none; }}
+  h2::before {{ content: none !important; }}
+  .content pre {{ color: #000; }}
+  .terminal-nav {{ display: none; }}{img}
+</style>"""
+
+IMG = "\n  .content img { max-width: 100%; border-radius: 4px; }"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug")
+    ap.add_argument("--photos", action="store_true")
+    ap.add_argument("--cat", default="savoury")
+    ap.add_argument("--subcat", default="")
+    args = ap.parse_args()
+
+    slug = args.slug.strip("/")
+    p = DRAFTS / slug / "_index.md"
+    if not p.exists():
+        print(f"error: no draft at content/_drafts/{slug}/", file=sys.stderr)
+        sys.exit(1)
+
+    body = p.read_text()
+    if "SETTINGS  (delete this block" in body:
+        print(f"{slug}: already wrapped")
+        return
+
+    m = re.match(r"(---\n.*?\n---\n)(.*)", body, re.S)
+    if not m:
+        print(f"error: {slug} has no frontmatter", file=sys.stderr)
+        sys.exit(1)
+
+    settings = SETTINGS.format(
+        slug=slug, cat=args.cat,
+        subcat=f' --subcat "{args.subcat}"' if args.subcat else "",
+    )
+    style = STYLE.format(img=IMG if args.photos else "")
+    p.write_text(f"{m.group(1)}\n{settings}\n\n{style}\n\n{m.group(2).lstrip()}")
+    print(f"{slug}: wrapped")
+
+
+if __name__ == "__main__":
+    main()

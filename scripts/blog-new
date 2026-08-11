@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+"""Scaffold a recipe draft in house style, ready to edit in vim.
+
+Usage:
+    blog-new <slug> [--title "Name"] [--photos] [--no-edit]
+
+Copies scripts/recipe-template.md to content/_drafts/<slug>/_index.md (gitignored,
+local only) and opens it in $EDITOR. Edit the template file itself to change the
+house skeleton, it is the single source of truth.
+
+Publish later with: blog-publish <slug> --cat <section>
+"""
+
+import argparse
+import os
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DRAFTS = ROOT / "content" / "_drafts"
+TEMPLATE = Path(__file__).resolve().parent / "recipe-template.md"
+
+IMG_RULE = "  .content img { max-width: 100%; border-radius: 4px; }\n"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug")
+    ap.add_argument("--title")
+    ap.add_argument("--photos", action="store_true", help="include the img CSS rule")
+    ap.add_argument("--no-edit", action="store_true")
+    args = ap.parse_args()
+
+    slug = args.slug.strip("/").lower()
+    title = args.title or slug.replace("-", " ").title()
+    path = DRAFTS / slug / "_index.md"
+
+    if path.exists():
+        print(f"draft already exists: content/_drafts/{slug}/_index.md")
+    else:
+        body = TEMPLATE.read_text()
+        body = body.replace("TITLE", title).replace("SLUG", slug)
+        if args.photos:
+            body = body.replace("  .terminal-nav { display: none; }\n",
+                                "  .terminal-nav { display: none; }\n" + IMG_RULE)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(body)
+        print(f"created content/_drafts/{slug}/_index.md")
+        print(f"preview at http://localhost:1313/_drafts/{slug}/")
+
+    if not args.no_edit:
+        subprocess.run([os.environ.get("EDITOR", "nvim"), str(path)])
+
+
+if __name__ == "__main__":
+    main()

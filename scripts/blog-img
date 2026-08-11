@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+"""Convert photos from the inbox into web-ready WebP for a recipe.
+
+Usage:
+    blog-img <slug> [--dry-run] [--quality N] [--width N]
+    blog-img --list
+
+Flow:
+    1. Drop photos (HEIC/JPG/PNG) into _inbox/<slug>/
+    2. Crop them in Preview, rename any you care about (header.heic, step1.heic...)
+    3. Run: blog-img <slug>
+
+Handles HEIF via sips, P3/HDR -> sRGB via Pillow ICC, resize, then cwebp.
+Output lands in static/images/<slug>/. Markdown snippets are printed to paste.
+"""
+
+import argparse
+import io
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+from PIL import Image, ImageCms, ImageOps
+
+ROOT = Path(__file__).resolve().parent.parent
+INBOX = ROOT / "_inbox"
+DEST = ROOT / "static" / "images"
+
+HEIF = {".heic", ".heif"}
+DIRECT = {".jpg", ".jpeg", ".png", ".tif", ".tiff"}
+STEP_RE = re.compile(r"^step(\d+)$", re.I)
+
+
+def die(msg):
+    print(f"error: {msg}", file=sys.stderr)
+    sys.exit(1)
+
+
+def heif_to_png(src, tmpdir):
+    """sips is the only thing on macOS that reads HEIC without extra deps."""
+    out = Path(tmpdir) / (src.stem + ".png")
+    subprocess.run(
+        ["sips", "-s", "format", "png", str(src), "--out", str(out)],
+        check=True, capture_output=True,
+    )
+    return out
+
+
+def to_srgb(im):
+    """Phone photos are Display P3 or HDR. Without this they oversaturate."""
+    icc = im.info.get("icc_profile")
+    if not icc:
+        return im.convert("RGB")
+    try:
+        src = ImageCms.ImageCmsProfile(io.BytesIO(icc))
+        dst = ImageCms.createProfile("sRGB")
+        return ImageCms.profileToProfile(im, src, dst, outputMode="RGB")
+    except Exception:
+        return im.convert("RGB")
+
+
+def prepare(src, tmpdir, max_width):
+    ext = src.suffix.lower()
+    if ext in HEIF:
+        src = heif_to_png(src, tmpdir)
+    im = Image.open(src)
+    im = ImageOps.exif_transpose(im)
+    im = to_srgb(im)
+    if im.width > max_width:
+        h = round(im.height * max_width / im.width)
+        im = im.resize((max_width, h), Image.LANCZOS)
+    staged = Path(tmpdir) / (src.stem + ".staged.png")
+    im.save(staged)
+    return staged, im.size
+
+
+def plan_names(files, dest_dir):
+    """Keep explicit header/stepN names. Auto-number anything else into free slots."""
+    taken = set()
+    for p in dest_dir.glob("*.webp"):
+        m = STEP_RE.match(p.stem)
+        if m:
+            taken.add(int(m.group(1)))
+
+    named, unnamed = [], []
+    for f in files:
+        stem = f.stem.lower()
+        if stem == "header":
+            named.append((f, "header"))
+        elif STEP_RE.match(stem):
+            n = int(STEP_RE.match(stem).group(1))
+            taken.add(n)
+            named.append((f, f"step{n}"))
+        else:
+            unnamed.append(f)
+
+    n = 1
+    for f in unnamed:
+        while n in taken:
+            n += 1
+        taken.add(n)
+        named.append((f, f"step{n}"))
+        n += 1
+
+    return sorted(named, key=lambda x: (x[1] != "header", x[1]))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug", nargs="?")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--quality", type=int, default=82)
+    ap.add_argument("--width", type=int, default=1200)
+    ap.add_argument("--list", action="store_true", help="show inbox folders")
+    args = ap.parse_args()
+
+    if args.list or not args.slug:
+        INBOX.mkdir(exist_ok=True)
+        dirs = sorted(d for d in INBOX.iterdir() if d.is_dir())
+        if not dirs:
+            print(f"inbox is empty. drop photos in {INBOX}/<slug>/")
+        for d in dirs:
+            n = len([f for f in d.iterdir() if f.suffix.lower() in HEIF | DIRECT])
+            print(f"  {d.name:<28} {n} photo{'s' if n != 1 else ''}")
+        return
+
+    if not shutil.which("cwebp"):
+        die("cwebp not found (brew install webp)")
+
+    slug = args.slug.strip("/")
+    src_dir = INBOX / slug
+    if not src_dir.is_dir():
+        src_dir.mkdir(parents=True, exist_ok=True)
+        print(f"created {src_dir}")
+        die(f"no photos yet. drop them in and re-run: blog-img {slug}")
+
+    files = sorted(f for f in src_dir.iterdir() if f.suffix.lower() in HEIF | DIRECT)
+    if not files:
+        die(f"no images in {src_dir}")
+
+    dest_dir = DEST / slug
+    mapping = plan_names(files, dest_dir)
+
+    existing = {p.stem for p in dest_dir.glob("*.webp")} if dest_dir.exists() else set()
+    auto = [s for s, n in mapping if s.stem.lower() != n]
+    if existing and auto:
+        print(f"note: static/images/{slug}/ already has {len(existing)} image(s).")
+        print("      unnamed photos get the next free step number, they won't overwrite.")
+        print("      clear the inbox after a run, or rename explicitly to replace.\n")
+
+    if args.dry_run:
+        print(f"would write to static/images/{slug}/")
+        for src, name in mapping:
+            print(f"  {src.name:<32} -> {name}.webp")
+        return
+
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    done = []
+    with tempfile.TemporaryDirectory() as tmpdir:
+        for src, name in mapping:
+            staged, size = prepare(src, tmpdir, args.width)
+            out = dest_dir / f"{name}.webp"
+            subprocess.run(
+                ["cwebp", "-q", str(args.quality), str(staged), "-o", str(out)],
+                check=True, capture_output=True,
+            )
+            kb = out.stat().st_size / 1024
+            print(f"  {src.name:<32} -> {name}.webp  {size[0]}x{size[1]}  {kb:.0f}KB")
+            done.append(name)
+
+    print(f"\n{len(done)} image{'s' if len(done) != 1 else ''} -> static/images/{slug}/")
+    print("originals kept in the inbox, delete when you're happy\n")
+
+    print("--- paste into the recipe ---\n")
+    for name in done:
+        if name == "header":
+            print(f"![{slug}](/images/{slug}/header.webp)\n")
+        else:
+            print("<details>")
+            print("<summary>show photo</summary>\n")
+            print(f"![](/images/{slug}/{name}.webp)\n")
+            print("</details>\n")
+
+
+if __name__ == "__main__":
+    main()
