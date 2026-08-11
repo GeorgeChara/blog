@@ -1,5 +1,6 @@
 ---
 title: "Sausage and Butter Bean Casserole"
+cooked: false
 tags: [freezer, make-ahead, dutch-oven]
 toc: false
 showreadingtime: false

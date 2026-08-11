@@ -1,5 +1,6 @@
 ---
 title: "Smoothies"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Butter"
+cooked: true
 tags: [freezer, stand-mixer]
 toc: false
 showreadingtime: false

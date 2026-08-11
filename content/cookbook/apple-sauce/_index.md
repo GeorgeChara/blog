@@ -1,5 +1,6 @@
 ---
 title: "Apple Sauce"
+cooked: false
 tags: [freezer, microwave]
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Flapjacks"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

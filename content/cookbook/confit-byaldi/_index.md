@@ -1,5 +1,6 @@
 ---
 title: "Confit Byaldi (Ratatouille)"
+cooked: true
 tags: [stand-mixer]
 toc: false
 showreadingtime: false

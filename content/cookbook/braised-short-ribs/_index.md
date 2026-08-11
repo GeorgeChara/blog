@@ -1,5 +1,6 @@
 ---
 title: "Braised Short Ribs"
+cooked: false
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

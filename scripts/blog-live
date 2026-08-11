@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Flip a cookbook link from grey (pending) to blue (cooked and verified).
+"""Flip a recipe from grey (pending) to blue (cooked and verified).
 
 Usage:
     blog-live <slug>            grey -> blue
     blog-live <slug> --undo     blue -> grey
     blog-live --pending         list everything still grey
 
-Also re-syncs the ❄ freezer icon from the recipe's frontmatter tags, so fixing a
-tag and re-running is enough to correct the index.
+The recipe's `cooked:` frontmatter is the source of truth. This sets it, then
+regenerates that recipe's index entry to match (grey/blue plus the ❄ icon). You
+can also just edit `cooked:` in the recipe by hand and run blog-synctags.
 """
 
 import argparse
@@ -29,10 +30,30 @@ def die(msg):
 
 def is_freezer(slug):
     page = COOKBOOK / slug / "_index.md"
-    if not page.exists():
-        return None
     m = re.search(r"^tags:\s*\[([^\]]*)\]", page.read_text(), re.M)
     return "freezer" in (m.group(1) if m else "")
+
+
+def set_cooked(slug, value):
+    """Write cooked: true/false into the recipe frontmatter. Returns False if
+    it was already that value."""
+    page = COOKBOOK / slug / "_index.md"
+    if not page.exists():
+        die(f"no recipe page for {slug}")
+    text = page.read_text()
+    m = re.search(r"^cooked:\s*(true|false)\s*$", text, re.M | re.I)
+    want = "true" if value else "false"
+    if m:
+        if m.group(1).lower() == want:
+            return False
+        text = text[:m.start()] + f"cooked: {want}" + text[m.end():]
+    else:
+        # no field yet, add it right after the title line
+        text, n = re.subn(r"(^title:.*$)", r"\1\ncooked: " + want, text, count=1, flags=re.M)
+        if not n:
+            die(f"{slug} has no title line to anchor cooked:")
+    page.write_text(text)
+    return True
 
 
 def main():
@@ -55,35 +76,33 @@ def main():
     slug = args.slug.strip("/").lower()
     href = f'/cookbook/{slug}/'
     hits = [i for i, l in enumerate(lines) if f'href="{href}"' in l]
-
     if not hits:
         die(f"{slug} is not in the cookbook index")
     if len(hits) > 1:
         die(f"{slug} appears {len(hits)} times in the index, fix that by hand")
 
+    changed = set_cooked(slug, not args.undo)
+
+    # Regenerate this index line from the (now updated) frontmatter.
     i = hits[0]
     before = lines[i]
+    m = re.match(r'<li(?: class="pending")?(?: data-tags="[^"]*")?>'
+                 r'(<a href="[^"]+">[^<]+</a>)', before)
+    inner = m.group(1) if m else re.search(r'(<a href.*</a>)', before).group(1)
+    tags = re.search(r'data-tags="([^"]*)"', before)
+    attrs = ' class="pending"' if args.undo else ""
+    if tags:
+        attrs += f' data-tags="{tags.group(1)}"'
+    icon = FRZ if is_freezer(slug) else ""
+    lines[i] = f"<li{attrs}>{inner}{icon}</li>"
 
-    if args.undo:
-        line = re.sub(r"^<li(?: class=\"pending\")?>", '<li class="pending">', before)
-    else:
-        line = re.sub(r"^<li class=\"pending\">", "<li>", before)
-
-    frz = is_freezer(slug)
-    if frz is not None:
-        line = line.replace(FRZ, "")
-        if frz:
-            line = line.replace("</a>", f"</a>{FRZ}")
-
-    if line == before:
-        state = "already grey" if args.undo else "already blue"
-        print(f"{slug}: {state}, nothing to do")
-        return
-
-    lines[i] = line
     INDEX.write_text("\n".join(lines) + "\n")
-    print(f"{slug}: {'blue -> grey' if args.undo else 'grey -> blue'}")
-    print(f"  {line}")
+
+    if not changed and lines[i] == before:
+        print(f"{slug}: already {'grey' if args.undo else 'blue'}, nothing to do")
+    else:
+        print(f"{slug}: {'blue -> grey' if args.undo else 'grey -> blue'}")
+        print(f"  {lines[i]}")
 
 
 if __name__ == "__main__":

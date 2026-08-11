@@ -1,5 +1,6 @@
 ---
 title: "Shokupan"
+cooked: false
 tags: [stand-mixer]
 toc: false
 showreadingtime: false

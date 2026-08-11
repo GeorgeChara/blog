@@ -1,5 +1,6 @@
 ---
 title: "Soy Garlic Salmon"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

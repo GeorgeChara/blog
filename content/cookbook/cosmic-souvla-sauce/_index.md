@@ -1,5 +1,6 @@
 ---
 title: "Cosmic Souvla Sauce"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

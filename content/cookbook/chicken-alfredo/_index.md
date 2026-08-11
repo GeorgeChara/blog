@@ -1,5 +1,6 @@
 ---
 title: "Chicken Alfredo"
+cooked: false
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

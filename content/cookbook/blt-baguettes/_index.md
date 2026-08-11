@@ -1,5 +1,6 @@
 ---
 title: "BLT Baguettes"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

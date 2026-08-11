@@ -1,5 +1,6 @@
 ---
 title: "Rice"
+cooked: false
 tags: [freezer, dutch-oven, microwave]
 toc: false
 showreadingtime: false

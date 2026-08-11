@@ -1,5 +1,6 @@
 ---
 title: "Lazy Boule"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

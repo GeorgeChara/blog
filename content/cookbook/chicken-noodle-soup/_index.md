@@ -1,5 +1,6 @@
 ---
 title: "Chicken Noodle Soup"
+cooked: false
 tags: [freezer, make-ahead]
 toc: false
 showreadingtime: false

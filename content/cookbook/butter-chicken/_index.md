@@ -1,5 +1,6 @@
 ---
 title: "Butter Chicken"
+cooked: false
 tags: [freezer, make-ahead, dutch-oven]
 toc: false
 showreadingtime: false

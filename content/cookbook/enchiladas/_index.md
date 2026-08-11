@@ -1,5 +1,6 @@
 ---
 title: "Enchiladas"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

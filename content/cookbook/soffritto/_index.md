@@ -1,5 +1,6 @@
 ---
 title: "Soffritto"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

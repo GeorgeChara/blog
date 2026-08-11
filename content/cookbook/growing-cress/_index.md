@@ -1,5 +1,6 @@
 ---
 title: "Growing Cress"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

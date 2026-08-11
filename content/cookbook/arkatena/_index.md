@@ -1,5 +1,6 @@
 ---
 title: "Arkatena"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

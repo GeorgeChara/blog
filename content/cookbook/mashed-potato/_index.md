@@ -1,5 +1,6 @@
 ---
 title: "Mashed Potato"
+cooked: false
 tags: [freezer, stand-mixer]
 toc: false
 showreadingtime: false

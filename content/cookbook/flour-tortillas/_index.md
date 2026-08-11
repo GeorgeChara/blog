@@ -1,5 +1,6 @@
 ---
 title: "Flour Tortillas"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

@@ -1,5 +1,6 @@
 ---
 title: "Buttercream"
+cooked: true
 tags: [freezer]
 toc: false
 showreadingtime: false

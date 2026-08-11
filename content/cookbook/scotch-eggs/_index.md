@@ -1,5 +1,6 @@
 ---
 title: "Scotch Eggs"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

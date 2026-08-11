@@ -1,5 +1,6 @@
 ---
 title: "Mujadara"
+cooked: false
 tags: [freezer, make-ahead, vegetarian]
 toc: false
 showreadingtime: false

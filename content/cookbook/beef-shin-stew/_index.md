@@ -1,5 +1,6 @@
 ---
 title: "Beef Shin Stew"
+cooked: false
 tags: [freezer, make-ahead, dutch-oven]
 toc: false
 showreadingtime: false

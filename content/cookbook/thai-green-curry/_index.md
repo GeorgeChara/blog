@@ -1,5 +1,6 @@
 ---
 title: "Thai Green Curry"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

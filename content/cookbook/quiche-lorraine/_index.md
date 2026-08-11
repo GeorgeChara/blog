@@ -1,5 +1,6 @@
 ---
 title: "Quiche Lorraine"
+cooked: false
 tags: []
 toc: false
 showreadingtime: false

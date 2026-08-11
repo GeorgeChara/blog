@@ -1,5 +1,6 @@
 ---
 title: "Banana Bread"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

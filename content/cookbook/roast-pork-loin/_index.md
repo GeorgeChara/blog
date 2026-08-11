@@ -1,5 +1,6 @@
 ---
 title: "Roast Pork Loin"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Pot-Roast Chicken Thighs"
+cooked: false
 tags: [freezer, dutch-oven]
 toc: false
 showreadingtime: false

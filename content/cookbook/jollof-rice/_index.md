@@ -1,5 +1,6 @@
 ---
 title: "Jollof Rice"
+cooked: false
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

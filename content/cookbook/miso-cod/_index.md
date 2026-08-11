@@ -1,5 +1,6 @@
 ---
 title: "Miso Cod"
+cooked: false
 toc: false
 showreadingtime: false
 layout: single

@@ -1,5 +1,6 @@
 ---
 title: "Aji Verde"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

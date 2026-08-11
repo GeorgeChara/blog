@@ -1,5 +1,6 @@
 ---
 title: "Tottenham Cake"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

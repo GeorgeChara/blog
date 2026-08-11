@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync data-tags onto each cookbook index entry from recipe frontmatter.
+"""Regenerate each cookbook index entry from the recipe's frontmatter.
 
 Usage:
     blog-synctags --dry-run
@@ -7,8 +7,10 @@ Usage:
     blog-synctags --counts     tag counts, for the chip row
 
 The index is hand-maintained HTML, so anything duplicated into it drifts. This
-regenerates the data-tags attribute (and the ❄ icon) from frontmatter every run,
-the same way blog-live does for a single recipe. Run it after changing any tags.
+rebuilds each <li> from the recipe frontmatter every run: data-tags and the ❄
+icon from `tags:`, and the grey/blue state from `cooked:` (true = blue link,
+false or absent = grey/pending). Frontmatter is the source of truth, so flip
+`cooked:` in the recipe and run this. Run it after changing any tags too.
 """
 
 import argparse
@@ -32,6 +34,15 @@ def tags_for(slug):
     return sorted(t.strip() for t in m.group(1).split(",") if t.strip())
 
 
+def cooked_for(slug):
+    """True (blue link) / False (grey, pending). Absent counts as not cooked."""
+    p = COOKBOOK / slug / "_index.md"
+    if not p.exists():
+        return False
+    m = re.search(r"^cooked:\s*(true|false)\s*$", p.read_text(), re.M | re.I)
+    return bool(m and m.group(1).lower() == "true")
+
+
 def rewrite(line):
     """Return (new_line, slug, tags) or (line, None, None) if not a recipe entry."""
     m = re.match(r'(<li)((?: [^>]*)?)(><a href="/cookbook/([^"]+)/">)(.*?)(</a>)(.*?)(</li>)$',
@@ -45,7 +56,8 @@ def rewrite(line):
         print(f"warn: no recipe page for {slug}", file=sys.stderr)
         return line, None, None
 
-    pending = 'class="pending"' in attrs
+    # Frontmatter drives the colour now: cooked:true -> blue, else grey/pending.
+    pending = not cooked_for(slug)
     parts = []
     if pending:
         parts.append('class="pending"')

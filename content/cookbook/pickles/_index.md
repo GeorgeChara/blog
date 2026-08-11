@@ -1,5 +1,6 @@
 ---
 title: "Pickles"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

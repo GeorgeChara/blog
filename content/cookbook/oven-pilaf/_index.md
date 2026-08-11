@@ -1,5 +1,6 @@
 ---
 title: "Oven Pilaf"
+cooked: false
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

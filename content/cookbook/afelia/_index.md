@@ -1,5 +1,6 @@
 ---
 title: "Afelia"
+cooked: false
 toc: false
 showreadingtime: false
 layout: single

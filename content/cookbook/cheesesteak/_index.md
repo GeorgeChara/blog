@@ -1,5 +1,6 @@
 ---
 title: "Cheesesteak"
+cooked: true
 tags: [cast-iron]
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Chana Saag"
+cooked: false
 tags: [freezer, make-ahead, vegan]
 toc: false
 showreadingtime: false

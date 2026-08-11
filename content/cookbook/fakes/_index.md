@@ -1,5 +1,6 @@
 ---
 title: "Fakes"
+cooked: false
 tags: [freezer, make-ahead, vegan]
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Pupusas"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Breakfast Burritos"
+cooked: true
 tags: [freezer, microwave]
 toc: false
 showreadingtime: false

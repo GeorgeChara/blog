@@ -1,5 +1,6 @@
 ---
 title: "Kleftiko"
+cooked: true
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

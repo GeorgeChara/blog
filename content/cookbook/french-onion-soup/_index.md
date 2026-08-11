@@ -1,5 +1,6 @@
 ---
 title: "French Onion Soup"
+cooked: false
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

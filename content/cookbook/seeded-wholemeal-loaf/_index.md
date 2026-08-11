@@ -1,5 +1,6 @@
 ---
 title: "Seeded Wholemeal Loaf"
+cooked: false
 tags: [freezer, stand-mixer]
 toc: false
 showreadingtime: false

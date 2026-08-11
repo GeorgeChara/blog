@@ -1,5 +1,6 @@
 ---
 title: "Pikla"
+cooked: false
 tags: []
 toc: false
 showreadingtime: false

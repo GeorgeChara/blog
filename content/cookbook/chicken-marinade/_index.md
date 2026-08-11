@@ -1,5 +1,6 @@
 ---
 title: "Chicken Marinade"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

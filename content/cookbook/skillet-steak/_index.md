@@ -1,5 +1,6 @@
 ---
 title: "Skillet Steak"
+cooked: false
 toc: false
 showreadingtime: false
 layout: single

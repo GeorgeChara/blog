@@ -1,5 +1,6 @@
 ---
 title: "Boule"
+cooked: true
 tags: [dutch-oven]
 toc: false
 showreadingtime: false

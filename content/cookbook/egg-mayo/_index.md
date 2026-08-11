@@ -1,5 +1,6 @@
 ---
 title: "Egg Mayo"
+cooked: true
 toc: false
 showreadingtime: false
 layout: single

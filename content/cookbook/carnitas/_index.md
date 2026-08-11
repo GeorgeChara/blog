@@ -1,5 +1,6 @@
 ---
 title: "Carnitas"
+cooked: true
 tags: [freezer, dutch-oven, stand-mixer]
 toc: false
 showreadingtime: false

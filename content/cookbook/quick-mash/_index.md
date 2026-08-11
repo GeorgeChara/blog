@@ -1,5 +1,6 @@
 ---
 title: "Quick Mash"
+cooked: false
 tags: [freezer, make-ahead, microwave]
 toc: false
 showreadingtime: false

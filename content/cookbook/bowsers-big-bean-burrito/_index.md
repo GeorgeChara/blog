@@ -1,5 +1,6 @@
 ---
 title: "Bowser's Big Bean Burrito"
+cooked: false
 tags: [freezer, microwave]
 toc: false
 showreadingtime: false

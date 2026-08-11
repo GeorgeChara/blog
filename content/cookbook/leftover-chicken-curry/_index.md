@@ -1,5 +1,6 @@
 ---
 title: "Leftover Chicken Curry"
+cooked: false
 tags: []
 toc: false
 showreadingtime: false

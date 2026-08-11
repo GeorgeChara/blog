@@ -110,9 +110,14 @@ def main():
     tags = re.search(r"^tags:\s*\[([^\]]*)\]", body, re.M)
     freezer = "freezer" in (tags.group(1) if tags else "")
 
-    cls = "" if args.live else ' class="pending"'
+    # Grey unless the recipe's own frontmatter says cooked, or --live overrides.
+    cooked = re.search(r"^cooked:\s*true\s*$", body, re.M | re.I) is not None
+    tag_str = " ".join(sorted(t.strip() for t in tags.group(1).split(",") if t.strip())) if tags else ""
+
+    cls = "" if (args.live or cooked) else ' class="pending"'
+    data = f' data-tags="{tag_str}"' if tag_str else ""
     icon = '<span class="frz">❄</span>' if freezer else ""
-    entry = f'<li{cls}><a href="/cookbook/{slug}/">{title}</a>{icon}</li>'
+    entry = f'<li{cls}{data}><a href="/cookbook/{slug}/">{title}</a>{icon}</li>'
 
     lo, hi = find_list(lines, args.cat, args.subcat)
     pos = hi

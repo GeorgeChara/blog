@@ -1,5 +1,6 @@
 ---
 title: "Ragù"
+cooked: false
 tags: [freezer]
 toc: false
 showreadingtime: false

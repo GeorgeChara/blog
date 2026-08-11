@@ -64,8 +64,11 @@ yeast     2g
 ```
 
 ## Cookbook index (`/content/cookbook/_index.md`)
-- Hand-maintained, grouped by category (Bread, Sweet, Savoury, Cypriot, Sauces & Preserves)
-- Each recipe is an `<li>`: published = normal link, pending/unwritten = `<li class="pending">` (greyed out)
+- Hand-maintained HTML, grouped by category (Bread, Sweet, Savoury, Cypriot, Sauces & Preserves)
 - Keep each category alphabetical when adding a recipe
-- Icons after the link mirror the recipe's frontmatter tags:
-  - `freezer` → `<span class="frz">❄</span>`
+- **Each `<li>` is generated from the recipe's frontmatter, don't hand-edit the state:**
+  - grey/blue comes from `cooked:` (true = blue link, false/absent = `class="pending"`, greyed out)
+  - `data-tags` and the ❄ icon come from `tags:`
+- Flip `cooked:` in the recipe file, then run `scripts/blog-synctags` to regenerate
+  the index. Or use `scripts/blog-live <slug>` which does both. Never set the pending
+  class by hand, the next sync overwrites it.

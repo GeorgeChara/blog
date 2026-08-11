@@ -1,5 +1,6 @@
 ---
 title: "Tahdig"
+cooked: false
 tags: [vegetarian, dutch-oven]
 toc: false
 showreadingtime: false

@@ -1,5 +1,6 @@
 ---
 title: "Pickled Red Onions"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

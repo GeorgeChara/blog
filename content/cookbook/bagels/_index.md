@@ -1,5 +1,6 @@
 ---
 title: "Bagels"
+cooked: true
 tags: [stand-mixer]
 toc: false
 showreadingtime: false

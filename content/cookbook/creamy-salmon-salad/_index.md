@@ -1,5 +1,6 @@
 ---
 title: "Creamy Salmon Salad"
+cooked: true
 tags: []
 toc: false
 showreadingtime: false
