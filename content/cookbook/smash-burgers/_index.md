@@ -1,6 +1,6 @@
 ---
 title: "Smash Burgers"
-cooked: false
+cooked: true
 tags: [cast-iron]
 toc: false
 showreadingtime: false

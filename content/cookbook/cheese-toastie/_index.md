@@ -1,6 +1,6 @@
 ---
 title: "Cheese Toastie"
-cooked: false
+cooked: true
 tags: []
 toc: false
 showreadingtime: false
@@ -37,6 +37,7 @@ butter
 
 **3.** Cook in a dry pan over low medium heat, covered with a lid, 3 to 4 minutes until deep golden underneath.
 
-**4.** Flip, press down, and cook another 3 to 4 minutes until both sides are golden and the cheese is fully molten.
+**4.** Flip, press down, and cook another 3 to 4 minutes until both sides are golden and the cheese has melted.
+
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Low medium heat is the trick. Too hot and the bread burns before the cheese melts. The lid traps heat to melt the middle.<br>Mayo on the outside instead of butter browns even more evenly and won't catch.</span>

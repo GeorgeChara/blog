@@ -54,7 +54,7 @@ nutmeg             1 tsp, grated
 salt and pepper    to season
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cypriot moussaka uses pork, or a pork and beef mix, with more cinnamon than the Greek lamb version.<br>Grate 60g halloumi into the finished bechamel if you like. Traditional and good.<br>Potatoes on the bottom is the Cypriot part.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cypriot moussaka uses pork, or a pork and beef mix.</span>
 
 ## Recipe
 

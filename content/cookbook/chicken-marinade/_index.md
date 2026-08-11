@@ -1,6 +1,6 @@
 ---
 title: "Chicken Marinade"
-cooked: false
+cooked: true
 tags: [freezer]
 toc: false
 showreadingtime: false
@@ -34,7 +34,7 @@ salt             1 tsp
 pepper           to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk the chipotle paste straight into the buttermilk, no need to dilute it. Start with 1 tbsp and add more for heat.<br>Buttermilk is already acidic, so go easy on the lemon, zest or a small squeeze is plenty.<br>A good use for the buttermilk left from making <a href="/cookbook/butter/">butter</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Start with 1 tbsp of chipotle and add more for heat.<br>Buttermilk is already acidic, so go easy on the lemon, zest or a small squeeze is plenty.<br>A good use for the buttermilk left from making <a href="/cookbook/butter/">butter</a>.</span>
 
 ## Recipe
 

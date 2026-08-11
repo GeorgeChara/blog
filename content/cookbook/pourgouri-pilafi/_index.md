@@ -1,6 +1,6 @@
 ---
 title: "Pourgouri Pilafi"
-cooked: false
+cooked: true
 tags: []
 toc: false
 showreadingtime: false

@@ -1,6 +1,6 @@
 ---
 title: "Louvi"
-cooked: false
+cooked: true
 tags: []
 toc: false
 showreadingtime: false
@@ -16,13 +16,13 @@ layout: single
 </style>
 
 <h1>Louvi</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot black-eyed peas with greens, serves 4-6</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot black eyed peas with greens, serves 4-6</p>
 
 ## Ingredients
 
 <pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;"><span style="color: #888;">Serves 4-6</span>
 
-black-eyed peas  500g
+black eyed peas  500g
 Swiss chard      300g
 potatoes         300g
 courgette        200g
@@ -34,13 +34,13 @@ salt             to taste
 black pepper     to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The olive oil and lemon are not garnish. They are the point. Use the best olive oil you have and be generous.<br>Serve with olives, crusty bread and raw tomatoes.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The olive oil and lemon are not garnish. They are the whole flavour. Use the best olive oil you have and be generous.<br>Serve with olives, crusty bread and raw tomatoes.</span>
 
 ## Recipe
 
 **1.** Rinse the black-eyed peas. Cover with cold water, bring to a boil and boil for 15 minutes. Drain and discard this first water.
 
-**2.** Heat a good glug of olive oil in a large pot. Onion and salt first for 5 minutes, then the garlic for another minute:
+**2.** Heat olive oil in a large pot. Onion and salt first for 5 minutes, then the garlic for another minute:
 
 {{< ingr "onion=100g chopped, salt=pinch, garlic=4 cloves sliced" >}}
 
@@ -50,4 +50,4 @@ black pepper     to taste
 
 **5.** Add the courgette and roughly chopped chard. Season well. Cook for 20 more minutes until everything is tender and the broth has thickened slightly.
 
-**6.** Serve in deep bowls. Everyone adds their own: a very generous squeeze of lemon, a lot of olive oil, salt and pepper.
+**6.** Serve in bowls with salt, pepper, lemon and olive oil.
