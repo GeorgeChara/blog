@@ -1,5 +1,6 @@
 ---
 title: "Ragù"
+tags: [freezer]
 toc: false
 showreadingtime: false
 layout: single
@@ -50,6 +51,6 @@ black pepper   to taste
 
 **7.** Cool completely. Portion into freezer bags or containers (roughly 150-200g per person). Label with the date.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Storing:</strong> pour into wide-mouth mason jars while still warm, leave a couple of centimetres of space at the top for expansion, seal and freeze. Straight into the fridge once opened, eat within 4 days.<br><strong>From frozen:</strong> straight into a pan on low heat, lid on, 10-15 minutes. Add a splash of water if it sticks.<br><strong>Use for:</strong> pasta, lasagne, cottage pie, stuffed peppers, in a toasted baguette with cheese, or thinned with stock as a soup base.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:1.2em; border-left: 2px solid #E5DECF; padding-left: 0.6em;"><strong>Storing:</strong> pour into wide mouth mason jars while still warm, leave a couple of centimetres of space at the top for expansion, seal and freeze. Straight into the fridge once opened, eat within 4 days.<br><strong>From frozen:</strong> straight into a pan on low heat, lid on, 10-15 minutes. Add a splash of water if it sticks.<br><strong>Use for:</strong> pasta, lasagne, cottage pie, stuffed peppers, in a toasted baguette with cheese, or thinned with stock as a soup base.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: cool, then portion flat in bags. It improves with freezing.<br>Reheat: from frozen with a splash of water, or thaw in the fridge.<br>Keeps: 3/6 months frozen, 4 days in the fridge.</span>

@@ -1,5 +1,6 @@
 ---
 title: "Buttermilk Pancakes"
+tags: [freezer, microwave, stand-mixer]
 toc: false
 showreadingtime: false
 layout: single

@@ -3,7 +3,7 @@ title: "Skillet Cookie"
 toc: false
 showreadingtime: false
 layout: single
-tags: [freezer, vegetarian]
+tags: [freezer, vegetarian, cast-iron, stand-mixer]
 ---
 
 <style>
@@ -17,7 +17,7 @@ tags: [freezer, vegetarian]
 </style>
 
 <h1>Skillet Cookie</h1>
-<p style="color: #888; margin-top: -0.5em;">serves 8, 40 min, 180°C, 25cm skillet</p>
+<p style="color: #888; margin-top: -0.5em;">serves 8, 40 min, 180°C (160°C fan), 25cm skillet</p>
 
 ## Ingredients
 

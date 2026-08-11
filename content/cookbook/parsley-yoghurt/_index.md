@@ -1,5 +1,6 @@
 ---
 title: "Parsley Yoghurt"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -26,7 +27,7 @@ olive oil       1 tbsp
 salt            to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Blend it for a smooth lime-green sauce, or finely chop the parsley and stir through for a white sauce with green flecks.<br>Loosen with a splash of water if you want it drizzly.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Blend it for a smooth lime green sauce, or finely chop the parsley and stir through for a white sauce with green flecks.<br>Loosen with a splash of water if you want it drizzly.</span>
 
 ## Recipe
 
@@ -40,7 +41,7 @@ Or chop the parsley fine and stir everything together by hand.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Top with <a href="/cookbook/pickled-red-onions/">pickled red onions</a> for a sharp, pink finish against the green.</span>
 
-## Mix-ins
+## Extras
 
 Classic ways to take it somewhere:
 

@@ -1,5 +1,6 @@
 ---
 title: "Louvi"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -38,7 +39,9 @@ black pepper     to taste
 
 **1.** Rinse the black-eyed peas. Cover with cold water, bring to a boil and boil for 15 minutes. Drain and discard this first water.
 
-**2.** Heat a good glug of olive oil in a large pot. Add the chopped onion with a pinch of salt and cook for 5 minutes. Add the sliced garlic and cook for another minute.
+**2.** Heat a good glug of olive oil in a large pot. Onion and salt first for 5 minutes, then the garlic for another minute:
+
+{{< ingr "onion=100g chopped, salt=pinch, garlic=4 cloves sliced" >}}
 
 **3.** Return the peas to the pot with 2 litres of fresh cold water. Bring to a boil, then cover and simmer for 45 minutes.
 

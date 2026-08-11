@@ -1,5 +1,6 @@
 ---
 title: "Braised Short Ribs"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -36,21 +37,23 @@ fresh thyme        few sprigs
 fresh rosemary     1 sprig
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Beef short ribs are sometimes sold as Jacob's ladder. Ask the butcher if your supermarket doesn't have them.<br>Use a red wine good enough to drink. Cheap and harsh shows in the sauce.<br>Serve over <a href="/cookbook/mashed-potato/">mashed potato</a> to catch the sauce.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use a red wine good enough to drink. Cheap and harsh shows in the sauce.<br>Serve over <a href="/cookbook/mashed-potato/">mashed potato</a> to catch the sauce.</span>
 
 ## Recipe
 
 **1.** Season the short ribs generously with salt and pepper. Leave 30 minutes to come to room temperature.
 
-**2.** Heat the oil in the Dutch oven over medium-high. Sear the ribs on all sides until deeply browned. Remove and set aside.
+**2.** Heat the oil in the Dutch oven over medium high. Sear the ribs on all sides until deeply browned. Remove and set aside.
 
-**3.** Add the diced onion, carrot and celery. Soften for 8/10 minutes. Add the garlic and tomato puree and cook 1 minute.
+**3.** Soften for 8/10 minutes, then add the garlic and tomato puree and cook 1 minute:
+
+{{< ingr "onion=1 diced, carrots=2, celery=2 sticks, garlic=4 cloves, tomato puree=2 tbsp" >}}
 
 **4.** Pour in the wine, scraping the base of the pot, and reduce by half, about 15 minutes.
 
 **5.** Add the stock, bay, thyme and rosemary. Return the ribs to the pot and bring to a simmer.
 
-**6.** Lid on, into the oven at 160°C for 3 hours until the meat is fall-apart tender.
+**6.** Lid on, into the oven at 160°C (140°C fan) for 3 hours until the meat is falling apart tender.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Don't want to move the pot to the oven? Braise on the lowest hob setting with the lid on for the same time, stirring now and then.</span>
 

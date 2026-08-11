@@ -3,7 +3,7 @@ title: "Matilda Chocolate Cake"
 toc: false
 showreadingtime: false
 layout: single
-tags: [vegetarian]
+tags: [vegetarian, stand-mixer]
 ---
 
 <style>
@@ -17,7 +17,7 @@ tags: [vegetarian]
 </style>
 
 <h1>Matilda Chocolate Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">1 hr plus chilling, 180°C, three 20cm tins</p>
+<p style="color: #888; margin-top: -0.5em;">1 hr plus chilling, 180°C (160°C fan), three 20cm tins</p>
 
 ## Ingredients
 
@@ -52,7 +52,13 @@ double cream         300ml, chilled
 
 **1.** Heat the oven to 180°C (160°C fan). Grease and line three 20cm tins.
 
-**2.** Whisk the flour, baking powder, bicarbonate of soda, both sugars and salt in one bowl. In another, whisk the eggs, oil, buttermilk and soured cream until smooth.
+**2.** Whisk the dry in one bowl:
+
+{{< ingr "plain flour=260g, baking powder=1.5 tsp, bicarbonate of soda=1.5 tsp, caster sugar=200g, light brown sugar=135g, salt=1 tsp" >}}
+
+In another, whisk the wet until smooth:
+
+{{< ingr "eggs=3, vegetable oil=135g, buttermilk=80g, soured cream=240g" >}}
 
 **3.** Mix the cocoa and coffee into the boiling water to a smooth paste.
 
@@ -70,7 +76,11 @@ double cream         300ml, chilled
 
 **7.** Melt the chocolate with the golden syrup over low heat, stirring, then set aside.
 
-**8.** In the stand mixer, beat the cream cheese, cocoa, icing sugar and salt until creamy. Add the cream and whisk to fluffy, then pour in the warm chocolate and whisk to a glossy, spreadable fudge.
+**8.** In the stand mixer, beat until creamy:
+
+{{< ingr "cream cheese=225g, cocoa powder=33g, icing sugar=100g, salt=1/4 tsp" >}}
+
+Add the cream and whisk to fluffy, then pour in the warm chocolate and whisk to a glossy, spreadable fudge.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">If it firms up too much, warm a spoonful and beat it back through.</span>
 

@@ -3,7 +3,7 @@ title: "Baked Cod"
 toc: false
 showreadingtime: false
 layout: single
-tags: []
+tags: [dutch-oven]
 ---
 
 <style>
@@ -35,9 +35,11 @@ salt and pepper    to season
 
 ## Recipe
 
-**1.** Heat the oven to 200°C. Pat the cod really dry on both sides.
+**1.** Heat the oven to 200°C (180°C fan). Pat the cod really dry on both sides.
 
-**2.** Mash the softened butter with the olive oil, garlic, parsley, paprika and a good pinch of salt and pepper into a rough paste.
+**2.** Mash into a rough paste:
+
+{{< ingr "softened butter=3 tbsp, olive oil=1 tbsp, garlic=3 cloves, parsley=2 tbsp, paprika=1/2 tsp, salt and pepper=good pinch" >}}
 
 **3.** Lay a few lemon slices across the base of the Le Creuset casserole dish. Sit the cod on top and spread the herb butter over each fillet. Tuck a couple more lemon slices on top.
 

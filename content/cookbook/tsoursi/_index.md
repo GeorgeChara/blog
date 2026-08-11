@@ -1,5 +1,6 @@
 ---
 title: "Tsoursi"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -35,11 +36,11 @@ sugar              15g
 black peppercorns  8g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tsoursi is a clean clear-brine pickle, not spiced with mustard or turmeric. That is Pikla.<br>Ready after 2-3 days, best at 1 week. Keeps 6 weeks refrigerated once opened.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tsoursi is a clean clear brine pickle, not spiced with mustard or turmeric. That is Pikla.<br>Ready after 2-3 days, best at 1 week. Keeps 6 weeks refrigerated once opened.</span>
 
 ## Recipe
 
-**1.** Cut all vegetables into even bite-sized pieces, keeping each type separate.
+**1.** Cut all vegetables into even bite size pieces, keeping each type separate.
 
 **2.** Blanch each type separately in boiling water for 3-5 minutes until just tender but still with plenty of bite. Drain well.
 

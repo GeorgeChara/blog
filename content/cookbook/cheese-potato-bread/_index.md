@@ -38,7 +38,9 @@ salt and pepper    to season
 
 ## Recipe
 
-**1.** Mix the flour and salt, add the butter and milk, and knead to a smooth dough. Chill 30 minutes.
+**1.** Knead to a smooth dough. Chill 30 minutes:
+
+{{< ingr "strong flour=120g, salt=pinch, butter=14g melted, milk=60g room temp" >}}
 
 **2.** Boil the peeled potato until tender. Mash while hot, stir in the mayonnaise and season.
 

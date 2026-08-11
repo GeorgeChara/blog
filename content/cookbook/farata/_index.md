@@ -1,5 +1,6 @@
 ---
 title: "Farata"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single

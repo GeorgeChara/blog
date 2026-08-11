@@ -1,5 +1,6 @@
 ---
 title: "Shokupan"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Shokupan</h1>
-<p style="color: #888; margin-top: -0.5em;">76% hydration, 25 min bake, 185°C</p>
+<p style="color: #888; margin-top: -0.5em;">76% hydration, 25 min bake, 185°C (165°C fan)</p>
 
 ## Ingredients
 
@@ -55,8 +56,8 @@ salt             5g
 
 **5.** Roll each piece into a 15x20cm rectangle. Fold both sides in to the centre, then rotate 90° and roll up into a log.
 
-**6.** Place both logs side by side seam-side down in a greased loaf tin. Cover and prove for 30 minutes until the dough reaches the top of the tin.
+**6.** Place both logs side by side seam side down in a greased loaf tin. Cover and prove for 30 minutes until the dough reaches the top of the tin.
 
-**7.** Bake at 185°C for 25-30 minutes until golden. Cool on a wire rack.
+**7.** Bake at 185°C (165°C fan) for 25-30 minutes until golden. Cool on a wire rack.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Wait until completely cool before slicing. The crumb needs time to set or it squashes.</span>

@@ -1,5 +1,6 @@
 ---
 title: "Rice"
+tags: [freezer, dutch-oven, microwave]
 toc: false
 showreadingtime: false
 layout: single
@@ -32,7 +33,9 @@ butter           knob
 
 **1.** Rinse the rice under cold water until it runs clear. This washes off the surface starch so it does not turn gluey.
 
-**2.** Add the rice, water, salt and butter to the Dutch oven. Bring to a boil.
+**2.** Into the Dutch oven and bring to a boil:
+
+{{< ingr "long grain rice=300g, water=450ml, salt=1/2 tsp, butter=knob" >}}
 
 **3.** Stir once, lid on, drop to the lowest heat. Leave 12 minutes, no peeking.
 

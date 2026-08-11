@@ -1,5 +1,6 @@
 ---
 title: "Smoothies"
+tags: []
 toc: false
 showreadingtime: false
 layout: single

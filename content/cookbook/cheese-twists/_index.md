@@ -1,5 +1,6 @@
 ---
 title: "Cheese Twists"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Cheese Twists</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C, makes 16-24</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C (180°C fan), makes 16-24</p>
 
 ## Ingredients
 
@@ -38,13 +39,13 @@ egg              1
 
 ## Recipe
 
-**1.** Heat the oven to 200°C. Line a large baking tray with baking paper.
+**1.** Heat the oven to 200°C (180°C fan). Line a large baking tray with baking paper.
 
 **2.** Roll the rough puff pastry to 3mm thick and cut into two equal rectangles.
 
-**3.** Brush one rectangle all over with beaten egg. Mix the cheeses and seasoning together and scatter evenly over the egg-washed piece. Press lightly into the pastry.
+**3.** Brush one rectangle all over with beaten egg. Mix the cheeses and seasoning together and scatter evenly over the egg washed piece. Press lightly into the pastry.
 
-**4.** Lay the second rectangle on top, egg-side down. Roll once gently to press them together. Brush the top with egg wash.
+**4.** Lay the second rectangle on top, egg side down. Roll once gently to press them together. Brush the top with egg wash.
 
 **5.** Cut into strips about 2cm wide. Pick up each strip by both ends and twist in opposite directions into a tight spiral. Press the ends firmly onto the lined tray.
 

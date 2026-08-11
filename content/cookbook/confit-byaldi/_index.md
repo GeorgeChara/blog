@@ -1,5 +1,6 @@
 ---
 title: "Confit Byaldi (Ratatouille)"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Confit Byaldi <span style="font-weight:normal; color:#888;">(Ratatouille)</span></h1>
-<p style="color: #888; margin-top: -0.5em;">2.5 hr bake, 135°C, serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">2.5 hr bake, 135°C (115°C fan), serves 4</p>
 
 <img loading="lazy" src="/images/confit-byaldi/header.webp" alt="Confit Byaldi">
 
@@ -54,9 +55,11 @@ balsamic vinegar 5g
 
 ### Piperade
 
-**1.** Heat the oven to 230°C. Place the pepper halves skin side down on a lined tray. Roast for 20-25 minutes until the skins blister. Leave to cool, peel and finely chop.
+**1.** Heat the oven to 230°C (210°C fan). Place the pepper halves skin side down on a lined tray. Roast for 20-25 minutes until the skins blister. Leave to cool, peel and finely chop.
 
-**2.** Heat the olive oil in a pan over medium-low heat. Add the onion and garlic and cook gently for 8 minutes until completely soft but not browned.
+**2.** Heat the olive oil in a pan over a low heat and cook gently for 8 minutes until completely soft but not browned:
+
+{{< ingr "olive oil=15g, onion=75g, garlic=3g" >}}
 
 **3.** Add the chopped tomatoes, thyme, parsley and bay leaf. Simmer on low for 10-15 minutes until thick. Stir in the roasted peppers and cook for another 5 minutes. Season, then remove the herb sprigs and bay leaf.
 
@@ -64,7 +67,7 @@ balsamic vinegar 5g
 
 ### Vegetable layer
 
-**5.** Reduce the oven to 135°C.
+**5.** Reduce the oven to 135°C (115°C fan).
 
 **6.** Slice all vegetables to 2mm rounds. Starting at the outer edge and working inward in a spiral, arrange in alternating order (courgette, aubergine, squash, tomato) with each slice overlapping the last by about 5mm.
 

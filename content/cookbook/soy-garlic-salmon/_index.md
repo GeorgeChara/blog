@@ -3,7 +3,7 @@ title: "Soy Garlic Salmon"
 toc: false
 showreadingtime: false
 layout: single
-tags: []
+tags: [cast-iron]
 ---
 
 <style>
@@ -48,11 +48,13 @@ sesame seeds       to scatter
 
 ## Recipe
 
-**1.** Pat the salmon really dry. Mix the soy, garlic, ginger, honey and water in a small bowl, keeping the sesame oil to one side.
+**1.** Pat the salmon really dry. Mix the glaze in a small bowl, keeping the sesame oil to one side:
+
+{{< ingr "soy sauce=2 tbsp, garlic=1 clove grated, ginger=thumb grated, honey=1 tsp, water=splash" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dry skin is what crisps, so pat it well.</span>
 
-**2.** Heat the oil in the pan on medium-high. Lay the salmon skin down and leave it until the skin is crisp and lifts freely, 3 to 4 minutes. Flip and cook 1 to 2 minutes more.
+**2.** Heat the oil in the pan on medium high. Lay the salmon skin down and leave it until the skin is crisp and lifts freely, 3 to 4 minutes. Flip and cook 1 to 2 minutes more.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">It sticks at first, then releases itself when the skin is crisp. Do not force it early.</span>
 
@@ -67,7 +69,9 @@ sesame seeds       to scatter
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Garlic and ginger scorch on high heat, so keep it low. The sesame oil goes in right at the end, off the boil.</span>
 
-**4.** Serve on rice with the sauce poured over, cucumber, avocado and edamame alongside. Scatter with spring onion and sesame.
+**4.** Serve on rice with the sauce poured over and the rest alongside:
+
+{{< ingr "cooked rice=2 bowls, cucumber=1/2 sliced, avocado=1 sliced, edamame=handful, spring onion=1 sliced, sesame seeds=to scatter" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flake the salmon into the sauce for a proper rice bowl, or keep the fillet whole.</span>
 

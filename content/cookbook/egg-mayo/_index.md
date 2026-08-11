@@ -34,7 +34,7 @@ salt and pepper to taste
 
 ## Recipe
 
-**1.** Lower the eggs into already-boiling water, boil for 10 minutes, then straight into cold water. The cold shock stops the cooking and the grey ring round the yolk.
+**1.** Lower the eggs into boiling water, boil for 10 minutes, then straight into cold water. The cold shock stops the cooking and the grey ring round the yolk.
 
 **2.** Peel and roughly mash with a fork. Leave some texture, you don't want a paste.
 

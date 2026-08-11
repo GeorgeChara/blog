@@ -1,5 +1,6 @@
 ---
 title: "Moussaka"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -20,7 +21,7 @@ layout: single
 </style>
 
 <h1>Moussaka</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot version, pork and beef mince, 1 hr bake at 180°C, serves 8-10</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot version, pork and beef mince, 1 hr bake at 180°C (160°C fan), serves 8-10</p>
 
 ## Ingredients
 
@@ -64,13 +65,19 @@ salt and pepper     to taste
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Shortcut: the air fryer handles aubergine and courgette well. Brush slices with oil, air fry at 200°C for 10-12 minutes, flipping halfway. Less oil, no mess, and they come out even. Do the potatoes in the air fryer too at 200°C for 15 minutes. No need to deep fry.</span>
 
-**2.** Peel the potatoes and slice into 5mm rounds. Slice the courgettes into 5mm rounds. Heat olive oil in a large frying pan and fry the potato slices in batches until golden on both sides. Drain on kitchen paper. Repeat with the courgettes and aubergine.
+**2.** Peel the potatoes and slice into 5mm rounds, same for the courgettes. Heat the oil in a large frying pan and fry the potato slices in batches until golden on both sides. Drain on kitchen paper. Repeat with the courgettes and aubergine:
 
-**3.** For the meat sauce: heat 30g olive oil in a wide pan over medium heat. Fry the onions until soft and golden, about 10 minutes. Add the garlic and cook for 1 minute.
+{{< ingr "potatoes=750g, courgettes=2 large, aubergines=2 large, olive oil=150g for frying" >}}
+
+**3.** For the meat sauce: heat the oil in a wide pan over medium heat. Fry the onions until soft and golden, about 10 minutes, then the garlic for 1 minute:
+
+{{< ingr "olive oil=30g, onions=2 large finely chopped, garlic=3 cloves crushed" >}}
 
 **4.** Add the mince. Break it up and cook until browned all over, about 8 minutes. Pour in the wine and let it bubble for 3-4 minutes.
 
-**5.** Add the passata, cinnamon, oregano, bay leaves, and parsley. Season with salt and pepper. Simmer uncovered on low heat for 20-25 minutes until the sauce is thick and the liquid has mostly gone.
+**5.** Add and simmer uncovered on low heat for 20-25 minutes until the sauce is thick and the liquid has mostly gone:
+
+{{< ingr "passata=500ml, ground cinnamon=9g, dried oregano=4g, bay leaves=4, flat leaf parsley=15g, salt and pepper=to taste" >}}
 
 **6.** Make the bechamel. Warm the milk in a small pan until just hot. In a separate pan melt the butter over medium heat, then add the flour and cook, stirring constantly, for 2 minutes.
 
@@ -78,7 +85,7 @@ salt and pepper     to taste
 
 **7.** Add the warm milk to the roux a ladleful at a time, whisking vigorously between each addition. Keep over medium heat. Once all the milk is in, whisk until the sauce thickens and coats the back of a spoon. Add nutmeg, season, and remove from heat.
 
-**8.** Preheat the oven to 180°C. Assemble in a deep ovenproof dish (roughly 30x22cm). Layer in this order: all the potatoes, then the aubergine, then the courgette, then all the meat sauce. Finish with the bechamel poured evenly over the top.
+**8.** Preheat the oven to 180°C (160°C fan). Assemble in a deep ovenproof dish (roughly 30x22cm). Layer in this order: all the potatoes, then the aubergine, then the courgette, then all the meat sauce. Finish with the bechamel poured evenly over the top.
 
 **9.** Bake for 45-60 minutes until the top is a deep golden brown. Leave to cool for at least 15 minutes before cutting. It cuts cleanly when fully cooled.
 

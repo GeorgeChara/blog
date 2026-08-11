@@ -1,5 +1,6 @@
 ---
 title: "Chicken Couscous Bowl"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -42,7 +43,9 @@ cumin          1 tsp
 
 **2.** Couscous in a bowl, pour over the boiling water or stock (1.5 times the couscous by volume). Lid on 5 minutes, then fluff with a fork.
 
-**3.** Dice the red onion, cucumber and tomato, chop the parsley, and stir it all through the couscous. Dress with lemon and olive oil.
+**3.** Dice, chop the parsley, and stir it all through the couscous. Dress with lemon and olive oil:
+
+{{< ingr "red onion=1, cucumber=1, tomato=2, parsley=handful, lemon=1, olive oil=to dress" >}}
 
 **4.** Pile the chicken on top. Season and add more lemon to taste.
 

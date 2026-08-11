@@ -1,5 +1,6 @@
 ---
 title: "Sourdough"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -14,7 +15,7 @@ layout: single
 </style>
 
 <h1>Sourdough</h1>
-<p style="color: #888; margin-top: -0.5em;">75% hydration, 24 hr process, 50 min bake, 230°C, makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">75% hydration, 24 hr process, 50 min bake, 230°C (210°C fan), makes 1 loaf</p>
 
 You need an active <a href="/cookbook/sourdough-starter/">sourdough starter</a> before making this.
 
@@ -50,15 +51,15 @@ The most important stage. The starter ferments the dough, gluten develops throug
 
 **3.** After the final fold, cover and leave undisturbed until bulk fermentation is complete. At 24/26°C this is around 4/5 hours. In a cooler kitchen (18/20°C) it can take 8/10 hours.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:1em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bulk is done when the dough has grown by 50/75%, has a dome on top, looks jiggly when you shake the bowl, and has bubbles on the surface and sides. Go by the dough, not the clock.<br>Under-fermented dough tears during shaping and gives a dense crumb. Over-fermented dough is slack, sticky and collapses in the oven.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:1em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bulk is done when the dough has grown by 50/75%, has a dome on top, looks jiggly when you shake the bowl, and has bubbles on the surface and sides. Go by the dough, not the clock.<br>Underfermented dough tears during shaping and gives a dense crumb. Overfermented dough is slack, sticky and collapses in the oven.</span>
 
 ---
 
 ## Shape
 
-**4.** Lightly flour the work surface and tip the dough out. Pre-shape into a rough round using a bench scraper, pulling it towards you to build surface tension. Leave uncovered for 20 minutes.
+**4.** Lightly flour the work surface and tip the dough out. Preshape into a rough round using a bench scraper, pulling it towards you to build surface tension. Leave uncovered for 20 minutes.
 
-**5.** Flour lightly again. Flip the dough, fold the edges in towards the centre, then flip seam side down. Cup your hands around it and drag towards you to tighten. Place seam side up into a well-floured banneton.
+**5.** Flour lightly again. Flip the dough, fold the edges in towards the centre, then flip seam side down. Cup your hands around it and drag towards you to tighten. Place seam side up into a well floured banneton.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:1em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A tight shape holds structure and rises up in the oven rather than spreading out. Rice flour is best for dusting the banneton.</span>
 
@@ -74,7 +75,7 @@ The most important stage. The starter ferments the dough, gluten develops throug
 
 ## Bake
 
-**7.** Place the Dutch oven with its lid in the oven and preheat to 230°C for at least 30 minutes.
+**7.** Place the Dutch oven with its lid in the oven and preheat to 230°C (210°C fan) for at least 30 minutes.
 
 **8.** Set your sling on the work surface. Tip the banneton upside down onto it so the dough lands seam side down.
 
@@ -84,6 +85,6 @@ The most important stage. The starter ferments the dough, gluten develops throug
 
 **10.** Lift by the sling, lower into the hot pot, tuck the paper inside, lid on. Bake for 30 minutes.
 
-**11.** Remove the lid, drop to 210°C and bake for a further 20 minutes until deep brown. Lift out and cool on a wire rack for at least 1 hour before cutting.
+**11.** Remove the lid, drop to 210°C (190°C fan) and bake for a further 20 minutes until deep brown. Lift out and cool on a wire rack for at least 1 hour before cutting.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The first 10/15 minutes is when oven spring happens. The yeast has one final burst of activity before the heat kills it, and the trapped CO2 expands rapidly. The lid traps steam which keeps the crust soft enough to open. Once the lid comes off the crust hardens and sets the shape.<br>Don't cut the loaf while still warm. The crumb is still setting inside and cutting early gives a gummy texture.</span>

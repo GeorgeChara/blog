@@ -39,7 +39,7 @@ ready to cut      10–14 days
 harvest at        3–5 cm tall
 hold time         cut within a few days, goes bitter if left
 water             keep damp every day, never let it dry out
-window            east-facing, bright morning light
+window            east facing, bright morning light
 </pre>
 
 ## Grow
@@ -52,7 +52,7 @@ window            east-facing, bright morning light
 
 **3.** Cover loosely with a lid or plate for 2–3 days until they sprout, then move to an east window.
 
-**4.** Mist daily and keep it damp at all times. A dried-out tray is the quickest way to lose a batch.
+**4.** Mist daily and keep it damp at all times. A dried out tray is the quickest way to lose a batch.
 
 **5.** Snip with scissors at 3–5 cm, around day 10–14. Cut within a few days, it turns bitter and leggy if left too long.
 

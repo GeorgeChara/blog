@@ -1,5 +1,6 @@
 ---
 title: "Cookies"
+tags: [freezer, stand-mixer]
 toc: false
 showreadingtime: false
 layout: single

@@ -1,5 +1,6 @@
 ---
 title: "Creamy Salmon Salad"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -36,6 +37,8 @@ salt and pepper    to season
 
 **1.** Flake the salmon into a bowl, skin and bones out. Mash in the avocado to bind it creamy.
 
-**2.** Stir in the yogurt, diced cucumber, chopped dill, lemon juice and hot sauce. Season and taste, adjust the lemon and hot sauce.
+**2.** Stir in the rest, then season and taste, adjusting the lemon and hot sauce:
+
+{{< ingr "Greek yogurt=2 tbsp, cucumber=1/2 diced, dill=handful, lemon=1/2 juiced, hot sauce=to taste" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pairs with a warm <a href="/cookbook/flour-tortillas/">flour tortilla</a>, or toast and crackers.</span>

@@ -1,5 +1,6 @@
 ---
 title: "Pink Turnip Pickle"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -35,7 +36,9 @@ bay leaves         3
 
 **1.** Peel the turnips and cut into thick batons about 1cm wide and 5-6cm long. Cut the beetroot into similar batons.
 
-**2.** Combine the water, salt, garlic and bay leaves in a saucepan. Bring to a boil, stirring until the salt dissolves. Add the vinegar and simmer for 3 minutes. Leave to cool completely.
+**2.** Combine in a saucepan and bring to a boil, stirring until the salt dissolves. Add the vinegar and simmer for 3 minutes. Leave to cool completely:
+
+{{< ingr "water=720g, coarse sea salt=95g, garlic=3 cloves, bay leaves=3, white wine vinegar=240g" >}}
 
 **3.** Pack the turnip batons tightly into a sterilised jar. Tuck the beetroot pieces throughout. Add the garlic and bay from the brine.
 

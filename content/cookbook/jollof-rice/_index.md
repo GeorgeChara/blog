@@ -1,5 +1,6 @@
 ---
 title: "Jollof Rice"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -55,7 +56,9 @@ Add the garlic and ginger too if using.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cooking the base down properly is what makes jollof taste like jollof. Rush it and it stays sour and thin.</span>
 
-**4.** Stir in the thyme, curry powder, bay leaves, crumbled stock cubes and salt.
+**4.** Stir in, crumbling the stock cubes:
+
+{{< ingr "thyme=1 tsp, curry powder=1 tsp, bay leaves=2, stock cubes=2, salt=to taste" >}}
 
 **5.** Rinse the rice until the water runs clear, then add to the pot with the water. Stir to coat. The liquid should just cover the rice.
 

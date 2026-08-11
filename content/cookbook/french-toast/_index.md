@@ -1,5 +1,6 @@
 ---
 title: "French Toast"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -42,6 +43,6 @@ butter           for frying
 
 **3.** Melt butter in a pan over medium heat. Fry 2 to 3 minutes a side until deep golden.
 
-**4.** For thick slices, finish in a 180°C oven for 3 to 5 minutes so the centre sets custardy rather than wet.
+**4.** For thick slices, finish in a 180°C (160°C fan) oven for 3 to 5 minutes so the centre sets custardy rather than wet.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Serve with maple syrup. Keep slices warm in a low oven while you work through the batch.</span>

@@ -3,7 +3,7 @@ title: "Tomato Soup"
 toc: false
 showreadingtime: false
 layout: single
-tags: [vegetarian, freezer]
+tags: [freezer, vegetarian, dutch-oven]
 ---
 
 <style>
@@ -34,7 +34,9 @@ salt               to taste
 
 ## Recipe
 
-**1.** Peel the onion and cut into quarters. Tip it into the Dutch oven with the tomatoes and butter. Smash the garlic cloves and add them too.
+**1.** Quarter the onion and smash the garlic. Everything into the Dutch oven:
+
+{{< ingr "tinned tomatoes=1.6kg, butter=115g, onion=1 quartered, garlic=4 cloves smashed" >}}
 
 **2.** Bring to a gentle simmer over low heat, lid half on.
 

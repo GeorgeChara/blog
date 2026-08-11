@@ -3,7 +3,7 @@ title: "Quesadilla"
 toc: false
 showreadingtime: false
 layout: single
-tags: [vegetarian]
+tags: [vegetarian, cast-iron]
 ---
 
 <style>
@@ -28,7 +28,7 @@ spring onion        1, finely sliced
 pickled jalapeno    1 tbsp, sliced
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Spring onion and jalapeno are optional, swap in whatever's in the fridge. Grate from a block, pre-grated cheese is coated in starch and melts poorly.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Spring onion and jalapeno are optional, swap in whatever's in the fridge. Grate from a block, ready grated cheese is coated in starch and melts poorly.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The cheese is the glue. A dry pan crisps the tortilla, oil fries it brown before the cheese melts. Don't overfill or it won't seal.</span>
 
@@ -38,7 +38,7 @@ pickled jalapeno    1 tbsp, sliced
 
 **2.** Lay the tortilla flat. Scatter the cheese over one half only, then add the thin filling on top.
 
-**3.** Once the cheese starts to melt at the edges, about 1 minute, fold the bare half over into a half-moon.
+**3.** Once the cheese starts to melt at the edges, about 1 minute, fold the bare half over into a half moon.
 
 **4.** Press gently and evenly with a spatula so the cheese glues the layers together.
 

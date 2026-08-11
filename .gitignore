@@ -13,3 +13,6 @@ scripts/garmin-sync/__pycache__/
 scripts/home.json
 scripts/__pycache__/
 scripts/routes/__pycache__/
+
+# Photo inbox (originals, never deployed)
+/_inbox/

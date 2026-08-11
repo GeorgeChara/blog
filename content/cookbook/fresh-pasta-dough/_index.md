@@ -1,5 +1,6 @@
 ---
 title: "Fresh Pasta Dough"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -56,8 +57,8 @@ fine salt    1g
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cutter attachment: fit the tagliatelle cutter, set to speed 2. Dust the sheet well with semolina so the strips don't stick, then feed it through, catching the strips as they come out the bottom. Shake into nests. Pappardelle is too wide for the cutter, cut it by hand.</span>
 
-**9.** For lasagne sheets: cut to fit your dish and use immediately, or layer between semolina-dusted parchment.
+**9.** For lasagne sheets: cut to fit your dish and use immediately, or layer between semolina dusted parchment.
 
-**10.** Cook fresh pasta in heavily salted boiling water. Tagliatelle and pappardelle: 2 minutes. Lasagne sheets going into a baked dish do not need pre-cooking.
+**10.** Cook fresh pasta in heavily salted boiling water. Tagliatelle and pappardelle: 2 minutes. Lasagne sheets going into a baked dish do not need cooking ahead.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Source: adapted from <a href="https://homecookingcollective.com/homemade-pasta-kitchenaid-recipe/">Home Cooking Collective</a> and <a href="https://pinabresciani.com/how-to-make-homemade-pasta-dough/">Pina Bresciani</a>. Ratio and flour type notes from both sources.</span>

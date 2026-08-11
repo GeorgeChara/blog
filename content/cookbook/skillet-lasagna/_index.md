@@ -3,7 +3,7 @@ title: "Skillet Lasagna"
 toc: false
 showreadingtime: false
 layout: single
-tags: [freezer]
+tags: [freezer, cast-iron]
 ---
 
 <style>
@@ -43,15 +43,21 @@ salt and pepper     to taste
 
 ## Recipe
 
-**1.** Heat the oil in a large oven-safe lidded skillet over medium-high. Brown the mince well, breaking it up, then add the onion and cook 4 to 5 minutes until soft. Stir in the garlic and tomato puree, cook 1 minute.
+**1.** Heat the oil in a large lidded skillet over medium heat. Brown the mince well, breaking it up, then the onion for 4 to 5 minutes until soft, then the garlic and tomato puree for 1 minute:
 
-**2.** Add the passata, oregano, salt and pepper. Simmer uncovered 8 to 10 minutes until thick and clinging, not soupy. Stir in the 150ml water, the pasta will drink it.
+{{< ingr "olive oil=1 tbsp, beef mince=400g, onion=1 medium chopped, garlic=2 cloves crushed, tomato puree=1 tbsp" >}}
+
+**2.** Add and simmer uncovered 8 to 10 minutes until thick and clinging, not soupy. Stir in the water, the pasta will drink it:
+
+{{< ingr "passata=500g, dried oregano=1 tsp, salt and pepper=to taste, water=150ml" >}}
 
 **3.** Break the dry lasagne sheets into rough 3-5cm pieces and scatter over the sauce. Push every piece fully under so they cook evenly.
 
 **4.** Cover and simmer gently for about 20 minutes, stirring once or twice, until the pasta is tender. Add a splash of water if it tightens too fast.
 
-**5.** Heat the grill to high. Dot ricotta over the surface, scatter the mozzarella and parmesan, and grill 3 to 5 minutes until bubbling and golden in patches.
+**5.** Heat the grill to high. Dot the ricotta over the surface, scatter the rest, and grill 3 to 5 minutes until bubbling and golden in patches:
+
+{{< ingr "ricotta=250g, mozzarella=125g torn, parmesan=30g grated" >}}
 
 **6.** Rest off the heat for 8 to 10 minutes so the starch sets and it slices cleanly. Scatter with basil and serve.
 

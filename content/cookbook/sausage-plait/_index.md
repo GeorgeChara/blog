@@ -1,5 +1,6 @@
 ---
 title: "Sausage Plait"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Sausage Plait</h1>
-<p style="color: #888; margin-top: -0.5em;">35 min bake, 200°C, serves 4-6</p>
+<p style="color: #888; margin-top: -0.5em;">35 min bake, 200°C (180°C fan), serves 4-6</p>
 
 ## Ingredients
 
@@ -46,13 +47,15 @@ sesame seeds      10g
 
 ## Recipe
 
-**1.** Finely slice the red onions. Cook in the butter and olive oil over low heat for 25-30 minutes until deeply soft and golden, stirring occasionally. Add the balsamic vinegar and stir for a minute until it evaporates. Spread onto a plate and leave to cool completely.
+**1.** Finely slice the red onions and cook over low heat for 25-30 minutes until deeply soft and golden, stirring occasionally. Add the balsamic vinegar and stir for a minute until it evaporates. Spread onto a plate and leave to cool completely:
+
+{{< ingr "red onions=300g, unsalted butter=15g, olive oil=15g, balsamic vinegar=15g" >}}
 
 **2.** Mix until evenly combined, then refrigerate until needed:
 
 {{< ingr "sausage meat=500g, breadcrumbs=40g, sage=5g, dijon=15g, salt=3g, black pepper=2g, cooled onions" >}}
 
-**3.** Heat the oven to 200°C. Line a large baking tray with baking paper.
+**3.** Heat the oven to 200°C (180°C fan). Line a large baking tray with baking paper.
 
 **4.** Roll the rough puff pastry to a 40x30cm rectangle, about 3-4mm thick. Transfer to the lined tray.
 

@@ -1,5 +1,6 @@
 ---
 title: "Quiche Lorraine"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Quiche Lorraine</h1>
-<p style="color: #888; margin-top: -0.5em;">30 min bake, 170°C, 23cm tart tin, serves 6</p>
+<p style="color: #888; margin-top: -0.5em;">30 min bake, 170°C (150°C fan), 23cm tart tin, serves 6</p>
 
 ## Ingredients
 
@@ -46,9 +47,9 @@ nutmeg           pinch
 
 **2.** Roll out to 3mm thick and line the tart tin, leaving a 1cm overhang. Prick the base all over. Refrigerate for 20 minutes.
 
-**3.** Heat the oven to 200°C. Line with baking paper and fill with baking beans. Blind bake for 15 minutes. Remove the beans and paper and bake for another 5 minutes until the base looks dry. Brush the base with a little beaten egg white and bake for 3 more minutes to seal it.
+**3.** Heat the oven to 200°C (180°C fan). Line with baking paper and fill with baking beans. Blind bake for 15 minutes. Remove the beans and paper and bake for another 5 minutes until the base looks dry. Brush the base with a little beaten egg white and bake for 3 more minutes to seal it.
 
-**4.** Reduce the oven to 170°C. Fry the lardons in a dry pan until golden but not crispy. Leave to cool.
+**4.** Reduce the oven to 170°C (150°C fan). Fry the lardons in a dry pan until golden but not crispy. Leave to cool.
 
 **5.** Whisk together:
 

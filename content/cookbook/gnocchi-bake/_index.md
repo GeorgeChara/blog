@@ -3,7 +3,7 @@ title: "Gnocchi Bake"
 toc: false
 showreadingtime: false
 layout: single
-tags: [freezer, vegetarian]
+tags: [freezer, vegetarian, cast-iron]
 ---
 
 <style>
@@ -40,7 +40,7 @@ salt                1/2 tsp, plus to taste
 
 ## Recipe
 
-**1.** Heat the grill to high. In a grill-proof skillet, melt the butter with the oil over medium-high heat.
+**1.** Heat the grill to high. In a grillproof skillet, melt the butter with the oil over medium high heat.
 
 **2.** Tip in the gnocchi straight from the pack and spread to a single layer with a little room around each piece (do two batches if the pan is small). Cook 12 to 15 minutes, turning every 2 to 3 minutes, until deep golden and crisp. Season, then tip out onto a plate.
 

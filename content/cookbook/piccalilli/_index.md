@@ -1,5 +1,6 @@
 ---
 title: "Piccalilli"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -51,7 +52,9 @@ cumin seeds      5g
 
 **3.** Sterilise your jars. Wash in hot soapy water then place in the oven at 120°C until completely dry and hot.
 
-**4.** In a bowl, combine the cornflour, mustard seeds, mustard powder, turmeric, coriander and cumin. Whisk in a splash of the vinegar to make a smooth paste.
+**4.** Combine in a bowl, then whisk in a splash of the vinegar to make a smooth paste:
+
+{{< ingr "cornflour=30g, mustard seeds=15g, mustard powder=10g, turmeric=10g, coriander seeds=5g, cumin seeds=5g" >}}
 
 **5.** Pour the remaining vinegar into a large saucepan. Add the sugar and honey. Heat over medium heat until dissolved, then bring to a boil.
 
@@ -59,6 +62,6 @@ cumin seeds      5g
 
 **7.** Take off the heat and fold in the drained vegetables. Stir to coat.
 
-**8.** Pack into the hot jars immediately, making sure the vegetables are submerged in sauce. Seal with vinegar-proof lids while still hot.
+**8.** Pack into the hot jars immediately, making sure the vegetables are submerged in sauce. Seal with vinegar proof lids while still hot.
 
 **9.** Leave in a cool dark place for at least 4-6 weeks before opening. Keeps for up to a year unopened. Once open, use within 4 weeks.

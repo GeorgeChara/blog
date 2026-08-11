@@ -1,5 +1,6 @@
 ---
 title: "Iced Fingers"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Iced Fingers</h1>
-<p style="color: #888; margin-top: -0.5em;">~3 hrs start to finish, 10 min bake, 220°C, makes 12</p>
+<p style="color: #888; margin-top: -0.5em;">~3 hrs start to finish, 10 min bake, 220°C (200°C fan), makes 12</p>
 
 ## Ingredients
 
@@ -56,17 +57,19 @@ Mix until a rough dough forms.
 
 **3.** Knock back and divide into 12 equal pieces, roughly 70g each. Roll each into a finger shape about 12cm long. Place on a lined tray with a small gap between each.
 
-**4.** Leave to prove for 40 minutes until puffed and nearly touching. Heat the oven to 220°C.
+**4.** Leave to prove for 40 minutes until puffed and nearly touching. Heat the oven to 220°C (200°C fan).
 
 **5.** Bake for 10 minutes until golden. Cool completely on a wire rack before filling or icing.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">While the bread bakes, clean the bowl and swap to the whisk attachment. Make the icing and cream straight in the mixer with no extra washing up.</span>
 
-**6.** If using raspberry jam, warm it on the hob and press through a sieve. Add the icing sugar to the clean mixer bowl and pour in the sieved jam or water on low, a little at a time, until you have a thick paste that coats the back of a spoon.
+**6.** If using raspberry jam, warm it on the hob and press through a sieve. Add the icing sugar to the clean mixer bowl and pour in the sieved jam or water on low, a little at a time, until you have a thick paste that coats the back of a spoon:
+
+{{< ingr "icing sugar=300g, water=to consistency, raspberry jam=optional" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Whisk attachment on low. Add the liquid gradually until the right consistency.</span>
 
-**7.** Dip the top of each finger into the icing. Set on a rack icing-side up and leave to set for 10-15 minutes.
+**7.** Dip the top of each finger into the icing. Set on a rack icing side up and leave to set for 10-15 minutes.
 
 **8.** Optional: whip the cream to firm peaks and pipe into each split finger. Serve straight away if filling with cream.
 

@@ -1,5 +1,6 @@
 ---
 title: "Avgolemoni"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -39,9 +40,13 @@ salt and pepper  to taste
 
 ## Recipe
 
-**1.** Dice the onion, carrot and celery. Soften in the oil, 8 to 10 minutes.
+**1.** Dice and soften in the oil, 8 to 10 minutes:
 
-**2.** Add the garlic for a minute, then the bay leaves, chicken breasts and stock. Simmer covered for 15 minutes.
+{{< ingr "onion=1, carrot=1, celery=2 sticks" >}}
+
+**2.** Garlic in for a minute, then simmer covered for 15 minutes:
+
+{{< ingr "bay leaves=2, chicken breasts=2, chicken stock=1.4L" >}}
 
 **3.** Lift out the chicken and bay leaves. Add the orzo and cook 10 minutes.
 

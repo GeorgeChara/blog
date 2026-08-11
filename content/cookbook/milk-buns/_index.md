@@ -3,7 +3,7 @@ title: "Milk Buns"
 toc: false
 showreadingtime: false
 layout: single
-tags: [freezer]
+tags: [freezer, stand-mixer]
 ---
 
 <style>

@@ -1,5 +1,6 @@
 ---
 title: "Chicken Alfredo"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -40,19 +41,23 @@ fettuccine         400g
 parsley            handful
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Grate your own parmesan, pre-grated won't melt smoothly.<br>Double cream only, single cream and milk split when boiled.<br>A pinch of nutmeg in the sauce is the classic touch.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Grate your own parmesan, ready grated won't melt smoothly.<br>Double cream only, single cream and milk split when boiled.<br>A pinch of nutmeg in the sauce is the classic touch.</span>
 
 ## Recipe
 
-**1.** Rub the chicken with the olive oil, paprika, garlic powder, onion powder, salt and pepper.
+**1.** Rub the chicken all over with:
 
-**2.** Heat the Dutch oven over medium-high. Cook the chicken 5/6 minutes each side until golden and cooked through. Remove and rest.
+{{< ingr "olive oil=drizzle, paprika=to taste, garlic powder=to taste, onion powder=to taste, salt and pepper=to taste" >}}
+
+**2.** Heat the Dutch oven over medium high. Cook the chicken 5/6 minutes each side until golden and cooked through. Remove and rest.
 
 **3.** Cook the fettuccine in a separate pot of salted boiling water until al dente. Keep a mugful of the pasta water, then drain.
 
 **4.** Back in the Dutch oven on low heat, melt the butter and saute the garlic for 30 seconds.
 
-**5.** Pour in the cream and simmer 2/3 minutes. Season with salt, pepper, italian seasoning and chilli flakes, then stir in the parmesan off the boil until smooth and creamy.
+**5.** Pour in the cream and simmer 2/3 minutes, then season and stir in the parmesan off the boil until smooth and creamy:
+
+{{< ingr "double cream=300ml, italian seasoning=1 tsp, chilli flakes=pinch, salt and pepper=to season, parmesan=100g" >}}
 
 **6.** Add the drained pasta to the Dutch oven and toss until fully coated. Loosen with a splash of pasta water at a time until silky.
 

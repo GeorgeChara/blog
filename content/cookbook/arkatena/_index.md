@@ -3,7 +3,7 @@ title: "Arkatena"
 toc: false
 showreadingtime: false
 layout: single
-tags: [vegan, freezer]
+tags: [freezer, vegan, stand-mixer]
 ---
 
 <style>
@@ -61,7 +61,7 @@ black sesame seeds   5g
 
 Steep until lukewarm, then strain. You need about 290g.
 
-**2.** Stir to a loose batter, about pancake-batter thickness:
+**2.** Stir to a loose batter, about pancake batter thickness:
 
 {{< ingr "chickpea flour=60g, strong flour=90g, spiced water=200g, yeast=1g" >}}
 

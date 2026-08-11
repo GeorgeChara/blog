@@ -1,5 +1,6 @@
 ---
 title: "Carnitas"
+tags: [freezer, dutch-oven, stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -60,7 +61,9 @@ lime
 
 </details>
 
-**2.** Put the pork in the Dutch oven with the quartered onion, garlic, cumin, oregano, cinnamon and bay. Squeeze in the orange and lime juice and add the stock. The liquid should come about halfway up.
+**2.** Put the pork in the Dutch oven with the rest, squeezing in the orange and lime juice. The liquid should come about halfway up:
+
+{{< ingr "onion=1 quartered, garlic=5 cloves, ground cumin=2 tsp, dried oregano=2 tsp, ground cinnamon=1/2 tsp, bay leaves=2, orange=1 juiced, lime=2 juiced, chicken stock=200ml" >}}
 
 <details>
 <summary>show photo</summary>
@@ -71,7 +74,7 @@ lime
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No searing, no preheating the pot. Everything goes in cold and comes up to temperature together in the oven. The crisping comes at the end under the grill.</span>
 
-**3.** Lid on, into the oven at 150°C for 3 hours until the pork falls apart easily.
+**3.** Lid on, into the oven at 150°C (130°C fan) for 3 hours until the pork falls apart easily.
 
 **4.** Lift the pork out with a slotted spoon, leaving the juices in the pot, into the stand mixer bowl. Paddle on low for a few seconds until shredded.
 

@@ -1,5 +1,6 @@
 ---
 title: "Cari Poulet"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -45,13 +46,17 @@ salt               to taste
 
 **2.** Mix the curry powder and turmeric with a splash of water to a loose paste.
 
-**3.** Heat oil in the Dutch oven. Soften the diced onion with the garlic, ginger, thyme, curry leaves and whole chillies for 5 minutes.
+**3.** Heat oil in the Dutch oven and soften for 5 minutes:
+
+{{< ingr "onion=1 diced, garlic=4 cloves, ginger=1 inch, fresh thyme=1 sprig, curry leaves=8, red chillies=2 whole" >}}
 
 **4.** Add the curry paste and cook 2/3 minutes until fragrant and the oil splits.
 
 **5.** Add the chicken and turn to coat in the masala. Add the diced tomato and cook down for 5 minutes.
 
-**6.** Add the potatoes, water and salt. Bring to a simmer, lid on, and cook 30/40 minutes until the chicken is tender and the potatoes are soft.
+**6.** Bring to a simmer, lid on, and cook 30/40 minutes until the chicken is tender and the potatoes are soft:
+
+{{< ingr "potatoes=500g, water=400ml, salt=to taste" >}}
 
 **7.** Finish with torn coriander. Serve with <a href="/cookbook/farata/">farata</a>.
 

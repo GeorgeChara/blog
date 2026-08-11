@@ -1,5 +1,6 @@
 ---
 title: "Hot Honey"
+tags: []
 toc: false
 showreadingtime: false
 layout: single

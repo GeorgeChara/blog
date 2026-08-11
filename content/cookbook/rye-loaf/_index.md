@@ -47,7 +47,7 @@ Add the warm water and honey and mix to a sticky, rough dough.
 
 **4.** Shape and drop into an oiled 2lb tin, scatter seeds on top. Prove 45 minutes.
 
-**5.** Bake at 220°C for 40/45 minutes until deep brown and hollow-sounding underneath.
+**5.** Bake at 220°C (200°C fan) for 40/45 minutes until deep brown and hollow when tapped underneath.
 
 **6.** Cool completely before slicing, ideally rest a day. The crumb sets as it cools, cut it warm and it goes gummy.
 

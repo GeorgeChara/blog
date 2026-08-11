@@ -1,5 +1,6 @@
 ---
 title: "Bourekia"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -37,7 +38,7 @@ vegetable oil    for frying
 icing sugar      to dust
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Anari is a fresh Cypriot whey cheese, similar to ricotta. Ricotta is a good substitute but has a wetter texture.<br>Deep-fried, not baked. Serve warm, dusted with icing sugar.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Anari is a fresh Cypriot whey cheese, similar to ricotta. Ricotta is a good substitute but has a wetter texture.<br>Deep fried, not baked. Serve warm, dusted with icing sugar.</span>
 
 ## Recipe
 

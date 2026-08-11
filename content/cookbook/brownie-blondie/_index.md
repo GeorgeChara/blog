@@ -1,5 +1,6 @@
 ---
 title: "Brownie Blondie"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -20,7 +21,7 @@ layout: single
 </style>
 
 <h1>Brownie Blondie</h1>
-<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C, 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C (160°C fan), 23cm square tin</p>
 
 <img loading="lazy" src="/images/brownie-blondie/IMG_5203.webp" alt="Brownie Blondie">
 
@@ -69,7 +70,9 @@ walnuts          50g
 
 **3.** Whisk in the egg and vanilla.
 
-**4.** Fold in the flour and salt until just combined. Fold in the melted white chocolate and walnuts.
+**4.** Fold in the flour and salt until just combined, then the melted white chocolate and walnuts:
+
+{{< ingr "flour=65g, salt=3g, white chocolate=75g melted, walnuts=50g" >}}
 
 **5.** Grease and line the tin. Alternate large spoonfuls of brownie and blondie batter across the tin.
 
@@ -80,7 +83,7 @@ walnuts          50g
 
 </details>
 
-**6.** Bake at 180°C for 10 minutes until just melted. Take it out and feather the top with a skewer. It's much easier to swirl once the batter has softened.
+**6.** Bake at 180°C (160°C fan) for 10 minutes until just melted. Take it out and feather the top with a skewer. It's much easier to swirl once the batter has softened.
 
 <details>
 <summary>show photo</summary>

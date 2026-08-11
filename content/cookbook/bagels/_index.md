@@ -1,5 +1,6 @@
 ---
 title: "Bagels"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Bagels</h1>
-<p style="color: #888; margin-top: -0.5em;">55% hydration, 22/25 min bake, 210°C, makes 7</p>
+<p style="color: #888; margin-top: -0.5em;">55% hydration, 22/25 min bake, 210°C (190°C fan), makes 7</p>
 
 ![](/images/bagels/bagel_header.webp)
 
@@ -77,7 +78,9 @@ Dough hook on speed 1 until no dry flour remains, about 2 minutes. Increase to s
 
 **5.** Cover and rest 20 minutes, or refrigerate overnight for more flavour.
 
-**6.** Bring the water to a boil with the honey and bicarb. Boil 2/3 at a time, 1 minute per side.
+**6.** Bring to a boil, then boil the bagels 2/3 at a time, 1 minute per side:
+
+{{< ingr "water=pot half full, honey=1 tbsp, bicarb=1 tbsp" >}}
 
 <details><summary>show photo</summary>
 
@@ -85,7 +88,7 @@ Dough hook on speed 1 until no dry flour remains, about 2 minutes. Increase to s
 
 </details>
 
-**7.** Drain, back onto the tray. Add toppings now while the surface is still wet. **Bake at 210°C for 22/25 minutes** until deep golden.
+**7.** Drain, back onto the tray. Add toppings now while the surface is still wet. **Bake at 210°C (190°C fan) for 22/25 minutes** until deep golden.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Everything bagel: dip the wet bagel face down into everything bagel seasoning.<br>Cheese and jalapeño: add grated cheese at the 10 minute mark.</span>
 

@@ -3,7 +3,7 @@ title: "Miso Cod"
 toc: false
 showreadingtime: false
 layout: single
-tags: [make-ahead]
+tags: [make-ahead, cast-iron]
 ---
 
 <style>
@@ -42,7 +42,7 @@ sugar              75g
 
 **5.** Serve as is. The fish is rich and needs little alongside it.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No grill? Get the cast iron skillet screaming hot, sear the fish to char the surface, then finish it in the 200°C oven for a few minutes.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No grill? Get the cast iron skillet screaming hot, sear the fish to char the surface, then finish it in the 200°C (180°C fan) oven for a few minutes.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Wipe, don't rinse. The thin film of miso left on is what chars. Black cod is the classic, but standard cod, salmon or mackerel all take the marinade well.</span>
 

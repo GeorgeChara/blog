@@ -33,13 +33,13 @@ salt             1 tsp
 
 ## Recipe
 
-**1.** Heat the oven to 200°C. Stir the lemon into the milk and leave 5 minutes to sour and thicken.
+**1.** Heat the oven to 200°C (180°C fan). Stir the lemon into the milk and leave 5 minutes to sour and thicken.
 
 **2.** Mix the dry ingredients, then stir in the soured milk to a soft, sticky dough. Don't knead, just bring it together.
 
 **3.** Shape into a round on a floured tray and cut a deep cross in the top.
 
-**4.** Bake 40 minutes until golden and hollow-sounding underneath. Cool on a rack.
+**4.** Bake 40 minutes until golden and hollow when tapped underneath. Cool on a rack.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Work fast and don't overmix. The bicarb starts working the moment it hits the soured milk, so get it in the oven quick. The cross helps it bake through evenly.</span>
 

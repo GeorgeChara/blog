@@ -1,5 +1,6 @@
 ---
 title: "Hash Browns"
+tags: [freezer]
 toc: false
 showreadingtime: false
 layout: single
@@ -36,7 +37,7 @@ oil              for frying
 
 **3.** Season the grated potato with salt and pepper.
 
-**4.** Heat a good layer of oil in a pan over medium-high. Press handfuls into patties and fry undisturbed for 4/5 minutes until deep golden, then flip and do the other side.
+**4.** Heat a good layer of oil in a pan over medium high. Press handfuls into patties and fry undisturbed for 4/5 minutes until deep golden, then flip and do the other side.
 
 **5.** Drain on kitchen paper and serve.
 

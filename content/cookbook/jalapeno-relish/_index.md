@@ -1,5 +1,6 @@
 ---
 title: "Jalapeño Relish"
+tags: []
 toc: false
 showreadingtime: false
 layout: single

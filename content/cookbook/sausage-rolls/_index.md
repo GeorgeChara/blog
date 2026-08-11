@@ -1,5 +1,6 @@
 ---
 title: "Sausage Rolls"
+tags: [freezer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Sausage Rolls</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 200°C, makes 16</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 200°C (180°C fan), makes 16</p>
 
 ## Ingredients
 
@@ -49,13 +50,13 @@ whole milk         15g
 
 Fry a small piece to taste and adjust seasoning.
 
-**3.** Heat the oven to 200°C. Line two baking trays with baking paper.
+**3.** Heat the oven to 200°C (180°C fan). Line two baking trays with baking paper.
 
 **4.** Roll the rough puff pastry to about 4mm thick and cut into two long rectangles.
 
 **5.** Divide the filling in half. Shape each half into a log and lay it along the lower third of each pastry rectangle.
 
-**6.** Brush the far edge with egg wash. Roll the pastry tightly over the filling, seam-side down. Press the seam firmly to seal.
+**6.** Brush the far edge with egg wash. Roll the pastry tightly over the filling, seam side down. Press the seam firmly to seal.
 
 **7.** Cut each log into 8 pieces with a sawing motion. Slash the tops diagonally 2-3 times. Brush all over with egg wash.
 

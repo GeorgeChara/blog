@@ -1,5 +1,6 @@
 ---
 title: "Steak Pie"
+tags: [freezer]
 toc: false
 showreadingtime: false
 layout: single
@@ -52,11 +53,11 @@ egg               1
 
 **3.** Stir in the tomato puree and cook for 1-2 minutes. Pour in the ale and scrape up all the caramelised bits from the base.
 
-**4.** Add the stock, Worcestershire sauce, thyme, bay leaves and the browned beef. Bring to a simmer. Cover and cook at 150°C in the oven for 2-2.5 hours until the beef is completely tender and the gravy is thick. If the gravy is still thin, uncover and simmer to reduce.
+**4.** Add the stock, Worcestershire sauce, thyme, bay leaves and the browned beef. Bring to a simmer. Cover and cook at 150°C (130°C fan) in the oven for 2-2.5 hours until the beef is completely tender and the gravy is thick. If the gravy is still thin, uncover and simmer to reduce.
 
 **5.** Remove the thyme and bay leaves. Taste and season. Cool completely, ideally overnight in the fridge.
 
-**6.** Heat the oven to 200°C. Transfer the cold filling into a pie dish. Roll the rough puff pastry to 3-4mm thick.
+**6.** Heat the oven to 200°C (180°C fan). Transfer the cold filling into a pie dish. Roll the rough puff pastry to 3-4mm thick.
 
 **7.** Brush the rim of the dish with beaten egg. Press a thin strip of pastry around the rim. Brush the strip with egg, then lay the pastry lid on top. Press firmly around the edges to seal. Trim and crimp.
 

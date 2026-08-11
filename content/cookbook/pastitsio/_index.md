@@ -1,5 +1,6 @@
 ---
 title: "Pastitsio"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -20,7 +21,7 @@ layout: single
 </style>
 
 <h1>Pastitsio</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot baked pasta, makaronia tou fournou, 40 min bake at 180°C, serves 8</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot baked pasta, makaronia tou fournou, 40 min bake at 180°C (160°C fan), serves 8</p>
 
 ## Ingredients
 
@@ -59,23 +60,29 @@ salt and pepper     to taste
 
 ## Recipe
 
-**1.** Heat the olive oil in a wide pan over medium heat. Cook the onion until soft and translucent, about 8 minutes. Add the garlic and cook for 1 minute.
+**1.** Heat the oil in a wide pan over medium heat. Cook the onion until soft and translucent, about 8 minutes, then the garlic for 1 minute:
+
+{{< ingr "olive oil=30g, onion=1 large finely diced, garlic=2 cloves crushed" >}}
 
 **2.** Add both minces and cook, breaking up clumps, until browned all over, about 8-10 minutes. Pour in the wine and let it reduce for 3-4 minutes.
 
 **3.** Add the cinnamon, cloves, nutmeg, mint, and passata. Stir well and simmer on low heat for 20-25 minutes until the sauce is thick and most of the liquid is gone. Season and set aside.
 
-**4.** Cook the pasta in well-salted boiling water for 1-2 minutes less than the packet says. It will finish cooking in the oven. Drain and set aside.
+**4.** Cook the pasta in well salted boiling water for 1-2 minutes less than the packet says. It will finish cooking in the oven. Drain and set aside.
 
 **5.** Make the bechamel. Melt the butter in a heavy saucepan over medium heat. Add the flour and cook, stirring constantly, for 3-4 minutes until the roux smells biscuity.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">KitchenAid shortcut for bechamel: use the balloon whisk attachment and the stand mixer bowl set over a saucepan of simmering water (bain-marie). Add the roux to the bowl, drizzle in the warm milk in a steady stream with the mixer running on speed 4. Transfer to the hob only to finish thickening. This prevents lumps without constant hand-whisking.<br>Food processor shortcut: blend the roux in a food processor, pour in the warm milk with the motor running, then tip into a saucepan to thicken over heat. Very quick and lump-free.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">KitchenAid shortcut for bechamel: use the balloon whisk attachment and the stand mixer bowl set over a saucepan of simmering water (bain-marie). Add the roux to the bowl, drizzle in the warm milk in a steady stream with the mixer running on speed 4. Transfer to the hob only to finish thickening. This prevents lumps without constant whisking by hand.<br>Food processor shortcut: blend the roux in a food processor, pour in the warm milk with the motor running, then tip into a saucepan to thicken over heat. Very quick and smooth.</span>
 
 **6.** Add the milk gradually, 200ml at a time, whisking well between each addition. Keep over medium heat, whisking constantly, until the sauce is thick enough to coat the back of a spoon. Remove from heat.
 
-**7.** Whisk in the grated halloumi, cheddar, parmesan, and nutmeg. Season with salt and pepper. The halloumi is quite salty so taste before adding extra salt.
+**7.** Whisk in the cheeses and nutmeg:
 
-**8.** Preheat the oven to 180°C. Grease a large deep baking dish (roughly 32x22cm).
+{{< ingr "halloumi=110g grated, cheddar=60g grated, parmesan=25g grated, ground nutmeg=1g, salt and pepper=to taste" >}}
+
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The halloumi is quite salty so taste before adding extra salt.</span>
+
+**8.** Preheat the oven to 180°C (160°C fan). Grease a large deep baking dish (roughly 32x22cm).
 
 **9.** Tip the cooked pasta into the dish and spread in an even layer. Spoon all the meat sauce over the pasta and spread evenly. Pour the bechamel over the top and level with a spatula. It should be a thick, even layer.
 

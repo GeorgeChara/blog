@@ -1,5 +1,6 @@
 ---
 title: "Croissants"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Croissants</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C then 180°C, two-day recipe</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C (180°C fan) then 180°C (160°C fan), two-day recipe</p>
 
 ## Ingredients
 
@@ -44,7 +45,9 @@ whole milk       14g
 
 ### Day 1
 
-**1.** Add milk, water and yeast to the stand mixer bowl, then add the flour, salt, sugar and butter. Mix on low until combined, then knead for 5 minutes until smooth. Press into a flat 18x18cm square, wrap and rest at room temperature for 30 minutes, then refrigerate overnight.
+**1.** Into the stand mixer bowl, milk, water and yeast first, then the rest. Mix on low until combined, then knead for 5 minutes until smooth. Press into a flat 18x18cm square, wrap and rest at room temperature for 30 minutes, then refrigerate overnight:
+
+{{< ingr "whole milk=170g, water=150g, instant yeast=14g, plain flour=600g, salt=12g, sugar=60g, unsalted butter=50g" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dough hook on low.</span>
 
@@ -52,7 +55,7 @@ whole milk       14g
 
 ### Day 2
 
-**3.** The dough needs to be fridge-cold (2-5°C) and the butter block around 12-15°C, so it bends without cracking. Take the butter out a few minutes before you start if it feels too firm.
+**3.** The dough needs to be cold from the fridge (2-5°C) and the butter block around 12-15°C, so it bends without cracking. Take the butter out a few minutes before you start if it feels too firm.
 
 **4.** Press the dough into a 23x36cm rectangle. Lay the butter block in the centre, fold the top and bottom of the dough over to fully cover it and pinch the edges closed.
 
@@ -70,4 +73,4 @@ whole milk       14g
 
 **11.** Brush the tops with egg wash. Keep it off the cut sides or it seals the layers shut.
 
-**12.** Bake at 200°C for 10 minutes. Rotate the trays, drop to 180°C and bake for another 10-13 minutes until deep golden brown. Leave on a wire rack for at least 20 minutes before eating.
+**12.** Bake at 200°C (180°C fan) for 10 minutes. Rotate the trays, drop to 180°C (160°C fan) and bake for another 10-13 minutes until deep golden brown. Leave on a wire rack for at least 20 minutes before eating.

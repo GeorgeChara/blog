@@ -1,5 +1,6 @@
 ---
 title: "Pikla"
+tags: []
 toc: false
 showreadingtime: false
 layout: single

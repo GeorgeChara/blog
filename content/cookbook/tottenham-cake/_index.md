@@ -1,5 +1,6 @@
 ---
 title: "Tottenham Cake"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Tottenham Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">30 min bake, 170°C, 33x23cm tin</p>
+<p style="color: #888; margin-top: -0.5em;">30 min bake, 170°C (150°C fan), 33x23cm tin</p>
 
 <img loading="lazy" src="/images/tottenham-cake/header.webp" alt="Tottenham Cake">
 
@@ -42,7 +43,7 @@ sprinkles           optional
 
 ## Recipe
 
-**1.** Heat the oven to 170°C. Grease and line the tin.
+**1.** Heat the oven to 170°C (150°C fan). Grease and line the tin.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cut a diagonal slit at each corner of the paper so it sits neatly in the tin without bunching.</span>
 

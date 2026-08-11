@@ -1,5 +1,6 @@
 ---
 title: "Enchiladas"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Enchiladas</h1>
-<p style="color: #888; margin-top: -0.5em;">45 min, 200°C, serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">45 min, 200°C (180°C fan), serves 4</p>
 
 ![](/images/enchiladas/header.webp)
 
@@ -56,7 +57,9 @@ fresh parsley      handful
 
 **3.** Take the pan off the heat and blend smooth with a stick blender. Taste and adjust the salt and heat.
 
-**4.** Slice half the red onion thinly. In a separate bowl, mix the shredded chicken with the sliced onion, a pinch of salt and cumin, and a few spoonfuls of the sauce until coated. Keep the rest of the sauce for the base and topping.
+**4.** In a separate bowl, mix until coated. Keep the rest of the sauce for the base and topping:
+
+{{< ingr "cooked chicken=400g shredded, red onion=1/2 sliced thinly, salt=pinch, ground cumin=pinch, red sauce=few spoonfuls" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Optional <a href="/cookbook/jalapeno-relish/">jalapeño relish</a> mixed in with the chicken, to taste.</span>
 
@@ -84,4 +87,4 @@ fresh parsley      handful
 
 </details>
 
-**8.** Bake at 200°C for 15/20 minutes until the cheese is melted and bubbling. Finely dice the other half of the red onion and finish with it and torn parsley.
+**8.** Bake at 200°C (180°C fan) for 15/20 minutes until the cheese is melted and bubbling. Finely dice the other half of the red onion and finish with it and torn parsley.

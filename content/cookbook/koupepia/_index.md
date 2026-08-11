@@ -1,5 +1,6 @@
 ---
 title: "Koupepia"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -53,7 +54,7 @@ black pepper       2g
 
 Mix in the rice. Leave to cool completely.
 
-**5.** Lay a vine leaf smooth-side down. Place a heaped teaspoon of filling near the stalk end. Fold the left side over, then the right, then roll away from you into a tight cigar. Not too tight as the rice will expand.
+**5.** Lay a vine leaf smooth side down. Place a heaped teaspoon of filling near the stalk end. Fold the left side over, then the right, then roll away from you into a tight cigar. Not too tight as the rice will expand.
 
 **6.** Line a heavy pot with a few flat vine leaves. Arrange the koupepia in tight layers on top.
 

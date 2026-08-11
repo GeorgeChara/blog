@@ -3,7 +3,7 @@ title: "Skillet Steak"
 toc: false
 showreadingtime: false
 layout: single
-tags: []
+tags: [cast-iron]
 ---
 
 <style>
@@ -47,15 +47,17 @@ asparagus           small bunch, trimmed
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A damp steak steams and goes grey. Salt too early and it draws water back out.</span>
 
-**3.** Add the oil to the pan and heat over medium-high until it shimmers and runs thin.
+**3.** Add the oil to the pan and heat over medium high until it shimmers and runs thin.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Never heat enamelled cast iron empty or on full heat, it can craze the enamel. With the oil in and the heat at medium-high it still gets plenty hot to sear, it just takes a minute longer to get there.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Never heat enamelled cast iron empty or on full heat, it can craze the enamel. With the oil in and the heat at medium high it still gets plenty hot to sear, it just takes a minute longer to get there.</span>
 
 **4.** Lay the steak in away from you and leave it, 2.5 to 3 minutes each side.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">It needs to sit still to brown, and lifts off the pan on its own once ready. Do not keep moving it.</span>
 
-**5.** Turn the heat down to medium, then add the butter, garlic and thyme.
+**5.** Turn the heat down to medium, then add:
+
+{{< ingr "butter=30g, garlic=2 cloves smashed, thyme=3 to 4 sprigs" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Butter burns on high heat, so sear first and lower the heat before it goes in. It should bubble gently, not smoke.</span>
 
@@ -67,7 +69,9 @@ asparagus           small bunch, trimmed
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">It keeps cooking as it rests, up to 54 to 57°C for medium rare, and the juices settle back in.</span>
 
-**8.** Cook the veg in the leftover butter while it rests: mushrooms 3 to 4 minutes, then asparagus 2 to 3, then tomatoes until they burst.
+**8.** Cook the veg in the leftover butter while it rests, mushrooms 3 to 4 minutes, then asparagus 2 to 3, then tomatoes until they burst:
+
+{{< ingr "mushrooms=6 to 8 chestnut halved, asparagus=small bunch trimmed, cherry tomatoes=handful" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Take it out at 50 to 52°C. After resting: rare 49 to 52°C, medium rare 54 to 57°C, medium 57 to 63°C. For a thick steak, warm it through in a low oven first, then sear hot for the crust.</span>
 

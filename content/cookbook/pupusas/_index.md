@@ -1,5 +1,6 @@
 ---
 title: "Pupusas"
+tags: [freezer]
 toc: false
 showreadingtime: false
 layout: single

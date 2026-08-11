@@ -3,7 +3,7 @@ title: "Carrot Cake"
 toc: false
 showreadingtime: false
 layout: single
-tags: [vegetarian, freezer]
+tags: [freezer, vegetarian, stand-mixer]
 ---
 
 <style>
@@ -78,7 +78,11 @@ Fold into the wet with the carrots and half the pecans, until just combined.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tin size changes the bake. More or bigger tins make thinner layers, so start checking a few minutes early. Two tins instead of three, or smaller tins, bake longer: 30 to 35 minutes.</span>
 
-**5.** Drain the cream cheese in a paper lined sieve for 30 minutes. Beat the butter smooth, then beat in the icing sugar to a thick buttercream. Add the cold drained cream cheese, vanilla and salt and mix on low just until smooth. If it is slack, beat in more icing sugar a spoonful at a time until it holds its shape.
+**5.** Drain the cream cheese in a paper lined sieve for 30 minutes. Beat the butter smooth, then beat in the icing sugar to a thick buttercream:
+
+{{< ingr "cream cheese=340g, unsalted butter=113g, icing sugar=480g, vanilla extract=7.5ml, salt=pinch" >}}
+
+Add the cold drained cream cheese, vanilla and salt and mix on low just until smooth. If it is slack, beat in more icing sugar a spoonful at a time until it holds its shape.
 
 <details>
 <summary>show the foolproof method</summary>

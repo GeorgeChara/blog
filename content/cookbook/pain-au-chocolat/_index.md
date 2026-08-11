@@ -1,5 +1,6 @@
 ---
 title: "Pain au Chocolat"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Pain au Chocolat</h1>
-<p style="color: #888; margin-top: -0.5em;">18 min bake, 200°C then 180°C, two-day recipe</p>
+<p style="color: #888; margin-top: -0.5em;">18 min bake, 200°C (180°C fan) then 180°C (160°C fan), two-day recipe</p>
 
 ## Ingredients
 
@@ -55,7 +56,7 @@ whole milk       14g
 
 ### Day 2
 
-**3.** Before starting, the dough should be fridge-cold. The butter block should be 12-15°C, flexible like cool clay that bends without snapping. If it cracks it's too cold; leave it a few minutes. If it leaves grease on your finger it's too warm; put it back in the fridge.
+**3.** Before starting, the dough should be cold from the fridge. The butter block should be 12-15°C, flexible like cool clay that bends without snapping. If it cracks it's too cold; leave it a few minutes. If it leaves grease on your finger it's too warm; put it back in the fridge.
 
 **4.** Roll the dough out to roughly 14x30cm. Place the butter block in the centre and fold the top and bottom of the dough over it to fully encase it. Pinch the seams closed.
 
@@ -65,12 +66,12 @@ whole milk       14g
 
 **7.** Roll the dough to 4mm thick and about 47cm long, 18cm wide. Trim all four edges cleanly.
 
-**8.** Cut into 6 rectangles. Place one chocolate baton along the short edge of each piece, roll once over it, place a second baton at the seam, then roll up firmly to the end. Place seam-side down on a lined tray.
+**8.** Cut into 6 rectangles. Place one chocolate baton along the short edge of each piece, roll once over it, place a second baton at the seam, then roll up firmly to the end. Place seam side down on a lined tray.
 
 **9.** Prove at room temperature for 2.5-4 hours until noticeably puffed and the layers are visible on the sides. Don't rush this with heat. Above 27°C the butter melts into the dough and you lose the layers.
 
 **10.** Brush the tops with egg wash. Don't let it drip down the cut sides.
 
-**11.** Bake at 200°C for 8 minutes, then reduce to 180°C for a further 10-12 minutes until deep golden brown. Cool on a wire rack for at least 10 minutes before eating.
+**11.** Bake at 200°C (180°C fan) for 8 minutes, then reduce to 180°C (160°C fan) for a further 10-12 minutes until deep golden brown. Cool on a wire rack for at least 10 minutes before eating.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Best eaten within a few hours of baking. To revive next day: 10 minutes at 180°C.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Best eaten within a few hours of baking. To revive next day: 10 minutes at 180°C (160°C fan).</span>

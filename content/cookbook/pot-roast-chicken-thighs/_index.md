@@ -1,5 +1,6 @@
 ---
 title: "Pot-Roast Chicken Thighs"
+tags: [freezer, dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -14,7 +15,7 @@ layout: single
 </style>
 
 <h1>Pot-Roast Chicken Thighs</h1>
-<p style="color: #888; margin-top: -0.5em;">one pot, hands off, 220°C, serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">one pot, hands off, 220°C (200°C fan), serves 4</p>
 
 ## Ingredients
 
@@ -28,13 +29,15 @@ oil              1 tbsp
 salt and pepper  to taste
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone-in, skin-on thighs. More forgiving and tastier than breast, and no carving.<br>Serve straight from the pot with the juices, and bread or potatoes to mop up.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Bone in, skin on thighs. More forgiving and tastier than breast, and no carving.<br>Serve straight from the pot with the juices, and bread or potatoes to mop up.</span>
 
 ## Recipe
 
-**1.** Heat the oven to 220°C. Pat the skin really dry, then rub with the oil and plenty of salt. Dry skin is the whole secret to crisp.
+**1.** Heat the oven to 220°C (200°C fan). Pat the skin really dry, then rub with the oil and plenty of salt. Dry skin is the whole secret to crisp.
 
-**2.** Scatter the sliced onion, garlic and halved lemon in the Dutch oven and pour in the stock or wine, just a shallow layer. Sit the thighs on top, skin up and proud of the liquid.
+**2.** Scatter in the Dutch oven, then sit the thighs on top, skin up and proud of the liquid:
+
+{{< ingr "onion=2 sliced, garlic=6 cloves, lemon=1 halved, thyme=few sprigs, stock or wine=150ml" >}}
 
 **3.** Roast uncovered 40/45 minutes, until the skin is crisp and golden and the meat cooked through. No searing, the oven does it.
 

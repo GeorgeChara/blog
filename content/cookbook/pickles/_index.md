@@ -1,5 +1,6 @@
 ---
 title: "Pickles"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -46,6 +47,8 @@ bay leaf           1
 
 {{< ingr "water=120g, rice vinegar=150g, maple syrup=18g, salt=9g, black pepper=pinch, red pepper flakes=pinch" >}}
 
-**3.** Pack the cucumber into a jar. Add the dill, garlic and bay leaf.
+**3.** Pack the cucumber into a jar, then add:
+
+{{< ingr "fresh dill=2 sprigs, garlic=2 cloves, bay leaf=1" >}}
 
 **4.** Pour the brine over until the cucumber is fully submerged. Seal and refrigerate.

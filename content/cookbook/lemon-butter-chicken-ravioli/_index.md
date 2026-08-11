@@ -1,5 +1,6 @@
 ---
 title: "Lemon Butter Chicken Ravioli"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -50,6 +51,8 @@ Simmer until the peas are bright, but don't reduce it fully or it splits.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The pasta water and cheese pull the sauce together so it clings. Add the water a splash at a time and toss hard. Swap 50g of the water for cream for a richer sauce.</span>
 
-**5.** Plate up. Torn basil, grated parmesan, black pepper, a squeeze more lemon.
+**5.** Plate up and finish:
+
+{{< ingr "basil=handful torn, parmesan=grated, black pepper=to taste, lemon=squeeze" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Cheddar works too, grated fine and added off the heat.</span>

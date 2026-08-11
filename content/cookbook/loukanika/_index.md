@@ -1,5 +1,6 @@
 ---
 title: "Loukanika"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -57,8 +58,8 @@ pork intestine        2 lengths, cleaned
 
 **8.** Hang the sausages in a cool, airy spot with good airflow. A sheltered spot outdoors in sun during the day works well. Bring indoors overnight and during rain. Leave to dry for 2 weeks.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Traditionally they are smoked after drying, using wood from Cypriot oak (latzia), almond, apricot, or vine. Smoke for 1-2 hours a day over 8-10 days if you have a cold smoker. Sun-drying alone produces a good result.<br>After drying, the sausages keep in the fridge for 2-3 weeks or freeze well.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Traditionally they are smoked after drying, using wood from Cypriot oak (latzia), almond, apricot, or vine. Smoke for 1-2 hours a day over 8-10 days if you have a cold smoker. Sun drying alone produces a good result.<br>After drying, the sausages keep in the fridge for 2-3 weeks or freeze well.</span>
 
-**9.** To cook: grill over charcoal, fry in a dry pan, or cook in the oven at 200°C for 15-20 minutes. Serve with grilled halloumi, tomatoes, and bread.
+**9.** To cook: grill over charcoal, fry in a dry pan, or cook in the oven at 200°C (180°C fan) for 15-20 minutes. Serve with grilled halloumi, tomatoes, and bread.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://afroditeskitchen.com/recipe/wine-sausage-with-coriander-loukanika/">Afrodite's Kitchen</a>, <a href="https://www.cyprusfoodmuseum.com/en/sylloges/paradosiakes-syntages/loukaniko-sausage">Cyprus Food Museum</a>.</span>

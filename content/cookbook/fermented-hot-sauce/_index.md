@@ -1,5 +1,6 @@
 ---
 title: "Fermented Hot Sauce"
+tags: []
 toc: false
 showreadingtime: false
 layout: single

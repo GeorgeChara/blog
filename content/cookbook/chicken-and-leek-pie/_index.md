@@ -1,5 +1,6 @@
 ---
 title: "Chicken and Leek Pie"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Chicken and Leek Pie</h1>
-<p style="color: #888; margin-top: -0.5em;">35 min bake, 190°C, 24cm pie dish, serves 6</p>
+<p style="color: #888; margin-top: -0.5em;">35 min bake, 190°C (170°C fan), 24cm pie dish, serves 6</p>
 
 ## Ingredients
 
@@ -52,13 +53,17 @@ black pepper     to taste
 
 **2.** Poach the chicken thighs in the stock for 15 minutes until cooked through. Remove and reserve 250g of the poaching stock. Shred the chicken into large pieces once cool.
 
-**3.** Fry the bacon in a wide pan until lightly golden. Add the sliced leeks, celery and garlic. Cook for 5 minutes until softened.
+**3.** Fry the bacon in a wide pan until lightly golden, then add the rest and cook 5 minutes until softened:
+
+{{< ingr "smoked bacon=200g, leeks=300g sliced, celery=100g, garlic=2 cloves" >}}
 
 **4.** Add the butter. Once melted, stir in the flour and cook for 1 minute. Gradually pour in the reserved stock and milk, stirring constantly until thick and smooth.
 
-**5.** Stir in the mustard, tarragon and bay leaves. Add the shredded chicken. Season well. The filling should be thick enough to hold its shape. Cool completely, removing the bay leaves.
+**5.** Stir in the seasonings, then the shredded chicken. The filling should be thick enough to hold its shape. Cool completely, removing the bay leaves:
 
-**6.** Heat the oven to 190°C. Roll the larger pastry piece to 3-4mm thick and line the pie dish with a little overhang. Fill with the cold filling.
+{{< ingr "dijon mustard=15g, dried tarragon=3g, bay leaves=2, salt and pepper=to taste" >}}
+
+**6.** Heat the oven to 190°C (170°C fan). Roll the larger pastry piece to 3-4mm thick and line the pie dish with a little overhang. Fill with the cold filling.
 
 **7.** Roll the lid piece. Brush the pastry overhang with beaten egg and lay the lid on top. Press and trim the edges, then crimp. Cut a small cross in the centre for steam.
 

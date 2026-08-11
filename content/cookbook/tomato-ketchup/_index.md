@@ -1,5 +1,6 @@
 ---
 title: "Tomato Ketchup"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -47,6 +48,6 @@ black pepper     to taste
 
 **5.** Cook uncovered for 20-25 minutes, stirring occasionally, until thick and glossy.
 
-**6.** Blend until completely smooth. Pass through a fine sieve for an ultra-smooth result.
+**6.** Blend until completely smooth. Pass through a fine sieve for an very smooth result.
 
 **7.** Taste and adjust. Cool completely, then bottle. Keeps refrigerated for up to 1 month.

@@ -1,5 +1,6 @@
 ---
 title: "Apple Sauce"
+tags: [freezer, microwave]
 toc: false
 showreadingtime: false
 layout: single
@@ -31,7 +32,9 @@ lemon            1/2
 
 **1.** Peel, core and chop the apples.
 
-**2.** Into a pan with the water, sugar and a squeeze of lemon. Lid on, low heat about 10 minutes, stirring now and then, until collapsed.
+**2.** Into a pan, lid on, low heat about 10 minutes, stirring now and then, until collapsed:
+
+{{< ingr "water=2 tbsp, sugar=1 tbsp, lemon=1/2 squeezed" >}}
 
 **3.** Beat smooth, or leave a few chunks. Stir in the butter and sweeten to taste.
 

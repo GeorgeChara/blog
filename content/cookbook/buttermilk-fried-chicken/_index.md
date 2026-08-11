@@ -1,5 +1,6 @@
 ---
 title: "Buttermilk Fried Chicken"
+tags: [freezer, microwave]
 toc: false
 showreadingtime: false
 layout: single

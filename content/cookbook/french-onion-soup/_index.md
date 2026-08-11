@@ -1,5 +1,6 @@
 ---
 title: "French Onion Soup"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
@@ -51,10 +52,10 @@ gruyère            150g
 
 **6.** Toast slices of baguette and rub each one with a cut garlic clove while still warm.
 
-**7.** Ladle the soup into oven-safe bowls, float a slice or two of toast on each and pile with grated gruyère.
+**7.** Ladle the soup into ovenproof bowls, float a slice or two of toast on each and pile with grated gruyère.
 
 **8.** Grill until the cheese is melted, bubbling and golden.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">For a richer top, spread the baguette with garlic butter before toasting instead of rubbing with raw garlic.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No oven-safe bowls: grill the cheese on the toast separately, then float on top.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No ovenproof bowls: grill the cheese on the toast separately, then float on top.</span>

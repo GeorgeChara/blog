@@ -1,5 +1,6 @@
 ---
 title: "English Muffins"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -64,7 +65,7 @@ Mix by hand until it comes together into a soft, sticky dough.
 
 **5.** Dust the worktop generously with semolina. Turn the dough out and pat to about 1.5cm thick. Cut out 6 rounds with a 9cm cutter. Dust the tops with semolina and leave to prove on a lined tray for 20-30 minutes.
 
-**6.** Heat a heavy frying pan or griddle over medium-low for at least 5 minutes. No oil needed. Cook the muffins in batches for 10-15 minutes on the first side until deep golden brown on the bottom and the sides look matte.
+**6.** Heat a heavy frying pan or griddle over medium low for at least 5 minutes. No oil needed. Cook the muffins in batches for 10-15 minutes on the first side until deep golden brown on the bottom and the sides look matte.
 
 **7.** Flip and cook for another 10-15 minutes. They should feel firm when gently squeezed.
 

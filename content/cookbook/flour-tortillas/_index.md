@@ -3,7 +3,7 @@ title: "Flour Tortillas"
 toc: false
 showreadingtime: false
 layout: single
-tags: [make-ahead, freezer]
+tags: [freezer, make-ahead, stand-mixer]
 ---
 
 <style>
@@ -50,9 +50,9 @@ spinach       100g, optional
 
 **3.** Weigh the dough and rest it whole. Same day: covered, 20 minutes somewhere warm. Ahead: oil lightly, wrap airtight, fridge up to 48 hours, then back to room temperature for an hour before dividing.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The fridge rest rolls thinner with less spring-back. Keep it whole so less surface dries out, a pizza dough box or any airtight tub is ideal.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The fridge rest rolls thinner with less spring back. Keep it whole so less surface dries out, a pizza dough box or any airtight tub is ideal.</span>
 
-**4.** Divide and ball. 8 for pan-sized, about 90g each, or 4 for large wraps, about 185g. Cover and rest 10 minutes while the pan heats.
+**4.** Divide and ball. 8 for pan sized, about 90g each, or 4 for large wraps, about 185g. Cover and rest 10 minutes while the pan heats.
 
 <details><summary>show photo</summary>
 
@@ -64,7 +64,7 @@ spinach       100g, optional
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Flour both sides lightly. Let the rolling pin do the work, don't push down or it sticks and tears. If it springs back, rest it 2/3 minutes.</span>
 
-**6.** Dry pan, medium-high, no oil. Cook 20/30 seconds a side until brown spots appear. Keep it quick or they dry out and stiffen. Drop the heat after the first if they crisp rather than stay soft.
+**6.** Dry pan, medium high, no oil. Cook 20/30 seconds a side until brown spots appear. Keep it quick or they dry out and stiffen. Drop the heat after the first if they crisp rather than stay soft.
 
 **7.** Wrap in a tea towel as they come off the pan. Serve immediately.
 

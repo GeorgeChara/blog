@@ -1,5 +1,6 @@
 ---
 title: "Sourdough Starter"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -54,7 +55,7 @@ Weeks in the fridge without feeding is fine. It is almost certainly still alive.
 
 **Check first.** Pour off any grey or brown liquid on top. This is hooch, just alcohol from a hungry starter. If you see pink, orange or fuzzy mould in the jar, bin it and start fresh. Anything else is fine.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Left at room temperature rather than the fridge? The revival process is the same but expect 5/7 days rather than 3/5, and it may not come back at all. Room temperature accelerates fermentation until all the food runs out, which is harder on the culture than a slow fridge starvation. If it shows no signs of rise after 7 days of twice-daily feeds, start fresh using the section below.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Left at room temperature rather than the fridge? The revival process is the same but expect 5/7 days rather than 3/5, and it may not come back at all. Room temperature accelerates fermentation until all the food runs out, which is harder on the culture than a slow fridge starvation. If it shows no signs of rise after 7 days of twice a day feeds, start fresh using the section below.</span>
 
 **1.** Scrape off any dried crust from the surface. Take 10g of starter from underneath and transfer to a clean jar.
 
@@ -98,7 +99,7 @@ Keep in the fridge in a loosely covered jar. Feed once a week minimum. The night
 
 Baking weekly, leave it on the counter and feed daily. Baking occasionally, fridge and a weekly feed is enough.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A well-maintained starter lasts indefinitely. Some bakeries use starters decades old.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A well maintained starter lasts indefinitely. Some bakeries use starters decades old.</span>
 
 ---
 

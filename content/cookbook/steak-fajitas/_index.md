@@ -3,7 +3,7 @@ title: "Steak Fajitas"
 toc: false
 showreadingtime: false
 layout: single
-tags: []
+tags: [cast-iron]
 ---
 
 <style>
@@ -43,13 +43,15 @@ soured cream, guacamole, lime
 
 ## Recipe
 
-**1.** Mix the lime, oil, garlic, cumin and paprika. Coat the steak and leave 1 to 4 hours.
+**1.** Mix the marinade, coat the steak and leave 1 to 4 hours:
+
+{{< ingr "lime=1 juiced, olive oil=2 tbsp, garlic=2 cloves grated, cumin=1 tsp, paprika=1 tsp, salt and pepper=to season" >}}
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No longer than 4 hours, the lime starts to turn it mushy.</span>
 
-**2.** Heat a little oil in the pan on medium-high. Cook the peppers and onion until soft and charred at the edges, 5 to 6 minutes, then tip out.
+**2.** Heat a little oil in the pan on medium high. Cook the peppers and onion until soft and charred at the edges, 5 to 6 minutes, then tip out.
 
-**3.** Sear the steak on medium-high, 3 to 4 minutes each side, then rest 10 minutes.
+**3.** Sear the steak on medium high, 3 to 4 minutes each side, then rest 10 minutes.
 
 **4.** Slice thin against the grain and toss back with the peppers.
 

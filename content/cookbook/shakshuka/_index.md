@@ -43,7 +43,9 @@ salt and pepper    to season
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Take your time here, soft sweet peppers are the base of the whole dish.</span>
 
-**2.** Add the garlic, cumin, paprika and chilli. Cook 1 minute until fragrant.
+**2.** Add and cook 1 minute until fragrant:
+
+{{< ingr "garlic=2 cloves sliced, cumin=1 tsp, paprika=1 tsp, chilli flakes=pinch" >}}
 
 **3.** Pour in the tomatoes, season, and simmer until thick, 10 to 15 minutes.
 

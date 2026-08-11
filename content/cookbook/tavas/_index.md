@@ -3,7 +3,7 @@ title: "Tavas"
 toc: false
 showreadingtime: false
 layout: single
-tags: [make-ahead]
+tags: [make-ahead, dutch-oven]
 ---
 
 <style>
@@ -41,7 +41,9 @@ olive oil        to drizzle
 
 ## Recipe
 
-**1.** Heat the oven to 200°C. Tumble the pork, potatoes, carrots and onions into the Dutch oven. Scatter over the oregano and salt, drizzle with olive oil, and toss to coat.
+**1.** Heat the oven to 200°C (180°C fan). Tumble into the Dutch oven, drizzle with olive oil and toss to coat:
+
+{{< ingr "pork shoulder=500g diced, potatoes=4 cubed, carrots=4 sliced, onions=4 chopped, dried oregano=4 tsp, salt=1 tsp, olive oil=to drizzle" >}}
 
 **2.** Push the veg out to the sides to leave a well in the middle. Tip the rice into the well and pour the chopped tomatoes over it.
 

@@ -1,5 +1,6 @@
 ---
 title: "Chicken Tagine"
+tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single

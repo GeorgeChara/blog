@@ -3,7 +3,7 @@ title: "Afelia"
 toc: false
 showreadingtime: false
 layout: single
-tags: [freezer, make-ahead]
+tags: [freezer, make-ahead, dutch-oven]
 ---
 
 <style>
@@ -38,13 +38,17 @@ mushrooms        300g, sliced (optional)
 
 ## Recipe
 
-**1.** Mix the pork with the wine, crushed coriander, cumin, bay, and a good grind of pepper. Cover and chill overnight, or at least 3 hours. Drain, keeping the marinade.
+**1.** Mix the pork with the marinade. Cover and chill overnight, or at least 3 hours. Drain, keeping the marinade:
 
-**2.** Warm the oil in the Dutch oven over medium-high heat and brown the pork on all sides.
+{{< ingr "red wine=500ml, coriander seeds=2 tbsp, cumin=1/2 tsp, bay leaves=2, black pepper=plenty" >}}
+
+**2.** Warm the oil in the Dutch oven over medium high heat and brown the pork on all sides.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pat the pieces dry first so they colour rather than stew in the marinade clinging to them.</span>
 
-**3.** Pour in the reserved marinade and let it bubble, then add the water and salt. Lift out the bay leaves after 10 minutes.
+**3.** Pour in the reserved marinade and let it bubble, then add the water and salt. Lift out the bay leaves after 10 minutes:
+
+{{< ingr "reserved marinade=all, water=120ml, salt=1 tbsp" >}}
 
 **4.** Lid on, turn down low, and simmer gently for about 1 hour 15 minutes, until the pork is tender and the sauce is dark and reduced. Add a splash of water if it gets too dry.
 

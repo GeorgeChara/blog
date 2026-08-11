@@ -3,7 +3,7 @@ title: "Gingerbread Men"
 toc: false
 showreadingtime: false
 layout: single
-tags: [vegetarian, freezer]
+tags: [freezer, vegetarian, stand-mixer]
 ---
 
 <style>
@@ -35,7 +35,7 @@ vanilla extract   10ml
 black treacle     170g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Black treacle is the British name for molasses, use either. Golden syrup gives a milder, lighter gingerbread if you prefer.<br>Roll 4mm thick for soft biscuits, a little thinner for snappy. Roll between two sheets of baking paper and use barely any flour, so they do not bake with a white dusting.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Golden syrup gives a milder, lighter gingerbread if you prefer.<br>Roll 4mm thick for soft biscuits, a little thinner for snappy. Roll between two sheets of baking paper and use barely any flour, so they do not bake with a white dusting.</span>
 
 ## Recipe
 
@@ -51,10 +51,10 @@ black treacle     170g
 
 **5.** Roll out 4mm thick between two sheets of baking paper. Cut out shapes and lift onto lined trays.
 
-**6.** Bake at 170°C fan for 12 minutes for soft, 14 for crisper. They firm up as they cool and soften a little the next day.
+**6.** Bake at 190°C (170°C fan) for 12 minutes for soft, 14 for crisper. They firm up as they cool and soften a little the next day.
 
 **7.** Cool on the tray a few minutes, then move to a rack. Decorate with royal icing once completely cold.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Royal icing: beat 1 egg white into about 200g icing sugar to a smooth pipeable paste, loosen with a drop of water if needed. It pipes sharp and sets hard. Shop-bought writing icing works too.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Royal icing: beat 1 egg white into about 200g icing sugar to a smooth pipeable paste, loosen with a drop of water if needed. It pipes sharp and sets hard. Shop bought writing icing works too.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: the wrapped dough, or the baked biscuits.<br>Use: roll the dough straight from chilled, thaw biscuits at room temperature.<br>Keeps: dough 5 days in the fridge or 3 months frozen, baked biscuits a week in a tin.</span>

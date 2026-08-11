@@ -1,5 +1,6 @@
 ---
 title: "Cheesecake"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Cheesecake</h1>
-<p style="color: #888; margin-top: -0.5em;">60 min bake, 180°C, 23cm springform tin, serves 12</p>
+<p style="color: #888; margin-top: -0.5em;">60 min bake, 180°C (160°C fan), 23cm springform tin, serves 12</p>
 
 ## Ingredients
 
@@ -38,7 +39,7 @@ eggs                3
 
 ## Recipe
 
-**1.** Heat the oven to 180°C. Blitz the digestive biscuits to fine crumbs in a food processor. Mix with the sugar, then stir in the melted butter until it looks like wet sand. Press firmly into the base of the springform tin and about 3cm up the sides. Bake for 10 minutes, then leave to cool.
+**1.** Heat the oven to 180°C (160°C fan). Blitz the digestive biscuits to fine crumbs in a food processor. Mix with the sugar, then stir in the melted butter until it looks like wet sand. Press firmly into the base of the springform tin and about 3cm up the sides. Bake for 10 minutes, then leave to cool.
 
 **2.** Beat the cream cheese and sugar until smooth, about 2 minutes.
 

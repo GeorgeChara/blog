@@ -1,5 +1,6 @@
 ---
 title: "Scones"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Scones</h1>
-<p style="color: #888; margin-top: -0.5em;">12 min bake, 220°C</p>
+<p style="color: #888; margin-top: -0.5em;">12 min bake, 220°C (200°C fan)</p>
 
 ## Ingredients
 
@@ -38,7 +39,7 @@ egg              1
 
 ## Recipe
 
-**1.** Heat the oven to 220°C and line a baking tray.
+**1.** Heat the oven to 220°C (200°C fan) and line a baking tray.
 
 **2.** Mix:
 
@@ -52,7 +53,7 @@ Rub in the cold butter until it looks like breadcrumbs.
 
 **4.** Tip onto a floured surface and pat to about 2.5cm thick. Don't roll it.
 
-**5.** Cut out rounds with a cutter, pressing straight down. Re-pat any offcuts and cut again.
+**5.** Cut out rounds with a cutter, pressing straight down. Repat any offcuts and cut again.
 
 **6.** Place on the tray and brush the tops with beaten egg.
 

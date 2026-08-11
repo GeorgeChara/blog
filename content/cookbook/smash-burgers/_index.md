@@ -1,5 +1,6 @@
 ---
 title: "Smash Burgers"
+tags: [cast-iron]
 toc: false
 showreadingtime: false
 layout: single

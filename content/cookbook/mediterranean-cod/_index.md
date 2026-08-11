@@ -3,7 +3,7 @@ title: "Mediterranean Cod"
 toc: false
 showreadingtime: false
 layout: single
-tags: []
+tags: [cast-iron]
 ---
 
 <style>
@@ -42,13 +42,15 @@ parsley            handful, chopped
 
 ## Recipe
 
-**1.** Heat the oven to 200°C. Pat the cod dry.
+**1.** Heat the oven to 200°C (180°C fan). Pat the cod dry.
 
-**2.** Mix the lemon juice, olive oil and melted butter in a small bowl. Stir the garlic through and set aside.
+**2.** Mix in a small bowl, stir the garlic through and set aside:
+
+{{< ingr "lemon juice=5 tbsp, olive oil=5 tbsp, butter=2 tbsp melted, garlic=5 cloves minced" >}}
 
 **3.** Combine the flour, coriander, paprika, cumin, salt and pepper on a plate. Dip each fillet in the lemon mix, then dredge all over in the spiced flour.
 
-**4.** Heat a good glug of olive oil in the cast iron skillet over medium-high until it shimmers. Sear the cod 2 minutes a side until golden.
+**4.** Heat a good glug of olive oil in the cast iron skillet over medium high until it shimmers. Sear the cod 2 minutes a side until golden.
 
 **5.** Pour the lemon garlic sauce over the fish and slide the whole skillet into the oven. Bake 8 to 10 minutes, until it flakes at the thickest part.
 

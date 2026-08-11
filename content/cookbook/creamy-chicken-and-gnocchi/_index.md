@@ -46,7 +46,7 @@ basil              to serve
 
 ## Recipe
 
-**1.** Season the thighs with paprika, salt and pepper. Brown in the oil on medium-high, a few minutes each side, then set aside.
+**1.** Season the thighs with paprika, salt and pepper. Brown in the oil on medium high, a few minutes each side, then set aside.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">They finish in the sauce, so just get colour now, not cooked through.</span>
 

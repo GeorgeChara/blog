@@ -40,7 +40,9 @@ black pepper        1 tsp, ground
 
 **2.** Meanwhile, put the diced guanciale in a cold frying pan over medium heat. Render slowly for 6 to 8 minutes until the fat runs and the pieces are golden and crisp. Take off the heat, leaving the fat in the pan.
 
-**3.** Whisk the egg yolks, whole egg, pecorino, parmesan and most of the pepper into a thick, smooth paste.
+**3.** Whisk into a thick, smooth paste, keeping a little pepper back:
+
+{{< ingr "egg yolks=4, whole egg=1, pecorino romano=40g, parmesan=15g, black pepper=1 tsp" >}}
 
 **4.** Scoop out a mugful of pasta water, then drain the spaghetti.
 

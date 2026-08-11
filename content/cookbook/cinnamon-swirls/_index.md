@@ -1,5 +1,6 @@
 ---
 title: "Cinnamon Swirls"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Cinnamon Swirls</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 180°C</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 180°C (160°C fan)</p>
 
 ## Ingredients
 
@@ -62,6 +63,6 @@ Add the warm milk and egg and mix until it comes together. Work in the butter an
 
 **6.** Place in a greased and lined tin. Cover and prove for 45 minutes.
 
-**7.** Bake at 180°C for 20-25 minutes until golden.
+**7.** Bake at 180°C (160°C fan) for 20-25 minutes until golden.
 
 **8.** Mix the icing sugar and milk to a thick drizzle. Pour over while still warm.

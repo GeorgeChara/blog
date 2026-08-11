@@ -1,5 +1,6 @@
 ---
 title: "Pickled Red Onions"
+tags: []
 toc: false
 showreadingtime: false
 layout: single

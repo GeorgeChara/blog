@@ -3,7 +3,7 @@ title: "Scotch Eggs"
 toc: false
 showreadingtime: false
 layout: single
-tags: [make-ahead]
+tags: [make-ahead, dutch-oven]
 ---
 
 <style>
@@ -35,7 +35,7 @@ oil              to fry
 
 ## Recipe
 
-**1.** Lower 6 eggs into already-boiling water for exactly 6 minutes, then straight into iced water. Leave 5 minutes, then peel gently.
+**1.** Lower 6 eggs into boiling water for exactly 6 minutes, then straight into iced water. Leave 5 minutes, then peel gently.
 
 **2.** Mix the sausagemeat with the mustard, chopped herbs and a good pinch of salt and pepper.
 

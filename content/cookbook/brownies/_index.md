@@ -1,5 +1,6 @@
 ---
 title: "Brownies"
+tags: [stand-mixer]
 toc: false
 showreadingtime: false
 layout: single
@@ -19,7 +20,7 @@ layout: single
 </style>
 
 <h1>Brownies</h1>
-<p style="color: #888; margin-top: -0.5em;">45 min bake, 180°C, 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">45 min bake, 180°C (160°C fan), 23cm square tin</p>
 
 <img loading="lazy" src="/images/brownies/header.webp" alt="Brownies">
 
@@ -44,9 +45,13 @@ flaky sea salt     pinch
 
 ## Recipe
 
-**1.** Heat the oven to 180°C. Grease the tin and line with parchment paper.
+**1.** Heat the oven to 180°C (160°C fan). Grease the tin and line with baking paper.
 
-**2.** Roughly chop the chocolate and add to a bowl with the cocoa powder (reserve 25g for later) and espresso powder. Pour the hot melted butter over and stir until smooth.
+**2.** Roughly chop the chocolate into a bowl with the cocoa and espresso powder. Pour the hot melted butter over and stir until smooth:
+
+{{< ingr "chocolate=225g, cocoa powder=50g, espresso powder=8g, unsalted butter=285g melted" >}}
+
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Reserve 25g of the cocoa powder for step 5.</span>
 
 **3.** Add to the stand mixer bowl:
 

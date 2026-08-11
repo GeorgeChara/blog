@@ -1,5 +1,6 @@
 ---
 title: "Blondies"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Blondies</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 175°C, 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 175°C (155°C fan), 23cm square tin</p>
 
 ## Ingredients
 
@@ -37,7 +38,7 @@ flaky sea salt   pinch
 
 ## Recipe
 
-**1.** Heat the oven to 175°C. Grease and line the tin.
+**1.** Heat the oven to 175°C (155°C fan). Grease and line the tin.
 
 **2.** Melt the butter in a saucepan over medium heat, stirring until it turns golden and smells nutty. Take off the heat, tip in the brown sugar and whisk together while still hot. Leave to cool for 5 minutes.
 
@@ -45,7 +46,9 @@ flaky sea salt   pinch
 
 **3.** Whisk in the egg and vanilla.
 
-**4.** Fold in the flour and salt until just combined. Fold in the melted white chocolate and walnuts.
+**4.** Fold in the flour and salt until just combined, then the melted white chocolate and walnuts:
+
+{{< ingr "flour=130g, salt=5g, white chocolate=150g melted, walnuts=80g" >}}
 
 **5.** Pour into the tin and level off.
 

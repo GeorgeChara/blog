@@ -1,5 +1,6 @@
 ---
 title: "Sticky Toffee Pudding"
+tags: []
 toc: false
 showreadingtime: false
 layout: single
@@ -16,7 +17,7 @@ layout: single
 </style>
 
 <h1>Sticky Toffee Pudding</h1>
-<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C, 33x23cm tin</p>
+<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C (160°C fan), 33x23cm tin</p>
 
 ## Ingredients
 
@@ -39,13 +40,13 @@ black treacle    20g
 double cream     315g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Medjool dates only. Standard dried dates are too dry and not caramel-flavoured enough.<br>The treacle in the sauce adds depth. Don't swap it out.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Medjool dates only. Standard dried dates are too dry and not caramel flavoured enough.<br>The treacle in the sauce adds depth. Don't swap it out.</span>
 
 ## Recipe
 
 **1.** Pit and roughly chop the dates. Put in a bowl with the bicarbonate of soda, pour over the boiling water, and leave for 10-15 minutes. Tip into a blender and blend to a smooth paste. Set aside.
 
-**2.** Heat the oven to 180°C. Grease and line the tin.
+**2.** Heat the oven to 180°C (160°C fan). Grease and line the tin.
 
 **3.** Beat the butter and both sugars for 4-5 minutes until pale and fluffy.
 
