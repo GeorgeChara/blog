@@ -1,4 +1,9 @@
+{{ if hugo.IsServer }}
+{{/* Local dev server: a distinct emoji favicon so the local tab is obvious. */}}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚧</text></svg>">
+{{ else }}
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
 <link rel="icon" type="image/png" sizes="96x96" href="{{ "favicon-96x96.png" | relURL }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+{{ end }}
