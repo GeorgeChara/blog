@@ -47,6 +47,8 @@ salt and pepper  to season
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No lid at all. Anything covered steams and you get pale skin and wet potatoes.</span>
 
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The long bake is for the potatoes, not the chicken. Thighs hit 75°C in about 45 minutes, so they finish well done rather than juicy. That is how this dish works, the fat renders out into the potatoes.<br>Want the chicken juicier: give the potatoes 30 minutes on their own first, then sit the chicken on and roast 45.<br>Thighs take it, breast does not. Don't swap.</span>
+
 **5.** Baste the chicken once halfway through.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Serve straight from the dish with the lemony juices spooned over.</span>

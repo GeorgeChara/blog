@@ -54,6 +54,8 @@ salt and pepper  to season
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Lid on while it rests and the trapped steam softens the skin you just spent 20 minutes on.</span>
 
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Go by the thermometer, not the clock. 65 minutes is shorter than the usual 20 minutes per 500g plus 20, which would be 84 for a 1.6kg bird. The lid makes up most of it, but ovens and birds vary.<br>Probe the thickest part of the thigh, not the breast, and keep clear of the bone.<br>Under 75°C, lid off, give it another 10 and check again.</span>
+
 **7.** Toss the veg through the juices in the bottom and squeeze the other lemon half over.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Carve every last scrap off the bird before you do anything else, and keep the carcass. Meat left on the bones through a three hour stock tastes of nothing afterwards.<br>A 1.6kg bird gives about 500g of picked meat and 1.5 litres of stock off the frame. Two of you eating a roast gets through half of that, so the meat is what runs out, not the stock. Buy a 2kg bird if you want all three meals comfortably.</span>

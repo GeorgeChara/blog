@@ -44,7 +44,7 @@ garam masala     1 tsp
 honey            1 tsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Kasoori methi is dried fenugreek leaves and there is no substitute. It is the thing that makes it taste like a restaurant rather than a creamy tomato sauce. Any Asian supermarket, about £1.50 for a bag that lasts a year.<br>The cashews are not optional either. They are what makes it silky. Cream alone gives you a thinner, sharper sauce.<br>No onion. Traditional makhani doesn't have any.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Kasoori methi is dried fenugreek leaves and there is no substitute. It is the thing that makes it taste like a restaurant rather than a creamy tomato sauce. Any Asian supermarket, about £1.50 for a bag that lasts a year.<br>The cashews are not optional either. They are what makes it silky. Cream alone gives you a thinner, sharper sauce.<br>No onion. The original Delhi makhani is tomato, butter, cream and cashew, and the cashews do the job onion would. Plenty of good modern recipes do add it, so it is a choice rather than a rule.</span>
 
 ## Recipe
 

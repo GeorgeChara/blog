@@ -20,7 +20,7 @@ layout: single
      display:contents makes the wrapper invisible to layout so the sticky
      element behaves as a direct child of the column. */
   .cb-searchwrap { display: contents; }
-  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); }
+  .cb-searchbar { position: sticky; top: 0; z-index: 30; background: var(--color-bg-primary); padding: 0.5em 0; margin-bottom: 1.3em; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; gap: 0.5em; }
 
   .cb-navwrap { position: sticky; top: 4em; flex: 0 0 120px; align-self: flex-start; padding-left: 0.3em; }
   .cb-nav { display: flex; flex-direction: column; gap: 0.55em; }
@@ -45,7 +45,18 @@ layout: single
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
   .frz { color: #3f9fd4; font-size: 1em; margin-left: 0.35em; }
 
-  .cookbook-search { width: 100%; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
+  .cookbook-search { flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
+
+  /* Tags toggle, sits inside the search bar on the right */
+  .cb-tagbtn {
+    flex: 0 0 auto; font-family: inherit; font-size: 0.75em; line-height: 1.4;
+    padding: 0.4em 0.7em; border: 1px solid #e0d9d0; border-radius: 3px;
+    background: #fff; color: #888; cursor: pointer; white-space: nowrap;
+    transition: color .15s, border-color .15s;
+  }
+  .cb-tagbtn:hover { color: #555; border-color: #cfc6ba; }
+  .cb-tagbtn.has-active { color: #4169E1; border-color: #4169E1; }
+  .cb-chips.is-collapsed { display: none; }
   .cookbook-search::placeholder { color: #b3b3b3; font-size: 13px; }
   .cookbook-search:focus { outline: none; border-color: #4169E1; }
   .cat.is-hidden, .recipe-list li.is-hidden { display: none; }
@@ -103,9 +114,10 @@ layout: single
 <div class="cb-searchwrap">
 <div class="cb-searchbar">
 <input type="search" id="cookbook-search" class="cookbook-search" placeholder="Search recipes…" autocomplete="off" aria-label="Search recipes">
+<button type="button" class="cb-tagbtn" id="cb-tagbtn" aria-expanded="false" aria-controls="cb-chips">tags</button>
 </div>
 </div>
-<div class="cb-chips" id="cb-chips">
+<div class="cb-chips is-collapsed" id="cb-chips">
 <button class="cb-chip" data-tag="freezer">❄ freezer</button>
 <button class="cb-chip" data-tag="make-ahead">make ahead</button>
 <button class="cb-chip" data-tag="vegetarian">vegetarian</button>
@@ -431,7 +443,15 @@ layout: single
   });
   var chips = [].slice.call(document.querySelectorAll('.cb-chip[data-tag]'));
   var clearBtn = document.getElementById('cb-chip-clear');
+  var chipRow = document.getElementById('cb-chips');
+  var tagBtn = document.getElementById('cb-tagbtn');
   var active = [];
+  // The row can be collapsed while filters are on, so the button carries the
+  // count. Without it a hidden filter would silently shrink the list.
+  function syncTagBtn() {
+    tagBtn.textContent = active.length ? 'tags (' + active.length + ')' : 'tags';
+    tagBtn.classList.toggle('has-active', active.length > 0);
+  }
   // Grey out chips no recipe carries, so the row never lies about what's there.
   chips.forEach(function (c) {
     var tag = c.getAttribute('data-tag');
@@ -467,6 +487,7 @@ layout: single
       if (i === -1) { active.push(tag); } else { active.splice(i, 1); }
       c.classList.toggle('is-active', i === -1);
       clearBtn.classList.toggle('is-shown', active.length > 0);
+      syncTagBtn();
       filter();
     });
   });
@@ -474,7 +495,12 @@ layout: single
     active = [];
     chips.forEach(function (c) { c.classList.remove('is-active'); });
     clearBtn.classList.remove('is-shown');
+    syncTagBtn();
     filter();
+  });
+  tagBtn.addEventListener('click', function () {
+    var open = chipRow.classList.toggle('is-collapsed') === false;
+    tagBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   // Reset to a clean, consistent state on every (re)visit, including Back via
   // the bfcache (where the input clears but the filtered DOM is restored stale).
@@ -483,6 +509,9 @@ layout: single
     active = [];
     chips.forEach(function (c) { c.classList.remove('is-active'); });
     clearBtn.classList.remove('is-shown');
+    chipRow.classList.add('is-collapsed');
+    tagBtn.setAttribute('aria-expanded', 'false');
+    syncTagBtn();
     filter();
   });
 })();

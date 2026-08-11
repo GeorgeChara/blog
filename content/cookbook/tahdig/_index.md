@@ -53,7 +53,7 @@ salt             to season
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The tea towel catches the condensation. Without it, water drips back down and the crust goes soggy.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Start checking at 30. You should hear it crackling and smell toasted rice, not burnt. Cast iron holds more heat than the pans most recipes assume, so it can be ready sooner.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Start checking at 30 and do not leave it to 45 unchecked. Most recipes say 25 to 30 minutes, the longer end here is because the Le Creuset base holds more heat than the thin pans they assume.<br>You want crackling and a smell of toasted rice. Any smell of burning and it is done, take it off.<br>To check without turning it out, lift the pot and tilt it, the crust should have shrunk slightly from the edge.</span>
 
 **7.** Run a knife round the edge and turn the whole thing out onto a plate, crust up. Pour the rest of the saffron water over.
 
