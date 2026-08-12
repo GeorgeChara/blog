@@ -375,6 +375,17 @@ layout: single
 </ul>
 </div>
 
+<div class="subcat">
+<p class="subcat-heading">Vegetarian</p>
+<ul class="recipe-list">
+<li class="pending" data-tags="dutch-oven freezer make-ahead vegan"><a href="/cookbook/gigantes-plaki/">Gigantes Plaki</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven vegetarian"><a href="/cookbook/halloumi-kleftiko/">Halloumi Kleftiko</a></li>
+<li class="pending" data-tags="dutch-oven freezer vegan"><a href="/cookbook/mushroom-bourguignon/">Mushroom Bourguignon</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead vegan"><a href="/cookbook/ribollita/">Ribollita</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="vegan"><a href="/cookbook/whole-roasted-cauliflower/">Whole Roasted Cauliflower</a></li>
+</ul>
+</div>
+
 </section>
 
 <section id="cypriot" class="cat">
