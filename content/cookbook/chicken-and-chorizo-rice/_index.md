@@ -5,6 +5,11 @@ tags: [dutch-oven]
 toc: false
 showreadingtime: false
 layout: single
+# scale sets, in ingredient order. stock scales sub-linearly (less evaporation
+# in a bigger, deeper pot) so it doesn't go stodgy.
+scales:
+  "2": ["16", "400g", "600g", "2", "8 cloves", "2", "1 tbsp", "4 tbsp", "1 litre", "4 tbsp"]
+  "3": ["24", "600g", "900g", "3", "12 cloves", "3", "1.5 tbsp", "5 tbsp", "1.5 litres", "5 tbsp"]
 ---
 
 <style>

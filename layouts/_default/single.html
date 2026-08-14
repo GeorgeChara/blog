@@ -57,6 +57,17 @@
     .ingr-tick { margin: 0 0.5em 0 0; vertical-align: middle; }
     .ingr:has(.ingr-tick:checked) { color: #bbb; text-decoration: line-through; }
 
+    /* Scale buttons (only shown when the recipe has a `scales` in frontmatter) */
+    .scale-row { display: flex; align-items: center; gap: 0.4em; margin: 0 0 0.7em 0; }
+    .scale-row .scale-label { font-size: 0.75em; color: #aaa; margin-right: 0.1em; }
+    .scale-btn {
+      font-family: inherit; font-size: 0.75em; line-height: 1.4;
+      padding: 0.2em 0.6em; border: 1px solid #e0d9d0; border-radius: 3px;
+      background: #fff; color: #888; cursor: pointer; transition: color .15s, border-color .15s;
+    }
+    .scale-btn:hover { color: #555; border-color: #cfc6ba; }
+    .scale-btn.is-active { background: #4169E1; border-color: #4169E1; color: #fff; }
+
     /* Wake lock pill — fixed bottom right */
     #wake-btn {
       position: fixed;
@@ -82,6 +93,11 @@
     }
   </style>
 
+  {{ with .Params.scales }}
+  <script id="ingredient-scales" type="text/plain">{{ range $k, $v := . }}{{ $k }}={{ delimit $v "|" }}
+{{ end }}</script>
+  {{ end }}
+
   <button id="wake-btn" onclick="toggleWake()" title="Keep screen on">screen on</button>
 
   <script>
@@ -94,6 +110,8 @@
                 .replace(/</g, '&lt;').replace(/>/g, '&gt;');
       }
 
+      var ingrPre = null, ingrWrap = null;
+
       pres.forEach(function(pre) {
         var isIngr = (pre.getAttribute('style') || '').indexOf('inline-block') !== -1;
 
@@ -101,6 +119,9 @@
         wrap.className = 'ingr-wrap';
         pre.parentNode.insertBefore(wrap, pre);
         wrap.appendChild(pre);
+
+        // First inline-block pre is the main ingredients list, the one we scale.
+        if (isIngr && !ingrPre) { ingrPre = pre; ingrWrap = wrap; }
 
         if (isIngr) {
           // Put a tickbox on each ingredient line. Keep section labels (grey
@@ -144,6 +165,56 @@
         };
         wrap.appendChild(btn);
       });
+
+      // Scale buttons: swap the ingredient amounts between the hand-tuned sets
+      // in frontmatter (`scales`). Only the ingredients list scales, not the
+      // step amounts. Buttons appear only when the recipe has a `scales`.
+      var scalesEl = document.getElementById('ingredient-scales');
+      if (scalesEl && ingrPre) {
+        // Data is "2=a|b|c" lines, one per scale factor. Avoids a jsonify quirk
+        // with Hugo's Params map type.
+        var scales = {};
+        scalesEl.textContent.trim().split('\n').forEach(function(line) {
+          var eq = line.indexOf('=');
+          if (eq > 0) scales[line.slice(0, eq).trim()] = line.slice(eq + 1).split('|');
+        });
+        var labels = Array.prototype.slice.call(ingrPre.querySelectorAll('label.ingr'));
+        if (Object.keys(scales).length && labels.length) {
+          // Keep each line's original HTML so repeated clicks rebuild from base.
+          var baseHTML = labels.map(function(lab) { return lab.innerHTML; });
+          function applyScale(factor) {
+            var arr = factor === 1 ? [] : (scales[String(factor)] || []);
+            labels.forEach(function(lab, i) {
+              var measure = arr[i];
+              if (measure == null || measure === '') { lab.innerHTML = baseHTML[i]; return; }
+              // Swap only the measure (before any comma); keep ", bone in skin on"
+              // etc, and the name and its padding.
+              lab.innerHTML = baseHTML[i].replace(/(\s{2,})([^<>]+)$/, function(_, gap, amount) {
+                var comma = amount.indexOf(',');
+                return gap + measure + (comma >= 0 ? amount.slice(comma) : '');
+              });
+            });
+          }
+          var row = document.createElement('div');
+          row.className = 'scale-row';
+          var lbl = document.createElement('span');
+          lbl.className = 'scale-label';
+          lbl.textContent = 'scale';
+          row.appendChild(lbl);
+          [1, 2, 3].forEach(function(f) {
+            var b = document.createElement('button');
+            b.className = 'scale-btn' + (f === 1 ? ' is-active' : '');
+            b.textContent = '×' + f;
+            b.onclick = function() {
+              row.querySelectorAll('.scale-btn').forEach(function(x) { x.classList.remove('is-active'); });
+              b.classList.add('is-active');
+              applyScale(f);
+            };
+            row.appendChild(b);
+          });
+          ingrWrap.parentNode.insertBefore(row, ingrWrap);
+        }
+      }
 
       document.getElementById('wake-btn').style.display = 'block';
     })();
