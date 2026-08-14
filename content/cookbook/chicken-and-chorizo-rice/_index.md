@@ -10,6 +10,9 @@ layout: single
 scales:
   "2": ["16", "400g", "600g", "2", "8 cloves", "2", "1 tbsp", "4 tbsp", "1 litre", "4 tbsp"]
   "3": ["24", "600g", "900g", "3", "12 cloves", "3", "1.5 tbsp", "5 tbsp", "1.5 litres", "5 tbsp"]
+scalenotes:
+  "2": "+10 min lid on, +10 min lid off"
+  "3": "+15 min lid on, +15 min lid off"
 ---
 
 <style>

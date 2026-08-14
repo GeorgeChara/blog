@@ -67,6 +67,7 @@
     }
     .scale-btn:hover { color: #555; border-color: #cfc6ba; }
     .scale-btn.is-active { background: #4169E1; border-color: #4169E1; color: #fff; }
+    .scale-note:not(:empty) { display: block; margin-top: 0.9em; font-size: 0.85em; color: #888; white-space: normal; }
 
     /* Wake lock pill — fixed bottom right */
     #wake-btn {
@@ -95,6 +96,10 @@
 
   {{ with .Params.scales }}
   <script id="ingredient-scales" type="text/plain">{{ range $k, $v := . }}{{ $k }}={{ delimit $v "|" }}
+{{ end }}</script>
+  {{ end }}
+  {{ with .Params.scalenotes }}
+  <script id="scale-notes" type="text/plain">{{ range $k, $v := . }}{{ $k }}={{ $v }}
 {{ end }}</script>
   {{ end }}
 
@@ -178,6 +183,16 @@
           var eq = line.indexOf('=');
           if (eq > 0) scales[line.slice(0, eq).trim()] = line.slice(eq + 1).split('|');
         });
+        // Optional per-scale note (e.g. cook-time bump for a bigger batch).
+        // Script-tag text isn't entity-decoded, so decode it ourselves.
+        function decodeEntities(s) { var t = document.createElement('textarea'); t.innerHTML = s; return t.value; }
+        var notes = {};
+        var notesEl = document.getElementById('scale-notes');
+        if (notesEl) notesEl.textContent.trim().split('\n').forEach(function(line) {
+          var eq = line.indexOf('=');
+          if (eq > 0) notes[line.slice(0, eq).trim()] = decodeEntities(line.slice(eq + 1));
+        });
+        var noteEl;
         var labels = Array.prototype.slice.call(ingrPre.querySelectorAll('label.ingr'));
         if (Object.keys(scales).length && labels.length) {
           // Keep each line's original HTML so repeated clicks rebuild from base.
@@ -194,6 +209,7 @@
                 return gap + measure + (comma >= 0 ? amount.slice(comma) : '');
               });
             });
+            if (noteEl) noteEl.textContent = notes[String(factor)] || '';
           }
           var row = document.createElement('div');
           row.className = 'scale-row';
@@ -213,6 +229,10 @@
             row.appendChild(b);
           });
           ingrWrap.parentNode.insertBefore(row, ingrWrap);
+          // Note lives inside the ingredients block, below the list.
+          noteEl = document.createElement('span');
+          noteEl.className = 'scale-note';
+          ingrPre.appendChild(noteEl);
         }
       }
 
