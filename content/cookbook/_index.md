@@ -418,6 +418,7 @@ layout: single
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
 <li data-tags="freezer vegan"><a href="/cookbook/cosmic-souvla-sauce/">Cosmic Souvla Sauce</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
+<li class="pending" data-tags="make-ahead"><a href="/cookbook/honey-chipotle-glaze/">Honey Chipotle Glaze</a></li>
 <li class="pending"><a href="/cookbook/hot-honey/">Hot Honey</a></li>
 <li class="pending"><a href="/cookbook/jalapeno-relish/">Jalapeño Relish</a></li>
 <li><a href="/cookbook/parsley-yoghurt/">Parsley Yoghurt</a></li>
