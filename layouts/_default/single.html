@@ -52,6 +52,36 @@
     }
     .copy-btn:hover { color: #555; }
 
+    /* Yield stepper: the same tab as the copy button, in the same place -
+       one oblong straddling the top edge of the ingredients box. */
+    .yield-step {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+      display: flex;
+      background: #fff;
+      border: 1px solid #E5DECF;
+      border-bottom: none;
+      border-radius: 3px 3px 0 0;
+      overflow: hidden;
+      font-size: 0.72em;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      line-height: 1.4;
+    }
+    .yield-step button {
+      background: none;
+      border: 0;
+      padding: 0.2em 0.6em;
+      font: inherit;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .yield-step button + button { border-left: 1px solid #E5DECF; }
+    .yield-step button:hover:not(:disabled) { color: #555; }
+    .yield-step button:disabled { opacity: 0.35; cursor: default; }
+
     /* Ingredient tick-off list */
     .ingr { cursor: pointer; }
     .ingr-tick { margin: 0 0.5em 0 0; vertical-align: middle; }
@@ -98,6 +128,10 @@
   <script id="ingredient-scales" type="text/plain">{{ range $k, $v := . }}{{ $k }}={{ delimit $v "|" }}
 {{ end }}</script>
   {{ end }}
+  {{ with .Params.makes }}
+  <script id="yield-config" type="text/plain">{{ range $k, $v := . }}{{ $k }}={{ $v }}
+{{ end }}</script>
+  {{ end }}
   {{ with .Params.scalenotes }}
   <script id="scale-notes" type="text/plain">{{ range $k, $v := . }}{{ $k }}={{ $v }}
 {{ end }}</script>
@@ -107,6 +141,16 @@
 
   <script>
     (function() {
+      var yieldCfg = {};
+      (function () {
+        var el = document.getElementById('yield-config');
+        if (!el) return;
+        el.textContent.trim().split('\n').forEach(function (line) {
+          var eq = line.indexOf('=');
+          if (eq > 0) yieldCfg[line.slice(0, eq).trim()] = line.slice(eq + 1).trim();
+        });
+      })();
+
       var pres = document.querySelectorAll('pre');
       if (!pres.length) return;
 
@@ -143,6 +187,11 @@
           }).join('\n');
         }
 
+        // A recipe that makes whole things gets a -/+ stepper instead of copy:
+        // with three or four ingredients a shopping list is not worth a button,
+        // and "how many do I want" is the question actually being asked.
+        if (isIngr && yieldCfg.unit) { buildYieldStepper(wrap, pre); return; }
+
         var btn = document.createElement('button');
         btn.className = 'copy-btn';
         btn.textContent = 'copy';
@@ -170,6 +219,66 @@
         };
         wrap.appendChild(btn);
       });
+
+      // Scale ingredient amounts by yield. Amounts are read from the page and
+      // multiplied, so nothing has to be hand-tuned per count - which works for
+      // bread because baker's percentages are linear. It would NOT be right for
+      // anything where a bigger batch needs proportionally less, like stock.
+      function buildYieldStepper(wrap, pre) {
+        var unit = yieldCfg.unit;
+        var base = parseInt(yieldCfg.base, 10) || 1;
+        var min  = parseInt(yieldCfg.min, 10) || base;
+        var max  = parseInt(yieldCfg.max, 10) || base;
+        var n = base;
+
+        var labels = Array.prototype.slice.call(pre.querySelectorAll('label.ingr'));
+        var baseHTML = labels.map(function(l) { return l.innerHTML; });
+        // the grey "Makes 2 baguettes" line above the ingredients
+        var headSpan = pre.querySelector('span[style*="888"]');
+        var headHTML = headSpan ? headSpan.innerHTML : null;
+
+        function tidy(v) {
+          // whole grams read better than 13.5; keep a half only under 10
+          return v < 10 ? Math.round(v * 2) / 2 : Math.round(v);
+        }
+
+        function apply() {
+          var f = n / base;
+          labels.forEach(function(lab, i) {
+            lab.innerHTML = baseHTML[i].replace(/(\s{2,})([\d.]+)(\s*[a-zA-Z]*)/,
+              function(_, gap, num, suffix) { return gap + tidy(parseFloat(num) * f) + suffix; });
+          });
+          if (headSpan && headHTML) {
+            headSpan.innerHTML = headHTML.replace(/\d+/, n)
+              .replace(new RegExp(unit.replace(/s$/, '') + 's?\\b'),
+                       n === 1 ? unit.replace(/s$/, '') : unit);
+          }
+          minus.disabled = n <= min;
+          plus.disabled = n >= max;
+        }
+
+        var box = document.createElement('div');
+        box.className = 'yield-step';
+        var minus = document.createElement('button');
+        minus.type = 'button'; minus.textContent = '\u2212';
+        minus.title = 'fewer';
+        var plus = document.createElement('button');
+        plus.type = 'button'; plus.textContent = '+';
+        plus.title = 'more';
+        minus.onclick = function() { if (n > min) { n--; apply(); } };
+        plus.onclick  = function() { if (n < max) { n++; apply(); } };
+        box.appendChild(minus); box.appendChild(plus);
+        wrap.appendChild(box);
+
+        // Lock the box to its widest state before showing the base amount, so
+        // stepping up to 2940g or "Makes 14 baguettes" never reflows the page.
+        apply();
+        var start = n;
+        n = max; apply();
+        var widest = Math.ceil(pre.getBoundingClientRect().width);
+        n = start; apply();
+        pre.style.minWidth = widest + 'px';
+      }
 
       // Scale buttons: swap the ingredient amounts between the hand-tuned sets
       // in frontmatter (`scales`). Only the ingredients list scales, not the
