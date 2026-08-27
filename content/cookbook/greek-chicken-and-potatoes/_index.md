@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Greek Chicken and Potatoes</h1>
-<p style="color: #888; margin-top: -0.5em;">One tray, 1 hr 20, 200°C (180°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">One tray, 1 hr 20, 180°C, serves 4</p>
 
 ## Ingredients
 
@@ -34,7 +34,7 @@ salt and pepper  to season
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan).
+**1.** Heat the oven to 180°C.
 
 **2.** Into the dish and toss it all together:
 

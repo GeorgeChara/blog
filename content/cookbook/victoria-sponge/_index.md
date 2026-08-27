@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Victoria Sponge</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 190°C (170°C fan), two 20cm tins</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 170°C, two 20cm tins</p>
 
 ![](/images/victoria-sponge/header.webp)
 
@@ -44,7 +44,7 @@ icing sugar        for dusting
 
 ## Recipe
 
-**1.** Heat the oven to 190°C (170°C fan). Grease two 20cm sandwich tins and line the bases with baking paper.
+**1.** Heat the oven to 170°C. Grease two 20cm sandwich tins and line the bases with baking paper.
 
 **2.** Weigh your eggs in their shells. Use that same weight for the butter, sugar, and flour.
 

@@ -34,7 +34,7 @@ salt             1 tsp
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Stir the lemon into the milk and leave 5 minutes to sour and thicken.
+**1.** Heat the oven to 180°C. Stir the lemon into the milk and leave 5 minutes to sour and thicken.
 
 **2.** Mix the dry ingredients, then stir in the soured milk to a soft, sticky dough. Don't knead, just bring it together.
 

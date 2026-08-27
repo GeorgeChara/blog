@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Blondies</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 175°C (155°C fan), 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 155°C, 23cm square tin</p>
 
 ## Ingredients
 
@@ -39,7 +39,7 @@ flaky sea salt   pinch
 
 ## Recipe
 
-**1.** Heat the oven to 175°C (155°C fan). Grease and line the tin.
+**1.** Heat the oven to 155°C. Grease and line the tin.
 
 **2.** Melt the butter in a saucepan over medium heat, stirring until it turns golden and smells nutty. Take off the heat, tip in the brown sugar and whisk together while still hot. Leave to cool for 5 minutes.
 

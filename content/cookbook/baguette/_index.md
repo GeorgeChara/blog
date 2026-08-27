@@ -118,7 +118,7 @@ It should look shaggy at this point, close to porridge consistency. Cover and le
   <div class="media-content" id="s5-video"><iframe src="https://www.youtube.com/embed/IRDL3lPQSkc?start=57&mute=1" frameborder="0" allowfullscreen></iframe></div>
 </div>
 
-**6.** Preheat oven to 230°C (210°C fan) with an empty metal tray on the bottom rack.
+**6.** Preheat oven to 210°C with an empty metal tray on the bottom rack.
 
 **7.** Score baguettes with 3/4 lines down the middle using a sharp blade.
 
@@ -129,9 +129,11 @@ It should look shaggy at this point, close to porridge consistency. Cover and le
 
 </details>
 
-**8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. **Bake at 230°C (210°C fan) for 10 mins then 210°C (190°C fan) for 7 mins**.
+**8.** Load baguettes into the oven and immediately pour a cup of boiling water into the hot tray. Bake:
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: bake until just set but still pale, cool fully, then freeze in a bag.<br>Reheat: from frozen into a hot 230°C (210°C fan) oven with a splash of water for steam, 14–18 mins until golden.<br>Keeps: 6–8 weeks frozen.</span>
+{{< ingr "210°C=10 mins, 190°C=7 mins" >}}
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: score and bake with steam as normal, but pull them pale and just set. Cool completely before bagging, or condensation turns to ice.<br>Reheat: from frozen, do not thaw. Into a hot 210°C oven, 14–18 mins until golden. A splash of water at the start stops the crust drying out; finish dry so it crisps.<br>Keeps: 6–8 weeks frozen.</span>
 
 <script>
 function toggleMedia(id, el) {

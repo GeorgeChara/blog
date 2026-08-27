@@ -52,7 +52,7 @@ cooked chicken   150g, shredded
 
 **2.** Bring it up to barely a simmer, a few bubbles breaking the surface every couple of seconds. Three hours.
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Do it in the oven, not on the hob, 110°C (90°C fan) with the lid on. The oven holds steady for hours so it can't drift into a boil, and the heat comes from all sides so nothing catches. Check after 30 minutes and drop the temperature if it is bubbling hard. A slow cooker does the same job.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Do it in the oven, not on the hob, 90°C with the lid on. The oven holds steady for hours so it can't drift into a boil, and the heat comes from all sides so nothing catches. Check after 30 minutes and drop the temperature if it is bubbling hard. A slow cooker does the same job.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Never let it boil, and don't stir it. A hard boil churns the fat back in and shears the scum into particles too fine to strain out. Left still, the scum stays on top as a raft and the sieve catches it, which is why there is no skimming in this recipe.</span>
 

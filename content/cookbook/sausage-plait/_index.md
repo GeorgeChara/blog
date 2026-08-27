@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Sausage Plait</h1>
-<p style="color: #888; margin-top: -0.5em;">35 min bake, 200°C (180°C fan), serves 4-6</p>
+<p style="color: #888; margin-top: -0.5em;">35 min bake, 180°C, serves 4-6</p>
 
 ## Ingredients
 
@@ -56,7 +56,7 @@ sesame seeds      10g
 
 {{< ingr "sausage meat=500g, breadcrumbs=40g, sage=5g, dijon=15g, salt=3g, black pepper=2g, cooled onions" >}}
 
-**3.** Heat the oven to 200°C (180°C fan). Line a large baking tray with baking paper.
+**3.** Heat the oven to 180°C. Line a large baking tray with baking paper.
 
 **4.** Roll the rough puff pastry to a 40x30cm rectangle, about 3-4mm thick. Transfer to the lined tray.
 

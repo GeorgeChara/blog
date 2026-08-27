@@ -18,7 +18,7 @@ tags: [freezer, vegan, stand-mixer]
 </style>
 
 <h1>Arkatena</h1>
-<p style="color: #888; margin-top: -0.5em;">overnight poolish, 50 min bake, 185°C (165°C fan), makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">overnight poolish, 50 min bake, 165°C, makes 1 loaf</p>
 
 <img loading="lazy" src="/images/arkatena/header.webp" alt="Arkatena">
 
@@ -84,7 +84,7 @@ Add the 90g spiced water a little at a time, kneading with the dough hook on low
 
 **4.** Put on a lined tray. Slash 4 or 5 cuts across the top, about 1cm deep, to mark the slices. Prove 45 minutes to 1 hour, the cuts open up and set. Start heating the baking stone now, if using.
 
-**5.** Bake at 185°C (165°C fan) for 45 to 50 minutes, until deep golden and hollow underneath. Tent loosely with foil if the sesame browns too fast.
+**5.** Bake at 165°C for 45 to 50 minutes, until deep golden and hollow underneath. Tent loosely with foil if the sesame browns too fast.
 
 **6.** Cool fully before slicing.
 

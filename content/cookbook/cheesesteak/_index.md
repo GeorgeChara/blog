@@ -49,4 +49,4 @@ black pepper              to taste
 
 **6.** Scoop it all into the warm roll, cheese side up.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Warm the rolls first, 3 minutes at 160°C (140°C fan) in the oven. Homemade <a href="/cookbook/milk-buns/">milk buns</a> shaped into subs are ideal.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Warm the rolls first, 3 minutes at 140°C in the oven. Homemade <a href="/cookbook/milk-buns/">milk buns</a> shaped into subs are ideal.</span>

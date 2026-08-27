@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Enchiladas</h1>
-<p style="color: #888; margin-top: -0.5em;">45 min, 200°C (180°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">45 min, 180°C, serves 4</p>
 
 ![](/images/enchiladas/header.webp)
 
@@ -88,4 +88,4 @@ fresh parsley      handful
 
 </details>
 
-**8.** Bake at 200°C (180°C fan) for 15/20 minutes until the cheese is melted and bubbling. Finely dice the other half of the red onion and finish with it and torn parsley.
+**8.** Bake at 180°C for 15/20 minutes until the cheese is melted and bubbling. Finely dice the other half of the red onion and finish with it and torn parsley.

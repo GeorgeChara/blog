@@ -22,7 +22,7 @@ layout: single
 </style>
 
 <h1>Pastitsio</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot baked pasta, makaronia tou fournou, 40 min bake at 180°C (160°C fan), serves 8</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot baked pasta, makaronia tou fournou, 40 min bake at 160°C, serves 8</p>
 
 ## Ingredients
 
@@ -82,7 +82,7 @@ salt and pepper  to season
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The halloumi is salty, so taste before adding more salt.</span>
 
-**8.** Heat the oven to 180°C (160°C fan). Grease a deep baking dish, about 32x22cm.
+**8.** Heat the oven to 160°C. Grease a deep baking dish, about 32x22cm.
 
 **9.** Lay the pasta in the dish, all the tubes facing the same way so it slices cleanly. Meat sauce over and level it, then the bechamel over that, levelled into a thick even layer.
 

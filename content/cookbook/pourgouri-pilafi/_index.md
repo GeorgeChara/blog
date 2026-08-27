@@ -37,7 +37,7 @@ black pepper     3g
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Heat the butter and olive oil in a wide ovenproof pan or casserole.
+**1.** Heat the oven to 180°C. Heat the butter and olive oil in a wide ovenproof pan or casserole.
 
 **2.** Add the finely diced onion and the broken vermicelli. Cook, stirring regularly, for 5-7 minutes until the onion is soft and the vermicelli is golden brown.
 

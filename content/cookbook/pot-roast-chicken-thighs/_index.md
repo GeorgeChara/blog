@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Pot-Roast Chicken Thighs</h1>
-<p style="color: #888; margin-top: -0.5em;">one pot, hands off, 220°C (200°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">one pot, hands off, 200°C, serves 4</p>
 
 ## Ingredients
 
@@ -34,7 +34,7 @@ salt and pepper  to taste
 
 ## Recipe
 
-**1.** Heat the oven to 220°C (200°C fan). Pat the skin really dry, then rub with the oil and plenty of salt. Dry skin is the whole secret to crisp.
+**1.** Heat the oven to 200°C. Pat the skin really dry, then rub with the oil and plenty of salt. Dry skin is the whole secret to crisp.
 
 **2.** Scatter in the Dutch oven, then sit the thighs on top, skin up and proud of the liquid:
 

@@ -48,6 +48,6 @@ oil              to fry
 
 **6.** Heat oil to 170°C in the Le Creuset casserole, deep enough to cover the eggs. Fry a couple at a time for 6 to 7 minutes, turning, until deep golden and cooked through. Drain on kitchen roll.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Eat cold. Cook the day before, keep 2 days in the fridge, halve to serve.<br>The 6-minute egg and iced water give a jammy yolk. Seal with no gaps so it doesn't split.<br>No deep pan? Bake at 200°C fan for 25 minutes, turning halfway.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Eat cold. Cook the day before, keep 2 days in the fridge, halve to serve.<br>The 6-minute egg and iced water give a jammy yolk. Seal with no gaps so it doesn't split.<br>No deep pan? Bake at 200°C for 25 minutes, turning halfway.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.thekitchn.com/scotch-egg-recipe-23270550">The Kitchn</a>, <a href="https://nerdswithknives.com/best-scotch-egg-jammy-yolk/">Nerds with Knives</a>.</span>

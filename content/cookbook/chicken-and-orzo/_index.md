@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Chicken and Orzo</h1>
-<p style="color: #888; margin-top: -0.5em;">One pot, 45 min, 200°C (180°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">One pot, 45 min, 180°C, serves 4</p>
 
 ## Ingredients
 
@@ -36,7 +36,7 @@ olive oil        2 tbsp
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan).
+**1.** Heat the oven to 180°C.
 
 **2.** Brown the chicken skin side down in the Dutch oven for 5 minutes. Set aside.
 

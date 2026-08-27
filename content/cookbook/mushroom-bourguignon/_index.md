@@ -78,7 +78,7 @@ salt and pepper     to season
 
 **5.** Season and pull out the bay. Serve over <a href="/cookbook/mashed-potato/">mashed potato</a> to catch the sauce.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Better the next day, like any braise.<br>For hands off, do the braise at step 4 with the lid on in the oven at 160°C (140°C fan) for 40 minutes.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Better the next day, like any braise.<br>For hands off, do the braise at step 4 with the lid on in the oven at 140°C for 40 minutes.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;">❄ <strong>Freezer</strong><br>Freeze: cool fully, freeze in portions for up to 3 months.<br>Reheat: from frozen in a pan on low, a splash of water if it tightens.</span>
 

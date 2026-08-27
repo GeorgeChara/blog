@@ -18,7 +18,7 @@ tags: [freezer, vegetarian, cast-iron, stand-mixer]
 </style>
 
 <h1>Skillet Cookie</h1>
-<p style="color: #888; margin-top: -0.5em;">serves 8, 40 min, 180°C (160°C fan), 25cm skillet</p>
+<p style="color: #888; margin-top: -0.5em;">serves 8, 40 min, 160°C, 25cm skillet</p>
 
 ## Ingredients
 
@@ -39,7 +39,7 @@ chocolate chunks    175g
 
 ## Recipe
 
-**1.** Heat the oven to 180°C (160°C fan). Butter a 25cm ovenproof skillet.
+**1.** Heat the oven to 160°C. Butter a 25cm ovenproof skillet.
 
 **2.** Melt the butter gently. To brown it, keep it on the heat until golden and nutty, then cool slightly.
 

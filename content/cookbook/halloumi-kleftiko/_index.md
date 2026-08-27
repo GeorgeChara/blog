@@ -66,7 +66,7 @@ dried mint       to scatter
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Mix the dressing:
+**1.** Heat the oven to 180°C. Mix the dressing:
 
 {{< ingr "olive oil=4 tbsp, lemon=1 juice and zest, dried oregano=1 tbsp, ground cinnamon=1/2 tsp, salt and pepper=light" >}}
 

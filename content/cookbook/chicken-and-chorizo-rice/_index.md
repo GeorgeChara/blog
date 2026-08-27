@@ -24,7 +24,7 @@ scalenotes:
 </style>
 
 <h1>Chicken and Chorizo Rice</h1>
-<p style="color: #888; margin-top: -0.5em;">One pot, oven, 50 min, 200°C (180°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">One pot, oven, 50 min, 180°C, serves 4</p>
 
 ## Ingredients
 
@@ -44,7 +44,7 @@ olive oil        2 tbsp
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan).
+**1.** Heat the oven to 180°C.
 
 **2.** Everything except the chicken into the Dutch oven. Stir once:
 

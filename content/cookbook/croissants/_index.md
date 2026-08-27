@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Croissants</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C (180°C fan) then 180°C (160°C fan), two-day recipe</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 180°C then 160°C, two-day recipe</p>
 
 ## Ingredients
 
@@ -74,4 +74,4 @@ whole milk       14g
 
 **11.** Brush the tops with egg wash. Keep it off the cut sides or it seals the layers shut.
 
-**12.** Bake at 200°C (180°C fan) for 10 minutes. Rotate the trays, drop to 180°C (160°C fan) and bake for another 10-13 minutes until deep golden brown. Leave on a wire rack for at least 20 minutes before eating.
+**12.** Bake at 180°C for 10 minutes. Rotate the trays, drop to 160°C and bake for another 10-13 minutes until deep golden brown. Leave on a wire rack for at least 20 minutes before eating.

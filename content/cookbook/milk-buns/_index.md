@@ -18,7 +18,7 @@ tags: [freezer, stand-mixer]
 </style>
 
 <h1>Milk Buns</h1>
-<p style="color: #888; margin-top: -0.5em;">16 min bake, 180°C (160°C fan), makes 6</p>
+<p style="color: #888; margin-top: -0.5em;">16 min bake, 160°C, makes 6</p>
 
 ## Ingredients
 
@@ -53,7 +53,7 @@ milk                to brush
 
 **5.** Divide into 6. Shape into 15cm logs for sub rolls, or tight balls for burgers. Space on a lined tray and prove 1 hour until puffy.
 
-**6.** Brush with milk. Bake at 180°C (160°C fan) for 15 to 18 minutes until pale golden.
+**6.** Brush with milk. Bake at 160°C for 15 to 18 minutes until pale golden.
 
 **7.** Cool on a rack.
 

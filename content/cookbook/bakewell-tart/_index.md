@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Bakewell Tart</h1>
-<p style="color: #888; margin-top: -0.5em;">40 min bake, 200°C (180°C fan) then 180°C (160°C fan), 23cm tart tin</p>
+<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C then 160°C, 23cm tart tin</p>
 
 ## Ingredients
 
@@ -51,13 +51,13 @@ flaked almonds   40g
 
 **2.** Roll the pastry out to 3-5mm thick and line the tart tin. Trim the edges. Prick the base all over with a fork. Refrigerate for another 30 minutes.
 
-**3.** Heat the oven to 200°C (180°C fan). Line the pastry with baking paper and fill with baking beans. Blind bake for 15 minutes. Remove the paper and beans and bake for another 5 minutes until just golden. Leave to cool slightly.
+**3.** Heat the oven to 180°C. Line the pastry with baking paper and fill with baking beans. Blind bake for 15 minutes. Remove the paper and beans and bake for another 5 minutes until just golden. Leave to cool slightly.
 
 **4.** For the frangipane, melt the butter and leave to cool a little. Stir in the rest until combined:
 
 {{< ingr "unsalted butter=175g melted, caster sugar=175g, ground almonds=175g, eggs=2, almond extract=5g" >}}
 
-**5.** Reduce the oven to 180°C (160°C fan). Spread the jam over the pastry base, then pour the frangipane over the top and spread to the edges. Scatter the flaked almonds over.
+**5.** Reduce the oven to 160°C. Spread the jam over the pastry base, then pour the frangipane over the top and spread to the edges. Scatter the flaked almonds over.
 
 **6.** Bake for 35-40 minutes until set with just a faint wobble in the centre and golden on top. If the almonds start to colour too quickly, cover loosely with foil.
 

@@ -21,7 +21,7 @@ layout: single
 </style>
 
 <h1>Brownies</h1>
-<p style="color: #888; margin-top: -0.5em;">45 min bake, 180°C (160°C fan), 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">45 min bake, 160°C, 23cm square tin</p>
 
 <img loading="lazy" src="/images/brownies/header.webp" alt="Brownies">
 
@@ -46,7 +46,7 @@ flaky sea salt     pinch
 
 ## Recipe
 
-**1.** Heat the oven to 180°C (160°C fan). Grease the tin and line with baking paper.
+**1.** Heat the oven to 160°C. Grease the tin and line with baking paper.
 
 **2.** Roughly chop the chocolate into a bowl with the cocoa and espresso powder. Pour the hot melted butter over and stir until smooth:
 

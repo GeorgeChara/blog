@@ -48,7 +48,7 @@ warm water       5g
 
 **1.** Roll the puff pastry to 3mm thick. Cut into three equal rectangles. Dock all over with a fork. Refrigerate on the trays for 45 minutes.
 
-**2.** Heat the oven to 150°C (130°C fan). Place a sheet of baking paper on top of each piece of pastry, then weigh it down with a second baking tray. Bake for 40-45 minutes until pale golden and cooked through.
+**2.** Heat the oven to 130°C. Place a sheet of baking paper on top of each piece of pastry, then weigh it down with a second baking tray. Bake for 40-45 minutes until pale golden and cooked through.
 
 **3.** Remove the top trays. Dust the pastry generously with icing sugar. Return under the grill at 220°C for 3-5 minutes until the sugar caramelises to a deep amber. Watch constantly. Trim all three sheets to exactly the same size while still hot. Leave to cool.
 

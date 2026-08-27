@@ -70,7 +70,7 @@ mint             handful, chopped
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Don't stir. The layers are the point.</span>
 
-**6.** Lid on tight, lowest possible heat, 25 minutes. Or 180°C (160°C fan) in the oven.
+**6.** Lid on tight, lowest possible heat, 25 minutes. Or 160°C in the oven.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">If the lid is loose, put foil under it. All the steam has to stay in.</span>
 

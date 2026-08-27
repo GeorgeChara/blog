@@ -75,7 +75,7 @@ lime
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No searing, no preheating the pot. Everything goes in cold and comes up to temperature together in the oven. The crisping comes at the end under the grill.</span>
 
-**3.** Lid on, into the oven at 150°C (130°C fan) for 3 hours until the pork falls apart easily.
+**3.** Lid on, into the oven at 130°C for 3 hours until the pork falls apart easily.
 
 **4.** Lift the pork out with a slotted spoon, leaving the juices in the pot, into the stand mixer bowl. Paddle on low for a few seconds until shredded.
 

@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Boule</h1>
-<p style="color: #888; margin-top: -0.5em;">76% hydration, 50 min bake, 230°C (210°C fan), makes 1 loaf</p>
+<p style="color: #888; margin-top: -0.5em;">76% hydration, 50 min bake, 210°C, makes 1 loaf</p>
 
 ## Ingredients
 
@@ -60,7 +60,7 @@ Cover and leave 1/2 hours at room temperature, or return to the fridge overnight
 
 ## Bake
 
-**1.** Place the Dutch oven with its lid in the oven and preheat to 230°C (210°C fan) for at least 30 minutes.
+**1.** Place the Dutch oven with its lid in the oven and preheat to 210°C for at least 30 minutes.
 
 **2.** Set your sling on the work surface and tip the banneton upside down onto it so the dough lands seam side down.
 
@@ -70,6 +70,6 @@ Cover and leave 1/2 hours at room temperature, or return to the fridge overnight
 
 **4.** Lift the sling by both ends and lower the dough into the hot pot. Tuck any excess paper down inside the pot, put the lid on and bake for 30 minutes.
 
-**5.** Remove the lid, drop to 210°C (190°C fan) and bake for a further 20 minutes until deep golden. Lift out using the sling and cool on a wire rack for at least 1 hour before cutting.
+**5.** Remove the lid, drop to 190°C and bake for a further 20 minutes until deep golden. Lift out using the sling and cool on a wire rack for at least 1 hour before cutting.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A 26cm pot fits the full batch comfortably. Rice flour is best for lining the banneton as it doesn't absorb into the dough.<br>A silicone bread sling is worth buying for Dutch oven baking. Search "Dutch oven bread sling" on Amazon. No sling yet: cut a strip of baking paper about 30cm wide and long enough to hang over both sides of the pot with enough to grip. Place it under the dough before you score, then use both ends to lower it in.<br>To bake two back to back: keep the second dough in the fridge while the first bakes. Reheat the pot for 5 minutes before the second loaf goes in.</span>

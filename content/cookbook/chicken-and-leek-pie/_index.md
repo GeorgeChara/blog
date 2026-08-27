@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Chicken and Leek Pie</h1>
-<p style="color: #888; margin-top: -0.5em;">35 min bake, 190°C (170°C fan), 24cm pie dish, serves 6</p>
+<p style="color: #888; margin-top: -0.5em;">35 min bake, 170°C, 24cm pie dish, serves 6</p>
 
 ## Ingredients
 
@@ -64,7 +64,7 @@ black pepper     to taste
 
 {{< ingr "dijon mustard=15g, dried tarragon=3g, bay leaves=2, salt and pepper=to taste" >}}
 
-**6.** Heat the oven to 190°C (170°C fan). Roll the larger pastry piece to 3-4mm thick and line the pie dish with a little overhang. Fill with the cold filling.
+**6.** Heat the oven to 170°C. Roll the larger pastry piece to 3-4mm thick and line the pie dish with a little overhang. Fill with the cold filling.
 
 **7.** Roll the lid piece. Brush the pastry overhang with beaten egg and lay the lid on top. Press and trim the edges, then crimp. Cut a small cross in the centre for steam.
 

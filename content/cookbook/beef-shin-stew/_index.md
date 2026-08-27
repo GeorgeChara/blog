@@ -44,7 +44,7 @@ potatoes         800g, halved, optional
 
 ## Recipe
 
-**1.** Heat the oven to 150°C (130°C fan). Pat the beef dry and salt it.
+**1.** Heat the oven to 130°C. Pat the beef dry and salt it.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Dry meat browns, wet meat steams.</span>
 

@@ -68,7 +68,7 @@ mint             handful, chopped
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">A little resistance, not soft. Boiled to collapse and it falls apart in the oven, underdone and the middle is raw once the outside is charred.</span>
 
-**2.** Heat the oven to 220°C (200°C fan). Mix the glaze:
+**2.** Heat the oven to 200°C. Mix the glaze:
 
 {{< ingr "harissa=2 tbsp, olive oil=2 tbsp, maple syrup=1 tbsp, ground turmeric=1/2 tsp, salt=1 tsp" >}}
 

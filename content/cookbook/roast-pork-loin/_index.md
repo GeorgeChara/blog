@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Roast Pork Loin</h1>
-<p style="color: #888; margin-top: -0.5em;">with crackling, 240°C (220°C fan) then 180°C (160°C fan), serves 4/6</p>
+<p style="color: #888; margin-top: -0.5em;">with crackling, 220°C then 160°C, serves 4/6</p>
 
 ## Ingredients
 
@@ -30,11 +30,11 @@ pepper            to taste
 
 ## Recipe
 
-**1.** Heat the oven to 240°C (220°C fan). Pat the rind bone dry. Score the fat 1cm apart if it isn't already, not into the meat. Rub with oil, then salt, into the scores.
+**1.** Heat the oven to 220°C. Pat the rind bone dry. Score the fat 1cm apart if it isn't already, not into the meat. Rub with oil, then salt, into the scores.
 
-**2.** Rind up in a roasting tin. Blast at 240°C (220°C fan) for 25 minutes to start the crackling.
+**2.** Rind up in a roasting tin. Blast at 220°C for 25 minutes to start the crackling.
 
-**3.** Drop to 180°C (160°C fan), roast about 30 minutes per 500g, until a thermometer reads 65°C. Go by the thermometer.
+**3.** Drop to 160°C, roast about 30 minutes per 500g, until a thermometer reads 65°C. Go by the thermometer.
 
 **4.** Rest under loose foil 15 minutes, snip the string, carve.
 

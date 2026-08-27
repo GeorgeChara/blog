@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Sausage and Butter Bean Casserole</h1>
-<p style="color: #888; margin-top: -0.5em;">One pot, no browning, 50 min, 200°C (180°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">One pot, no browning, 50 min, 180°C, serves 4</p>
 
 ## Ingredients
 
@@ -36,7 +36,7 @@ salt and pepper  to season
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan).
+**1.** Heat the oven to 180°C.
 
 **2.** Everything into the Dutch oven. Stir once:
 

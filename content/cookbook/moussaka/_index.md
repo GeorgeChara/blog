@@ -22,7 +22,7 @@ layout: single
 </style>
 
 <h1>Moussaka</h1>
-<p style="color: #888; margin-top: -0.5em;">Cypriot version, pork and beef mince, 1 hr bake at 180°C (160°C fan), serves 8 to 10</p>
+<p style="color: #888; margin-top: -0.5em;">Cypriot version, pork and beef mince, 1 hr bake at 160°C, serves 8 to 10</p>
 
 ## Ingredients
 
@@ -80,7 +80,7 @@ salt and pepper    to season
 
 **7.** Add the warm milk to the roux a ladle at a time, whisking between each. Keep over medium heat until it coats the back of a spoon. Nutmeg, season, off the heat.
 
-**8.** Heat the oven to 180°C (160°C fan). Assemble in a deep ovenproof dish, about 30x22cm: all the potatoes, then the aubergine, then the courgette, then the meat sauce. Pour the bechamel evenly over the top.
+**8.** Heat the oven to 160°C. Assemble in a deep ovenproof dish, about 30x22cm: all the potatoes, then the aubergine, then the courgette, then the meat sauce. Pour the bechamel evenly over the top.
 
 **9.** Bake 45 to 60 minutes until deep golden. Cool at least 15 minutes before cutting, it slices cleanly once settled.
 

@@ -51,7 +51,7 @@ Add the warm water, honey and oil and mix to a rough, sticky dough.
 
 **5.** Cover and prove about 45 minutes, until risen just above the rim.
 
-**6.** Bake at 220°C (200°C fan) for 35/40 minutes, until deep brown and hollow when tapped when tapped underneath.
+**6.** Bake at 200°C for 35/40 minutes, until deep brown and hollow when tapped when tapped underneath.
 
 **7.** Tip out and cool on a rack before slicing.
 

@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Sausage Rolls</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 200°C (180°C fan), makes 16</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C, makes 16</p>
 
 ## Ingredients
 
@@ -51,7 +51,7 @@ whole milk         15g
 
 Fry a small piece to taste and adjust seasoning.
 
-**3.** Heat the oven to 200°C (180°C fan). Line two baking trays with baking paper.
+**3.** Heat the oven to 180°C. Line two baking trays with baking paper.
 
 **4.** Roll the rough puff pastry to about 4mm thick and cut into two long rectangles.
 

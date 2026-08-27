@@ -42,7 +42,7 @@ olive oil        to drizzle
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Tumble into the Dutch oven, drizzle with olive oil and toss to coat:
+**1.** Heat the oven to 180°C. Tumble into the Dutch oven, drizzle with olive oil and toss to coat:
 
 {{< ingr "pork shoulder=500g diced, potatoes=4 cubed, carrots=4 sliced, onions=4 chopped, dried oregano=4 tsp, salt=1 tsp, olive oil=to drizzle" >}}
 

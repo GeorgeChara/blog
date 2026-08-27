@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Cheese Twists</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C (180°C fan), makes 16-24</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 180°C, makes 16-24</p>
 
 ## Ingredients
 
@@ -40,7 +40,7 @@ egg              1
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Line a large baking tray with baking paper.
+**1.** Heat the oven to 180°C. Line a large baking tray with baking paper.
 
 **2.** Roll the rough puff pastry to 3mm thick and cut into two equal rectangles.
 

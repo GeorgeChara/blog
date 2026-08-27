@@ -18,7 +18,7 @@ tags: [freezer, stand-mixer]
 </style>
 
 <h1>Brioche Buns</h1>
-<p style="color: #888; margin-top: -0.5em;">16 min bake, 180°C (160°C fan), makes 8</p>
+<p style="color: #888; margin-top: -0.5em;">16 min bake, 160°C, makes 8</p>
 
 ## Ingredients
 
@@ -54,7 +54,7 @@ sesame seeds        to top
 
 **5.** Divide into 8, shape into tight balls, space on a lined tray. Prove 1 hour until puffy.
 
-**6.** Egg wash and scatter sesame. Bake at 180°C (160°C fan) for 16 to 18 minutes until deep golden.
+**6.** Egg wash and scatter sesame. Bake at 160°C for 16 to 18 minutes until deep golden.
 
 **7.** Brush with melted butter while warm.
 

@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Scones</h1>
-<p style="color: #888; margin-top: -0.5em;">12 min bake, 220°C (200°C fan)</p>
+<p style="color: #888; margin-top: -0.5em;">12 min bake, 200°C</p>
 
 ## Ingredients
 
@@ -40,7 +40,7 @@ egg              1
 
 ## Recipe
 
-**1.** Heat the oven to 220°C (200°C fan) and line a baking tray.
+**1.** Heat the oven to 200°C and line a baking tray.
 
 **2.** Mix:
 

@@ -23,7 +23,7 @@ tags: [freezer, vegetarian, stand-mixer]
 </style>
 
 <h1>Carrot Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">25 min bake, 180°C (160°C fan), three 24cm tins, serves 12</p>
+<p style="color: #888; margin-top: -0.5em;">25 min bake, 160°C, three 24cm tins, serves 12</p>
 
 <img loading="lazy" src="/images/carrot-cake/header.webp" alt="Carrot Cake">
 
@@ -59,7 +59,7 @@ salt                 pinch
 
 ## Recipe
 
-**1.** Heat the oven to 150°C (130°C fan). Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 180°C (160°C fan). Grease and line three 24cm tins.
+**1.** Heat the oven to 130°C. Toast the pecans on a tray for 7 minutes, then chop. Turn the oven up to 160°C. Grease and line three 24cm tins.
 
 **2.** Whisk until smooth:
 

@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Pain au Chocolat</h1>
-<p style="color: #888; margin-top: -0.5em;">18 min bake, 200°C (180°C fan) then 180°C (160°C fan), two-day recipe</p>
+<p style="color: #888; margin-top: -0.5em;">18 min bake, 180°C then 160°C, two-day recipe</p>
 
 ## Ingredients
 
@@ -73,6 +73,6 @@ whole milk       14g
 
 **10.** Brush the tops with egg wash. Don't let it drip down the cut sides.
 
-**11.** Bake at 200°C (180°C fan) for 8 minutes, then reduce to 180°C (160°C fan) for a further 10-12 minutes until deep golden brown. Cool on a wire rack for at least 10 minutes before eating.
+**11.** Bake at 180°C for 8 minutes, then reduce to 160°C for a further 10-12 minutes until deep golden brown. Cool on a wire rack for at least 10 minutes before eating.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Best eaten within a few hours of baking. To revive next day: 10 minutes at 180°C (160°C fan).</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Best eaten within a few hours of baking. To revive next day: 10 minutes at 160°C.</span>

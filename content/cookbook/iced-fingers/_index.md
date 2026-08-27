@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Iced Fingers</h1>
-<p style="color: #888; margin-top: -0.5em;">~3 hrs start to finish, 10 min bake, 220°C (200°C fan), makes 12</p>
+<p style="color: #888; margin-top: -0.5em;">~3 hrs start to finish, 10 min bake, 200°C, makes 12</p>
 
 ## Ingredients
 
@@ -58,7 +58,7 @@ Mix until a rough dough forms.
 
 **3.** Knock back and divide into 12 equal pieces, roughly 70g each. Roll each into a finger shape about 12cm long. Place on a lined tray with a small gap between each.
 
-**4.** Leave to prove for 40 minutes until puffed and nearly touching. Heat the oven to 220°C (200°C fan).
+**4.** Leave to prove for 40 minutes until puffed and nearly touching. Heat the oven to 200°C.
 
 **5.** Bake for 10 minutes until golden. Cool completely on a wire rack before filling or icing.
 

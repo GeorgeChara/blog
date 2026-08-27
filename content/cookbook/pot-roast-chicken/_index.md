@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Pot Roast Chicken</h1>
-<p style="color: #888; margin-top: -0.5em;">One pot, 1 hr 20, 200°C (180°C fan), serves 4 with leftovers</p>
+<p style="color: #888; margin-top: -0.5em;">One pot, 1 hr 20, 180°C, serves 4 with leftovers</p>
 
 ## Ingredients
 
@@ -35,7 +35,7 @@ salt and pepper  to season
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Get the chicken out of the fridge half an hour before, if you remember.
+**1.** Heat the oven to 180°C. Get the chicken out of the fridge half an hour before, if you remember.
 
 **2.** Into the Dutch oven with the oil. Toss:
 

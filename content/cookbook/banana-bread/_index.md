@@ -16,7 +16,7 @@ tags: [freezer, vegetarian]
 </style>
 
 <h1>Banana Bread</h1>
-<p style="color: #888; margin-top: -0.5em;">60 min bake, 190°C (170°C fan), 2lb loaf tin, makes 1</p>
+<p style="color: #888; margin-top: -0.5em;">60 min bake, 170°C, 2lb loaf tin, makes 1</p>
 
 ## Ingredients
 
@@ -32,11 +32,11 @@ salt               1/2 tsp
 cinnamon           1 tsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The blacker and softer the bananas, the sweeter the loaf. In a hurry, bake them unpeeled at 150°C (130°C fan) for 15 min until the skins go black.<br>Brown the butter first for a nutty, caramel depth. The single biggest flavour upgrade.<br>Yogurt keeps it moist, sour cream works too. Cinnamon is optional.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The blacker and softer the bananas, the sweeter the loaf. In a hurry, bake them unpeeled at 130°C for 15 min until the skins go black.<br>Brown the butter first for a nutty, caramel depth. The single biggest flavour upgrade.<br>Yogurt keeps it moist, sour cream works too. Cinnamon is optional.</span>
 
 ## Recipe
 
-**1.** Heat the oven to 190°C (170°C fan) and line a 2lb loaf tin with paper.
+**1.** Heat the oven to 170°C and line a 2lb loaf tin with paper.
 
 **2.** Melt the butter. For the best flavour, keep it on the heat until it foams, smells nutty and turns golden brown, then leave to cool a little.
 

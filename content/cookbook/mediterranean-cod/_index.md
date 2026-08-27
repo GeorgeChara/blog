@@ -43,7 +43,7 @@ parsley            handful, chopped
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Pat the cod dry.
+**1.** Heat the oven to 180°C. Pat the cod dry.
 
 **2.** Mix in a small bowl, stir the garlic through and set aside:
 

@@ -36,7 +36,7 @@ salt and pepper    to season
 
 ## Recipe
 
-**1.** Heat the oven to 200°C (180°C fan). Pat the cod really dry on both sides.
+**1.** Heat the oven to 180°C. Pat the cod really dry on both sides.
 
 **2.** Mash into a rough paste:
 

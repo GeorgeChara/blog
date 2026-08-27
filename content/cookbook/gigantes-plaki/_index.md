@@ -35,7 +35,7 @@ layout: single
 </style>
 
 <h1>Gigantes Plaki</h1>
-<p style="color: #888; margin-top: -0.5em;">Greek baked butter beans, vegan, one pot, 50 min, 190°C (170°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">Greek baked butter beans, vegan, one pot, 50 min, 170°C, serves 4</p>
 
 ## Ingredients
 
@@ -65,7 +65,7 @@ feta             optional
 
 ## Recipe
 
-**1.** Heat the oven to 190°C (170°C fan). Soften in the oil in an ovenproof pan over medium heat, 8 minutes:
+**1.** Heat the oven to 170°C. Soften in the oil in an ovenproof pan over medium heat, 8 minutes:
 
 {{< ingr "onion=1 finely chopped, carrot=1 finely chopped, celery=1 stick, garlic=2 cloves sliced" >}}
 

@@ -18,7 +18,7 @@ tags: [vegetarian, stand-mixer]
 </style>
 
 <h1>Matilda Chocolate Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">1 hr plus chilling, 180°C (160°C fan), three 20cm tins</p>
+<p style="color: #888; margin-top: -0.5em;">1 hr plus chilling, 160°C, three 20cm tins</p>
 
 ## Ingredients
 
@@ -51,7 +51,7 @@ double cream         300ml, chilled
 
 ## Recipe
 
-**1.** Heat the oven to 180°C (160°C fan). Grease and line three 20cm tins.
+**1.** Heat the oven to 160°C. Grease and line three 20cm tins.
 
 **2.** Whisk the dry in one bowl:
 

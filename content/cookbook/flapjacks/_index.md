@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Flapjacks</h1>
-<p style="color: #888; margin-top: -0.5em;">30 min bake, 160°C (140°C fan), 20cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">30 min bake, 140°C, 20cm square tin</p>
 
 <img loading="lazy" src="/images/flapjacks/header.webp" alt="Flapjacks">
 
@@ -37,7 +37,7 @@ salt               4g
 
 ## Recipe
 
-**1.** Heat the oven to 160°C (140°C fan). Grease and line a 20cm square tin.
+**1.** Heat the oven to 140°C. Grease and line a 20cm square tin.
 
 **2.** Melt the butter, sugar and golden syrup in a pan over low heat, stirring until the sugar dissolves. Don't let it boil hard or it sets too firm as it cools.
 

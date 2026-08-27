@@ -56,4 +56,4 @@ lime             to serve
 
 **5.** Serve with soured cream and a squeeze of lime.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: cool the filling, roll the burritos, wrap each in baking paper, freeze flat.<br>Reheat: from frozen, 90 seconds in the microwave then a minute in a dry pan, or wrap in foil and bake at 180°C (160°C fan) for 25/30 minutes.<br>Keeps: 3 months frozen, 3 days in the fridge.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: cool the filling, roll the burritos, wrap each in baking paper, freeze flat.<br>Reheat: from frozen, 90 seconds in the microwave then a minute in a dry pan, or wrap in foil and bake at 160°C for 25/30 minutes.<br>Keeps: 3 months frozen, 3 days in the fridge.</span>

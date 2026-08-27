@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Hot Cross Buns</h1>
-<p style="color: #888; margin-top: -0.5em;">20 min bake, 220°C (200°C fan)</p>
+<p style="color: #888; margin-top: -0.5em;">20 min bake, 200°C</p>
 
 ## Ingredients
 
@@ -67,6 +67,6 @@ Add the warm milk, egg and butter. Knead for 10 minutes until smooth and springy
 
 **5.** Make the cross paste: mix the plain flour and water to a thick, smooth paste. Transfer to a piping bag and pipe a cross over each bun.
 
-**6.** Bake at 220°C (200°C fan) for 15-20 minutes until deep golden brown.
+**6.** Bake at 200°C for 15-20 minutes until deep golden brown.
 
 **7.** Warm the apricot jam until loose. Brush over the buns straight out of the oven for a shiny glaze.

@@ -45,7 +45,7 @@ salt and pepper  to season
 
 ## Recipe
 
-**1.** Heat the oven to 160°C (140°C fan). Warm the oil in the Dutch oven over medium high heat and brown the beef in batches, then lift it out.
+**1.** Heat the oven to 140°C. Warm the oil in the Dutch oven over medium high heat and brown the beef in batches, then lift it out.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Do not crowd the pot. In one layer with space the meat browns; piled in it steams and stays grey. Browning is most of the flavour.</span>
 

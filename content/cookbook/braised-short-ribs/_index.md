@@ -54,7 +54,7 @@ fresh rosemary     1 sprig
 
 **5.** Add the stock, bay, thyme and rosemary. Return the ribs to the pot and bring to a simmer.
 
-**6.** Lid on, into the oven at 160°C (140°C fan) for 3 hours until the meat is falling apart tender.
+**6.** Lid on, into the oven at 140°C for 3 hours until the meat is falling apart tender.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; margin-bottom:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Don't want to move the pot to the oven? Braise on the lowest hob setting with the lid on for the same time, stirring now and then.</span>
 

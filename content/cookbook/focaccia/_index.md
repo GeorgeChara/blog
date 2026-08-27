@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Focaccia</h1>
-<p style="color: #888; margin-top: -0.5em;">75% hydration, 30 min bake, 240°C (220°C fan), overnight prove, serves 12</p>
+<p style="color: #888; margin-top: -0.5em;">75% hydration, 30 min bake, 220°C, overnight prove, serves 12</p>
 
 ## Ingredients
 
@@ -43,7 +43,7 @@ olive oil        40g
 flaky sea salt   generous pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The oil quantities are not a typo. Ligurian focaccia is generous at every stage and this is what makes it taste like itself.<br>The brine poured into the dimples is the key technique. It seasons the inside and creates the characteristic chewy salty pockets. Do not skip it.<br>Use as hot an oven as your domestic oven will go. 240°C (220°C fan) is correct.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The oil quantities are not a typo. Ligurian focaccia is generous at every stage and this is what makes it taste like itself.<br>The brine poured into the dimples is the key technique. It seasons the inside and creates the characteristic chewy salty pockets. Do not skip it.<br>Use as hot an oven as your domestic oven will go. 220°C is correct.</span>
 
 ## Recipe
 
@@ -65,7 +65,7 @@ Pour the yeast mixture and olive oil into the flour and mix until a rough sticky
 
 **5.** Mix the brine salt into the 80g of water until dissolved. Pour evenly over the dimpled dough. It will pool in the holes.
 
-**6.** Leave uncovered for 45 minutes until visibly puffed. Heat the oven to 240°C (220°C fan) during this time.
+**6.** Leave uncovered for 45 minutes until visibly puffed. Heat the oven to 220°C during this time.
 
 **7.** Scatter flaky salt across the surface. Bake for 25-30 minutes until the top is golden and the bottom is deep golden brown when you lift a corner.
 

@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Kolouri</h1>
-<p style="color: #888; margin-top: -0.5em;">65% hydration, 30 min bake, 210°C (190°C fan)</p>
+<p style="color: #888; margin-top: -0.5em;">65% hydration, 30 min bake, 190°C</p>
 
 ## Ingredients
 
@@ -68,6 +68,6 @@ aniseed             2g
 
 **7.** Once proved, knock the air out by folding the dough until smooth. Shape into a 12-inch loaf, brush with milk, then roll in the seed mixture.
 
-**8.** Transfer to a lined baking tray. Score into 4–5cm sections with a dough cutter or sharp knife. Cover and prove for another hour. After 40 minutes, preheat the oven to 210°C (190°C fan).
+**8.** Transfer to a lined baking tray. Score into 4–5cm sections with a dough cutter or sharp knife. Cover and prove for another hour. After 40 minutes, preheat the oven to 190°C.
 
 **9.** Place a small ovenproof dish with half a cup of water on the bottom rack for steam. Bake for 30–35 minutes until golden. Leave to cool for 15 minutes before slicing.

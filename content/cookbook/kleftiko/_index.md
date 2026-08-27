@@ -75,7 +75,7 @@ dried mint       to scatter
 
 </details>
 
-**3.** Heat the oven to 160°C (140°C fan). Drain the potatoes and add them to the Le Creuset with the rest. Sit the lamb on top and pour in the wine with any leftover marinade:
+**3.** Heat the oven to 140°C. Drain the potatoes and add them to the Le Creuset with the rest. Sit the lamb on top and pour in the wine with any leftover marinade:
 
 {{< ingr "potatoes=2kg, onions=2 in wedges, tomatoes=2 quartered, bay leaves=3, garlic=1 bulb halved, white wine=250ml" >}}
 
@@ -110,7 +110,7 @@ dried mint       to scatter
 
 </details>
 
-**6.** Lid off, turn up to 220°C (200°C fan), and roast 15 minutes to brown the top and colour the halloumi.
+**6.** Lid off, turn up to 200°C, and roast 15 minutes to brown the top and colour the halloumi.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">This is just for colour, the lamb is already cooked.</span>
 

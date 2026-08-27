@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Oven Pilaf</h1>
-<p style="color: #888; margin-top: -0.5em;">One pot, 40 min, 190°C (170°C fan), serves 4</p>
+<p style="color: #888; margin-top: -0.5em;">One pot, 40 min, 170°C, serves 4</p>
 
 ## Ingredients
 
@@ -32,7 +32,7 @@ salt             to season
 
 ## Recipe
 
-**1.** Heat the oven to 190°C (170°C fan). Rinse the rice until the water runs clear.
+**1.** Heat the oven to 170°C. Rinse the rice until the water runs clear.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Washing the loose starch off the outside is what lets the butter coat the grain itself. Skip it and they clag together.</span>
 

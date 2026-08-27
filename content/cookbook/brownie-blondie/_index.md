@@ -22,7 +22,7 @@ layout: single
 </style>
 
 <h1>Brownie Blondie</h1>
-<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C (160°C fan), 23cm square tin</p>
+<p style="color: #888; margin-top: -0.5em;">40 min bake, 160°C, 23cm square tin</p>
 
 <img loading="lazy" src="/images/brownie-blondie/IMG_5203.webp" alt="Brownie Blondie">
 
@@ -84,7 +84,7 @@ walnuts          50g
 
 </details>
 
-**6.** Bake at 180°C (160°C fan) for 10 minutes until just melted. Take it out and feather the top with a skewer. It's much easier to swirl once the batter has softened.
+**6.** Bake at 160°C for 10 minutes until just melted. Take it out and feather the top with a skewer. It's much easier to swirl once the batter has softened.
 
 <details>
 <summary>show photo</summary>

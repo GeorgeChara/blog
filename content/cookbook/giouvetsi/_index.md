@@ -52,7 +52,7 @@ kefalotyri       100g, grated (or feta)
 
 **4.** Add the tomatoes, cinnamon, sugar, and enough water to just cover the meat. Season. Lid on, and simmer gently for about 45 minutes, until the beef is nearly tender.
 
-**5.** Heat the oven to 180°C (160°C fan). Toast the orzo in the rest of the oil in a frying pan until golden, then stir it into the pot. Pour in enough hot stock to cover the orzo by a finger, about a litre.
+**5.** Heat the oven to 160°C. Toast the orzo in the rest of the oil in a frying pan until golden, then stir it into the pot. Pour in enough hot stock to cover the orzo by a finger, about a litre.
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Toasting the orzo first keeps the grains separate and nutty rather than gluey.</span>
 

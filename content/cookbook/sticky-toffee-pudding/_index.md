@@ -18,7 +18,7 @@ layout: single
 </style>
 
 <h1>Sticky Toffee Pudding</h1>
-<p style="color: #888; margin-top: -0.5em;">40 min bake, 180°C (160°C fan), 33x23cm tin</p>
+<p style="color: #888; margin-top: -0.5em;">40 min bake, 160°C, 33x23cm tin</p>
 
 ## Ingredients
 
@@ -47,7 +47,7 @@ double cream     315g
 
 **1.** Pit and roughly chop the dates. Put in a bowl with the bicarbonate of soda, pour over the boiling water, and leave for 10-15 minutes. Tip into a blender and blend to a smooth paste. Set aside.
 
-**2.** Heat the oven to 180°C (160°C fan). Grease and line the tin.
+**2.** Heat the oven to 160°C. Grease and line the tin.
 
 **3.** Beat the butter and both sugars for 4-5 minutes until pale and fluffy.
 

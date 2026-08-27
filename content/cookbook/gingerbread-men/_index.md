@@ -16,7 +16,7 @@ tags: [freezer, vegetarian, stand-mixer]
 </style>
 
 <h1>Gingerbread Men</h1>
-<p style="color: #888; margin-top: -0.5em;">chill 2 hr, 12 min bake, 190°C (170°C fan), makes 18</p>
+<p style="color: #888; margin-top: -0.5em;">chill 2 hr, 12 min bake, 170°C, makes 18</p>
 
 ## Ingredients
 
@@ -52,7 +52,7 @@ black treacle     170g
 
 **5.** Roll out 4mm thick between two sheets of baking paper. Cut out shapes and lift onto lined trays.
 
-**6.** Bake at 190°C (170°C fan) for 12 minutes for soft, 14 for crisper. They firm up as they cool and soften a little the next day.
+**6.** Bake at 170°C for 12 minutes for soft, 14 for crisper. They firm up as they cool and soften a little the next day.
 
 **7.** Cool on the tray a few minutes, then move to a rack. Decorate with royal icing once completely cold.
 

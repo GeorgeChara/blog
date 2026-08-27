@@ -30,6 +30,7 @@
    <!-- Content -->
    {{ .Content }}
 
+
   <style>
     /* Copy button on ingredients block */
     .ingr-wrap { position: relative; display: inline-block; }
@@ -219,6 +220,35 @@
         };
         wrap.appendChild(btn);
       });
+
+      // Every oven temperature in the cookbook is a fan temperature, so the
+      // recipes just say "180°C" and this one line carries the convention.
+      // It goes with the ingredients rather than at the foot of the page:
+      // appended to the note under the ingredients block, or given its own
+      // if the recipe has no note.
+      (function () {
+        if (!ingrPre) return;
+        // NOT document.body.textContent: that includes the text of <script>
+        // elements, so this check matched its own source string and put the
+        // note on recipes with no oven step at all. Read the rendered prose.
+        var prose = Array.prototype.map.call(
+          document.querySelectorAll('main p, main li, main pre, main h2, main h3'),
+          function (n) { return n.textContent; }).join(' ');
+        if (!/\d+\s*°C/.test(prose)) return;
+        var text = 'All temperatures are for a fan oven. Add 20\u00B0C for conventional.';
+        var wrap = ingrPre.closest('.pre-wrap') || ingrPre.parentNode;
+        var el = wrap.nextElementSibling;
+        var note = el && el.querySelector && el.querySelector('span[style*="border-left"]');
+        if (note) {
+          note.insertAdjacentHTML('beforeend', '<br>' + text);
+        } else {
+          var p = document.createElement('p');
+          p.innerHTML = '<span style="display:block; color:#888; font-size:0.8em;'
+            + ' margin-bottom:1.5em; border-left:2px solid #E5DECF;'
+            + ' padding-left:0.6em;">' + text + '</span>';
+          wrap.parentNode.insertBefore(p, wrap.nextSibling);
+        }
+      })();
 
       // Scale ingredient amounts by yield. Amounts are read from the page and
       // multiplied, so nothing has to be hand-tuned per count - which works for
