@@ -62,7 +62,7 @@ salt     9g
 yeast    2g
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-bottom: 1.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use strong white bread flour. It makes a difference.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-bottom: 1.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Use strong white bread flour.</span>
 
 ## Recipe
 
