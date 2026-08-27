@@ -53,7 +53,7 @@ makes:
 </style>
 
 <h1>Baguette</h1>
-<p style="color: #888; margin-top: -0.5em;">recipe v2.1, 76% hydration, 25 min prep, 17 min bake</p>
+<p style="color: #888; margin-top: -0.5em;">76% hydration, 17 min bake</p>
 
 <img loading="lazy" src="/images/baguette/header.webp" alt="Baguette">
 
