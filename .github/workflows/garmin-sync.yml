@@ -41,10 +41,9 @@ jobs:
           fi
           tar xzf /tmp/tok.tgz -C /tmp
           ls -la /tmp/garmin_tokens
-          if ! ls /tmp/garmin_tokens/*oauth1* >/dev/null 2>&1; then
-            echo "::error::No oauth1 token - the session cannot refresh and will expire early."
-            exit 1
-          fi
+          # garminconnect 0.3.x stores one garmin_tokens.json; di_refresh_token
+          # is the long-lived half that lets the session renew itself.
+          python -c "import json,sys; d=json.load(open('/tmp/garmin_tokens/garmin_tokens.json')); sys.exit('::error::Token has no di_refresh_token; it will expire early.') if not d.get('di_refresh_token') else print('token ok, keys: '+', '.join(k for k,v in sorted(d.items()) if v))"
 
       - name: Sync Garmin activities
         env:

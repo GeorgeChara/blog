@@ -18,6 +18,7 @@ is wired up.
 import base64
 import getpass
 import io
+import json
 import subprocess
 import sys
 import tarfile
@@ -72,9 +73,20 @@ def main():
         die("token directory is empty")
     print(f"\nLogged in. Token files: {', '.join(files)}")
 
-    if not any("oauth1" in f for f in files):
-        die("no oauth1 token. Without it the session cannot refresh itself and\n"
-            "        would expire in weeks. Not worth storing - try again.")
+    # garminconnect 0.3.x dropped the oauth1/oauth2 file pair for a single
+    # garmin_tokens.json holding di_token + di_refresh_token. The refresh token
+    # is the long-lived half: without it the session cannot renew itself.
+    store = out / "garmin_tokens.json"
+    if not store.exists():
+        die(f"expected garmin_tokens.json, got: {', '.join(files)}")
+    try:
+        data = json.loads(store.read_text())
+    except Exception as e:
+        die(f"token file is not valid JSON: {e}")
+    if not data.get("di_refresh_token"):
+        die("no di_refresh_token. Without it the session cannot refresh itself\n"
+            "        and would expire early. Not worth storing - try again.")
+    print("Token has: " + ", ".join(k for k, v in sorted(data.items()) if v))
 
     buf = io.BytesIO()
     with tarfile.open(fileobj=buf, mode="w:gz") as tar:
