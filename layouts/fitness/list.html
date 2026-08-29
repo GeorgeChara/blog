@@ -14,6 +14,18 @@
   .fstat .v { font-weight: bold; font-size: 1.4em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
   .fstat .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
   .fstat .l { display: block; font-size: 0.66em; color: #999; margin-top: 0.45em; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* Each card carries a small figure so it can be read at a glance without
+     parsing the caption: a month of days, a run of weeks, the seven days of
+     this week, and one bar per activity. Same colours as the heatmap. */
+  .fspark { display: flex; align-items: flex-end; gap: 2px; margin-top: 0.55em; height: 14px; }
+  .fspark i { flex: 1 1 0; min-width: 2px; background: #ece9e0; border-radius: 1px; height: 6px; }
+  .fspark i.on { background: #9c948b; height: 12px; }
+  .fspark.week i { height: 12px; border-radius: 1px; }
+  .fspark.week i.today { box-shadow: inset 0 0 0 1px #b3ab9a; }
+  .fspark.streak i { height: 12px; flex: 0 0 5px; }
+  .fspark.split { gap: 5px; }
+  .fspark.split i { height: 12px; flex: 1 1 0; }
   .fstat .rd { color: #d2761f; } .fstat .gy { color: #3f80c6; } .fstat .rn { color: #3f9e63; }
 
   /* Combined heatmap (blue = ride, green = gym) */
@@ -69,10 +81,14 @@
 </div>
 
 <div class="fstats" id="fstats">
-  <div class="fstat"><span class="v" id="stActive">–</span><span class="l">Active days this month</span></div>
-  <div class="fstat"><span class="v" id="stStreak">–</span><span class="l">Week streak</span></div>
-  <div class="fstat"><span class="v" id="stWeek">–</span><span class="l">This week</span></div>
-  <div class="fstat"><span class="v" id="stSplit">–</span><span class="l">Ride / weights / run</span></div>
+  <div class="fstat"><span class="v" id="stActive">–</span>
+    <div class="fspark" id="spkActive"></div><span class="l">Active days this month</span></div>
+  <div class="fstat"><span class="v" id="stStreak">–</span>
+    <div class="fspark streak" id="spkStreak"></div><span class="l">Week streak</span></div>
+  <div class="fstat"><span class="v" id="stWeek">–</span>
+    <div class="fspark week" id="spkWeek"></div><span class="l">This week</span></div>
+  <div class="fstat"><span class="v" id="stSplit">–</span>
+    <div class="fspark split" id="spkSplit"></div><span class="l">Ride / weights / run</span></div>
 </div>
 
 <div class="heat-card">
@@ -134,6 +150,51 @@
   document.getElementById('stWeek').textContent = weekDays;
   document.getElementById('stSplit').innerHTML = '<span class="rd">' + ridesMonth + '</span> / <span class="gy">'
     + gymMonth + '</span> / <span class="rn">' + runsMonth + '</span>';
+
+  // Small figures under each number, so a card can be read without its caption.
+  function spark(el, cells) {
+    el.innerHTML = '';
+    cells.forEach(function (c) {
+      var i = document.createElement('i');
+      if (c.cls) i.className = c.cls;
+      if (c.bg) i.style.background = c.bg;
+      if (c.grow != null) i.style.flexGrow = c.grow;
+      el.appendChild(i);
+    });
+  }
+
+  // one mark per day elapsed this month, filled when something was done
+  var dim = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getDate();
+  var mcells = [];
+  for (var dd = 1; dd <= dim; dd++) {
+    var k = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0')
+          + '-' + String(dd).padStart(2, '0');
+    mcells.push({ cls: byDay[k] ? 'on' : '' });
+  }
+  spark(document.getElementById('spkActive'), mcells);
+
+  // one mark per week of the streak, capped so a long streak stays readable
+  var scells = [];
+  for (var w2 = 0; w2 < Math.min(streak, 10); w2++) scells.push({ cls: 'on' });
+  if (!scells.length) scells.push({});
+  spark(document.getElementById('spkStreak'), scells);
+
+  // Monday to Sunday, filled for days done, this week outlined on today
+  var wcells = [], mon = new Date(today); mon.setDate(mon.getDate() - ((mon.getDay() + 6) % 7));
+  for (var d2 = 0; d2 < 7; d2++) {
+    var dt = new Date(mon); dt.setDate(dt.getDate() + d2);
+    var kk = iso(dt);
+    wcells.push({ cls: (byDay[kk] ? 'on' : '') + (kk === iso(today) ? ' today' : '') });
+  }
+  spark(document.getElementById('spkWeek'), wcells);
+
+  // one bar per activity, width by count, colour as on the heatmap
+  var maxc = Math.max(1, ridesMonth, gymMonth, runsMonth);
+  spark(document.getElementById('spkSplit'), [
+    { bg: '#f6a351', grow: 0.15 + ridesMonth / maxc },
+    { bg: '#699bd3', grow: 0.15 + gymMonth / maxc },
+    { bg: '#61b885', grow: 0.15 + runsMonth / maxc }
+  ]);
 
   // ---- heatmap (rolling window; 4 months on mobile, 6 on desktop) ----
   var heat = document.getElementById('heat'), monthsEl = document.getElementById('heatMonths');
