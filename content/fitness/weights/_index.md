@@ -38,25 +38,28 @@ layout: single
   .lifts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6em 2.4em; }
   @media (max-width: 560px) { .lifts { grid-template-columns: 1fr; } }
   .card .h { font-weight: bold; color: #000; margin: 0 0 0.4em 0; font-size: 0.95em; }
-  table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
-  table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
-  table.ex td:first-child { width: 100%; }
+  /* The lift and its reps are what you read mid-session, so they are the
+     largest thing here; the swap-in and the notes are reference and sit back. */
+  table.ex { width: 100%; border-collapse: collapse; font-size: 1.05em; }
+  table.ex td { padding: 0.55em 0; border-bottom: 1px solid #f2efe8; vertical-align: baseline; }
+  table.ex td:first-child { width: 100%; color: #000; }
   table.ex tr:last-child td { border-bottom: none; }
-  table.ex td.r { text-align: left; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .alt { display: block; font-size: 0.78em; color: #999; margin-top: 0.25em; }
-  .alt .sw { color: #bbb; margin-right: 0.35em; }
+  table.ex td.r { text-align: right; color: #000; font-weight: bold; white-space: nowrap;
+                  font-variant-numeric: tabular-nums; padding-left: 1.2em; }
+  .alt { display: block; font-size: 0.72em; color: #b3ab9a; margin-top: 0.15em; }
+  .alt .sw { color: #c9c2b4; margin-right: 0.3em; }
 
   /* The progression rule reads as a plain sentence; a tinted box made the one
      thing you actually need to remember look like boilerplate. */
-  .callout { font-size: 0.85em; color: #555; margin: 0 0 0.9em 0; line-height: 1.6; }
+  .callout { font-size: 0.85em; color: #6b6459; margin: 0 0 0.9em 0; line-height: 1.6; }
   .callout b { color: #000; }
 
-  .rules .rule { display: grid; grid-template-columns: 6em 1fr; gap: 0.8em; padding: 0.55em 0; border-bottom: 1px solid #f2efe8; font-size: 0.85em; }
+  .rules .rule { display: grid; grid-template-columns: 5.5em 1fr; gap: 0.9em; padding: 0.5em 0; border-bottom: 1px solid #f2efe8; font-size: 0.8em; }
   .rules .rule:last-child { border-bottom: none; }
   .rules .k { font-weight: bold; color: #000; }
-  .rules .v { color: #555; line-height: 1.5; }
+  .rules .v { color: #6b6459; line-height: 1.5; }
 
-  .note { display:block; color:#888; font-size:0.8em; line-height:1.6; border-left: 2px solid #E5DECF; padding-left: 0.6em; margin: 0.55em 0; }
+  .note { display:block; color:#a9a094; font-size:0.75em; line-height:1.55; border-left: 2px solid #E5DECF; padding-left: 0.6em; margin: 0.55em 0; }
   .src { margin-top: 2.4em; }
 </style>
 
@@ -75,14 +78,14 @@ layout: single
 <div class="day ride"><div class="bar"></div><div class="in"><div class="d">Sat</div><div class="a">Ride</div></div></div>
 <div class="day rest"><div class="bar"></div><div class="in"><div class="d">Sun</div><div class="a">Rest</div></div></div>
 </div>
-<span class="note">Runs at lunch, ride is 100k. Move the days around to fit work, and keep a rest day either side of the ride.</span>
+<span class="note">Runs at lunch, ride is 100k. Move days to fit work, rest either side of the ride.</span>
 
 <p class="gym-h2">The lifts</p>
 <div class="lifts">
 <div class="card">
 <p class="h">Lift A</p>
 <table class="ex">
-<tr><td>Squat<span class="alt"><span class="sw">⇄</span>or Front squat, more upright and easier on the back</span></td><td class="r">3 x 8</td></tr>
+<tr><td>Squat<span class="alt"><span class="sw">⇄</span>or Front squat, easier on the back</span></td><td class="r">3 x 8</td></tr>
 <tr><td>Bench press</td><td class="r">3 x 8</td></tr>
 <tr><td><a href="https://www.youtube.com/shorts/Nqh7q3zDCoQ" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 8</td></tr>
 <tr><td>Dips</td><td class="r">3 x max</td></tr>
@@ -91,23 +94,23 @@ layout: single
 <div class="card">
 <p class="h">Lift B</p>
 <table class="ex">
-<tr><td><a href="https://www.youtube.com/shorts/4LBVP2Oe7fg" target="_blank" rel="noopener">Overhead press</a><span class="alt"><span class="sw">⇄</span>or Push press, leg drive to move more weight</span></td><td class="r">3 x 8</td></tr>
+<tr><td><a href="https://www.youtube.com/shorts/4LBVP2Oe7fg" target="_blank" rel="noopener">Overhead press</a><span class="alt"><span class="sw">⇄</span>or Push press, more weight</span></td><td class="r">3 x 8</td></tr>
 <tr><td><a href="https://www.youtube.com/shorts/xNwpvDuZJ3k" target="_blank" rel="noopener">Deadlift</a><span class="alt"><span class="sw">⇄</span>or <a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" rel="noopener">Romanian deadlift</a>, easier on the back</span></td><td class="r">3 x 5</td></tr>
 <tr><td><a href="https://www.youtube.com/shorts/phVtqawIgbk" target="_blank" rel="noopener">Barbell row</a></td><td class="r">3 x 8</td></tr>
 <tr><td>Dips</td><td class="r">3 x max</td></tr>
 </table>
 </div>
 </div>
-<span class="note">Dips to a couple short of failure. Everything else is a straight weight across all sets.</span>
-<span class="note">A ⇄ line is a swap-in, do that instead when the main lift does not suit the day.</span>
+<span class="note">Dips stop a couple short of failure. Everything else is the same weight across all sets.</span>
+<span class="note">⇄ is a swap-in when the main lift does not suit the day.</span>
 
 <p class="gym-h2">How it works</p>
 <div class="callout"><b>Hit every rep, add weight next time.</b> 2.5kg on the bar lifts, 5kg on the deadlift. Miss reps and stay at the same weight until you get them.</div>
 <div class="card rules">
-<div class="rule"><span class="k">Rest</span><span class="v">2 to 3 minutes between the heavy sets. Warm up each lift with a couple of lighter sets first.</span></div>
-<div class="rule"><span class="k">Legs</span><span class="v">Squat one day, deadlift the other, never both heavy on the same day. The bike and runs do the rest.</span></div>
-<div class="rule"><span class="k">Back</span><span class="v">Rows on both days stand in for pull-ups. Add chin-ups once you get the bar.</span></div>
-<div class="rule"><span class="k">Recovery</span><span class="v">Keep your heavy leg days, squat and deadlift, away from the day before your ride.</span></div>
+<div class="rule"><span class="k">Rest</span><span class="v">2 to 3 minutes between heavy sets. Warm up with two lighter sets.</span></div>
+<div class="rule"><span class="k">Legs</span><span class="v">Squat one day, deadlift the other. Never both heavy.</span></div>
+<div class="rule"><span class="k">Back</span><span class="v">Rows stand in for pull-ups. Add chin-ups once you get the bar.</span></div>
+<div class="rule"><span class="k">Recovery</span><span class="v">No heavy legs the day before a ride.</span></div>
 </div>
 
 <span class="note src">Sources: <a href="https://thefitness.wiki/routines/r-fitness-basic-beginner-routine/">r/Fitness Basic Beginner Routine</a>, <a href="https://www.strengthlog.com/strength-training-for-cyclists/">StrengthLog</a>, <a href="https://www.simongpt.co.uk/pt-strength-and-conditioning-coach-for-cyclists-and-endurance-athletes/">simongPT</a>.</span>
