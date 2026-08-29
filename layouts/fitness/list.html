@@ -14,7 +14,7 @@
   .fstat .v { font-weight: bold; font-size: 1.4em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
   .fstat .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
   .fstat .l { display: block; font-size: 0.66em; color: #999; margin-top: 0.45em; text-transform: uppercase; letter-spacing: 0.04em; }
-  .fstat .rd { color: #2b7fd9; } .fstat .gy { color: #3aa06a; }
+  .fstat .rd { color: #d2761f; } .fstat .gy { color: #3f80c6; } .fstat .rn { color: #3f9e63; }
 
   /* Combined heatmap (blue = ride, green = gym) */
   .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 1.4em 0 0; }
@@ -38,8 +38,9 @@
   table.acts tr:last-child td { border-bottom: none; }
   table.acts a { color: #000; text-decoration: none; }
   table.acts .tag { display: inline-block; font-size: 0.7em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1em 0.45em; border-radius: 3px; margin-right: 0.6em; }
-  table.acts .tag.ride { color: #2b7fd9; background: #eaf2fc; }
-  table.acts .tag.gym { color: #3aa06a; background: #eaf5ee; }
+  table.acts .tag.ride { color: #d2761f; background: #fdf2e9; }
+  table.acts .tag.gym { color: #3f80c6; background: #edf3fb; }
+  table.acts .tag.run { color: #3f9e63; background: #ecf6ef; }
   table.acts .date { display: block; font-size: 0.78em; color: #999; margin-top: 0.2em; }
   table.acts td.meta { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
@@ -58,6 +59,8 @@
 {{ end }}
 {{ $gym := slice }}
 {{ with hugo.Data.fitness }}{{ with .gym }}{{ with .dates }}{{ $gym = . }}{{ end }}{{ end }}{{ end }}
+{{ $runs := slice }}
+{{ with hugo.Data.fitness }}{{ with .runs }}{{ with .runs }}{{ $runs = . }}{{ end }}{{ end }}{{ end }}
 
 <div class="fnav">
   <a href="/fitness/cycling/">Cycling</a>
@@ -69,7 +72,7 @@
   <div class="fstat"><span class="v" id="stActive">–</span><span class="l">Active days this month</span></div>
   <div class="fstat"><span class="v" id="stStreak">–</span><span class="l">Week streak</span></div>
   <div class="fstat"><span class="v" id="stWeek">–</span><span class="l">This week</span></div>
-  <div class="fstat"><span class="v" id="stSplit">–</span><span class="l">Rides / gym (month)</span></div>
+  <div class="fstat"><span class="v" id="stSplit">–</span><span class="l">Ride / weights / run</span></div>
 </div>
 
 <div class="heat-card">
@@ -79,9 +82,9 @@
     <div class="heat" id="heat"></div>
   </div>
   <div class="heat-legend">
-    <span><i style="background:#2b7fd9"></i> Ride</span>
-    <span><i style="background:#3aa06a"></i> Gym</span>
-    <span><i style="background:linear-gradient(135deg,#2b7fd9 50%,#3aa06a 50%)"></i> Both</span>
+    <span><i style="background:#f6a351"></i> Ride</span>
+    <span><i style="background:#699bd3"></i> Weights</span>
+    <span><i style="background:#61b885"></i> Run</span>
   </div>
 </div>
 
@@ -90,17 +93,20 @@
 
 <script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
 <script id="gym-data" type="application/json">{{ $gym | jsonify | safeJS }}</script>
+<script id="runs-data" type="application/json">{{ $runs | jsonify | safeJS }}</script>
 
 <script>
 (function () {
   var rides = JSON.parse(document.getElementById('rides-data').textContent) || [];
   var gymDates = JSON.parse(document.getElementById('gym-data').textContent) || [];
+  var runs = JSON.parse(document.getElementById('runs-data').textContent) || [];
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
   // merge into byDay: { ride:{km,name,url}|null, gym:bool }
   var byDay = {};
   rides.forEach(function (r) { (byDay[r.d] = byDay[r.d] || {}).ride = { km: r.km, name: r.name, url: r.url }; });
   gymDates.forEach(function (d) { (byDay[d] = byDay[d] || {}).gym = true; });
+  runs.forEach(function (r) { (byDay[r.d] = byDay[r.d] || {}).run = { km: r.km }; });
 
   // ---- consistency stats ----
   function parse(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
@@ -113,6 +119,7 @@
   var monthDays = activeDays.filter(function (d) { return d.slice(0, 7) === ym; });
   var ridesMonth = monthDays.filter(function (d) { return byDay[d].ride; }).length;
   var gymMonth = monthDays.filter(function (d) { return byDay[d].gym; }).length;
+  var runsMonth = monthDays.filter(function (d) { return byDay[d].run; }).length;
   var thisWeekKey = weekKey(today);
   var weekDays = activeDays.filter(function (d) { return weekKey(parse(d)) === thisWeekKey; }).length;
 
@@ -125,7 +132,8 @@
   document.getElementById('stActive').textContent = monthDays.length;
   document.getElementById('stStreak').innerHTML = streak + '<span class="u"> wk</span>';
   document.getElementById('stWeek').textContent = weekDays;
-  document.getElementById('stSplit').innerHTML = '<span class="rd">' + ridesMonth + '</span> / <span class="gy">' + gymMonth + '</span>';
+  document.getElementById('stSplit').innerHTML = '<span class="rd">' + ridesMonth + '</span> / <span class="gy">'
+    + gymMonth + '</span> / <span class="rn">' + runsMonth + '</span>';
 
   // ---- heatmap (rolling window; 4 months on mobile, 6 on desktop) ----
   var heat = document.getElementById('heat'), monthsEl = document.getElementById('heatMonths');
@@ -135,8 +143,10 @@
   setReadout(null);
 
   function lvl(km) { return km <= 0 ? 1 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
-  var blues = ['#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
-  var GREEN = '#3aa06a';
+  var RIDE = ['#f8b877', '#f6a351', '#f48f2a', '#e4780c'];
+  var BLUE = '#699bd3';
+  var GREEN = '#61b885';
+  var GOLD = '#edc75c', GOLD_EDGE = '#d8ae43';
   var monthsBack = window.innerWidth < 600 ? 4 : 6;
   var start = new Date(today); start.setMonth(start.getMonth() - monthsBack);
   start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
@@ -162,10 +172,28 @@
       var key = iso(cur), rec = inRange ? byDay[key] : null;
       var i = document.createElement('i');
       i.style.width = i.style.height = cell + 'px';
-      if (rec && rec.ride && rec.gym) { i.style.background = 'linear-gradient(135deg,' + blues[lvl(rec.ride.km) - 1] + ' 50%,' + GREEN + ' 50%)'; }
-      else if (rec && rec.ride) { i.style.background = blues[lvl(rec.ride.km) - 1]; }
-      else if (rec && rec.gym) { i.style.background = GREEN; }
-      else { i.style.background = inRange ? '#ece9e0' : 'transparent'; }
+      // ride, gym and run on one day earns a gold cell with a star. Two of
+      // the three splits the square diagonally. One fills it.
+      var kinds = [];
+      if (rec && rec.ride) kinds.push(RIDE[lvl(rec.ride.km) - 1]);
+      if (rec && rec.gym) kinds.push(BLUE);
+      if (rec && rec.run) kinds.push(GREEN);
+      if (kinds.length === 3) {
+        i.style.background = GOLD;
+        i.style.boxShadow = 'inset 0 0 0 1px ' + GOLD_EDGE;
+        i.textContent = '\u2605';
+        i.style.color = '#fff';
+        i.style.fontSize = Math.max(7, Math.round(cell * 0.6)) + 'px';
+        i.style.lineHeight = cell + 'px';
+        i.style.textAlign = 'center';
+        i.style.fontStyle = 'normal';
+      } else if (kinds.length === 2) {
+        i.style.background = 'linear-gradient(135deg,' + kinds[0] + ' 50%,' + kinds[1] + ' 50%)';
+      } else if (kinds.length === 1) {
+        i.style.background = kinds[0];
+      } else {
+        i.style.background = inRange ? '#ece9e0' : 'transparent';
+      }
       if (rec) {
         i.className = 'has';
         (function (label, url) {
@@ -180,8 +208,9 @@
   heat.addEventListener('mouseleave', function () { setReadout(null); });
   function fmt(key, rec) {
     var parts = ['<span class="hk">' + dstr(key) + '</span>'];
-    if (rec.gym) parts.push('<span style="color:#3aa06a">Gym</span>');
-    if (rec.ride) parts.push('<span style="color:#2b7fd9">' + (rec.ride.name || 'Ride') + '</span>' + '<span class="hsep">|</span><span>' + Math.round(rec.ride.km) + ' km</span>');
+    if (rec.gym) parts.push('<span style="color:#3f80c6">Weights</span>');
+    if (rec.run) parts.push('<span style="color:#3f9e63">Run' + (rec.run.km ? ' ' + rec.run.km + 'km' : '') + '</span>');
+    if (rec.ride) parts.push('<span style="color:#d2761f">' + (rec.ride.name || 'Ride') + '</span>' + '<span class="hsep">|</span><span>' + Math.round(rec.ride.km) + ' km</span>');
     return parts.join('<span class="hsep">|</span>');
   }
 
@@ -197,7 +226,11 @@
       cells.push('<tr><td><span class="tag ride">Ride</span>' + nm + '<span class="date">' + dstr2 + '</span></td><td class="meta">' + Math.round(r.ride.km) + ' km</td></tr>');
     }
     if (r.gym) {
-      cells.push('<tr><td><span class="tag gym">Gym</span>Workout<span class="date">' + dstr2 + '</span></td><td class="meta"></td></tr>');
+      cells.push('<tr><td><span class="tag gym">Weights</span>Session<span class="date">' + dstr2 + '</span></td><td class="meta"></td></tr>');
+    }
+    if (r.run) {
+      cells.push('<tr><td><span class="tag run">Run</span>Run<span class="date">' + dstr2 + '</span></td><td class="meta">'
+        + (r.run.km ? r.run.km + ' km' : '') + '</td></tr>');
     }
     return cells.join('');
   }).join('');

@@ -1,0 +1,67 @@
+name: Log run
+
+# Tick off a run. Trigger from the GitHub app (Actions > Run workflow) or from
+# an iOS Shortcut that POSTs to this workflow's dispatch endpoint.
+# Distance is optional: a run with no distance still counts on the heatmap.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Run date (YYYY-MM-DD). Blank = today (Europe/London)."
+        required: false
+        default: ""
+      km:
+        description: "Distance in km. Blank = not recorded."
+        required: false
+        default: ""
+      remove:
+        description: "Set to true to remove that date instead of adding it."
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update run log
+        run: |
+          DATE="${{ github.event.inputs.date }}"
+          [ -z "$DATE" ] && DATE=$(TZ=Europe/London date +%F)
+          KM="${{ github.event.inputs.km }}"
+          FILE=data/fitness/runs.json
+          mkdir -p data/fitness
+          [ -f "$FILE" ] || echo '{"runs":[]}' > "$FILE"
+          tmp=$(mktemp)
+          if [ "${{ github.event.inputs.remove }}" = "true" ]; then
+            jq --arg d "$DATE" '.runs = [.runs[] | select(.d != $d)]' "$FILE" > "$tmp"
+            echo "Removed $DATE"
+          else
+            # replace any existing entry for that date, then sort by date
+            if [ -n "$KM" ]; then
+              jq --arg d "$DATE" --argjson k "$KM" \
+                '.runs = ([.runs[] | select(.d != $d)] + [{d:$d, km:$k}] | sort_by(.d))' "$FILE" > "$tmp"
+              echo "Logged $DATE ($KM km)"
+            else
+              jq --arg d "$DATE" \
+                '.runs = ([.runs[] | select(.d != $d)] + [{d:$d, km:null}] | sort_by(.d))' "$FILE" > "$tmp"
+              echo "Logged $DATE"
+            fi
+          fi
+          mv "$tmp" "$FILE"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fitness/runs.json
+          if git diff --staged --quiet; then
+            echo "No change (already in that state)"
+          else
+            git commit -m "Log run"
+            git push
+          fi

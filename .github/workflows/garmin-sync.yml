@@ -1,8 +1,9 @@
 name: Sync Garmin Activities
 
+# Run it by hand from the Actions tab. It used to run daily, but the Garmin
+# session token expires roughly monthly and a fresh login needs an MFA code,
+# so a schedule just produced a failed run every morning until noticed.
 on:
-  schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM UTC
   workflow_dispatch:
   repository_dispatch:
     types: [garmin-activity]
