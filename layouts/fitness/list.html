@@ -8,7 +8,7 @@
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 1.4em 0 0.8em 0; color: #000; }
 
   /* Consistency stat tiles */
-  .fstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6em; margin-top: 1.5em; }
+  .fstats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 1.5em; }
   @media (max-width: 560px) { .fstats { grid-template-columns: repeat(2, 1fr); } }
   .fstat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.8em 0.9em; }
   .fstat .v { font-weight: bold; font-size: 1.4em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
@@ -24,9 +24,12 @@
   .fspark.week i { height: 12px; border-radius: 1px; }
   .fspark.week i.today { box-shadow: inset 0 0 0 1px #b3ab9a; }
   .fspark.streak i { height: 12px; flex: 0 0 5px; }
-  .fspark.split { gap: 5px; }
-  .fspark.split i { height: 12px; flex: 1 1 0; }
-  .fstat .rd { color: #d2761f; } .fstat .gy { color: #3f80c6; } .fstat .rn { color: #3f9e63; }
+  .heat-legend b { font-weight: 600; color: #8d8478; font-variant-numeric: tabular-nums; }
+  /* The month's ride/weights/run split, as one thin bar rather than a fourth
+     card - the legend directly above it already names the colours. */
+  .heat-split { display: flex; height: 3px; margin-top: 0.55em; border-radius: 2px;
+                overflow: hidden; background: #ece9e0; }
+  .heat-split i { display: block; height: 100%; }
 
   /* Combined heatmap (blue = ride, green = gym) */
   .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 1.4em 0 0; }
@@ -82,13 +85,11 @@
 
 <div class="fstats" id="fstats">
   <div class="fstat"><span class="v" id="stActive">–</span>
-    <div class="fspark" id="spkActive"></div><span class="l">Active days this month</span></div>
+    <div class="fspark" id="spkActive"></div><span class="l">Active days</span></div>
   <div class="fstat"><span class="v" id="stStreak">–</span>
-    <div class="fspark streak" id="spkStreak"></div><span class="l">Week streak</span></div>
+    <div class="fspark streak" id="spkStreak"></div><span class="l">Streak</span></div>
   <div class="fstat"><span class="v" id="stWeek">–</span>
     <div class="fspark week" id="spkWeek"></div><span class="l">This week</span></div>
-  <div class="fstat"><span class="v" id="stSplit">–</span>
-    <div class="fspark split" id="spkSplit"></div><span class="l">Ride / weights / run</span></div>
 </div>
 
 <div class="heat-card">
@@ -98,10 +99,11 @@
     <div class="heat" id="heat"></div>
   </div>
   <div class="heat-legend">
-    <span><i style="background:#f6a351"></i> Ride</span>
-    <span><i style="background:#699bd3"></i> Weights</span>
-    <span><i style="background:#61b885"></i> Run</span>
+    <span><i style="background:#f6a351"></i> Ride <b id="lgRide">–</b></span>
+    <span><i style="background:#699bd3"></i> Weights <b id="lgGym">–</b></span>
+    <span><i style="background:#61b885"></i> Run <b id="lgRun">–</b></span>
   </div>
+  <div class="heat-split" id="heatSplit"></div>
 </div>
 
 <p class="cy-h2">Recent activity</p>
@@ -148,8 +150,6 @@
   document.getElementById('stActive').textContent = monthDays.length;
   document.getElementById('stStreak').innerHTML = streak + '<span class="u"> wk</span>';
   document.getElementById('stWeek').textContent = weekDays;
-  document.getElementById('stSplit').innerHTML = '<span class="rd">' + ridesMonth + '</span> / <span class="gy">'
-    + gymMonth + '</span> / <span class="rn">' + runsMonth + '</span>';
 
   // Small figures under each number, so a card can be read without its caption.
   function spark(el, cells) {
@@ -188,13 +188,23 @@
   }
   spark(document.getElementById('spkWeek'), wcells);
 
-  // one bar per activity, width by count, colour as on the heatmap
-  var maxc = Math.max(1, ridesMonth, gymMonth, runsMonth);
-  spark(document.getElementById('spkSplit'), [
-    { bg: '#f6a351', grow: 0.15 + ridesMonth / maxc },
-    { bg: '#699bd3', grow: 0.15 + gymMonth / maxc },
-    { bg: '#61b885', grow: 0.15 + runsMonth / maxc }
-  ]);
+  // This month's split, shown as one thin bar along the bottom of the heatmap.
+  // Segments are true proportions - an activity you haven't done simply isn't
+  // there, rather than being padded to a visible stub.
+  document.getElementById('lgRide').textContent = ridesMonth;
+  document.getElementById('lgGym').textContent = gymMonth;
+  document.getElementById('lgRun').textContent = runsMonth;
+  var splitEl = document.getElementById('heatSplit'), totalMonth = ridesMonth + gymMonth + runsMonth;
+  splitEl.innerHTML = '';
+  if (totalMonth) {
+    [['#f6a351', ridesMonth], ['#699bd3', gymMonth], ['#61b885', runsMonth]].forEach(function (seg) {
+      if (!seg[1]) return;
+      var i = document.createElement('i');
+      i.style.background = seg[0];
+      i.style.width = (seg[1] / totalMonth * 100) + '%';
+      splitEl.appendChild(i);
+    });
+  }
 
   // ---- heatmap (rolling window; 4 months on mobile, 6 on desktop) ----
   var heat = document.getElementById('heat'), monthsEl = document.getElementById('heatMonths');
