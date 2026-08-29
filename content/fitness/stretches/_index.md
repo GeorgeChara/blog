@@ -14,7 +14,9 @@ layout: single
   .gym-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
   .gym-h2 { font-weight: bold; font-size: 1em; margin: 2em 0 0.7em 0; color: #000; }
 
-  .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
+  /* No card borders: the hairlines between rows already group the list, and a
+     box around every table made the page look like a form to fill in. */
+  .card { margin: 0; }
   .subh { font-size: 0.7em; letter-spacing: 0.06em; text-transform: uppercase; color: #aaa; margin: 1.1em 0 0.4em 0; }
   .card > .subh:first-child { margin-top: 0; }
   table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
@@ -23,7 +25,7 @@ layout: single
   table.ex tr:last-child td { border-bottom: none; }
   table.ex td.r { text-align: left; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-  .callout { border-left: 3px solid #4169E1; background: #f3f6fd; border-radius: 0 4px 4px 0; padding: 0.7em 0.9em; font-size: 0.85em; color: #333; }
+  .callout { font-size: 0.85em; color: #555; line-height: 1.6; margin: 0; }
   .callout b { color: #000; }
 
   .rules .rule { display: grid; grid-template-columns: 6em 1fr; gap: 0.8em; padding: 0.55em 0; border-bottom: 1px solid #f2efe8; font-size: 0.85em; }

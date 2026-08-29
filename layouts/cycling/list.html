@@ -10,20 +10,20 @@
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 1.4em 0 0.8em 0; color: #000; }
 
   /* Milestone bars: value inside the fill, target at the end. Hover shows a small tip above (nothing on the bar moves) */
-  .ms1 { margin-top: 1.4em; display: flex; flex-direction: column; gap: 0.5em; }
-  .ms1-item { position: relative; }
-  .ms1-bar { position: relative; height: 30px; border-radius: 3px; background: #e6e3da; overflow: hidden; font-family: monospace; }
-  .ms1-fill { position: absolute; left: 0; top: 0; height: 100%; display: flex; align-items: center; justify-content: flex-end; }
-  .ms1-pct { color: rgba(255,255,255,0.92); font-size: 0.76em; padding-right: 0.7em; opacity: 0; transition: opacity 0.12s; white-space: nowrap; }
-  .ms1-item:hover .ms1-pct { opacity: 1; }
-  .ms1-km { position: absolute; left: 0.75em; top: 0; height: 100%; display: flex; align-items: center; gap: 0.5em; color: #fff; font-weight: bold; font-size: 0.82em; z-index: 2; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .ms1-km .sub { font-weight: normal; color: rgba(255,255,255,0.8); }
-  .ms1-target { position: absolute; right: 0.75em; top: 0; height: 100%; display: flex; align-items: center; color: #8f8a7e; font-size: 0.78em; z-index: 2; font-variant-numeric: tabular-nums; }
-  .ms1-bar.b .ms1-fill { background: #2b7fd9; }
-  .ms1-bar.g .ms1-fill { background: #3aa06a; }
+  /* Progress to the next milestone: the number reads as text, the bar is just
+     the bar. Filled blocks with white text inside were the heaviest thing on
+     the page and the hardest to scan. */
+  .ms1 { margin: 1.4em 0 0; display: flex; flex-direction: column; gap: 0.9em; }
+  .ms1-head { display: flex; justify-content: space-between; align-items: baseline;
+              font-size: 0.8em; color: #a9a094; margin-bottom: 0.35em; gap: 1em; }
+  .ms1-head b { color: #000; font-variant-numeric: tabular-nums; }
+  .ms1-bar { height: 3px; border-radius: 2px; background: #ece9e0; overflow: hidden; }
+  .ms1-fill { display: block; height: 100%; }
+  .ms1-bar.b .ms1-fill { background: #699bd3; }
+  .ms1-bar.g .ms1-fill { background: #61b885; }
 
   /* Ride heatmap */
-  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 1.4em 0 0; }
+  .heat-card { margin: 1.6em 0 0; }
   .heat-head { margin-bottom: 0.5em; }
   .heat-title { font-size: 0.66em; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: bold; }
   .heat-readout { font-family: monospace; font-size: 0.78em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.45em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
@@ -43,7 +43,7 @@
   /* Personal-best leaderboards: top 3 per metric */
   .lbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 1.4em; }
   @media (max-width: 640px) { .lbs { grid-template-columns: 1fr; } }
-  .lb { border: 1px solid #e5decf; border-radius: 4px; padding: 0.75em 0.85em; }
+  .lb { }
   .lb-head { font-size: 0.64em; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; margin-bottom: 0.5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .lb-head.ride { color: #4169E1; }
   .lb-row { display: grid; grid-template-columns: 1em auto 1fr auto; align-items: center; gap: 0.5em; padding: 0.3em 0.3em; margin: 0 -0.3em; font-size: 0.82em; text-decoration: none; color: inherit; border-bottom: none; border-radius: 3px; -webkit-tap-highlight-color: transparent; }
@@ -52,19 +52,19 @@
   .lb-row.top .lb-rank { color: #c9a227; font-weight: bold; }
   .lb-val { font-weight: bold; color: #000; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .lb-val .u { font-weight: normal; color: #aaa; font-size: 0.8em; }
-  .lb-bar { height: 6px; background: #eee; border-radius: 1px; overflow: hidden; }
+  .lb-bar { height: 3px; background: #ece9e0; border-radius: 1px; overflow: hidden; }
   .lb-bar > span { display: block; height: 100%; }
   .lb-date { color: #b3ab9a; font-size: 0.85em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
   /* Totals row */
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.6em; }
   @media (max-width: 560px) { .stats { grid-template-columns: repeat(3, 1fr); } }
-  .stat { border: 1px solid #e5decf; border-radius: 4px; padding: 0.7em 0.85em; }
+  .stat { }
   .stat .v { font-weight: bold; font-size: 1.15em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.1em; }
   .stat .u { font-size: 0.55em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
   .stat .l { display: block; font-size: 0.64em; color: #999; margin-top: 0.4em; text-transform: uppercase; letter-spacing: 0.04em; }
 
-  .chart-card { border: 1px solid #e5decf; border-radius: 4px; padding: 1em 1.1em; }
+  .chart-card { margin-top: 0.4em; }
 
   /* Volume graph (tidied): fills a fixed-height card, readout sits inside at the top */
   .vol-wrap { height: 300px; display: flex; flex-direction: column; margin-top: 1.4em; }
@@ -119,18 +119,12 @@
 {{ $cpct := mul (div $climb $cms) 100 }}
 <div class="ms1">
   <div class="ms1-item">
-    <div class="ms1-bar b">
-      <span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"><span class="ms1-pct">{{ printf "%.0f" $pct }}%</span></span>
-      <span class="ms1-km">{{ printf "%.0f" $total }} km<span class="sub">| {{ .total_rides }} rides</span></span>
-      <span class="ms1-target">{{ printf "%.0f" $ms }} km</span>
-    </div>
+    <div class="ms1-head"><span><b>{{ printf "%.0f" $total }} km</b> over {{ .total_rides }} rides</span><span>{{ printf "%.0f" $ms }} km</span></div>
+    <div class="ms1-bar b"><span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"></span></div>
   </div>
   <div class="ms1-item">
-    <div class="ms1-bar g">
-      <span class="ms1-fill" style="width:{{ printf "%.1f" $cpct }}%"><span class="ms1-pct">{{ printf "%.0f" $cpct }}%</span></span>
-      <span class="ms1-km">{{ printf "%.0f" $climb }} m climbed</span>
-      <span class="ms1-target">{{ printf "%.0f" $cms }} m</span>
-    </div>
+    <div class="ms1-head"><span><b>{{ printf "%.0f" $climb }} m</b> climbed</span><span>{{ printf "%.0f" $cms }} m</span></div>
+    <div class="ms1-bar g"><span class="ms1-fill" style="width:{{ printf "%.1f" $cpct }}%"></span></div>
   </div>
 </div>
 {{ end }}
@@ -150,7 +144,7 @@
     <div class="heat-months" id="heatMonths"></div>
     <div class="heat" id="heat"></div>
   </div>
-  <div class="heat-legend">less <i style="background:#ece9e0"></i><i style="background:#cfe0f4"></i><i style="background:#9ec4ec"></i><i style="background:#5c9de0"></i><i style="background:#2b7fd9"></i> more</div>
+  <div class="heat-legend">less <i style="background:#ece9e0"></i><i style="background:#cfe0f4"></i><i style="background:#9ec4ec"></i><i style="background:#5c9de0"></i><i style="background:#699bd3"></i> more</div>
 </div>
 <script id="heat-data" type="application/json">{{ $days | jsonify | safeJS }}</script>
 {{ end }}
@@ -169,7 +163,7 @@
     <a class="lb-row{{ if eq $i 0 }} top{{ end }}"{{ with (index $urls (substr $a.date 0 10)) }} href="{{ . }}"{{ end }} data-ride="{{ $a.name }}">
       <span class="lb-rank">{{ add $i 1 }}</span>
       <span class="lb-val">{{ printf "%.0f" $a.distance_km }}<span class="u"> km</span></span>
-      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.distance_km $mx) 100) }}%; background:#2b7fd9"></span></span>
+      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.distance_km $mx) 100) }}%; background:#699bd3"></span></span>
       <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
     </a>
     {{ end }}
@@ -194,7 +188,7 @@
     <a class="lb-row{{ if eq $i 0 }} top{{ end }}"{{ with (index $urls (substr $a.date 0 10)) }} href="{{ . }}"{{ end }} data-ride="{{ $a.name }}">
       <span class="lb-rank">{{ add $i 1 }}</span>
       <span class="lb-val">{{ printf "%.0f" $a.max_power }}<span class="u"> W</span></span>
-      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.max_power $mx) 100) }}%; background:#c0392b"></span></span>
+      <span class="lb-bar"><span style="width:{{ printf "%.0f" (mul (div $a.max_power $mx) 100) }}%; background:#c2705f"></span></span>
       <span class="lb-date">{{ (time $a.date).Format "2 Jan 06" }}</span>
     </a>
     {{ end }}
@@ -256,7 +250,7 @@
   var byDay = {}; days.forEach(function(r) { byDay[r.d] = { km: (byDay[r.d] ? byDay[r.d].km : 0) + (r.km || 0), name: r.name, url: r.url }; });
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   function lvl(km) { return km <= 0 ? 0 : km < 30 ? 1 : km < 70 ? 2 : km < 120 ? 3 : 4; }
-  var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#2b7fd9'];
+  var cols = ['#ece9e0', '#cfe0f4', '#9ec4ec', '#5c9de0', '#699bd3'];
 
   var today = new Date(); today.setHours(0, 0, 0, 0);
   var monthsBack = window.innerWidth < 600 ? 4 : 6; // fewer months on mobile so cells stay readable
@@ -300,7 +294,7 @@
         (function(label, url) {
           i.addEventListener('mouseenter', function() { setReadout(label); });
           if (url) i.addEventListener('click', function() { window.location.href = url; });
-        })('<span class="hk">' + dd + '</span><span class="hsep">|</span><span class="hn">' + (rec.name || 'Ride') + '</span><span class="hsep">|</span><span style="color:#2b7fd9">' + Math.round(km) + ' km</span>', rec.url);
+        })('<span class="hk">' + dd + '</span><span class="hsep">|</span><span class="hn">' + (rec.name || 'Ride') + '</span><span class="hsep">|</span><span style="color:#699bd3">' + Math.round(km) + ' km</span>', rec.url);
       }
       heat.appendChild(i);
       cur.setDate(cur.getDate() + 1);
@@ -353,8 +347,8 @@
     if (i < 0) return '<span class="vhint">' + idleHint + '</span>';
     function seg(v, unit, color) { return (v == null) ? '' : '<span class="vsep">|</span><span style="color:' + color + '">' + v + unit + '</span>'; }
     return '<span class="vk">' + labels[i] + '</span>' +
-      seg(dist[i] != null ? dist[i].toFixed(0) : null, ' km', '#2b7fd9') +
-      seg(speed[i], ' km/h', '#4169E1') + seg(power[i], ' W', '#c0392b');
+      seg(dist[i] != null ? dist[i].toFixed(0) : null, ' km', '#699bd3') +
+      seg(speed[i], ' km/h', '#4169E1') + seg(power[i], ' W', '#c2705f');
   }
   function setReadout(i) { hoverIdx = i; if (roEl) roEl.innerHTML = fmtReadout(i); }
   setReadout(-1);
@@ -373,9 +367,9 @@
     data: {
       labels: labels,
       datasets: [
-        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(43,127,217,0.25)', borderColor: '#2b7fd9', borderWidth: 1, borderRadius: 1 },
+        { type: 'bar', label: 'Distance', data: dist, yAxisID: 'yKm', order: 3, backgroundColor: 'rgba(105,155,211,0.28)', borderColor: '#699bd3', borderWidth: 1, borderRadius: 1 },
         { type: 'line', label: 'Avg speed', data: speed, yAxisID: 'ySpeed', order: 1, borderColor: '#4169E1', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 },
-        { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c0392b', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 }
+        { type: 'line', label: 'Avg power', data: power, yAxisID: 'yPower', order: 2, borderColor: '#c2705f', backgroundColor: 'transparent', spanGaps: true, tension: 0.3, borderWidth: 2, pointRadius: 2 }
       ]
     },
     options: {
@@ -414,7 +408,7 @@
     if (ll.length < 2) { map.setView([51.9, 0.5], 9); return; }
     var draw = ll;
     if (ll.length > 2 && L.latLng(ll[0]).distanceTo(L.latLng(ll[ll.length - 1])) < 5000) { draw = ll.concat([ll[0]]); }
-    var pl = L.polyline(draw, { color: '#2b7fd9', weight: 3, opacity: 0.9, smoothFactor: 0 }).addTo(map);
+    var pl = L.polyline(draw, { color: '#699bd3', weight: 3, opacity: 0.9, smoothFactor: 0 }).addTo(map);
     map.fitBounds(pl.getBounds(), { padding: [26, 26] });
   }).catch(function() { map.setView([51.9, 0.5], 9); });
 })();

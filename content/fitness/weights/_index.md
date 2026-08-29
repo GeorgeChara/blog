@@ -14,19 +14,19 @@ layout: single
   .gym-sub { color: #888; font-size: 0.9em; margin: 0 0 2em 0; }
   .gym-h2 { font-weight: bold; font-size: 1em; margin: 2em 0 0.7em 0; color: #000; }
 
-  /* week grid */
-  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4em; }
-  @media (max-width: 560px) { .week { grid-template-columns: repeat(3, 1fr); } }
-  .day { border: 1px solid #eee; border-radius: 4px; overflow: hidden; }
-  .day .bar { height: 4px; background: #d8d8d8; }
-  .day .in { padding: 0.5em 0.6em; }
-  .day .d { font-size: 0.7em; letter-spacing: 0.05em; text-transform: uppercase; color: #aaa; }
-  .day .a { font-size: 0.85em; margin-top: 0.25em; }
-  .day.rest .a { color: #bbb; }
-  .lift .bar { background: #4169E1; }
-  .run  .bar { background: #3aa06a; }
-  .ride .bar { background: #d98a2b; }
-  .rest .bar { background: #d8d8d8; }
+  /* The week: a coloured tick over each day, no boxes. Colours match the
+     heatmap on /fitness so a ride is the same orange everywhere. */
+  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0 0.9em; }
+  @media (max-width: 560px) { .week { grid-template-columns: repeat(4, 1fr); gap: 1em 0.8em; } }
+  .day .bar { height: 2px; border-radius: 1px; background: #e5e0d5; }
+  .day .in { padding: 0.45em 0 0; }
+  .day .d { font-size: 0.66em; letter-spacing: 0.05em; text-transform: uppercase; color: #a9a094; }
+  .day .a { font-size: 0.85em; margin-top: 0.2em; color: #000; }
+  .day.rest .a { color: #c3bbac; }
+  .lift .bar { background: #699bd3; }
+  .run  .bar { background: #61b885; }
+  .ride .bar { background: #f6a351; }
+  .rest .bar { background: #e5e0d5; }
 
   .week-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.4em 1em; margin: 2em 0 0.7em; }
   .week-head .gym-h2 { margin: 0; }
@@ -35,10 +35,9 @@ layout: single
   .legend .sw { width: 14px; height: 4px; border-radius: 2px; display: inline-block; }
 
   /* lift cards */
-  .lifts { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+  .lifts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6em 2.4em; }
   @media (max-width: 560px) { .lifts { grid-template-columns: 1fr; } }
-  .card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.1em; }
-  .card .h { font-weight: bold; color: #000; margin: 0 0 0.5em 0; font-size: 0.95em; }
+  .card .h { font-weight: bold; color: #000; margin: 0 0 0.4em 0; font-size: 0.95em; }
   table.ex { width: 100%; border-collapse: collapse; font-size: 0.9em; }
   table.ex td { padding: 0.4em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
   table.ex td:first-child { width: 100%; }
@@ -47,8 +46,9 @@ layout: single
   .alt { display: block; font-size: 0.78em; color: #999; margin-top: 0.25em; }
   .alt .sw { color: #bbb; margin-right: 0.35em; }
 
-  /* callout */
-  .callout { border-left: 3px solid #4169E1; background: #f3f6fd; border-radius: 0 4px 4px 0; padding: 0.7em 0.9em; font-size: 0.85em; color: #333; margin: 0 0 0.8em 0; }
+  /* The progression rule reads as a plain sentence; a tinted box made the one
+     thing you actually need to remember look like boilerplate. */
+  .callout { font-size: 0.85em; color: #555; margin: 0 0 0.9em 0; line-height: 1.6; }
   .callout b { color: #000; }
 
   .rules .rule { display: grid; grid-template-columns: 6em 1fr; gap: 0.8em; padding: 0.55em 0; border-bottom: 1px solid #f2efe8; font-size: 0.85em; }
@@ -64,7 +64,7 @@ layout: single
 
 <div class="week-head">
 <p class="gym-h2">The week</p>
-<div class="legend"><span><span class="sw" style="background:#3aa06a"></span>Run</span><span><span class="sw" style="background:#4169E1"></span>Lift</span><span><span class="sw" style="background:#d98a2b"></span>Ride</span><span><span class="sw" style="background:#d8d8d8"></span>Rest</span></div>
+<div class="legend"><span><span class="sw" style="background:#61b885"></span>Run</span><span><span class="sw" style="background:#699bd3"></span>Lift</span><span><span class="sw" style="background:#f6a351"></span>Ride</span><span><span class="sw" style="background:#e5e0d5"></span>Rest</span></div>
 </div>
 <div class="week">
 <div class="day run"><div class="bar"></div><div class="in"><div class="d">Mon</div><div class="a">Run</div></div></div>
