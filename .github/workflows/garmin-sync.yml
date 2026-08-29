@@ -40,10 +40,10 @@ jobs:
             exit 1
           fi
           tar xzf /tmp/tok.tgz -C /tmp
-          ls -la /tmp/garmin_tokens
-          # garminconnect 0.3.x stores one garmin_tokens.json; di_refresh_token
-          # is the long-lived half that lets the session renew itself.
-          python -c "import json,sys; d=json.load(open('/tmp/garmin_tokens/garmin_tokens.json')); sys.exit('::error::Token has no di_refresh_token; it will expire early.') if not d.get('di_refresh_token') else print('token ok, keys: '+', '.join(k for k,v in sorted(d.items()) if v))"
+          python scripts/garmin-sync/token_info.py /tmp/garmin_tokens
+          # Remember what we started with, so the persist-back step can tell
+          # whether the library actually refreshed anything.
+          shasum -a 256 /tmp/garmin_tokens/garmin_tokens.json | cut -d" " -f1 > /tmp/tok.sha
 
       - name: Sync Garmin activities
         env:
@@ -51,6 +51,30 @@ jobs:
           HOME_JSON: ${{ secrets.HOME_JSON }}
         working-directory: scripts/garmin-sync
         run: python sync.py --days 14
+
+      # The library refreshes the short-lived access token and writes the new
+      # one back to GARMIN_TOKEN_PATH - but that is a temp dir on a runner that
+      # is destroyed minutes later, so without this every run replayed the same
+      # ageing snapshot until it died. Saving it back makes the token renew
+      # itself on every sync.
+      - name: Persist the refreshed token
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::SECRETS_PAT is not set, so the refreshed token is being discarded."
+            echo "Add a fine-grained PAT with Secrets: write as SECRETS_PAT to make the token self-renewing."
+            exit 0
+          fi
+          if [ "$(shasum -a 256 /tmp/garmin_tokens/garmin_tokens.json | cut -d' ' -f1)" = "$(cat /tmp/tok.sha)" ]; then
+            echo "Token unchanged; nothing to persist."
+            exit 0
+          fi
+          python scripts/garmin-sync/token_info.py /tmp/garmin_tokens
+          tar czf - -C /tmp garmin_tokens | base64 -w0 \
+            | gh secret set GARMIN_TOKEN_B64 --repo "$GITHUB_REPOSITORY"
+          echo "Refreshed token saved back to GARMIN_TOKEN_B64."
 
       - name: Commit and push if changed
         run: |
