@@ -37,7 +37,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          # Full commit history is needed: hugo.toml sets enableGitInfo and
+          # derives lastmod from git. But the history also holds ~375MB of
+          # source PNGs that were long ago converted to webp and deleted, and
+          # fetching those took the checkout from seconds to nine minutes.
+          # blob:none gets every commit and only the file contents the build
+          # actually reads. 492MB -> 81MB.
           fetch-depth: 0
+          filter: blob:none
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
