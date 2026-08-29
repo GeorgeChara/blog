@@ -30,7 +30,17 @@ SECRET = "GARMIN_TOKEN_B64"
 try:
     from garminconnect import Garmin
 except ImportError:
-    sys.exit("pip install -r scripts/garmin-sync/requirements.txt first")
+    # Homebrew python is externally managed, so a plain "pip install" here is
+    # refused (PEP 668). Re-exec under the sibling venv rather than making the
+    # caller remember which interpreter has the library.
+    import os
+    venv = Path(__file__).resolve().parent / ".venv" / "bin" / "python"
+    if venv.exists() and not os.environ.get("_GARMIN_REEXEC"):
+        os.environ["_GARMIN_REEXEC"] = "1"
+        os.execv(str(venv), [str(venv), str(Path(__file__).resolve()), *sys.argv[1:]])
+    sys.exit("Missing garminconnect. Run:\n"
+             "  python3 -m venv scripts/garmin-sync/.venv\n"
+             "  scripts/garmin-sync/.venv/bin/pip install garminconnect")
 
 
 def die(msg):
@@ -38,6 +48,10 @@ def die(msg):
 
 
 def main():
+    if not sys.stdin.isatty():
+        sys.exit("This asks for your password and an MFA code, so it needs a real\n"
+                 "terminal. Run it in a normal shell, not through a wrapper.")
+
     out = Path(tempfile.mkdtemp()) / "garmin_tokens"
     email = input("Garmin email: ").strip()
     password = getpass.getpass("Garmin password: ")
