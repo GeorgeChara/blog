@@ -7,33 +7,12 @@
 
   .cy-h2 { font-weight: bold; font-size: 1em; margin: 1.4em 0 0.8em 0; color: #000; }
 
-  /* Consistency stat tiles */
-  /* No boxes: three readouts on one rule-divided line, so the heatmap below is
-     the only framed element on the page. */
-  .fstats { display: flex; flex-wrap: wrap; margin: 1.6em 0 0; }
-  .fstat { flex: 1; min-width: 0; padding: 0 1.4em; border-left: 1px solid #ece9e0; }
-  .fstat:first-child { padding-left: 0; border-left: 0; }
-  /* Active days needs room for a tick per day of the month, which three abreast
-     cannot give it on a phone - so it takes its own row and the other two share
-     the next one. */
-  @media (max-width: 560px) {
-    .fstat { padding: 0 1em; }
-    .fstat:first-child { flex: 1 0 100%; padding-bottom: 1.1em; }
-    .fstat:nth-child(2) { padding-left: 0; border-left: 0; }
-  }
-  .fstat .v { font-weight: bold; font-size: 1.4em; color: #000; font-variant-numeric: tabular-nums; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.12em; }
-  .fstat .u { font-size: 0.5em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
-  .fstat .l { display: block; font-size: 0.64em; color: #a9a094; margin-top: 0.5em; text-transform: uppercase; letter-spacing: 0.04em; }
-
-  /* Each card carries a small figure so it can be read at a glance without
-     parsing the caption: a month of days, a run of weeks, the seven days of
-     this week, and one bar per activity. Same colours as the heatmap. */
-  .fspark { display: flex; align-items: flex-end; gap: 2px; margin-top: 0.5em; height: 14px; }
-  .fspark i { flex: 1 1 0; min-width: 2px; background: #ece9e0; border-radius: 1px; height: 6px; }
-  .fspark i.on { background: #9c948b; height: 12px; }
-  .fspark.week i { height: 12px; border-radius: 1px; }
-  .fspark.week i.today { box-shadow: inset 0 0 0 1px #b3ab9a; }
-  .fspark.streak i { height: 12px; flex: 1 1 0; min-width: 4px; }
+  /* The heatmap is the picture; these are just its caption. Earlier versions
+     drew a mini chart per stat, which competed with the grid directly below
+     and made the page read like a dashboard. */
+  .fstats { font-size: 0.78em; color: #a9a094; margin: 1.5em 0 1.1em;
+            display: flex; flex-wrap: wrap; gap: 0.35em 1.5em; }
+  .fstats b { color: #000; font-weight: bold; font-variant-numeric: tabular-nums; }
   .heat-legend .lgyear { margin-left: auto; color: #c3bbac; }
   .heat-legend b { font-weight: 600; color: #8d8478; font-variant-numeric: tabular-nums; }
   /* The month's ride/weights/run split, as one thin bar rather than a fourth
@@ -43,7 +22,7 @@
   .heat-split i { display: block; height: 100%; }
 
   /* Combined heatmap (blue = ride, green = gym) */
-  .heat-card { border: 1px solid #e5decf; border-radius: 4px; padding: 0.9em 1.05em; margin: 1.4em 0 0; }
+  .heat-card { margin: 0 0 0.9em; }
   .heat-readout { font-family: monospace; font-size: 0.78em; color: #999; height: 1.5em; line-height: 1.5em; margin-bottom: 0.45em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
   .heat-readout .hk { color: #000; font-weight: bold; }
   .heat-readout .hsep { color: #d8d2c4; padding: 0 0.2em; }
@@ -95,12 +74,9 @@
 </div>
 
 <div class="fstats" id="fstats">
-  <div class="fstat"><span class="v" id="stActive">–</span>
-    <div class="fspark" id="spkActive"></div><span class="l">Active days</span></div>
-  <div class="fstat"><span class="v" id="stStreak">–</span>
-    <div class="fspark streak" id="spkStreak"></div><span class="l">Streak</span></div>
-  <div class="fstat"><span class="v" id="stWeek">–</span>
-    <div class="fspark week" id="spkWeek"></div><span class="l">This week</span></div>
+  <span><b id="stActive">–</b> active days this month</span>
+  <span><b id="stStreak">–</b> week streak</span>
+  <span><b id="stWeek">–</b> this week</span>
 </div>
 
 <div class="heat-card">
@@ -163,48 +139,8 @@
   while (weeksActive[weekKey(probe)]) { streak++; probe.setDate(probe.getDate() - 7); }
 
   document.getElementById('stActive').textContent = monthDays.length;
-  document.getElementById('stStreak').innerHTML = streak + '<span class="u"> wk</span>';
+  document.getElementById('stStreak').textContent = streak;
   document.getElementById('stWeek').textContent = weekDays;
-
-  // Small figures under each number, so a card can be read without its caption.
-  function spark(el, cells) {
-    el.innerHTML = '';
-    cells.forEach(function (c) {
-      var i = document.createElement('i');
-      if (c.cls) i.className = c.cls;
-      if (c.bg) i.style.background = c.bg;
-      if (c.grow != null) i.style.flexGrow = c.grow;
-      el.appendChild(i);
-    });
-  }
-
-  // one mark per day elapsed this month, filled when something was done
-  var dim = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getDate();
-  var mcells = [];
-  for (var dd = 1; dd <= dim; dd++) {
-    var k = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0')
-          + '-' + String(dd).padStart(2, '0');
-    mcells.push({ cls: byDay[k] ? 'on' : '' });
-  }
-  spark(document.getElementById('spkActive'), mcells);
-
-  // The last 10 weeks, oldest first, filled where something was done - so the
-  // figure shows the shape of the run rather than restating its length.
-  var scells = [], wk = new Date(today);
-  for (var w2 = 9; w2 >= 0; w2--) {
-    var probe2 = new Date(wk); probe2.setDate(probe2.getDate() - w2 * 7);
-    scells.push({ cls: weeksActive[weekKey(probe2)] ? 'on' : '' });
-  }
-  spark(document.getElementById('spkStreak'), scells);
-
-  // Monday to Sunday, filled for days done, this week outlined on today
-  var wcells = [], mon = new Date(today); mon.setDate(mon.getDate() - ((mon.getDay() + 6) % 7));
-  for (var d2 = 0; d2 < 7; d2++) {
-    var dt = new Date(mon); dt.setDate(dt.getDate() + d2);
-    var kk = iso(dt);
-    wcells.push({ cls: (byDay[kk] ? 'on' : '') + (kk === iso(today) ? ' today' : '') });
-  }
-  spark(document.getElementById('spkWeek'), wcells);
 
   // This month's split, shown as one thin bar along the bottom of the heatmap.
   // Segments are true proportions - an activity you haven't done simply isn't
