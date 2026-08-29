@@ -56,7 +56,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/cycling/ static/cycling/gpx/ static/cycling/og/ content/cycling/rides/
+          # git add fails the whole step if any one pathspec matches nothing,
+          # and content/cycling/rides only exists once a ride has been written.
+          for path in data/cycling static/cycling/gpx static/cycling/og content/cycling/rides; do
+            if [ -e "$path" ]; then git add "$path"; fi
+          done
           if git diff --staged --quiet; then
             echo "No new activities to commit"
           else
