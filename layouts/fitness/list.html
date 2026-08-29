@@ -224,6 +224,11 @@
         i.className = 'has';
         (function (label, url) {
           i.addEventListener('mouseenter', function () { setReadout(label); });
+          // Clear on leaving the cell itself, not just the grid - otherwise the
+          // last session stayed on screen while the cursor sat in a gap between
+          // squares. Moving straight to another cell fires this before that
+          // cell's mouseenter, so the label swaps without flicking through the hint.
+          i.addEventListener('mouseleave', function () { setReadout(null); });
           if (url) i.addEventListener('click', function () { window.location.href = url; });
         })(fmt(key, rec), rec.ride ? rec.ride.url : null);
       }
