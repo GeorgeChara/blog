@@ -97,6 +97,8 @@
   .note { display: block; color: #888; font-size: 0.8em; line-height: 1.6; border-left: 2px solid #E5DECF; padding-left: 0.6em; margin: 0.6em 0; }
   .view-all { font-size: 0.85em; margin-top: 1em; }
   .view-all a { color: #4169E1; text-decoration: none; }
+
+.leaflet-tile-pane{filter:grayscale(1) brightness(1.12) contrast(.95);}
 </style>
 
 {{ $summary := hugo.Data.cycling.summary }}
@@ -404,7 +406,7 @@
   var lm = document.getElementById('latestMap');
   if (!lm || !window.L) return;
   var map = L.map('latestMap', { zoomControl: false, attributionControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, touchZoom: false, boxZoom: false, keyboard: false });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
   fetch(lm.dataset.gpx).then(function(r) { return r.ok ? r.text() : null; }).then(function(xml) {
     if (!xml) { map.setView([51.9, 0.5], 9); return; }
     var pts = new DOMParser().parseFromString(xml, 'application/xml').getElementsByTagName('trkpt'), ll = [];

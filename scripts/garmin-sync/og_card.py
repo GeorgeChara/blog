@@ -14,9 +14,14 @@ import matplotlib.font_manager as fm
 
 W, H = 1200, 630
 FTP = 220
-# Voyager (not light_all): its roads are clearly visible, so the route reads as
-# following real roads rather than floating over the near-white light basemap.
-TILE_URL = "https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
+# CARTO now watermarks every tile served without an API key, so the cards were
+# rendering "API KEY REQUIRED" across the map. OSM standard is keyless and its
+# roads are clearly visible, so the route still reads as following real roads
+# rather than floating over a near-white basemap.
+TILE_URL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+# OSM's tile policy asks for an identifying User-Agent; the library's default
+# ("StaticMap") is the kind of generic agent they block.
+TILE_HEADERS = {"User-Agent": "yodko-blog-og-cards (github.com/GeorgeChara/blog)"}
 BLUE = "#2b7fd9"
 # zone fill (Zwift-style, translucent) and the power line
 ZBOUNDS = [0.55, 0.75, 0.90, 1.05]
@@ -137,7 +142,8 @@ def _draw_panel(base, title, dist_km, climb_m, duration, calories):
 
 def make_og_card(out_path, title, dist_km, climb_m, duration, calories, coords, power):
     """coords: (lat, lon) points.  power: power_profile list (may hold None)."""
-    m = StaticMap(W, H, url_template=TILE_URL, padding_x=70, padding_y=80)
+    m = StaticMap(W, H, url_template=TILE_URL, padding_x=70, padding_y=80,
+                  headers=TILE_HEADERS)
     if coords and len(coords) > 1:
         lonlat = [(c[1], c[0]) for c in coords]
         # close the loop when the ride starts and finishes near the same place

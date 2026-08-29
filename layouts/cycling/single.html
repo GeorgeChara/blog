@@ -81,6 +81,8 @@
 
   .view-all { font-size: 0.85em; margin-top: 2em; }
   .view-all a { color: #4169E1; text-decoration: none; }
+
+.leaflet-tile-pane{filter:grayscale(1) brightness(1.12) contrast(.95);}
 </style>
 
 {{ $activityId := .Params.garmin_id }}
@@ -132,8 +134,8 @@
 (function() {
   var map = L.map('ride-map', { scrollWheelZoom: false, attributionControl: false });
   map.zoomControl.setPosition('bottomright'); // keep the map corners clear of the overlaid graph + stats
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap, &copy; CARTO', subdomains: 'abcd', maxZoom: 20, crossOrigin: true
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap', maxZoom: 19, crossOrigin: true
   }).addTo(map);
   // Route as a plain polyline (no markers, so home is never pinned) + hover position marker
   var routeLatLngs = [], gpxCum = [];
