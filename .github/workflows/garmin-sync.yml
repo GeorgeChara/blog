@@ -32,8 +32,19 @@ jobs:
         env:
           GARMIN_TOKEN_B64: ${{ secrets.GARMIN_TOKEN_B64 }}
         run: |
-          echo "$GARMIN_TOKEN_B64" | base64 -d | tar xz -C /tmp
+          # Strip whitespace first: a stray newline or a clipboard mishap
+          # otherwise surfaces as "gzip: unexpected end of file", which reads
+          # like a corrupt token rather than a malformed secret.
+          if ! printf '%s' "$GARMIN_TOKEN_B64" | tr -d '[:space:]' | base64 -d > /tmp/tok.tgz 2>/dev/null; then
+            echo "::error::GARMIN_TOKEN_B64 is not valid base64. Re-run scripts/garmin-sync/mint-token.py"
+            exit 1
+          fi
+          tar xzf /tmp/tok.tgz -C /tmp
           ls -la /tmp/garmin_tokens
+          if ! ls /tmp/garmin_tokens/*oauth1* >/dev/null 2>&1; then
+            echo "::error::No oauth1 token - the session cannot refresh and will expire early."
+            exit 1
+          fi
 
       - name: Sync Garmin activities
         env:
