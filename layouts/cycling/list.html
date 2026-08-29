@@ -15,8 +15,12 @@
      the page and the hardest to scan. */
   .ms1 { margin: 1.4em 0 0; display: flex; flex-direction: column; gap: 0.9em; }
   .ms1-head { display: flex; justify-content: space-between; align-items: baseline;
-              font-size: 0.8em; color: #a9a094; margin-bottom: 0.35em; gap: 1em; }
-  .ms1-head b { color: #000; font-variant-numeric: tabular-nums; }
+              font-size: 0.8em; color: #a9a094; margin-bottom: 0.4em; gap: 1em; }
+  .ms1-head b { display: block; font-size: 1.9em; line-height: 1.05; color: #000;
+                font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .ms1-head b .u { font-size: 0.45em; font-weight: normal; color: #a9a094;
+                   letter-spacing: 0.03em; margin-left: 0.15em; }
+  .ms1-head .tgt { align-self: flex-end; white-space: nowrap; }
   .ms1-bar { height: 3px; border-radius: 2px; background: #ece9e0; overflow: hidden; }
   .ms1-fill { display: block; height: 100%; }
   .ms1-bar.b .ms1-fill { background: #699bd3; }
@@ -45,12 +49,12 @@
   @media (max-width: 640px) { .lbs { grid-template-columns: 1fr; } }
   .lb { }
   .lb-head { font-size: 0.64em; color: #999; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; margin-bottom: 0.5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .lb-head.ride { color: #4169E1; }
-  .lb-row { display: grid; grid-template-columns: 1em auto 1fr auto; align-items: center; gap: 0.5em; padding: 0.3em 0.3em; margin: 0 -0.3em; font-size: 0.82em; text-decoration: none; color: inherit; border-bottom: none; border-radius: 3px; -webkit-tap-highlight-color: transparent; }
+  .lb-head.ride { color: #8d8478; }
+  .lb-row { display: grid; grid-template-columns: 1em 4.6em 1fr auto; align-items: center; gap: 0.5em; padding: 0.3em 0.3em; margin: 0 -0.3em; font-size: 0.82em; text-decoration: none; color: inherit; border-bottom: none; border-radius: 3px; -webkit-tap-highlight-color: transparent; }
   a.lb-row:hover { background: #f4f2ec; border-bottom: none; }
   .lb-rank { color: #c3bcac; font-variant-numeric: tabular-nums; }
   .lb-row.top .lb-rank { color: #c9a227; font-weight: bold; }
-  .lb-val { font-weight: bold; color: #000; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lb-val { font-weight: bold; color: #000; font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
   .lb-val .u { font-weight: normal; color: #aaa; font-size: 0.8em; }
   .lb-bar { height: 3px; background: #ece9e0; border-radius: 1px; overflow: hidden; }
   .lb-bar > span { display: block; height: 100%; }
@@ -119,11 +123,11 @@
 {{ $cpct := mul (div $climb $cms) 100 }}
 <div class="ms1">
   <div class="ms1-item">
-    <div class="ms1-head"><span><b>{{ printf "%.0f" $total }} km</b> over {{ .total_rides }} rides</span><span>{{ printf "%.0f" $ms }} km</span></div>
+    <div class="ms1-head"><span><b>{{ printf "%.0f" $total }}<span class="u">km</span></b>{{ .total_rides }} rides</span><span class="tgt">{{ printf "%.0f" $ms }} km</span></div>
     <div class="ms1-bar b"><span class="ms1-fill" style="width:{{ printf "%.1f" $pct }}%"></span></div>
   </div>
   <div class="ms1-item">
-    <div class="ms1-head"><span><b>{{ printf "%.0f" $climb }} m</b> climbed</span><span>{{ printf "%.0f" $cms }} m</span></div>
+    <div class="ms1-head"><span><b>{{ printf "%.0f" $climb }}<span class="u">m</span></b>climbed</span><span class="tgt">{{ printf "%.0f" $cms }} m</span></div>
     <div class="ms1-bar g"><span class="ms1-fill" style="width:{{ printf "%.1f" $cpct }}%"></span></div>
   </div>
 </div>
