@@ -11,7 +11,6 @@ layout: single
      SETTINGS  (delete this block once you're done)
 
      tags:  freezer | make-ahead | no-cook | vegetarian | vegan
-            freezer also puts a blue ❄ next to the index link
 
      grey link -> blue link
             new recipes go in the cookbook GREY (not cooked yet).

@@ -7,7 +7,7 @@ Usage:
     blog-live --pending         list everything still grey
 
 The recipe's `cooked:` frontmatter is the source of truth. This sets it, then
-regenerates that recipe's index entry to match (grey/blue plus the ❄ icon). You
+regenerates that recipe's index entry to match (grey or blue link). You
 can also just edit `cooked:` in the recipe by hand and run blog-synctags.
 """
 
@@ -20,7 +20,6 @@ ROOT = Path(__file__).resolve().parent.parent
 COOKBOOK = ROOT / "content" / "cookbook"
 INDEX = COOKBOOK / "_index.md"
 
-FRZ = '<span class="frz">❄</span>'
 
 
 def die(msg):
@@ -93,8 +92,7 @@ def main():
     attrs = ' class="pending"' if args.undo else ""
     if tags:
         attrs += f' data-tags="{tags.group(1)}"'
-    icon = FRZ if is_freezer(slug) else ""
-    lines[i] = f"<li{attrs}>{inner}{icon}</li>"
+    lines[i] = f"<li{attrs}>{inner}</li>"
 
     INDEX.write_text("\n".join(lines) + "\n")
 

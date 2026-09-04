@@ -7,8 +7,8 @@ Usage:
     blog-synctags --counts     tag counts, for the chip row
 
 The index is hand-maintained HTML, so anything duplicated into it drifts. This
-rebuilds each <li> from the recipe frontmatter every run: data-tags and the ❄
-icon from `tags:`, and the grey/blue state from `cooked:` (true = blue link,
+rebuilds each <li> from the recipe frontmatter every run: data-tags
+from `tags:`, and the grey/blue state from `cooked:` (true = blue link,
 false or absent = grey/pending). Frontmatter is the source of truth, so flip
 `cooked:` in the recipe and run this. Run it after changing any tags too.
 """
@@ -21,7 +21,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 COOKBOOK = ROOT / "content" / "cookbook"
 INDEX = COOKBOOK / "_index.md"
-FRZ = '<span class="frz">❄</span>'
 
 
 def tags_for(slug):
@@ -65,8 +64,7 @@ def rewrite(line):
         parts.append(f'data-tags="{" ".join(tags)}"')
     attr = (" " + " ".join(parts)) if parts else ""
 
-    icon = FRZ if "freezer" in tags else ""
-    return f"<li{attr}><a href=\"/cookbook/{slug}/\">{name}</a>{icon}</li>", slug, tags
+    return f"<li{attr}><a href=\"/cookbook/{slug}/\">{name}</a></li>", slug, tags
 
 
 def main():

@@ -6,7 +6,7 @@ Usage:
     blog-publish --cats            # list sections and subcategories
 
 New entries land greyed out (class="pending") because you haven't cooked them
-yet. Pass --live once you've made it. The freezer icon comes from frontmatter
+yet. Pass --live once you've made it. Freezer status comes from frontmatter
 tags automatically.
 """
 
@@ -116,8 +116,7 @@ def main():
 
     cls = "" if (args.live or cooked) else ' class="pending"'
     data = f' data-tags="{tag_str}"' if tag_str else ""
-    icon = '<span class="frz">❄</span>' if freezer else ""
-    entry = f'<li{cls}{data}><a href="/cookbook/{slug}/">{title}</a>{icon}</li>'
+    entry = f'<li{cls}{data}><a href="/cookbook/{slug}/">{title}</a></li>'
 
     lo, hi = find_list(lines, args.cat, args.subcat)
     pos = hi

@@ -46,7 +46,6 @@ layout: single
   .recipe-list a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
-  .frz { color: #3f9fd4; font-size: 1em; margin-left: 0.35em; }
 
   .cookbook-search { flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
 
@@ -164,7 +163,7 @@ layout: single
 <section id="signature" class="cat">
 <p class="cat-heading">Signature</p>
 <ul class="recipe-list">
-<li data-tags="freezer"><a href="/cookbook/baguette/">Baguette</a><span class="frz">❄</span></li>
+<li data-tags="freezer"><a href="/cookbook/baguette/">Baguette</a></li>
 </ul>
 </section>
 
@@ -173,24 +172,24 @@ layout: single
 <ul class="recipe-list">
 <li data-tags="stand-mixer"><a href="/cookbook/bagels/">Bagels</a></li>
 <li data-tags="dutch-oven"><a href="/cookbook/boule/">Boule</a></li>
-<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/brioche-buns/">Brioche Buns</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/brioche-buns/">Brioche Buns</a></li>
 <li class="pending" data-tags="vegetarian"><a href="/cookbook/cheese-potato-bread/">Cheese Potato Bread</a></li>
 <li class="pending"><a href="/cookbook/cinnamon-swirls/">Cinnamon Swirls</a></li>
 <li class="pending"><a href="/cookbook/crumpets/">Crumpets</a></li>
 <li class="pending"><a href="/cookbook/english-muffins/">English Muffins</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/farata/">Farata</a></li>
-<li data-tags="freezer make-ahead stand-mixer"><a href="/cookbook/flour-tortillas/">Flour Tortillas</a><span class="frz">❄</span></li>
+<li data-tags="freezer make-ahead stand-mixer"><a href="/cookbook/flour-tortillas/">Flour Tortillas</a></li>
 <li class="pending"><a href="/cookbook/focaccia/">Focaccia</a></li>
 <li class="pending"><a href="/cookbook/hot-cross-buns/">Hot Cross Buns</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/iced-fingers/">Iced Fingers</a></li>
-<li data-tags="dutch-oven freezer stand-mixer"><a href="/cookbook/lazy-boule/">Lazy Boule</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/milk-buns/">Milk Buns</a><span class="frz">❄</span></li>
+<li data-tags="dutch-oven freezer stand-mixer"><a href="/cookbook/lazy-boule/">Lazy Boule</a></li>
+<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/milk-buns/">Milk Buns</a></li>
 <li class="pending"><a href="/cookbook/pita/">Pita</a></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/pupusas/">Pupusas</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/rye-loaf/">Rye Loaf</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/seeded-wholemeal-loaf/">Seeded Wholemeal Loaf</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/pupusas/">Pupusas</a></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/rye-loaf/">Rye Loaf</a></li>
+<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/seeded-wholemeal-loaf/">Seeded Wholemeal Loaf</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/shokupan/">Shokupan</a></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/soda-bread/">Soda Bread</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/soda-bread/">Soda Bread</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/sourdough/">Sourdough</a></li>
 <li class="pending"><a href="/cookbook/sourdough-starter/">Sourdough Starter</a></li>
 </ul>
@@ -199,18 +198,18 @@ layout: single
 <section id="basics" class="cat">
 <p class="cat-heading">Basics</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="freezer microwave"><a href="/cookbook/apple-sauce/">Apple Sauce</a><span class="frz">❄</span></li>
-<li data-tags="freezer stand-mixer"><a href="/cookbook/butter/">Butter</a><span class="frz">❄</span></li>
-<li data-tags="freezer"><a href="/cookbook/buttercream/">Buttercream</a><span class="frz">❄</span></li>
-<li data-tags="freezer"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer microwave"><a href="/cookbook/apple-sauce/">Apple Sauce</a></li>
+<li data-tags="freezer stand-mixer"><a href="/cookbook/butter/">Butter</a></li>
+<li data-tags="freezer"><a href="/cookbook/buttercream/">Buttercream</a></li>
+<li data-tags="freezer"><a href="/cookbook/chicken-marinade/">Chicken Marinade</a></li>
 <li data-tags="make-ahead vegetarian"><a href="/cookbook/egg-mayo/">Egg Mayo</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/fresh-pasta-dough/">Fresh Pasta Dough</a></li>
-<li data-tags="freezer"><a href="/cookbook/hash-browns/">Hash Browns</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/mashed-potato/">Mashed Potato</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer make-ahead microwave"><a href="/cookbook/quick-mash/">Quick Mash</a><span class="frz">❄</span></li>
-<li data-tags="dutch-oven freezer microwave"><a href="/cookbook/rice/">Rice</a><span class="frz">❄</span></li>
+<li data-tags="freezer"><a href="/cookbook/hash-browns/">Hash Browns</a></li>
+<li class="pending" data-tags="freezer stand-mixer"><a href="/cookbook/mashed-potato/">Mashed Potato</a></li>
+<li class="pending" data-tags="freezer make-ahead microwave"><a href="/cookbook/quick-mash/">Quick Mash</a></li>
+<li data-tags="dutch-oven freezer microwave"><a href="/cookbook/rice/">Rice</a></li>
 <li class="pending"><a href="/cookbook/rough-puff-pastry/">Rough Puff Pastry</a></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/soffritto/">Soffritto</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/soffritto/">Soffritto</a></li>
 </ul>
 </section>
 
@@ -218,24 +217,25 @@ layout: single
 <p class="cat-heading">Sweet</p>
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/bakewell-tart/">Bakewell Tart</a></li>
-<li data-tags="freezer vegetarian"><a href="/cookbook/banana-bread/">Banana Bread</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer make-ahead no-cook"><a href="/cookbook/biscoff-cheesecake/">Biscoff Cheesecake</a><span class="frz">❄</span></li>
+<li data-tags="freezer vegetarian"><a href="/cookbook/banana-bread/">Banana Bread</a></li>
+<li class="pending" data-tags="freezer make-ahead no-cook"><a href="/cookbook/biscoff-cheesecake/">Biscoff Cheesecake</a></li>
 <li class="pending"><a href="/cookbook/blondies/">Blondies</a></li>
 <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
 <li data-tags="stand-mixer"><a href="/cookbook/brownies/">Brownies</a></li>
-<li data-tags="freezer microwave stand-mixer"><a href="/cookbook/buttermilk-pancakes/">Buttermilk Pancakes</a><span class="frz">❄</span></li>
-<li data-tags="freezer stand-mixer vegetarian"><a href="/cookbook/carrot-cake/">Carrot Cake</a><span class="frz">❄</span></li>
+<li data-tags="freezer microwave stand-mixer"><a href="/cookbook/buttermilk-pancakes/">Buttermilk Pancakes</a></li>
+<li data-tags="freezer stand-mixer vegetarian"><a href="/cookbook/carrot-cake/">Carrot Cake</a></li>
 <li class="pending"><a href="/cookbook/cheesecake/">Cheesecake</a></li>
-<li data-tags="freezer stand-mixer"><a href="/cookbook/cookies/">Cookies</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer make-ahead stand-mixer"><a href="/cookbook/cinnamon-roll-cheesecake/">Cinnamon Roll Cheesecake</a></li>
+<li data-tags="freezer stand-mixer"><a href="/cookbook/cookies/">Cookies</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/croissants/">Croissants</a></li>
 <li><a href="/cookbook/flapjacks/">Flapjacks</a></li>
 <li class="pending"><a href="/cookbook/french-toast/">French Toast</a></li>
-<li class="pending" data-tags="freezer stand-mixer vegetarian"><a href="/cookbook/gingerbread-men/">Gingerbread Men</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer stand-mixer vegetarian"><a href="/cookbook/gingerbread-men/">Gingerbread Men</a></li>
 <li class="pending" data-tags="stand-mixer vegetarian"><a href="/cookbook/matilda-chocolate-cake/">Matilda Chocolate Cake</a></li>
 <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
 <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
-<li class="pending" data-tags="cast-iron freezer stand-mixer vegetarian"><a href="/cookbook/skillet-cookie/">Skillet Cookie</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="cast-iron freezer stand-mixer vegetarian"><a href="/cookbook/skillet-cookie/">Skillet Cookie</a></li>
 <li class="pending"><a href="/cookbook/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
 <li><a href="/cookbook/tottenham-cake/">Tottenham Cake</a></li>
 <li><a href="/cookbook/victoria-sponge/">Victoria Sponge</a></li>
@@ -248,18 +248,18 @@ layout: single
 <div class="subcat">
 <p class="subcat-heading">Beef</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/beef-shin-stew/">Beef Shin Stew</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/beef-shin-stew/">Beef Shin Stew</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/braised-short-ribs/">Braised Short Ribs</a></li>
 <li class="pending" data-tags="cast-iron"><a href="/cookbook/skillet-steak/">Skillet Steak</a></li>
 <li data-tags="cast-iron"><a href="/cookbook/smash-burgers/">Smash Burgers</a></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/steak-pie/">Steak Pie</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/steak-pie/">Steak Pie</a></li>
 </ul>
 </div>
 
 <div class="subcat">
 <p class="subcat-heading">Chicken</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="freezer microwave"><a href="/cookbook/buttermilk-fried-chicken/">Buttermilk Fried Chicken</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer microwave"><a href="/cookbook/buttermilk-fried-chicken/">Buttermilk Fried Chicken</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/chicken-alfredo/">Chicken Alfredo</a></li>
 <li class="pending"><a href="/cookbook/chicken-and-leek-pie/">Chicken and Leek Pie</a></li>
 <li><a href="/cookbook/chicken-couscous-bowl/">Chicken Couscous Bowl</a></li>
@@ -268,18 +268,18 @@ layout: single
 <li class="pending"><a href="/cookbook/greek-chicken-and-potatoes/">Greek Chicken and Potatoes</a></li>
 <li><a href="/cookbook/lemon-butter-chicken-ravioli/">Lemon Butter Chicken Ravioli</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/pot-roast-chicken/">Pot Roast Chicken</a></li>
-<li class="pending" data-tags="dutch-oven freezer"><a href="/cookbook/pot-roast-chicken-thighs/">Pot-Roast Chicken Thighs</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer"><a href="/cookbook/pot-roast-chicken-thighs/">Pot-Roast Chicken Thighs</a></li>
 </ul>
 </div>
 
 <div class="subcat">
 <p class="subcat-heading">Curry</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/butter-chicken/">Butter Chicken</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/butter-chicken/">Butter Chicken</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/cari-poulet/">Cari Poulet</a></li>
-<li class="pending" data-tags="freezer make-ahead vegan"><a href="/cookbook/chana-saag/">Chana Saag</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer make-ahead vegan"><a href="/cookbook/chana-saag/">Chana Saag</a></li>
 <li class="pending"><a href="/cookbook/leftover-chicken-curry/">Leftover Chicken Curry</a></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/thai-green-curry/">Thai Green Curry</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/thai-green-curry/">Thai Green Curry</a></li>
 </ul>
 </div>
 
@@ -297,8 +297,8 @@ layout: single
 <div class="subcat">
 <p class="subcat-heading">Mexican</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="freezer microwave"><a href="/cookbook/bowsers-big-bean-burrito/">Bowser's Big Bean Burrito</a><span class="frz">❄</span></li>
-<li data-tags="freezer microwave"><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer microwave"><a href="/cookbook/bowsers-big-bean-burrito/">Bowser's Big Bean Burrito</a></li>
+<li data-tags="freezer microwave"><a href="/cookbook/breakfast-burritos/">Breakfast Burritos</a></li>
 <li><a href="/cookbook/enchiladas/">Enchiladas</a></li>
 <li class="pending" data-tags="cast-iron vegetarian"><a href="/cookbook/quesadilla/">Quesadilla</a></li>
 <li class="pending" data-tags="cast-iron"><a href="/cookbook/steak-fajitas/">Steak Fajitas</a></li>
@@ -313,21 +313,21 @@ layout: single
 <li class="pending" data-tags="make-ahead"><a href="/cookbook/greek-pasta-salad/">Greek Pasta Salad</a></li>
 <li class="pending" data-tags="make-ahead"><a href="/cookbook/green-goddess-pasta-salad/">Green Goddess Pasta Salad</a></li>
 <li class="pending" data-tags="make-ahead"><a href="/cookbook/italian-deli-pasta-salad/">Italian Deli Pasta Salad</a></li>
-<li class="pending" data-tags="dutch-oven freezer"><a href="/cookbook/pasta-with-tiny-meatballs/">Pasta with Tiny Meatballs</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/ragu/">Ragù</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/sausage-ragu/">Sausage Ragu</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="cast-iron freezer"><a href="/cookbook/skillet-lasagna/">Skillet Lasagna</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer"><a href="/cookbook/pasta-with-tiny-meatballs/">Pasta with Tiny Meatballs</a></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/ragu/">Ragù</a></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/sausage-ragu/">Sausage Ragu</a></li>
+<li class="pending" data-tags="cast-iron freezer"><a href="/cookbook/skillet-lasagna/">Skillet Lasagna</a></li>
 </ul>
 </div>
 
 <div class="subcat">
 <p class="subcat-heading">Pork</p>
 <ul class="recipe-list">
-<li data-tags="dutch-oven freezer stand-mixer"><a href="/cookbook/carnitas/">Carnitas</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/roast-pork-loin/">Roast Pork Loin</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/sausage-and-butter-bean-casserole/">Sausage and Butter Bean Casserole</a><span class="frz">❄</span></li>
+<li data-tags="dutch-oven freezer stand-mixer"><a href="/cookbook/carnitas/">Carnitas</a></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/roast-pork-loin/">Roast Pork Loin</a></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/sausage-and-butter-bean-casserole/">Sausage and Butter Bean Casserole</a></li>
 <li class="pending"><a href="/cookbook/sausage-plait/">Sausage Plait</a></li>
-<li class="pending" data-tags="freezer"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer"><a href="/cookbook/sausage-rolls/">Sausage Rolls</a></li>
 <li data-tags="dutch-oven make-ahead"><a href="/cookbook/scotch-eggs/">Scotch Eggs</a></li>
 </ul>
 </div>
@@ -336,9 +336,9 @@ layout: single
 <p class="subcat-heading">Rice</p>
 <ul class="recipe-list">
 <li data-tags="dutch-oven"><a href="/cookbook/chicken-and-chorizo-rice/">Chicken and Chorizo Rice</a></li>
-<li class="pending" data-tags="freezer make-ahead"><a href="/cookbook/chicken-biryani/">Chicken Biryani</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer make-ahead"><a href="/cookbook/chicken-biryani/">Chicken Biryani</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/jollof-rice/">Jollof Rice</a></li>
-<li class="pending" data-tags="freezer make-ahead vegetarian"><a href="/cookbook/mujadara/">Mujadara</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer make-ahead vegetarian"><a href="/cookbook/mujadara/">Mujadara</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/oven-pilaf/">Oven Pilaf</a></li>
 <li class="pending" data-tags="dutch-oven vegetarian"><a href="/cookbook/tahdig/">Tahdig</a></li>
 </ul>
@@ -358,7 +358,7 @@ layout: single
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/cheese-twists/">Cheese Twists</a></li>
 <li data-tags="stand-mixer"><a href="/cookbook/confit-byaldi/">Confit Byaldi</a></li>
-<li class="pending" data-tags="cast-iron freezer vegetarian"><a href="/cookbook/gnocchi-bake/">Gnocchi Bake</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="cast-iron freezer vegetarian"><a href="/cookbook/gnocchi-bake/">Gnocchi Bake</a></li>
 <li><a href="/cookbook/lime-cabbage-slaw/">Lime Cabbage Slaw</a></li>
 <li class="pending"><a href="/cookbook/plantain-dodo/">Plantain (Dodo)</a></li>
 <li class="pending"><a href="/cookbook/quiche-lorraine/">Quiche Lorraine</a></li>
@@ -369,20 +369,20 @@ layout: single
 <div class="subcat">
 <p class="subcat-heading">Soups</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="freezer make-ahead"><a href="/cookbook/chicken-noodle-soup/">Chicken Noodle Soup</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="freezer make-ahead vegan"><a href="/cookbook/fakes/">Fakes</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer make-ahead"><a href="/cookbook/chicken-noodle-soup/">Chicken Noodle Soup</a></li>
+<li class="pending" data-tags="freezer make-ahead vegan"><a href="/cookbook/fakes/">Fakes</a></li>
 <li class="pending" data-tags="dutch-oven"><a href="/cookbook/french-onion-soup/">French Onion Soup</a></li>
-<li data-tags="dutch-oven freezer vegetarian"><a href="/cookbook/tomato-soup/">Tomato Soup</a><span class="frz">❄</span></li>
+<li data-tags="dutch-oven freezer vegetarian"><a href="/cookbook/tomato-soup/">Tomato Soup</a></li>
 </ul>
 </div>
 
 <div class="subcat">
 <p class="subcat-heading">Vegetarian</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="dutch-oven freezer make-ahead vegan"><a href="/cookbook/gigantes-plaki/">Gigantes Plaki</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead vegan"><a href="/cookbook/gigantes-plaki/">Gigantes Plaki</a></li>
 <li class="pending" data-tags="dutch-oven vegetarian"><a href="/cookbook/halloumi-kleftiko/">Halloumi Kleftiko</a></li>
-<li class="pending" data-tags="dutch-oven freezer vegan"><a href="/cookbook/mushroom-bourguignon/">Mushroom Bourguignon</a><span class="frz">❄</span></li>
-<li class="pending" data-tags="dutch-oven freezer make-ahead vegan"><a href="/cookbook/ribollita/">Ribollita</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer vegan"><a href="/cookbook/mushroom-bourguignon/">Mushroom Bourguignon</a></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead vegan"><a href="/cookbook/ribollita/">Ribollita</a></li>
 <li class="pending" data-tags="vegan"><a href="/cookbook/whole-roasted-cauliflower/">Whole Roasted Cauliflower</a></li>
 </ul>
 </div>
@@ -392,8 +392,8 @@ layout: single
 <section id="cypriot" class="cat">
 <p class="cat-heading">Cypriot</p>
 <ul class="recipe-list">
-<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/afelia/">Afelia</a><span class="frz">❄</span></li>
-<li data-tags="freezer stand-mixer vegan"><a href="/cookbook/arkatena/">Arkatena</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/afelia/">Afelia</a></li>
+<li data-tags="freezer stand-mixer vegan"><a href="/cookbook/arkatena/">Arkatena</a></li>
 <li class="pending"><a href="/cookbook/avgolemoni/">Avgolemoni</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/bourekia/">Bourekia</a></li>
 <li class="pending" data-tags="dutch-oven make-ahead"><a href="/cookbook/giouvetsi/">Giouvetsi</a></li>
@@ -407,7 +407,7 @@ layout: single
 <li><a href="/cookbook/pourgouri-pilafi/">Pourgouri Pilafi</a></li>
 <li class="pending" data-tags="cast-iron vegetarian"><a href="/cookbook/saganaki/">Saganaki</a></li>
 <li><a href="/cookbook/souvla/">Souvla</a></li>
-<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/stifado/">Stifado</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="dutch-oven freezer make-ahead"><a href="/cookbook/stifado/">Stifado</a></li>
 <li class="pending" data-tags="dutch-oven make-ahead"><a href="/cookbook/tavas/">Tavas</a></li>
 </ul>
 </section>
@@ -415,9 +415,9 @@ layout: single
 <section id="sauces" class="cat">
 <p class="cat-heading">Sauces &amp; Preserves</p>
 <ul class="recipe-list">
-<li data-tags="freezer"><a href="/cookbook/aji-verde/">Aji Verde</a><span class="frz">❄</span></li>
+<li data-tags="freezer"><a href="/cookbook/aji-verde/">Aji Verde</a></li>
 <li class="pending"><a href="/cookbook/brown-sauce/">Brown Sauce</a></li>
-<li data-tags="freezer vegan"><a href="/cookbook/cosmic-souvla-sauce/">Cosmic Souvla Sauce</a><span class="frz">❄</span></li>
+<li data-tags="freezer vegan"><a href="/cookbook/cosmic-souvla-sauce/">Cosmic Souvla Sauce</a></li>
 <li class="pending"><a href="/cookbook/fermented-hot-sauce/">Fermented Hot Sauce</a></li>
 <li class="pending" data-tags="make-ahead"><a href="/cookbook/honey-chipotle-glaze/">Honey Chipotle Glaze</a></li>
 <li class="pending"><a href="/cookbook/hot-honey/">Hot Honey</a></li>
