@@ -219,6 +219,7 @@ layout: single
 <ul class="recipe-list">
 <li class="pending"><a href="/cookbook/bakewell-tart/">Bakewell Tart</a></li>
 <li data-tags="freezer vegetarian"><a href="/cookbook/banana-bread/">Banana Bread</a><span class="frz">❄</span></li>
+<li class="pending" data-tags="freezer make-ahead no-cook"><a href="/cookbook/biscoff-cheesecake/">Biscoff Cheesecake</a><span class="frz">❄</span></li>
 <li class="pending"><a href="/cookbook/blondies/">Blondies</a></li>
 <li><a href="/cookbook/brownie-blondie/">Brownie Blondie</a></li>
 <li data-tags="stand-mixer"><a href="/cookbook/brownies/">Brownies</a></li>
