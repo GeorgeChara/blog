@@ -46,6 +46,8 @@ Biscoff biscuits   50g
 
 {{< ingr "double cream=300ml, cream cheese=400g, Biscoff spread=200g" >}}
 
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">KitchenAid: whisk attachment, speed 4, 2 to 3 min. It thickens suddenly at the end, so watch it.</span>
+
 **4.** Spoon onto the base and smooth the top. Cover and chill at least 3 hr, overnight is better.
 
 **5.** Melt the remaining spread, 20 seconds at a time, until it pours. Pour over and spread to the edges. Scatter the last of the biscuits round the rim. Put in the fridge for an hour.
