@@ -18,41 +18,33 @@ tags: []
 </style>
 
 <h1>Carbonara</h1>
-<p style="color: #888; margin-top: -0.5em;">serves 2, 25 min, no cream</p>
+<p style="color: #888; margin-top: -0.5em;">Roman pasta, one pan, 15 min, serves 2</p>
 
 ## Ingredients
 
-<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">spaghetti           200g
-egg yolks           4
-whole egg           1
-pecorino romano     40g, grated
-parmesan            15g, grated
-guanciale           100g, diced
-black pepper        1 tsp, ground
+<pre style="padding: 1em; border-radius: 4px; display: inline-block; margin: 0; color: #000;">spaghetti       200g
+pancetta        100g
+eggs            3
+pecorino        50g
+black pepper    1 tsp
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Pancetta works instead of guanciale. Salt the pasta water lightly, the guanciale and cheese are already salty.</span>
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">No cream. The sauce is an emulsion you make off the heat. The warmth of the pasta cooks the yolks into a glossy coat, a pan on the flame scrambles them.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Guanciale is the traditional cut, pancetta is easier to get. Buy it in a piece and dice it thick.<br>Salt the pasta water lightly, the pancetta and pecorino bring plenty.</span>
 
 ## Recipe
 
-**1.** Boil a large pan of lightly salted water and cook the spaghetti to just under al dente.
+**1.** Dice the pancetta and fry it in a dry pan over medium heat until the fat runs and the edges crisp, 6 to 8 minutes. Take the pan off the heat.
 
-**2.** Meanwhile, put the diced guanciale in a cold frying pan over medium heat. Render slowly for 6 to 8 minutes until the fat runs and the pieces are golden and crisp. Take off the heat, leaving the fat in the pan.
+**2.** Cook the spaghetti in lightly salted water until al dente. Keep back a mug of the water.
 
-**3.** Whisk into a thick, smooth paste, keeping a little pepper back:
+**3.** Whisk to a thick paste:
 
-{{< ingr "egg yolks=4, whole egg=1, pecorino romano=40g, parmesan=15g, black pepper=1 tsp" >}}
+{{< ingr "egg=1, egg yolks=2, pecorino=50g grated, black pepper=1 tsp" >}}
 
-**4.** Scoop out a mugful of pasta water, then drain the spaghetti.
+**4.** Drain the spaghetti into the pancetta pan and toss in the fat. Pour in the egg mix and toss hard, loosening with pasta water until it is glossy and coats every strand.
 
-**5.** Toss the hot pasta into the pan of guanciale fat, off the heat, and let it cool for 30 seconds so it is hot but not searing.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The pan should be warm, not hot. If it hisses when the eggs go in you will get scrambled egg, so wait half a minute first. Too thick, more pasta water. Too thin, more grated pecorino. The hob is never the answer.</span>
 
-**6.** Pour in the egg mix and toss hard, adding a splash of pasta water as you go, until glossy and creamy and coating every strand.
+**5.** Serve straight away with more pecorino and pepper.
 
-**7.** Loosen with more pasta water if it tightens. Never put it back on the heat. Serve with extra pecorino and a grind of pepper.
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Too thick? more pasta water. Too thin? toss in more grated pecorino. The hob is never the answer.</span>
-
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.seriouseats.com/the-best-spaghetti-carbonara-recipe">Serious Eats</a>, <a href="https://www.recipesfromitaly.com/spaghetti-carbonara-original-recipe/">Recipes from Italy</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe">BBC Good Food</a>, <a href="https://www.giallozafferano.com/recipes/Traditional-carbonara.html">GialloZafferano</a>, <a href="https://thehappyfoodie.co.uk/recipes/perfect-spaghetti-carbonara/">The Happy Foodie</a>.</span>
