@@ -77,18 +77,17 @@ Fold into the wet with the carrots and half the pecans, until just combined.
 
 **4.** Divide between the tins and bake 20 to 25 minutes, until a skewer in the middle comes out clean and the top springs back when pressed. Cool in the tins 1 hour, turn out onto a rack, and frost only when cold.
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:-0.5em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Tin size changes the bake. More or bigger tins make thinner layers, so start checking a few minutes early. Two tins instead of three, or smaller tins, bake longer: 30 to 35 minutes.</span>
+**5.** Drain the cream cheese in a paper lined sieve for 30 minutes.
 
-**5.** Drain the cream cheese in a paper lined sieve for 30 minutes. Beat the butter smooth, then beat in the icing sugar to a thick buttercream:
+**6.** Paddle the butter on its own, medium, 1 minute, until creamy. Add the icing sugar, low then medium, 2 to 3 minutes, to a thick buttercream:
 
-{{< ingr "cream cheese=340g, unsalted butter=113g, icing sugar=480g, vanilla extract=7.5ml, salt=pinch" >}}
+{{< ingr "unsalted butter=113g, icing sugar=480g" >}}
 
-Add the cold drained cream cheese, vanilla and salt and mix on low just until smooth. If it is slack, beat in more icing sugar a spoonful at a time until it holds its shape.
+**7.** Add the drained cream cheese, vanilla and salt. Mix on low 30 to 60 seconds, just until smooth:
 
-<details>
-<summary>show the foolproof method</summary>
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.4em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Paddle, not the whisk.<br>1. Drain the cream cheese first: sit it in a sieve lined with kitchen paper, 30 minutes, to lose the loose water.<br>2. Butter on its own, medium, 1 min, until creamy.<br>3. Add the icing sugar, low then medium, 2 to 3 min, to a thick buttercream.<br>4. Add the cold drained cream cheese, vanilla and salt, low, 30 to 60 seconds, just until smooth. Stop there.<br>5. Still slack? Beat in more icing sugar a spoon at a time until it holds its shape.<br>It firms up cold. Chill before spreading, and the cake sets cleanest after a few hours in the fridge, ideally overnight.<br>🤓 <strong>The science:</strong> the slackness is water from the cream cheese. Draining removes it, butter and sugar first stop the rest pulling out, and the cold fridge sets the butter firm. Overbeating or creaming the cheese in early releases the water and turns it runny.</span>
-</details>
+{{< ingr "cream cheese=340g, vanilla extract=7.5ml, salt=pinch" >}}
+
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stop as soon as it is smooth. Beating on past that pulls the water back out of the cheese and it goes runny.<br>Still slack, beat in more icing sugar a spoon at a time until it holds its shape. It firms up cold, so chill it before spreading.</span>
 
 <details>
 <summary>show photo</summary>
@@ -100,6 +99,6 @@ Add the cold drained cream cheese, vanilla and salt and mix on low just until sm
 
 </details>
 
-**6.** Stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill a few hours, ideally overnight, to set fully before slicing.
+**8.** Stack the layers with frosting between each, then coat the top and sides and press the rest of the pecans on top. Chill a few hours, ideally overnight, to set fully before slicing.
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 3px solid #8fcfe8; padding-left: 0.6em;"><span style="color:#3f9fd4; font-size:1.1em;">❄ <strong>Freezer</strong></span><br>Freeze: wrap the unfrosted layers well, or freeze finished slices.<br>Reheat: thaw at room temperature.<br>Keeps: 3 months frozen, 5 days in the fridge once frosted.</span>
