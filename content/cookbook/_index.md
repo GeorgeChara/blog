@@ -234,6 +234,7 @@ layout: single
 <li class="pending" data-tags="stand-mixer vegetarian"><a href="/cookbook/matilda-chocolate-cake/">Matilda Chocolate Cake</a></li>
 <li class="pending"><a href="/cookbook/mille-feuille/">Mille-feuille</a></li>
 <li class="pending" data-tags="stand-mixer"><a href="/cookbook/pain-au-chocolat/">Pain au Chocolat</a></li>
+<li class="pending" data-tags="stand-mixer vegetarian"><a href="/cookbook/pandan-cake/">Pandan Cake</a></li>
 <li class="pending"><a href="/cookbook/scones/">Scones</a></li>
 <li class="pending" data-tags="cast-iron freezer stand-mixer vegetarian"><a href="/cookbook/skillet-cookie/">Skillet Cookie</a></li>
 <li class="pending"><a href="/cookbook/sticky-toffee-pudding/">Sticky Toffee Pudding</a></li>
