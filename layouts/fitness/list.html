@@ -47,10 +47,12 @@
   table.acts td { padding: 0.55em 0; border-bottom: 1px solid #f2efe8; vertical-align: top; }
   table.acts tr:last-child td { border-bottom: none; }
   table.acts a { color: #000; text-decoration: none; }
-  table.acts .tag { display: inline-block; font-size: 0.7em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1em 0.45em; border-radius: 3px; margin-right: 0.6em; }
-  table.acts .tag.ride { color: #d2761f; background: #fdf2e9; }
-  table.acts .tag.gym { color: #3f80c6; background: #edf3fb; }
-  table.acts .tag.run { color: #3f9e63; background: #ecf6ef; }
+  .tag { display: inline-block; font-size: 0.7em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1em 0.45em; border-radius: 3px; margin-right: 0.4em; }
+  .tag.ride { color: #d2761f; background: #fdf2e9; }
+  .tag.gym { color: #3f80c6; background: #edf3fb; }
+  .tag.run { color: #3f9e63; background: #ecf6ef; }
+  .tag.move { color: #7d6db0; background: #f3f0fa; }
+  .heat-readout .tag { font-size: 0.85em; line-height: 1.3; vertical-align: 1px; }
   table.acts .date { display: block; font-size: 0.78em; color: #999; margin-top: 0.2em; }
   table.acts td.meta { text-align: right; color: #666; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
@@ -304,13 +306,26 @@
     }
   }
   heat.addEventListener('mouseleave', function () { setReadout(null); });
+  // colour coded blocks for a day, same order everywhere
+  function tags(rec) {
+    var t = '';
+    if (rec.ride) t += '<span class="tag ride">Ride</span>';
+    if (rec.gym) t += '<span class="tag gym">Weights</span>';
+    if (rec.run) t += '<span class="tag run">Run</span>';
+    if (rec.move) t += '<span class="tag move">Move</span>';
+    return t;
+  }
+  function kms(rec) {
+    var k = [];
+    if (rec.ride) k.push(Math.round(rec.ride.km) + ' km');
+    if (rec.run && rec.run.km) k.push(rec.run.km + ' km');
+    return k.join(', ');
+  }
   function fmt(key, rec) {
-    var parts = ['<span class="hk">' + dstr(key) + '</span>'];
-    if (rec.move) parts.push('<span style="color:#7d6db0">Move</span>');
-    if (rec.gym) parts.push('<span style="color:#3f80c6">Weights</span>');
-    if (rec.run) parts.push('<span style="color:#3f9e63">Run' + (rec.run.km ? ' ' + rec.run.km + 'km' : '') + '</span>');
-    if (rec.ride) parts.push('<span style="color:#d2761f">' + (rec.ride.name || 'Ride') + '</span>' + '<span class="hsep">|</span><span>' + Math.round(rec.ride.km) + ' km</span>');
-    return parts.join('<span class="hsep">|</span>');
+    var h = '<span class="hk">' + dstr(key) + '</span> ' + tags(rec);
+    if (rec.ride) h += '<span style="color:#d2761f">' + (rec.ride.name || 'Ride') + '</span>';
+    if (kms(rec)) h += '<span class="hsep">|</span>' + kms(rec);
+    return h;
   }
 
   // ---- recent activity (merged, newest first) ----
@@ -323,19 +338,9 @@
   all.sort(function (a, b) { return a.d < b.d ? 1 : -1; });
   var rows = all.slice(0, 12).map(function (x) {
     var r = x.rec, dstr2 = new Date(x.d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-    var cells = [];
-    if (r.ride) {
-      var nm = r.ride.url ? '<a href="' + r.ride.url + '">' + (r.ride.name || 'Ride') + '</a>' : (r.ride.name || 'Ride');
-      cells.push('<tr><td><span class="tag ride">Ride</span>' + nm + '<span class="date">' + dstr2 + '</span></td><td class="meta">' + Math.round(r.ride.km) + ' km</td></tr>');
-    }
-    if (r.gym) {
-      cells.push('<tr><td><span class="tag gym">Weights</span>Session<span class="date">' + dstr2 + '</span></td><td class="meta"></td></tr>');
-    }
-    if (r.run) {
-      cells.push('<tr><td><span class="tag run">Run</span>Run<span class="date">' + dstr2 + '</span></td><td class="meta">'
-        + (r.run.km ? r.run.km + ' km' : '') + '</td></tr>');
-    }
-    return cells.join('');
+    var nm = '';
+    if (r.ride) nm = r.ride.url ? '<a href="' + r.ride.url + '">' + (r.ride.name || 'Ride') + '</a>' : (r.ride.name || 'Ride');
+    return '<tr><td>' + tags(r) + nm + '<span class="date">' + dstr2 + '</span></td><td class="meta">' + kms(r) + '</td></tr>';
   }).join('');
   document.getElementById('actsTable').innerHTML = rows || '<tr><td style="color:#999">No activity yet.</td></tr>';
 })();
