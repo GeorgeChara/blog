@@ -1,0 +1,57 @@
+name: Log move
+
+# Tick off a day you moved (walk, stretch, anything). Trigger from the GitHub
+# app (Actions > Run workflow) or from an iOS Shortcut that POSTs to this
+# workflow's dispatch endpoint.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date (YYYY-MM-DD). Blank = today (Europe/London)."
+        required: false
+        default: ""
+      remove:
+        description: "Set to true to remove that date instead of adding it."
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update move log
+        env:
+          IN_DATE: ${{ github.event.inputs.date }}
+          IN_REMOVE: ${{ github.event.inputs.remove }}
+        run: |
+          DATE="$IN_DATE"
+          [ -z "$DATE" ] && DATE=$(TZ=Europe/London date +%F)
+          FILE=data/fitness/move.json
+          mkdir -p data/fitness
+          [ -f "$FILE" ] || echo '{"dates":[]}' > "$FILE"
+          tmp=$(mktemp)
+          if [ "$IN_REMOVE" = "true" ]; then
+            jq --arg d "$DATE" '.dates = (.dates - [$d])' "$FILE" > "$tmp"
+            echo "Removed $DATE"
+          else
+            jq --arg d "$DATE" '.dates = ((.dates + [$d]) | unique | sort)' "$FILE" > "$tmp"
+            echo "Logged $DATE"
+          fi
+          mv "$tmp" "$FILE"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fitness/move.json
+          if git diff --staged --quiet; then
+            echo "No change (already in that state)"
+          else
+            git commit -m "Log move"
+            git push
+          fi
