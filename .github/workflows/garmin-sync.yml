@@ -1,9 +1,11 @@
 name: Sync Garmin Activities
 
-# Run it by hand from the Actions tab. It used to run daily, but the Garmin
-# session token expires roughly monthly and a fresh login needs an MFA code,
-# so a schedule just produced a failed run every morning until noticed.
+# Run it by hand from the Actions tab or the Log shortcut. The weekly run keeps
+# the Garmin login renewed (see "Persist the refreshed token") even in weeks
+# without a manual sync.
 on:
+  schedule:
+    - cron: "0 6 * * 1"
   workflow_dispatch:
   repository_dispatch:
     types: [garmin-activity]
