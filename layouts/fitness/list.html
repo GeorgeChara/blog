@@ -13,6 +13,11 @@
   .fstats { font-size: 0.78em; color: #a9a094; margin: 1.5em 0 1.1em;
             display: flex; flex-wrap: wrap; gap: 0.35em 1.5em; }
   .fstats b { color: #000; font-weight: bold; font-variant-numeric: tabular-nums; }
+  .fstats .muted, .fstats .muted b { color: #c3bbac; font-weight: normal; }
+  .fweek { font-size: 0.78em; color: #a9a094; margin: -0.6em 0 1.1em;
+           display: flex; flex-wrap: wrap; gap: 0.35em 1.5em; }
+  .fweek b { color: #000; font-weight: bold; font-variant-numeric: tabular-nums; }
+  .fweek b.hit { color: #3f9e63; }
   .heat-legend .lgyear { margin-left: auto; color: #c3bbac; }
   .heat-legend b { font-weight: 600; color: #8d8478; font-variant-numeric: tabular-nums; }
   /* The month's ride/weights/run split, as one thin bar rather than a fourth
@@ -64,6 +69,8 @@
 {{ end }}
 {{ $gym := slice }}
 {{ with hugo.Data.fitness }}{{ with .gym }}{{ with .dates }}{{ $gym = . }}{{ end }}{{ end }}{{ end }}
+{{ $move := slice }}
+{{ with hugo.Data.fitness }}{{ with .move }}{{ with .dates }}{{ $move = . }}{{ end }}{{ end }}{{ end }}
 {{ $runs := slice }}
 {{ with hugo.Data.fitness }}{{ with .runs }}{{ with .runs }}{{ $runs = . }}{{ end }}{{ end }}{{ end }}
 
@@ -74,9 +81,16 @@
 </div>
 
 <div class="fstats" id="fstats">
+  <span>last moved <b id="stLast">–</b></span>
+  <span><b id="stStreak">–</b> week streak <span class="muted">best <b id="stBest">–</b></span></span>
   <span><b id="stActive">–</b> active days this month</span>
-  <span><b id="stStreak">–</b> week streak</span>
-  <span><b id="stWeek">–</b> this week</span>
+</div>
+
+<div class="fweek">
+  <span>this week</span>
+  <span>Moved <b id="wkMove">–</b>/<span id="tgMove"></span></span>
+  <span>Ride <b id="wkRide">–</b>/<span id="tgRide"></span></span>
+  <span>Weights <b id="wkGym">–</b>/<span id="tgGym"></span></span>
 </div>
 
 <div class="heat-card">
@@ -89,6 +103,7 @@
     <span><i style="background:#f6a351"></i> Ride <b id="lgRide">–</b></span>
     <span><i style="background:#699bd3"></i> Weights <b id="lgGym">–</b></span>
     <span><i style="background:#61b885"></i> Run <b id="lgRun">–</b></span>
+    <span><i style="background:#c5b9e2"></i> Move <b id="lgMove">–</b></span>
     <span class="lgyear" id="lgYear"></span>
   </div>
   <div class="heat-split" id="heatSplit"></div>
@@ -100,19 +115,27 @@
 <script id="rides-data" type="application/json">{{ $rides | jsonify | safeJS }}</script>
 <script id="gym-data" type="application/json">{{ $gym | jsonify | safeJS }}</script>
 <script id="runs-data" type="application/json">{{ $runs | jsonify | safeJS }}</script>
+<script id="move-data" type="application/json">{{ $move | jsonify | safeJS }}</script>
 
 <script>
 (function () {
+  // Streaks-style weekly targets. A week counts towards the streak once it has
+  // WEEK_MIN active days of any kind.
+  var TARGET = { move: 7, ride: 2, gym: 2 };
+  var WEEK_MIN = 3;
+
   var rides = JSON.parse(document.getElementById('rides-data').textContent) || [];
   var gymDates = JSON.parse(document.getElementById('gym-data').textContent) || [];
   var runs = JSON.parse(document.getElementById('runs-data').textContent) || [];
+  var moveDates = JSON.parse(document.getElementById('move-data').textContent) || [];
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-  // merge into byDay: { ride:{km,name,url}|null, gym:bool }
+  // merge into byDay: { ride:{km,name,url}|null, gym:bool, run:{km}, move:bool }
   var byDay = {};
   rides.forEach(function (r) { (byDay[r.d] = byDay[r.d] || {}).ride = { km: r.km, name: r.name, url: r.url }; });
   gymDates.forEach(function (d) { (byDay[d] = byDay[d] || {}).gym = true; });
   runs.forEach(function (r) { (byDay[r.d] = byDay[r.d] || {}).run = { km: r.km }; });
+  moveDates.forEach(function (d) { (byDay[d] = byDay[d] || {}).move = true; });
 
   // ---- consistency stats ----
   function parse(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
@@ -129,18 +152,58 @@
   var ridesYear = yearDays.filter(function (d) { return byDay[d].ride; }).length;
   var gymYear = yearDays.filter(function (d) { return byDay[d].gym; }).length;
   var runsYear = yearDays.filter(function (d) { return byDay[d].run; }).length;
-  var thisWeekKey = weekKey(today);
-  var weekDays = activeDays.filter(function (d) { return weekKey(parse(d)) === thisWeekKey; }).length;
+  var moveYear = yearDays.filter(function (d) { return byDay[d].move; }).length;
+  var todayKey = iso(today), thisWeekKey = weekKey(today);
+  var weekDays = activeDays.filter(function (d) { return d <= todayKey && weekKey(parse(d)) === thisWeekKey; });
 
-  // week streak: consecutive weeks (ending this week) with >=1 active day
-  var weeksActive = {}; activeDays.forEach(function (d) { weeksActive[weekKey(parse(d))] = true; });
+  // active days per Monday-start week
+  var weekCount = {};
+  activeDays.forEach(function (d) { if (d <= todayKey) { var k = weekKey(parse(d)); weekCount[k] = (weekCount[k] || 0) + 1; } });
+  function full(dt) { return (weekCount[weekKey(dt)] || 0) >= WEEK_MIN; }
+
+  // week streak: consecutive full weeks ending this week. A week still short of
+  // WEEK_MIN is skipped, not counted as a break.
   var streak = 0, probe = new Date(today);
-  if (!weeksActive[weekKey(probe)]) probe.setDate(probe.getDate() - 7); // allow current week not yet done
-  while (weeksActive[weekKey(probe)]) { streak++; probe.setDate(probe.getDate() - 7); }
+  if (!full(probe)) probe.setDate(probe.getDate() - 7);
+  while (full(probe)) { streak++; probe.setDate(probe.getDate() - 7); }
+
+  // best streak: longest run of consecutive full weeks ever
+  var best = streak, run = 0;
+  var firstDay = activeDays.slice().sort()[0];
+  if (firstDay) {
+    for (var wk = parse(weekKey(parse(firstDay))); wk <= today; wk.setDate(wk.getDate() + 7)) {
+      run = full(wk) ? run + 1 : 0;
+      if (run > best) best = run;
+    }
+  }
+
+  // last moved: any kind of activity counts
+  var past = activeDays.filter(function (d) { return d <= todayKey; }).sort();
+  var lastEl = document.getElementById('stLast');
+  if (past.length) {
+    var ago = Math.round((today - parse(past[past.length - 1])) / 86400000);
+    lastEl.textContent = ago === 0 ? 'today' : ago === 1 ? 'yesterday' : ago + ' days ago';
+    if (ago === 1) lastEl.style.color = '#d8962b';
+    else if (ago >= 2) lastEl.style.color = '#c8553d';
+  } else {
+    lastEl.textContent = 'never';
+    lastEl.style.color = '#c8553d';
+  }
 
   document.getElementById('stActive').textContent = monthDays.length;
   document.getElementById('stStreak').textContent = streak;
-  document.getElementById('stWeek').textContent = weekDays;
+  document.getElementById('stBest').textContent = best;
+
+  // this week against targets; a number turns green once it hits its target
+  [['wkMove', 'tgMove', weekDays.length, TARGET.move],
+   ['wkRide', 'tgRide', weekDays.filter(function (d) { return byDay[d].ride; }).length, TARGET.ride],
+   ['wkGym', 'tgGym', weekDays.filter(function (d) { return byDay[d].gym; }).length, TARGET.gym]
+  ].forEach(function (x) {
+    var el = document.getElementById(x[0]);
+    el.textContent = x[2];
+    if (x[2] >= x[3]) el.className = 'hit';
+    document.getElementById(x[1]).textContent = x[3];
+  });
 
   // This month's split, shown as one thin bar along the bottom of the heatmap.
   // Segments are true proportions - an activity you haven't done simply isn't
@@ -148,6 +211,7 @@
   document.getElementById('lgRide').textContent = ridesYear;
   document.getElementById('lgGym').textContent = gymYear;
   document.getElementById('lgRun').textContent = runsYear;
+  document.getElementById('lgMove').textContent = moveYear;
   document.getElementById('lgYear').textContent = today.getFullYear();
   var splitEl = document.getElementById('heatSplit'), totalYear = ridesYear + gymYear + runsYear;
   splitEl.innerHTML = '';
@@ -172,6 +236,7 @@
   var RIDE = ['#f8b877', '#f6a351', '#f48f2a', '#e4780c'];
   var BLUE = '#699bd3';
   var GREEN = '#61b885';
+  var MOVE = '#c5b9e2';
   var GOLD = '#edc75c', GOLD_EDGE = '#d8ae43';
   var monthsBack = window.innerWidth < 600 ? 4 : 6;
   var start = new Date(today); start.setMonth(start.getMonth() - monthsBack);
@@ -217,6 +282,8 @@
         i.style.background = 'linear-gradient(135deg,' + kinds[0] + ' 50%,' + kinds[1] + ' 50%)';
       } else if (kinds.length === 1) {
         i.style.background = kinds[0];
+      } else if (rec && rec.move) {
+        i.style.background = MOVE;
       } else {
         i.style.background = inRange ? '#ece9e0' : 'transparent';
       }
@@ -239,6 +306,7 @@
   heat.addEventListener('mouseleave', function () { setReadout(null); });
   function fmt(key, rec) {
     var parts = ['<span class="hk">' + dstr(key) + '</span>'];
+    if (rec.move) parts.push('<span style="color:#7d6db0">Move</span>');
     if (rec.gym) parts.push('<span style="color:#3f80c6">Weights</span>');
     if (rec.run) parts.push('<span style="color:#3f9e63">Run' + (rec.run.km ? ' ' + rec.run.km + 'km' : '') + '</span>');
     if (rec.ride) parts.push('<span style="color:#d2761f">' + (rec.ride.name || 'Ride') + '</span>' + '<span class="hsep">|</span><span>' + Math.round(rec.ride.km) + ' km</span>');
@@ -247,7 +315,11 @@
 
   // ---- recent activity (merged, newest first) ----
   var all = [];
-  Object.keys(byDay).forEach(function (d) { all.push({ d: d, rec: byDay[d] }); });
+  // move-only days are left out, they'd flood the list
+  Object.keys(byDay).forEach(function (d) {
+    var r = byDay[d];
+    if (r.ride || r.gym || r.run) all.push({ d: d, rec: r });
+  });
   all.sort(function (a, b) { return a.d < b.d ? 1 : -1; });
   var rows = all.slice(0, 12).map(function (x) {
     var r = x.rec, dstr2 = new Date(x.d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });

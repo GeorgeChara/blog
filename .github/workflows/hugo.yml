@@ -4,10 +4,10 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
-  # The Garmin sync commits with GITHUB_TOKEN, which does not trigger the push
-  # event above, so chain the deploy off the sync workflow finishing instead.
+  # The Garmin sync and log workflows commit with GITHUB_TOKEN, which does not
+  # trigger the push event above, so chain the deploy off them finishing instead.
   workflow_run:
-    workflows: ["Sync Garmin Activities", "Log gym workout"]
+    workflows: ["Sync Garmin Activities", "Log gym workout", "Log run", "Log move"]
     types: [completed]
 
 permissions:
