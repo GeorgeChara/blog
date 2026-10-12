@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Pandan Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">50 min bake, 170°C then 150°C, 20cm chiffon tin, serves 8</p>
+<p style="color: #888; margin-top: -0.5em;">50 min bake, 155°C fan then 135°C, 20cm chiffon tin, serves 8</p>
 
 ## Ingredients
 
@@ -33,13 +33,11 @@ cream of tartar    ½ tsp
 salt               pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The tin goes in dry. Ungreased, unlined, and not non-stick, the cake has to grip the sides to climb.<br>No cake flour: 88g plain flour plus 12g cornflour, sifted together.<br>The powder carries the flavour, the paste is just for colour.<br>Fresh leaves instead: blend 15 leaves with 60ml water, squeeze through a sieve and use 2 tbsp in place of the water, powder and paste.<br>Full fat tinned coconut milk, shaken. The thin stuff bakes dry.</span>
-
 ## Recipe
 
-**1.** Heat the oven to 170°C. Separate the eggs.
+**1.** Heat the oven to 155°C fan. Separate the eggs.
 
-**2.** Whisk smooth:
+**2.** In a large bowl, whisk smooth by hand:
 
 {{< ingr "egg yolks=5, caster sugar=20g, coconut milk=100ml, water=2 tbsp, pandan paste=¼ tsp, vegetable oil=60ml" >}}
 
@@ -47,18 +45,20 @@ salt               pinch
 
 {{< ingr "cake flour=100g, pandan powder=1 tbsp, baking powder=1 tsp, salt=pinch" >}}
 
-**4.** Whip to stiff peaks, adding the sugar in three goes once it is foamy:
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stop once smooth. Overmixed batter bakes short and dense.</span>
+
+**4.** In the stand mixer with the whisk attachment, on medium, whisk the whites and cream of tartar until foamy, then add the sugar in three goes and whip to stiff peaks:
 
 {{< ingr "egg whites=5, cream of tartar=½ tsp, caster sugar=60g" >}}
 
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stiff but not dry. Lifted out, the peak should stand up and flop at the very tip. Dry grainy meringue tears the batter when you fold it.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Stiff but not dry. Lifted out, the peak should stand up and flop at the very tip.<br>Underwhipped, the cake bakes short and dense. Overwhipped, it clumps and needs more folding, which knocks the air out.</span>
 
-**5.** Fold a third of the meringue into the batter to loosen it, then fold in the rest until no white streaks are left.
+**5.** By hand with a spatula, fold a third of the meringue into the batter to loosen it, then fold in the rest until no white streaks are left.
 
-**6.** Pour into the tin and bake 15 minutes, then drop the oven to 150°C and bake 30 to 35 minutes more, until a skewer comes out clean. Keep the door shut.
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Every extra fold pops air and the cake sinks.<br>White streaks left in bake into holes.</span>
+
+**6.** Pour into the tin and bake 15 minutes, then drop the oven to 135°C and bake 30 to 35 minutes more, until a skewer comes out clean. Keep the door shut.
 
 **7.** Invert the tin on its legs the second it comes out. Leave 3 hours until stone cold, then run a knife round the edge and the centre to turn out.
-
-<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Upside down while it cools is what keeps the height. Cooling it the right way up collapses it under its own weight.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://en.christinesrecipes.com/2011/06/pandan-chiffon-cake.html">Christine's Recipes</a>, <a href="https://dailycookingquest.com/pandan-chiffon-cake.html">Daily Cooking Quest</a>, <a href="https://whattocooktoday.com/pandan-chiffon-cake.html">What To Cook Today</a>, <a href="https://thelast-word.blog/2022/09/04/pandan-chiffon-cake-revisited/">The Last Word</a>.</span>
