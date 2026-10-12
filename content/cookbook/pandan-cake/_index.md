@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Pandan Cake</h1>
-<p style="color: #888; margin-top: -0.5em;">50 min bake, 155°C fan then 135°C, 20cm chiffon tin, serves 8</p>
+<p style="color: #888; margin-top: -0.5em;">50 min bake</p>
 
 ## Ingredients
 
@@ -33,9 +33,11 @@ cream of tartar    ½ tsp
 salt               pinch
 </pre>
 
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Coconut cream instead of milk: 50ml cream plus 50ml water. Straight cream is too thick.</span>
+
 ## Recipe
 
-**1.** Heat the oven to 155°C fan. Separate the eggs.
+**1.** Heat the oven to 155°C. Separate the eggs.
 
 **2.** In a large bowl, whisk smooth by hand:
 

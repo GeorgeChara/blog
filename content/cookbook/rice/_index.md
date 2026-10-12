@@ -16,7 +16,7 @@ layout: single
 </style>
 
 <h1>Rice</h1>
-<p style="color: #888; margin-top: -0.5em;">Dutch oven, 180°C fan, 45 min, serves 6</p>
+<p style="color: #888; margin-top: -0.5em;">Dutch oven, 180°C, 45 min, serves 6</p>
 
 ## Ingredients
 
@@ -32,7 +32,7 @@ butter           knob
 
 ## Recipe
 
-**1.** Heat the oven to 180°C fan.
+**1.** Heat the oven to 180°C.
 
 **2.** Rinse the rice under cold water until it runs clear, or skip it. Rinsed cooks up separate and fluffy, unrinsed a little stickier.
 
