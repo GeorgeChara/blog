@@ -24,14 +24,16 @@ layout: single
 cake flour         100g
 caster sugar       80g
 coconut milk       100ml
-pandan extract     2 tbsp
+pandan powder      1 tbsp
+pandan paste       ¼ tsp
+water              2 tbsp
 vegetable oil      60ml
 baking powder      1 tsp
 cream of tartar    ½ tsp
 salt               pinch
 </pre>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The tin goes in dry. Ungreased, unlined, and not non-stick, the cake has to grip the sides to climb.<br>No cake flour: 88g plain flour plus 12g cornflour, sifted together.<br>Pandan extract: blend 15 leaves with 60ml water and squeeze through a sieve. Shop bought paste works, use 1 tsp and top up to 2 tbsp with water.<br>Full fat tinned coconut milk, shaken. The thin stuff bakes dry.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">The tin goes in dry. Ungreased, unlined, and not non-stick, the cake has to grip the sides to climb.<br>No cake flour: 88g plain flour plus 12g cornflour, sifted together.<br>The powder carries the flavour, the paste is just for colour.<br>Fresh leaves instead: blend 15 leaves with 60ml water, squeeze through a sieve and use 2 tbsp in place of the water, powder and paste.<br>Full fat tinned coconut milk, shaken. The thin stuff bakes dry.</span>
 
 ## Recipe
 
@@ -39,11 +41,11 @@ salt               pinch
 
 **2.** Whisk smooth:
 
-{{< ingr "egg yolks=5, caster sugar=20g, coconut milk=100ml, pandan extract=2 tbsp, vegetable oil=60ml" >}}
+{{< ingr "egg yolks=5, caster sugar=20g, coconut milk=100ml, water=2 tbsp, pandan paste=¼ tsp, vegetable oil=60ml" >}}
 
 **3.** Sift in and whisk to a loose batter:
 
-{{< ingr "cake flour=100g, baking powder=1 tsp, salt=pinch" >}}
+{{< ingr "cake flour=100g, pandan powder=1 tbsp, baking powder=1 tsp, salt=pinch" >}}
 
 **4.** Whip to stiff peaks, adding the sugar in three goes once it is foamy:
 
@@ -59,4 +61,4 @@ salt               pinch
 
 <span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Upside down while it cools is what keeps the height. Cooling it the right way up collapses it under its own weight.</span>
 
-<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://en.christinesrecipes.com/2011/06/pandan-chiffon-cake.html">Christine's Recipes</a>, <a href="https://dailycookingquest.com/pandan-chiffon-cake.html">Daily Cooking Quest</a>, <a href="https://whattocooktoday.com/pandan-chiffon-cake.html">What To Cook Today</a>.</span>
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://en.christinesrecipes.com/2011/06/pandan-chiffon-cake.html">Christine's Recipes</a>, <a href="https://dailycookingquest.com/pandan-chiffon-cake.html">Daily Cooking Quest</a>, <a href="https://whattocooktoday.com/pandan-chiffon-cake.html">What To Cook Today</a>, <a href="https://thelast-word.blog/2022/09/04/pandan-chiffon-cake-revisited/">The Last Word</a>.</span>
