@@ -39,7 +39,9 @@ salt               ½ tsp
 
 ## Recipe
 
-**1.** Heat the oven to 150°C. Separate the eggs.
+**1.** Heat the oven to 150°C. Separate the eggs while cold and leave them out 30 minutes.
+
+<span style="display:block; color:#888; font-size:0.8em; margin:0.2em 0 0.9em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Room temperature whites whip higher than cold ones.</span>
 
 **2.** In a large bowl, whisk smooth by hand:
 
@@ -64,5 +66,7 @@ salt               ½ tsp
 **6.** Pour into the tin and bake 55 minutes, then turn the oven up to 165°C for 10 minutes more, until a skewer comes out clean. Keep the door shut.
 
 **7.** Invert the tin on its legs the second it comes out. Leave 3 hours until stone cold, then run a knife round the edge and the centre to turn out.
+
+<span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Store: cool completely before covering, then keep sealed at room temperature.<br>Keeps 2 to 3 days, 2 in humid weather. Not the fridge, it dries it out.</span>
 
 <span style="display:block; color:#888; font-size:0.8em; margin-top:0.8em; border-left: 2px solid #E5DECF; padding-left: 0.6em;">Sources: <a href="https://whattocooktoday.com/pandan-chiffon-cake.html">What To Cook Today</a>, <a href="https://www.foodelicacy.com/pandan-chiffon-cake/">Foodelicacy</a>, <a href="https://thelast-word.blog/2022/09/04/pandan-chiffon-cake-revisited/">The Last Word</a>, <a href="https://sugaryums.com/pandan-cake/">SugarYums</a>, <a href="https://bakabee.com/pandan-chiffon-cake/">Bakabee</a>.</span>
