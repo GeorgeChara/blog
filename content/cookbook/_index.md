@@ -45,6 +45,14 @@ layout: single
   .recipe-list a { color: #4169E1; text-decoration: none; }
   .recipe-list a:hover { color: #2a50c8; border-bottom-color: #2a50c8; }
   .recipe-list li.pending a { color: #aaa; border-bottom-color: #e0d9d0; }
+
+  /* Link between the cooked page and /cookbook/to-try/. The nav copy is for
+     desktop, the foot copy for mobile where the nav is hidden. */
+  .cb-nav a.cb-other { color: #aaa; margin-top: 0.8em; }
+  .cb-nav a.cb-other:hover { color: #888; border-bottom-color: #aaa; }
+  .cb-otherfoot { display: none; margin: 0 0 1.9em 0; }
+  .cb-otherfoot a { color: #aaa; text-decoration: none; }
+  .cb-pagehead { font-weight: bold; font-size: 1.05em; margin: 0 0 0.6em 0; color: #000; }
   .recipe-list li.pending a:hover { color: #888; border-bottom-color: #aaa; }
 
   .cookbook-search { flex: 1 1 0; min-width: 0; box-sizing: border-box; padding: 0.4em 0.7em; margin: 0; font-family: inherit; font-size: 16px; border: 1px solid #e0d9d0; border-radius: 6px; background: #fff; color: #555; }
@@ -111,6 +119,7 @@ layout: single
     .cb-main { padding-left: 0; }
     /* Hide the section tabs on mobile — just the search */
     .cb-navwrap { display: none; }
+    .cb-otherfoot { display: block; }
     /* The forced diet/equipment split only reads well when each group fits one
        line. On a phone both groups wrap anyway, so the break just leaves a gap
        mid-row. Drop it and let all the chips flow evenly. */
@@ -155,6 +164,7 @@ layout: single
 <a href="#sauces">Sauces</a>
 <a href="#drinks">Drinks</a>
 <a href="#growing">Growing</a>
+<a href="/cookbook/to-try/" class="cb-other">Not tried yet</a>
 </nav>
 </div>
 
@@ -449,8 +459,36 @@ layout: single
 </ul>
 </section>
 
+<p class="cb-otherfoot"><a href="/cookbook/to-try/" class="cb-other">Not tried yet →</a></p>
+
 </div>
 </div>
+
+<script>
+// Split the one index into two pages. /cookbook/ keeps the cooked (blue)
+// recipes, /cookbook/to-try/ renders this same index inside a
+// data-mode="pending" wrapper and keeps the grey ones. Runs before the search
+// script so search, chips and nav only ever see what's left.
+(function () {
+  var wrap = document.querySelector('.cb-mode');
+  var pending = !!wrap && wrap.getAttribute('data-mode') === 'pending';
+  [].slice.call(document.querySelectorAll('.recipe-list li')).forEach(function (li) {
+    if (li.classList.contains('pending') !== pending) li.remove();
+  });
+  [].slice.call(document.querySelectorAll('.subcat, .cat')).forEach(function (el) {
+    if (!el.querySelector('.recipe-list li')) el.remove();
+  });
+  [].slice.call(document.querySelectorAll('.cb-nav a[href^="#"]')).forEach(function (a) {
+    if (!document.querySelector(a.getAttribute('href'))) a.remove();
+  });
+  if (pending) {
+    [].slice.call(document.querySelectorAll('a.cb-other')).forEach(function (a) {
+      a.href = '/cookbook/';
+      a.textContent = '← Cookbook';
+    });
+  }
+})();
+</script>
 
 <script>
 (function () {

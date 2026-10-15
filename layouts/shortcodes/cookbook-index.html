@@ -1,0 +1,7 @@
+{{- /* Renders the cookbook index on another page. The index stays one file so
+   blog-publish/blog-live/blog-synctags keep working; data-mode tells its JS
+   which half (cooked or pending) to keep. */ -}}
+<div class="cb-mode" data-mode="{{ .Get "mode" | default "cooked" }}">
+{{ with .Get "heading" }}<p class="cb-pagehead">{{ . }}</p>{{ end }}
+{{ with site.GetPage "/cookbook" }}{{ .Content }}{{ end }}
+</div>
